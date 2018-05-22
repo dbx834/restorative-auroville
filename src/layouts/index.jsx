@@ -111,7 +111,9 @@ class TemplateWrapper extends React.Component {
         options={{ range: [12, 21] }}
       >
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
-        <InitializeMeta data={{ titleTemplate: "%s | Joy Living Learning" }} />
+        <InitializeMeta
+          data={{ titleTemplate: "%s | Restorative Auroville" }}
+        />
         <UpdateTitle title="Loading..." />
         <WebsiteSchema data={websiteSchemaData} />
         <OrganisationSchema data={organisationSchemaData} />

@@ -46,7 +46,7 @@ const { Fragment } = React;
 // ------------------------------------------------------------------------ SEO
 // ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "Homepage",
+  pageTitle: "Coming Soon",
   nakedPageSlug: "",
   pageAbstract: "Page abstract.",
 };
