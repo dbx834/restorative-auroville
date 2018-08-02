@@ -7,15 +7,13 @@ import PropTypes from "prop-types";
 import { css } from "glamor";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import merge from "lodash/merge";
 import map from "lodash/map";
 import startsWith from "lodash/startsWith";
-// import isUndefined from "lodash/isUndefined";
+import isUndefined from "lodash/isUndefined";
 import split from "lodash/split";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Link from "gatsby-link";
-import { Elements } from "@bodhi-project/typography";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import OutLink from "@bodhi-project/components/lib/OutLink";
@@ -23,55 +21,29 @@ import Container from "@bodhi-project/components/lib/Container";
 import Image from "@bodhi-project/components/lib/Image";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-// import Popover from "antd/lib/popover";
-// import "antd/lib/popover/style/css";
+import Menu from "antd/lib/menu";
+import "@bodhi-project/antrd/lib/restorative-auroville/menu/style/css";
+
+import Row from "antd/lib/row";
+import "@bodhi-project/antrd/lib/restorative-auroville/row/style/css";
+
+import Col from "antd/lib/col";
+import "@bodhi-project/antrd/lib/restorative-auroville/col/style/css";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import logo from "../../assets/logoColor.png";
+import underAreaTop from "../../assets/underAreaTop.png";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-// const { Fragment } = React;
-const { Ul } = Elements;
+const { Fragment } = React;
+const { SubMenu } = Menu;
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Desktop
 const desktopNavStyle = css({
-  textAlign: "center",
-  padding: 0,
-
-  "& ul": {
-    listStyle: "none",
-    paddingLeft: 0,
-
-    "& li": {
-      display: "inline-block",
-      marginRight: "20px",
-      marginBottom: "0px !important",
-    },
-
-    "& a": {
-      color: "#4a4a4a",
-      borderBottom: "1.625px solid transparent",
-      transition: "0.125s",
-      textTransform: "uppercase",
-      letterSpacing: "0.14625ex",
-
-      "& span": {
-        fontSize: "66%",
-      },
-
-      "&:hover": {
-        color: "#4a4a4a",
-        borderBottom: "1.625px solid #4a4a4a",
-      },
-    },
-
-    "& a.active": {
-      color: "#BA6B02",
-    },
-  },
+  width: "100%",
 });
 const desktopNavStyleClass = desktopNavStyle.toString();
 
@@ -79,59 +51,130 @@ const desktopNavStyleClass = desktopNavStyle.toString();
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** DesktopNav */
-const DesktopNav = props => {
-  const { pathname } = props.location;
-  return (
-    <Container bleed block noFade className={desktopNavStyleClass}>
-      <Link to="/">
+class DesktopNav extends React.Component {
+  /** standard constructor */
+  constructor(props) {
+    super(props);
+  }
+
+  /** standard renderer */
+  render() {
+    const { pathname } = this.props.location;
+
+    return (
+      <div className={desktopNavStyleClass}>
+        <div style={{ background: "#FFF", padding: "1em 0em" }}>
+          <Container block noFade>
+            <Row type="flex">
+              <Col xs={23} sm={23} md={6} lg={5} xl={5}>
+                <Link to="/">
+                  <Image
+                    src={logo}
+                    rawWidth={2042}
+                    rawHeight={582}
+                    style={{
+                      height: 60,
+                      width: "auto",
+                      border: 0,
+                      background: "transparent",
+                      marginBottom: 10,
+                      marginTop: 10,
+                      float: "left",
+                    }}
+                    loader="gradient"
+                    alt="NVC India"
+                  />
+                </Link>
+              </Col>
+              <Col xs={0} sm={0} md={18} lg={19} xl={19}>
+                <Menu
+                  mode="horizontal"
+                  style={{
+                    display: "inline-block",
+                    float: "right",
+                    borderBottom: "unset",
+                    marginTop: 27.5,
+                  }}
+                >
+                  {map(this.props.menu, topLevel => {
+                    const { title, menu, link } = topLevel;
+                    let returnObj = <br />;
+                    if (isUndefined(link)) {
+                      returnObj = (
+                        <SubMenu title={title} key={`${title}-${link}`}>
+                          {map(menu, subMenu => {
+                            const { title: subTitle, link: thisLink } = subMenu;
+                            const isOutLink = startsWith(thisLink, "http");
+                            const hashLink = isUndefined(thisLink);
+
+                            return (
+                              <Menu.Item key={thisLink}>
+                                {isOutLink === true && (
+                                  <OutLink to={thisLink}>{subTitle}</OutLink>
+                                )}
+                                {isOutLink === false && (
+                                  <Fragment>
+                                    {hashLink === true ? (
+                                      <a
+                                        href="#"
+                                        className={
+                                          pathname ===
+                                          split(thisLink, "?", 1)[0]
+                                            ? "active"
+                                            : ""
+                                        }
+                                      >
+                                        <span>{subTitle}</span>
+                                      </a>
+                                    ) : (
+                                      <Link
+                                        to={thisLink}
+                                        className={
+                                          pathname ===
+                                          split(thisLink, "?", 1)[0]
+                                            ? "active"
+                                            : ""
+                                        }
+                                      >
+                                        <span>{subTitle}</span>
+                                      </Link>
+                                    )}
+                                  </Fragment>
+                                )}
+                              </Menu.Item>
+                            );
+                          })}
+                        </SubMenu>
+                      );
+                    } else {
+                      returnObj = (
+                        <Menu.Item key={link}>
+                          <Link to={link}>{title}</Link>
+                        </Menu.Item>
+                      );
+                    }
+
+                    return returnObj;
+                  })}
+                </Menu>
+              </Col>
+            </Row>
+          </Container>
+        </div>
         <Image
-          src={logo}
-          rawWidth={842}
-          rawHeight={936}
+          src={underAreaTop}
           style={{
-            height: 156,
-            width: 140,
+            height: 30,
+            width: "100%",
             border: 0,
             background: "transparent",
-            marginLeft: 40,
-            marginBottom: 26,
-            marginTop: 26,
-            display: "inline-block",
           }}
-          loader="gradient"
+          alt="Restorative Auroville"
         />
-      </Link>
-      <nav>
-        <Ul>
-          {map(props.menu, menuItem => {
-            const { title, link } = menuItem;
-            const isOutLink = startsWith(link, "http");
-
-            return (
-              <li key={link}>
-                {isOutLink === true && (
-                  <OutLink to={link}>
-                    <span>{title}</span>
-                  </OutLink>
-                )}
-                {isOutLink === false && (
-                  <Link
-                    to={link}
-                    className={
-                      pathname === split(link, "?", 1)[0] ? "active" : ""
-                    }
-                  >
-                    <span>{title}</span>
-                  </Link>
-                )}
-              </li>
-            );
-          })}
-        </Ul>
-      </nav>
-    </Container>
-  );
-};
+      </div>
+    );
+  }
+}
 
 DesktopNav.propTypes = {
   location: PropTypes.object, // eslint-disable-line react/forbid-prop-types

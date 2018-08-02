@@ -28,6 +28,7 @@ const seoHelper = pageData => {
       description: pageData.pageAbstract,
       keywords: data.websiteKeywords,
       image: ogY,
+      url: `${data.websiteUrl}${pageData.nakedPageSlug}`,
     },
     twitterSummaryCardData: {
       site: data.websiteName,

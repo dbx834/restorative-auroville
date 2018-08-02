@@ -67,7 +67,20 @@ const organisationSchemaData = {
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const pageStyle = css({});
+const pageStyle = css({
+  // background: "#0053a5",
+  padding: 0,
+
+  "& #appWrapper": {
+    background: "#f2f2f2",
+  },
+
+  "& #content": {
+    paddingTop: "4em",
+    paddingBottom: "4em",
+    minHeight: "100vh",
+  },
+});
 const pageStyles = pageStyle.toString();
 
 // ----------------------------------------------------------------------------
@@ -105,7 +118,7 @@ class TemplateWrapper extends React.Component {
   render() {
     return (
       <Type
-        kit="dkc2ilk"
+        kit="ywx7soy"
         style={{ minHeight: "100vh" }}
         className={pageStyles}
         options={{ range: [12, 21] }}
@@ -120,13 +133,15 @@ class TemplateWrapper extends React.Component {
         <div id="appWrapper">
           <div id="menuWrapper">
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Header */}
+            <Header {...this.props} />
           </div>
           <div id="contentWrapper">
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
-            <Container noFade block id="content">
+            <Container noFade bleed block id="content">
               {this.props.children()}
             </Container>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Footer */}
+            <Footer />
           </div>
         </div>
       </Type>

@@ -1,6 +1,4 @@
-// ----------------------------------------------------------------------------
-// -------------------------------------------------------------------- Imports
-// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------- Imports
 const twix = require("twix");
 const moment = require("moment");
 const path = require("path");
@@ -50,7 +48,7 @@ const getNext = (index, edges, thisEdge) => {
   return returnNode;
 };
 
-/** onCreateNode */
+// ----------------------------------------------------------------------- Create Nodes
 exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators;
   let route;
@@ -66,26 +64,23 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     const { date, startDate, finishDate } = node.frontmatter;
 
     const begins = moment(!_.isUndefined(startDate) ? startDate : date);
+    const beginDateInt = parseInt(begins.format("YYYYMMDD"), 10);
+
     const ends = moment(
-      !_.isUndefined(finishDate) ? finishDate : begins.clone().add(23, "hours"),
+      !_.isUndefined(finishDate) ? finishDate : begins.clone().add(1, "hour"),
     );
+
+    const diff = !_.isNull(finishDate)
+      ? moment.duration(ends.diff(begins)).asDays()
+      : 0;
 
     const sameDay = _.isUndefined(finishDate);
     const elapsed = begins.fromNow();
 
     let humanDate = begins.format("ddd, MMMM D, YYYY");
     if (sameDay === false) {
-      const range = begins.twix(ends, { allDay: true });
-      const rangeX = range.format({
-        showDayOfWeek: true,
-        hideTime: true,
-        spaceBeforeMeridiem: false,
-        yearFormat: "YYYY",
-        monthFormat: "MMMM",
-        dayFormat: "D",
-        weekdayFormat: "ddd",
-        meridiemFormat: "A",
-      });
+      const range = begins.twix(ends, { allDay: false });
+      const rangeX = range.simpleFormat("ddd, MMMM D");
       const beginsYear = begins.format("YYYY");
       const endsYear = ends.format("YYYY");
       if (beginsYear === endsYear) {
@@ -110,18 +105,20 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     createNodeField({ node, name: "humanDate", value: humanDate });
     createNodeField({ node, name: "route", value: route });
     createNodeField({ node, name: "rawContent", value: node.internal.content });
+    createNodeField({ node, name: "beginDateInt", value: beginDateInt });
+    createNodeField({ node, name: "diff", value: diff });
     // console.log(node.internal.content);
   }
 };
 
-/** createPages */
+// ----------------------------------------------------------------------- Create Pages
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
-    const doc = path.resolve("src/templates/doc.jsx");
+    // const doc = path.resolve("src/templates/doc.jsx");
     const event = path.resolve("src/templates/event.jsx");
-    const faq = path.resolve("src/templates/faq.jsx");
+    // const faq = path.resolve("src/templates/faq.jsx");
     const page = path.resolve("src/templates/page.jsx");
     const post = path.resolve("src/templates/post.jsx");
     resolve(
@@ -132,12 +129,18 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               edges {
                 node {
                   frontmatter {
+                    category
                     title
                     subTitle
-                    category
                     cover
                     date
+                    startDate
+                    finishDate
+                    fromTime
+                    toTime
+                    category
                     tags
+                    cost
                     abstract
                   }
                   headings {
@@ -154,6 +157,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     beginIsoDate
                     endHumanDate
                     endIsoDate
+                    beginDateInt
+                    diff
                   }
                 }
               }
@@ -208,18 +213,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             createPage({
               path: pathX,
               component: post,
-              context,
-            });
-          } else if (_.startsWith(trimmedRoute, "docs")) {
-            createPage({
-              path: pathX,
-              component: doc,
-              context,
-            });
-          } else if (_.startsWith(trimmedRoute, "faq")) {
-            createPage({
-              path: pathX,
-              component: faq,
               context,
             });
           } else {
