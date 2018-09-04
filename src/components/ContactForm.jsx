@@ -12,16 +12,16 @@ import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Form from "antd/lib/form";
-import "@bodhi-project/antrd/lib/restorative-auroville/form/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/form/style/css";
 
 import Select from "antd/lib/select";
-import "@bodhi-project/antrd/lib/restorative-auroville/select/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/select/style/css";
 
 import Input from "antd/lib/input";
-import "@bodhi-project/antrd/lib/restorative-auroville/input/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/input/style/css";
 
 import Button from "antd/lib/button";
-import "@bodhi-project/antrd/lib/restorative-auroville/button/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/button/style/css";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import {

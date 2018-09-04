@@ -11,44 +11,27 @@ import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from "react-sizes";
-import {
-  Page,
-  Header as SemanticHeader,
-} from "@bodhi-project/semantic-webflow";
 import Link from "gatsby-link";
 
-import {
-  // --------------- Basic
-  UpdateTitle,
-  GeneralMeta,
-  // --------------- Twitter
-  TwitterSummaryCard,
-  // --------------- Open Graph
-  OpenGraphSummary,
-  // --------------- Schema.org JSON-LD
-  WebpageSchema,
-  BreadcrumbSchema,
-} from "@bodhi-project/seo";
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import Container from "@bodhi-project/components/lib/Container";
-
 import SectionAstridAlt from "@bodhi-project/blocks/lib/SectionAstridAlt";
-import "@bodhi-project/antrd/lib/restorative-auroville/tag/style/css";
-import "@bodhi-project/antrd/lib/restorative-auroville/card/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/tag/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/card/style/css";
 
 import SectionSaros from "@bodhi-project/blocks/lib/SectionSaros";
-import "@bodhi-project/antrd/lib/restorative-auroville/collapse/style/css";
-import "@bodhi-project/antrd/lib/restorative-auroville/spin/style/css";
-import "@bodhi-project/antrd/lib/restorative-auroville/button/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/collapse/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/spin/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/button/style/css";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import seoHelper from "../helpers/seoHelper";
 
+import StandardPage from "../components/StandardPage";
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment } = React;
+// const { Fragment } = React;
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------------ SEO
@@ -62,35 +45,12 @@ const pageData = {
 
 const seoData = seoHelper(pageData);
 
-const {
-  pageTitle,
-  generalMetaData,
-  twitterSummaryCardData,
-  openGraphSummaryData,
-  webpageSchemaData,
-  breadcrumbSchemaData,
-} = seoData;
-
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const pageStyle = css({
-  // "& .ant-tag": {
-  //   color: "#00006F !important",
-  //   background: "transparent !important",
-  //   borderColor: "transparent !important",
-  //   borderBottom: "2px solid transparent !important",
-  //   borderRadius: "0px !important",
-  // },
-  // "& .ant-tag-checkable-checked": {
-  //   color: "#00006F !important",
-  //   background: "#transparent !important",
-  //   borderColor: "#transparent !important",
-  //   borderBottom: "2px solid #00006F !important",
-  // },
-});
-const pageStyleClass = pageStyle.toString();
+const pageStyle = css({});
+const pageStyles = pageStyle.toString();
 
 // ------------------------------------------------------------------------------
 // -------------------------------------------------------------------- Component
@@ -147,30 +107,17 @@ class Blog extends React.Component {
     };
 
     return (
-      <Fragment>
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
-        <UpdateTitle title={pageTitle} />
-        <GeneralMeta data={generalMetaData} />
-        <TwitterSummaryCard data={twitterSummaryCardData} />
-        <OpenGraphSummary data={openGraphSummaryData} />
-        <WebpageSchema data={webpageSchemaData} />
-        <BreadcrumbSchema data={breadcrumbSchemaData} />
-
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
-        <Container block noFade>
-          <Page className={pageStyleClass}>
-            <h1 style={{ marginBottom: 10 }}>Articles</h1>
-            {!isMobile ? (
-              <SectionAstridAlt data={astridData} />
-            ) : (
-              <SectionSaros
-                data={sarosData}
-                style={{ padding: 0, marginBottom: 60 }}
-              />
-            )}
-          </Page>
-        </Container>
-      </Fragment>
+      <StandardPage className={pageStyles} seoData={seoData}>
+        <h1 style={{ marginBottom: 10 }}>Articles</h1>
+        {!isMobile ? (
+          <SectionAstridAlt data={astridData} />
+        ) : (
+          <SectionSaros
+            data={sarosData}
+            style={{ padding: 0, marginBottom: 60 }}
+          />
+        )}
+      </StandardPage>
     );
   }
 }

@@ -16,13 +16,13 @@ import Image from "@bodhi-project/components/lib/Image";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Row from "antd/lib/row";
-import "@bodhi-project/antrd/lib/restorative-auroville/row/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/row/style/css";
 
 import Col from "antd/lib/col";
-import "@bodhi-project/antrd/lib/restorative-auroville/col/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/col/style/css";
 
 import Icon from "antd/lib/icon";
-import "@bodhi-project/antrd/lib/restorative-auroville/icon/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/icon/style/css";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import packageJson from "../../../package.json";
@@ -47,8 +47,7 @@ import soundcloud from "../../assets/soundcloud.png";
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Footer
 const footerStyle = css({
-  background: "#00006F",
-  color: "#FFFFFF",
+  background: "#d9d9d9",
 });
 
 const footerStyles = footerStyle.toString();
@@ -76,7 +75,6 @@ const Footer = props => {
           <p
             style={{
               textAlign: "center",
-              color: "#FFFFFF",
             }}
           >
             <span style={{ fontSize: "125%" }}>
@@ -209,25 +207,15 @@ const Footer = props => {
           <p
             style={{
               textAlign: "center",
-              color: "#FFFFFF",
             }}
           >
             Made with&nbsp;
-            <Icon
-              type="heart"
-              style={{ color: "#FFFFFF", fontSize: "80%" }}
-            />&nbsp;by&nbsp;
-            <OutLink
-              to="https://www.bodhiproject.org/"
-              style={{ color: "#FFFFFF" }}
-            >
-              Bodhi Project
-            </OutLink>.
+            <Icon type="heart" style={{ fontSize: "80%" }} />&nbsp;by&nbsp;
+            <OutLink to="https://www.bodhiproject.org/">Bodhi Project</OutLink>.
           </p>
           <p
             style={{
               textAlign: "center",
-              color: "#FFFFFF",
             }}
           >
             Copyright © 2018 L’aura Joy & Joy Living Learning

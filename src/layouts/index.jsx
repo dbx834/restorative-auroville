@@ -117,12 +117,7 @@ class TemplateWrapper extends React.Component {
   /** standard renderer */
   render() {
     return (
-      <Type
-        kit="ywx7soy"
-        style={{ minHeight: "100vh" }}
-        className={pageStyles}
-        options={{ range: [12, 21] }}
-      >
+      <Type kit="dkc2ilk" style={{ minHeight: "100vh" }} className={pageStyles}>
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
         <InitializeMeta
           data={{ titleTemplate: "%s | Restorative Auroville" }}

@@ -11,33 +11,14 @@ import { css } from "glamor";
 // import Link from 'gatsby-link';
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import {
-  Page,
-  Section,
-  Header,
-  Article,
-  Footer,
-} from "@bodhi-project/semantic-webflow";
-import {
-  // --------------- Basic
-  UpdateTitle,
-  GeneralMeta,
-  // --------------- Twitter
-  TwitterSummaryCard,
-  // --------------- Open Graph
-  OpenGraphSummary,
-  // --------------- Schema.org JSON-LD
-  WebpageSchema,
-  BreadcrumbSchema,
-} from "@bodhi-project/seo";
+import { Header } from "@bodhi-project/semantic-webflow";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Images from "@bodhi-project/components/lib/Images";
-import Container from "@bodhi-project/components/lib/Container";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Images
 import seoHelper from "../helpers/seoHelper";
-import MonoBlock from "../components/MonoBlock";
+import StandardPage from "../components/StandardPage";
 
 import nvcX1 from "../assets/gallery/nvcX1.jpg";
 import nvcX2 from "../assets/gallery/nvcX2.jpg";
@@ -158,7 +139,7 @@ const photos = [
 ];
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstract stuff
-const { Fragment } = React;
+// const { Fragment } = React;
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------------ SEO
@@ -172,21 +153,12 @@ const pageData = {
 
 const seoData = seoHelper(pageData);
 
-const {
-  pageTitle,
-  generalMetaData,
-  twitterSummaryCardData,
-  openGraphSummaryData,
-  webpageSchemaData,
-  breadcrumbSchemaData,
-} = seoData;
-
 // ------------------------------------------------------------------------------
 // ----------------------------------------------------------------------- Styles
 // ------------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
 const pageStyle = css({});
-const pageStyleClass = pageStyle.toString();
+const pageStyles = pageStyle.toString();
 
 // ----------------------------------------------------------------------- Component
 /** ThisPage */
@@ -194,26 +166,13 @@ class ThisPage extends React.Component {
   /** standard renderer */
   render() {
     return (
-      <Fragment>
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
-        <UpdateTitle title={pageTitle} />
-        <GeneralMeta data={generalMetaData} />
-        <TwitterSummaryCard data={twitterSummaryCardData} />
-        <OpenGraphSummary data={openGraphSummaryData} />
-        <WebpageSchema data={webpageSchemaData} />
-        <BreadcrumbSchema data={breadcrumbSchemaData} />
-
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
-        <Container block noFade>
-          <Page className={pageStyleClass}>
-            <Header>
-              <h1>Gallery</h1>
-              <p className="stash">Abstract</p>
-            </Header>
-            <Images photos={photos} loader="gradient" />
-          </Page>
-        </Container>
-      </Fragment>
+      <StandardPage className={pageStyles} seoData={seoData}>
+        <Header>
+          <h1>Gallery</h1>
+          <p className="stash">Abstract</p>
+        </Header>
+        <Images photos={photos} loader="gradient" />
+      </StandardPage>
     );
   }
 }

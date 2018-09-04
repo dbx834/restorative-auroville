@@ -11,46 +11,28 @@ import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Link from "gatsby-link";
-import FacebookProvider, { Page as FBPage } from "react-facebook";
-import { Page } from "@bodhi-project/semantic-webflow";
-import {
-  // --------------- Basic
-  UpdateTitle,
-  GeneralMeta,
-  // --------------- Twitter
-  TwitterSummaryCard,
-  // --------------- Open Graph
-  OpenGraphSummary,
-  // --------------- Schema.org JSON-LD
-  WebpageSchema,
-  BreadcrumbSchema,
-} from "@bodhi-project/seo";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import Container from "@bodhi-project/components/lib/Container";
 import Image from "@bodhi-project/components/lib/Image";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-import Tabs from "antd/lib/tabs";
-import "antd/lib/tabs/style/css";
-
 import SectionAstridAlt from "@bodhi-project/blocks/lib/SectionAstridAlt";
-import "@bodhi-project/antrd/lib/restorative-auroville/tag/style/css";
-import "@bodhi-project/antrd/lib/restorative-auroville/card/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/tag/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/card/style/css";
 
-import SectionHalley from "@bodhi-project/blocks/lib/SectionHalley";
-import "@bodhi-project/antrd/lib/restorative-auroville/list/style/css";
-import "@bodhi-project/antrd/lib/restorative-auroville/spin/style/css";
-import "@bodhi-project/antrd/lib/restorative-auroville/button/style/css";
+// import SectionHalley from "@bodhi-project/blocks/lib/SectionHalley";
+// import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/list/style/css";
+// import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/spin/style/css";
+// import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/button/style/css";
 
 import MainBlock from "../components/MainBlock";
+import StandardPage from "../components/StandardPage";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import seoHelper from "../helpers/seoHelper";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment } = React;
-const TabPane = Tabs.TabPane;
+// const { Fragment } = React;
 
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------- Data
@@ -58,19 +40,19 @@ const TabPane = Tabs.TabPane;
 const currentProjects = [
   {
     route: "writings/cross-cultural-dialogue1",
-    humanDate: "Fri, September 16, 2016",
+    humanDate: "2018",
     elapsed: "2 years ago",
     abstract:
       "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
     title: "Cross-Cultural Dialogue",
     cover:
-      "https://www.joylivinglearning.org/content-assets/covers/cross-cultural-dialogue.jpg",
+      "https://images.unsplash.com/photo-1533529318682-0c3e2fc1e225?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=66bef43351b3fe01a5b3b41f9d7d3a64&auto=format&fit=crop&w=1440&h=900&q=60",
     date: "2016-09-16T00:00:00.000Z",
     category: "2.RC",
   },
   {
     route: "writings/cross-cultural-dialogue2",
-    humanDate: "Fri, September 16, 2016",
+    humanDate: "2017-2018",
     elapsed: "2 years ago",
     abstract:
       "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
@@ -82,7 +64,7 @@ const currentProjects = [
   },
   {
     route: "writings/cross-cultural-dialogue3",
-    humanDate: "Fri, September 16, 2016",
+    humanDate: "2016-2018",
     elapsed: "2 years ago",
     abstract:
       "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
@@ -94,7 +76,7 @@ const currentProjects = [
   },
   {
     route: "writings/cross-cultural-dialogue4",
-    humanDate: "Fri, September 16, 2016",
+    humanDate: "2018",
     elapsed: "2 years ago",
     abstract:
       "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
@@ -113,7 +95,7 @@ const pastProjects = [
       "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
     image:
       "https://www.aljazeera.com/mritems/imagecache/mbdresplarge/mritems/Images/2018/7/30/b42634d5f9484791893dfb7c21a8c3b0_18.jpg",
-    date: "30 Jul 2018 12:37 GMT",
+    date: "2017-2018",
   },
   {
     title: "Welcome to the Aquarium, the first of its kind",
@@ -121,7 +103,7 @@ const pastProjects = [
       "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
     image:
       "https://www.aljazeera.com/mritems/imagecache/mbdresplarge/mritems/Images/2018/7/30/b42634d5f9484791893dfb7c21a8c3b0_18.jpg",
-    date: "30 Jul 2018 12:37 GMT",
+    date: "2017-2018",
   },
   {
     title: "Welcome to the Aquarium, the first of its kind",
@@ -129,7 +111,7 @@ const pastProjects = [
       "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
     image:
       "https://www.aljazeera.com/mritems/imagecache/mbdresplarge/mritems/Images/2018/7/30/b42634d5f9484791893dfb7c21a8c3b0_18.jpg",
-    date: "30 Jul 2018 12:37 GMT",
+    date: "2017-2018",
   },
   {
     title: "Welcome to the Aquarium, the first of its kind",
@@ -137,7 +119,7 @@ const pastProjects = [
       "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
     image:
       "https://www.aljazeera.com/mritems/imagecache/mbdresplarge/mritems/Images/2018/7/30/b42634d5f9484791893dfb7c21a8c3b0_18.jpg",
-    date: "30 Jul 2018 12:37 GMT",
+    date: "2017-2018",
   },
   {
     title: "Welcome to the Aquarium, the first of its kind",
@@ -145,7 +127,7 @@ const pastProjects = [
       "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
     image:
       "https://www.aljazeera.com/mritems/imagecache/mbdresplarge/mritems/Images/2018/7/30/b42634d5f9484791893dfb7c21a8c3b0_18.jpg",
-    date: "30 Jul 2018 12:37 GMT",
+    date: "2017-2018",
   },
 ];
 
@@ -154,20 +136,11 @@ const pastProjects = [
 // ----------------------------------------------------------------------------
 const pageData = {
   pageTitle: "Projects",
-  nakedPageSlug: "",
+  nakedPageSlug: "projects",
   pageAbstract: "Page abstract.",
 };
 
 const seoData = seoHelper(pageData);
-
-const {
-  pageTitle,
-  generalMetaData,
-  twitterSummaryCardData,
-  openGraphSummaryData,
-  webpageSchemaData,
-  breadcrumbSchemaData,
-} = seoData;
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -245,61 +218,48 @@ class IndexPage extends React.Component {
     };
 
     return (
-      <Fragment>
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
-        <UpdateTitle title={pageTitle} />
-        <GeneralMeta data={generalMetaData} />
-        <TwitterSummaryCard data={twitterSummaryCardData} />
-        <OpenGraphSummary data={openGraphSummaryData} />
-        <WebpageSchema data={webpageSchemaData} />
-        <BreadcrumbSchema data={breadcrumbSchemaData} />
+      <StandardPage className={pageStyles} seoData={seoData}>
+        <h1>Ongoing Projects</h1>
+        <SectionAstridAlt data={astridData} />
+        <br />
+        <br />
+        <br />
+        <br />
 
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
-        <Page className={pageStyles}>
-          <Container block>
-            <h1>Ongoing Projects</h1>
-            <SectionAstridAlt data={astridData} />
-            <br />
-            <br />
-            <br />
-            <br />
+        <MainBlock>
+          <div className="projects">
+            <h1>Past Projects</h1>
 
-            <MainBlock>
-              <div className="projects">
-                <h1>Past Projects</h1>
-
-                {map(pastProjects, project => {
-                  const { title, subTitle, image, date } = project;
-                  return (
-                    <div className="project">
-                      <div>
-                        <p className="date">
-                          <span>{date}</span>
-                        </p>
-                        <h3 className="title mask-h4">{title}</h3>
-                        <p className="subTitle">{subTitle}</p>
-                      </div>
-                      <div>
-                        <Image
-                          src={image}
-                          style={{
-                            height: "auto",
-                            width: "100%",
-                            border: 0,
-                            background: "transparent",
-                          }}
-                          alt={`${title} – ${subTitle}`}
-                        />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <div>Etc...</div>
-            </MainBlock>
-          </Container>
-        </Page>
-      </Fragment>
+            {map(pastProjects, project => {
+              const { title, subTitle, image, date } = project;
+              return (
+                <div className="project">
+                  <div>
+                    <p className="date">
+                      <span>{date}</span>
+                    </p>
+                    <h3 className="title mask-h4">{title}</h3>
+                    <p className="subTitle">{subTitle}</p>
+                  </div>
+                  <div>
+                    <Image
+                      src={image}
+                      style={{
+                        height: "auto",
+                        width: "100%",
+                        border: 0,
+                        background: "transparent",
+                      }}
+                      alt={`${title} – ${subTitle}`}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div>Etc...</div>
+        </MainBlock>
+      </StandardPage>
     );
   }
 }

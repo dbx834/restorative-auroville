@@ -10,36 +10,18 @@ import { css } from "glamor";
 import withSizes from "react-sizes";
 import Link from "gatsby-link";
 import "moment/locale/en-gb";
-import {
-  Page,
-  Header as SemanticHeader,
-} from "@bodhi-project/semantic-webflow";
-import {
-  // --------------- Basic
-  UpdateTitle,
-  GeneralMeta,
-  // --------------- Twitter
-  TwitterSummaryCard,
-  // --------------- Open Graph
-  OpenGraphSummary,
-  // --------------- Schema.org JSON-LD
-  WebpageSchema,
-  BreadcrumbSchema,
-} from "@bodhi-project/seo";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/blocks
 import SectionOpheliaAlt from "@bodhi-project/blocks/lib/SectionOpheliaAlt";
-import "@bodhi-project/antrd/lib/restorative-auroville/tag/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/tag/style/css";
 
 import SectionHalley from "@bodhi-project/blocks/lib/SectionHalley";
-import "@bodhi-project/antrd/lib/restorative-auroville/list/style/css";
-import "@bodhi-project/antrd/lib/restorative-auroville/spin/style/css";
-import "@bodhi-project/antrd/lib/restorative-auroville/button/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/list/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/spin/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/button/style/css";
 
 import Tag from "antd/lib/tag";
-// import "@bodhi-project/antrd/lib/nvc-website/tag/style/css"; // already imported
-
-import Container from "@bodhi-project/components/lib/Container";
+// import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/tag/style/css"; // already imported
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import nvc from "../assets/nvc.png";
@@ -48,9 +30,10 @@ import seoHelper from "../helpers/seoHelper";
 import categoriseEvents from "../helpers/categoriseEvents";
 
 import MainBlock from "../components/MainBlock";
+import StandardPage from "../components/StandardPage";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment } = React;
+// const { Fragment } = React;
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------------ SEO
@@ -63,15 +46,6 @@ const pageData = {
 };
 
 const seoData = seoHelper(pageData);
-
-const {
-  pageTitle,
-  generalMetaData,
-  twitterSummaryCardData,
-  openGraphSummaryData,
-  webpageSchemaData,
-  breadcrumbSchemaData,
-} = seoData;
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -200,7 +174,7 @@ const pageStyle = css({
     },
   },
 });
-const pageStyleClass = pageStyle.toString();
+const pageStyles = pageStyle.toString();
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -272,78 +246,65 @@ class EventsAndCalendar extends React.Component {
     };
 
     return (
-      <Fragment>
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
-        <UpdateTitle title={pageTitle} />
-        <GeneralMeta data={generalMetaData} />
-        <TwitterSummaryCard data={twitterSummaryCardData} />
-        <OpenGraphSummary data={openGraphSummaryData} />
-        <WebpageSchema data={webpageSchemaData} />
-        <BreadcrumbSchema data={breadcrumbSchemaData} />
-
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
-        <Page className={pageStyleClass}>
-          <Container block noFade>
-            <MainBlock>
-              <div style={{ position: "relative" }}>
-                <h1>Workshops & Events</h1>
-                <div className="mask-p top-link">
-                  <Tag>
-                    <Link to="/events-archive">Events Archive</Link>
-                  </Tag>
-                </div>
-                {!isMobile ? (
-                  <SectionOpheliaAlt data={opheliaData} />
-                ) : (
-                  <div className="mask-p">
-                    <SectionHalley data={pandoraData1} style={{ padding: 0 }} />
-                  </div>
-                )}
+      <StandardPage className={pageStyles} seoData={seoData}>
+        <MainBlock>
+          <div style={{ position: "relative" }}>
+            <h1>Workshops & Events</h1>
+            <div className="mask-p top-link">
+              <Tag>
+                <Link to="/events-archive">Events Archive</Link>
+              </Tag>
+            </div>
+            {!isMobile ? (
+              <SectionOpheliaAlt data={opheliaData} />
+            ) : (
+              <div className="mask-p">
+                <SectionHalley data={pandoraData1} style={{ padding: 0 }} />
               </div>
-              <div style={{ position: "relative" }}>
-                <h3 className="mask-p" style={{ marginBottom: 0 }}>
-                  NVC Practice Group
-                </h3>
-                <p
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    right: 0,
-                    display: "inline-block",
-                    margin: 0,
-                    marginTop: 0,
-                  }}
-                >
-                  <small>
-                    <Link to="/calendar">See calendar ⇝</Link>
-                  </small>
-                </p>
-                <SectionHalley data={pandoraData2} style={{ marginTop: -5 }} />
+            )}
+          </div>
+          <div style={{ position: "relative" }}>
+            <h3 className="mask-p" style={{ marginBottom: 0 }}>
+              NVC Practice Group
+            </h3>
+            <p
+              style={{
+                position: "absolute",
+                top: 0,
+                right: 0,
+                display: "inline-block",
+                margin: 0,
+                marginTop: 0,
+              }}
+            >
+              <small>
+                <Link to="/calendar">See calendar ⇝</Link>
+              </small>
+            </p>
+            <SectionHalley data={pandoraData2} style={{ marginTop: -5 }} />
 
-                <h3 className="mask-p" style={{ marginBottom: 0 }}>
-                  RC Practice Group
-                </h3>
-                <p
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    right: 0,
-                    display: "inline-block",
-                    margin: 0,
-                    marginTop: 0,
-                  }}
-                >
-                  <small>
-                    <Link to="/calendar">See calendar ⇝</Link>
-                  </small>
-                </p>
+            <h3 className="mask-p" style={{ marginBottom: 0 }}>
+              RC Practice Group
+            </h3>
+            <p
+              style={{
+                position: "absolute",
+                top: 0,
+                right: 0,
+                display: "inline-block",
+                margin: 0,
+                marginTop: 0,
+              }}
+            >
+              <small>
+                <Link to="/calendar">See calendar ⇝</Link>
+              </small>
+            </p>
 
-                <SectionHalley data={pandoraData3} style={{ marginTop: -5 }} />
-              </div>
-            </MainBlock>
-          </Container>
-        </Page>
-      </Fragment>
+            <SectionHalley data={pandoraData3} style={{ marginTop: -5 }} />
+          </div>
+        </MainBlock>
+      </StandardPage>
     );
   }
 }

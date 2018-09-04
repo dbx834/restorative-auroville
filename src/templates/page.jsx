@@ -19,7 +19,7 @@ import {
   Footer,
 } from "@bodhi-project/semantic-webflow";
 import { Elements } from "@bodhi-project/typography";
-import { tocParser, treeCodeParser } from "@bodhi-project/markdown-to-react";
+import treeParser from "@bodhi-project/markdown-to-react/lib/treeParser";
 import {
   // --------------- Basic
   UpdateTitle,

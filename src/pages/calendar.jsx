@@ -15,44 +15,27 @@ import join from "lodash/join";
 import withSizes from "react-sizes";
 import Link, { withPrefix } from "gatsby-link";
 import "moment/locale/en-gb";
-import {
-  Page,
-  Header as SemanticHeader,
-} from "@bodhi-project/semantic-webflow";
 import { applyType } from "@bodhi-project/typography";
-import {
-  // --------------- Basic
-  UpdateTitle,
-  GeneralMeta,
-  // --------------- Twitter
-  TwitterSummaryCard,
-  // --------------- Open Graph
-  OpenGraphSummary,
-  // --------------- Schema.org JSON-LD
-  WebpageSchema,
-  BreadcrumbSchema,
-} from "@bodhi-project/seo";
-
-import Container from "@bodhi-project/components/lib/Container";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/blocks
 import SectionPhoebe from "@bodhi-project/blocks/lib/SectionPhoebe";
-import "@bodhi-project/antrd/lib/nvc-website/locale-provider/style/css";
-import "@bodhi-project/antrd/lib/nvc-website/calendar/style/css";
-import "@bodhi-project/antrd/lib/nvc-website/popover/style/css";
-import "@bodhi-project/antrd/lib/nvc-website/tag/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/locale-provider/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/calendar/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/popover/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/tag/style/css";
 
 import SectionHalleyAlt from "@bodhi-project/blocks/lib/SectionHalleyAlt";
-import "@bodhi-project/antrd/lib/nvc-website/list/style/css";
-import "@bodhi-project/antrd/lib/nvc-website/spin/style/css";
-import "@bodhi-project/antrd/lib/nvc-website/button/style/css";
-import "@bodhi-project/antrd/lib/nvc-website/select/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/list/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/spin/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/button/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/select/style/css";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import seoHelper from "../helpers/seoHelper";
 import globalWithMediaQueries from "../helpers/globalWithMediaQueries";
 
 import MainBlock from "../components/MainBlock";
+import StandardPage from "../components/StandardPage";
 
 import nvc from "../assets/nvc.png";
 import rc from "../assets/rc.png";
@@ -63,7 +46,7 @@ import middle from "../assets/middle.png";
 import end from "../assets/end.png";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment } = React;
+// const { Fragment } = React;
 
 globalWithMediaQueries(
   ".ant-popover-inner-content .phoebe-popcontent",
@@ -87,39 +70,6 @@ globalWithMediaQueries(
   true,
 );
 
-// globalWithMediaQueries(
-//   ".ant-popover-inner-content .phoebe-popcontent a:hover",
-//   {
-//     color: "#6D00FF",
-//     borderBottom: "1.625px solid #6D00FF",
-//   },
-//   true,
-// );
-
-// globalWithMediaQueries(
-//   ".ant-popover-inner-content .phoebe-popcontent a:visited",
-//   {
-//     textDecoration: "none",
-//   },
-//   true,
-// );
-
-// globalWithMediaQueries(
-//   ".ant-popover-inner-content .phoebe-popcontent a:link",
-//   {
-//     textDecoration: "none",
-//   },
-//   true,
-// );
-
-// globalWithMediaQueries(
-//   ".ant-popover-inner-content .phoebe-popcontent a:active",
-//   {
-//     textDecoration: "none",
-//   },
-//   true,
-// );
-
 /** inArray */
 const inArray = (array, value) => {
   let rx = false;
@@ -141,90 +91,12 @@ const pageData = {
 
 const seoData = seoHelper(pageData);
 
-const {
-  pageTitle,
-  generalMetaData,
-  twitterSummaryCardData,
-  openGraphSummaryData,
-  webpageSchemaData,
-  breadcrumbSchemaData,
-} = seoData;
-
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const pageStyle = css({
-  marginBottom: 60,
-  display: "block",
-  position: "relative",
-
-  "& .ant-btn": {
-    color: "#ffffff !important",
-  },
-
-  "& .ant-fullcalendar-header": {
-    paddingTop: "0px !important",
-  },
-
-  "& h3": {
-    fontWeight: "700 !important",
-  },
-
-  "& hr": {
-    border: "none",
-    borderTop: "3px solid #B43808",
-    marginBottom: 20,
-  },
-
-  "& .jke": {
-    padding: "0em 1.25em",
-  },
-
-  "& .kale": {
-    "& section": {
-      padding: 0,
-    },
-
-    "@media(max-width: 768px)": {
-      display: "block",
-    },
-
-    display: "flex",
-
-    "& > div": {
-      padding: "0em 1.25em",
-
-      "&:nth-child(1)": {
-        flexBasis: 0,
-        flexGrow: 62,
-
-        "& .hope": {
-          display: "flex",
-
-          "& > div": {
-            "&:nth-child(1)": {
-              flexBasis: 0,
-              flexGrow: 50,
-              paddingRight: "1.25em",
-            },
-
-            "&:nth-child(2)": {
-              flexBasis: 0,
-              flexGrow: 50,
-            },
-          },
-        },
-      },
-
-      "&:nth-child(2)": {
-        flexBasis: 0,
-        flexGrow: 38,
-      },
-    },
-  },
-});
-const pageStyleClass = pageStyle.toString();
+const pageStyle = css({});
+const pageStyles = pageStyle.toString();
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -315,39 +187,23 @@ class EventsAndCalendar extends React.Component {
     };
 
     return (
-      <Fragment>
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
-        <UpdateTitle title={pageTitle} />
-        <GeneralMeta data={generalMetaData} />
-        <TwitterSummaryCard data={twitterSummaryCardData} />
-        <OpenGraphSummary data={openGraphSummaryData} />
-        <WebpageSchema data={webpageSchemaData} />
-        <BreadcrumbSchema data={breadcrumbSchemaData} />
-
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
-        <Page className={pageStyleClass}>
-          <Container block noFade>
-            <MainBlock>
-              <div>
-                <h1>Calendar</h1>
-                {!isMobile ? (
-                  <div className="mask-p">
-                    <SectionPhoebe data={phoebeData} />
-                  </div>
-                ) : (
-                  <div className="mask-p">
-                    <SectionHalleyAlt
-                      data={altHalleyData}
-                      style={{ padding: 0 }}
-                    />
-                  </div>
-                )}
+      <StandardPage className={pageStyles} seoData={seoData}>
+        <MainBlock>
+          <div>
+            <h1>Calendar</h1>
+            {!isMobile ? (
+              <div className="mask-p">
+                <SectionPhoebe data={phoebeData} />
               </div>
-              <div>Etc...</div>
-            </MainBlock>
-          </Container>
-        </Page>
-      </Fragment>
+            ) : (
+              <div className="mask-p">
+                <SectionHalleyAlt data={altHalleyData} style={{ padding: 0 }} />
+              </div>
+            )}
+          </div>
+          <div>Etc...</div>
+        </MainBlock>
+      </StandardPage>
     );
   }
 }

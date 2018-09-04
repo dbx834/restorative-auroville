@@ -12,43 +12,37 @@ import { css } from "glamor";
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Link from "gatsby-link";
 import FacebookProvider, { Page as FBPage } from "react-facebook";
-import { Page } from "@bodhi-project/semantic-webflow";
-import {
-  // --------------- Basic
-  UpdateTitle,
-  GeneralMeta,
-  // --------------- Twitter
-  TwitterSummaryCard,
-  // --------------- Open Graph
-  OpenGraphSummary,
-  // --------------- Schema.org JSON-LD
-  WebpageSchema,
-  BreadcrumbSchema,
-} from "@bodhi-project/seo";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from "@bodhi-project/components/lib/Image";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Tabs from "antd/lib/tabs";
-import "@bodhi-project/antrd/lib/restorative-auroville/tabs/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/tabs/style/css";
 
 import Card from "antd/lib/card";
-import "@bodhi-project/antrd/lib/restorative-auroville/card/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/card/style/css";
 
 import SectionHalley from "@bodhi-project/blocks/lib/SectionHalley";
-import "@bodhi-project/antrd/lib/restorative-auroville/list/style/css";
-import "@bodhi-project/antrd/lib/restorative-auroville/spin/style/css";
-import "@bodhi-project/antrd/lib/restorative-auroville/button/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/list/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/spin/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/button/style/css";
+
+import SectionAstridAlt from "@bodhi-project/blocks/lib/SectionAstridAlt";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/tag/style/css";
+// import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/card/style/css";
 
 import LearnMore from "../components/LearnMore";
+import StandardPage from "../components/StandardPage";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import seoHelper from "../helpers/seoHelper";
 
+import banner from "../assets/banner.png";
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment } = React;
-const TabPane = Tabs.TabPane;
+// const { Fragment } = React;
+const { TabPane } = Tabs;
 
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------- Data
@@ -64,15 +58,6 @@ const pageData = {
 };
 
 const seoData = seoHelper(pageData);
-
-const {
-  pageTitle,
-  generalMetaData,
-  twitterSummaryCardData,
-  openGraphSummaryData,
-  webpageSchemaData,
-  breadcrumbSchemaData,
-} = seoData;
 
 const events = [
   {
@@ -242,16 +227,38 @@ const learnMoreData = [
   },
 ];
 
+const currentProjects = [
+  {
+    route: "writings/cross-cultural-dialogue1",
+    humanDate: "2018",
+    elapsed: "2 years ago",
+    abstract:
+      "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
+    title: "Cross-Cultural Dialogue",
+    cover:
+      "https://images.unsplash.com/photo-1533529318682-0c3e2fc1e225?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=66bef43351b3fe01a5b3b41f9d7d3a64&auto=format&fit=crop&w=1440&h=900&q=60",
+    date: "2016-09-16T00:00:00.000Z",
+    category: "2.RC",
+  },
+  {
+    route: "writings/cross-cultural-dialogue2",
+    humanDate: "2017-2018",
+    elapsed: "2 years ago",
+    abstract:
+      "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
+    title: "Aikyam School Project",
+    cover:
+      "https://images.unsplash.com/photo-1533153309598-39dd04d03af2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=762be954da945ab02dc032fa36850d9c&auto=format&fit=crop&w=1440&h=900&q=60",
+    date: "2016-09-16T00:00:00.000Z",
+    category: "2.RC",
+  },
+];
+
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
 const pageStyle = css({
-  marginTop: 60,
-  "& section": {
-    padding: 0,
-  },
-
   "& .event-tabs": {
     "& .ant-card-body": {
       padding: 0,
@@ -285,84 +292,102 @@ class IndexPage extends React.Component {
 
   /** standard renderer */
   render() {
-    return (
-      <Fragment>
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
-        <UpdateTitle title={pageTitle} />
-        <GeneralMeta data={generalMetaData} />
-        <TwitterSummaryCard data={twitterSummaryCardData} />
-        <OpenGraphSummary data={openGraphSummaryData} />
-        <WebpageSchema data={webpageSchemaData} />
-        <BreadcrumbSchema data={breadcrumbSchemaData} />
+    const astridData = {
+      cards: currentProjects,
+      components: {
+        localLink: Link,
+      },
+      conf: {
+        image: {
+          rawCoverWidth: 1440,
+          rawCoverHeight: 900,
+        },
+        columnWidth: "50%",
+      },
+      categoryMap: {
+        NVC: "Nonviolent Communication",
+        RC: "Restorative Circles",
+      },
+    };
 
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
-        <Page className={pageStyles}>
-          {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Intro block */}
-          <div
-            style={{ display: "flex", marginBottom: 30, padding: "0em 2em" }}
-          >
-            <div style={{ flexGrow: 62, flexBasis: 0, paddingRight: 30 }}>
-              <Card>
-                <h1 className="squiggle">Restorative Auroville, Who we are</h1>
-                <p>
-                  Joy Living Learning is situated in Auroville, an international
-                  community in south India that aims to actualize human unity.
-                  Given this environment, we are surrounded by opportunities for
-                  growth, learning and exploration.
-                </p>
-                <p>
-                  Project write-up = what, why To Mention: AV, Dominic, NVC, RC
-                  practice since 2010, Joy LL as legal entity, etc
-                </p>
-              </Card>
-            </div>
-            <div style={{ flexGrow: 38, flexBasis: 0 }}>
-              <Card className="event-tabs">
-                <Tabs defaultActiveKey="1">
-                  <TabPane tab="Upcoming Events" key="1">
-                    <SectionHalley data={halleyData} />
-                  </TabPane>
-                  <TabPane tab="Practice Groups" key="2">
-                    <SectionHalley data={halleyData} />
-                  </TabPane>
-                  <TabPane tab="Workshops" key="3">
-                    <SectionHalley data={halleyData} />
-                  </TabPane>
-                </Tabs>
-              </Card>
-            </div>
+    return (
+      <StandardPage className={pageStyles} seoData={seoData}>
+        <Image
+          src={banner}
+          style={{
+            height: "auto",
+            width: "100%",
+            border: 0,
+            background: "transparent",
+            marginBottom: 10,
+            marginTop: -100,
+          }}
+          alt="Restorative Auroville"
+        />
+
+        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Intro block */}
+        <div style={{ display: "flex", marginBottom: 30, padding: "0em 2em" }}>
+          <div style={{ flexGrow: 62, flexBasis: 0, paddingRight: 30 }}>
+            <Card>
+              <h1 className="squiggle">Restorative Auroville, Who we are</h1>
+              <p>
+                Joy Living Learning is situated in Auroville, an international
+                community in south India that aims to actualize human unity.
+                Given this environment, we are surrounded by opportunities for
+                growth, learning and exploration.
+              </p>
+              <p>
+                Project write-up = what, why To Mention: AV, Dominic, NVC, RC
+                practice since 2010, Joy LL as legal entity, etc
+              </p>
+            </Card>
           </div>
-          {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ RC block */}
-          <div
-            style={{ display: "flex", marginBottom: 30, padding: "0em 2em" }}
-          >
-            <div style={{ flexGrow: 62, flexBasis: 0, paddingRight: 30 }}>
-              <Card
-                cover={
-                  <Image
-                    src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
-                    style={{
-                      height: "auto",
-                      width: "100%",
-                      border: 0,
-                      background: "transparent",
-                      marginBottom: 10,
-                    }}
-                    alt="Restorative Auroville"
-                  />
-                }
-              >
-                <h2>Our RC System</h2>
-                <p>
-                  Joy Living Learning is situated in Auroville, an international
-                  community in south India that aims to actualize human unity.
-                  Given this environment, we are surrounded by opportunities for
-                  growth, learning and exploration.
-                </p>
-                <p>Text explaining, visual</p>
-              </Card>
-            </div>
-            <div style={{ flexGrow: 38, flexBasis: 0 }}>
+          <div style={{ flexGrow: 38, flexBasis: 0 }}>
+            <Card className="event-tabs">
+              <Tabs defaultActiveKey="1">
+                <TabPane tab="Upcoming Events" key="1">
+                  <SectionHalley data={halleyData} />
+                </TabPane>
+                <TabPane tab="Practice Groups" key="2">
+                  <SectionHalley data={halleyData} />
+                </TabPane>
+                <TabPane tab="Workshops" key="3">
+                  <SectionHalley data={halleyData} />
+                </TabPane>
+              </Tabs>
+            </Card>
+          </div>
+        </div>
+        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ RC block */}
+        <div style={{ display: "flex", marginBottom: 30, padding: "0em 2em" }}>
+          <div style={{ flexGrow: 62, flexBasis: 0, paddingRight: 30 }}>
+            <Card
+              cover={
+                <Image
+                  src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
+                  style={{
+                    height: "auto",
+                    width: "100%",
+                    border: 0,
+                    background: "transparent",
+                    marginBottom: 10,
+                  }}
+                  alt="Restorative Auroville"
+                />
+              }
+            >
+              <h2>Our RC System</h2>
+              <p>
+                Joy Living Learning is situated in Auroville, an international
+                community in south India that aims to actualize human unity.
+                Given this environment, we are surrounded by opportunities for
+                growth, learning and exploration.
+              </p>
+              <p>Text explaining, visual</p>
+            </Card>
+          </div>
+          <div style={{ flexGrow: 38, flexBasis: 0 }}>
+            <Card>
               <h2>Call a Circle</h2>
               <p>
                 Joy Living Learning is situated in Auroville, an international
@@ -389,261 +414,144 @@ class IndexPage extends React.Component {
                 growth, learning and exploration.
               </p>
               <p>Find out more...</p>
-            </div>
+            </Card>
           </div>
-          {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ RC block */}
+        </div>
+        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ RC block */}
+        <div
+          style={{
+            marginBottom: 30,
+            padding: "2em 2em",
+          }}
+        >
+          <h1>Our Projects</h1>
           <div
             style={{
               display: "flex",
-              marginBottom: 30,
-              background: "#0054A5",
-              padding: "2em 2em",
             }}
           >
-            <div style={{ flexGrow: 62, flexBasis: 0, margin: "0px 20px" }}>
-              <div>
-                <h2>Our Projects</h2>
-                <p>
-                  Joy Living Learning is situated in Auroville, an international
-                  community in south India that aims to actualize human unity.
-                  Given this environment, we are surrounded by opportunities for
-                  growth, learning and exploration.
-                </p>
-                <Image
-                  src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
-                  style={{
-                    height: "auto",
-                    width: "100%",
-                    border: 0,
-                    background: "transparent",
-                    marginBottom: 10,
-                  }}
-                  alt="Restorative Auroville"
-                />
-                <h3>Cross-Cultural Dialogue</h3>
-                <p>
-                  Joy Living Learning is situated in Auroville, an international
-                  community in south India that aims to actualize human unity.
-                  Given this environment, we are surrounded by opportunities for
-                  growth, learning and exploration.
-                </p>
-                <p>Find out more...</p>
-                <div style={{ display: "flex" }}>
-                  <div
-                    style={{ flexGrow: 50, flexBasis: 0, margin: "0px 20px" }}
-                  >
-                    <Image
-                      src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
-                      style={{
-                        height: "auto",
-                        width: "100%",
-                        border: 0,
-                        background: "transparent",
-                        marginBottom: 10,
-                      }}
-                      alt="Restorative Auroville"
-                    />
-                    <h3>Aikiyam School</h3>
-                    <p>
-                      Joy Living Learning is situated in Auroville, an
-                      international community in south India that aims to
-                      actualize human unity. Given this environment, we are
-                      surrounded by opportunities for growth, learning and
-                      exploration.
-                    </p>
-                    <p>Find out more...</p>
-                  </div>
-                  <div
-                    style={{ flexGrow: 50, flexBasis: 0, margin: "0px 20px" }}
-                  >
-                    <Image
-                      src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
-                      style={{
-                        height: "auto",
-                        width: "100%",
-                        border: 0,
-                        background: "transparent",
-                        marginBottom: 10,
-                      }}
-                      alt="Restorative Auroville"
-                    />
-                    <h3>Building a system in AV</h3>
-                    <p>
-                      Joy Living Learning is situated in Auroville, an
-                      international community in south India that aims to
-                      actualize human unity. Given this environment, we are
-                      surrounded by opportunities for growth, learning and
-                      exploration.
-                    </p>
-                    <p>Find out more...</p>
-                  </div>
-                </div>
-              </div>
+            <div style={{ flexGrow: 62, flexBasis: 0 }}>
+              <p>
+                Joy Living Learning is situated in Auroville, an international
+                community in south India that aims to actualize human unity.
+                Given this environment, we are surrounded by opportunities for
+                growth, learning and exploration.
+              </p>
             </div>
-            <div style={{ flexGrow: 38, flexBasis: 0, margin: "0px 20px" }}>
-              <h2>Past Projects</h2>
-              <p>
-                Joy Living Learning is situated in Auroville, an international
-                community in south India that aims to actualize human unity.
-                Given this environment, we are surrounded by opportunities for
-                growth, learning and exploration.
-              </p>
-              <h3>Film Festival</h3>
-              <Image
-                src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
-                style={{
-                  height: "auto",
-                  width: "100%",
-                  border: 0,
-                  background: "transparent",
-                  marginBottom: 10,
-                }}
-                alt="Restorative Auroville"
-              />
-              <p>
-                Joy Living Learning is situated in Auroville, an international
-                community in south India that aims to actualize human unity.
-                Given this environment, we are surrounded by opportunities for
-                growth, learning and exploration.
-              </p>
-              <p>Find out more...</p>
-              <h3>Walk of Hope</h3>
-              <Image
-                src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
-                style={{
-                  height: "auto",
-                  width: "100%",
-                  border: 0,
-                  background: "transparent",
-                  marginBottom: 10,
-                }}
-                alt="Restorative Auroville"
-              />
-              <p>
-                Joy Living Learning is situated in Auroville, an international
-                community in south India that aims to actualize human unity.
-                Given this environment, we are surrounded by opportunities for
-                growth, learning and exploration.
-              </p>
-              <p>Find out more...</p>
-              <p>See Archive...</p>
-            </div>
+            <div style={{ flexGrow: 38, flexBasis: 0 }}>&nbsp;</div>
           </div>
-          {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Team block */}
-          <div
-            style={{ display: "flex", marginBottom: 30, padding: "2em 2em" }}
+          <SectionAstridAlt data={astridData} />
+        </div>
+        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Team block */}
+        <div style={{ display: "flex", marginBottom: 30, padding: "2em 2em" }}>
+          <Card
+            cover={
+              <Image
+                src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
+                style={{
+                  height: "auto",
+                  width: "100%",
+                  border: 0,
+                  background: "transparent",
+                  marginBottom: 10,
+                }}
+                alt="Restorative Auroville"
+              />
+            }
+            style={{
+              flexGrow: 33,
+              flexBasis: 0,
+              marginRight: 20,
+            }}
           >
-            <Card
-              cover={
-                <Image
-                  src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
-                  style={{
-                    height: "auto",
-                    width: "100%",
-                    border: 0,
-                    background: "transparent",
-                    marginBottom: 10,
-                  }}
-                  alt="Restorative Auroville"
-                />
-              }
-              style={{
-                flexGrow: 33,
-                flexBasis: 0,
-                marginRight: 20,
-              }}
-            >
-              <h2>Organization</h2>
-              <p>
-                Joy Living Learning is situated in Auroville, an international
-                community in south India that aims to actualize human unity.
-                Given this environment, we are surrounded by opportunities for
-                growth, learning and exploration.
-              </p>
-              <p>Find out more...</p>
-            </Card>
-            <Card
-              cover={
-                <Image
-                  src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
-                  style={{
-                    height: "auto",
-                    width: "100%",
-                    border: 0,
-                    background: "transparent",
-                    marginBottom: 10,
-                  }}
-                  alt="Restorative Auroville"
-                />
-              }
-              style={{
-                flexGrow: 33,
-                flexBasis: 0,
-                marginRight: 20,
-              }}
-            >
-              <h2>Team</h2>
-              <p>
-                Joy Living Learning is situated in Auroville, an international
-                community in south India that aims to actualize human unity.
-                Given this environment, we are surrounded by opportunities for
-                growth, learning and exploration.
-              </p>
-              <p>Find out more...</p>
-            </Card>
-            <Card
-              cover={
-                <Image
-                  src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
-                  style={{
-                    height: "auto",
-                    width: "100%",
-                    border: 0,
-                    background: "transparent",
-                    marginBottom: 10,
-                  }}
-                  alt="Restorative Auroville"
-                />
-              }
-              style={{
-                flexGrow: 33,
-                flexBasis: 0,
-                marginRight: 20,
-              }}
-            >
-              <h2>Volunteer With Us</h2>
-              <p>
-                Joy Living Learning is situated in Auroville, an international
-                community in south India that aims to actualize human unity.
-                Given this environment, we are surrounded by opportunities for
-                growth, learning and exploration.
-              </p>
-              <p>Find out more...</p>
-            </Card>
-          </div>
+            <h2>Organization</h2>
+            <p>
+              Joy Living Learning is situated in Auroville, an international
+              community in south India that aims to actualize human unity. Given
+              this environment, we are surrounded by opportunities for growth,
+              learning and exploration.
+            </p>
+            <p>Find out more...</p>
+          </Card>
+          <Card
+            cover={
+              <Image
+                src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
+                style={{
+                  height: "auto",
+                  width: "100%",
+                  border: 0,
+                  background: "transparent",
+                  marginBottom: 10,
+                }}
+                alt="Restorative Auroville"
+              />
+            }
+            style={{
+              flexGrow: 33,
+              flexBasis: 0,
+              marginRight: 20,
+            }}
+          >
+            <h2>Team</h2>
+            <p>
+              Joy Living Learning is situated in Auroville, an international
+              community in south India that aims to actualize human unity. Given
+              this environment, we are surrounded by opportunities for growth,
+              learning and exploration.
+            </p>
+            <p>Find out more...</p>
+          </Card>
+          <Card
+            cover={
+              <Image
+                src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
+                style={{
+                  height: "auto",
+                  width: "100%",
+                  border: 0,
+                  background: "transparent",
+                  marginBottom: 10,
+                }}
+                alt="Restorative Auroville"
+              />
+            }
+            style={{
+              flexGrow: 33,
+              flexBasis: 0,
+              marginRight: 20,
+            }}
+          >
+            <h2>Volunteer With Us</h2>
+            <p>
+              Joy Living Learning is situated in Auroville, an international
+              community in south India that aims to actualize human unity. Given
+              this environment, we are surrounded by opportunities for growth,
+              learning and exploration.
+            </p>
+            <p>Find out more...</p>
+          </Card>
+        </div>
 
-          {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Extra */}
-          <div
-            style={{ display: "flex", marginBottom: 30, padding: "2em 2em" }}
-          >
-            <div style={{ flexGrow: 62, flexBasis: 0, paddingRight: 30 }}>
-              <div>
-                <h2>Further Links...</h2>
-                <LearnMore data={learnMoreData} />
-              </div>
-            </div>
-            <div style={{ flexGrow: 38, flexBasis: 0 }}>
-              <h3>Find us on Facebook</h3>
-              <FacebookProvider appId="218604115574634">
-                <FBPage
-                  href="https://www.facebook.com/JoyLivingLearning"
-                  tabs="timeline,events,messages"
-                />
-              </FacebookProvider>
+        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Extra */}
+        <div style={{ display: "flex", marginBottom: 30, padding: "2em 2em" }}>
+          <div style={{ flexGrow: 62, flexBasis: 0, paddingRight: 30 }}>
+            <div>
+              <h2>Further Links...</h2>
+              <LearnMore data={learnMoreData} />
             </div>
           </div>
-        </Page>
-      </Fragment>
+          <div style={{ flexGrow: 38, flexBasis: 0 }}>
+            <h3>Find us on Facebook</h3>
+            <FacebookProvider appId="218604115574634">
+              <FBPage
+                href="https://www.facebook.com/JoyLivingLearning"
+                tabs="timeline,events,messages"
+              />
+            </FacebookProvider>
+          </div>
+        </div>
+      </StandardPage>
     );
   }
 }

@@ -11,7 +11,7 @@ import { Header as SemanticHeader } from "@bodhi-project/semantic-webflow";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import CompositeHeader from "@bodhi-project/components/lib/CompositeHeader";
-import "@bodhi-project/antrd/lib/restorative-auroville/modal/style/css";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/modal/style/css";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import mobileLogo from "../../assets/mobileLogo.png";
@@ -36,55 +36,20 @@ const menu = [
   {
     title: "About",
     menu: [
-      { title: "About The Project", link: "/about-restorative-auroville" },
-      { title: "The Team", link: "/our-team" },
+      { title: "Restorative Auroville", link: "/about-restorative-auroville" },
+      { title: "Restorative Circles", link: "/about-restorative-auroville" },
+      { title: "Our Team", link: "/team" },
     ],
   },
-  { title: "Projects", link: "/projects" },
+  { title: "Discover", link: "/discover" },
   {
-    title: "Learn",
-    menu: [
-      { title: "Workshops & Events", link: "/workshops-and-events" },
-      { title: "Calendar View", link: "/calendar" },
-      {
-        title: "Pay Fee",
-        link: "/pay-fee",
-        renderInModal: true,
-      },
-    ],
-  },
-  { title: "Articles", link: "/writings" },
-  { title: "Gallery", link: "/gallery" },
-  {
-    title: "More",
+    title: "Support",
     menu: [
       { title: "Contact Us", link: "/contact-us" },
       {
         title: "Donate",
         link: "/donate",
       },
-    ],
-  },
-  {
-    title: "Further Links",
-    menu: [
-      {
-        title: "Joy Living Learning",
-        link: "https://www.joylivinglearning.org/",
-      },
-      {
-        title: "India NVC",
-        link: "https://www.indianvc.org/",
-      },
-      {
-        title: "Nonviolent Communication & CNVC",
-        link: "http://www.cnvc.org/",
-      },
-      {
-        title: "Restorative Circles & Dominic Barter",
-        link: "http://www.restorativecircles.org/",
-      },
-      { title: "Auroville", link: "https://www.auroville.org/" },
     ],
   },
 ];

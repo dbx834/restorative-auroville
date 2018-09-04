@@ -9,45 +9,36 @@ import { css } from "glamor";
 // import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// import Link from "gatsby-link";
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
+import { Page } from "@bodhi-project/semantic-webflow";
+import Container from "@bodhi-project/components/lib/Container";
+import {
+  // --------------- Basic
+  UpdateTitle,
+  GeneralMeta,
+  // --------------- Twitter
+  TwitterSummaryCard,
+  // --------------- Open Graph
+  OpenGraphSummary,
+  // --------------- Schema.org JSON-LD
+  WebpageSchema,
+  BreadcrumbSchema,
+} from "@bodhi-project/seo";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React;
+
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const blockStyles = css({
-  display: "flex",
-  marginBottom: 30,
-  alignItems: "flex-start",
-
-  "& > div:nth-child(1)": {
-    flexGrow: 62,
-    flexBasis: 0,
-    paddingRight: 30,
-    marginRight: 30,
-    backgroundColor: "#FFFFFF",
-    padding: "6px 9px",
-    boxShadow: "1px 2px 0 0 rgba(0,0,0,0.05)",
-    borderTop: "4px solid #00006f",
-    borderRadius: 3,
-  },
-
-  "& > div:nth-child(2)": {
-    flexGrow: 38,
-    flexBasis: 0,
-    backgroundColor: "#FFFFFF",
-    padding: "6px 9px",
-    boxShadow: "1px 2px 0 0 rgba(0,0,0,0.05)",
-    borderTop: "4px solid #00006f",
-    borderRadius: 3,
+const pageStyle = css({
+  "& section": {
+    padding: 0,
   },
 });
-const blockStyle = blockStyles.toString();
+const pageStyles = pageStyle.toString();
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Functions
@@ -56,22 +47,41 @@ const blockStyle = blockStyles.toString();
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** MainBlock */
-const MainBlock = props => {
-  const div0 = props.children[0];
-  const div1 = props.children[1];
+/** StandardPage */
+const StandardPage = props => {
+  const { className, seoData, children } = props;
+  const {
+    pageTitle,
+    generalMetaData,
+    twitterSummaryCardData,
+    openGraphSummaryData,
+    webpageSchemaData,
+    breadcrumbSchemaData,
+  } = seoData;
 
   return (
-    <div className={blockStyle}>
-      {div0}
-      {div1}
-    </div>
+    <Fragment>
+      {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
+      <UpdateTitle title={pageTitle} />
+      <GeneralMeta data={generalMetaData} />
+      <TwitterSummaryCard data={twitterSummaryCardData} />
+      <OpenGraphSummary data={openGraphSummaryData} />
+      <WebpageSchema data={webpageSchemaData} />
+      <BreadcrumbSchema data={breadcrumbSchemaData} />
+
+      {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
+      <Page className={`${pageStyles} ${className}`}>
+        <Container block noFade>
+          {children}
+        </Container>
+      </Page>
+    </Fragment>
   );
 };
 
-MainBlock.propTypes = {};
+StandardPage.propTypes = {};
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default MainBlock;
+export default StandardPage;
