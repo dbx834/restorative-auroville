@@ -11,6 +11,7 @@ import moment from "moment";
 import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Link from "gatsby-link";
 import { Type } from "@bodhi-project/typography";
 import {
   InitializeMeta,
@@ -18,6 +19,8 @@ import {
   WebsiteSchema,
   OrganisationSchema,
 } from "@bodhi-project/seo";
+import { StickyContainer, Sticky } from "react-sticky";
+import Image from "@bodhi-project/components/lib/Image";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Container from "@bodhi-project/components/lib/Container";
@@ -26,6 +29,7 @@ import Container from "@bodhi-project/components/lib/Container";
 import "../styles/index.less";
 import indexImage from "../assets/launch.jpg";
 import packageJson from "../../package.json";
+import logo from "../assets/logoColor.png";
 
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
@@ -72,13 +76,20 @@ const pageStyle = css({
   padding: 0,
 
   "& #appWrapper": {
-    background: "#f2f2f2",
+    // background: "#f2f2f2",
   },
 
-  "& #content": {
-    paddingTop: "4em",
-    paddingBottom: "4em",
-    minHeight: "100vh",
+  "& #contentWrapper": {
+    // paddingTop: "100px",
+
+    "& #content": {
+      // paddingBottom: "4em",
+      minHeight: "100vh",
+    },
+  },
+
+  "& #menuWrapper": {
+    zIndex: 1000,
   },
 });
 const pageStyles = pageStyle.toString();
@@ -126,18 +137,45 @@ class TemplateWrapper extends React.Component {
         <WebsiteSchema data={websiteSchemaData} />
         <OrganisationSchema data={organisationSchemaData} />
         <div id="appWrapper">
-          <div id="menuWrapper">
-            {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Header */}
-            <Header {...this.props} />
-          </div>
-          <div id="contentWrapper">
-            {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
-            <Container noFade bleed block id="content">
-              {this.props.children()}
+          <StickyContainer>
+            <Container goldenMajor block noFade>
+              <Link
+                to="/"
+                style={{ display: "block", border: "unset", height: 100 }}
+              >
+                <Image
+                  src={logo}
+                  rawWidth={2042}
+                  rawHeight={582}
+                  style={{
+                    display: "block",
+                    height: 60,
+                    width: "auto",
+                    border: 0,
+                    background: "transparent",
+                    marginBottom: 10,
+                    marginTop: 30,
+                    float: "left",
+                  }}
+                  loader="gradient"
+                  alt="NVC India"
+                />
+              </Link>
             </Container>
-            {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Footer */}
-            <Footer />
-          </div>
+            <Sticky topOffset={80}>
+              {({ style }) => (
+                <div id="menuWrapper" style={style}>
+                  <Header {...this.props} />
+                </div>
+              )}
+            </Sticky>
+            <div id="contentWrapper">
+              <Container noFade goldenMajor block id="content">
+                {this.props.children()}
+                <Footer />
+              </Container>
+            </div>
+          </StickyContainer>
         </div>
       </Type>
     );

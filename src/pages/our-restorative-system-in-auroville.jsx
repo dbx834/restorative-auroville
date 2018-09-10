@@ -78,82 +78,42 @@ class IndexPage extends React.Component {
   render() {
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
-        <h1 className="mask-h3">Our Project: Restorative Auroville</h1>
+        <h1 className="mask-h3">Our Restorative System</h1>
         <h2 className="mask-p">
-          Restorative Auroville is an independent project that aims to bring the
-          practice of{" "}
-          <Link to="www.restorativecircles.org">Restorative Circles</Link>, a
-          holistic, community-based form of conflict resolution, to Auroville,
-          and to explore what a consciously designed justice system could look
-          like here – one that reflects our ideals, but that is also effective
-          and has the power to bring about constructive change, both on the
-          individual and community levels.
+          Conflict is a natural, inevitable part of living together, and
+          Auroville is no exception. Koodam (hyperlink:...), Auroville’s
+          conflict resolution platform, has already done so much to bring about
+          a shift in conflict resolution, and yet we believe we still a long way
+          to go before we are really able, as a community, to deal with our
+          conflicts in ways that are healthy, effective, sustainable and
+          life-serving.
         </h2>
         <p>
-          As RC is a process that engages the community as an essential part of
-          resolving conflicts, we trust that it will offer a way forward and
-          support a shift in how we hold space for conflict and transformation.
+          For RC to be fully effective on a community-level, we need to explore
+          it in more depth and to understand our resistance (both as human
+          beings in general, but also as Aurovilians aspiring to build a city of
+          human unity) to using processes such as these.
         </p>
         <p>
-          At present, Restorative Circles are offered as part of Auroville’s
-          Conflict Resolution Policy (in addition to Mediation and Arbitration).
-          However, our long-term dream is to bring about a radical shift in how
-          we hold conflict as a community. Our project includes research,
-          teaching, sharing of information, large-scale community involvement
-          and events, experiments, testimonials, and more.
+          We need to start questioning our very system and re-evaluate how we
+          want to respond to justice as a larger community. The next step needed
+          is to take a deeper and wider look at our present situation in
+          Auroville, which is complex and doesn’t always allow for an easy
+          resolution to our challenges. Restorative Circles, in its design and
+          nature, is a process that works on several levels, and it aims at
+          bringing about a shift on a systemic level. It invites us to
+          re-evaluate how we think about conflict, how we can invite people to
+          take responsibility for their actions, and how we can support healing
+          and rebuilding trust in our communities. It’s a process that includes
+          all layers of the community, and it invites us to co-create a justice
+          system that works for us. On a practical level, Restorative Circles
+          also offer large-scale training, additional skills for conflict
+          transformation, a large pool of available Facilitators, willingness
+          amongst community members to participate in Circles if called upon,
+          and increased awareness about the importance of consciously choosing a
+          justice system for the growth and development of a community.
         </p>
-        <p>
-          After having studied and practiced the Restorative Circles process for
-          5 years, we officially launched Restorative Auroville as a public
-          service in September 2015. Because much of this work depends on how
-          it’s received in the community, we do not know exactly where it will
-          lead us and how long it will take.
-        </p>
-        <h2 className="mask-p">Aims & Objectives:</h2>
-        <ul className="mask-p">
-          <li>
-            To co-create a Justice System in Auroville that reflects our values
-            and is effective
-          </li>
-          <li>To continue to raise awareness in Auroville about RC</li>
-          <li>
-            To have a functioning Restorative System where people can call live
-            Circles and a critical mass understands how the process works
-          </li>
-          <li>
-            To train a large number of people and to have potential Facilitators
-            across the community (in different neighbourhoods, Working Groups,
-            schools, Units, Services, etc)
-          </li>
-          <li>
-            To understand what is unique about Auroville and how to adapt RC to
-            suit our needs and ideals
-          </li>
-          <li>
-            To contribute to more ease and efficiency in resolving conflicts
-            (increased goodwill, creativity, and inclusion instead of exclusion)
-          </li>
-          <li>
-            To contribute towards a cultural shift in understanding conflict,
-            its potential for transformation, and the need to take
-            responsibility for our actions
-          </li>
-          <li>
-            To contribute to restoring trust, communication and harmony amongst
-            Aurovilians
-          </li>
-          <li>
-            To potentially be an example for other communities seeking to
-            improve their peace and justice systems
-          </li>
-        </ul>
-        <p>
-          Restorative Auroville is an initiative of{" "}
-          <Link to="https://www.joylivinglearning.org/">
-            Joy Living Learning
-          </Link>, which is a Unit of the&nbsp;
-          <Link to="https://www.auroville.org/">Auroville Foundation</Link>.
-        </p>
+        <p>Link to system document...</p>
       </StandardPage>
     );
   }

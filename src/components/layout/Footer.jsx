@@ -47,7 +47,10 @@ import soundcloud from "../../assets/soundcloud.png";
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Footer
 const footerStyle = css({
-  background: "#d9d9d9",
+  borderTop: "2px dotted #00006F",
+  paddingTop: 30,
+  marginTop: 30,
+  // background: "#d9d9d9",
 });
 
 const footerStyles = footerStyle.toString();
@@ -59,169 +62,151 @@ const footerStyles = footerStyle.toString();
 const Footer = props => {
   return (
     <SemanticFooter className={footerStyles}>
-      <Image
-        src={underArea}
+      <p
         style={{
-          height: 30,
-          width: "100%",
-          border: 0,
-          background: "transparent",
-          marginBottom: 100,
+          textAlign: "center",
         }}
-        alt="Restorative Auroville"
-      />
-      <Row type="flex">
-        <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-          <p
+      >
+        "<i>
+          Power without love is reckless and abusive, and love without power is
+          sentimental and anemic. Power at its best is love implementing the
+          demands of justice, and justice at its best is power correcting
+          everything that stands against love.
+        </i>"
+        <br />
+        ~ Martin Luther King Jr.
+      </p>
+      <br />
+      <div className="mask-p hidden-sm" style={{ textAlign: "center" }}>
+        <OutLink to="https://www.facebook.com/RestorativeAuroville/">
+          <Image
+            src={facebook}
+            rawWidth={450}
+            rawHeight={450}
             style={{
-              textAlign: "center",
+              display: "inline-block",
+              border: "none",
+              background: "none",
+              height: 45,
+              width: 45,
             }}
-          >
-            <span style={{ fontSize: "125%" }}>
-              The One Quality Needed for the Path is Love, it is the essence of
-              Sufism, and all that is needed by the wayfarer.
-            </span>
-          </p>
-          <br />
-          <div className="mask-p hidden-sm" style={{ textAlign: "center" }}>
-            <OutLink to="https://www.facebook.com/JoyLivingLearning/">
-              <Image
-                src={facebook}
-                rawWidth={450}
-                rawHeight={450}
-                style={{
-                  display: "inline-block",
-                  border: "none",
-                  background: "none",
-                  height: 45,
-                  width: 45,
-                }}
-                alt="Follow us on Facebook - https://www.facebook.com/JoyLivingLearning/"
-              />
-            </OutLink>
-            <OutLink
-              to="https://www.youtube.com/user/laurajoyful/videos"
-              style={{ marginLeft: 17 }}
-            >
-              <Image
-                src={youtube}
-                rawWidth={450}
-                rawHeight={450}
-                style={{
-                  display: "inline-block",
-                  border: "none",
-                  background: "none",
-                  height: 45,
-                  width: 45,
-                }}
-                alt="See more videos on YouTube - https://www.youtube.com/user/laurajoyful/videos"
-              />
-            </OutLink>
-            <OutLink
-              to="https://vimeo.com/laurajoyful"
-              style={{ marginLeft: 17 }}
-            >
-              <Image
-                src={vimeo}
-                rawWidth={450}
-                rawHeight={450}
-                style={{
-                  display: "inline-block",
-                  border: "none",
-                  background: "none",
-                  height: 42,
-                  width: 42,
-                }}
-                alt="See more videos on Vimeo - https://vimeo.com/laurajoyful"
-              />
-            </OutLink>
-            <OutLink
-              to="https://soundcloud.com/laura-joy-145472107"
-              style={{ marginLeft: 17 }}
-            >
-              <Image
-                src={soundcloud}
-                rawWidth={450}
-                rawHeight={450}
-                style={{
-                  display: "inline-block",
-                  border: "none",
-                  background: "none",
-                  height: 42,
-                  width: 42,
-                }}
-                alt="Listen to our dialogues on Soundcloud - https://soundcloud.com/laura-joy-145472107"
-              />
-            </OutLink>
-            <OutLink
-              to="https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
-              style={{ marginLeft: 17 }}
-            >
-              <Image
-                src={payu}
-                rawWidth={450}
-                rawHeight={450}
-                style={{
-                  display: "inline-block",
-                  border: "none",
-                  background: "none",
-                  height: 42,
-                  width: 42,
-                }}
-                alt="Donate or pay fees through PayU - https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
-              />
-            </OutLink>
-            <form
-              action="https://www.paypal.com/cgi-bin/webscr"
-              method="post"
-              target="_blank"
-              style={{ display: "inline-block", marginLeft: 17 }}
-              className="hover"
-            >
-              <input type="hidden" name="cmd" value="_s-xclick" />
-              <input
-                type="hidden"
-                name="hosted_button_id"
-                value="WFXM5RNDGBXL4"
-              />
-              <input
-                type="image"
-                src={paypal}
-                border="0"
-                name="submit"
-                alt="PayPal – The safer, easier way to pay online!"
-                style={{
-                  height: 42,
-                  width: 42,
-                }}
-              />
-              <img
-                alt=""
-                border="0"
-                src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif"
-                width="1"
-                height="1"
-              />
-            </form>
-          </div>
-          <p
+            alt="Follow us on Facebook - https://www.facebook.com/JoyLivingLearning/"
+          />
+        </OutLink>
+        <OutLink
+          to="https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF"
+          style={{ marginLeft: 17 }}
+        >
+          <Image
+            src={youtube}
+            rawWidth={450}
+            rawHeight={450}
             style={{
-              textAlign: "center",
+              display: "inline-block",
+              border: "none",
+              background: "none",
+              height: 45,
+              width: 45,
             }}
-          >
-            Made with&nbsp;
-            <Icon type="heart" style={{ fontSize: "80%" }} />&nbsp;by&nbsp;
-            <OutLink to="https://www.bodhiproject.org/">Bodhi Project</OutLink>.
-          </p>
-          <p
+            alt="See more videos on YouTube - https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF"
+          />
+        </OutLink>
+        <OutLink to="https://vimeo.com/laurajoyful" style={{ marginLeft: 17 }}>
+          <Image
+            src={vimeo}
+            rawWidth={450}
+            rawHeight={450}
             style={{
-              textAlign: "center",
+              display: "inline-block",
+              border: "none",
+              background: "none",
+              height: 42,
+              width: 42,
             }}
-          >
-            Copyright © 2018 L’aura Joy & Joy Living Learning
-          </p>
-        </Col>
-      </Row>
+            alt="See more videos on Vimeo - https://vimeo.com/laurajoyful"
+          />
+        </OutLink>
+        <OutLink
+          to="https://soundcloud.com/laura-joy-145472107"
+          style={{ marginLeft: 17 }}
+        >
+          <Image
+            src={soundcloud}
+            rawWidth={450}
+            rawHeight={450}
+            style={{
+              display: "inline-block",
+              border: "none",
+              background: "none",
+              height: 42,
+              width: 42,
+            }}
+            alt="Listen to our dialogues on Soundcloud - https://soundcloud.com/laura-joy-145472107"
+          />
+        </OutLink>
+        <OutLink
+          to="https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
+          style={{ marginLeft: 17 }}
+        >
+          <Image
+            src={payu}
+            rawWidth={450}
+            rawHeight={450}
+            style={{
+              display: "inline-block",
+              border: "none",
+              background: "none",
+              height: 42,
+              width: 42,
+            }}
+            alt="Donate or pay fees through PayU - https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
+          />
+        </OutLink>
+        <form
+          action="https://www.paypal.com/cgi-bin/webscr"
+          method="post"
+          target="_blank"
+          style={{ display: "inline-block", marginLeft: 17 }}
+          className="hover"
+        >
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value="WFXM5RNDGBXL4" />
+          <input
+            type="image"
+            src={paypal}
+            border="0"
+            name="submit"
+            alt="PayPal – The safer, easier way to pay online!"
+            style={{
+              height: 42,
+              width: 42,
+            }}
+          />
+          <img
+            alt=""
+            border="0"
+            src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif"
+            width="1"
+            height="1"
+          />
+        </form>
+      </div>
+      <p
+        style={{
+          textAlign: "center",
+        }}
+      >
+        Made with&nbsp;
+        <Icon type="heart" style={{ fontSize: "80%" }} />&nbsp;by&nbsp;
+        <OutLink to="https://www.bodhiproject.org/">Bodhi Project</OutLink>.
+      </p>
+      <p
+        style={{
+          textAlign: "center",
+        }}
+      >
+        Copyright © 2018 Joy Living Learning & Restorative Auroville
+      </p>
     </SemanticFooter>
   );
 };

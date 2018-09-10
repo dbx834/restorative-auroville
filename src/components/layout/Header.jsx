@@ -33,25 +33,57 @@ const {
 // ----------------------------------------------------------------------- Data
 // ----------------------------------------------------------------------------
 const menu = [
+  { title: "Home", link: "/" },
   {
-    title: "About",
+    title: "Explore +",
     menu: [
-      { title: "Restorative Auroville", link: "/about-restorative-auroville" },
-      { title: "Restorative Circles", link: "/about-restorative-auroville" },
-      { title: "Our Team", link: "/team" },
+      { title: "Our Project", link: "/about-restorative-auroville" },
+      { title: "Restorative Circles", link: "/restorative-circles" },
+      {
+        title: "Our Restorative System",
+        link: "/our-restorative-system-in-auroville",
+      },
     ],
   },
-  { title: "Discover", link: "/discover" },
   {
-    title: "Support",
+    title: "Learn +",
     menu: [
-      { title: "Contact Us", link: "/contact-us" },
+      { title: "Calendar of events", link: "/team" },
+      { title: "Educational Tools", link: "/team" },
+      { title: "Videos", link: "/team" },
+      { title: "Other?", link: "/team" },
+    ],
+  },
+  {
+    title: "Our Initiatives +",
+    menu: [
+      { title: "Aikiyam", link: "/team" },
+      { title: "Cross-Cultural Dialogue", link: "/team" },
+      { title: "Others", link: "/team" },
+    ],
+  },
+  {
+    title: "Support +",
+    menu: [
       {
         title: "Donate",
         link: "/donate",
       },
+      {
+        title: "Volunteer",
+        link: "/volunteer",
+      },
     ],
   },
+  { title: "Our Team", link: "/our-team" },
+  {
+    title: "More +",
+    menu: [
+      { title: "Gallery", link: "/team" },
+      { title: "Articles", link: "/team" },
+    ],
+  },
+  { title: "Contact Us", link: "/articles" },
 ];
 
 // ----------------------------------------------------------------------------
