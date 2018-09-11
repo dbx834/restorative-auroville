@@ -10,6 +10,7 @@ import { css } from "glamor";
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import isArray from "lodash/isArray";
 import isString from "lodash/isString";
+import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { Footer as SemanticFooter } from "@bodhi-project/semantic-webflow";
@@ -75,7 +76,11 @@ const footerStyles = footerStyle.toString();
 const Footer = props => {
   const random = getRandomArbitraryInt(0, quotes.length);
   const quoteObj = quotes[random];
-  const { quote, author } = quoteObj;
+  let quote = "";
+  let author = "";
+  if (!isUndefined(quoteObj)) {
+    ({ quote, author } = quoteObj);
+  }
 
   return (
     <SemanticFooter className={footerStyles}>
