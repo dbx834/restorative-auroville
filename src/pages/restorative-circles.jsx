@@ -117,6 +117,13 @@ class IndexPage extends React.Component {
           perceive conflict and how we can find co-creative, empowered ways of
           restoring harmony and trust amongst us.
         </p>
+        <p>
+          Restorative Circles are a specific restorative practice whose
+          development began with the work of Dominic Barker in the favelas in
+          Rio de Janeiro in the mid 1990s and continues with a growing community
+          both in Brazil and internationally. [Source: Dominic Barter and
+          Restorative Circles]
+        </p>
 
         <h1 className="mask-h3">Call a Circle</h1>
         <p>

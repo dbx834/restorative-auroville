@@ -16,6 +16,9 @@ import Image from "@bodhi-project/components/lib/Image";
 import Link from "gatsby-link";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
+import Collapse from "antd/lib/collapse";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/collapse/style/css";
+
 import Video from "../components/Video";
 import Quote from "../components/Quote";
 import MainBlock from "../components/MainBlock";
@@ -34,6 +37,7 @@ import shanti from "../assets/shanti.jpg";
 import dummy from "../assets/dummy.jpg";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const Panel = Collapse.Panel;
 
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------- Data
@@ -54,7 +58,16 @@ const seoData = seoHelper(pageData);
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const pageStyle = css({});
+const pageStyle = css({
+  "& .ant-collapse": {
+    width: "100%",
+
+    "& .ant-collapse-content-box, .ant-collapse-header": {
+      paddingLeft: 0,
+      paddingRight: 0,
+    },
+  },
+});
 const pageStyles = pageStyle.toString();
 
 /** Person */
@@ -154,6 +167,41 @@ class IndexPage extends React.Component {
             photo={dummy}
             link="/our-team"
           />
+          <h2 className="mask-h3">Past Members</h2>
+          <p>
+            Restorative Auroville is an independent project that aims to bring
+            the practice of{" "}
+            <Link to="www.restorativecircles.org">Restorative Circles</Link>, a
+            holistic, community-based form of conflict resolution, to Auroville,
+            and to explore what a consciously designed justice system could look
+            like here – one that reflects our ideals, but that is also effective
+            and has the power to bring about constructive change, both on the
+            individual and community levels.
+          </p>
+          <Collapse bordered={false}>
+            <Panel header="See past members" key="1">
+              <div style={{ display: "flex", flexWrap: "wrap" }}>
+                <Person
+                  name="Hélène"
+                  designation="Volunteer"
+                  photo={dummy}
+                  link="/helene"
+                />
+                <Person
+                  name="Shanti"
+                  designation="Volunteer"
+                  photo={shanti}
+                  link="/shanti"
+                />
+                <Person
+                  name="Dummy"
+                  designation="Volunteer"
+                  photo={dummy}
+                  link="/our-team"
+                />
+              </div>
+            </Panel>
+          </Collapse>
         </div>
       </StandardPage>
     );

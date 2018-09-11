@@ -7,6 +7,10 @@ import PropTypes from "prop-types";
 import { css } from "glamor";
 // import classNames from "classnames";
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
+import isArray from "lodash/isArray";
+import isString from "lodash/isString";
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { Footer as SemanticFooter } from "@bodhi-project/semantic-webflow";
 
@@ -25,7 +29,7 @@ import Icon from "antd/lib/icon";
 import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/icon/style/css";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import packageJson from "../../../package.json";
+import quotes from "../../data/quotes.json";
 import underArea from "../../assets/underArea.png";
 import facebook from "../../assets/facebook.png";
 import youtube from "../../assets/youtube.png";
@@ -41,6 +45,15 @@ import soundcloud from "../../assets/soundcloud.png";
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------- Data
 // ----------------------------------------------------------------------------
+/** returns a random number between min (inclusive) and max (exclusive) */
+const getRandomArbitrary = (min, max) => {
+  return Math.random() * (max - min) + min;
+};
+
+/** returns a random int between min (inclusive) and max (exclusive) */
+const getRandomArbitraryInt = (min, max) => {
+  return Math.round(getRandomArbitrary(min, max));
+};
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -60,6 +73,10 @@ const footerStyles = footerStyle.toString();
 // ----------------------------------------------------------------------------
 /** Footer */
 const Footer = props => {
+  const random = getRandomArbitraryInt(0, quotes.length);
+  const quoteObj = quotes[random];
+  const { quote, author } = quoteObj;
+
   return (
     <SemanticFooter className={footerStyles}>
       <p
@@ -67,14 +84,9 @@ const Footer = props => {
           textAlign: "center",
         }}
       >
-        "<i>
-          Power without love is reckless and abusive, and love without power is
-          sentimental and anemic. Power at its best is love implementing the
-          demands of justice, and justice at its best is power correcting
-          everything that stands against love.
-        </i>"
+        "<i>{isString(quote) && quote}</i>"
         <br />
-        ~ Martin Luther King Jr.
+        ~ {author}
       </p>
       <br />
       <div className="mask-p hidden-sm" style={{ textAlign: "center" }}>

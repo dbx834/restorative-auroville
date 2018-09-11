@@ -49,6 +49,7 @@ import nvcX27 from "../assets/gallery/nvcX27.jpg";
 import nvcX28 from "../assets/gallery/nvcX28.jpg";
 import nvcX29 from "../assets/gallery/nvcX29.jpg";
 import nvcX30 from "../assets/gallery/nvcX30.jpg";
+import nvcX31 from "../assets/gallery/nvcX31.jpg";
 import nvcX32 from "../assets/gallery/nvcX32.jpg";
 import nvcX33 from "../assets/gallery/nvcX33.jpg";
 import nvcX34 from "../assets/gallery/nvcX34.jpg";
@@ -63,79 +64,52 @@ import nvcX42 from "../assets/gallery/nvcX42.jpg";
 import nvcX43 from "../assets/gallery/nvcX43.jpg";
 import nvcX44 from "../assets/gallery/nvcX44.jpg";
 import nvcX45 from "../assets/gallery/nvcX45.jpg";
-import nvcX46 from "../assets/gallery/nvcX46.jpg";
-import nvcX47 from "../assets/gallery/nvcX47.jpg";
-import nvcX48 from "../assets/gallery/nvcX48.jpg";
-import nvcX49 from "../assets/gallery/nvcX49.jpg";
-import nvcX50 from "../assets/gallery/nvcX50.jpg";
-import nvcX51 from "../assets/gallery/nvcX51.jpg";
-import nvcX52 from "../assets/gallery/nvcX52.jpg";
-import nvcX53 from "../assets/gallery/nvcX53.jpg";
-import nvcX54 from "../assets/gallery/nvcX54.jpg";
-import nvcX55 from "../assets/gallery/nvcX55.jpg";
-import nvcX56 from "../assets/gallery/nvcX56.jpg";
-import nvcX57 from "../assets/gallery/nvcX57.jpeg";
-import nvcX58 from "../assets/gallery/nvcX58.jpeg";
-import nvcX59 from "../assets/gallery/nvcX59.jpg";
 
 const photos = [
-  { src: nvcX56, width: 600, height: 214 },
-  { src: nvcX57, width: 600, height: 400 },
-  { src: nvcX58, width: 600, height: 400 },
-  { src: nvcX59, width: 600, height: 400 },
   { src: nvcX1, width: 600, height: 450 },
-  { src: nvcX2, width: 600, height: 353 },
-  { src: nvcX4, width: 600, height: 800 },
-  { src: nvcX5, width: 600, height: 400 },
-  { src: nvcX6, width: 600, height: 803 },
-  { src: nvcX7, width: 600, height: 401 },
-  { src: nvcX8, width: 600, height: 818 },
-  { src: nvcX9, width: 600, height: 450 },
-  { src: nvcX10, width: 600, height: 433 },
-  { src: nvcX11, width: 600, height: 450 },
-  { src: nvcX12, width: 600, height: 373 },
-  { src: nvcX13, width: 600, height: 800 },
-  { src: nvcX14, width: 600, height: 530 },
-  { src: nvcX15, width: 600, height: 800 },
-  { src: nvcX16, width: 600, height: 800 },
-  { src: nvcX17, width: 600, height: 448 },
-  { src: nvcX18, width: 600, height: 1077 },
-  { src: nvcX19, width: 600, height: 448 },
-  { src: nvcX20, width: 600, height: 450 },
-  { src: nvcX21, width: 600, height: 367 },
-  { src: nvcX22, width: 600, height: 368 },
-  { src: nvcX23, width: 600, height: 377 },
+  { src: nvcX2, width: 600, height: 450 },
+  { src: nvcX4, width: 600, height: 418 },
+  { src: nvcX5, width: 600, height: 338 },
+  { src: nvcX6, width: 600, height: 800 },
+  { src: nvcX7, width: 600, height: 367 },
+  { src: nvcX8, width: 600, height: 450 },
+  { src: nvcX9, width: 600, height: 779 },
+  { src: nvcX10, width: 600, height: 690 },
+  { src: nvcX11, width: 600, height: 400 },
+  { src: nvcX12, width: 600, height: 493 },
+  { src: nvcX13, width: 600, height: 388 },
+  { src: nvcX14, width: 600, height: 800 },
+  { src: nvcX15, width: 600, height: 214 },
+  { src: nvcX16, width: 600, height: 450 },
+  { src: nvcX17, width: 600, height: 414 },
+  { src: nvcX18, width: 600, height: 1067 },
+  { src: nvcX19, width: 600, height: 800 },
+  { src: nvcX20, width: 600, height: 411 },
+  { src: nvcX21, width: 600, height: 450 },
+  { src: nvcX22, width: 600, height: 450 },
+  { src: nvcX23, width: 600, height: 450 },
   { src: nvcX24, width: 600, height: 450 },
-  { src: nvcX25, width: 600, height: 450 },
-  { src: nvcX26, width: 600, height: 400 },
-  { src: nvcX27, width: 600, height: 328 },
-  { src: nvcX28, width: 600, height: 596 },
-  { src: nvcX29, width: 600, height: 368 },
-  { src: nvcX30, width: 600, height: 465 },
-  { src: nvcX32, width: 600, height: 333 },
-  { src: nvcX33, width: 600, height: 356 },
+  { src: nvcX25, width: 600, height: 441 },
+  { src: nvcX26, width: 600, height: 456 },
+  { src: nvcX27, width: 600, height: 450 },
+  { src: nvcX28, width: 600, height: 400 },
+  { src: nvcX29, width: 600, height: 400 },
+  { src: nvcX30, width: 600, height: 450 },
+  { src: nvcX31, width: 600, height: 354 },
+  { src: nvcX32, width: 600, height: 450 },
+  { src: nvcX33, width: 600, height: 450 },
   { src: nvcX34, width: 600, height: 450 },
-  { src: nvcX35, width: 600, height: 396 },
+  { src: nvcX35, width: 600, height: 450 },
   { src: nvcX36, width: 600, height: 450 },
-  { src: nvcX37, width: 600, height: 800 },
+  { src: nvcX37, width: 600, height: 400 },
   { src: nvcX38, width: 600, height: 450 },
   { src: nvcX39, width: 600, height: 450 },
-  { src: nvcX40, width: 600, height: 414 },
-  { src: nvcX41, width: 600, height: 450 },
-  { src: nvcX42, width: 600, height: 450 },
-  { src: nvcX43, width: 600, height: 450 },
-  { src: nvcX44, width: 600, height: 461 },
-  { src: nvcX45, width: 600, height: 800 },
-  { src: nvcX46, width: 600, height: 459 },
-  { src: nvcX47, width: 600, height: 613 },
-  { src: nvcX48, width: 600, height: 431 },
-  { src: nvcX49, width: 600, height: 448 },
-  { src: nvcX50, width: 600, height: 448 },
-  { src: nvcX51, width: 600, height: 450 },
-  { src: nvcX52, width: 600, height: 450 },
-  { src: nvcX53, width: 600, height: 455 },
-  { src: nvcX54, width: 600, height: 497 },
-  { src: nvcX55, width: 600, height: 899 },
+  { src: nvcX40, width: 600, height: 450 },
+  { src: nvcX41, width: 600, height: 399 },
+  { src: nvcX42, width: 600, height: 399 },
+  { src: nvcX43, width: 600, height: 399 },
+  { src: nvcX44, width: 600, height: 399 },
+  { src: nvcX45, width: 600, height: 450 },
 ];
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstract stuff
@@ -168,8 +142,8 @@ class ThisPage extends React.Component {
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
         <Header>
-          <h1>Gallery</h1>
-          <p className="stash">Abstract</p>
+          <h1 className="mask-h3">Gallery</h1>
+          <p>Abstract</p>
         </Header>
         <Images photos={photos} loader="gradient" />
       </StandardPage>

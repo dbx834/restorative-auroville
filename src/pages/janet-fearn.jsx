@@ -105,9 +105,6 @@ class IndexPage extends React.Component {
           practice better understood in Auroville, and helping as a
           co-facilitator in many Circles.
         </p>
-        <div className="mask-p">
-          <Images photos={lauraPhotos} loader="gradient" columns={2} />
-        </div>
       </StandardPage>
     );
   }

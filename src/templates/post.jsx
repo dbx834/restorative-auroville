@@ -107,95 +107,87 @@ class BlogPostTemplate extends React.Component {
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
         <BlogPostSchema data={blogPageSchemaData} />
-        <MainBlock>
-          <div>
-            <Article className={markdownStylesClass}>
-              <Header>
-                <h1 className="mask-h4">{frontmatter.title}</h1>
-                <p>
-                  {catString}&nbsp;&nbsp;○&nbsp;&nbsp;{dateStr}&nbsp;({when})
-                </p>
-                <p>
-                  <i>{frontmatter.abstract}</i>
-                </p>
-                <div style={{ position: "relative" }} className="mask-p">
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 99,
-                      backgroundColor: "#ffffff",
-                      zIndex: 10,
-                      height: 20,
-                      width: "calc(100% - 96px)",
-                    }}
+        <Article className={markdownStylesClass}>
+          <Header>
+            <h1 className="mask-h4">{frontmatter.title}</h1>
+            <p>
+              {catString}&nbsp;&nbsp;○&nbsp;&nbsp;{dateStr}&nbsp;({when})
+            </p>
+            <p>
+              <i>{frontmatter.abstract}</i>
+            </p>
+            <div style={{ position: "relative" }} className="mask-p">
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 99,
+                  backgroundColor: "#ffffff",
+                  zIndex: 10,
+                  height: 20,
+                  width: "calc(100% - 96px)",
+                }}
+              />
+              <div style={{ maxWidth: 96 }} id="fb">
+                <FacebookProvider appId="218604115574634">
+                  <FBLike
+                    href={withUrl(route, data)}
+                    colorScheme="dark"
+                    showFaces
+                    share
                   />
-                  <div style={{ maxWidth: 96 }} id="fb">
-                    <FacebookProvider appId="218604115574634">
-                      <FBLike
-                        href={withUrl(route, data)}
-                        colorScheme="dark"
-                        showFaces
-                        share
-                      />
-                    </FacebookProvider>
-                  </div>
-                </div>
-                <Image
-                  src={frontmatter.cover}
-                  rawWidth={1440}
-                  rawHeight={900}
-                  style={{ border: 0, height: "auto !important" }}
-                  className="mask-p"
-                />
-              </Header>
+                </FacebookProvider>
+              </div>
+            </div>
+            <Image
+              src={frontmatter.cover}
+              rawWidth={1440}
+              rawHeight={900}
+              style={{ border: 0, height: "auto !important" }}
+              className="mask-p"
+            />
+          </Header>
 
-              {treeParser(
-                markdownAst,
-                {
-                  localLink: Link,
-                  linkHeaders: false,
-                  trackHeaders: false,
-                  nestHeaders: false,
-                },
-                {},
-              )}
+          {treeParser(
+            markdownAst,
+            {
+              localLink: Link,
+              linkHeaders: false,
+              trackHeaders: false,
+              nestHeaders: false,
+            },
+            {},
+          )}
 
-              <Footer>
-                <H1 mask="h4">More posts…</H1>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    marginBottom: 0,
-                  }}
-                  className="mask-p"
-                >
-                  <div>
-                    {!isNull(prev) && (
-                      <Link to={`/${prev.fields.route}`}>⇜ Previous</Link>
-                    )}
-                  </div>
-                  <div>
-                    {!isNull(next) && (
-                      <Link to={`/${next.fields.route}`}>Next ⇝</Link>
-                    )}
-                  </div>
-                </div>
-                <Paragraph className="stash">
-                  {data.copyright}
-                  <br />
-                  <br />
-                  Published on {humanDate} ({elapsed}).
-                </Paragraph>
-              </Footer>
-            </Article>
-          </div>
-          <div>
-            <Video />
-            <Quote />
-          </div>
-        </MainBlock>
+          <Footer>
+            <H1 mask="h4">More posts…</H1>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginBottom: 0,
+              }}
+              className="mask-p"
+            >
+              <div>
+                {!isNull(prev) && (
+                  <Link to={`/${prev.fields.route}`}>⇜ Previous</Link>
+                )}
+              </div>
+              <div>
+                {!isNull(next) && (
+                  <Link to={`/${next.fields.route}`}>Next ⇝</Link>
+                )}
+              </div>
+            </div>
+            <Paragraph className="stash">
+              {data.copyright}
+              <br />
+              <br />
+              Published on {humanDate} ({elapsed}).
+            </Paragraph>
+          </Footer>
+        </Article>
       </StandardPage>
     );
   }

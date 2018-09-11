@@ -105,9 +105,6 @@ class IndexPage extends React.Component {
           dynamic, living system. I couldn’t have found a more meaningful way to
           give back to Auroville.
         </p>
-        <div className="mask-p">
-          <Images photos={lauraPhotos} loader="gradient" columns={2} />
-        </div>
       </StandardPage>
     );
   }

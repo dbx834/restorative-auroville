@@ -101,9 +101,6 @@ class IndexPage extends React.Component {
           Restorative circles are the way forward to greater understanding and
           lasting harmony.
         </p>
-        <div className="mask-p">
-          <Images photos={lauraPhotos} loader="gradient" columns={2} />
-        </div>
       </StandardPage>
     );
   }

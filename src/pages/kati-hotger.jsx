@@ -104,9 +104,6 @@ class IndexPage extends React.Component {
           justice system for Auroville where connection is more important than
           punishment.
         </p>
-        <div className="mask-p">
-          <Images photos={lauraPhotos} loader="gradient" columns={2} />
-        </div>
       </StandardPage>
     );
   }

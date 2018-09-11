@@ -70,17 +70,8 @@ class IndexPage extends React.Component {
   render() {
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
-        <MainBlock>
-          <div>
-            <h1>Contact Us</h1>
-            <ContactForm />
-          </div>
-          <div>
-            <h3>About</h3>
-            <Video />
-            <Quote />
-          </div>
-        </MainBlock>
+        <h1 className="mask-h3">Contact Us</h1>
+        <ContactForm />
       </StandardPage>
     );
   }

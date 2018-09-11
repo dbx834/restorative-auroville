@@ -78,7 +78,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
-        <h1 className="mask-h3">Our Restorative System</h1>
+        <h1 className="mask-h3">Our Restorative System In Auroville</h1>
         <h2 className="mask-p">
           Conflict is a natural, inevitable part of living together, and
           Auroville is no exception. Koodam (hyperlink:...), Auroville’s

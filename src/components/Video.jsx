@@ -37,6 +37,7 @@ const blockStyle = blockStyles.toString();
 // ----------------------------------------------------------------------------
 /** MainBlock */
 const MainBlock = props => {
+  const { url } = props;
   return (
     <div className={`${blockStyle} mask-p`}>
       <ContainerDimensions>
@@ -50,11 +51,7 @@ const MainBlock = props => {
                 height: playerHeight,
               }}
             >
-              <ReactPlayer
-                url="https://www.youtube.com/watch?v=uIyY6TDbnSQ"
-                width="inherit"
-                height="inherit"
-              />
+              <ReactPlayer url={url} width="inherit" height="inherit" />
             </div>
           );
         }}

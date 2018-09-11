@@ -68,8 +68,12 @@ class IndexPage extends React.Component {
   render() {
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
-        <h1>Volunteer</h1>
-        <p>text...</p>
+        <h1 className="mask-h3">Volunteer</h1>
+        <p>
+          In order for this work to develop fully in Auroville, we need more
+          ambassadors who are willing to do the research, the teaching and the
+          experimenting.
+        </p>
       </StandardPage>
     );
   }

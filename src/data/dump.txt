@@ -1,0 +1,116 @@
+<Row type="flex">
+              <Col xs={23} sm={23} md={6} lg={5} xl={5}>
+                <Link to="/" onClick={this.logoClick}>
+                  <Image
+                    src={logo}
+                    rawWidth={2042}
+                    rawHeight={582}
+                    style={{
+                      height: 60,
+                      width: "auto",
+                      border: 0,
+                      background: "transparent",
+                      marginBottom: 10,
+                      marginTop: 10,
+                      float: "left",
+                    }}
+                    loader="gradient"
+                    alt="NVC India"
+                  />
+                </Link>
+              </Col>
+              <Col xs={0} sm={0} md={18} lg={19} xl={19}>
+                
+              </Col>
+            </Row>
+
+
+            <Image
+          src={underAreaTop}
+          style={{
+            height: 30,
+            width: "100%",
+            border: 0,
+            background: "transparent",
+          }}
+          alt="Restorative Auroville"
+        />
+        <Modal
+          title={null}
+          visible={this.state.visible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+          style={{
+            top: 0,
+            left: 0,
+            paddingBottom: 0,
+          }}
+          bodyStyle={{
+            height: "100vh",
+            background: "#00006F",
+          }}
+          width="100vw"
+          footer={null}
+        >
+          <Type kit="dkc2ilk" style={{ minHeight: "100vh" }}>
+            <Row type="flex" gutter={16}>
+              <Col xs={0} sm={0} md={14} lg={14} xl={14}>
+                <h2 style={{ color: "#FFFFFF", marginBottom: 0 }}>
+                  Current & Upcoming Programs →
+                </h2>
+                <p style={{ color: "#FFFFFF" }}>
+                  Joy Living Learning is situated in Auroville, an international
+                  community in south India that aims to actualize human unity.
+                  Given this environment, we are surrounded by opportunities for
+                  growth, learning and exploration.
+                </p>
+                <h2 style={{ color: "#FFFFFF", marginBottom: 0 }}>
+                  Regular Practice Groups →
+                </h2>
+                <p style={{ color: "#FFFFFF" }}>
+                  Joy Living Learning is situated in Auroville, an international
+                  community in south India that aims to actualize human unity.
+                  Given this environment, we are surrounded by opportunities for
+                  growth, learning and exploration.
+                </p>
+                <h2 style={{ color: "#FFFFFF", marginBottom: 0 }}>
+                  Past Events →
+                </h2>
+                <p style={{ color: "#FFFFFF" }}>
+                  Joy Living Learning is situated in Auroville, an international
+                  community in south India that aims to actualize human unity.
+                  Given this environment, we are surrounded by opportunities for
+                  growth, learning and exploration.
+                </p>
+              </Col>
+              <Col xs={24} sm={24} md={10} lg={10} xl={10}>
+                <h2 style={{ color: "#FFFFFF", marginBottom: 0 }}>
+                  Resources →
+                </h2>
+                <p style={{ color: "#FFFFFF" }}>
+                  Joy Living Learning is situated in Auroville, an international
+                  community in south India that aims to actualize human unity.
+                </p>
+                <h2 style={{ color: "#FFFFFF", marginBottom: 0 }}>
+                  Learn Online →
+                </h2>
+                <p style={{ color: "#FFFFFF" }}>
+                  Joy Living Learning is situated in Auroville, an international
+                  community in south India that aims to actualize human unity.
+                </p>
+                <h2 style={{ color: "#FFFFFF", marginBottom: 0 }}>
+                  Video Recordings →
+                </h2>
+                <p style={{ color: "#FFFFFF" }}>
+                  Joy Living Learning is situated in Auroville, an international
+                  community in south India that aims to actualize human unity.
+                </p>
+                <h2 style={{ color: "#FFFFFF", marginBottom: 0 }}>Pay Fee →</h2>
+                <p style={{ color: "#FFFFFF" }}>
+                  Joy Living Learning is situated in Auroville, an international
+                  community in south India that aims to actualize human unity.
+                </p>
+              </Col>
+            </Row>
+          </Type>
+        </Modal>

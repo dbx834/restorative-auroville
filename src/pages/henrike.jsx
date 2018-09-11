@@ -97,9 +97,6 @@ class IndexPage extends React.Component {
           the whole community well-being. I am happy to work and do my small
           part to make it happen!
         </p>
-        <div className="mask-p">
-          <Images photos={lauraPhotos} loader="gradient" columns={2} />
-        </div>
       </StandardPage>
     );
   }

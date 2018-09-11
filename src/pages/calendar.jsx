@@ -188,21 +188,16 @@ class EventsAndCalendar extends React.Component {
 
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
-        <MainBlock>
-          <div>
-            <h1>Calendar</h1>
-            {!isMobile ? (
-              <div className="mask-p">
-                <SectionPhoebe data={phoebeData} />
-              </div>
-            ) : (
-              <div className="mask-p">
-                <SectionHalleyAlt data={altHalleyData} style={{ padding: 0 }} />
-              </div>
-            )}
+        <h1 className="mask-h3">Calendar</h1>
+        {!isMobile ? (
+          <div className="mask-p">
+            <SectionPhoebe data={phoebeData} />
           </div>
-          <div>Etc...</div>
-        </MainBlock>
+        ) : (
+          <div className="mask-p">
+            <SectionHalleyAlt data={altHalleyData} style={{ padding: 0 }} />
+          </div>
+        )}
       </StandardPage>
     );
   }

@@ -30,7 +30,6 @@ import {
   validateName,
   validateComment,
 } from "../helpers/formHelpers";
-import { formStyleClass } from "../helpers/defaultFormStyles";
 import seoHelper from "../helpers/seoHelper";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -145,7 +144,7 @@ class IndexPage extends React.Component {
     return (
       <div>
         {this.state.formSent === false && (
-          <Form onSubmit={this.handleSubmit} className={formStyleClass}>
+          <Form onSubmit={this.handleSubmit}>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Name */}
             <FormItem
               validateStatus={nameError ? "error" : ""}

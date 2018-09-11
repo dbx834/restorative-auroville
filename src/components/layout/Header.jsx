@@ -48,19 +48,13 @@ const menu = [
   {
     title: "Learn +",
     menu: [
-      { title: "Calendar of events", link: "/team" },
-      { title: "Educational Tools", link: "/team" },
-      { title: "Videos", link: "/team" },
-      { title: "Other?", link: "/team" },
+      { title: "Calendar of events", link: "/calendar" },
+      { title: "Educational Tools", link: "/educational-tools" },
     ],
   },
   {
-    title: "Our Initiatives +",
-    menu: [
-      { title: "Aikiyam", link: "/team" },
-      { title: "Cross-Cultural Dialogue", link: "/team" },
-      { title: "Others", link: "/team" },
-    ],
+    title: "Our Initiatives",
+    link: "/initiatives",
   },
   {
     title: "Support +",
@@ -79,11 +73,12 @@ const menu = [
   {
     title: "More +",
     menu: [
-      { title: "Gallery", link: "/team" },
-      { title: "Articles", link: "/team" },
+      { title: "Gallery", link: "/gallery" },
+      { title: "Articles", link: "/writings" },
+      { title: "Archives", link: "/archives" },
     ],
   },
-  { title: "Contact Us", link: "/articles" },
+  { title: "Contact Us", link: "/contact-us" },
 ];
 
 // ----------------------------------------------------------------------------
