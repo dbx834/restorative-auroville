@@ -10,30 +10,18 @@ import { css } from "glamor";
 // import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import Images from "@bodhi-project/components/lib/Images";
+import Image from "@bodhi-project/components/lib/Image";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Link from "gatsby-link";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-import Video from "../components/Video";
-import Quote from "../components/Quote";
-import MainBlock from "../components/MainBlock";
 import StandardPage from "../components/StandardPage";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import seoHelper from "../helpers/seoHelper";
 
-import nvcX1 from "../assets/gallery/nvcX1.jpg";
-import nvcX2 from "../assets/gallery/nvcX2.jpg";
-import nvcX4 from "../assets/gallery/nvcX4.jpg";
-
-const photos = [
-  { src: nvcX1, width: 600, height: 450 },
-  { src: nvcX4, width: 600, height: 800 },
-  { src: nvcX2, width: 600, height: 353 },
-  { src: nvcX1, width: 600, height: 450 },
-];
+import galaxy from "../assets/galaxy.png";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 
@@ -56,7 +44,9 @@ const seoData = seoHelper(pageData);
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const pageStyle = css({});
+const pageStyle = css({
+  position: "relative",
+});
 const pageStyles = pageStyle.toString();
 
 // ----------------------------------------------------------------------------
@@ -114,6 +104,19 @@ class IndexPage extends React.Component {
           justice system for the growth and development of a community.
         </p>
         <p>Link to system document...</p>
+        <div style={{ position: "absolute", top: 0, left: 0, height: "100%" }}>
+          <Image
+            src={galaxy}
+            style={{
+              background: "transparent",
+              border: "unset",
+              height: "100%",
+              width: "100%",
+            }}
+            rawWidth={1600}
+            rawHeight={900}
+          />
+        </div>
       </StandardPage>
     );
   }

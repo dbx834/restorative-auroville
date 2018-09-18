@@ -36,11 +36,14 @@ const { SubMenu } = Menu;
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Desktop
 const desktopNavStyle = css({
   width: "100%",
+  transition: "background 0.6s cubic-bezier(0.78, 0.14, 0.15, 0.86)",
+
   "& .ant-menu": {
-    paddingTop: 10,
-    paddingBottom: 10,
-    marginBottom: 10,
+    paddingTop: 30,
+    paddingBottom: 30,
+    marginBottom: 30,
     borderBottom: "2px dotted #00006F",
+    background: "transparent",
 
     display: "flex",
     justifyContent: "space-between",
@@ -113,16 +116,20 @@ class DesktopNav extends React.Component {
 
   /** standard renderer */
   render() {
+    const { isSticky } = this.props;
     const { pathname } = this.props.location;
 
     return (
-      <div className={desktopNavStyleClass}>
+      <div
+        id="desktop-nav"
+        className={desktopNavStyleClass}
+        style={{ background: isSticky ? "#f2f2f2" : "#FFFFFF" }}
+      >
         <Container goldenMajor block noFade>
           <Menu
             mode="horizontal"
             onClick={this.handleClick}
             selectedKeys={[this.state.current]}
-            // className="bordered"
           >
             {map(this.props.menu, topLevel => {
               const { title, menu, link } = topLevel;

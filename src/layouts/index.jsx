@@ -23,6 +23,7 @@ import { StickyContainer, Sticky } from "react-sticky";
 import Image from "@bodhi-project/components/lib/Image";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
+import ResponsiveToggle from "@bodhi-project/components/lib/ResponsiveToggle";
 import Container from "@bodhi-project/components/lib/Container";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
@@ -31,8 +32,9 @@ import indexImage from "../assets/launch.jpg";
 import packageJson from "../../package.json";
 import logo from "../assets/logoColor.png";
 
-import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
+import DesktopNav from "../components/layout/DesktopNav";
+import MobileNav from "../components/layout/MobileNav";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { data } = packageJson;
@@ -68,6 +70,58 @@ const organisationSchemaData = {
 };
 
 // ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------- Data
+// ----------------------------------------------------------------------------
+const menu = [
+  { title: "Home", link: "/" },
+  {
+    title: "Explore +",
+    menu: [
+      { title: "Our Project", link: "/about-restorative-auroville" },
+      { title: "Restorative Circles", link: "/restorative-circles" },
+      {
+        title: "Our Restorative System",
+        link: "/our-restorative-system-in-auroville",
+      },
+    ],
+  },
+  {
+    title: "Learn +",
+    menu: [
+      { title: "Calendar of events", link: "/calendar" },
+      { title: "Educational Tools", link: "/educational-tools" },
+    ],
+  },
+  {
+    title: "Our Initiatives",
+    link: "/initiatives",
+  },
+  {
+    title: "Support Us +",
+    menu: [
+      {
+        title: "Donate",
+        link: "/donate",
+      },
+      {
+        title: "Volunteer",
+        link: "/volunteer",
+      },
+    ],
+  },
+  { title: "Our Team", link: "/our-team" },
+  {
+    title: "More +",
+    menu: [
+      { title: "Articles", link: "/writings" },
+      { title: "Archives", link: "/archives" },
+      { title: "Gallery", link: "/gallery" },
+    ],
+  },
+  { title: "Contact Us", link: "/contact-us" },
+];
+
+// ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
@@ -84,7 +138,7 @@ const pageStyle = css({
 
     "& #content": {
       // paddingBottom: "4em",
-      minHeight: "100vh",
+      // minHeight: "100vh",
     },
   },
 
@@ -136,47 +190,64 @@ class TemplateWrapper extends React.Component {
         <UpdateTitle title="Loading..." />
         <WebsiteSchema data={websiteSchemaData} />
         <OrganisationSchema data={organisationSchemaData} />
-        <div id="appWrapper">
-          <StickyContainer>
-            <Container goldenMajor block noFade>
-              <Link
-                to="/"
-                style={{ display: "block", border: "unset", height: 100 }}
-              >
-                <Image
-                  src={logo}
-                  rawWidth={2042}
-                  rawHeight={582}
-                  style={{
-                    display: "block",
-                    height: 60,
-                    width: "auto",
-                    border: 0,
-                    background: "transparent",
-                    marginBottom: 10,
-                    marginTop: 30,
-                    float: "left",
-                  }}
-                  loader="gradient"
-                  alt="NVC India"
-                />
-              </Link>
-            </Container>
-            <Sticky topOffset={80}>
-              {({ style }) => (
-                <div id="menuWrapper" style={style}>
-                  <Header {...this.props} />
-                </div>
-              )}
-            </Sticky>
+        <ResponsiveToggle id="appWrapper">
+          {/* Mobile view */}
+          <div id="mobile-app">
+            <MobileNav />
             <div id="contentWrapper">
-              <Container noFade goldenMajor block id="content">
+              <Container noFade bleed block id="content">
                 {this.props.children()}
-                <Footer />
               </Container>
             </div>
-          </StickyContainer>
-        </div>
+          </div>
+
+          {/* Desktop view */}
+          <div id="desktop-app">
+            <StickyContainer>
+              <Container goldenMajor block noFade>
+                <Link
+                  to="/"
+                  style={{ display: "block", border: "unset", height: 100 }}
+                >
+                  <Image
+                    src={logo}
+                    rawWidth={2042}
+                    rawHeight={582}
+                    style={{
+                      display: "block",
+                      height: 60,
+                      width: "auto",
+                      border: 0,
+                      background: "transparent",
+                      marginBottom: 10,
+                      marginTop: 30,
+                      float: "left",
+                    }}
+                    loader="gradient"
+                    alt="NVC India"
+                  />
+                </Link>
+              </Container>
+              <Sticky topOffset={140}>
+                {({ style, isSticky }) => (
+                  <div id="menuWrapper" style={style}>
+                    <DesktopNav
+                      menu={menu}
+                      {...this.props}
+                      isSticky={isSticky}
+                    />
+                  </div>
+                )}
+              </Sticky>
+              <div id="contentWrapper">
+                <Container noFade goldenMajor block id="content">
+                  {this.props.children()}
+                  <Footer />
+                </Container>
+              </div>
+            </StickyContainer>
+          </div>
+        </ResponsiveToggle>
       </Type>
     );
   }

@@ -14,6 +14,7 @@ import Images from "@bodhi-project/components/lib/Images";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Link from "gatsby-link";
+import Disqus from "disqus-react";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Video from "../components/Video";
@@ -76,6 +77,13 @@ class IndexPage extends React.Component {
 
   /** standard renderer */
   render() {
+    const disqusShortname = "restorativeauroville";
+    const disqusConfig = {
+      url: "http://localhost:8000/restorative-circles",
+      identifier: "http://localhost:8000/restorative-circles",
+      title: "Our Project: Restorative Auroville",
+    };
+
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
         <h1 className="mask-h3">Our Project: Restorative Auroville</h1>
@@ -154,6 +162,12 @@ class IndexPage extends React.Component {
           </Link>, which is a Unit of the&nbsp;
           <Link to="https://www.auroville.org/">Auroville Foundation</Link>.
         </p>
+        <div style={{ width: "65%" }}>
+          <Disqus.DiscussionEmbed
+            shortname={disqusShortname}
+            config={disqusConfig}
+          />
+        </div>
       </StandardPage>
     );
   }
