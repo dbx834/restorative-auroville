@@ -18,13 +18,14 @@ import Link from "gatsby-link";
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import OutLink from "@bodhi-project/components/lib/OutLink";
 import Container from "@bodhi-project/components/lib/Container";
+import Image from "@bodhi-project/components/lib/Image";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Menu from "antd/lib/menu";
 import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/menu/style/css";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import underAreaTop from "../../assets/underAreaTop.png";
+import wavesTop from "../../assets/wavesTop.png";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React;
@@ -40,10 +41,9 @@ const desktopNavStyle = css({
 
   "& .ant-menu": {
     paddingTop: 30,
-    paddingBottom: 30,
-    marginBottom: 30,
-    borderBottom: "2px dotted #00006F",
-    background: "transparent",
+    paddingBottom: 18,
+    marginBottom: 0,
+    background: "#FFFFFF",
 
     display: "flex",
     justifyContent: "space-between",
@@ -120,11 +120,7 @@ class DesktopNav extends React.Component {
     const { pathname } = this.props.location;
 
     return (
-      <div
-        id="desktop-nav"
-        className={desktopNavStyleClass}
-        style={{ background: isSticky ? "#f2f2f2" : "#FFFFFF" }}
-      >
+      <div id="desktop-nav" className={desktopNavStyleClass}>
         <Container goldenMajor block noFade>
           <Menu
             mode="horizontal"
@@ -197,6 +193,17 @@ class DesktopNav extends React.Component {
               return returnObj;
             })}
           </Menu>
+          <Image
+            src={wavesTop}
+            style={{
+              height: 30,
+              width: "100%",
+              border: 0,
+              background: "transparent",
+              marginBottom: 0,
+            }}
+            alt="Restorative Auroville"
+          />
         </Container>
       </div>
     );

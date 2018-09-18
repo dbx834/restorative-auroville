@@ -134,7 +134,7 @@ const pageStyle = css({
   },
 
   "& #contentWrapper": {
-    // paddingTop: "100px",
+    paddingTop: "24px",
 
     "& #content": {
       // paddingBottom: "4em",
@@ -228,7 +228,7 @@ class TemplateWrapper extends React.Component {
                   />
                 </Link>
               </Container>
-              <Sticky topOffset={140}>
+              <Sticky topOffset={100}>
                 {({ style, isSticky }) => (
                   <div id="menuWrapper" style={style}>
                     <DesktopNav

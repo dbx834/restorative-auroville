@@ -31,6 +31,7 @@ import helene from "../assets/helene.jpg";
 import janet from "../assets/janet.jpg";
 import kati from "../assets/kati.jpg";
 import henrike from "../assets/henrike.jpg";
+import henrikeAlt from "../assets/henrike-alt.jpg";
 import laura from "../assets/laura.jpg";
 import pranjal from "../assets/pranjal.jpg";
 import shanti from "../assets/shanti.jpg";
@@ -158,7 +159,7 @@ class IndexPage extends React.Component {
           <Person
             name="Henrike"
             designation="Volunteer"
-            photo={henrike}
+            photo={henrikeAlt}
             link="/henrike"
           />
           <Person
