@@ -93,8 +93,11 @@ const menu = [
     ],
   },
   {
-    title: "Our Initiatives",
-    link: "/initiatives",
+    title: "Our Initiatives +",
+    menu: [
+      { title: "Ongoing Initiatives", link: "/initiatives/ongoing" },
+      { title: "Past Initiatives", link: "/initiatives/past" },
+    ],
   },
   {
     title: "Support Us +",

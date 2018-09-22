@@ -35,8 +35,8 @@ import seoHelper from "../../helpers/seoHelper";
 // ------------------------------------------------------------------------ SEO
 // ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "Volunteer",
-  nakedPageSlug: "volunteer",
+  pageTitle: "Cross Cultural Dialogue",
+  nakedPageSlug: "cross-cultural-dialogue",
   pageAbstract: "Page abstract.",
 };
 
@@ -52,34 +52,21 @@ const pageStyles = pageStyle.toString();
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** IndexPage */
-class IndexPage extends React.Component {
-  /** standard constructor */
-  constructor(props) {
-    super(props);
-  }
+/** Initiative */
+const Initiative = props => {
+  return (
+    <StandardPage className={pageStyles} seoData={seoData}>
+      <h1 className="mask-h3">Cross Cultural Dialogue</h1>
+      <p>...</p>
+    </StandardPage>
+  );
+};
 
-  /** standard constructor */
-  componentDidMount() {
-    console.log("hit");
-  }
-
-  /** standard renderer */
-  render() {
-    return (
-      <StandardPage className={pageStyles} seoData={seoData}>
-        <h1 className="mask-h3">Cross Cultural Dialogue</h1>
-        <p>...</p>
-      </StandardPage>
-    );
-  }
-}
-
-IndexPage.propTypes = {
+Initiative.propTypes = {
   data: PropTypes.object,
 };
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default IndexPage;
+export default Initiative;

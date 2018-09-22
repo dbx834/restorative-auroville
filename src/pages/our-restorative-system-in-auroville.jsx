@@ -33,8 +33,8 @@ import galaxy from "../assets/galaxy.png";
 // ------------------------------------------------------------------------ SEO
 // ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "About Restorative Auroville",
-  nakedPageSlug: "",
+  pageTitle: "Our Restorative System In Auroville",
+  nakedPageSlug: "our-restorative-system-in-auroville",
   pageAbstract: "Page abstract.",
 };
 

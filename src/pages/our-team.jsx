@@ -48,8 +48,8 @@ const Panel = Collapse.Panel;
 // ------------------------------------------------------------------------ SEO
 // ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "About Restorative Auroville",
-  nakedPageSlug: "",
+  pageTitle: "Our Team",
+  nakedPageSlug: "our-team",
   pageAbstract: "Page abstract.",
 };
 

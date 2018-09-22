@@ -45,8 +45,8 @@ const lauraPhotos = [
 // ------------------------------------------------------------------------ SEO
 // ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "About Restorative Auroville",
-  nakedPageSlug: "",
+  pageTitle: "Janet",
+  nakedPageSlug: "janet-fearn",
   pageAbstract: "Page abstract.",
 };
 

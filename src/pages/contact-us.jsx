@@ -37,8 +37,8 @@ import seoHelper from "../helpers/seoHelper";
 // ------------------------------------------------------------------------ SEO
 // ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "About Restorative Auroville",
-  nakedPageSlug: "",
+  pageTitle: "Contact Us",
+  nakedPageSlug: "contact-us",
   pageAbstract: "Page abstract.",
 };
 

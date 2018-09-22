@@ -23,11 +23,11 @@ import StandardPage from "../components/StandardPage";
 import nvcX1 from "../assets/gallery/nvcX1.jpg";
 import nvcX2 from "../assets/gallery/nvcX2.jpg";
 import nvcX4 from "../assets/gallery/nvcX4.jpg";
-import nvcX5 from "../assets/gallery/nvcX5.jpg";
+// import nvcX5 from "../assets/gallery/nvcX5.jpg";
 import nvcX6 from "../assets/gallery/nvcX6.jpg";
 import nvcX7 from "../assets/gallery/nvcX7.jpg";
 import nvcX8 from "../assets/gallery/nvcX8.jpg";
-import nvcX9 from "../assets/gallery/nvcX9.jpg";
+// import nvcX9 from "../assets/gallery/nvcX9.jpg";
 import nvcX10 from "../assets/gallery/nvcX10.jpg";
 import nvcX11 from "../assets/gallery/nvcX11.jpg";
 import nvcX12 from "../assets/gallery/nvcX12.jpg";
@@ -64,12 +64,45 @@ import nvcX42 from "../assets/gallery/nvcX42.jpg";
 import nvcX43 from "../assets/gallery/nvcX43.jpg";
 import nvcX44 from "../assets/gallery/nvcX44.jpg";
 import nvcX45 from "../assets/gallery/nvcX45.jpg";
+import nvcX46 from "../assets/gallery/nvcX46.jpg";
+import nvcX47 from "../assets/gallery/nvcX47.jpg";
+import nvcX48 from "../assets/gallery/nvcX48.jpg";
+import nvcX49 from "../assets/gallery/nvcX49.jpg";
+import nvcX50 from "../assets/gallery/nvcX50.jpg";
+import nvcX51 from "../assets/gallery/nvcX51.jpg";
+import nvcX52 from "../assets/gallery/nvcX52.jpg";
+import nvcX53 from "../assets/gallery/nvcX53.jpg";
+import nvcX54 from "../assets/gallery/nvcX54.jpg";
+import nvcX55 from "../assets/gallery/nvcX55.jpg";
+import nvcX56 from "../assets/gallery/nvcX56.jpg";
+import nvcX57 from "../assets/gallery/nvcX57.jpg";
+import nvcX58 from "../assets/gallery/nvcX58.jpg";
+import nvcX59 from "../assets/gallery/nvcX59.jpg";
+import nvcX60 from "../assets/gallery/nvcX60.jpg";
+import nvcX61 from "../assets/gallery/nvcX61.jpg";
+import nvcX62 from "../assets/gallery/nvcX62.jpg";
+import nvcX63 from "../assets/gallery/nvcX63.jpg";
+import nvcX64 from "../assets/gallery/nvcX64.jpg";
+import nvcX65 from "../assets/gallery/nvcX65.jpg";
+import nvcX66 from "../assets/gallery/nvcX66.jpg";
+import nvcX67 from "../assets/gallery/nvcX67.jpg";
+import nvcX68 from "../assets/gallery/nvcX68.jpg";
+import nvcX69 from "../assets/gallery/nvcX69.jpg";
+import nvcX70 from "../assets/gallery/nvcX70.jpg";
+import nvcX71 from "../assets/gallery/nvcX71.jpg";
+import nvcX72 from "../assets/gallery/nvcX72.jpg";
+import nvcX73 from "../assets/gallery/nvcX73.jpg";
+import nvcX74 from "../assets/gallery/nvcX74.jpg";
+import nvcX75 from "../assets/gallery/nvcX75.jpg";
+import nvcX76 from "../assets/gallery/nvcX76.jpg";
+import nvcX77 from "../assets/gallery/nvcX77.jpg";
+import nvcX78 from "../assets/gallery/nvcX78.jpg";
 
 const photos = [
   { src: nvcX1, width: 600, height: 450 },
   { src: nvcX2, width: 600, height: 450 },
   { src: nvcX4, width: 600, height: 418 },
-  { src: nvcX5, width: 600, height: 800 },
+  { src: nvcX78, width: 600, height: 800 },
   { src: nvcX6, width: 600, height: 367 },
   { src: nvcX7, width: 600, height: 367 },
   { src: nvcX8, width: 600, height: 450 },
@@ -109,6 +142,38 @@ const photos = [
   { src: nvcX43, width: 600, height: 399 },
   { src: nvcX44, width: 600, height: 399 },
   { src: nvcX45, width: 600, height: 450 },
+  { src: nvcX46, width: 600, height: 330 },
+  { src: nvcX47, width: 600, height: 450 },
+  { src: nvcX48, width: 600, height: 450 },
+  { src: nvcX49, width: 600, height: 1067 },
+  { src: nvcX50, width: 600, height: 776 },
+  { src: nvcX51, width: 600, height: 424 },
+  { src: nvcX52, width: 600, height: 243 },
+  { src: nvcX53, width: 600, height: 450 },
+  { src: nvcX54, width: 600, height: 338 },
+  { src: nvcX55, width: 600, height: 261 },
+  { src: nvcX56, width: 600, height: 400 },
+  { src: nvcX57, width: 600, height: 508 },
+  { src: nvcX58, width: 600, height: 848 },
+  { src: nvcX59, width: 600, height: 424 },
+  { src: nvcX60, width: 600, height: 806 },
+  { src: nvcX61, width: 600, height: 400 },
+  { src: nvcX62, width: 600, height: 400 },
+  { src: nvcX63, width: 600, height: 450 },
+  { src: nvcX64, width: 600, height: 450 },
+  { src: nvcX65, width: 600, height: 450 },
+  { src: nvcX66, width: 600, height: 450 },
+  { src: nvcX67, width: 600, height: 450 },
+  { src: nvcX68, width: 600, height: 450 },
+  { src: nvcX69, width: 600, height: 450 },
+  { src: nvcX70, width: 600, height: 450 },
+  { src: nvcX71, width: 600, height: 450 },
+  { src: nvcX72, width: 600, height: 450 },
+  { src: nvcX73, width: 600, height: 382 },
+  { src: nvcX74, width: 600, height: 249 },
+  { src: nvcX75, width: 600, height: 401 },
+  { src: nvcX76, width: 600, height: 401 },
+  { src: nvcX77, width: 600, height: 450 },
 ];
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstract stuff

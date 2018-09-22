@@ -16,6 +16,7 @@ import isUndefined from "lodash/isUndefined";
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import FacebookProvider, { Page as FBPage } from "react-facebook";
 import { Footer as SemanticFooter } from "@bodhi-project/semantic-webflow";
+import Disqus from "disqus-react";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import OutLink from "@bodhi-project/components/lib/OutLink";
@@ -88,6 +89,13 @@ const Footer = props => {
   if (!isUndefined(quoteObj)) {
     ({ quote, author } = quoteObj);
   }
+
+  const disqusShortname = "restorativeauroville";
+  const disqusConfig = {
+    url: "http://localhost:8000/restorative-circles",
+    identifier: "http://localhost:8000/restorative-circles",
+    title: "Our Project: Restorative Auroville",
+  };
 
   return (
     <div>
@@ -375,6 +383,19 @@ const Footer = props => {
         <div
           style={{
             paddingTop: 24,
+            borderBottom: "1px dotted #00006F",
+            paddingBottom: 24,
+          }}
+        >
+          <h3 className="mask-h6">Leave A Comment</h3>
+          <Disqus.DiscussionEmbed
+            shortname={disqusShortname}
+            config={disqusConfig}
+          />
+        </div>
+        <div
+          style={{
+            paddingTop: 24,
           }}
         >
           <p
@@ -408,12 +429,16 @@ const Footer = props => {
             }}
           >
             Made with&nbsp;
-            <Icon type="heart" style={{ fontSize: "80%" }} />&nbsp;by&nbsp;
-            <OutLink to="https://www.bodhiproject.org/">Bodhi Project</OutLink>.
+            <Icon
+              type="heart"
+              style={{ fontSize: "80%", color: "#00006F" }}
+            />&nbsp;by&nbsp;
+            <OutLink to="https://www.bodhiproject.org/">Bodhi Project</OutLink>
           </p>
           <p
             style={{
               textAlign: "center",
+              marginBottom: 20,
             }}
           >
             Copyright © 2018 Restorative Auroville & Joy Living Learning

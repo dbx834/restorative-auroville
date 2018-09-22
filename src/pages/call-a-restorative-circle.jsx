@@ -38,8 +38,8 @@ import seoHelper from "../helpers/seoHelper";
 // ------------------------------------------------------------------------ SEO
 // ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "Organisation",
-  nakedPageSlug: "",
+  pageTitle: "Call a Restorative Circle",
+  nakedPageSlug: "call-a-restorative-circle",
   pageAbstract: "Page abstract.",
 };
 
