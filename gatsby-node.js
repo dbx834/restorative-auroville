@@ -90,6 +90,11 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       }
     }
 
+    const year = begins.format("YYYY");
+    const month = begins.format("MMM");
+    const monthN = begins.format("MM");
+    const dayOfMonth = begins.format("Do");
+
     const isoDate = begins.format();
     const beginHumanDate = begins.format("ddd, MMMM D, YYYY");
     const beginIsoDate = begins.format();
@@ -98,6 +103,10 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 
     createNodeField({ node, name: "elapsed", value: elapsed });
     createNodeField({ node, name: "isoDate", value: isoDate });
+    createNodeField({ node, name: "year", value: year });
+    createNodeField({ node, name: "month", value: month });
+    createNodeField({ node, name: "dayOfMonth", value: dayOfMonth });
+    createNodeField({ node, name: "monthN", value: monthN });
     createNodeField({ node, name: "beginHumanDate", value: beginHumanDate });
     createNodeField({ node, name: "beginIsoDate", value: beginIsoDate });
     createNodeField({ node, name: "endHumanDate", value: endHumanDate });
@@ -159,6 +168,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     endIsoDate
                     beginDateInt
                     diff
+                    year
+                    month
+                    monthN
+                    dayOfMonth
                   }
                 }
               }

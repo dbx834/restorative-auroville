@@ -387,7 +387,7 @@ const Footer = props => {
             paddingBottom: 24,
           }}
         >
-          <h3 className="mask-h6">Leave A Comment</h3>
+          <h3 className="mask-h6">Leave a comment…</h3>
           <Disqus.DiscussionEmbed
             shortname={disqusShortname}
             config={disqusConfig}
