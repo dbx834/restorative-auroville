@@ -33,7 +33,7 @@ import galaxy from "../assets/galaxy.png";
 // ------------------------------------------------------------------------ SEO
 // ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "Our Restorative System In Auroville",
+  pageTitle: "Our Restorative System in Auroville",
   nakedPageSlug: "our-restorative-system-in-auroville",
   pageAbstract: "Page abstract.",
 };
@@ -68,7 +68,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
-        <h1 className="mask-h3">Our Restorative System In Auroville</h1>
+        <h1 className="mask-h3">Our Restorative System in Auroville</h1>
         <h2 className="mask-p">
           Conflict is a natural, inevitable part of living together, and
           Auroville is no exception. Koodam (hyperlink:...), Auroville’s

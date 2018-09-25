@@ -88,7 +88,7 @@ const menu = [
   {
     title: "Learn +",
     menu: [
-      { title: "Calendar of events", link: "/calendar" },
+      { title: "Events", link: "/events" },
       { title: "Educational Tools", link: "/educational-tools" },
     ],
   },

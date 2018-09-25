@@ -36,7 +36,7 @@ const TabPane = Tabs.TabPane;
 // ------------------------------------------------------------------------ SEO
 // ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "Calendar Of Events",
+  pageTitle: "Events",
   nakedPageSlug: "calendar",
   pageAbstract:
     "We offer learning opportunities through workshops and practice groups on Nonviolent Communication and Restorative Circles. We are also available for individual coaching and mediation, and we are happy to consult with community-based projects that are seeking to shift paradigms.",
@@ -175,7 +175,7 @@ class EventsAndCalendar extends React.Component {
       <StandardPage className={pageStyles} seoData={seoData}>
         <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
           <Col span={15}>
-            <h1 className="mask-h3">Workshops and Events</h1>
+            <h1 className="mask-h3">Workshops & Events</h1>
             <Tabs type="card">
               {map(years, year => {
                 return (

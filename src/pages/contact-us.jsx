@@ -11,20 +11,25 @@ import { css } from "glamor";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-// import Image from "@bodhi-project/components/lib/Image";
+import OutLink from "@bodhi-project/components/lib/OutLink";
+import Image from "@bodhi-project/components/lib/Image";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-// import Tabs from "antd/lib/tabs";
-// import "antd/lib/tabs/style/css";
+import Row from "antd/lib/row";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/row/style/css";
+
+import Col from "antd/lib/col";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/col/style/css";
+
+import Icon from "antd/lib/icon";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/icon/style/css";
 
 import ContactForm from "../components/ContactForm";
-import Video from "../components/Video";
-import Quote from "../components/Quote";
-import MainBlock from "../components/MainBlock";
 import StandardPage from "../components/StandardPage";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import seoHelper from "../helpers/seoHelper";
+import birdsTop from "../assets/birdsTop.png";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
@@ -70,8 +75,55 @@ class IndexPage extends React.Component {
   render() {
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
-        <h1 className="mask-h3">Contact Us</h1>
-        <ContactForm />
+        <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
+          <Col span={15}>
+            <h1 className="mask-h3">Contact Us</h1>
+            <ContactForm />
+          </Col>
+          <Col span={9}>
+            <h1
+              className="mask-h3"
+              style={{ display: "inline-block", position: "relative" }}
+            >
+              Restorative Auroville
+              <div
+                style={{
+                  position: "absolute",
+                  top: -20,
+                  right: -38,
+                  height: 50,
+                }}
+              >
+                <Image
+                  src={birdsTop}
+                  style={{
+                    background: "transparent",
+                    border: "unset",
+                    height: 50,
+                    width: 50,
+                  }}
+                  rawWidth={900}
+                  rawHeight={900}
+                />
+              </div>
+            </h1>
+            <p>
+              Restorative Auroville is a project of{" "}
+              <OutLink to="https://www.joylivinglearning.org/">
+                Joy Living Learning
+              </OutLink>, a unit of the{" "}
+              <OutLink to="https://www.auroville.org/">
+                Auroville Foundation
+              </OutLink>, India.
+            </p>
+            <p>
+              <OutLink to="mailto:restorative@auroville.org.in?Subject=Hello">
+                <Icon type="mail" theme="outlined" />&nbsp;
+                restorative@auroville.org.in
+              </OutLink>
+            </p>
+          </Col>
+        </Row>
       </StandardPage>
     );
   }

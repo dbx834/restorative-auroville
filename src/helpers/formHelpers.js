@@ -37,20 +37,25 @@ const validateMobile = (rule, value, callback) => {
   // }
 };
 
+/** Check email is valid */
 const validateCountry = (rule, value, callback) => {
-  callback();
-  // if (isEmpty(value)) {
-  //   callback("Please fill in these details.");
-  // }
+  if (isEmpty(value)) {
+    callback("We'd like to know where you're from!");
+  } else {
+    callback();
+  }
 };
 
+/** Check email is valid */
 const validateCurrentLocation = (rule, value, callback) => {
-  callback();
-  // if (isEmpty(value)) {
-  //   callback("Please fill in these details.");
-  // }
+  if (isEmpty(value)) {
+    callback("We'd like to know where you're currently living!");
+  } else {
+    callback();
+  }
 };
 
+/** Check email is valid */
 const validateWhatDrawsYou = (rule, value, callback) => {
   callback();
   // if (isEmpty(value)) {
@@ -58,11 +63,13 @@ const validateWhatDrawsYou = (rule, value, callback) => {
   // }
 };
 
+/** Check email is valid */
 const validateComment = (rule, value, callback) => {
-  callback();
-  // if (isEmpty(value)) {
-  //   callback("Please fill in these details.");
-  // }
+  if (isEmpty(value)) {
+    callback("Please fill in this detail.");
+  } else {
+    callback();
+  }
 };
 
 /** Check name is valid */
@@ -86,6 +93,9 @@ const exportThis = {
   validateEmail,
   validateName,
   validateComment,
+  validateCountry,
+  validateCurrentLocation,
+  validateWhatDrawsYou,
 };
 
 export default exportThis;

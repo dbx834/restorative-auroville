@@ -94,24 +94,38 @@ class IndexPage extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        // console.log('Received values of form: ', values);
         this.setState({
-          // Show loader and reset errors if any.
           loader: true,
         });
 
-        let { name, email, comment, originCountry, currentPlace } = values;
+        let {
+          name,
+          email,
+          originCountry,
+          currentPlace,
+          aboutYourself,
+          whatDrawsYou,
+          whatSkills,
+          whatAcknowledgement,
+          anyOtherComment,
+        } = values;
 
         name = isUndefined(name) ? " " : name;
         email = isUndefined(email) ? " " : email;
-        comment = isUndefined(comment) ? " " : comment;
         originCountry = isUndefined(originCountry) ? " " : originCountry;
         currentPlace = isUndefined(currentPlace) ? " " : currentPlace;
+        aboutYourself = isUndefined(aboutYourself) ? " " : aboutYourself;
+        whatDrawsYou = isUndefined(whatDrawsYou) ? " " : whatDrawsYou;
+        whatSkills = isUndefined(whatSkills) ? " " : whatSkills;
+        whatAcknowledgement = isUndefined(whatAcknowledgement)
+          ? " "
+          : whatAcknowledgement;
+        anyOtherComment = isUndefined(anyOtherComment) ? " " : anyOtherComment;
 
         // Mock some delay
         setTimeout(() => {
           fetch(
-            `https://script.google.com/macros/s/AKfycbypHlj_GjUiPjp9EbqdFJgK2T3WzWEaJ8cXLHrJlMZj5H9TOO4/exec?email=${email}&name=${name}&comment=${comment}&originCountry=${originCountry}&currentPlace=${currentPlace}&callback=?`,
+            `https://script.google.com/macros/s/AKfycbz5JIQcdqZVgIKOL1QfxRxXZtcouqV3NRSAgbKXKZqE6pFGF3w8/exec?email=${email}&name=${name}&originCountry=${originCountry}&currentPlace=${currentPlace}&aboutYourself=${aboutYourself}&whatDrawsYou=${whatDrawsYou}&whatSkills=${whatSkills}&whatAcknowledgement=${whatAcknowledgement}&anyOtherComment=${anyOtherComment}&callback=?`,
             {
               method: "GET",
               mode: "no-cors",
@@ -143,12 +157,22 @@ class IndexPage extends React.Component {
     } = this.props.form;
     // Only show error after a field is touched.
     const nameError = isFieldTouched("name") && getFieldError("name");
+    const emailError = isFieldTouched("email") && getFieldError("email");
     const originCountryError =
       isFieldTouched("originCountry") && getFieldError("originCountry");
     const currentPlaceError =
       isFieldTouched("currentPlace") && getFieldError("currentPlace");
-    const emailError = isFieldTouched("email") && getFieldError("email");
-    const commentError = isFieldTouched("comment") && getFieldError("comment");
+    const aboutYourselfError =
+      isFieldTouched("aboutYourself") && getFieldError("aboutYourself");
+    const whatDrawsYouError =
+      isFieldTouched("whatDrawsYou") && getFieldError("whatDrawsYou");
+    const whatSkillsError =
+      isFieldTouched("whatSkills") && getFieldError("whatSkills");
+    const whatAcknowledgementError =
+      isFieldTouched("whatAcknowledgement") &&
+      getFieldError("whatAcknowledgement");
+    const anyOtherCommentError =
+      isFieldTouched("anyOtherComment") && getFieldError("anyOtherComment");
 
     return (
       <div>
@@ -195,21 +219,85 @@ class IndexPage extends React.Component {
                 rules: [{ validator: validateCurrentLocation }],
               })(<Input placeholder="Where are you living presently?" />)}
             </FormItem>
-            {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comment */}
+            {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ About Yourself */}
             <FormItem
-              validateStatus={commentError ? "error" : ""}
-              help={commentError || ""}
+              validateStatus={aboutYourselfError ? "error" : ""}
+              help={aboutYourselfError || ""}
             >
-              {getFieldDecorator("comment", {
+              {getFieldDecorator("aboutYourself", {
                 validateTrigger: ["onChange", "onBlur"],
                 rules: [{ validator: validateComment }],
               })(
                 <TextArea
-                  placeholder="Your questions / comments…"
+                  placeholder="Please tell us a little bit about you..."
                   autosize={{ minRows: 3, maxRows: 6 }}
                 />,
               )}
             </FormItem>
+            {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ What Draws You */}
+            <FormItem
+              validateStatus={whatDrawsYouError ? "error" : ""}
+              help={whatDrawsYouError || ""}
+            >
+              {getFieldDecorator("whatDrawsYou", {
+                validateTrigger: ["onChange", "onBlur"],
+                rules: [{ validator: validateComment }],
+              })(
+                <TextArea
+                  placeholder="What draws you to wanting to volunteer with Restorative Auroville?"
+                  autosize={{ minRows: 3, maxRows: 6 }}
+                />,
+              )}
+            </FormItem>
+
+            {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ What Skills */}
+            <FormItem
+              validateStatus={whatSkillsError ? "error" : ""}
+              help={whatSkillsError || ""}
+            >
+              {getFieldDecorator("whatSkills", {
+                validateTrigger: ["onChange", "onBlur"],
+                rules: [{ validator: validateComment }],
+              })(
+                <TextArea
+                  placeholder="What skills or support would you like to offer?"
+                  autosize={{ minRows: 3, maxRows: 6 }}
+                />,
+              )}
+            </FormItem>
+
+            {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ What Acknowledgement */}
+            <FormItem
+              validateStatus={whatAcknowledgementError ? "error" : ""}
+              help={whatAcknowledgementError || ""}
+            >
+              {getFieldDecorator("whatAcknowledgement", {
+                validateTrigger: ["onChange", "onBlur"],
+                rules: [{ validator: validateComment }],
+              })(
+                <TextArea
+                  placeholder="What acknowledgement or support would you like to receive in return?"
+                  autosize={{ minRows: 3, maxRows: 6 }}
+                />,
+              )}
+            </FormItem>
+
+            {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Any Other Comment */}
+            <FormItem
+              validateStatus={anyOtherCommentError ? "error" : ""}
+              help={anyOtherCommentError || ""}
+            >
+              {getFieldDecorator("anyOtherComment", {
+                validateTrigger: ["onChange", "onBlur"],
+                rules: [{ validator: validateComment }],
+              })(
+                <TextArea
+                  placeholder="Anything else you'd like to tell us..."
+                  autosize={{ minRows: 3, maxRows: 6 }}
+                />,
+              )}
+            </FormItem>
+
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Submit */}
             <FormItem>
               <Button
