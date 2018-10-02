@@ -171,8 +171,8 @@ class IndexPage extends React.Component {
                     >
                       {fullscreen === false && (
                         <ReactReader
-                          url="/alice.epub"
-                          title="Alice in wonderland"
+                          url="/av-rc-system.epub"
+                          title="AV RC System"
                           locationChanged={this.onLocationChanged}
                           location={location}
                           getRendition={this.getRendition}
@@ -208,8 +208,8 @@ class IndexPage extends React.Component {
             >
               {fullscreen === true && (
                 <ReactReader
-                  url="/alice.epub"
-                  title="Alice in wonderland"
+                  url="/av-rc-system.epub"
+                  title="AV RC System"
                   locationChanged={this.onLocationChanged}
                   location={location}
                   getRendition={this.getRendition}

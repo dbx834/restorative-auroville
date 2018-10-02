@@ -24,6 +24,11 @@ import treeParser from "@bodhi-project/markdown-to-react/lib/treeParser";
 import { EventSchema } from "@bodhi-project/seo";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
+import Row from "antd/lib/row";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/row/style/css";
+
+import Col from "antd/lib/col";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/col/style/css";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from "@bodhi-project/components/lib/Image";
@@ -37,9 +42,7 @@ import markdownStylesClass from "../styles/markdownStyles";
 import lauraPhoto from "../assets/rx/laura-joy-nvc-trainer-india.jpeg";
 
 import StandardPage from "../components/StandardPage";
-import MainBlock from "../components/MainBlock";
-import Video from "../components/Video";
-import Quote from "../components/Quote";
+import EventRegisterationForm from "../components/EventRegisterationForm";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
@@ -146,14 +149,13 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
-        <EventSchema data={eventSchemaData} />
-        <MainBlock>
-          <div>
+        <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
+          <Col span={15}>
             <Article className={markdownStylesClass}>
               <Header>
-                <h1 className="mask-h4">{frontmatter.title}</h1>
+                <h1 className="mask-h3">{frontmatter.title}</h1>
                 <p>
-                  {catString}&nbsp;&nbsp;○&nbsp;&nbsp;{dateStr}&nbsp;({when})
+                  {catString}&nbsp;•&nbsp;{dateStr}&nbsp;({when})
                 </p>
                 <p>
                   <i>{frontmatter.abstract}</i>
@@ -185,10 +187,15 @@ class BlogPostTemplate extends React.Component {
                   src={frontmatter.cover}
                   rawWidth={1440}
                   rawHeight={900}
-                  style={{ border: 0, height: "auto !important" }}
+                  style={{
+                    border: 0,
+                    height: "auto !important",
+                    marginBottom: 0,
+                  }}
                   className="mask-p"
                 />
               </Header>
+              <hr />
 
               {treeParser(
                 markdownAst,
@@ -230,12 +237,13 @@ class BlogPostTemplate extends React.Component {
                 </Paragraph>
               </Footer>
             </Article>
-          </div>
-          <div>
-            <Video />
-            <Quote />
-          </div>
-        </MainBlock>
+          </Col>
+          <Col span={9}>
+            <EventRegisterationForm
+              event={{ node: { frontmatter, fields: { route, humanDate } } }}
+            />
+          </Col>
+        </Row>
       </StandardPage>
     );
   }

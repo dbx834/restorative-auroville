@@ -412,7 +412,7 @@ const Footer = props => {
               <Fragment>
                 "<i>
                   {map(quote, (quotelet, index) => (
-                    <Fragment>
+                    <Fragment key={index}>
                       {index !== 0 && <br />}
                       {quotelet}
                     </Fragment>

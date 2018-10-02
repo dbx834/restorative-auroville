@@ -5,14 +5,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { css } from "glamor";
+import moment from "moment";
+import axios from "axios";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import map from "lodash/map";
+import filter from "lodash/filter";
+import reverse from "lodash/reverse";
+import values from "lodash/values";
+import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import withSizes from "react-sizes";
 import Link from "gatsby-link";
+import withSizes from "react-sizes";
 import "moment/locale/en-gb";
+import treeParser from "@bodhi-project/markdown-to-react/lib/treeParser";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/blocks
 import Tabs from "antd/lib/tabs";
@@ -24,13 +31,24 @@ import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/row/style/css";
 import Col from "antd/lib/col";
 import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/col/style/css";
 
+import Icon from "antd/lib/icon";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/icon/style/css";
+
+import Button from "antd/lib/button";
+import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/button/style/css";
+
+import Drawer from "antd/lib/drawer";
+import "@bodhi-project/antrd/lib/futuristic/3.8.4/drawer/style/css";
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import seoHelper from "../helpers/seoHelper";
 import StandardPage from "../components/StandardPage";
 
+import EventRegisterationForm from "../components/EventRegisterationForm";
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React;
-const TabPane = Tabs.TabPane;
+const { TabPane } = Tabs;
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------------ SEO
@@ -54,61 +72,40 @@ const pageStyle = css({
   },
 
   "& .item": {
-    width: "100%",
+    width: "calc(100% + 70px)",
     display: "block",
     position: "relative",
-    transition: "all 0.3s linear, opacity 0.2s linear",
-    lineHeight: "50px",
+    transition: "all 200ms ease-in, opacity 200ms ease-in",
+    lineHeight: "36px !important",
+    overflow: "hidden",
 
     "&:before": {
       content: `""`,
       width: "100%",
-      height: 2,
+      height: 1,
       position: "absolute",
       backgroundColor: "#272727",
       opacity: 0.08,
-      top: 25,
+      top: 19,
       left: 0,
       zIndex: 1,
-      transition: "all 0.2s linear",
+      transition: "all 200ms ease-in",
+    },
+
+    "&:hover": {
+      "& .day": {
+        paddingRight: 70,
+      },
+
+      "&::after": {
+        opacity: 1,
+        zIndex: 20,
+      },
     },
 
     "& a": {
-      width: "100%",
-      display: "block",
-      position: "relative",
-      border: 0,
       zIndex: 4,
-      overflow: "hidden",
-      lineHeight: "50px",
-
-      "&:hover": {
-        "& .day": {
-          paddingRight: 20,
-        },
-
-        "&::after": {
-          opacity: 1,
-          zIndex: 20,
-        },
-      },
-
-      "&:after": {
-        content: `""`,
-        width: 20,
-        height: 15,
-        position: "absolute",
-        top: 17,
-        right: 0,
-        backgroundImage: `url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><svg width="17px" height="14px" viewBox="0 0 17 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.7"><g id="Artboard-Copy-11" transform="translate(-872.000000, -2066.000000)" stroke="black" stroke-width="1.5"><g id="arrow" transform="translate(880.490381, 2073.069507) rotate(180.000000) translate(-880.490381, -2073.069507) translate(872.490381, 2066.569507)"><path d="M1.0804038,6.76950694 L15.6703738,6.76950694" id="Line"></path><path d="M0.487749094,7.37181072 L6.82588282,0.68336081" id="Line-Copy"></path><path d="M0.486030816,12.6847475 L6.6364344,6.19440378" id="Line-Copy-2" transform="translate(3.561233, 9.439576) scale(-1, 1) rotate(-180.000000) translate(-3.561233, -9.439576) "></path></g></g></g></svg>')`,
-        backgroundSize: 16,
-        backgroundColor: "white",
-        backgroundPosition: "right",
-        backgroundRepeat: "no-repeat",
-        zIndex: 2,
-        opacity: 0,
-        transition: "all 0.15s ease",
-      },
+      lineHeight: "36px",
     },
 
     "& .title": {
@@ -116,7 +113,8 @@ const pageStyle = css({
       float: "left",
       position: "relative",
       backgroundColor: "#FFFFFF",
-      paddingRight: 4,
+      paddingRight: 6,
+      zIndex: 4,
     },
 
     "& .day": {
@@ -124,128 +122,323 @@ const pageStyle = css({
       top: 0,
       right: 0,
       zIndex: 4,
-      transition: "all 0.15s linear",
+      transition: "all 200ms ease-in",
       backgroundColor: "#FFFFFF",
-      paddingLeft: 4,
+      paddingLeft: 6,
     },
   },
 });
 const pageStyles = pageStyle.toString();
 
+/** Month */
+const Month = props => {
+  const { year, month, monthKey, postEdges, openSet, registerForEvent } = props;
+  return (
+    <div
+      style={{
+        marginBottom: 12,
+        position: "relative",
+      }}
+      key={`${month}-${monthKey}`}
+    >
+      <h2 className="mask-h6" style={{ textAlign: "right" }}>
+        {month}
+      </h2>
+      <ul style={{ listStyle: "none", padding: 0 }}>
+        {map(postEdges, ({ node }, edgeIndex) => {
+          const showThis =
+            node.fields.year === year && node.fields.month === month;
+          if (showThis === true) {
+            return (
+              <li className="item" key={edgeIndex}>
+                <div className="title">{node.frontmatter.title}</div>
+                <div className="day">
+                  {node.fields.dayOfMonth}
+                  &nbsp;
+                  <Link to={node.fields.route}>
+                    <Icon type="link" theme="outlined" />
+                  </Link>
+                  &nbsp;
+                  <a
+                    href="#"
+                    title="More details"
+                    onClick={e => openSet(e, edgeIndex)}
+                  >
+                    <Icon type="search" theme="outlined" />
+                  </a>
+                  &nbsp;
+                  <a
+                    href="#"
+                    title="Register now"
+                    onClick={e => registerForEvent(e, edgeIndex)}
+                  >
+                    <Icon type="form" theme="outlined" />
+                  </a>
+                </div>
+              </li>
+            );
+          }
+        })}
+      </ul>
+    </div>
+  );
+};
+
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** EventsAndCalendar */
-class EventsAndCalendar extends React.Component {
+/** Events */
+class Events extends React.Component {
   /** standard constructor */
   constructor(props) {
     super(props);
+
+    this.state = {
+      visible: false,
+      index: undefined,
+      indexForForm: undefined,
+      eventData: undefined,
+      fetchingData: false,
+    };
+
+    this.onClose = this.onClose.bind(this);
+    this.openSet = this.openSet.bind(this);
+    this.registerForEvent = this.registerForEvent.bind(this);
+  }
+
+  /** componentDidUpdate */
+  componentDidUpdate(prevProps, prevState) {
+    const { index: oldIndex } = prevState;
+    const { index: newIndex } = this.state;
+
+    if (oldIndex !== newIndex) {
+      this.setState({ fetchingData: true });
+      const { data } = this.props;
+      const postEdges = data.allMarkdownRemark.edges;
+      const selectedEdge = postEdges[newIndex];
+      const {
+        node: {
+          fields: { route },
+        },
+      } = selectedEdge;
+      if (!isUndefined(window)) {
+        axios
+          .get(`/${route}.json`)
+          .then(response => {
+            // All OK
+            if (response.status === 200) {
+              const { data: eventData } = response;
+              this.setState({ eventData });
+
+              // Mock some delay
+              setTimeout(() => {
+                this.setState({ fetchingData: false });
+              }, 500);
+            }
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      }
+    }
+  }
+
+  /** onClose */
+  onClose() {
+    this.setState({
+      visible: false,
+    });
+  }
+
+  /** openSet */
+  openSet(e, index) {
+    e.preventDefault();
+    this.setState({
+      visible: true,
+      index,
+    });
+  }
+
+  /** registerForEvent */
+  registerForEvent(e, index) {
+    e.preventDefault();
+    this.setState({
+      visible: false,
+      indexForForm: index,
+    });
   }
 
   /** standard renderer */
   render() {
-    const postEdges = this.props.data.allMarkdownRemark.edges;
-    const years = ["2019", "2018"];
-    const months = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-    const monthColors = {
-      Jan: "#6D00FF",
-      Feb: "#0000C0",
-      Mar: "#FFBF00",
-      Jun: "#D5C200",
-      Jul: "#FFE800",
-      Aug: "#FFE800",
-      Sep: "#8E3CFC",
-      Oct: "#010195",
-      Nov: "#6D00FF",
-      Dec: "#3E0091",
+    const { data } = this.props;
+    const postEdges = data.allMarkdownRemark.edges;
+    const { index, indexForForm, visible } = this.state;
+    const today = moment();
+    const thisYear = today.year().toString();
+    const thisMonth = today.month();
+    const years = ["2018", "2019"];
+    const months = {
+      0: "Jan",
+      1: "Feb",
+      2: "Mar",
+      3: "Apr",
+      4: "May",
+      5: "Jun",
+      6: "Jul",
+      7: "Aug",
+      8: "Sep",
+      9: "Oct",
+      10: "Nov",
+      11: "Dec",
     };
+    const monthsArray = values(months);
+    const previousMonths = reverse(filter(months, (m, key) => key < thisMonth));
+    const thisAndFutureMonths = filter(months, (m, key) => key >= thisMonth);
+    const title = isUndefined(index)
+      ? "Event"
+      : `${postEdges[index].node.frontmatter.title} @ ${
+          postEdges[index].node.fields.humanDate
+        }`;
+    const { eventData, fetchingData } = this.state;
 
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
-        <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
+        <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
           <Col span={15}>
             <h1 className="mask-h3">Workshops & Events</h1>
             <Tabs type="card">
-              {map(years, year => {
+              {map(years, (year, yearKey) => {
+                const key = `${year}-${yearKey}`;
                 return (
-                  <TabPane tab={year} key={year}>
-                    {map(months, month => {
-                      return (
-                        <div
-                          style={{
-                            paddingLeft: 12,
-                            borderLeft: `8px solid ${monthColors[month]}`,
-                            marginBottom: 12,
-                            position: "relative",
-                          }}
-                        >
-                          <h2
-                            className="mask-h6"
-                            style={{ textAlign: "right" }}
-                          >
-                            {month}
-                          </h2>
-                          <ul style={{ listStyle: "none", padding: 0 }}>
-                            {map(postEdges, ({ node }) => {
-                              const showThis =
-                                node.fields.year === year &&
-                                node.fields.month === month;
-                              if (showThis === true) {
-                                return (
-                                  <li className="item">
-                                    <Link to="#">
-                                      <div className="title">
-                                        {node.frontmatter.title}
-                                      </div>
-                                      <div className="day">
-                                        {node.fields.dayOfMonth}
-                                      </div>
-                                    </Link>
-                                  </li>
-                                );
-                              }
-                            })}
-                          </ul>
-                        </div>
-                      );
-                    })}
+                  <TabPane tab={year} key={key}>
+                    <Fragment>
+                      {year === thisYear && (
+                        <Fragment>
+                          {map(thisAndFutureMonths, (month, monthKey) => {
+                            return (
+                              <Month
+                                year={year}
+                                month={month}
+                                monthKey={monthKey}
+                                postEdges={postEdges}
+                                openSet={this.openSet}
+                                registerForEvent={this.registerForEvent}
+                                key={`${month}-${monthKey}`}
+                              />
+                            );
+                          })}
+                          <hr />
+                          <h4>Past Events</h4>
+                          {map(previousMonths, (month, monthKey) => {
+                            return (
+                              <Month
+                                year={year}
+                                month={month}
+                                monthKey={monthKey}
+                                postEdges={postEdges}
+                                openSet={this.openSet}
+                                registerForEvent={this.registerForEvent}
+                                key={`${month}-${monthKey}`}
+                              />
+                            );
+                          })}
+                        </Fragment>
+                      )}
+                      {year !== thisYear && (
+                        <Fragment>
+                          {map(monthsArray, (month, monthKey) => {
+                            return (
+                              <Month
+                                year={year}
+                                month={month}
+                                monthKey={monthKey}
+                                postEdges={postEdges}
+                                openSet={this.openSet}
+                                registerForEvent={this.registerForEvent}
+                                key={`${month}-${monthKey}`}
+                              />
+                            );
+                          })}
+                        </Fragment>
+                      )}
+                    </Fragment>
                   </TabPane>
                 );
               })}
             </Tabs>
           </Col>
           <Col span={9}>
-            <h1 className="mask-h3">Workshops and Events</h1>
-            <p>
-              Joy Living Learning continues to offer regular NVC and RC
-              workshops in Auroville and other cities in the country, plus
-              weekly practice groups in Auroville.
-            </p>
-            <p>
-              Joy Living Learning has also incorporated RC into Auroville's
-              conflict resolution policy and is working towards building an
-              alternative justice system in Auroville based on the principles
-              that underly the NVC movement.
-            </p>
+            {isUndefined(indexForForm) ? (
+              <Fragment>
+                <h3>Register</h3>
+                <p>
+                  To register for an event please select an event from the
+                  selection.
+                </p>
+              </Fragment>
+            ) : (
+              <EventRegisterationForm event={postEdges[indexForForm]} />
+            )}
           </Col>
         </Row>
+        <Drawer
+          title={title}
+          closable={false}
+          onClose={this.onClose}
+          visible={visible}
+          width="62vw"
+          placement="left"
+        >
+          {fetchingData === true && <p>Fetching data…</p>}
+          {fetchingData === false &&
+            !isUndefined(eventData) && (
+              <Fragment>
+                {treeParser(
+                  eventData.markdownAst,
+                  {
+                    localLink: Link,
+                    linkHeaders: false,
+                    trackHeaders: false,
+                    nestHeaders: false,
+                  },
+                  {},
+                )}
+              </Fragment>
+            )}
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              width: "100%",
+              borderTop: "1px solid #e8e8e8",
+              padding: "10px 16px",
+              left: 0,
+              background: "#f2f2f2",
+              textAlign: "right",
+            }}
+          >
+            <Button
+              style={{
+                marginRight: 8,
+              }}
+              onClick={this.onClose}
+            >
+              Close
+            </Button>
+            <Button
+              type="primary"
+              onClick={e => this.registerForEvent(e, index)}
+            >
+              Register
+            </Button>
+          </div>
+        </Drawer>
       </StandardPage>
     );
   }
 }
 
-EventsAndCalendar.propTypes = {
+Events.propTypes = {
   data: PropTypes.object,
 };
 
@@ -286,6 +479,7 @@ export const pageQuery = graphql`
             category
             tags
             type
+            cost
           }
         }
       }
@@ -302,4 +496,4 @@ const mapSizesToProps = ({ width }) => ({
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default withSizes(mapSizesToProps)(EventsAndCalendar);
+export default withSizes(mapSizesToProps)(Events);

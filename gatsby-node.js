@@ -5,6 +5,7 @@ const path = require("path");
 const _ = require("lodash");
 const unified = require("unified");
 const markdown = require("remark-parse");
+const jsonfile = require("jsonfile");
 // const webpackLodashPlugin = require("lodash-webpack-plugin");
 
 // console.log(unified().use(markdown).parse(testMd));
@@ -122,6 +123,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 
 // ----------------------------------------------------------------------- Create Pages
 exports.createPages = ({ graphql, boundActionCreators }) => {
+  console.log("hit createPages");
   const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
@@ -233,6 +235,109 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               path: pathX,
               component: page,
               context,
+            });
+          }
+        });
+      }),
+    );
+  });
+};
+
+exports.onPostBuild = ({ graphql }) => {
+  console.log("hit onPostBuild");
+
+  return new Promise((resolve, reject) => {
+    resolve(
+      graphql(
+        `
+          {
+            allMarkdownRemark {
+              edges {
+                node {
+                  frontmatter {
+                    category
+                    title
+                    subTitle
+                    cover
+                    date
+                    startDate
+                    finishDate
+                    fromTime
+                    toTime
+                    category
+                    tags
+                    cost
+                    abstract
+                  }
+                  headings {
+                    depth
+                    value
+                  }
+                  fields {
+                    route
+                    rawContent
+                    elapsed
+                    humanDate
+                    isoDate
+                    beginHumanDate
+                    beginIsoDate
+                    endHumanDate
+                    endIsoDate
+                    beginDateInt
+                    diff
+                    year
+                    month
+                    monthN
+                    dayOfMonth
+                  }
+                }
+              }
+            }
+          }
+        `,
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors); // eslint-disable-line no-console
+          reject(result.errors);
+        }
+
+        const { edges } = result.data.allMarkdownRemark;
+
+        edges.sort((a, b) => {
+          const aNode = a.node.frontmatter;
+          const bNode = b.node.frontmatter;
+          const A = !_.isNull(aNode.startDate) ? aNode.startDate : aNode.date;
+          const B = !_.isNull(bNode.startDate) ? bNode.startDate : bNode.date;
+          const dateA = new Date(A);
+          const dateB = new Date(B);
+          return dateA - dateB;
+        });
+
+        // Loop through markdown nodes
+        edges.forEach((edge, i) => {
+          const trimmedRoute = _.trim(edge.node.fields.route);
+          const prev = i === 0 ? null : getPrev(i, edges, edge);
+          const next = i === edges.length - 1 ? null : getNext(i, edges, edge);
+
+          const context = {
+            frontmatter: edge.node.frontmatter,
+            headings: edge.node.headings,
+            route: edge.node.fields.route,
+            elapsed: edge.node.fields.elapsed,
+            humanDate: edge.node.fields.humanDate,
+            markdownAst: unified()
+              .use(markdown)
+              .parse(edge.node.fields.rawContent),
+            prev,
+            next,
+          };
+          const pathX = edge.node.fields.route;
+
+          if (_.startsWith(trimmedRoute, "events")) {
+            jsonfile.writeFile(`public/${pathX}.json`, context, err => {
+              if (err) {
+                console.error(err);
+              }
             });
           }
         });
