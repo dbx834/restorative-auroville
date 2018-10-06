@@ -1,5 +1,5 @@
 ---
-title: Restorative Circles Learning Community (Auroville)
+title: Restorative Circles Learning Community Workshop (Auroville)
 subTitle: na
 cover: /content-assets/2018-events/aurovillerc.png
 category: 3.Featured

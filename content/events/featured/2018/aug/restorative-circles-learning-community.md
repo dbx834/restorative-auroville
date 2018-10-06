@@ -1,5 +1,5 @@
 ---
-title: Restorative Circles Learning Community (Pune)
+title: Restorative Circles Learning Community Workshop (Pune)
 subTitle: na
 cover: /content-assets/2018-events/punerc.png
 category: 3.Featured

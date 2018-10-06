@@ -107,7 +107,7 @@ const Footer = props => {
           border: 0,
           background: "transparent",
           marginBottom: 0,
-          marginTop: 48,
+          marginTop: 64,
         }}
         alt="Restorative Auroville"
       />

@@ -72,59 +72,35 @@ const pageStyle = css({
   },
 
   "& .item": {
-    width: "calc(100% + 70px)",
-    display: "block",
-    position: "relative",
-    transition: "all 200ms ease-in, opacity 200ms ease-in",
-    lineHeight: "36px !important",
-    overflow: "hidden",
+    display: "flex",
+    padding: "4px 9px",
 
-    "&:before": {
-      content: `""`,
-      width: "100%",
-      height: 1,
-      position: "absolute",
-      backgroundColor: "#272727",
-      opacity: 0.08,
-      top: 19,
-      left: 0,
-      zIndex: 1,
-      transition: "all 200ms ease-in",
+    "&:nth-child(odd)": {
+      backgroundColor: "rgba(255, 191, 0, 0.1)",
     },
 
-    "&:hover": {
-      "& .day": {
-        paddingRight: 70,
-      },
-
-      "&::after": {
-        opacity: 1,
-        zIndex: 20,
-      },
-    },
-
-    "& a": {
-      zIndex: 4,
-      lineHeight: "36px",
+    "&:nth-child(even)": {
+      backgroundColor: "rgba(109, 0, 255, 0.1)",
     },
 
     "& .title": {
-      display: "block",
-      float: "left",
-      position: "relative",
-      backgroundColor: "#FFFFFF",
-      paddingRight: 6,
-      zIndex: 4,
+      flexGrow: 75,
+      flexBasis: 0,
+
+      // "& .time": {
+      //   display: "flex",
+      //   width: "100%",
+      //   lineHeight: "22px",
+
+      //   "& div": {
+      //     flexGrow: 1,
+      //   },
+      // },
     },
 
-    "& .day": {
-      position: "absolute",
-      top: 0,
-      right: 0,
-      zIndex: 4,
-      transition: "all 200ms ease-in",
-      backgroundColor: "#FFFFFF",
-      paddingLeft: 6,
+    "& .time": {
+      flexGrow: 25,
+      flexBasis: 0,
     },
   },
 });
@@ -141,39 +117,53 @@ const Month = props => {
       }}
       key={`${month}-${monthKey}`}
     >
-      <h2 className="mask-h6" style={{ textAlign: "right" }}>
-        {month}
-      </h2>
-      <ul style={{ listStyle: "none", padding: 0 }}>
+      <h2 className="mask-h6">{month}</h2>
+      <ul className="event-list" style={{ listStyle: "none", padding: 0 }}>
         {map(postEdges, ({ node }, edgeIndex) => {
           const showThis =
             node.fields.year === year && node.fields.month === month;
           if (showThis === true) {
             return (
               <li className="item" key={edgeIndex}>
-                <div className="title">{node.frontmatter.title}</div>
-                <div className="day">
-                  {node.fields.dayOfMonth}
-                  &nbsp;
-                  <Link to={node.fields.route}>
-                    <Icon type="link" theme="outlined" />
-                  </Link>
-                  &nbsp;
-                  <a
-                    href="#"
-                    title="More details"
-                    onClick={e => openSet(e, edgeIndex)}
-                  >
-                    <Icon type="search" theme="outlined" />
-                  </a>
-                  &nbsp;
-                  <a
-                    href="#"
-                    title="Register now"
-                    onClick={e => registerForEvent(e, edgeIndex)}
-                  >
-                    <Icon type="form" theme="outlined" />
-                  </a>
+                <div className="title">
+                  <div className="event-title">
+                    <Link to={node.fields.route} style={{ color: "unset" }}>
+                      {node.frontmatter.title}
+                    </Link>
+                  </div>
+                  <div className="links">
+                    <small>
+                      <a
+                        href="#"
+                        title="More details"
+                        onClick={e => openSet(e, edgeIndex)}
+                      >
+                        <Icon type="search" theme="outlined" />
+                      </a>
+                      &nbsp;
+                      <a
+                        href="#"
+                        title="Register now"
+                        onClick={e => registerForEvent(e, edgeIndex)}
+                      >
+                        <Icon type="form" theme="outlined" />
+                      </a>
+                    </small>
+                  </div>
+                </div>
+                <div className="time">
+                  <div style={{ textAlign: "right" }}>
+                    <i>
+                      <small>{node.fields.humanDate}</small>
+                    </i>
+                  </div>
+                  <div style={{ textAlign: "right" }}>
+                    <i>
+                      <small>
+                        {node.frontmatter.fromTime} - {node.frontmatter.toTime}
+                      </small>
+                    </i>
+                  </div>
                 </div>
               </li>
             );
@@ -296,7 +286,7 @@ class Events extends React.Component {
     const thisAndFutureMonths = filter(months, (m, key) => key >= thisMonth);
     const title = isUndefined(index)
       ? "Event"
-      : `${postEdges[index].node.frontmatter.title} @ ${
+      : `${postEdges[index].node.frontmatter.title}: ${
           postEdges[index].node.fields.humanDate
         }`;
     const { eventData, fetchingData } = this.state;

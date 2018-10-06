@@ -10,30 +10,16 @@ import { css } from "glamor";
 // import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import Images from "@bodhi-project/components/lib/Images";
+// import Images from "@bodhi-project/components/lib/Images";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from "gatsby-link";
+// import Link from "gatsby-link";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-import Video from "../components/Video";
-import Quote from "../components/Quote";
-import MainBlock from "../components/MainBlock";
-import StandardPage from "../components/StandardPage";
+import StandardPage from "../../components/StandardPage";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import seoHelper from "../helpers/seoHelper";
-
-import laura1 from "../assets/laura3.jpeg";
-import laura2 from "../assets/laura2.jpeg";
-import laura3 from "../assets/laura4.jpeg";
-
-const lauraPhotos = [
-  { src: laura1, width: 900, height: 600 },
-  { src: laura2, width: 900, height: 600 },
-  { src: laura3, width: 900, height: 600 },
-  { src: laura1, width: 900, height: 600 },
-];
+import seoHelper from "../../helpers/seoHelper";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 
@@ -45,8 +31,8 @@ const lauraPhotos = [
 // ------------------------------------------------------------------------ SEO
 // ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "Janet",
-  nakedPageSlug: "janet-fearn",
+  pageTitle: "Shanti",
+  nakedPageSlug: "shanti",
   pageAbstract: "Page abstract.",
 };
 
@@ -78,32 +64,13 @@ class IndexPage extends React.Component {
   render() {
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
-        <h1 className="mask-h3">Janet Fearn</h1>
+        <h1 className="mask-h3">Shanti</h1>
         <p>
-          In 1967 I left my job in Toronto, Canada as a psychiatric social
-          worker, and bought an around the world plane ticket. I spent several
-          months travelling in India, and arrived in Pondicherry by chance in
-          June of 1968, four months after the inauguration of Auroville. I
-          stayed in the Sri Aurobindo Ashram until September and then moved to
-          Auroville, which at the time was an eroded, barren plateau with a few
-          impoverished villages and less than ten people from other parts of the
-          world who had come to build the new city.
-        </p>
-        <p>
-          Over the next 40+ years I did several kinds of work from planting
-          trees and working at the Matrimandir in the early days to running a
-          handicraft workshop, and later a guesthouse. I was also on several
-          different Auroville Councils, where I became more aware of Auroville’s
-          need for better communication skills, and the tools to resolve
-          conflict.
-        </p>
-        <p>
-          I heard about Restorative Circles in 2010 from L’aura (my daughter)
-          and Jason after they returned from a workshop in the US with Dominic
-          Barter and immediately saw its potential for Auroville. Since that
-          time I have been part of the team working with L’aura to make the
-          practice better understood in Auroville, and helping as a
-          co-facilitator in many Circles.
+          I was born and grew up in Montreal City, Quebec (the French-speaking
+          part of Canada). After studying pure sciences at college I started to
+          study and practice painting and engraving. In parallel I started to
+          look inside myself, trying to understand who I was and what happiness
+          was.
         </p>
       </StandardPage>
     );

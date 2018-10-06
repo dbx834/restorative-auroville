@@ -10,30 +10,16 @@ import { css } from "glamor";
 // import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import Images from "@bodhi-project/components/lib/Images";
+// import Images from "@bodhi-project/components/lib/Images";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from "gatsby-link";
+// import Link from "gatsby-link";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-import Video from "../components/Video";
-import Quote from "../components/Quote";
-import MainBlock from "../components/MainBlock";
-import StandardPage from "../components/StandardPage";
+import StandardPage from "../../components/StandardPage";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import seoHelper from "../helpers/seoHelper";
-
-import laura1 from "../assets/laura3.jpeg";
-import laura2 from "../assets/laura2.jpeg";
-import laura3 from "../assets/laura4.jpeg";
-
-const lauraPhotos = [
-  { src: laura1, width: 900, height: 600 },
-  { src: laura2, width: 900, height: 600 },
-  { src: laura3, width: 900, height: 600 },
-  { src: laura1, width: 900, height: 600 },
-];
+import seoHelper from "../../helpers/seoHelper";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 
@@ -45,8 +31,8 @@ const lauraPhotos = [
 // ------------------------------------------------------------------------ SEO
 // ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "Henrike",
-  nakedPageSlug: "henrike",
+  pageTitle: "Shanti",
+  nakedPageSlug: "shanti",
   pageAbstract: "Page abstract.",
 };
 
@@ -78,24 +64,13 @@ class IndexPage extends React.Component {
   render() {
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
-        <h1 className="mask-h3">Henrike</h1>
+        <h1 className="mask-h3">Shanti</h1>
         <p>
-          I was born and raised in Holland, where I studied Anthropology and
-          Law. In this time, I did some research into restorative justice models
-          as they are found among native groups around the world. I was
-          fascinated and convinced of the basic principles, but unsure whether
-          these systems can still be relevant for communities that are bigger,
-          less interdependent.
-        </p>
-        <p>
-          When I came to settle in Auroville in 2017, I realized that the work
-          of Restorative Auroville would be my chance to see how a restorative
-          justice system might emerge outside of traditional ethnic groups.
-          Auroville is still a relatively small community, but there are very
-          few ‘set’ ways of doing things together. This provides an amazing
-          opportunity to try and move towards a sense of justice that supports
-          the whole community well-being. I am happy to work and do my small
-          part to make it happen!
+          I was born and grew up in Montreal City, Quebec (the French-speaking
+          part of Canada). After studying pure sciences at college I started to
+          study and practice painting and engraving. In parallel I started to
+          look inside myself, trying to understand who I was and what happiness
+          was.
         </p>
       </StandardPage>
     );

@@ -78,14 +78,14 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     const sameDay = _.isUndefined(finishDate);
     const elapsed = begins.fromNow();
 
-    let humanDate = begins.format("ddd, MMMM D, YYYY");
+    let humanDate = begins.format("ddd D");
     if (sameDay === false) {
       const range = begins.twix(ends, { allDay: false });
-      const rangeX = range.simpleFormat("ddd, MMMM D");
+      const rangeX = range.simpleFormat("ddd, D");
       const beginsYear = begins.format("YYYY");
       const endsYear = ends.format("YYYY");
       if (beginsYear === endsYear) {
-        humanDate = `${rangeX}, ${beginsYear}`;
+        humanDate = rangeX;
       } else {
         humanDate = rangeX;
       }

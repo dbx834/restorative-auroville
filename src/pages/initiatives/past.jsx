@@ -19,6 +19,12 @@ import Image from "@bodhi-project/components/lib/Image";
 import StandardPage from "../../components/StandardPage";
 import seoHelper from "../../helpers/seoHelper";
 
+import nvcX32 from "../../assets/gallery/nvcX32.jpg";
+import nvcX36 from "../../assets/gallery/nvcX36.jpg";
+import nvcX39 from "../../assets/gallery/nvcX39.jpg";
+import nvcX41 from "../../assets/gallery/nvcX41.jpg";
+import nvcX13 from "../../assets/gallery/nvcX13.jpg";
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
 
@@ -27,48 +33,43 @@ import seoHelper from "../../helpers/seoHelper";
 // ----------------------------------------------------------------------------
 const pastProjects = [
   {
-    route: "walk-of-hope-in-auroville-and-the-bioregion",
+    route: "walk-of-hope-in-auroville-and-the-bioregion", // http://localhost:8000/static/nvcX32.80a80f7b.jpg
     title: "Walk of Hope in Auroville and the Bioregion",
     subTitle:
       "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
-    image:
-      "https://www.aljazeera.com/mritems/imagecache/mbdresplarge/mritems/Images/2018/7/30/b42634d5f9484791893dfb7c21a8c3b0_18.jpg",
+    image: nvcX32,
     date: "2018",
   },
   {
-    route: "exploring-justice-and-rc-with-the-auroville-council",
+    route: "exploring-justice-and-rc-with-the-auroville-council", // http://localhost:8000/static/nvcX36.d06e8ee2.jpg
     title: "Exploring Justice and RC with the Auroville Council",
     subTitle:
       "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
-    image:
-      "https://www.aljazeera.com/mritems/imagecache/mbdresplarge/mritems/Images/2018/7/30/b42634d5f9484791893dfb7c21a8c3b0_18.jpg",
+    image: nvcX36,
     date: "2018",
   },
   {
-    route: "restorative-dialogue-across-cultures",
+    route: "restorative-dialogue-across-cultures", // http://localhost:8000/static/nvcX39.716db87c.jpg
     title: "Restorative Dialogue across Cultures",
     subTitle:
       "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
-    image:
-      "https://www.aljazeera.com/mritems/imagecache/mbdresplarge/mritems/Images/2018/7/30/b42634d5f9484791893dfb7c21a8c3b0_18.jpg",
+    image: nvcX39,
     date: "2016",
   },
   {
-    route: "filmfest-restoring-connection",
+    route: "filmfest-restoring-connection", // http://localhost:8000/static/nvcX41.d10a7c12.jpg
     title: "FilmFest: Restoring Connection",
     subTitle:
       "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
-    image:
-      "https://www.aljazeera.com/mritems/imagecache/mbdresplarge/mritems/Images/2018/7/30/b42634d5f9484791893dfb7c21a8c3b0_18.jpg",
+    image: nvcX41,
     date: "2016",
   },
   {
-    route: "restorative-circles-in-the-learning-community-school",
+    route: "restorative-circles-in-the-learning-community-school", // http://localhost:8000/static/nvcX13.7d0ebbed.jpg
     title: "Restorative Circles in The Learning Community School",
     subTitle:
       "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
-    image:
-      "https://www.aljazeera.com/mritems/imagecache/mbdresplarge/mritems/Images/2018/7/30/b42634d5f9484791893dfb7c21a8c3b0_18.jpg",
+    image: nvcX13,
     date: "2015",
   },
 ];

@@ -30,6 +30,10 @@ import StandardPage from "../../components/StandardPage";
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import seoHelper from "../../helpers/seoHelper";
 
+import yurtCover from "../../assets/yurt/yurt4.jpeg";
+import nvcX62 from "../../assets/gallery/nvcX62.jpg";
+import nvcX20 from "../../assets/gallery/nvcX20.jpg";
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
 
@@ -38,14 +42,13 @@ import seoHelper from "../../helpers/seoHelper";
 // ----------------------------------------------------------------------------
 const currentProjects = [
   {
-    route: "cross-cultural-dialogue",
+    route: "cross-cultural-dialogue", // http://localhost:8000/static/nvcX62.31bd6861.jpg
     humanDate: "2018",
     elapsed: "2 years ago",
     abstract:
       "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
     title: "Cross-Cultural Dialogue",
-    cover:
-      "https://images.unsplash.com/photo-1533529318682-0c3e2fc1e225?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=66bef43351b3fe01a5b3b41f9d7d3a64&auto=format&fit=crop&w=1440&h=900&q=60",
+    cover: nvcX62,
     date: "2016-09-16T00:00:00.000Z",
     category: "2.RC",
   },
@@ -62,14 +65,13 @@ const currentProjects = [
     category: "2.RC",
   },
   {
-    route: "restorative-circles-in-aikyam-school",
+    route: "restorative-circles-in-aikyam-school", // http://localhost:8000/static/nvcX20.bf58fb56.jpg
     humanDate: "2017-2018",
     elapsed: "2 years ago",
     abstract:
       "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
     title: "Restorative Circles in Aikiyam School",
-    cover:
-      "https://images.unsplash.com/photo-1533153309598-39dd04d03af2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=762be954da945ab02dc032fa36850d9c&auto=format&fit=crop&w=1440&h=900&q=60",
+    cover: nvcX20,
     date: "2016-09-16T00:00:00.000Z",
     category: "2.RC",
   },
@@ -92,8 +94,19 @@ const currentProjects = [
     abstract:
       "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
     title: "Building a Yurt",
+    cover: yurtCover,
+    date: "2016-09-16T00:00:00.000Z",
+    category: "2.RC",
+  },
+  {
+    route: "women-for-justice",
+    humanDate: "2018",
+    elapsed: "2 years ago",
+    abstract:
+      "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
+    title: "Women for Justice",
     cover:
-      "https://images.unsplash.com/photo-1533141947706-226ac3586b0a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=62cfb92bd22d6e1f80062e04e41dac6e&auto=format&fit=crop&w=1440&h=900&q=60",
+      "https://images.unsplash.com/photo-1530231810657-c657c81a437d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c116b929e3b785f7100e8ec2204ba549&auto=format&fit=crop&w=1440&h=900&q=80",
     date: "2016-09-16T00:00:00.000Z",
     category: "2.RC",
   },

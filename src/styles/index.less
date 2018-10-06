@@ -44,17 +44,72 @@ body {
   background: #FFFFFF !important;
 }
 
-// .my-drawer {
-//   position: relative;
-//   overflow: auto;
-//   -webkit-overflow-scrolling: touch;
-// }
-// .my-drawer .am-drawer-sidebar {
-//   background-color: #fff;
-//   overflow: auto;
-//   -webkit-overflow-scrolling: touch;
-// }
-// .my-drawer .am-drawer-sidebar .am-list {
-//   width: 100vw;
-//   padding: 0;
-// }
+.parent-circle{
+  width: 250px;
+  height: 250px;
+  background-color: white;
+  border-radius: 50%;
+  border: 2px solid red;
+  position: relative;
+  margin-left: 62px;
+  margin-top: 42px;
+  margin-bottom: 122px;
+  margin-right: 82px;
+}
+
+.child-circle {
+  width: 125px;
+  height: 125px;
+  background-color: orange;
+  border-radius: 50%;
+  position: absolute;
+  left: 62px;
+  top: 62px;
+  transition: all 300ms ease-in;
+  cursor: pointer;
+}
+
+.child-circle.s {
+  width: 105px;
+  height: 105px;
+  // left: 62px;
+  // top: 62px;
+}
+
+.child-circle::after {
+  width: 125px;
+  text-align: center;
+  position: absolute;
+  text-shadow: 1px 1px white, 1px 0px white, 0px 1px white, 0px 0px white, -1px -1px white, 0px -1px white, -1px 0px white; 
+}
+
+.child-circle.s::after {
+  width: 105px;
+}
+
+.child-circle p {
+  transition: all 200ms ease-in;
+  opacity: 0;
+  margin-top: -1px;
+  margin-left: -1px;
+  margin-bottom: 0px;
+  width: 123px;
+  height: 123px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00006F;
+  color: #FFFFFF;
+}
+
+.child-circle.s p {
+  width: 103px;
+  height: 103px;
+}
+
+.child-circle:hover p {
+  opacity: 1;
+}
+
+
