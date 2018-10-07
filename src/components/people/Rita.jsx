@@ -21,13 +21,8 @@ import React from "react";
 /** Person */
 const Person = () => (
   <div>
-    <h1 className="mask-h3">Shanti</h1>
-    <p>
-      I was born and grew up in Montreal City, Quebec (the French-speaking part
-      of Canada). After studying pure sciences at college I started to study and
-      practice painting and engraving. In parallel I started to look inside
-      myself, trying to understand who I was and what happiness was.
-    </p>
+    <h1 className="mask-h3">Rita</h1>
+    <p>Blah blah...</p>
   </div>
 );
 

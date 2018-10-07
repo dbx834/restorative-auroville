@@ -24,6 +24,7 @@ import seoHelper from "../helpers/seoHelper";
 import ProjectWorkingTeam from "../components/our-team-blocks/ProjectWorkingTeam";
 import FacilitatorsTeam from "../components/our-team-blocks/FacilitatorsTeam";
 import Apprentices from "../components/our-team-blocks/Apprentices";
+import PastMembers from "../components/our-team-blocks/PastMembers";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 
@@ -80,13 +81,7 @@ class IndexPage extends React.Component {
         <ProjectWorkingTeam />
         <FacilitatorsTeam />
         <Apprentices />
-        <h1 className="mask-h3">Past Members</h1>
-        <p>
-          But I somehow didn’t find this work as fulfilling as I had expected,
-          so I quit, not knowing what was coming next. In 2007, I
-          serendipitously ended up in a Nonviolent Communication workshop, and
-          this was the beginning of a new passion and career...
-        </p>
+        <PastMembers />
       </StandardPage>
     );
   }

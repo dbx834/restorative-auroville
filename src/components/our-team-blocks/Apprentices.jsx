@@ -21,6 +21,7 @@ import { css } from "glamor";
 import blueSquare from "../../assets/blueSquare.jpg";
 import henrikeSquare from "../../assets/henrikeSquare.jpg";
 import pranjalSquare from "../../assets/pranjalSquare.jpg";
+import stefanSquare from "../../assets/stefanSquare.jpg";
 
 import Henrike from "../people/Henrike";
 import Pranjal from "../people/Pranjal";
@@ -139,7 +140,7 @@ class Apprentices extends React.Component {
               className="child-circle s"
               ref="child1"
               style={{
-                backgroundImage: `url(${blueSquare})`,
+                backgroundImage: `url(${stefanSquare})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "105px 105px",
                 border: "2px solid #FFBF00",
