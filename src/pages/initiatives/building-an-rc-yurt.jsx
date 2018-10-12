@@ -48,8 +48,8 @@ const photos = [
 // ------------------------------------------------------------------------ SEO
 // ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "Building a Yurt",
-  nakedPageSlug: "building-a-yurt",
+  pageTitle: "Building an RC Yurt",
+  nakedPageSlug: "building-an-rc-yurt",
   pageAbstract: "Page abstract.",
 };
 

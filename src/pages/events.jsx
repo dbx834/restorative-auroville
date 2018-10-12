@@ -376,7 +376,7 @@ class Events extends React.Component {
           closable={false}
           onClose={this.onClose}
           visible={visible}
-          width="62vw"
+          width="45vw"
           placement="left"
         >
           {fetchingData === true && <p>Fetching data…</p>}

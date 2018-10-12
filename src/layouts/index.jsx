@@ -89,7 +89,10 @@ const menu = [
     title: "Learn +",
     menu: [
       { title: "Events", link: "/events" },
-      { title: "Educational Tools", link: "/educational-tools" },
+      {
+        title: "The Power of Dialogue - Video Series",
+        link: "/the-power-of-dialogue",
+      },
     ],
   },
   {
@@ -119,6 +122,7 @@ const menu = [
       { title: "Articles", link: "/writings" },
       { title: "Archives", link: "/archives" },
       { title: "Gallery", link: "/gallery" },
+      { title: "Newsletter", link: "/newsletter" },
     ],
   },
   { title: "Contact Us", link: "/contact-us" },

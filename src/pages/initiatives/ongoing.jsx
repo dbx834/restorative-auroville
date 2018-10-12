@@ -88,12 +88,12 @@ const currentProjects = [
     category: "2.RC",
   },
   {
-    route: "building-a-yurt",
+    route: "building-an-rc-yurt",
     humanDate: "2018",
     elapsed: "2 years ago",
     abstract:
       "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
-    title: "Building a Yurt",
+    title: "Building an RC Yurt",
     cover: yurtCover,
     date: "2016-09-16T00:00:00.000Z",
     category: "2.RC",

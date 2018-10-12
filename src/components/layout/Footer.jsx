@@ -14,6 +14,7 @@ import isString from "lodash/isString";
 import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Link from "gatsby-link";
 import FacebookProvider, { Page as FBPage } from "react-facebook";
 import { Footer as SemanticFooter } from "@bodhi-project/semantic-webflow";
 import Disqus from "disqus-react";
@@ -46,6 +47,7 @@ import payu from "../../assets/payu.png";
 import soundcloud from "../../assets/soundcloud.png";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import nvcX62 from "../../assets/gallery/nvcX62.jpg";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React;
@@ -126,7 +128,9 @@ const Footer = props => {
                   Receive e-mail updates on our exhibitions, events, and more
                 </p>
                 <div className="mask-p" style={{ marginBottom: 0 }}>
-                  <Button block>Subscribe</Button>
+                  <Button block>
+                    <Link to="/newsletter">Subscribe</Link>
+                  </Button>
                 </div>
               </div>
               <div style={{ paddingTop: 24 }}>
@@ -135,7 +139,9 @@ const Footer = props => {
                   Receive e-mail updates on our exhibitions, events, and more
                 </p>
                 <div className="mask-p" style={{ marginBottom: 0 }}>
-                  <Button block>Volunteer</Button>
+                  <Button block>
+                    <Link to="/volunteer">Volunteer</Link>
+                  </Button>
                 </div>
               </div>
             </Col>
@@ -341,7 +347,7 @@ const Footer = props => {
           >
             <h3 className="mask-h6">Project Highlight</h3>
             <Image
-              src="https://images.unsplash.com/photo-1533529318682-0c3e2fc1e225?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=66bef43351b3fe01a5b3b41f9d7d3a64&auto=format&fit=crop&w=1440&h=900&q=60"
+              src={nvcX62}
               rawWidth={1440}
               rawHeight={900}
               style={{
