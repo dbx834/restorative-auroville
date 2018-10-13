@@ -27,6 +27,11 @@ import StandardPage from "../components/StandardPage";
 
 import seoHelper from "../helpers/seoHelper";
 
+import p1ComingSoon from "../assets/coming-soon-yellow.jpg";
+import p2ComingSoon from "../assets/coming-soon-blue.jpg";
+import p3ComingSoon from "../assets/coming-soon-red.jpg";
+import p4ComingSoon from "../assets/coming-soon-green.jpg";
+
 import p21 from "../assets/genies-precircle-with-janet.jpg";
 import p31 from "../assets/engaging-with-restorative-circles-in-auroville.jpg";
 import p32 from "../assets/designing-our-justice-system-consciously.jpg";
@@ -59,6 +64,30 @@ const Page = () => (
       useful. We all have quite a bit of unlearning and relearning to do.{" "}
     </p>
     <h1 className="mask-h3">1. The Craft</h1>
+    <Row gutter={{ md: 24 }}>
+      <Col md={12}>
+        <Image
+          src={p1ComingSoon}
+          style={{
+            background: "transparent",
+            border: "unset",
+            height: "auto",
+            width: "100%",
+            marginBottom: 10,
+          }}
+          loader="gradient"
+          rawWidth={1440}
+          rawHeight={900}
+        />
+        <p>
+          We all have preferences and biases. For instance, do you have a bias
+          for clarity/formalization or for ambiguity/emergence? It's helpful to
+          know your preferences, to become more flexible and adapt to what's
+          needed.
+        </p>
+      </Col>
+      <Col md={12}>&nbsp;</Col>
+    </Row>
     <p>
       These videos are meant for the top leader ("CEO") of the organization, but
       they are equally relevant for other leaders championing the
@@ -98,7 +127,27 @@ const Page = () => (
           needed.
         </p>
       </Col>
-      <Col md={12}>&nbsp;</Col>
+      <Col md={12}>
+        <Image
+          src={p2ComingSoon}
+          style={{
+            background: "transparent",
+            border: "unset",
+            height: "auto",
+            width: "100%",
+            marginBottom: 10,
+          }}
+          loader="gradient"
+          rawWidth={1440}
+          rawHeight={900}
+        />
+        <p>
+          We all have preferences and biases. For instance, do you have a bias
+          for clarity/formalization or for ambiguity/emergence? It's helpful to
+          know your preferences, to become more flexible and adapt to what's
+          needed.
+        </p>
+      </Col>
     </Row>
     <h1 className="mask-h3">3. The Restorative System</h1>
     <p>
@@ -156,6 +205,30 @@ const Page = () => (
         </p>
       </Col>
     </Row>
+    <Row gutter={{ md: 24 }}>
+      <Col md={12}>
+        <Image
+          src={p3ComingSoon}
+          style={{
+            background: "transparent",
+            border: "unset",
+            height: "auto",
+            width: "100%",
+            marginBottom: 10,
+          }}
+          loader="gradient"
+          rawWidth={1440}
+          rawHeight={900}
+        />
+        <p>
+          We all have preferences and biases. For instance, do you have a bias
+          for clarity/formalization or for ambiguity/emergence? It's helpful to
+          know your preferences, to become more flexible and adapt to what's
+          needed.
+        </p>
+      </Col>
+      <Col md={12}>&nbsp;</Col>
+    </Row>
     <h1 className="mask-h3">4. Experiences</h1>
     <p>
       These videos are meant for the top leader ("CEO") of the organization, but
@@ -188,7 +261,27 @@ const Page = () => (
           needed.
         </p>
       </Col>
-      <Col md={12}>&nbsp;</Col>
+      <Col md={12}>
+        <Image
+          src={p4ComingSoon}
+          style={{
+            background: "transparent",
+            border: "unset",
+            height: "auto",
+            width: "100%",
+            marginBottom: 10,
+          }}
+          loader="gradient"
+          rawWidth={1440}
+          rawHeight={900}
+        />
+        <p>
+          We all have preferences and biases. For instance, do you have a bias
+          for clarity/formalization or for ambiguity/emergence? It's helpful to
+          know your preferences, to become more flexible and adapt to what's
+          needed.
+        </p>
+      </Col>
     </Row>
   </StandardPage>
 );

@@ -33,6 +33,7 @@ import seoHelper from "../../helpers/seoHelper";
 import yurtCover from "../../assets/yurt/yurt4.jpeg";
 import nvcX62 from "../../assets/gallery/nvcX62.jpg";
 import nvcX20 from "../../assets/gallery/nvcX20.jpg";
+import flyer from "../../assets/women-for-justice-flyer.jpg";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
@@ -105,8 +106,7 @@ const currentProjects = [
     abstract:
       "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
     title: "Women for Justice",
-    cover:
-      "https://images.unsplash.com/photo-1530231810657-c657c81a437d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c116b929e3b785f7100e8ec2204ba549&auto=format&fit=crop&w=1440&h=900&q=80",
+    cover: flyer,
     date: "2016-09-16T00:00:00.000Z",
     category: "2.RC",
   },

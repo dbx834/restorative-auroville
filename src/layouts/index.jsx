@@ -88,11 +88,12 @@ const menu = [
   {
     title: "Learn +",
     menu: [
-      { title: "Events", link: "/events" },
+      { title: "Upcoming Events", link: "/events" },
       {
-        title: "The Power of Dialogue - Video Series",
+        title: "The Power of Dialogue",
         link: "/the-power-of-dialogue",
       },
+      { title: "Volunteer & Apprentice", link: "/volunteer" },
     ],
   },
   {
@@ -102,20 +103,11 @@ const menu = [
       { title: "Past Initiatives", link: "/initiatives/past" },
     ],
   },
-  {
-    title: "Support Us +",
-    menu: [
-      {
-        title: "Donate",
-        link: "/donate",
-      },
-      {
-        title: "Volunteer",
-        link: "/volunteer",
-      },
-    ],
-  },
   { title: "Our Team", link: "/our-team" },
+  {
+    title: "Donate",
+    link: "/donate",
+  },
   {
     title: "More +",
     menu: [

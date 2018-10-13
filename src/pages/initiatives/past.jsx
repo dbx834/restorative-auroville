@@ -36,7 +36,7 @@ const pastProjects = [
     route: "walk-of-hope-in-auroville-and-the-bioregion", // http://localhost:8000/static/nvcX32.80a80f7b.jpg
     title: "Walk of Hope in Auroville and the Bioregion",
     subTitle:
-      "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
+      "The Walk was led by Sri M, an eminent spiritual guide, educationist and social activist. Sri M became known for his Walk of Hope from Kanyakumari to Kashmir, over 7000 km through India in 2015-16.",
     image: nvcX32,
     date: "2018",
   },
@@ -58,9 +58,9 @@ const pastProjects = [
   },
   {
     route: "filmfest-restoring-connection", // http://localhost:8000/static/nvcX41.d10a7c12.jpg
-    title: "FilmFest: Restoring Connection",
+    title: '"Restoring Connection" FilmFest',
     subTitle:
-      "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
+      "Restorative Auroville hosted a 6-day Film Festival on the theme of “Restoring Connection” in October 2016 as part of our larger Restorative Circles project in Auroville, where we are working to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values",
     image: nvcX41,
     date: "2016",
   },
