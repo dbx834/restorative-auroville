@@ -360,9 +360,10 @@ exports.onPostBuild = ({ graphql }) => {
             next,
           }
           const pathX = edge.node.fields.route
+          // console.log(context)
 
           if (_.startsWith(trimmedRoute, 'events')) {
-            jsonfile.writeFile(`public/${pathX}.json`, context, err => {
+            jsonfile.writeFileSync(`public/${pathX}.json`, context, err => {
               if (err) {
                 console.error(err)
               }
