@@ -177,12 +177,12 @@ module.exports = {
         siteUrl,
       },
     },
-    {
-      resolve: `gatsby-plugin-sri`, // https://www.gatsbyjs.org/packages/gatsby-plugin-sri
-      options: {
-        hash: 'sha512',
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-sri`, // https://www.gatsbyjs.org/packages/gatsby-plugin-sri
+    //   options: {
+    //     hash: 'sha512',
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-zopfli`, // https://www.gatsbyjs.org/packages/gatsby-plugin-zopfli
     },
