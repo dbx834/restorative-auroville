@@ -108,7 +108,7 @@ class Block extends React.Component {
 
   /** standard renderer */
   render() {
-    const { data } = this.props
+    const { data, isMobile } = this.props
     const { filter: filterByAuthor } = this.state
     const uniqueSortedAuthors = uniq(map(data, 'author')).sort((a, b) => {
       if (a < b) return -1
@@ -160,7 +160,7 @@ class Block extends React.Component {
         ))}
 
         <StackGrid
-          columnWidth="33%"
+          columnWidth={isMobile ? '100%' : '33%'}
           duration={360}
           gutterWidth={20}
           gutterHeight={42}

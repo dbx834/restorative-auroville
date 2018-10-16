@@ -91,7 +91,7 @@ const Page = props => {
     <StandardPage className="" seoData={seoData}>
       <EventSchema data={eventSchemaData} />
       <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-        <Col span={15}>
+        <Col sm={24} md={15}>
           <Header>
             <h1 className="mask-h3">{title}</h1>
             <p>{dateStr}</p>
@@ -136,7 +136,7 @@ const Page = props => {
           </Header>
           {children}
         </Col>
-        <Col span={9}>
+        <Col sm={24} md={9}>
           <EventRegisterationForm
             event={{ node: { frontmatter, fields: { route, humanDate } } }}
           />

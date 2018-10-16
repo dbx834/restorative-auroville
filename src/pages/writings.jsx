@@ -66,7 +66,7 @@ const Page = props => {
       <h1 className="mask-h3" style={{ marginBottom: 10 }}>
         Articles
       </h1>
-      {!isMobile ? <BlogListing data={sorted} /> : <p>Mobile listing</p>}
+      <BlogListing data={sorted} isMobile={isMobile} />
     </StandardPage>
   )
 }

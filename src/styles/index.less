@@ -134,10 +134,13 @@ body {
 @media only screen and (max-width: 768px) {
   .ant-col-sm-0 {
     display: none;
-  }    
+  }
+  .hidden-sm {
+    display: none;
+  }
 }
 
-.ant-menu-vertical > .ant-menu-item {
+.ant-menu-vertical > .ant-menu-item, .ant-menu-sub.ant-menu-inline > .ant-menu-item {
   line-height: 30px !important;
   height: 30px !important;
 }

@@ -11,6 +11,7 @@ import React from 'react'
 // import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import withSizes from 'react-sizes'
 import { Link } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
@@ -46,27 +47,35 @@ const seoData = seoHelper(pageData)
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <StandardPage className="" seoData={seoData}>
-    <h1 className="mask-h3">About Our Team</h1>
-    <p className="mask-p">
-      Restorative Auroville is an independent project that aims to bring the
-      practice of{' '}
-      <Link to="www.restorativecircles.org">Restorative Circles</Link>, a
-      holistic, community-based form of conflict resolution, to Auroville, and
-      to explore what a consciously designed justice system could look like here
-      – one that reflects our ideals, but that is also effective and has the
-      power to bring about constructive change, both on the individual and
-      community levels.
-    </p>
-    <ProjectWorkingTeam />
-    <FacilitatorsTeam />
-    <Apprentices />
-    <PastMembers />
-  </StandardPage>
-)
+const Page = props => {
+  const { isMobile } = props
+  return (
+    <StandardPage className="" seoData={seoData}>
+      <h1 className="mask-h3">About Our Team</h1>
+      <p className="mask-p">
+        Restorative Auroville is an independent project that aims to bring the
+        practice of{' '}
+        <Link to="www.restorativecircles.org">Restorative Circles</Link>, a
+        holistic, community-based form of conflict resolution, to Auroville, and
+        to explore what a consciously designed justice system could look like
+        here – one that reflects our ideals, but that is also effective and has
+        the power to bring about constructive change, both on the individual and
+        community levels.
+      </p>
+      <ProjectWorkingTeam isMobile={isMobile} />
+      <FacilitatorsTeam isMobile={isMobile} />
+      <Apprentices isMobile={isMobile} />
+      <PastMembers isMobile={isMobile} />
+    </StandardPage>
+  )
+}
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Export
 // ----------------------------------------------------------------------------
-export default Page
+/** mapSizesToProps */
+const mapSizesToProps = ({ width }) => ({
+  isMobile: width <= 768,
+})
+
+export default withSizes(mapSizesToProps)(Page)

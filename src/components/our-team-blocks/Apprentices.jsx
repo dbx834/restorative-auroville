@@ -124,6 +124,7 @@ class Apprentices extends React.Component {
   /** standard renderer */
   render() {
     const { person } = this.state
+    const { isMobile } = this.props
 
     return (
       <div>
@@ -134,7 +135,7 @@ class Apprentices extends React.Component {
           serendipitously ended up in a Nonviolent Communication workshop, and
           this was the beginning of a new passion and career…
         </p>
-        <div style={{ display: 'flex' }}>
+        <div style={{ display: isMobile ? 'block' : 'flex' }}>
           <div className={`parent-circle ${circleStyles}`} ref="parent">
             <div
               className="child-circle s"

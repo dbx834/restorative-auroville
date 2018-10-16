@@ -95,6 +95,7 @@ class FacilitatorsTeam extends React.Component {
   /** standard renderer */
   render() {
     const { person } = this.state
+    const { isMobile } = this.props
 
     return (
       <div>

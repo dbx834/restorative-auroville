@@ -55,11 +55,11 @@ const seoData = seoHelper(pageData)
 const Page = () => (
   <StandardPage className="" seoData={seoData}>
     <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
-      <Col span={15}>
+      <Col sm={24} md={15}>
         <h1 className="mask-h3">Contact Us</h1>
         <ContactForm />
       </Col>
-      <Col span={9}>
+      <Col sm={24} md={9}>
         <h1
           className="mask-h3"
           style={{ display: 'inline-block', position: 'relative' }}

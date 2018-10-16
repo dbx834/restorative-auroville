@@ -12,6 +12,7 @@ import sortBy from 'lodash/sortBy'
 import reverse from 'lodash/reverse'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import withSizes from 'react-sizes'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 
@@ -63,6 +64,8 @@ const pageStyles = pageStyle.toString()
 // ----------------------------------------------------------------------------
 /** OngoingInitiatives */
 const OngoingInitiatives = props => {
+  const { isMobile } = props
+
   return (
     <StandardPage className={pageStyles} seoData={seoData}>
       <h1 className="mask-h3">Ongoing Initiatives</h1>
@@ -72,7 +75,7 @@ const OngoingInitiatives = props => {
         understand how to build systems that respond to our unique and complex
         reality.
       </p>
-      <ProjectListing data={ongoingProjects} />
+      <ProjectListing data={ongoingProjects} isMobile={isMobile} />
     </StandardPage>
   )
 }
@@ -84,4 +87,9 @@ OngoingInitiatives.propTypes = {
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default OngoingInitiatives
+/** mapSizesToProps */
+const mapSizesToProps = ({ width }) => ({
+  isMobile: width <= 768,
+})
+
+export default withSizes(mapSizesToProps)(OngoingInitiatives)

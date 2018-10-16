@@ -102,12 +102,12 @@ class Block extends React.Component {
 
   /** standard renderer */
   render() {
-    const { data } = this.props
+    const { data, isMobile } = this.props
 
     return (
       <div className={blockStyleClass}>
         <StackGrid
-          columnWidth="49%"
+          columnWidth={isMobile ? '100%' : '49%'}
           duration={360}
           gutterWidth={20}
           gutterHeight={42}
