@@ -137,6 +137,17 @@ class MobileNav extends React.Component {
           }}
         >
           <Nav mode="inline" />
+          <div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          </div>
         </Drawer>
       </div>
     )

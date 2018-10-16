@@ -40,6 +40,8 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
 import Drawer from 'antd/lib/drawer'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/drawer/style/css'
 
+import { Type } from '@bodhi-project/typography'
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import seoHelper from '../methods/seoHelper'
 import StandardPage from '../components/StandardPage'
@@ -382,7 +384,7 @@ class Events extends React.Component {
           {fetchingData === true && <p>Fetching data…</p>}
           {fetchingData === false &&
             !isUndefined(eventData) && (
-              <Fragment>
+              <Type kit="dkc2ilk">
                 {treeParser(
                   eventData.markdownAst,
                   {
@@ -393,7 +395,7 @@ class Events extends React.Component {
                   },
                   {}
                 )}
-              </Fragment>
+              </Type>
             )}
           <div
             style={{
