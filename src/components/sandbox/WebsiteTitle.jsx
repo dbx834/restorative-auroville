@@ -35,6 +35,7 @@ const styleObject = css({
       flexBasis: 'auto',
       paddingLeft: 65,
       textIndent: '-9999em',
+      width: 210,
     },
 
     '& h2': {
