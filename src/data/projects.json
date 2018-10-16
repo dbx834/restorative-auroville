@@ -1,121 +1,114 @@
 [
   {
-    "route": "initiatives/cross-cultural-dialogue",
-    "humanDate": "2018",
-    "elapsed": "2 years ago",
-    "abstract":
+    "pageTitle": "Cross-Cultural Dialogue",
+    "nakedPageSlug": "initiatives/cross-cultural-dialogue",
+    "pageAbstract":
       "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
-    "title": "Cross-Cultural Dialogue",
     "cover": "/projects/ccd.jpg",
-    "date": "2016-09-16T00:00:00.000Z",
-    "ongoing": true,
-    "category": "2.RC"
+    "beginTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "ongoing": true
   },
   {
-    "route": "initiatives/magazine",
-    "humanDate": "2017-2018",
-    "elapsed": "2 years ago",
-    "abstract":
-      "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
-    "title": "Magazine",
+    "pageTitle": "Magazine",
+    "nakedPageSlug": "initiatives/magazine",
+    "pageAbstract":
+      "We are creating a magazine focusing on the experiences of Tamil Aurovilians, their journeys into Auroville, and their feelings of belonging and exclusion.",
     "cover":
       "https://images.unsplash.com/photo-1533153309598-39dd04d03af2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=762be954da945ab02dc032fa36850d9c&auto=format&fit=crop&w=1440&h=900&q=60",
-    "date": "2016-09-16T00:00:00.000Z",
-    "ongoing": true,
-    "category": "2.RC"
+    "beginTimestamp": 1483265319,
+    "endTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "ongoing": true
   },
   {
-    "route": "initiatives/restorative-circles-in-aikyam-school",
-    "humanDate": "2017-2018",
-    "elapsed": "2 years ago",
-    "abstract":
-      "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
-    "title": "Restorative Circles in Aikiyam School",
+    "pageTitle": "Restorative Circles in Aikiyam School",
+    "nakedPageSlug": "initiatives/restorative-circles-in-aikyam-school",
+    "pageAbstract": "Aikyam school initiative abstract.",
     "cover": "/projects/aikyam.jpg",
-    "date": "2016-09-16T00:00:00.000Z",
-    "ongoing": true,
-    "category": "2.RC"
+    "beginTimestamp": 1483265319,
+    "endTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "ongoing": true
   },
   {
-    "route": "initiatives/filimng-a-live-restorative-circle",
-    "humanDate": "2016-2018",
-    "elapsed": "2 years ago",
-    "abstract":
-      "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
-    "title": "Filming a live Restorative Circle",
+    "pageTitle": "Filming a live Restorative Circle",
+    "nakedPageSlug": "initiatives/filimng-a-live-restorative-circle",
+    "pageAbstract": "Filiming initiative abstract.",
     "cover":
       "https://images.unsplash.com/photo-1533153405494-6cf1f6354349?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2852890a231e91ae67186703503c9736&auto=format&fit=crop&w=1440&h=900&q=60",
-    "date": "2016-09-16T00:00:00.000Z",
-    "ongoing": true,
-    "category": "2.RC"
+    "beginTimestamp": 1451642919,
+    "endTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "ongoing": true
   },
   {
-    "route": "initiatives/building-an-rc-yurt",
-    "humanDate": "2018",
-    "elapsed": "2 years ago",
-    "abstract":
-      "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
-    "title": "Building an RC Yurt",
+    "pageTitle": "Building an RC Yurt",
+    "nakedPageSlug": "initiatives/building-an-rc-yurt",
+    "pageAbstract":
+      "With our work growing, it’s high-time that we build a physical structure for our RC gatherings. We’re hoping to raise Rs.5 lakhs, in order to set up a dismountable yurt in Centre Field.",
     "cover": "/projects/yurt.jpg",
-    "date": "2016-09-16T00:00:00.000Z",
-    "ongoing": true,
-    "category": "2.RC"
+    "beginTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "ongoing": true
   },
   {
-    "route": "initiatives/women-for-justice",
-    "humanDate": "2018",
-    "elapsed": "2 years ago",
-    "abstract":
+    "pageTitle": "Women for Justice",
+    "nakedPageSlug": "initiatives/women-for-justice",
+    "pageAbstract":
       "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
-    "title": "Women for Justice",
     "cover": "/projects/women.jpg",
-    "date": "2016-09-16T00:00:00.000Z",
-    "ongoing": true,
-    "category": "2.RC"
+    "beginTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "ongoing": true
   },
   {
-    "route": "initiatives/walk-of-hope-in-auroville-and-the-bioregion",
-    "title": "Walk of Hope in Auroville and the Bioregion",
-    "subTitle":
+    "pageTitle": "Walk of Hope in Auroville and the Bioregion",
+    "nakedPageSlug": "initiatives/walk-of-hope-in-auroville-and-the-bioregion",
+    "pageAbstract":
       "The Walk was led by Sri M, an eminent spiritual guide, educationist and social activist. Sri M became known for his Walk of Hope from Kanyakumari to Kashmir, over 7000 km through India in 2015-16.",
     "cover": "/projects/woh.jpg",
-    "ongoing": false,
-    "date": "2018"
+    "beginTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "ongoing": false
   },
   {
-    "route": "initiatives/exploring-justice-and-rc-with-the-auroville-council",
-    "title": "Exploring Justice and RC with the Auroville Council",
-    "subTitle":
-      "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
+    "pageTitle": "Exploring Justice and RC with the Auroville Council",
+    "nakedPageSlug":
+      "initiatives/exploring-justice-and-rc-with-the-auroville-council",
+    "pageAbstract": "AV Council initiative abstract.",
     "cover": "/projects/avCouncil.jpg",
-    "ongoing": false,
-    "date": "2018"
+    "beginTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "ongoing": false
   },
   {
-    "route": "initiatives/restorative-dialogue-across-cultures",
-    "title": "Restorative Dialogue across Cultures",
-    "subTitle":
-      "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
+    "pageTitle": "Restorative Dialogue across Cultures",
+    "nakedPageSlug": "initiatives/restorative-dialogue-across-cultures",
+    "pageAbstract": "Restorative Dialogue initiative abstract.",
     "cover": "/projects/restorativeDialogueAcrossCultures.jpg",
-    "ongoing": false,
-    "date": "2016"
+    "beginTimestamp": 1451642919,
+    "category": "Restorative Circles",
+    "ongoing": false
   },
   {
-    "route": "initiatives/filmfest-restoring-connection",
-    "title": "\"Restoring Connection\" FilmFest",
-    "subTitle":
-      "Restorative Auroville hosted a 6-day Film Festival on the theme of “Restoring Connection” in October 2016 as part of our larger Restorative Circles project in Auroville, where we are working to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values",
+    "pageTitle": "\"Restoring Connection\" FilmFest",
+    "nakedPageSlug": "initiatives/filmfest-restoring-connection",
+    "pageAbstract":
+      "Restorative Auroville hosted a 6-day Film Festival on the theme of “Restoring Connection” in October 2016 as part of our larger Restorative Circles project in Auroville, where we are working to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values.",
     "cover": "/projects/filmFest.jpg",
-    "ongoing": false,
-    "date": "2016"
+    "beginTimestamp": 1451642919,
+    "category": "Restorative Circles",
+    "ongoing": false
   },
   {
-    "route": "initiatives/restorative-circles-in-the-learning-community-school",
-    "title": "Restorative Circles in The Learning Community School",
-    "subTitle":
-      "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
+    "pageTitle": "Restorative Circles in The Learning Community School",
+    "nakedPageSlug":
+      "initiatives/restorative-circles-in-the-learning-community-school",
+    "pageAbstract": "TLC abstract.",
     "cover": "/projects/tlc.jpg",
-    "ongoing": false,
-    "date": "2015"
+    "beginTimestamp": 1451642919,
+    "category": "Restorative Circles",
+    "ongoing": false
   }
 ]

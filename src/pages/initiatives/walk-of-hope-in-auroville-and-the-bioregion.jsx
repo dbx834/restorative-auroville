@@ -49,7 +49,7 @@ const photos = [
 // ----------------------------------------------------------------------------
 const pageData = {
   pageTitle: 'Walk of Hope in Auroville and the Bioregion',
-  nakedPageSlug: 'walk-of-hope-in-auroville-and-the-bioregion',
+  nakedPageSlug: 'initiatives/walk-of-hope-in-auroville-and-the-bioregion',
   pageAbstract: 'Page abstract.',
 }
 

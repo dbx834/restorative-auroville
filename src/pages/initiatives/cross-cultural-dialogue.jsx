@@ -25,7 +25,7 @@ import seoHelper from '../../methods/seoHelper'
 
 const pageData = {
   pageTitle: 'Cross Cultural Dialogue',
-  nakedPageSlug: 'cross-cultural-dialogue',
+  nakedPageSlug: 'initiatives/cross-cultural-dialogue',
   pageAbstract: 'Page abstract.',
 }
 

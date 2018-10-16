@@ -4,7 +4,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 import PropTypes from 'prop-types'
-import { css } from 'glamor'
+// import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import map from 'lodash/map'
@@ -17,8 +17,6 @@ import { Link } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import OutLink from '@bodhi-project/components/lib/OutLink'
-import Container from '@bodhi-project/components/lib/Container'
-import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Menu from 'antd/lib/menu'

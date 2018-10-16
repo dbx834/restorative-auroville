@@ -22,7 +22,7 @@ import seoHelper from '../../methods/seoHelper'
 
 const pageData = {
   pageTitle: 'Restorative Dialogue across Cultures',
-  nakedPageSlug: 'restorative-dialogue-across-cultures',
+  nakedPageSlug: 'initiatives/restorative-dialogue-across-cultures',
   pageAbstract: 'Page abstract.',
 }
 

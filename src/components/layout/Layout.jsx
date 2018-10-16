@@ -11,7 +11,6 @@ import moment from 'moment'
 import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { Link } from 'gatsby'
 import { Type } from '@bodhi-project/typography'
 import {
   InitializeMeta,
@@ -20,7 +19,6 @@ import {
   OrganisationSchema,
 } from '@bodhi-project/seo'
 import { StickyContainer, Sticky } from 'react-sticky'
-import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import ResponsiveToggle from '@bodhi-project/components/lib/ResponsiveToggle'
@@ -30,14 +28,12 @@ import Container from '@bodhi-project/components/lib/Container'
 import '../../styles/index.less'
 import indexImage from '../../assets/launch.jpg'
 import data from '../../data/website.json'
-import menu from '../../data/menu.json'
 
 import WebsiteTitle from '../sandbox/WebsiteTitle'
-import WebsiteMenu from '../sandbox/WebsiteMenu'
-
-import Footer from './Footer'
 import MobileNav from './MobileNav'
 import DesktopNav from './DesktopNav'
+import DesktopFooter from './DesktopFooter'
+import MobileFooter from './MobileFooter'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 
@@ -155,7 +151,7 @@ class Layout extends React.Component {
                 style={{ paddingLeft: 6, paddingRight: 6 }}
               >
                 {children}
-                <Footer />
+                <MobileFooter />
               </Container>
             </div>
           </div>
@@ -165,10 +161,7 @@ class Layout extends React.Component {
             <StickyContainer>
               <header>
                 <Container goldenMajor block noFade>
-                  <WebsiteTitle
-                    title="Starter"
-                    subTitle="An opionated GatsbyJS Starter"
-                  />
+                  <WebsiteTitle />
                 </Container>
                 <Sticky topOffset={100}>
                   {({ style, isSticky }) => (
@@ -183,7 +176,7 @@ class Layout extends React.Component {
                   {children}
                 </Container>
                 <Container noFade goldenMajor block>
-                  <Footer />
+                  <DesktopFooter />
                 </Container>
               </div>
             </StickyContainer>

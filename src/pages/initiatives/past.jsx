@@ -5,12 +5,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'glamor'
+import moment from 'moment'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import filter from 'lodash/filter'
 import sortBy from 'lodash/sortBy'
 import reverse from 'lodash/reverse'
 import map from 'lodash/map'
+import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { Link } from 'gatsby'
@@ -28,12 +30,15 @@ import projects from '../../data/projects.json'
 // const { Fragment } = React;
 
 const pastProjects = reverse(
-  sortBy(filter(projects, ['ongoing', false]), [o => o.publishedTimestamp])
+  sortBy(filter(projects, ['ongoing', false]), [
+    o => o.beginTimestamp,
+    o => o.endTimestamp,
+  ])
 )
 
 const pageData = {
   pageTitle: 'Past Initiatives',
-  nakedPageSlug: 'past',
+  nakedPageSlug: 'initiatives/past',
   pageAbstract: 'Page abstract.',
 }
 
@@ -106,15 +111,26 @@ const PastInitiatives = props => {
       <h1 className="mask-h3">Past Initiatives</h1>
       <div>
         {map(pastProjects, project => {
-          const { title, subTitle, cover, date, route } = project
+          const {
+            pageTitle,
+            pageAbstract,
+            cover,
+            beginTimestamp,
+            endTimestamp,
+            nakedPageSlug,
+          } = project
           return (
-            <Link className="project" to={route}>
+            <Link className="project" to={`/${nakedPageSlug}`}>
               <div>
                 <p className="date">
-                  <span>{date}</span>
+                  <span>
+                    {moment.unix(beginTimestamp).format('YYYY')}
+                    {!isUndefined(endTimestamp) &&
+                      ` – ${moment.unix(endTimestamp).format('YYYY')}`}
+                  </span>
                 </p>
-                <h3 className="title mask-h4">{title}</h3>
-                <p className="subTitle">{subTitle}</p>
+                <h3 className="title mask-h4">{pageTitle}</h3>
+                <p className="subTitle">{pageAbstract}</p>
               </div>
               <div>
                 <Image
@@ -127,7 +143,7 @@ const PastInitiatives = props => {
                     border: 0,
                     background: 'transparent',
                   }}
-                  alt={`${title} – ${subTitle}`}
+                  alt={`${pageTitle} – ${pageAbstract}`}
                 />
               </div>
             </Link>

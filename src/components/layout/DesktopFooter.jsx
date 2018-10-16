@@ -25,16 +25,16 @@ import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Row from 'antd/lib/row'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.6.5/row/style/css'
 
 import Col from 'antd/lib/col'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.6.5/col/style/css'
 
 import Icon from 'antd/lib/icon'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.6.5/icon/style/css'
 
 import Button from 'antd/lib/button'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.6.5/button/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import quotes from '../../data/quotes.json'
@@ -114,10 +114,10 @@ const Footer = props => {
         alt="Restorative Auroville"
       />
       <SemanticFooter className={footerStyles}>
-        <h1>More Information</h1>
+        <h1 className="mask-h3">More Information</h1>
         <div style={{ borderBottom: '1px dotted #00006F', paddingBottom: 24 }}>
           <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
-            <Col sm={24} md={8} style={{ borderRight: '1px dotted #00006F' }}>
+            <Col span={8} style={{ borderRight: '1px dotted #00006F' }}>
               <div
                 style={{
                   borderBottom: '1px dotted #00006F',
@@ -146,7 +146,7 @@ const Footer = props => {
                 </div>
               </div>
             </Col>
-            <Col sm={24} md={16}>
+            <Col span={16}>
               <div
                 style={{
                   borderBottom: '1px dotted #00006F',
@@ -154,7 +154,7 @@ const Footer = props => {
                 }}
               >
                 <Row gutter={{ xs: 12, sm: 12, md: 12 }}>
-                  <Col sm={8} md={8}>
+                  <Col span={8}>
                     <h3 className="mask-h6">About Us</h3>
                     <ul
                       className="mask-p"
@@ -168,7 +168,7 @@ const Footer = props => {
                       <li>Team</li>
                     </ul>
                   </Col>
-                  <Col sm={8} md={8}>
+                  <Col span={8}>
                     <h3 className="mask-h6">Our Work</h3>
                     <ul
                       className="mask-p"
@@ -184,7 +184,7 @@ const Footer = props => {
                       <li>Gallery</li>
                     </ul>
                   </Col>
-                  <Col sm={8} md={8}>
+                  <Col span={8}>
                     <h3 className="mask-h6">External Links</h3>
                     <ul
                       className="mask-p"
@@ -331,80 +331,75 @@ const Footer = props => {
             </Col>
           </Row>
         </div>
-        <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
-          <Col sm={0} md={24}>
-            <div
+        <div
+          style={{
+            paddingTop: 24,
+            display: 'flex',
+            borderBottom: '1px dotted #00006F',
+            paddingBottom: 24,
+          }}
+        >
+          <div
+            style={{
+              flexGrow: 1,
+              paddingRight: 12,
+              borderRight: '1px dotted #00006F',
+            }}
+          >
+            <h3 className="mask-h6">Project Highlight</h3>
+            <Image
+              src={nvcX62}
+              rawWidth={1440}
+              rawHeight={900}
               style={{
-                paddingTop: 24,
-                display: 'flex',
-                borderBottom: '1px dotted #00006F',
-                paddingBottom: 24,
+                border: 0,
+                background: 'transparent',
               }}
-            >
-              <div
-                style={{
-                  flexGrow: 1,
-                  paddingRight: 12,
-                  borderRight: '1px dotted #00006F',
-                }}
-              >
-                <h3 className="mask-h6">Project Highlight</h3>
-                <Image
-                  src={nvcX62}
-                  rawWidth={1440}
-                  rawHeight={900}
-                  style={{
-                    border: 0,
-                    background: 'transparent',
-                  }}
+            />
+            <p>
+              <strong>Cross-Cultural Dialogue</strong>
+              <br />
+              2018
+              <br />
+              We want to explore and understand this question: Are we divided in
+              Auroville, as local Tamil Aurovilians and non-local Aurovilians?
+            </p>
+            <div className="mask-p" style={{ marginBottom: 0 }}>
+              <Button block>Read More...</Button>
+            </div>
+          </div>
+          <div
+            style={{
+              flexGrow: 1,
+              maxWidth: 340,
+              minWidth: 340,
+              paddingLeft: 12,
+            }}
+          >
+            <h3 className="mask-h6">Find Us On Facebook</h3>
+            <div style={{ maxHeight: 500, overflow: 'hidden' }}>
+              <FacebookProvider appId="218604115574634">
+                <FBPage
+                  href="https://www.facebook.com/RestorativeAuroville"
+                  tabs="timeline,events,messages"
                 />
-                <p>
-                  <strong>Cross-Cultural Dialogue</strong>
-                  <br />
-                  2018
-                  <br />
-                  We want to explore and understand this question: Are we
-                  divided in Auroville, as local Tamil Aurovilians and non-local
-                  Aurovilians?
-                </p>
-                <div className="mask-p" style={{ marginBottom: 0 }}>
-                  <Button block>Read More...</Button>
-                </div>
-              </div>
-              <div
-                style={{
-                  flexGrow: 1,
-                  maxWidth: 340,
-                  minWidth: 340,
-                  paddingLeft: 12,
-                }}
-              >
-                <h3 className="mask-h6">Find Us On Facebook</h3>
-                <div style={{ maxHeight: 500, overflow: 'hidden' }}>
-                  <FacebookProvider appId="218604115574634">
-                    <FBPage
-                      href="https://www.facebook.com/RestorativeAuroville"
-                      tabs="timeline,events,messages"
-                    />
-                  </FacebookProvider>
-                </div>
-              </div>
+              </FacebookProvider>
             </div>
-            <div
-              style={{
-                paddingTop: 24,
-                borderBottom: '1px dotted #00006F',
-                paddingBottom: 24,
-              }}
-            >
-              <h3 className="mask-h6">Leave a comment…</h3>
-              <Disqus.DiscussionEmbed
-                shortname={disqusShortname}
-                config={disqusConfig}
-              />
-            </div>
-          </Col>
-        </Row>
+          </div>
+        </div>
+        <div
+          style={{
+            paddingTop: 24,
+            borderBottom: '1px dotted #00006F',
+            paddingBottom: 24,
+          }}
+        >
+          <h3 className="mask-h6">Leave a comment…</h3>
+          <Disqus.DiscussionEmbed
+            shortname={disqusShortname}
+            config={disqusConfig}
+          />
+        </div>
         <div
           style={{
             paddingTop: 24,

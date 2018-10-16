@@ -37,7 +37,7 @@ const photos = [
 
 const pageData = {
   pageTitle: 'FilmFest: Restoring Connection',
-  nakedPageSlug: 'filmfest-restoring-connection',
+  nakedPageSlug: 'initiatives/filmfest-restoring-connection',
   pageAbstract: 'Page abstract.',
 }
 

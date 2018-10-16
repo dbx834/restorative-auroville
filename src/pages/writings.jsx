@@ -13,7 +13,6 @@ import reverse from 'lodash/reverse'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
-import { Link } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 // import Image from '@bodhi-project/components/lib/Image'
@@ -61,25 +60,13 @@ const pageStyle = pageStyles.toString()
 /** Page */
 const Page = props => {
   const { isMobile } = props
-  const data = {
-    cards: sorted,
-    components: {
-      localLink: Link,
-    },
-    conf: {
-      image: {
-        rawCoverWidth: 1440,
-        rawCoverHeight: 900,
-      },
-    },
-  }
 
   return (
     <StandardPage className={pageStyle} seoData={seoData}>
       <h1 className="mask-h3" style={{ marginBottom: 10 }}>
         Articles
       </h1>
-      {!isMobile ? <BlogListing data={data} /> : <p>Mobile listing</p>}
+      {!isMobile ? <BlogListing data={sorted} /> : <p>Mobile listing</p>}
     </StandardPage>
   )
 }

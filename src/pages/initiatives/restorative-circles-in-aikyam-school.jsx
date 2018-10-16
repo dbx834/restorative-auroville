@@ -22,7 +22,7 @@ import seoHelper from '../../methods/seoHelper'
 
 const pageData = {
   pageTitle: 'Restorative Circles in Aikyam School',
-  nakedPageSlug: 'restorative-circles-in-aikyam-school',
+  nakedPageSlug: 'initiatives/restorative-circles-in-aikyam-school',
   pageAbstract: 'Page abstract.',
 }
 

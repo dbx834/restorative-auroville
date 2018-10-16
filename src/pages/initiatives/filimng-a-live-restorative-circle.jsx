@@ -24,7 +24,7 @@ import seoHelper from '../../methods/seoHelper'
 
 const pageData = {
   pageTitle: 'Filming a Live Restorative Circle',
-  nakedPageSlug: 'filimng-a-live-restorative-circle',
+  nakedPageSlug: 'initiatives/filimng-a-live-restorative-circle',
   pageAbstract: 'Page abstract.',
 }
 

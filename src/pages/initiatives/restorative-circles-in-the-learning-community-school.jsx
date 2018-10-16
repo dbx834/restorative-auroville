@@ -22,7 +22,8 @@ import seoHelper from '../../methods/seoHelper'
 
 const pageData = {
   pageTitle: 'Restorative Circles in The Learning Community School',
-  nakedPageSlug: 'restorative-circles-in-the-learning-community-school',
+  nakedPageSlug:
+    'initiatives/restorative-circles-in-the-learning-community-school',
   pageAbstract: 'Page abstract.',
 }
 

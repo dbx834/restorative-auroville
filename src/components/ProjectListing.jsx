@@ -8,9 +8,8 @@ import { css } from 'glamor'
 import moment from 'moment'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-import filter from 'lodash/filter'
-import uniq from 'lodash/uniq'
 import map from 'lodash/map'
+import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { Link } from 'gatsby'
@@ -21,17 +20,12 @@ import { Header, Article } from '@bodhi-project/semantic-webflow'
 import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-import Tag from 'antd/lib/tag'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
-
 import Card from 'antd/lib/card'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/card/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment } = React
-const { CheckableTag } = Tag
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -109,70 +103,26 @@ class Block extends React.Component {
   /** standard renderer */
   render() {
     const { data } = this.props
-    const { filter: filterByAuthor } = this.state
-    const uniqueSortedAuthors = uniq(map(data, 'author')).sort((a, b) => {
-      if (a < b) return -1
-      if (a > b) return 1
-      return 0
-    })
-    let filteredData = data
-    if (filterByAuthor !== 'all') {
-      filteredData = filter(data, ['author', filterByAuthor])
-    }
 
     return (
       <div className={blockStyleClass}>
-        {filterByAuthor === 'all' ? (
-          <CheckableTag
-            checked
-            onClick={() => this.applyFilter('all')}
-            style={{ marginBottom: 10 }}
-          >
-            All Posts
-          </CheckableTag>
-        ) : (
-          <Tag
-            onClick={() => this.applyFilter('all')}
-            style={{ marginBottom: 10 }}
-          >
-            All Posts
-          </Tag>
-        )}
-        {map(uniqueSortedAuthors, author => (
-          <Fragment key={author}>
-            {filterByAuthor === author ? (
-              <CheckableTag
-                checked
-                onClick={() => this.applyFilter(author)}
-                style={{ marginBottom: 10 }}
-              >
-                {author}
-              </CheckableTag>
-            ) : (
-              <Tag
-                onClick={() => this.applyFilter(author)}
-                style={{ marginBottom: 10 }}
-              >
-                {author}
-              </Tag>
-            )}
-          </Fragment>
-        ))}
-
         <StackGrid
-          columnWidth="33%"
+          columnWidth="49%"
           duration={360}
           gutterWidth={20}
           gutterHeight={42}
           monitorImagesLoaded={true}
         >
-          {map(filteredData, (card, index) => {
+          {map(data, (card, index) => {
             const {
               pageTitle,
               nakedPageSlug,
               pageAbstract,
               cover,
-              publishedTimestamp,
+              beginTimestamp,
+              endTimestamp,
+              // category,
+              // author,
             } = card
 
             return (
@@ -185,9 +135,9 @@ class Block extends React.Component {
                     <Article>
                       <Header>
                         <span className="date">
-                          {moment
-                            .unix(publishedTimestamp)
-                            .format('ddd, MMMM D, YYYY')}
+                          {moment.unix(beginTimestamp).format('YYYY')}
+                          {!isUndefined(endTimestamp) &&
+                            ` – ${moment.unix(endTimestamp).format('YYYY')}`}
                         </span>
                         <h1 className="mask-h5">{pageTitle}</h1>
                         <p style={{ marginBottom: 0 }}>{pageAbstract}</p>

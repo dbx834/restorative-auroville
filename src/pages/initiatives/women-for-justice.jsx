@@ -26,8 +26,9 @@ import flyer from '../../assets/women-for-justice-flyer.jpg'
 
 const pageData = {
   pageTitle: 'Women for Justice',
-  nakedPageSlug: 'women-for-justice',
-  pageAbstract: 'Page abstract.',
+  nakedPageSlug: 'initiatives/women-for-justice',
+  pageAbstract:
+    'A Story About The Power of Solidarity (53 minutes) - Violence against women is omnipresent and nearly all women, independent of class, caste and religion are affected. Because police and justice hardly give any protection or aid, women have organized to fight against this violence and injustice.',
 }
 
 const seoData = seoHelper(pageData)

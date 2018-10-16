@@ -26,7 +26,8 @@ import seoHelper from '../../methods/seoHelper'
 
 const pageData = {
   pageTitle: 'Exploring Justice and RC with the Auroville Council',
-  nakedPageSlug: 'exploring-justice-and-rc-with-the-auroville-council',
+  nakedPageSlug:
+    'initiatives/exploring-justice-and-rc-with-the-auroville-council',
   pageAbstract: 'Page abstract.',
 }
 

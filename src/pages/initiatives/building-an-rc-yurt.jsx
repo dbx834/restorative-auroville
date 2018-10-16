@@ -37,8 +37,9 @@ const photos = [
 
 const pageData = {
   pageTitle: 'Building an RC Yurt',
-  nakedPageSlug: 'building-an-rc-yurt',
-  pageAbstract: 'Page abstract.',
+  nakedPageSlug: 'initiatives/building-an-rc-yurt',
+  pageAbstract:
+    'With our work growing, it’s high-time that we build a physical structure for our RC gatherings. We’re hoping to raise Rs.5 lakhs, in order to set up a dismountable yurt in Centre Field.',
 }
 
 const seoData = seoHelper(pageData)
@@ -50,7 +51,7 @@ const seoData = seoHelper(pageData)
 const Initiative = props => {
   return (
     <StandardPage className="" seoData={seoData}>
-      <h1 className="mask-h3">Building a Yurt</h1>
+      <h1 className="mask-h3">Building an RC Yurt</h1>
       <p>
         With our work growing, it’s high-time that we build a physical structure
         for our RC gatherings. We’re hoping to raise Rs.5 lakhs, in order to set
