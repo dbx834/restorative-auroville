@@ -84,3 +84,12 @@ export const validateName = (rule, value, callback) => {
     }
   }
 }
+
+/** Check email is valid */
+export const validateExperience = (rule, value, callback) => {
+  if (isEmpty(value)) {
+    callback('Please fill in this detail.')
+  } else {
+    callback()
+  }
+}

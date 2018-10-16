@@ -38,6 +38,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: `${__dirname}/content/`,
+      },
+    },
+    'gatsby-transformer-remark',
+    {
       resolve: `gatsby-source-mongodb`, // https://www.gatsbyjs.org/packages/gatsby-source-mongodb/?=gatsby-source-mongodb
       options: {
         dbName: data.db.dbName,

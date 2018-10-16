@@ -25,16 +25,16 @@ import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Row from 'antd/lib/row'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.6.5/row/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 
 import Col from 'antd/lib/col'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.6.5/col/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 import Icon from 'antd/lib/icon'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.6.5/icon/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 
 import Button from 'antd/lib/button'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.6.5/button/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import quotes from '../../data/quotes.json'
