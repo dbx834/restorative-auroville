@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------------- Imports
 // ------------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
-import React from "react";
+import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 // import map from "lodash/map";
@@ -21,7 +21,7 @@ import React from "react";
 /** Person */
 const Person = () => (
   <div>
-    <h1 className="mask-h4">Pranjal</h1>
+    <h1 className="mask-h4">Pranjal Tiwari</h1>
     <p>
       Originally from the north of India, I grew up in Pondicherry at the Sri
       Aurobindo Ashram School. I graduated in Political Science and
@@ -44,11 +44,11 @@ const Person = () => (
       forward to greater understanding and lasting harmony.
     </p>
   </div>
-);
+)
 
-Person.propTypes = {};
+Person.propTypes = {}
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default Person;
+export default Person

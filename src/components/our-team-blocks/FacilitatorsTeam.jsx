@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------------- Imports
 // ------------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
-import React from "react";
+import React from 'react'
 // import PropTypes from "prop-types";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
@@ -23,33 +23,33 @@ import React from "react";
 // import henrikeSquare from "../../assets/henrikeSquare.jpg";
 // import pranjalSquare from "../../assets/pranjalSquare.jpg";
 
-import Henrike from "../people/Henrike";
-import Janet from "../people/Janet";
-import Kati from "../people/Kati";
-import Laura from "../people/Laura";
-import Pranjal from "../people/Pranjal";
+import Henrike from '../people/Henrike'
+import Janet from '../people/Janet'
+import Kati from '../people/Kati'
+import Laura from '../people/Laura'
+import Pranjal from '../people/Pranjal'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 /** toDegrees */
-const toDegrees = angle => angle * (Math.PI / 180);
+const toDegrees = angle => angle * (Math.PI / 180)
 
 /** renderSwitch */
 const renderSwitch = person => {
   switch (person) {
-    case "henrike":
-      return <Henrike />;
-    case "janet":
-      return <Janet />;
-    case "kati":
-      return <Kati />;
-    case "laura":
-      return <Laura />;
-    case "pranjal":
-      return <Pranjal />;
+    case 'henrike':
+      return <Henrike />
+    case 'janet':
+      return <Janet />
+    case 'kati':
+      return <Kati />
+    case 'laura':
+      return <Laura />
+    case 'pranjal':
+      return <Pranjal />
     default:
-      return <br />;
+      return <br />
   }
-};
+}
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -58,13 +58,13 @@ const renderSwitch = person => {
 class FacilitatorsTeam extends React.Component {
   /** standard constructor */
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
-      person: "laura",
-    };
+      person: 'laura',
+    }
 
-    this.showPerson = this.showPerson.bind(this);
+    this.showPerson = this.showPerson.bind(this)
   }
 
   /** standard constructor */
@@ -89,12 +89,12 @@ class FacilitatorsTeam extends React.Component {
 
   /** showPerson */
   showPerson(person) {
-    this.setState({ person });
+    this.setState({ person })
   }
 
   /** standard renderer */
   render() {
-    const { person } = this.state;
+    const { person } = this.state
 
     return (
       <div>
@@ -106,13 +106,13 @@ class FacilitatorsTeam extends React.Component {
           this was the beginning of a new passion and career...
         </p>
       </div>
-    );
+    )
   }
 }
 
-FacilitatorsTeam.propTypes = {};
+FacilitatorsTeam.propTypes = {}
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default FacilitatorsTeam;
+export default FacilitatorsTeam

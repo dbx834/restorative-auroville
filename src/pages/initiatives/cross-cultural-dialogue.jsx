@@ -2,52 +2,34 @@
 // ---------------------------------------------------------------------- Imports
 // ------------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
-import React from "react";
-import PropTypes from "prop-types";
-import { css } from "glamor";
+import React from 'react'
+import PropTypes from 'prop-types'
+// import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 // import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// import Link from "gatsby-link";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 // import Image from "@bodhi-project/components/lib/Image";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-// import Tabs from "antd/lib/tabs";
-// import "antd/lib/tabs/style/css";
-
-import StandardPage from "../../components/StandardPage";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import seoHelper from "../../helpers/seoHelper";
+import StandardPage from '../../components/StandardPage'
+import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
 
-// ----------------------------------------------------------------------------
-// ----------------------------------------------------------------------- Data
-// ----------------------------------------------------------------------------
-
-// ----------------------------------------------------------------------------
-// ------------------------------------------------------------------------ SEO
-// ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "Cross Cultural Dialogue",
-  nakedPageSlug: "cross-cultural-dialogue",
-  pageAbstract: "Page abstract.",
-};
+  pageTitle: 'Cross Cultural Dialogue',
+  nakedPageSlug: 'cross-cultural-dialogue',
+  pageAbstract: 'Page abstract.',
+}
 
-const seoData = seoHelper(pageData);
-
-// ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Styles
-// ----------------------------------------------------------------------------
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const pageStyle = css({});
-const pageStyles = pageStyle.toString();
+const seoData = seoHelper(pageData)
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -55,18 +37,18 @@ const pageStyles = pageStyle.toString();
 /** Initiative */
 const Initiative = props => {
   return (
-    <StandardPage className={pageStyles} seoData={seoData}>
+    <StandardPage className="" seoData={seoData}>
       <h1 className="mask-h3">Cross Cultural Dialogue</h1>
       <p>...</p>
     </StandardPage>
-  );
-};
+  )
+}
 
 Initiative.propTypes = {
   data: PropTypes.object,
-};
+}
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default Initiative;
+export default Initiative

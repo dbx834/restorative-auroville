@@ -2,71 +2,42 @@
 // -------------------------------------------------------------------- Imports
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
-import React from "react";
-import PropTypes from "prop-types";
-import { css } from "glamor";
+import React from 'react'
+import PropTypes from 'prop-types'
+// import { css } from "glamor";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-import map from "lodash/map";
-import isUndefined from "lodash/isUndefined";
-import startsWith from "lodash/startsWith";
-import split from "lodash/split";
+// import map from "lodash/map";
+// import isUndefined from "lodash/isUndefined";
+// import startsWith from "lodash/startsWith";
+// import split from "lodash/split";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Drawer from "antd/lib/drawer";
-import "antd/lib/drawer/style/css";
+import Drawer from 'antd/lib/drawer'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/drawer/style/css'
 
-import Button from "antd/lib/button";
-import "antd/lib/button/style/css";
+import Button from 'antd/lib/button'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
 
-import Link from "gatsby-link";
-import OutLink from "@bodhi-project/components/lib/OutLink";
-import Image from "@bodhi-project/components/lib/Image";
-import { Elements } from "@bodhi-project/typography";
+import Icon from 'antd/lib/icon'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
+
+import { Link } from 'gatsby'
+// import OutLink from "@bodhi-project/components/lib/OutLink";
+import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import logo from "../../assets/logoColor.png";
+import logo from '../../assets/logoColor.png'
+import wavesTop from '../../assets/wavesTop.png'
+
+import Nav from './Nav'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment } = React;
-const { Ul } = Elements;
+const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Desktop
-// const mobileNavStyles = css({
-//   height: "inherit",
-//   padding: "0em",
-
-//   "& nav": {
-//     "& ul": {
-//       listStyle: "none",
-//       padding: 0,
-
-//       "& ul": {
-//         listStyle: "none",
-//         paddingLeft: 20,
-//         marginBottom: 15,
-//       },
-
-//       "& li": {
-//         marginBottom: 2,
-//       },
-
-//       "& li.header": {
-//         "& span": {
-//           fontWeight: 700,
-//         },
-
-//         ":not(:first-child)": {
-//           marginTop: 25,
-//         },
-//       },
-//     },
-//   },
-// });
-// const mobileNavStylesClass = mobileNavStyles.toString();
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -75,81 +46,107 @@ const { Ul } = Elements;
 class MobileNav extends React.Component {
   /** standard constructor */
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       visible: false,
-    };
+    }
 
-    this.showDrawer = this.showDrawer.bind(this);
-    this.onClose = this.onClose.bind(this);
+    this.showDrawer = this.showDrawer.bind(this)
+    this.onClose = this.onClose.bind(this)
   }
 
   /** onClose */
   onClose() {
     this.setState({
       visible: false,
-    });
+    })
   }
 
   /** showDrawer */
   showDrawer() {
     this.setState({
       visible: true,
-    });
+    })
   }
 
   /** standard renderer */
   render() {
-    console.log(this.state);
+    console.log(this.state)
 
     return (
       <div id="mobile-nav">
-        <div style={{ display: "flex" }}>
+        <div
+          style={{
+            display: 'flex',
+            paddingTop: 20,
+            paddingBottom: 20,
+            paddingLeft: 10,
+            paddingRight: 10,
+            justifyContent: 'space-between',
+          }}
+        >
           <Link
             to="/"
-            style={{ display: "block", border: "unset", height: 100 }}
+            style={{
+              display: 'block',
+              border: 'unset',
+            }}
           >
             <Image
               src={logo}
               rawWidth={2042}
               rawHeight={582}
               style={{
-                display: "block",
+                display: 'block',
                 height: 60,
-                width: "auto",
+                width: 'auto',
                 border: 0,
-                background: "transparent",
-                // marginBottom: 10,
-                // marginTop: 30,
-                float: "left",
+                background: 'transparent',
+                float: 'left',
               }}
               loader="gradient"
               alt="NVC India"
             />
           </Link>
-          <Button type="primary" onClick={this.showDrawer}>
-            Open
-          </Button>
+          <div style={{ paddingTop: 14 }}>
+            <Button type="primary" onClick={this.showDrawer}>
+              <Icon type="menu-fold" theme="outlined" />
+            </Button>
+          </div>
         </div>
+        <Image
+          src={wavesTop}
+          style={{
+            height: 30,
+            width: '100%',
+            border: 0,
+            background: 'transparent',
+            marginBottom: 0,
+          }}
+          alt="Restorative Auroville"
+        />
         <Drawer
-          title="Basic Drawer"
+          title="Restorative Auroville"
           placement="right"
           closable={false}
           onClose={this.onClose}
           visible={this.state.visible}
+          style={{
+            padding: 0,
+          }}
         >
-          {this.props.children}
+          <Nav mode="inline" />
         </Drawer>
       </div>
-    );
+    )
   }
 }
 
 MobileNav.propTypes = {
   location: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   menu: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-};
+}
 
 // --------------------------------------------------------------------- Export
-export default MobileNav;
+export default MobileNav

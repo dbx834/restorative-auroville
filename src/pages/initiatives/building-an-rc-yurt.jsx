@@ -2,65 +2,46 @@
 // ---------------------------------------------------------------------- Imports
 // ------------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
-import React from "react";
-import PropTypes from "prop-types";
-import { css } from "glamor";
+import React from 'react'
+import PropTypes from 'prop-types'
+// import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// import Link from "gatsby-link";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import OutLink from "@bodhi-project/components/lib/OutLink";
-import Images from "@bodhi-project/components/lib/Images";
+import OutLink from '@bodhi-project/components/lib/OutLink'
+import Images from '@bodhi-project/components/lib/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-// import Tabs from "antd/lib/tabs";
-// import "antd/lib/tabs/style/css";
-
-import StandardPage from "../../components/StandardPage";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import seoHelper from "../../helpers/seoHelper";
+import StandardPage from '../../components/StandardPage'
+import seoHelper from '../../methods/seoHelper'
 
-import yurt4 from "../../assets/yurt/yurt4.jpeg";
-import yurt2 from "../../assets/yurt/yurt2.jpeg";
-import yurt3 from "../../assets/yurt/yurt3.jpeg";
-import yurt5 from "../../assets/yurt/yurt5.jpeg";
+import yurt4 from '../../assets/yurt/yurt4.jpeg'
+import yurt2 from '../../assets/yurt/yurt2.jpeg'
+import yurt3 from '../../assets/yurt/yurt3.jpeg'
+import yurt5 from '../../assets/yurt/yurt5.jpeg'
 
 const photos = [
   { src: yurt4, width: 600, height: 450 },
   { src: yurt2, width: 600, height: 800 },
   { src: yurt3, width: 600, height: 450 },
   { src: yurt5, width: 600, height: 450 },
-];
+]
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
 
-// ----------------------------------------------------------------------------
-// ----------------------------------------------------------------------- Data
-// ----------------------------------------------------------------------------
-
-// ----------------------------------------------------------------------------
-// ------------------------------------------------------------------------ SEO
-// ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "Building an RC Yurt",
-  nakedPageSlug: "building-an-rc-yurt",
-  pageAbstract: "Page abstract.",
-};
+  pageTitle: 'Building an RC Yurt',
+  nakedPageSlug: 'building-an-rc-yurt',
+  pageAbstract: 'Page abstract.',
+}
 
-const seoData = seoHelper(pageData);
-
-// ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Styles
-// ----------------------------------------------------------------------------
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const pageStyle = css({});
-const pageStyles = pageStyle.toString();
+const seoData = seoHelper(pageData)
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -68,7 +49,7 @@ const pageStyles = pageStyle.toString();
 /** Initiative */
 const Initiative = props => {
   return (
-    <StandardPage className={pageStyles} seoData={seoData}>
+    <StandardPage className="" seoData={seoData}>
       <h1 className="mask-h3">Building a Yurt</h1>
       <p>
         With our work growing, it’s high-time that we build a physical structure
@@ -111,14 +92,14 @@ const Initiative = props => {
         <li>
           From within Auroville:
           <ul>
-            <li style={{ fontSize: "unset" }}>
+            <li style={{ fontSize: 'unset' }}>
               Make a transfer/deposit at Financial Services to “Joy Living
               Projects,” Acct # 252235
               <ul>
-                <li style={{ fontSize: "unset" }}>
+                <li style={{ fontSize: 'unset' }}>
                   Please specify “for RC Yurt, Joy Living Learning Project.”
                 </li>
-                <li style={{ fontSize: "unset" }}>
+                <li style={{ fontSize: 'unset' }}>
                   Please notify us by email (restorative@auroville.org.in) that
                   you’ve made a transfer, so that we can track your
                   contribution.
@@ -130,15 +111,15 @@ const Initiative = props => {
         <li>
           From within India and/or abroad:
           <ul>
-            <li style={{ fontSize: "unset" }}>
-              Follow the payment link{" "}
+            <li style={{ fontSize: 'unset' }}>
+              Follow the payment link{' '}
               <OutLink to="https://donations.auroville.com/">here</OutLink>.
               <ul>
-                <li style={{ fontSize: "unset" }}>
+                <li style={{ fontSize: 'unset' }}>
                   Please select “Other” in the Project select, specify “for RC
                   Yurt, Joy Living Learning Project.”
                 </li>
-                <li style={{ fontSize: "unset" }}>
+                <li style={{ fontSize: 'unset' }}>
                   Please notify us by email (restorative@auroville.org.in) that
                   you’ve made a transfer, so that we can track your
                   contribution.
@@ -149,14 +130,14 @@ const Initiative = props => {
         </li>
       </ol>
     </StandardPage>
-  );
-};
+  )
+}
 
 Initiative.propTypes = {
   data: PropTypes.object,
-};
+}
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default Initiative;
+export default Initiative

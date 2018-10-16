@@ -2,15 +2,14 @@
 // ---------------------------------------------------------------------- Imports
 // ------------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
-import React from "react";
-import { css } from "glamor";
+import React from 'react'
+import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 // import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { Page } from "@bodhi-project/semantic-webflow";
-import Container from "@bodhi-project/components/lib/Container";
+import { Page } from '@bodhi-project/semantic-webflow'
 import {
   // --------------- Basic
   UpdateTitle,
@@ -22,23 +21,24 @@ import {
   // --------------- Schema.org JSON-LD
   WebpageSchema,
   BreadcrumbSchema,
-} from "@bodhi-project/seo";
+} from '@bodhi-project/seo'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Layout from './layout/Layout'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment } = React;
+// const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
 const pageStyle = css({
-  "& section": {
+  '& section': {
     padding: 0,
   },
-});
-const pageStyles = pageStyle.toString();
+})
+const pageStyles = pageStyle.toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Functions
@@ -49,7 +49,7 @@ const pageStyles = pageStyle.toString();
 // ----------------------------------------------------------------------------
 /** StandardPage */
 const StandardPage = props => {
-  const { className, seoData, children } = props;
+  const { className, seoData, children } = props
   const {
     pageTitle,
     generalMetaData,
@@ -57,10 +57,10 @@ const StandardPage = props => {
     openGraphSummaryData,
     webpageSchemaData,
     breadcrumbSchemaData,
-  } = seoData;
+  } = seoData
 
   return (
-    <Fragment>
+    <Layout>
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
       <UpdateTitle title={pageTitle} />
       <GeneralMeta data={generalMetaData} />
@@ -70,18 +70,14 @@ const StandardPage = props => {
       <BreadcrumbSchema data={breadcrumbSchemaData} />
 
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
-      <Page className={`${pageStyles} ${className}`}>
-        <Container block noFade>
-          {children}
-        </Container>
-      </Page>
-    </Fragment>
-  );
-};
+      <Page className={`${pageStyles} ${className}`}>{children}</Page>
+    </Layout>
+  )
+}
 
-StandardPage.propTypes = {};
+StandardPage.propTypes = {}
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default StandardPage;
+export default StandardPage

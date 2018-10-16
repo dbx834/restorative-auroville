@@ -2,22 +2,22 @@
 // ---------------------------------------------------------------------- Imports
 // ------------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import ReactReader from "react-reader/lib/ReactReader/ReactReader";
-import ContainerDimensions from "react-container-dimensions";
+import ReactReader from 'react-reader/lib/ReactReader/ReactReader'
+import ContainerDimensions from 'react-container-dimensions'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-import Button from "antd/lib/button";
-import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/button/style/css";
+import Button from 'antd/lib/button'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
 
-import Modal from "antd/lib/modal";
-import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/modal/style/css";
+import Modal from 'antd/lib/modal'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/modal/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment } = React;
+const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -26,83 +26,83 @@ const { Fragment } = React;
 class IndexPage extends React.Component {
   /** standard constructor */
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       fullscreen: false,
       location: null,
       largeText: false,
-    };
-    this.rendition = null;
+    }
+    this.rendition = null
 
-    this.toggleFullscreen = this.toggleFullscreen.bind(this);
-    this.onToggleFontSize = this.onToggleFontSize.bind(this);
-    this.onLocationChanged = this.onLocationChanged.bind(this);
-    this.getRendition = this.getRendition.bind(this);
+    this.toggleFullscreen = this.toggleFullscreen.bind(this)
+    this.onToggleFontSize = this.onToggleFontSize.bind(this)
+    this.onLocationChanged = this.onLocationChanged.bind(this)
+    this.getRendition = this.getRendition.bind(this)
   }
 
   /** onToggleFontSize */
   onToggleFontSize(location) {
-    const nextState = !this.state.largeText;
+    const nextState = !this.state.largeText
     this.setState(
       {
         largeText: nextState,
       },
       () => {
-        this.rendition.themes.fontSize(nextState ? "140%" : "100%");
-      },
-    );
+        this.rendition.themes.fontSize(nextState ? '140%' : '100%')
+      }
+    )
   }
 
   /** onLocationChanged */
   onLocationChanged(location) {
-    this.setState({ location });
+    this.setState({ location })
   }
 
   /** getRendition */
   getRendition(rendition) {
     // Set inital font-size, and add a pointer to rendition for later updates
-    const { largeText } = this.state;
-    this.rendition = rendition;
-    rendition.themes.fontSize(largeText ? "140%" : "100%");
+    const { largeText } = this.state
+    this.rendition = rendition
+    rendition.themes.fontSize(largeText ? '140%' : '100%')
   }
 
   /** toggleFullscreen */
   toggleFullscreen() {
-    this.setState({ fullscreen: !this.state.fullscreen });
+    this.setState({ fullscreen: !this.state.fullscreen })
   }
 
   /** standard renderer */
   render() {
-    const { fullscreen, location } = this.state;
-    const { title, url } = this.props;
+    const { fullscreen, location } = this.state
+    const { title, url } = this.props
 
     return (
-      <div style={{ position: "relative", background: "#FFFFFF" }}>
+      <div style={{ position: 'relative', background: '#FFFFFF' }}>
         <h1 className="mask-h3">{title}</h1>
         <Button
           onClick={this.toggleFullscreen}
-          style={{ position: "absolute", top: 0, right: 0 }}
+          style={{ position: 'absolute', top: 0, right: 0 }}
         >
           Fullscreen
         </Button>
         <ContainerDimensions>
           {({ width }) => {
-            const screenWidth = width / 0.625;
-            const isNotSmallScreen = screenWidth > 800;
-            const large = width + 200;
+            const screenWidth = width / 0.625
+            const isNotSmallScreen = screenWidth > 800
+            const large = width + 200
 
             return (
               <Fragment>
                 {isNotSmallScreen === true && (
                   <div
                     style={{
-                      position: "relative",
+                      position: 'relative',
                       width: large,
                       marginLeft: -100,
-                      height: "calc(100vh - 180px)",
-                      border: "1px solid #00006F",
-                      background: "#FFFFFF",
+                      height: 'calc(100vh - 180px)',
+                      border: '1px solid #00006F',
+                      background: '#FFFFFF',
                     }}
                   >
                     {fullscreen === false && (
@@ -117,7 +117,7 @@ class IndexPage extends React.Component {
                   </div>
                 )}
               </Fragment>
-            );
+            )
           }}
         </ContainerDimensions>
         <Modal
@@ -137,9 +137,9 @@ class IndexPage extends React.Component {
         >
           <div
             style={{
-              position: "relative",
-              width: "90vw",
-              height: "90vh",
+              position: 'relative',
+              width: '90vw',
+              height: '90vh',
             }}
           >
             {fullscreen === true && (
@@ -154,16 +154,16 @@ class IndexPage extends React.Component {
           </div>
         </Modal>
       </div>
-    );
+    )
   }
 }
 
 IndexPage.propTypes = {
   title: PropTypes.string,
   url: PropTypes.string,
-};
+}
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default IndexPage;
+export default IndexPage

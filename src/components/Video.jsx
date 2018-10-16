@@ -2,48 +2,36 @@
 // ---------------------------------------------------------------------- Imports
 // ------------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
-import React from "react";
-import { css } from "glamor";
+import React from 'react'
+// import PropTypes from 'prop-types'
+// import { css } from "glamor"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import ReactPlayer from "react-player";
-import ContainerDimensions from "react-container-dimensions";
-
-// import Link from "gatsby-link";
+import ReactPlayer from 'react-player'
+import ContainerDimensions from 'react-container-dimensions'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-// ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Styles
-// ----------------------------------------------------------------------------
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const blockStyles = css({
-  display: "block",
-});
-const blockStyle = blockStyles.toString();
-
-// ----------------------------------------------------------------------------
-// ------------------------------------------------------------------ Functions
-// ----------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** MainBlock */
-const MainBlock = props => {
-  const { url } = props;
+/** Video */
+const Video = props => {
+  const { url } = props
   return (
-    <div className={`${blockStyle} mask-p`}>
+    <div className="mask-p" style={{ display: 'block' }}>
       <ContainerDimensions>
         {({ width }) => {
-          const playerWidth = width;
-          const playerHeight = width * 0.62;
+          const playerWidth = width
+          const playerHeight = width * 0.62
           return (
             <div
               style={{
@@ -53,16 +41,16 @@ const MainBlock = props => {
             >
               <ReactPlayer url={url} width="inherit" height="inherit" />
             </div>
-          );
+          )
         }}
       </ContainerDimensions>
     </div>
-  );
-};
+  )
+}
 
-MainBlock.propTypes = {};
+Video.propTypes = {}
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default MainBlock;
+export default Video

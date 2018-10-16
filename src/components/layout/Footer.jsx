@@ -2,68 +2,68 @@
 // -------------------------------------------------------------------- Imports
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
-import React from "react";
-import PropTypes from "prop-types";
-import { css } from "glamor";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { css } from 'glamor'
 // import classNames from "classnames";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-import map from "lodash/map";
-import isArray from "lodash/isArray";
-import isString from "lodash/isString";
-import isUndefined from "lodash/isUndefined";
+import map from 'lodash/map'
+import isArray from 'lodash/isArray'
+import isString from 'lodash/isString'
+import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from "gatsby-link";
-import FacebookProvider, { Page as FBPage } from "react-facebook";
-import { Footer as SemanticFooter } from "@bodhi-project/semantic-webflow";
-import Disqus from "disqus-react";
+import { Link } from 'gatsby'
+import { FacebookProvider, Page as FBPage } from 'react-facebook'
+import { Footer as SemanticFooter } from '@bodhi-project/semantic-webflow'
+import Disqus from 'disqus-react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import OutLink from "@bodhi-project/components/lib/OutLink";
-import Image from "@bodhi-project/components/lib/Image";
+import OutLink from '@bodhi-project/components/lib/OutLink'
+import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-import Row from "antd/lib/row";
-import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/row/style/css";
+import Row from 'antd/lib/row'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 
-import Col from "antd/lib/col";
-import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/col/style/css";
+import Col from 'antd/lib/col'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
-import Icon from "antd/lib/icon";
-import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/icon/style/css";
+import Icon from 'antd/lib/icon'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 
-import Button from "antd/lib/button";
-import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/button/style/css";
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import quotes from "../../data/quotes.json";
-import wavesBottom from "../../assets/wavesBottom.png";
-import facebook from "../../assets/facebook.png";
-import youtube from "../../assets/youtube.png";
-import vimeo from "../../assets/vimeo.png";
-import paypal from "../../assets/paypal.png";
-import payu from "../../assets/payu.png";
-import soundcloud from "../../assets/soundcloud.png";
+import Button from 'antd/lib/button'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import nvcX62 from "../../assets/gallery/nvcX62.jpg";
+import quotes from '../../data/quotes.json'
+import wavesBottom from '../../assets/wavesBottom.png'
+import facebook from '../../assets/facebook.png'
+import youtube from '../../assets/youtube.png'
+import vimeo from '../../assets/vimeo.png'
+import paypal from '../../assets/paypal.png'
+import payu from '../../assets/payu.png'
+import soundcloud from '../../assets/soundcloud.png'
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import nvcX62 from '../../assets/gallery/nvcX62.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment } = React;
+const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------- Data
 // ----------------------------------------------------------------------------
 /** returns a random number between min (inclusive) and max (exclusive) */
 const getRandomArbitrary = (min, max) => {
-  return Math.random() * (max - min) + min;
-};
+  return Math.random() * (max - min) + min
+}
 
 /** returns a random int between min (inclusive) and max (exclusive) */
 const getRandomArbitraryInt = (min, max) => {
-  return Math.round(getRandomArbitrary(min, max));
-};
+  return Math.round(getRandomArbitrary(min, max))
+}
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -74,30 +74,30 @@ const footerStyle = css({
   paddingRight: 12,
   paddingTop: 12,
   paddingBottom: 24,
-  background: "#f2f2f2",
-});
+  background: '#f2f2f2',
+})
 
-const footerStyles = footerStyle.toString();
+const footerStyles = footerStyle.toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Footer */
 const Footer = props => {
-  const random = getRandomArbitraryInt(0, quotes.length - 1);
-  const quoteObj = quotes[random];
-  let quote = "";
-  let author = "";
+  const random = getRandomArbitraryInt(0, quotes.length - 1)
+  const quoteObj = quotes[random]
+  let quote = ''
+  let author = ''
   if (!isUndefined(quoteObj)) {
-    ({ quote, author } = quoteObj);
+    ;({ quote, author } = quoteObj)
   }
 
-  const disqusShortname = "restorativeauroville";
+  const disqusShortname = 'restorativeauroville'
   const disqusConfig = {
-    url: "http://localhost:8000/restorative-circles",
-    identifier: "http://localhost:8000/restorative-circles",
-    title: "Our Project: Restorative Auroville",
-  };
+    url: 'http://localhost:8000/restorative-circles',
+    identifier: 'http://localhost:8000/restorative-circles',
+    title: 'Our Project: Restorative Auroville',
+  }
 
   return (
     <div>
@@ -105,21 +105,22 @@ const Footer = props => {
         src={wavesBottom}
         style={{
           height: 30,
-          width: "100%",
+          width: '100%',
           border: 0,
-          background: "transparent",
+          background: 'transparent',
           marginBottom: 0,
           marginTop: 64,
         }}
         alt="Restorative Auroville"
       />
       <SemanticFooter className={footerStyles}>
-        <div style={{ borderBottom: "1px dotted #00006F", paddingBottom: 24 }}>
+        <h1>More Information</h1>
+        <div style={{ borderBottom: '1px dotted #00006F', paddingBottom: 24 }}>
           <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
-            <Col span={8} style={{ borderRight: "1px dotted #00006F" }}>
+            <Col sm={24} md={8} style={{ borderRight: '1px dotted #00006F' }}>
               <div
                 style={{
-                  borderBottom: "1px dotted #00006F",
+                  borderBottom: '1px dotted #00006F',
                   paddingBottom: 24,
                 }}
               >
@@ -145,20 +146,20 @@ const Footer = props => {
                 </div>
               </div>
             </Col>
-            <Col span={16}>
+            <Col sm={24} md={16}>
               <div
                 style={{
-                  borderBottom: "1px dotted #00006F",
+                  borderBottom: '1px dotted #00006F',
                   paddingBottom: 24,
                 }}
               >
                 <Row gutter={{ xs: 12, sm: 12, md: 12 }}>
-                  <Col span={8}>
+                  <Col sm={8} md={8}>
                     <h3 className="mask-h6">About Us</h3>
                     <ul
                       className="mask-p"
                       style={{
-                        listStyle: "none",
+                        listStyle: 'none',
                         paddingLeft: 0,
                         marginBottom: 0,
                       }}
@@ -167,12 +168,12 @@ const Footer = props => {
                       <li>Team</li>
                     </ul>
                   </Col>
-                  <Col span={8}>
+                  <Col sm={8} md={8}>
                     <h3 className="mask-h6">Our Work</h3>
                     <ul
                       className="mask-p"
                       style={{
-                        listStyle: "none",
+                        listStyle: 'none',
                         paddingLeft: 0,
                         marginBottom: 0,
                       }}
@@ -183,12 +184,12 @@ const Footer = props => {
                       <li>Gallery</li>
                     </ul>
                   </Col>
-                  <Col span={8}>
+                  <Col sm={8} md={8}>
                     <h3 className="mask-h6">External Links</h3>
                     <ul
                       className="mask-p"
                       style={{
-                        listStyle: "none",
+                        listStyle: 'none',
                         paddingLeft: 0,
                         marginBottom: 0,
                       }}
@@ -204,7 +205,7 @@ const Footer = props => {
               <div style={{ paddingTop: 24 }}>
                 <h3 className="mask-h6">Connect With Us</h3>
                 <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
+                  style={{ display: 'flex', justifyContent: 'space-between' }}
                 >
                   <OutLink to="https://www.facebook.com/RestorativeAuroville/">
                     <Image
@@ -212,9 +213,9 @@ const Footer = props => {
                       rawWidth={450}
                       rawHeight={450}
                       style={{
-                        display: "inline-block",
-                        border: "none",
-                        background: "none",
+                        display: 'inline-block',
+                        border: 'none',
+                        background: 'none',
                         height: 45,
                         width: 45,
                       }}
@@ -230,9 +231,9 @@ const Footer = props => {
                       rawWidth={450}
                       rawHeight={450}
                       style={{
-                        display: "inline-block",
-                        border: "none",
-                        background: "none",
+                        display: 'inline-block',
+                        border: 'none',
+                        background: 'none',
                         height: 45,
                         width: 45,
                       }}
@@ -248,9 +249,9 @@ const Footer = props => {
                       rawWidth={450}
                       rawHeight={450}
                       style={{
-                        display: "inline-block",
-                        border: "none",
-                        background: "none",
+                        display: 'inline-block',
+                        border: 'none',
+                        background: 'none',
                         height: 42,
                         width: 42,
                       }}
@@ -266,9 +267,9 @@ const Footer = props => {
                       rawWidth={450}
                       rawHeight={450}
                       style={{
-                        display: "inline-block",
-                        border: "none",
-                        background: "none",
+                        display: 'inline-block',
+                        border: 'none',
+                        background: 'none',
                         height: 42,
                         width: 42,
                       }}
@@ -284,9 +285,9 @@ const Footer = props => {
                       rawWidth={450}
                       rawHeight={450}
                       style={{
-                        display: "inline-block",
-                        border: "none",
-                        background: "none",
+                        display: 'inline-block',
+                        border: 'none',
+                        background: 'none',
                         height: 42,
                         width: 42,
                       }}
@@ -297,7 +298,7 @@ const Footer = props => {
                     action="https://www.paypal.com/cgi-bin/webscr"
                     method="post"
                     target="_blank"
-                    style={{ display: "inline-block", marginLeft: 17 }}
+                    style={{ display: 'inline-block', marginLeft: 17 }}
                     className="hover"
                   >
                     <input type="hidden" name="cmd" value="_s-xclick" />
@@ -330,75 +331,80 @@ const Footer = props => {
             </Col>
           </Row>
         </div>
-        <div
-          style={{
-            paddingTop: 24,
-            display: "flex",
-            borderBottom: "1px dotted #00006F",
-            paddingBottom: 24,
-          }}
-        >
-          <div
-            style={{
-              flexGrow: 1,
-              paddingRight: 12,
-              borderRight: "1px dotted #00006F",
-            }}
-          >
-            <h3 className="mask-h6">Project Highlight</h3>
-            <Image
-              src={nvcX62}
-              rawWidth={1440}
-              rawHeight={900}
+        <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
+          <Col sm={0} md={24}>
+            <div
               style={{
-                border: 0,
-                background: "transparent",
+                paddingTop: 24,
+                display: 'flex',
+                borderBottom: '1px dotted #00006F',
+                paddingBottom: 24,
               }}
-            />
-            <p>
-              <strong>Cross-Cultural Dialogue</strong>
-              <br />
-              2018
-              <br />
-              We want to explore and understand this question: Are we divided in
-              Auroville, as local Tamil Aurovilians and non-local Aurovilians?
-            </p>
-            <div className="mask-p" style={{ marginBottom: 0 }}>
-              <Button block>Read More...</Button>
-            </div>
-          </div>
-          <div
-            style={{
-              flexGrow: 1,
-              maxWidth: 340,
-              minWidth: 340,
-              paddingLeft: 12,
-            }}
-          >
-            <h3 className="mask-h6">Find Us On Facebook</h3>
-            <div style={{ maxHeight: 500, overflow: "hidden" }}>
-              <FacebookProvider appId="218604115574634">
-                <FBPage
-                  href="https://www.facebook.com/RestorativeAuroville"
-                  tabs="timeline,events,messages"
+            >
+              <div
+                style={{
+                  flexGrow: 1,
+                  paddingRight: 12,
+                  borderRight: '1px dotted #00006F',
+                }}
+              >
+                <h3 className="mask-h6">Project Highlight</h3>
+                <Image
+                  src={nvcX62}
+                  rawWidth={1440}
+                  rawHeight={900}
+                  style={{
+                    border: 0,
+                    background: 'transparent',
+                  }}
                 />
-              </FacebookProvider>
+                <p>
+                  <strong>Cross-Cultural Dialogue</strong>
+                  <br />
+                  2018
+                  <br />
+                  We want to explore and understand this question: Are we
+                  divided in Auroville, as local Tamil Aurovilians and non-local
+                  Aurovilians?
+                </p>
+                <div className="mask-p" style={{ marginBottom: 0 }}>
+                  <Button block>Read More...</Button>
+                </div>
+              </div>
+              <div
+                style={{
+                  flexGrow: 1,
+                  maxWidth: 340,
+                  minWidth: 340,
+                  paddingLeft: 12,
+                }}
+              >
+                <h3 className="mask-h6">Find Us On Facebook</h3>
+                <div style={{ maxHeight: 500, overflow: 'hidden' }}>
+                  <FacebookProvider appId="218604115574634">
+                    <FBPage
+                      href="https://www.facebook.com/RestorativeAuroville"
+                      tabs="timeline,events,messages"
+                    />
+                  </FacebookProvider>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div
-          style={{
-            paddingTop: 24,
-            borderBottom: "1px dotted #00006F",
-            paddingBottom: 24,
-          }}
-        >
-          <h3 className="mask-h6">Leave a comment…</h3>
-          <Disqus.DiscussionEmbed
-            shortname={disqusShortname}
-            config={disqusConfig}
-          />
-        </div>
+            <div
+              style={{
+                paddingTop: 24,
+                borderBottom: '1px dotted #00006F',
+                paddingBottom: 24,
+              }}
+            >
+              <h3 className="mask-h6">Leave a comment…</h3>
+              <Disqus.DiscussionEmbed
+                shortname={disqusShortname}
+                config={disqusConfig}
+              />
+            </div>
+          </Col>
+        </Row>
         <div
           style={{
             paddingTop: 24,
@@ -406,7 +412,7 @@ const Footer = props => {
         >
           <p
             style={{
-              textAlign: "center",
+              textAlign: 'center',
             }}
           >
             {isString(quote) && (
@@ -431,19 +437,19 @@ const Footer = props => {
           </p>
           <p
             style={{
-              textAlign: "center",
+              textAlign: 'center',
             }}
           >
             Made with&nbsp;
             <Icon
               type="heart"
-              style={{ fontSize: "80%", color: "#00006F" }}
+              style={{ fontSize: '80%', color: '#00006F' }}
             />&nbsp;by&nbsp;
             <OutLink to="https://www.bodhiproject.org/">Bodhi Project</OutLink>
           </p>
           <p
             style={{
-              textAlign: "center",
+              textAlign: 'center',
               marginBottom: 20,
             }}
           >
@@ -452,12 +458,12 @@ const Footer = props => {
         </div>
       </SemanticFooter>
     </div>
-  );
-};
+  )
+}
 
 Footer.propTypes = {
   location: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
+}
 
 // --------------------------------------------------------------------- Export
-export default Footer;
+export default Footer

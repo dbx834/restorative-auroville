@@ -2,66 +2,46 @@
 // ---------------------------------------------------------------------- Imports
 // ------------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
-import React from "react";
-import PropTypes from "prop-types";
-import { css } from "glamor";
+import React from 'react'
+import PropTypes from 'prop-types'
+// import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// import Link from "gatsby-link";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-// import Image from "@bodhi-project/components/lib/Image";
-import Images from "@bodhi-project/components/lib/Images";
+import Images from '@bodhi-project/components/lib/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-// import Tabs from "antd/lib/tabs";
-// import "antd/lib/tabs/style/css";
-
-import StandardPage from "../../components/StandardPage";
-import BookReader from "../../components/BookReader";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import seoHelper from "../../helpers/seoHelper";
+import StandardPage from '../../components/StandardPage'
+import BookReader from '../../components/BookReader'
+import seoHelper from '../../methods/seoHelper'
 
-import nvcX42 from "../../assets/gallery/nvcX42.jpg";
-import nvcX43 from "../../assets/gallery/nvcX43.jpg";
-import nvcX44 from "../../assets/gallery/nvcX44.jpg";
-import nvcX37 from "../../assets/gallery/nvcX37.jpg";
+import nvcX42 from '../../assets/gallery/nvcX42.jpg'
+import nvcX43 from '../../assets/gallery/nvcX43.jpg'
+import nvcX44 from '../../assets/gallery/nvcX44.jpg'
+import nvcX37 from '../../assets/gallery/nvcX37.jpg'
 
 const photos = [
   { src: nvcX43, width: 600, height: 399 },
   { src: nvcX44, width: 600, height: 399 },
   { src: nvcX37, width: 600, height: 400 },
   { src: nvcX42, width: 600, height: 399 },
-];
+]
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
 
-// ----------------------------------------------------------------------------
-// ----------------------------------------------------------------------- Data
-// ----------------------------------------------------------------------------
-
-// ----------------------------------------------------------------------------
-// ------------------------------------------------------------------------ SEO
-// ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "FilmFest: Restoring Connection",
-  nakedPageSlug: "filmfest-restoring-connection",
-  pageAbstract: "Page abstract.",
-};
+  pageTitle: 'FilmFest: Restoring Connection',
+  nakedPageSlug: 'filmfest-restoring-connection',
+  pageAbstract: 'Page abstract.',
+}
 
-const seoData = seoHelper(pageData);
-
-// ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Styles
-// ----------------------------------------------------------------------------
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const pageStyle = css({});
-const pageStyles = pageStyle.toString();
+const seoData = seoHelper(pageData)
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -69,7 +49,7 @@ const pageStyles = pageStyle.toString();
 /** Initiative */
 const Initiative = props => {
   return (
-    <StandardPage className={pageStyles} seoData={seoData}>
+    <StandardPage className="" seoData={seoData}>
       <h1 className="mask-h3">"Restoring Connection" FilmFest</h1>
       <p>
         Restorative Auroville hosted a 6-day Film Festival on the theme of
@@ -135,14 +115,14 @@ const Initiative = props => {
       </p>
       <BookReader title="Flow" url="/filmfest-reflowable.epub" />
     </StandardPage>
-  );
-};
+  )
+}
 
 Initiative.propTypes = {
   data: PropTypes.object,
-};
+}
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default Initiative;
+export default Initiative

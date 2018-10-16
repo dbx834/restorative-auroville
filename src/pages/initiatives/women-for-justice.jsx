@@ -2,54 +2,35 @@
 // ---------------------------------------------------------------------- Imports
 // ------------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
-import React from "react";
-import PropTypes from "prop-types";
-import { css } from "glamor";
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// import Link from "gatsby-link";
+import { Document, Page } from 'react-pdf'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import Image from "@bodhi-project/components/lib/Image";
+import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-// import Tabs from "antd/lib/tabs";
-// import "antd/lib/tabs/style/css";
-
-import StandardPage from "../../components/StandardPage";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import seoHelper from "../../helpers/seoHelper";
+import StandardPage from '../../components/StandardPage'
+import seoHelper from '../../methods/seoHelper'
 
-import flyer from "../../assets/women-for-justice-flyer.jpg";
+import flyer from '../../assets/women-for-justice-flyer.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
 
-// ----------------------------------------------------------------------------
-// ----------------------------------------------------------------------- Data
-// ----------------------------------------------------------------------------
-
-// ----------------------------------------------------------------------------
-// ------------------------------------------------------------------------ SEO
-// ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "Women for Justice",
-  nakedPageSlug: "women-for-justice",
-  pageAbstract: "Page abstract.",
-};
+  pageTitle: 'Women for Justice',
+  nakedPageSlug: 'women-for-justice',
+  pageAbstract: 'Page abstract.',
+}
 
-const seoData = seoHelper(pageData);
-
-// ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Styles
-// ----------------------------------------------------------------------------
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const pageStyle = css({});
-const pageStyles = pageStyle.toString();
+const seoData = seoHelper(pageData)
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -57,17 +38,17 @@ const pageStyles = pageStyle.toString();
 /** Initiative */
 const Initiative = props => {
   return (
-    <StandardPage className={pageStyles} seoData={seoData}>
+    <StandardPage className="" seoData={seoData}>
       <h1 className="mask-h3">Restorative Auroville presents:</h1>
       <Image
         src={flyer}
         style={{
-          background: "transparent",
-          border: "unset",
-          height: "62vh",
-          width: "auto",
+          background: 'transparent',
+          border: 'unset',
+          height: '62vh',
+          width: 'auto',
           marginBottom: 10,
-          display: "block",
+          display: 'block',
         }}
         loader="gradient"
         rawWidth={598}
@@ -97,15 +78,20 @@ const Initiative = props => {
       </p>
       <p>All are welcome,</p>
       <p>women & men, girls & boys !</p>
+      <div className="mask-p" style={{ border: '1px dotted #00006F' }}>
+        <Document file="/projects/women-for-justice-tamil-flyer.pdf">
+          <Page pageNumber={1} />
+        </Document>
+      </div>
     </StandardPage>
-  );
-};
+  )
+}
 
 Initiative.propTypes = {
   data: PropTypes.object,
-};
+}
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default Initiative;
+export default Initiative

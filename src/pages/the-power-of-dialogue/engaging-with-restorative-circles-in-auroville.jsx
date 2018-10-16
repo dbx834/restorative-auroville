@@ -2,27 +2,26 @@
 // -------------------------------------------------------------------- Imports
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
-import React from "react";
+import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from "../../components/StandardPage";
-import Video from "../../components/Video";
-
-import seoHelper from "../../helpers/seoHelper";
+import StandardPage from '../../components/StandardPage'
+import Video from '../../components/Video'
+import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: "Engaging with Restorative Circles in Auroville",
+  pageTitle: 'Engaging with Restorative Circles in Auroville',
   nakedPageSlug:
-    "the-power-of-dialogue/engaging-with-restorative-circles-in-auroville",
-  pageAbstract: "Page abstract.",
-};
+    'the-power-of-dialogue/engaging-with-restorative-circles-in-auroville',
+  pageAbstract: 'Page abstract.',
+}
 
-const seoData = seoHelper(pageData);
+const seoData = seoHelper(pageData)
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -42,9 +41,9 @@ const Page = () => (
     </p>
     <Video url="https://www.youtube.com/watch?v=tuJrfIFd3IY" />
   </StandardPage>
-);
+)
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Export
 // ----------------------------------------------------------------------------
-export default Page;
+export default Page

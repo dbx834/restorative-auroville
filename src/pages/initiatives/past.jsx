@@ -2,146 +2,99 @@
 // ---------------------------------------------------------------------- Imports
 // ------------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
-import React from "react";
-import PropTypes from "prop-types";
-import { css } from "glamor";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-import map from "lodash/map";
+import filter from 'lodash/filter'
+import sortBy from 'lodash/sortBy'
+import reverse from 'lodash/reverse'
+import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from "gatsby-link";
+import { Link } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import Image from "@bodhi-project/components/lib/Image";
+import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from "../../components/StandardPage";
-import seoHelper from "../../helpers/seoHelper";
+import StandardPage from '../../components/StandardPage'
+import seoHelper from '../../methods/seoHelper'
 
-import nvcX32 from "../../assets/gallery/nvcX32.jpg";
-import nvcX36 from "../../assets/gallery/nvcX36.jpg";
-import nvcX39 from "../../assets/gallery/nvcX39.jpg";
-import nvcX41 from "../../assets/gallery/nvcX41.jpg";
-import nvcX13 from "../../assets/gallery/nvcX13.jpg";
+import projects from '../../data/projects.json'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
 
-// ----------------------------------------------------------------------------
-// ----------------------------------------------------------------------- Data
-// ----------------------------------------------------------------------------
-const pastProjects = [
-  {
-    route: "walk-of-hope-in-auroville-and-the-bioregion", // http://localhost:8000/static/nvcX32.80a80f7b.jpg
-    title: "Walk of Hope in Auroville and the Bioregion",
-    subTitle:
-      "The Walk was led by Sri M, an eminent spiritual guide, educationist and social activist. Sri M became known for his Walk of Hope from Kanyakumari to Kashmir, over 7000 km through India in 2015-16.",
-    image: nvcX32,
-    date: "2018",
-  },
-  {
-    route: "exploring-justice-and-rc-with-the-auroville-council", // http://localhost:8000/static/nvcX36.d06e8ee2.jpg
-    title: "Exploring Justice and RC with the Auroville Council",
-    subTitle:
-      "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
-    image: nvcX36,
-    date: "2018",
-  },
-  {
-    route: "restorative-dialogue-across-cultures", // http://localhost:8000/static/nvcX39.716db87c.jpg
-    title: "Restorative Dialogue across Cultures",
-    subTitle:
-      "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
-    image: nvcX39,
-    date: "2016",
-  },
-  {
-    route: "filmfest-restoring-connection", // http://localhost:8000/static/nvcX41.d10a7c12.jpg
-    title: '"Restoring Connection" FilmFest',
-    subTitle:
-      "Restorative Auroville hosted a 6-day Film Festival on the theme of “Restoring Connection” in October 2016 as part of our larger Restorative Circles project in Auroville, where we are working to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values",
-    image: nvcX41,
-    date: "2016",
-  },
-  {
-    route: "restorative-circles-in-the-learning-community-school", // http://localhost:8000/static/nvcX13.7d0ebbed.jpg
-    title: "Restorative Circles in The Learning Community School",
-    subTitle:
-      "The aquarium, which has 250 species, took more than a year to set up and was funded by a group of investors.",
-    image: nvcX13,
-    date: "2015",
-  },
-];
+const pastProjects = reverse(
+  sortBy(filter(projects, ['ongoing', false]), [o => o.publishedTimestamp])
+)
 
-// ----------------------------------------------------------------------------
-// ------------------------------------------------------------------------ SEO
-// ----------------------------------------------------------------------------
 const pageData = {
-  pageTitle: "Past Initiatives",
-  nakedPageSlug: "past",
-  pageAbstract: "Page abstract.",
-};
+  pageTitle: 'Past Initiatives',
+  nakedPageSlug: 'past',
+  pageAbstract: 'Page abstract.',
+}
 
-const seoData = seoHelper(pageData);
+const seoData = seoHelper(pageData)
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
 const pageStyle = css({
-  display: "block",
+  display: 'block',
 
-  "& .ant-card": {
-    boxShadow: "1px 2px 0 0 rgba(0, 0, 111, 1)",
+  '& .ant-card': {
+    boxShadow: '1px 2px 0 0 rgba(0, 0, 111, 1)',
 
-    "&:hover": {
-      boxShadow: "2px 4px 0 0 rgba(0, 0, 111, 1)",
+    '&:hover': {
+      boxShadow: '2px 4px 0 0 rgba(0, 0, 111, 1)',
     },
   },
 
-  "& .project": {
-    display: "flex",
+  '& .project': {
+    display: 'flex',
     padding: 12,
-    color: "unset",
+    color: 'unset',
 
-    ":not(:last-of-type)": {
-      borderBottom: "1px dotted #00006F",
+    ':not(:last-of-type)': {
+      borderBottom: '1px dotted #00006F',
     },
 
-    "& > div:nth-child(1)": {
+    '& > div:nth-child(1)': {
       flexGrow: 58,
       flexBasis: 0,
       paddingRight: 12,
     },
 
-    "& > div:nth-child(2)": {
+    '& > div:nth-child(2)': {
       flexGrow: 42,
       flexBasis: 0,
     },
 
-    "& p.date": {
+    '& p.date': {
       marginBottom: 0,
 
-      "& span": {
-        fontSize: "80%",
+      '& span': {
+        fontSize: '80%',
       },
     },
 
-    "& p.subTitle": {
+    '& p.subTitle': {
       marginBottom: 0,
     },
 
-    "&:nth-child(odd)": {
-      backgroundColor: "rgba(255, 191, 0, 0.1)",
+    '&:nth-child(odd)': {
+      backgroundColor: 'rgba(255, 191, 0, 0.1)',
     },
 
-    "&:nth-child(even)": {
-      backgroundColor: "rgba(109, 0, 255, 0.1)",
+    '&:nth-child(even)': {
+      backgroundColor: 'rgba(109, 0, 255, 0.1)',
     },
   },
-});
-const pageStyles = pageStyle.toString();
+})
+const pageStyles = pageStyle.toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -153,7 +106,7 @@ const PastInitiatives = props => {
       <h1 className="mask-h3">Past Initiatives</h1>
       <div>
         {map(pastProjects, project => {
-          const { title, subTitle, image, date, route } = project;
+          const { title, subTitle, cover, date, route } = project
           return (
             <Link className="project" to={route}>
               <div>
@@ -165,29 +118,31 @@ const PastInitiatives = props => {
               </div>
               <div>
                 <Image
-                  src={image}
+                  src={cover}
+                  rawWidth={1440}
+                  rawHeight={900}
                   style={{
-                    height: "auto",
-                    width: "100%",
+                    height: 'auto',
+                    width: '100%',
                     border: 0,
-                    background: "transparent",
+                    background: 'transparent',
                   }}
                   alt={`${title} – ${subTitle}`}
                 />
               </div>
             </Link>
-          );
+          )
         })}
       </div>
     </StandardPage>
-  );
-};
+  )
+}
 
 PastInitiatives.propTypes = {
   data: PropTypes.object,
-};
+}
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default PastInitiatives;
+export default PastInitiatives

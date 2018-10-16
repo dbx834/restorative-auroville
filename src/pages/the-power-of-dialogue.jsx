@@ -2,7 +2,7 @@
 // -------------------------------------------------------------------- Imports
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
-import React from "react";
+import React from 'react'
 // import PropTypes from 'prop-types'
 // import { css } from "glamor";
 
@@ -11,40 +11,42 @@ import React from "react";
 // import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from "gatsby-link";
+import { Link } from 'gatsby'
 
-import Image from "@bodhi-project/components/lib/Image";
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
+import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-import Row from "antd/lib/row";
-import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/row/style/css";
+import Row from 'antd/lib/row'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 
-import Col from "antd/lib/col";
-import "@bodhi-project/antrd/lib/restorative-auroville/3.6.5/col/style/css";
+import Col from 'antd/lib/col'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from "../components/StandardPage";
+import StandardPage from '../components/StandardPage'
 
-import seoHelper from "../helpers/seoHelper";
+import seoHelper from '../methods/seoHelper'
 
-import p1ComingSoon from "../assets/coming-soon-yellow.jpg";
-import p2ComingSoon from "../assets/coming-soon-blue.jpg";
-import p3ComingSoon from "../assets/coming-soon-red.jpg";
-import p4ComingSoon from "../assets/coming-soon-green.jpg";
+import p1ComingSoon from '../assets/coming-soon-yellow.jpg'
+import p2ComingSoon from '../assets/coming-soon-blue.jpg'
+import p3ComingSoon from '../assets/coming-soon-red.jpg'
+import p4ComingSoon from '../assets/coming-soon-green.jpg'
 
-import p21 from "../assets/genies-precircle-with-janet.jpg";
-import p31 from "../assets/engaging-with-restorative-circles-in-auroville.jpg";
-import p32 from "../assets/designing-our-justice-system-consciously.jpg";
-import p41 from "../assets/surya-on-restorative-circles.jpg";
+import p21 from '../assets/genies-precircle-with-janet.jpg'
+import p31 from '../assets/engaging-with-restorative-circles-in-auroville.jpg'
+import p32 from '../assets/designing-our-justice-system-consciously.jpg'
+import p41 from '../assets/surya-on-restorative-circles.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: "The Power of Dialogue",
-  nakedPageSlug: "the-power-of-dialogue",
-  pageAbstract: "Page abstract.",
-};
+  pageTitle: 'The Power of Dialogue',
+  nakedPageSlug: 'the-power-of-dialogue',
+  pageAbstract:
+    "We all have a certain idea - often unconscious! - about how change happens. And for the kind of transformation to a new paradigm we are talking about here, I've noticed that the models we have tend not to be useful. We all have quite a bit of unlearning and relearning to do.",
+}
 
-const seoData = seoHelper(pageData);
+const seoData = seoHelper(pageData)
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -61,7 +63,7 @@ const Page = () => (
       We all have a certain idea - often unconscious! - about how change
       happens. And for the kind of transformation to a new paradigm we are
       talking about here, I've noticed that the models we have tend not to be
-      useful. We all have quite a bit of unlearning and relearning to do.{" "}
+      useful. We all have quite a bit of unlearning and relearning to do.
     </p>
     <h1 className="mask-h3">1. The Craft</h1>
     <Row gutter={{ md: 24 }}>
@@ -69,10 +71,10 @@ const Page = () => (
         <Image
           src={p1ComingSoon}
           style={{
-            background: "transparent",
-            border: "unset",
-            height: "auto",
-            width: "100%",
+            background: 'transparent',
+            border: 'unset',
+            height: 'auto',
+            width: '100%',
             marginBottom: 10,
           }}
           loader="gradient"
@@ -109,10 +111,10 @@ const Page = () => (
           <Image
             src={p21}
             style={{
-              background: "transparent",
-              border: "unset",
-              height: "auto",
-              width: "100%",
+              background: 'transparent',
+              border: 'unset',
+              height: 'auto',
+              width: '100%',
               marginBottom: 10,
             }}
             loader="gradient"
@@ -131,10 +133,10 @@ const Page = () => (
         <Image
           src={p2ComingSoon}
           style={{
-            background: "transparent",
-            border: "unset",
-            height: "auto",
-            width: "100%",
+            background: 'transparent',
+            border: 'unset',
+            height: 'auto',
+            width: '100%',
             marginBottom: 10,
           }}
           loader="gradient"
@@ -163,10 +165,10 @@ const Page = () => (
           <Image
             src={p31}
             style={{
-              background: "transparent",
-              border: "unset",
-              height: "auto",
-              width: "100%",
+              background: 'transparent',
+              border: 'unset',
+              height: 'auto',
+              width: '100%',
               marginBottom: 10,
             }}
             loader="gradient"
@@ -186,10 +188,10 @@ const Page = () => (
           <Image
             src={p32}
             style={{
-              background: "transparent",
-              border: "unset",
-              height: "auto",
-              width: "100%",
+              background: 'transparent',
+              border: 'unset',
+              height: 'auto',
+              width: '100%',
               marginBottom: 10,
             }}
             loader="gradient"
@@ -210,10 +212,10 @@ const Page = () => (
         <Image
           src={p3ComingSoon}
           style={{
-            background: "transparent",
-            border: "unset",
-            height: "auto",
-            width: "100%",
+            background: 'transparent',
+            border: 'unset',
+            height: 'auto',
+            width: '100%',
             marginBottom: 10,
           }}
           loader="gradient"
@@ -243,10 +245,10 @@ const Page = () => (
           <Image
             src={p41}
             style={{
-              background: "transparent",
-              border: "unset",
-              height: "auto",
-              width: "100%",
+              background: 'transparent',
+              border: 'unset',
+              height: 'auto',
+              width: '100%',
               marginBottom: 10,
             }}
             loader="gradient"
@@ -265,10 +267,10 @@ const Page = () => (
         <Image
           src={p4ComingSoon}
           style={{
-            background: "transparent",
-            border: "unset",
-            height: "auto",
-            width: "100%",
+            background: 'transparent',
+            border: 'unset',
+            height: 'auto',
+            width: '100%',
             marginBottom: 10,
           }}
           loader="gradient"
@@ -284,9 +286,9 @@ const Page = () => (
       </Col>
     </Row>
   </StandardPage>
-);
+)
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Export
 // ----------------------------------------------------------------------------
-export default Page;
+export default Page
