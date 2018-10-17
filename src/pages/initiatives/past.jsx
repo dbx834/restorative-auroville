@@ -132,7 +132,7 @@ const PastInitiatives = props => {
                 <h3 className="title mask-h4">{pageTitle}</h3>
                 <p className="subTitle">{pageAbstract}</p>
               </div>
-              <div>
+              <div className="hidden-sm">
                 <Image
                   src={cover}
                   rawWidth={1440}

@@ -33,9 +33,6 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 import Icon from 'antd/lib/icon'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 
-import Button from 'antd/lib/button'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import quotes from '../../data/quotes.json'
 import wavesBottom from '../../assets/wavesBottom.png'
@@ -75,6 +72,15 @@ const footerStyle = css({
   paddingTop: 12,
   paddingBottom: 24,
   background: '#f2f2f2',
+
+  '& .apply-filter': {
+    transition: 'all 200ms ease-in',
+
+    '&:hover': {
+      filter:
+        'invert(100%) sepia(100%) saturate(1000%) hue-rotate(-60deg) saturate(500%)',
+    },
+  },
 })
 
 const footerStyles = footerStyle.toString()
@@ -126,23 +132,20 @@ const Footer = props => {
               >
                 <h3 className="mask-h6">Newsletter</h3>
                 <p>
-                  Receive e-mail updates on our exhibitions, events, and more
+                  Receive e-mail updates on our exhibitions, events, and more…
                 </p>
                 <div className="mask-p" style={{ marginBottom: 0 }}>
-                  <Button block>
-                    <Link to="/newsletter">Subscribe</Link>
-                  </Button>
+                  <Link to="/newsletter">Subscribe ⇝</Link>
                 </div>
               </div>
               <div style={{ paddingTop: 24 }}>
-                <h3 className="mask-h6">Volunteer</h3>
+                <h3 className="mask-h6">Volunteer & Apprentice</h3>
                 <p>
-                  Receive e-mail updates on our exhibitions, events, and more
+                  We need more ambassadors who are willing to do the research,
+                  the teaching and the experimenting…
                 </p>
                 <div className="mask-p" style={{ marginBottom: 0 }}>
-                  <Button block>
-                    <Link to="/volunteer">Volunteer</Link>
-                  </Button>
+                  <Link to="/volunteer">Apply ⇝</Link>
                 </div>
               </div>
             </Col>
@@ -155,7 +158,7 @@ const Footer = props => {
               >
                 <Row gutter={{ xs: 12, sm: 12, md: 12 }}>
                   <Col span={8}>
-                    <h3 className="mask-h6">About Us</h3>
+                    <h3 className="mask-h6">About</h3>
                     <ul
                       className="mask-p"
                       style={{
@@ -164,8 +167,14 @@ const Footer = props => {
                         marginBottom: 0,
                       }}
                     >
-                      <li>About</li>
-                      <li>Team</li>
+                      <li>
+                        <Link to="/about-restorative-auroville">
+                          Our Project
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/our-team">Our Team</Link>
+                      </li>
                     </ul>
                   </Col>
                   <Col span={8}>
@@ -178,10 +187,18 @@ const Footer = props => {
                         marginBottom: 0,
                       }}
                     >
-                      <li>Projects</li>
-                      <li>Archives</li>
-                      <li>Articles</li>
-                      <li>Gallery</li>
+                      <li>
+                        <Link to="/initiatives/ongoing">Initiatives</Link>
+                      </li>
+                      <li>
+                        <Link to="/archives">Archives</Link>
+                      </li>
+                      <li>
+                        <Link to="/writings">Articles</Link>
+                      </li>
+                      <li>
+                        <Link to="/gallery">Gallery</Link>
+                      </li>
                     </ul>
                   </Col>
                   <Col span={8}>
@@ -194,10 +211,26 @@ const Footer = props => {
                         marginBottom: 0,
                       }}
                     >
-                      <li>Joy Living Learning</li>
-                      <li>Dominic's Website</li>
-                      <li>NVC India</li>
-                      <li>Auroville</li>
+                      <li>
+                        <OutLink to="https://www.joylivinglearning.org/">
+                          Joy Living Learning
+                        </OutLink>
+                      </li>
+                      <li>
+                        <OutLink to="https://www.restorativecircles.org/">
+                          Dominic's Website
+                        </OutLink>
+                      </li>
+                      <li>
+                        <OutLink to="https://www.indianvc.org/">
+                          NVC India
+                        </OutLink>
+                      </li>
+                      <li>
+                        <OutLink to="https://www.auroville.org/">
+                          Auroville
+                        </OutLink>
+                      </li>
                     </ul>
                   </Col>
                 </Row>
@@ -207,7 +240,10 @@ const Footer = props => {
                 <div
                   style={{ display: 'flex', justifyContent: 'space-between' }}
                 >
-                  <OutLink to="https://www.facebook.com/RestorativeAuroville/">
+                  <OutLink
+                    to="https://www.facebook.com/RestorativeAuroville/"
+                    title="Facebook"
+                  >
                     <Image
                       src={facebook}
                       rawWidth={450}
@@ -219,6 +255,7 @@ const Footer = props => {
                         height: 45,
                         width: 45,
                       }}
+                      className="apply-filter"
                       alt="Follow us on Facebook - https://www.facebook.com/RestorativeAuroville"
                     />
                   </OutLink>
@@ -237,6 +274,7 @@ const Footer = props => {
                         height: 45,
                         width: 45,
                       }}
+                      className="apply-filter"
                       alt="See more videos on YouTube - https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF"
                     />
                   </OutLink>
@@ -255,6 +293,7 @@ const Footer = props => {
                         height: 42,
                         width: 42,
                       }}
+                      className="apply-filter"
                       alt="See more videos on Vimeo - https://vimeo.com/laurajoyful"
                     />
                   </OutLink>
@@ -273,6 +312,7 @@ const Footer = props => {
                         height: 42,
                         width: 42,
                       }}
+                      className="apply-filter"
                       alt="Listen to our dialogues on Soundcloud - https://soundcloud.com/laura-joy-145472107"
                     />
                   </OutLink>
@@ -291,6 +331,7 @@ const Footer = props => {
                         height: 42,
                         width: 42,
                       }}
+                      className="apply-filter"
                       alt="Donate or pay fees through PayU - https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
                     />
                   </OutLink>
@@ -299,7 +340,7 @@ const Footer = props => {
                     method="post"
                     target="_blank"
                     style={{ display: 'inline-block', marginLeft: 17 }}
-                    className="hover"
+                    className="hover apply-filter"
                   >
                     <input type="hidden" name="cmd" value="_s-xclick" />
                     <input
@@ -365,7 +406,7 @@ const Footer = props => {
               Auroville, as local Tamil Aurovilians and non-local Aurovilians?
             </p>
             <div className="mask-p" style={{ marginBottom: 0 }}>
-              <Button block>Read More...</Button>
+              <Link to="/initiatives/cross-cultural-dialogue">Read more ⇝</Link>
             </div>
           </div>
           <div

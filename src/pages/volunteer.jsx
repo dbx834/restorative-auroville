@@ -81,7 +81,7 @@ const Li = props => (
 /** Page */
 const Page = () => (
   <StandardPage className={pageStyle} seoData={seoData}>
-    <h1 className="mask-h3">Volunteer</h1>
+    <h1 className="mask-h3">Volunteer & Apprentice</h1>
     <p>
       In order for this work to develop fully in Auroville, we need more
       ambassadors who are willing to do the research, the teaching and the

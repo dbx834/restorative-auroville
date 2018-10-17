@@ -17,6 +17,7 @@ import isUndefined from 'lodash/isUndefined'
 import { Link } from 'gatsby'
 import { FacebookProvider, Page as FBPage } from 'react-facebook'
 import { Footer as SemanticFooter } from '@bodhi-project/semantic-webflow'
+import ContainerDimensions from 'react-container-dimensions'
 import Disqus from 'disqus-react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
@@ -24,17 +25,8 @@ import OutLink from '@bodhi-project/components/lib/OutLink'
 import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-import Row from 'antd/lib/row'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
-
-import Col from 'antd/lib/col'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
-
 import Icon from 'antd/lib/icon'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
-
-import Button from 'antd/lib/button'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import quotes from '../../data/quotes.json'
@@ -75,6 +67,15 @@ const footerStyle = css({
   paddingTop: 12,
   paddingBottom: 24,
   background: '#f2f2f2',
+
+  '& .apply-filter': {
+    transition: 'all 200ms ease-in',
+
+    '&:hover': {
+      filter:
+        'invert(100%) sepia(100%) saturate(1000%) hue-rotate(-60deg) saturate(500%)',
+    },
+  },
 })
 
 const footerStyles = footerStyle.toString()
@@ -127,7 +128,7 @@ const Footer = props => {
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <OutLink
               to="https://www.facebook.com/RestorativeAuroville/"
-              style={{ height: 45 }}
+              title="Facebook"
             >
               <Image
                 src={facebook}
@@ -140,12 +141,13 @@ const Footer = props => {
                   height: 45,
                   width: 45,
                 }}
+                className="apply-filter"
                 alt="Follow us on Facebook - https://www.facebook.com/RestorativeAuroville"
               />
             </OutLink>
             <OutLink
               to="https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF"
-              style={{ marginLeft: 6, height: 45 }}
+              style={{ marginLeft: 17 }}
             >
               <Image
                 src={youtube}
@@ -158,12 +160,13 @@ const Footer = props => {
                   height: 45,
                   width: 45,
                 }}
+                className="apply-filter"
                 alt="See more videos on YouTube - https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF"
               />
             </OutLink>
             <OutLink
               to="https://vimeo.com/laurajoyful"
-              style={{ marginLeft: 6, height: 45 }}
+              style={{ marginLeft: 17 }}
             >
               <Image
                 src={vimeo}
@@ -176,12 +179,13 @@ const Footer = props => {
                   height: 42,
                   width: 42,
                 }}
+                className="apply-filter"
                 alt="See more videos on Vimeo - https://vimeo.com/laurajoyful"
               />
             </OutLink>
             <OutLink
               to="https://soundcloud.com/laura-joy-145472107"
-              style={{ marginLeft: 6, height: 45 }}
+              style={{ marginLeft: 17 }}
             >
               <Image
                 src={soundcloud}
@@ -194,12 +198,13 @@ const Footer = props => {
                   height: 42,
                   width: 42,
                 }}
+                className="apply-filter"
                 alt="Listen to our dialogues on Soundcloud - https://soundcloud.com/laura-joy-145472107"
               />
             </OutLink>
             <OutLink
               to="https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
-              style={{ marginLeft: 6, height: 45 }}
+              style={{ marginLeft: 17 }}
             >
               <Image
                 src={payu}
@@ -212,6 +217,7 @@ const Footer = props => {
                   height: 42,
                   width: 42,
                 }}
+                className="apply-filter"
                 alt="Donate or pay fees through PayU - https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
               />
             </OutLink>
@@ -219,8 +225,8 @@ const Footer = props => {
               action="https://www.paypal.com/cgi-bin/webscr"
               method="post"
               target="_blank"
-              style={{ display: 'inline-block', marginLeft: 6, height: 45 }}
-              className="hover"
+              style={{ display: 'inline-block', marginLeft: 17 }}
+              className="hover apply-filter"
             >
               <input type="hidden" name="cmd" value="_s-xclick" />
               <input
@@ -276,8 +282,8 @@ const Footer = props => {
             We want to explore and understand this question: Are we divided in
             Auroville, as local Tamil Aurovilians and non-local Aurovilians?
           </p>
-          <div className="mask-p">
-            <Link to="/">Read More...</Link>
+          <div className="mask-p" style={{ marginBottom: 0 }}>
+            <Link to="/initiatives/cross-cultural-dialogue">Read more ⇝</Link>
           </div>
         </div>
         <div
@@ -300,22 +306,25 @@ const Footer = props => {
             paddingTop: 12,
           }}
         >
-          <div
-            style={{
-              maxWidth: 340,
-              minWidth: 340,
-            }}
-          >
-            <h3 className="mask-h6">Find Us On Facebook</h3>
-            <div style={{ maxHeight: 500, overflow: 'hidden' }}>
-              <FacebookProvider appId="218604115574634">
-                <FBPage
-                  href="https://www.facebook.com/RestorativeAuroville"
-                  tabs="timeline,events,messages"
-                />
-              </FacebookProvider>
-            </div>
-          </div>
+          <ContainerDimensions>
+            {({ width }) => (
+              <div
+                style={{
+                  width,
+                }}
+              >
+                <h3 className="mask-h6">Find Us On Facebook</h3>
+                <div style={{ maxHeight: 500, overflow: 'hidden' }}>
+                  <FacebookProvider appId="218604115574634">
+                    <FBPage
+                      href="https://www.facebook.com/RestorativeAuroville"
+                      tabs="timeline,events,messages"
+                    />
+                  </FacebookProvider>
+                </div>
+              </div>
+            )}
+          </ContainerDimensions>
         </div>
         <div
           style={{
