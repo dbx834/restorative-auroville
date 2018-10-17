@@ -18,7 +18,6 @@ import { Link } from 'gatsby'
 import { FacebookProvider, Page as FBPage } from 'react-facebook'
 import { Footer as SemanticFooter } from '@bodhi-project/semantic-webflow'
 import ContainerDimensions from 'react-container-dimensions'
-import Disqus from 'disqus-react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import OutLink from '@bodhi-project/components/lib/OutLink'
@@ -283,21 +282,8 @@ const Footer = props => {
             Auroville, as local Tamil Aurovilians and non-local Aurovilians?
           </p>
           <div className="mask-p" style={{ marginBottom: 0 }}>
-            <Link to="/initiatives/cross-cultural-dialogue">Read more ⇝</Link>
+            <Link to="/projects/cross-cultural-dialogue">Read more ⇝</Link>
           </div>
-        </div>
-        <div
-          style={{
-            borderBottom: '1px dotted #00006F',
-            paddingBottom: 12,
-            paddingTop: 12,
-          }}
-        >
-          <h3 className="mask-h6">Leave a comment…</h3>
-          <Disqus.DiscussionEmbed
-            shortname={disqusShortname}
-            config={disqusConfig}
-          />
         </div>
         <div
           style={{

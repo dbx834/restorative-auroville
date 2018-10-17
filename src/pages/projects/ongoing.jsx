@@ -36,8 +36,8 @@ const ongoingProjects = reverse(
 )
 
 const pageData = {
-  pageTitle: 'Ongoing Initiatives',
-  nakedPageSlug: 'initiatives/ongoing',
+  pageTitle: 'Ongoing projects',
+  nakedPageSlug: 'projects/ongoing',
   pageAbstract: 'Page abstract.',
 }
 
@@ -62,13 +62,13 @@ const pageStyles = pageStyle.toString()
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** OngoingInitiatives */
-const OngoingInitiatives = props => {
+/** Ongoingprojects */
+const Ongoingprojects = props => {
   const { isMobile } = props
 
   return (
     <StandardPage className={pageStyles} seoData={seoData}>
-      <h1 className="mask-h3">Ongoing Initiatives</h1>
+      <h1 className="mask-h3">Ongoing projects</h1>
       <p>
         Our approach incorporates different strategies, with the hope to connect
         with different aspects of our community life, so that we can better
@@ -80,7 +80,7 @@ const OngoingInitiatives = props => {
   )
 }
 
-OngoingInitiatives.propTypes = {
+Ongoingprojects.propTypes = {
   data: PropTypes.object,
 }
 
@@ -92,4 +92,4 @@ const mapSizesToProps = ({ width }) => ({
   isMobile: width <= 768,
 })
 
-export default withSizes(mapSizesToProps)(OngoingInitiatives)
+export default withSizes(mapSizesToProps)(Ongoingprojects)

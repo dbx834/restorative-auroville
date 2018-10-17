@@ -19,6 +19,7 @@ import OutLink from '@bodhi-project/components/lib/OutLink'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import BlogPostWrapper from '../../components/BlogPostWrapper'
+import DisqusComments from '../../components/DisqusComments'
 
 // import seoHelper from '../../methods/seoHelper'
 
@@ -59,6 +60,7 @@ const Page = () => (
         https://www.aurovilleradio.org/restorative-circles/
       </OutLink>
     </p>
+    <DisqusComments pageData={pageData} />
   </BlogPostWrapper>
 )
 

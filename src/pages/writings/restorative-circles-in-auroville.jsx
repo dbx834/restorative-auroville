@@ -19,6 +19,7 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import BlogPostWrapper from '../../components/BlogPostWrapper'
+import DisqusComments from '../../components/DisqusComments'
 import Video from '../../components/Video'
 
 // import seoHelper from '../../methods/seoHelper'
@@ -49,6 +50,7 @@ const Page = () => (
     <div className="mask-p">
       <Video url="https://www.youtube.com/watch?v=ngOhj-NhKJo" />
     </div>
+    <DisqusComments pageData={pageData} />
   </BlogPostWrapper>
 )
 

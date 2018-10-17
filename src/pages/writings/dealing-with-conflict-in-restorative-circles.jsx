@@ -19,6 +19,7 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import BlogPostWrapper from '../../components/BlogPostWrapper'
+import DisqusComments from '../../components/DisqusComments'
 
 // import seoHelper from '../../methods/seoHelper'
 
@@ -159,6 +160,7 @@ const Page = () => (
     <p>
       <i>Elaine and Alan</i>
     </p>
+    <DisqusComments pageData={pageData} />
   </BlogPostWrapper>
 )
 

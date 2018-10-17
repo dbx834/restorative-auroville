@@ -6,7 +6,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 
@@ -14,20 +13,18 @@ import PropTypes from 'prop-types'
 // import Image from "@bodhi-project/components/lib/Image";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-// import Tabs from "antd/lib/tabs";
-// import "antd/lib/tabs/style/css";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
+import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
 
 const pageData = {
-  pageTitle: 'Exploring Justice and RC with the Auroville Council',
-  nakedPageSlug:
-    'initiatives/exploring-justice-and-rc-with-the-auroville-council',
+  pageTitle: 'Filming a Live Restorative Circle',
+  nakedPageSlug: 'projects/filimng-a-live-restorative-circle',
   pageAbstract: 'Page abstract.',
 }
 
@@ -40,10 +37,9 @@ const seoData = seoHelper(pageData)
 const Initiative = props => {
   return (
     <StandardPage className="" seoData={seoData}>
-      <h1 className="mask-h3">
-        Exploring Justice and RC with the Auroville Council
-      </h1>
+      <h1 className="mask-h3">Filming a Live Restorative Circle</h1>
       <p>...</p>
+      <DisqusComments pageData={pageData} />
     </StandardPage>
   )
 }

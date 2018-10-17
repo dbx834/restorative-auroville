@@ -17,6 +17,7 @@ import Images from '@bodhi-project/components/lib/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
+import DisqusComments from '../../components/DisqusComments'
 import BookReader from '../../components/BookReader'
 import seoHelper from '../../methods/seoHelper'
 
@@ -37,7 +38,7 @@ const photos = [
 
 const pageData = {
   pageTitle: 'FilmFest: Restoring Connection',
-  nakedPageSlug: 'initiatives/filmfest-restoring-connection',
+  nakedPageSlug: 'projects/filmfest-restoring-connection',
   pageAbstract: 'Page abstract.',
 }
 
@@ -114,6 +115,7 @@ const Initiative = props => {
         superiority versus inferiority.
       </p>
       <BookReader title="Flow" url="/filmfest-reflowable.epub" />
+      <DisqusComments pageData={pageData} />
     </StandardPage>
   )
 }

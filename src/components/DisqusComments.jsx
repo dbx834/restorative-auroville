@@ -7,48 +7,61 @@ import PropTypes from 'prop-types'
 // import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Disqus from 'disqus-react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-// import Image from "@bodhi-project/components/lib/Image";
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../../components/StandardPage'
-import seoHelper from '../../methods/seoHelper'
+import data from '../data/website.json'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-// const { Fragment } = React;
-
-const pageData = {
-  pageTitle: 'Cross Cultural Dialogue',
-  nakedPageSlug: 'initiatives/cross-cultural-dialogue',
-  pageAbstract: 'Page abstract.',
-}
-
-const seoData = seoHelper(pageData)
+const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** Initiative */
-const Initiative = props => {
+/** DisqusComments */
+const DisqusComments = props => {
+  const { pageData } = props
+  const disqusShortname = 'restorativeauroville'
+  const disqusConfig = {
+    url: `${data.websiteUrl}${pageData.nakedPageSlug}`,
+    identifier: `${data.websiteUrl}${pageData.nakedPageSlug}`,
+    title: pageData.pageTitle,
+  }
+
   return (
-    <StandardPage className="" seoData={seoData}>
-      <h1 className="mask-h3">Cross Cultural Dialogue</h1>
-      <p>...</p>
-    </StandardPage>
+    <Fragment>
+      <h2 className="mask-h6">Leave a comment…</h2>
+      <p>
+        Our hope is for the comments below to bring to surface our collective
+        wisdom on the topic.
+      </p>
+      <p>
+        If you have something to share, please add a link to an article, a
+        video... Feel free to agree or disagree with what I say, but always:
+        please keep it on topic, relevant, practical. And of course, let's keep
+        things respectful and kind. Please don't comment if what you say is
+        off-topic or wouldn't benefit viewers of this page.
+      </p>
+      <div className="mask-p">
+        <Disqus.DiscussionEmbed
+          shortname={disqusShortname}
+          config={disqusConfig}
+        />
+      </div>
+    </Fragment>
   )
 }
 
-Initiative.propTypes = {
-  data: PropTypes.object,
+DisqusComments.propTypes = {
+  pageData: PropTypes.object,
 }
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default Initiative
+export default DisqusComments

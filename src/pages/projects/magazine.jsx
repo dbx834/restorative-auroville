@@ -16,6 +16,7 @@ import OutLink from '@bodhi-project/components/lib/OutLink'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
+import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -23,7 +24,7 @@ import seoHelper from '../../methods/seoHelper'
 
 const pageData = {
   pageTitle: 'Magazine',
-  nakedPageSlug: 'initiatives/magazine',
+  nakedPageSlug: 'projects/magazine',
   pageAbstract:
     'We are creating a magazine focusing on the experiences of Tamil Aurovilians, their journeys into Auroville, and their feelings of belonging and exclusion.',
 }
@@ -128,6 +129,7 @@ const Initiative = props => {
           </ul>
         </li>
       </ol>
+      <DisqusComments pageData={pageData} />
     </StandardPage>
   )
 }

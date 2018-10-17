@@ -19,6 +19,7 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import BlogPostWrapper from '../../components/BlogPostWrapper'
+import DisqusComments from '../../components/DisqusComments'
 
 // import seoHelper from '../../methods/seoHelper'
 
@@ -247,6 +248,7 @@ const Page = () => (
       serious dialogue about these issues in Auroville – that we desperately
       lack a justice system.
     </p>
+    <DisqusComments pageData={pageData} />
   </BlogPostWrapper>
 )
 

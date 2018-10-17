@@ -17,6 +17,7 @@ import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
+import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
 
 import flyer from '../../assets/women-for-justice-flyer.jpg'
@@ -26,7 +27,7 @@ import flyer from '../../assets/women-for-justice-flyer.jpg'
 
 const pageData = {
   pageTitle: 'Women for Justice',
-  nakedPageSlug: 'initiatives/women-for-justice',
+  nakedPageSlug: 'projects/women-for-justice',
   pageAbstract:
     'A Story About The Power of Solidarity (53 minutes) - Violence against women is omnipresent and nearly all women, independent of class, caste and religion are affected. Because police and justice hardly give any protection or aid, women have organized to fight against this violence and injustice.',
 }
@@ -84,6 +85,7 @@ const Initiative = props => {
           <Page pageNumber={1} />
         </Document>
       </div>
+      <DisqusComments pageData={pageData} />
     </StandardPage>
   )
 }

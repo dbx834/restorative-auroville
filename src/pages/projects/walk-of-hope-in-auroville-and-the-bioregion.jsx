@@ -4,7 +4,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 import PropTypes from 'prop-types'
-import { css } from 'glamor'
+// import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 // import map from "lodash/map";
@@ -20,9 +20,9 @@ import Images from '@bodhi-project/components/lib/Images'
 // import Tabs from "antd/lib/tabs";
 // import "antd/lib/tabs/style/css";
 
-import StandardPage from '../../components/StandardPage'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import StandardPage from '../../components/StandardPage'
+import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -40,27 +40,13 @@ const photos = [
   { src: nvcX34, width: 600, height: 450 },
 ]
 
-// ----------------------------------------------------------------------------
-// ----------------------------------------------------------------------- Data
-// ----------------------------------------------------------------------------
-
-// ----------------------------------------------------------------------------
-// ------------------------------------------------------------------------ SEO
-// ----------------------------------------------------------------------------
 const pageData = {
   pageTitle: 'Walk of Hope in Auroville and the Bioregion',
-  nakedPageSlug: 'initiatives/walk-of-hope-in-auroville-and-the-bioregion',
+  nakedPageSlug: 'projects/walk-of-hope-in-auroville-and-the-bioregion',
   pageAbstract: 'Page abstract.',
 }
 
 const seoData = seoHelper(pageData)
-
-// ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Styles
-// ----------------------------------------------------------------------------
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const pageStyle = css({})
-const pageStyles = pageStyle.toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -143,6 +129,7 @@ const Initiative = props => {
         activity; it appealed to all backgrounds, and language was not a barrier
         - hence, walking instead of talking - together and towards each other!
       </p>
+      <DisqusComments pageData={pageData} />
     </StandardPage>
   )
 }

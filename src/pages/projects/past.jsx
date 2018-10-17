@@ -37,8 +37,8 @@ const pastProjects = reverse(
 )
 
 const pageData = {
-  pageTitle: 'Past Initiatives',
-  nakedPageSlug: 'initiatives/past',
+  pageTitle: 'Past projects',
+  nakedPageSlug: 'projects/past',
   pageAbstract: 'Page abstract.',
 }
 
@@ -104,11 +104,11 @@ const pageStyles = pageStyle.toString()
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** PastInitiatives */
-const PastInitiatives = props => {
+/** Pastprojects */
+const Pastprojects = props => {
   return (
     <StandardPage className={pageStyles} seoData={seoData}>
-      <h1 className="mask-h3">Past Initiatives</h1>
+      <h1 className="mask-h3">Past projects</h1>
       <div>
         {map(pastProjects, project => {
           const {
@@ -154,11 +154,11 @@ const PastInitiatives = props => {
   )
 }
 
-PastInitiatives.propTypes = {
+Pastprojects.propTypes = {
   data: PropTypes.object,
 }
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default PastInitiatives
+export default Pastprojects

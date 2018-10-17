@@ -17,7 +17,6 @@ import isUndefined from 'lodash/isUndefined'
 import { Link } from 'gatsby'
 import { FacebookProvider, Page as FBPage } from 'react-facebook'
 import { Footer as SemanticFooter } from '@bodhi-project/semantic-webflow'
-import Disqus from 'disqus-react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import OutLink from '@bodhi-project/components/lib/OutLink'
@@ -96,13 +95,6 @@ const Footer = props => {
   let author = ''
   if (!isUndefined(quoteObj)) {
     ;({ quote, author } = quoteObj)
-  }
-
-  const disqusShortname = 'restorativeauroville'
-  const disqusConfig = {
-    url: 'http://localhost:8000/restorative-circles',
-    identifier: 'http://localhost:8000/restorative-circles',
-    title: 'Our Project: Restorative Auroville',
   }
 
   return (
@@ -188,7 +180,7 @@ const Footer = props => {
                       }}
                     >
                       <li>
-                        <Link to="/initiatives/ongoing">Initiatives</Link>
+                        <Link to="/projects/ongoing">projects</Link>
                       </li>
                       <li>
                         <Link to="/archives">Archives</Link>
@@ -406,7 +398,7 @@ const Footer = props => {
               Auroville, as local Tamil Aurovilians and non-local Aurovilians?
             </p>
             <div className="mask-p" style={{ marginBottom: 0 }}>
-              <Link to="/initiatives/cross-cultural-dialogue">Read more ⇝</Link>
+              <Link to="/projects/cross-cultural-dialogue">Read more ⇝</Link>
             </div>
           </div>
           <div
@@ -427,19 +419,6 @@ const Footer = props => {
               </FacebookProvider>
             </div>
           </div>
-        </div>
-        <div
-          style={{
-            paddingTop: 24,
-            borderBottom: '1px dotted #00006F',
-            paddingBottom: 24,
-          }}
-        >
-          <h3 className="mask-h6">Leave a comment…</h3>
-          <Disqus.DiscussionEmbed
-            shortname={disqusShortname}
-            config={disqusConfig}
-          />
         </div>
         <div
           style={{

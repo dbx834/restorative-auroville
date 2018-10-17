@@ -23,10 +23,10 @@
     ]
   },
   {
-    "title": "Our Initiatives +",
+    "title": "Our projects +",
     "menu": [
-      { "title": "Ongoing Initiatives", "link": "/initiatives/ongoing" },
-      { "title": "Past Initiatives", "link": "/initiatives/past" }
+      { "title": "Ongoing projects", "link": "/projects/ongoing" },
+      { "title": "Past projects", "link": "/projects/past" }
     ]
   },
   { "title": "Our Team", "link": "/our-team" },

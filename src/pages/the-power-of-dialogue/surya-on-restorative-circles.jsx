@@ -10,6 +10,7 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
+import DisqusComments from '../../components/DisqusComments'
 import Video from '../../components/Video'
 import seoHelper from '../../methods/seoHelper'
 
@@ -39,6 +40,7 @@ const Page = () => (
       your preferences, to become more flexible and adapt to what's needed.
     </p>
     <Video url="https://www.youtube.com/watch?v=uIyY6TDbnSQ" />
+    <DisqusComments pageData={pageData} />
   </StandardPage>
 )
 

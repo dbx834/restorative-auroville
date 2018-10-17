@@ -18,6 +18,7 @@ import Images from '@bodhi-project/components/lib/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
+import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
 
 import yurt4 from '../../assets/yurt/yurt4.jpeg'
@@ -37,7 +38,7 @@ const photos = [
 
 const pageData = {
   pageTitle: 'Building an RC Yurt',
-  nakedPageSlug: 'initiatives/building-an-rc-yurt',
+  nakedPageSlug: 'projects/building-an-rc-yurt',
   pageAbstract:
     'With our work growing, it’s high-time that we build a physical structure for our RC gatherings. We’re hoping to raise Rs.5 lakhs, in order to set up a dismountable yurt in Centre Field.',
 }
@@ -130,6 +131,7 @@ const Initiative = props => {
           </ul>
         </li>
       </ol>
+      <DisqusComments pageData={pageData} />
     </StandardPage>
   )
 }

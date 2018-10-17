@@ -15,14 +15,16 @@ import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
+import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
 
 const pageData = {
-  pageTitle: 'Restorative Circles in Aikyam School',
-  nakedPageSlug: 'initiatives/restorative-circles-in-aikyam-school',
+  pageTitle: 'Restorative Circles in The Learning Community School',
+  nakedPageSlug:
+    'projects/restorative-circles-in-the-learning-community-school',
   pageAbstract: 'Page abstract.',
 }
 
@@ -35,8 +37,11 @@ const seoData = seoHelper(pageData)
 const Initiative = props => {
   return (
     <StandardPage className="" seoData={seoData}>
-      <h1 className="mask-h3">Restorative Circles in Aikyam School</h1>
+      <h1 className="mask-h3">
+        Restorative Circles in The Learning Community School
+      </h1>
       <p>...</p>
+      <DisqusComments pageData={pageData} />
     </StandardPage>
   )
 }
