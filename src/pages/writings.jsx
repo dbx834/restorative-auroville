@@ -44,6 +44,8 @@ const seoData = seoHelper(pageData)
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 const pageStyles = css({
+  marginBottom: 60,
+
   '& .ant-card': {
     boxShadow: '1px 2px 0 0 rgba(0, 0, 111, 1)',
 
