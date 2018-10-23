@@ -114,7 +114,7 @@ const Initiative = props => {
         love, to forgive, to share, and to overcome our conditioned ideas of
         superiority versus inferiority.
       </p>
-      <BookReader title="Flow" url="/filmfest-reflowable.epub" />
+      <BookReader title="Flow" url="/rev4.epub" />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )
