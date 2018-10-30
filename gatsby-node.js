@@ -82,15 +82,23 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     const elapsed = begins.fromNow()
 
     let humanDate = begins.format('ddd D')
+    let displayDate = begins.format('D')
+    let formattedDate = begins.format('ddd, MMMM D, YYYY')
     if (sameDay === false) {
       const range = begins.twix(ends, { allDay: false })
       const rangeX = range.simpleFormat('ddd, D')
+      const rangeY = range.simpleFormat('D')
+      const rangeZ = range.simpleFormat('ddd, MMMM D')
       const beginsYear = begins.format('YYYY')
       const endsYear = ends.format('YYYY')
       if (beginsYear === endsYear) {
         humanDate = rangeX
+        displayDate = rangeY
+        formattedDate = `${rangeZ}, ${beginsYear}`
       } else {
         humanDate = rangeX
+        displayDate = rangeY
+        formattedDate = rangeZ
       }
     }
 
@@ -115,7 +123,9 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     createNodeField({ node, name: 'beginIsoDate', value: beginIsoDate })
     createNodeField({ node, name: 'endHumanDate', value: endHumanDate })
     createNodeField({ node, name: 'endIsoDate', value: endIsoDate })
+    createNodeField({ node, name: 'formattedDate', value: formattedDate })
     createNodeField({ node, name: 'humanDate', value: humanDate })
+    createNodeField({ node, name: 'displayDate', value: displayDate })
     createNodeField({ node, name: 'route', value: route })
     createNodeField({ node, name: 'rawContent', value: node.internal.content })
     createNodeField({ node, name: 'beginDateInt', value: beginDateInt })
@@ -215,6 +225,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     month
                     monthN
                     dayOfMonth
+                    displayDate
+                    formattedDate
                   }
                 }
               }
@@ -250,6 +262,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             route: edge.node.fields.route,
             elapsed: edge.node.fields.elapsed,
             humanDate: edge.node.fields.humanDate,
+            formattedDate: edge.node.fields.formattedDate,
             markdownAst: unified()
               .use(markdown)
               .parse(edge.node.fields.rawContent),
@@ -317,6 +330,8 @@ exports.onPostBuild = ({ graphql }) => {
                     month
                     monthN
                     dayOfMonth
+                    displayDate
+                    formattedDate
                   }
                 }
               }
@@ -353,6 +368,7 @@ exports.onPostBuild = ({ graphql }) => {
             route: edge.node.fields.route,
             elapsed: edge.node.fields.elapsed,
             humanDate: edge.node.fields.humanDate,
+            formattedDate: edge.node.fields.formattedDate,
             markdownAst: unified()
               .use(markdown)
               .parse(edge.node.fields.rawContent),

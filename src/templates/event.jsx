@@ -39,8 +39,8 @@ class BlogPostTemplate extends React.Component {
     const { pathContext } = this.props
     const { frontmatter } = pathContext
     // const { toc } = pathContext;
-    const { markdownAst } = pathContext
-    const { route, humanDate } = pathContext
+    const { markdownAst, next, prev } = pathContext
+    const { route, humanDate, formattedDate } = pathContext
     const checkedRoute = startsWith(route, '/') ? route : `/${route}`
     const nakedRoute = checkedRoute.substr(1)
     const { tags, date, startDate, finishDate, cover } = frontmatter
@@ -79,6 +79,9 @@ class BlogPostTemplate extends React.Component {
         pageData={pageData}
         frontmatter={frontmatter}
         humanDate={humanDate}
+        formattedDate={formattedDate}
+        next={next}
+        prev={prev}
       >
         {treeParser(
           markdownAst,

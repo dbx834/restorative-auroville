@@ -115,32 +115,6 @@ const Footer = props => {
         <h1 className="mask-h3">More Information</h1>
         <div style={{ borderBottom: '1px dotted #00006F', paddingBottom: 24 }}>
           <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
-            <Col span={8} style={{ borderRight: '1px dotted #00006F' }}>
-              <div
-                style={{
-                  borderBottom: '1px dotted #00006F',
-                  paddingBottom: 24,
-                }}
-              >
-                <h3 className="mask-h6">Newsletter</h3>
-                <p>
-                  Receive e-mail updates on our exhibitions, events, and more…
-                </p>
-                <div className="mask-p" style={{ marginBottom: 0 }}>
-                  <Link to="/newsletter">Subscribe ⇝</Link>
-                </div>
-              </div>
-              <div style={{ paddingTop: 24 }}>
-                <h3 className="mask-h6">Volunteer & Apprentice</h3>
-                <p>
-                  We need more ambassadors who are willing to do the research,
-                  the teaching and the experimenting…
-                </p>
-                <div className="mask-p" style={{ marginBottom: 0 }}>
-                  <Link to="/volunteer">Apply ⇝</Link>
-                </div>
-              </div>
-            </Col>
             <Col span={16}>
               <div
                 style={{
@@ -180,7 +154,7 @@ const Footer = props => {
                       }}
                     >
                       <li>
-                        <Link to="/projects/ongoing">projects</Link>
+                        <Link to="/projects/ongoing">Projects</Link>
                       </li>
                       <li>
                         <Link to="/archives">Archives</Link>
@@ -227,7 +201,13 @@ const Footer = props => {
                   </Col>
                 </Row>
               </div>
-              <div style={{ paddingTop: 24 }}>
+              <div
+                style={{
+                  paddingTop: 24,
+                  paddingBottom: 24,
+                  borderBottom: '1px dotted #00006F',
+                }}
+              >
                 <h3 className="mask-h6">Connect With Us</h3>
                 <div
                   style={{ display: 'flex', justifyContent: 'space-between' }}
@@ -361,105 +341,70 @@ const Footer = props => {
                   </form>
                 </div>
               </div>
+              <div style={{ paddingTop: 24 }}>
+                <p
+                  style={{
+                    textAlign: 'center',
+                  }}
+                >
+                  {isString(quote) && (
+                    <Fragment>
+                      "<i>{quote}</i>"
+                    </Fragment>
+                  )}
+                  {isArray(quote) && (
+                    <Fragment>
+                      "
+                      <i>
+                        {map(quote, (quotelet, index) => (
+                          <Fragment key={index}>
+                            {index !== 0 && <br />}
+                            {quotelet}
+                          </Fragment>
+                        ))}
+                      </i>
+                      "
+                    </Fragment>
+                  )}
+                  <br />~ {author}
+                </p>
+              </div>
+            </Col>
+            <Col span={8} style={{ borderLeft: '1px dotted #00006F' }}>
+              <div
+                style={{
+                  flexGrow: 1,
+                  maxWidth: 340,
+                  minWidth: 340,
+                  paddingLeft: 12,
+                }}
+              >
+                <h3 className="mask-h6">Find Us On Facebook</h3>
+                <div style={{ maxHeight: 500, overflow: 'hidden' }}>
+                  <FacebookProvider appId="218604115574634">
+                    <FBPage
+                      href="https://www.facebook.com/RestorativeAuroville"
+                      tabs="timeline,events,messages"
+                    />
+                  </FacebookProvider>
+                </div>
+              </div>
             </Col>
           </Row>
         </div>
         <div
           style={{
             paddingTop: 24,
-            display: 'flex',
-            borderBottom: '1px dotted #00006F',
-            paddingBottom: 24,
           }}
         >
-          <div
-            style={{
-              flexGrow: 1,
-              paddingRight: 12,
-              borderRight: '1px dotted #00006F',
-            }}
-          >
-            <h3 className="mask-h6">Project Highlight</h3>
-            <Image
-              src={nvcX62}
-              rawWidth={1440}
-              rawHeight={900}
-              style={{
-                border: 0,
-                background: 'transparent',
-              }}
-            />
-            <p>
-              <strong>Cross-Cultural Dialogue</strong>
-              <br />
-              2018
-              <br />
-              We want to explore and understand this question: Are we divided in
-              Auroville, as local Tamil Aurovilians and non-local Aurovilians?
-            </p>
-            <div className="mask-p" style={{ marginBottom: 0 }}>
-              <Link to="/projects/cross-cultural-dialogue">Read more ⇝</Link>
-            </div>
-          </div>
-          <div
-            style={{
-              flexGrow: 1,
-              maxWidth: 340,
-              minWidth: 340,
-              paddingLeft: 12,
-            }}
-          >
-            <h3 className="mask-h6">Find Us On Facebook</h3>
-            <div style={{ maxHeight: 500, overflow: 'hidden' }}>
-              <FacebookProvider appId="218604115574634">
-                <FBPage
-                  href="https://www.facebook.com/RestorativeAuroville"
-                  tabs="timeline,events,messages"
-                />
-              </FacebookProvider>
-            </div>
-          </div>
-        </div>
-        <div
-          style={{
-            paddingTop: 24,
-          }}
-        >
-          <p
-            style={{
-              textAlign: 'center',
-            }}
-          >
-            {isString(quote) && (
-              <Fragment>
-                "<i>{quote}</i>"
-              </Fragment>
-            )}
-            {isArray(quote) && (
-              <Fragment>
-                "<i>
-                  {map(quote, (quotelet, index) => (
-                    <Fragment key={index}>
-                      {index !== 0 && <br />}
-                      {quotelet}
-                    </Fragment>
-                  ))}
-                </i>"
-              </Fragment>
-            )}
-            <br />
-            ~ {author}
-          </p>
           <p
             style={{
               textAlign: 'center',
             }}
           >
             Made with&nbsp;
-            <Icon
-              type="heart"
-              style={{ fontSize: '80%', color: '#00006F' }}
-            />&nbsp;by&nbsp;
+            <Icon type="heart" style={{ fontSize: '80%', color: '#00006F' }} />
+            &nbsp;by&nbsp;
             <OutLink to="https://www.bodhiproject.org/">Bodhi Project</OutLink>
           </p>
           <p

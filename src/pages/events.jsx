@@ -6,7 +6,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'glamor'
 import moment from 'moment'
-import axios from 'axios'
+import color from 'color'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import map from 'lodash/map'
@@ -14,12 +14,16 @@ import filter from 'lodash/filter'
 import reverse from 'lodash/reverse'
 import values from 'lodash/values'
 import isUndefined from 'lodash/isUndefined'
+import join from 'lodash/join'
+import isNull from 'lodash/isNull'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { Link } from 'gatsby'
+import { Link, withPrefix } from 'gatsby'
 import withSizes from 'react-sizes'
 import 'moment/locale/en-gb'
-import treeParser from '@bodhi-project/markdown-to-react/lib/treeParser'
+
+import Image from '@bodhi-project/components/lib/Image'
+import AnimateOnChange from 'react-animate-on-change'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/blocks
 import Tabs from 'antd/lib/tabs'
@@ -31,8 +35,8 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import Col from 'antd/lib/col'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
-import Icon from 'antd/lib/icon'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
+import Switch from 'antd/lib/switch'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/switch/style/css'
 
 import Button from 'antd/lib/button'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
@@ -46,6 +50,7 @@ import { Type } from '@bodhi-project/typography'
 import seoHelper from '../methods/seoHelper'
 import StandardPage from '../components/StandardPage'
 
+import Month from '../components/Month'
 import EventRegisterationForm from '../components/EventRegisterationForm'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -68,112 +73,185 @@ const seoData = seoHelper(pageData)
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
+const baseColor = color('rgba(0, 0, 111, 0.68)')
 const pageStyle = css({
+  '& .ant-tabs': {
+    overflow: 'visible',
+
+    '& .ant-tabs-bar': {
+      marginLeft: -72,
+      border: 'unset !important',
+    },
+
+    '& .ant-tabs-tab': {
+      fontFamily: 'futura-pt, sans-serif !important',
+      height: '50px !important',
+      width: '50px !important',
+      display: 'flex !important',
+      justifyContent: 'center !important',
+      alignItems: 'center !important',
+      color: `${baseColor} !important`,
+      border: `1px solid ${baseColor} !important`,
+      transition: 'all 200ms ease-in !important',
+      borderRadius: '50% !important',
+      marginBottom: '18px !important',
+    },
+
+    '& .ant-tabs-tab.ant-tabs-tab-active': {
+      fontFamily: 'futura-pt, sans-serif !important',
+      height: '50px !important',
+      width: '50px !important',
+      display: 'flex !important',
+      justifyContent: 'center !important',
+      alignItems: 'center !important',
+      backgroundColor: `${baseColor} !important`,
+      color: `#ffffff !important`,
+      border: `1px solid ${baseColor} !important`,
+      transition: 'all 200ms ease-in !important',
+      borderRadius: '50% !important',
+      marginBottom: '18px !important',
+    },
+
+    '& .ant-tabs-content': {
+      border: 'unset !important',
+      padding: 'unset !important',
+    },
+  },
+
   '& .ant-tabs-nav-scroll': {
     textAlign: 'unset !important',
   },
 
-  '& .item': {
+  '& .month': {
+    marginTop: 18,
+    marginBottom: 18,
+    position: 'relative',
     display: 'flex',
-    padding: '4px 9px',
 
-    '&:nth-child(odd)': {
-      backgroundColor: 'rgba(255, 191, 0, 0.1)',
+    '&:nth-child(1)': {
+      marginTop: 0,
     },
 
-    '&:nth-child(even)': {
-      backgroundColor: 'rgba(109, 0, 255, 0.1)',
-    },
-
-    '& .title': {
-      flexGrow: 75,
+    '& .month-title': {
+      flexGrow: 15,
       flexBasis: 0,
+      borderTopLeftRadius: 24,
+      borderBottomLeftRadius: 24,
+      marginRight: 24,
+      alignContent: 'flex-center',
+      position: 'relative',
+      height: 50,
 
-      // "& .time": {
-      //   display: "flex",
-      //   width: "100%",
-      //   lineHeight: "22px",
-
-      //   "& div": {
-      //     flexGrow: 1,
-      //   },
-      // },
+      '& h2': {
+        margin: 0,
+        position: 'absolute',
+        right: 25,
+        lineHeight: '50px',
+        height: 50,
+        fontWeight: 700,
+      },
     },
 
-    '& .time': {
-      flexGrow: 25,
+    '& .event-list': {
+      flexGrow: 85,
       flexBasis: 0,
+      display: 'flex',
+
+      '& .event': {
+        minWidth: 50,
+        paddingLeft: 8,
+        paddingRight: 8,
+        marginRight: 5,
+        marginLeft: 5,
+        height: 50,
+        position: 'relative',
+        transition: 'all 300ms ease-in',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        cursor: 'pointer',
+
+        '&.not-practice-group': {
+          borderRadius: 6,
+          backgroundColor: '#FF7D00',
+          color: '#2c2c2c',
+        },
+
+        '&.practice-group': {
+          borderRadius: '50%',
+          backgroundColor: '#ffcb9a',
+          color: '#2c2c2c',
+        },
+
+        '&.is-active': {
+          backgroundColor: baseColor,
+          color: '#FFF',
+        },
+
+        '&:hover': {
+          backgroundColor: baseColor,
+          color: '#FFF',
+        },
+
+        '& p': {
+          fontFamily: 'futura-pt, sans-serif !important',
+          display: 'inline-block',
+          margin: 0,
+          letterSpacing: '-0.2ex',
+        },
+      },
     },
   },
 })
 const pageStyles = pageStyle.toString()
 
-/** Month */
-const Month = props => {
-  const { year, month, monthKey, postEdges, openSet, registerForEvent } = props
-  return (
-    <div
-      style={{
-        marginBottom: 12,
-        position: 'relative',
-      }}
-      key={`${month}-${monthKey}`}
-    >
-      <h2 className="mask-h6">{month}</h2>
-      <ul className="event-list" style={{ listStyle: 'none', padding: 0 }}>
-        {map(postEdges, ({ node }, edgeIndex) => {
-          const showThis =
-            node.fields.year === year && node.fields.month === month
-          if (showThis === true) {
-            return (
-              <li className="item" key={edgeIndex}>
-                <div className="title">
-                  <div className="event-title">
-                    <Link to={node.fields.route} style={{ color: 'unset' }}>
-                      {node.frontmatter.title}
-                    </Link>
-                  </div>
-                  <div className="links hidden-sm">
-                    <small>
-                      <a
-                        href="#"
-                        title="More details"
-                        onClick={e => openSet(e, edgeIndex)}
-                      >
-                        <Icon type="search" theme="outlined" />
-                      </a>
-                      &nbsp;
-                      <a
-                        href="#"
-                        title="Register now"
-                        onClick={e => registerForEvent(e, edgeIndex)}
-                      >
-                        <Icon type="form" theme="outlined" />
-                      </a>
-                    </small>
-                  </div>
-                </div>
-                <div className="time">
-                  <div style={{ textAlign: 'right' }}>
-                    <i>
-                      <small>{node.fields.humanDate}</small>
-                    </i>
-                  </div>
-                  <div style={{ textAlign: 'right' }}>
-                    <i>
-                      <small>
-                        {node.frontmatter.fromTime} - {node.frontmatter.toTime}
-                      </small>
-                    </i>
-                  </div>
-                </div>
-              </li>
-            )
-          }
-        })}
-      </ul>
-    </div>
+/** getBanner */
+const getBanner = (cover, tags) => {
+  let eventBanner = null
+  if (cover === 'fallback') {
+    const coverHint = join(tags, '-')
+    eventBanner = withPrefix(`/content-assets/event-fallbacks/${coverHint}.jpg`)
+  } else {
+    eventBanner = withPrefix(cover)
+  }
+  return eventBanner
+}
+
+const todayInt = parseInt(moment().format('YYYYMMDD'), 10)
+
+/** registerLink */
+const registerLink = (extraData, registerForEvent) => {
+  const begins = moment(
+    !isNull(extraData.node.frontmatter.startDate)
+      ? extraData.node.frontmatter.startDate
+      : extraData.node.frontmatter.date
   )
+  const beginDateInt = parseInt(begins.format('YYYYMMDD'), 10)
+  let eventStatus = null
+  if (todayInt > beginDateInt) {
+    eventStatus = 'past'
+  } else if (todayInt < beginDateInt) {
+    eventStatus = 'future'
+  } else {
+    eventStatus = 'present'
+  }
+
+  let frag = <Fragment />
+  if (eventStatus === 'past' || eventStatus === 'present') {
+    frag = 'Registration for this event is now closed.'
+  } else {
+    frag = (
+      <a
+        href="#"
+        title="Register now"
+        onClick={e => registerForEvent(e, extraData.edgeIndex)}
+      >
+        Register now.
+      </a>
+    )
+  }
+
+  return frag
 }
 
 // ----------------------------------------------------------------------------
@@ -187,58 +265,58 @@ class Events extends React.Component {
 
     this.state = {
       visible: false,
-      index: undefined,
       indexForForm: undefined,
-      eventData: undefined,
-      fetchingData: false,
+      showArchive: false,
+      animate: true,
+      extraData: undefined,
+      active: undefined,
     }
 
     this.onClose = this.onClose.bind(this)
     this.openSet = this.openSet.bind(this)
+    this.updateExtraData = this.updateExtraData.bind(this)
     this.registerForEvent = this.registerForEvent.bind(this)
+    this.toggleArchive = this.toggleArchive.bind(this)
+    this.doneAnimating = this.doneAnimating.bind(this)
+    this.setActive = this.setActive.bind(this)
   }
 
   /** componentDidUpdate */
   componentDidUpdate(prevProps, prevState) {
-    const { index: oldIndex } = prevState
-    const { index: newIndex } = this.state
+    const { extraData: oldExtraData } = prevState
+    const { extraData: newExtraData } = this.state
 
-    if (oldIndex !== newIndex) {
-      this.setState({ fetchingData: true })
-      const { data } = this.props
-      const postEdges = data.allMarkdownRemark.edges
-      const selectedEdge = postEdges[newIndex]
-      const {
-        node: {
-          fields: { route },
-        },
-      } = selectedEdge
-      if (!isUndefined(window)) {
-        axios
-          .get(`/${route}.json`)
-          .then(response => {
-            // All OK
-            if (response.status === 200) {
-              const { data: eventData } = response
-              this.setState({ eventData })
+    if (!isUndefined(oldExtraData) && !isUndefined(newExtraData)) {
+      const { edgeIndex: oldEdgeIndex } = oldExtraData
+      const { edgeIndex: newEdgeIndex } = newExtraData
 
-              // Mock some delay
-              setTimeout(() => {
-                this.setState({ fetchingData: false })
-              }, 500)
-            }
-          })
-          .catch(error => {
-            console.log(error)
-          })
+      if (oldEdgeIndex !== newEdgeIndex) {
+        this.setState({ animate: true })
       }
     }
+  }
+
+  /** setActive */
+  setActive(edgeIndex) {
+    this.setState({
+      active: edgeIndex,
+    })
   }
 
   /** onClose */
   onClose() {
     this.setState({
       visible: false,
+    })
+  }
+
+  /** updateExtraData */
+  updateExtraData(node, edgeIndex) {
+    this.setState({
+      extraData: {
+        node,
+        edgeIndex,
+      },
     })
   }
 
@@ -255,8 +333,22 @@ class Events extends React.Component {
   registerForEvent(e, index) {
     e.preventDefault()
     this.setState({
-      visible: false,
+      visible: true,
       indexForForm: index,
+    })
+  }
+
+  /** toggleArchive */
+  toggleArchive(checked) {
+    this.setState({
+      showArchive: checked,
+    })
+  }
+
+  /** doneAnimating */
+  doneAnimating() {
+    this.setState({
+      animate: false,
     })
   }
 
@@ -264,7 +356,13 @@ class Events extends React.Component {
   render() {
     const { data } = this.props
     const postEdges = data.allMarkdownRemark.edges
-    const { index, indexForForm, visible } = this.state
+    const {
+      animate,
+      indexForForm,
+      visible,
+      extraData,
+      showArchive,
+    } = this.state
     const today = moment()
     const thisYear = today.year().toString()
     const thisMonth = today.month()
@@ -286,19 +384,35 @@ class Events extends React.Component {
     const monthsArray = values(months)
     const previousMonths = reverse(filter(months, (m, key) => key < thisMonth))
     const thisAndFutureMonths = filter(months, (m, key) => key >= thisMonth)
-    const title = isUndefined(index)
-      ? 'Event'
-      : `${postEdges[index].node.frontmatter.title}: ${
-          postEdges[index].node.fields.humanDate
-        }`
-    const { eventData, fetchingData } = this.state
+    const { active } = this.state
 
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
         <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
           <Col sm={24} md={15}>
-            <h1 className="mask-h3">Workshops & Events</h1>
-            <Tabs type="card">
+            <div style={{ position: 'relative' }}>
+              <h1 className="mask-h3">Workshops & Events</h1>
+              <div style={{ position: 'absolute', top: 0, right: 0 }}>
+                <h2
+                  className="mask-h6"
+                  style={{
+                    display: 'inline-block',
+                    margin: 0,
+                    lineHeight: '22px',
+                    marginTop: 9,
+                  }}
+                >
+                  Past Events
+                </h2>
+                &nbsp;
+                <Switch
+                  style={{ display: 'inline-block', margin: 0, marginTop: -2 }}
+                  defaultChecked={false}
+                  onChange={this.toggleArchive}
+                />
+              </div>
+            </div>
+            <Tabs type="card" tabPosition="left">
               {map(years, (year, yearKey) => {
                 const key = `${year}-${yearKey}`
                 return (
@@ -306,51 +420,73 @@ class Events extends React.Component {
                     <Fragment>
                       {year === thisYear && (
                         <Fragment>
-                          {map(thisAndFutureMonths, (month, monthKey) => {
-                            return (
-                              <Month
-                                year={year}
-                                month={month}
-                                monthKey={monthKey}
-                                postEdges={postEdges}
-                                openSet={this.openSet}
-                                registerForEvent={this.registerForEvent}
-                                key={`${month}-${monthKey}`}
-                              />
-                            )
-                          })}
-                          <hr />
-                          <h4>Past Events</h4>
-                          {map(previousMonths, (month, monthKey) => {
-                            return (
-                              <Month
-                                year={year}
-                                month={month}
-                                monthKey={monthKey}
-                                postEdges={postEdges}
-                                openSet={this.openSet}
-                                registerForEvent={this.registerForEvent}
-                                key={`${month}-${monthKey}`}
-                              />
-                            )
-                          })}
+                          {showArchive === false ? (
+                            <Fragment>
+                              {map(thisAndFutureMonths, (month, monthKey) => {
+                                return (
+                                  <Month
+                                    year={year}
+                                    month={month}
+                                    monthKey={monthKey}
+                                    postEdges={postEdges}
+                                    openSet={this.openSet}
+                                    registerForEvent={this.registerForEvent}
+                                    updateExtraData={this.updateExtraData}
+                                    past={false}
+                                    key={`${month}-${monthKey}`}
+                                    setActive={this.setActive}
+                                    active={active}
+                                  />
+                                )
+                              })}
+                            </Fragment>
+                          ) : (
+                            <Fragment>
+                              {map(previousMonths, (month, monthKey) => {
+                                return (
+                                  <Month
+                                    year={year}
+                                    month={month}
+                                    monthKey={monthKey}
+                                    postEdges={postEdges}
+                                    openSet={this.openSet}
+                                    registerForEvent={this.registerForEvent}
+                                    updateExtraData={this.updateExtraData}
+                                    past={true}
+                                    key={`${month}-${monthKey}`}
+                                    setActive={this.setActive}
+                                    active={active}
+                                  />
+                                )
+                              })}
+                            </Fragment>
+                          )}
                         </Fragment>
                       )}
-                      {year !== thisYear && (
+                      {showArchive === false && (
                         <Fragment>
-                          {map(monthsArray, (month, monthKey) => {
-                            return (
-                              <Month
-                                year={year}
-                                month={month}
-                                monthKey={monthKey}
-                                postEdges={postEdges}
-                                openSet={this.openSet}
-                                registerForEvent={this.registerForEvent}
-                                key={`${month}-${monthKey}`}
-                              />
-                            )
-                          })}
+                          {year !== thisYear &&
+                            year > thisYear && (
+                              <Fragment>
+                                {map(monthsArray, (month, monthKey) => {
+                                  return (
+                                    <Month
+                                      year={year}
+                                      month={month}
+                                      monthKey={monthKey}
+                                      postEdges={postEdges}
+                                      openSet={this.openSet}
+                                      registerForEvent={this.registerForEvent}
+                                      updateExtraData={this.updateExtraData}
+                                      past={false}
+                                      key={`${month}-${monthKey}`}
+                                      setActive={this.setActive}
+                                      active={active}
+                                    />
+                                  )
+                                })}
+                              </Fragment>
+                            )}
                         </Fragment>
                       )}
                     </Fragment>
@@ -360,43 +496,59 @@ class Events extends React.Component {
             </Tabs>
           </Col>
           <Col span={9} className="hidden-sm">
-            {isUndefined(indexForForm) ? (
-              <Fragment>
-                <h3>Register</h3>
+            {!isUndefined(extraData) && (
+              <div>
+                <Image
+                  src={getBanner(
+                    extraData.node.frontmatter.cover,
+                    extraData.node.frontmatter.tags
+                  )}
+                  rawWidth={1440}
+                  rawHeight={900}
+                  style={{
+                    border: '1px solid #00006F',
+                    height: 'auto',
+                    width: '100%',
+                    marginBottom: 11,
+                  }}
+                  className="mask-p"
+                />
+                <h3 className="mask-h4">{extraData.node.frontmatter.title}</h3>
                 <p>
-                  To register for an event please select an event from the
-                  selection.
+                  <AnimateOnChange
+                    baseClassName="animated"
+                    animationClassName="flash"
+                    animate={animate}
+                    onAnimationEnd={() => this.doneAnimating()}
+                  >
+                    <i>
+                      {extraData.node.fields.formattedDate}
+                      <br />
+                      {extraData.node.frontmatter.fromTime} -{' '}
+                      {extraData.node.frontmatter.toTime}
+                    </i>
+                  </AnimateOnChange>
                 </p>
-              </Fragment>
-            ) : (
-              <EventRegisterationForm event={postEdges[indexForForm]} />
+                <p>{extraData.node.frontmatter.abstract}</p>
+                <p>{registerLink(extraData, this.registerForEvent)}</p>
+                <p>
+                  <Link to={extraData.node.fields.route}>More details.</Link>
+                </p>
+              </div>
             )}
           </Col>
         </Row>
         <Drawer
-          title={title}
+          title={false}
           closable={false}
           onClose={this.onClose}
           visible={visible}
-          width="45vw"
+          width="38vw"
           placement="left"
         >
-          {fetchingData === true && <p>Fetching data…</p>}
-          {fetchingData === false &&
-            !isUndefined(eventData) && (
-              <Type kit="dkc2ilk">
-                {treeParser(
-                  eventData.markdownAst,
-                  {
-                    localLink: Link,
-                    linkHeaders: false,
-                    trackHeaders: false,
-                    nestHeaders: false,
-                  },
-                  {}
-                )}
-              </Type>
-            )}
+          <Type kit="dkc2ilk">
+            <EventRegisterationForm event={postEdges[indexForForm]} />
+          </Type>
           <div
             style={{
               position: 'absolute',
@@ -416,12 +568,6 @@ class Events extends React.Component {
               onClick={this.onClose}
             >
               Close
-            </Button>
-            <Button
-              type="primary"
-              onClick={e => this.registerForEvent(e, index)}
-            >
-              Register
             </Button>
           </div>
         </Drawer>
@@ -457,6 +603,8 @@ export const pageQuery = graphql`
             month
             monthN
             dayOfMonth
+            displayDate
+            formattedDate
           }
           frontmatter {
             abstract

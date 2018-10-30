@@ -102,6 +102,13 @@ import nvcX75 from '../assets/gallery/nvcX75.jpg'
 import nvcX76 from '../assets/gallery/nvcX76.jpg'
 import nvcX77 from '../assets/gallery/nvcX77.jpg'
 import nvcX78 from '../assets/gallery/nvcX78.jpg'
+import nvcX85 from '../assets/gallery/nvcX85.jpg'
+import nvcX79 from '../assets/gallery/nvcX79.jpg'
+import nvcX80 from '../assets/gallery/nvcX80.jpg'
+import nvcX81 from '../assets/gallery/nvcX81.jpg'
+import nvcX82 from '../assets/gallery/nvcX82.jpg'
+import nvcX83 from '../assets/gallery/nvcX83.jpg'
+import nvcX84 from '../assets/gallery/nvcX84.jpg'
 
 const photos = [
   { src: nvcX1, width: 600, height: 450 },
@@ -179,6 +186,13 @@ const photos = [
   { src: nvcX75, width: 600, height: 401 },
   { src: nvcX76, width: 600, height: 401 },
   { src: nvcX77, width: 600, height: 450 },
+  { src: nvcX85, width: 600, height: 450 },
+  { src: nvcX79, width: 600, height: 425 },
+  { src: nvcX80, width: 600, height: 603 },
+  { src: nvcX81, width: 600, height: 415 },
+  { src: nvcX82, width: 600, height: 555 },
+  { src: nvcX83, width: 600, height: 450 },
+  { src: nvcX84, width: 600, height: 889 },
 ]
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
