@@ -103,8 +103,17 @@ const Page = props => {
   return (
     <StandardPage className="" seoData={seoData}>
       <EventSchema data={eventSchemaData} />
+      <Breadcrumb className="mask-p">
+        <BItem>
+          <Link to="/">Home</Link>
+        </BItem>
+        <BItem>
+          <Link to="/events">Events</Link>
+        </BItem>
+        <BItem>{title}</BItem>
+      </Breadcrumb>
       <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-        <Col sm={24} md={15}>
+        <Col sm={24} md={24} xl={15}>
           <Header>
             <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
               <Col sm={24} md={9}>
@@ -123,15 +132,6 @@ const Page = props => {
               </Col>
               <Col sm={24} md={15}>
                 <h1 className="mask-h3">{title}</h1>
-                <Breadcrumb className="mask-p">
-                  <BItem>
-                    <Link to="/">Home</Link>
-                  </BItem>
-                  <BItem>
-                    <Link to="/events">Events</Link>
-                  </BItem>
-                  <BItem>{title}</BItem>
-                </Breadcrumb>
                 <p>{formattedDate}</p>
                 <p>
                   <i>{abstract}</i>
@@ -186,7 +186,7 @@ const Page = props => {
             </div>
           </Footer>
         </Col>
-        <Col sm={24} md={9}>
+        <Col sm={24} md={24} xl={9}>
           <EventRegisterationForm
             event={{ node: { frontmatter, fields: { route, humanDate } } }}
           />

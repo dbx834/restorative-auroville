@@ -4,26 +4,49 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 // import PropTypes from 'prop-types'
-// import { css } from "glamor";
+import { css } from 'glamor'
+import moment from 'moment'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 // import map from "lodash/map";
 // import isUndefined from "lodash/isUndefined";
+import filter from 'lodash/filter'
+import slice from 'lodash/slice'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { Link } from 'gatsby'
+import withSizes from 'react-sizes'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
+import Row from 'antd/lib/row'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+
+import Col from 'antd/lib/col'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../components/StandardPage'
+import Video from '../components/Video'
+import EventListing from '../components/EventListing'
+
+import ProjectHighlight from '../components/home-page/ProjectHighlight'
+import ArticleHighlight from '../components/home-page/ArticleHighlight'
+import TeamHighlight from '../components/home-page/TeamHighlight'
+import Feedback from '../components/home-page/Feedback'
 
 import seoHelper from '../methods/seoHelper'
 
 import banner from '../assets/banner.png'
+
+import v1 from '../assets/the-craft.jpg'
+import v2 from '../assets/in-action.jpg'
+import v3 from '../assets/the-restorative-system.jpg'
+import v4 from '../assets/experiences.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
@@ -38,45 +61,52 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
+const styleObject = css({
+  display: 'block',
+
+  '& .ant-card': {
+    boxShadow: '1px 2px 0 0 #FF7D00',
+
+    '&:hover': {
+      boxShadow: '2px 4px 0 0 #FF7D00',
+    },
+  },
+})
+const pageStyle = styleObject.toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** Page */
-const Page = () => (
-  <StandardPage className="" seoData={seoData}>
-    <Image
-      src={banner}
-      style={{
-        height: 'auto',
-        width: '100%',
-        border: 0,
-        background: 'transparent',
-        marginBottom: 10,
-      }}
-      alt="Restorative Auroville"
-    />
-
-    <h1 className="mask-h3">Restorative Auroville</h1>
-    <p>
-      Restorative Auroville is an independent project that aims to bring the
-      practice of{' '}
-      <Link to="www.restorativecircles.org">Restorative Circles</Link>, a
-      holistic, community-based form of conflict resolution, to Auroville, and
-      to explore what a consciously designed justice system could look like here
-      – one that reflects our ideals, but that is also effective and has the
-      power to bring about constructive change, both on the individual and
-      community levels.
-    </p>
-
-    <h2 className="mask-h3" style={{ borderBottom: '1px dotted #00006F' }}>
-      Current & Upcoming Events
-    </h2>
-
-    <div style={{ display: 'flex' }}>
-      <div style={{ flexGrow: 1, flexBasis: 0, paddingRight: 10 }}>
+/**
+ * [description]
+ * @return {[type]} [description]
+ */
+const VideoSeriesBlock1 = () => (
+  <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
+    <Col sm={24} md={24} lg={15}>
+      <h2 className="mask-h3">The Power of Dialogue - Video Series</h2>
+      <Video url="https://www.youtube.com/watch?v=ur4OvDPkoSE" />
+      <p>
+        <strong>3.2 – Designing our Justice System Consciously</strong>
+        <br />
+        We all have preferences and biases. For instance, do you have a bias for
+        clarity/formalization or for ambiguity/emergence? It's helpful to know
+        your preferences, to become more flexible and adapt to what's needed.{' '}
+        <Link to="/the-power-of-dialogue/designing-our-justice-system-consciously">
+          Visit page ⇝
+        </Link>
+      </p>
+      <p>
+        <Link to="/the-power-of-dialogue">See more videos ⇝</Link>
+      </p>
+    </Col>
+    <Col sm={24} md={24} lg={9}>
+      <h3 className="mask-h3">From The Series</h3>
+      <Link to="/the-power-of-dialogue#the-craft">
         <Image
-          src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
+          src={v1}
+          rawWidth={1800}
+          rawHeight={450}
           style={{
             height: 'auto',
             width: '100%',
@@ -84,16 +114,14 @@ const Page = () => (
             background: 'transparent',
             marginBottom: 10,
           }}
-          alt="Restorative Auroville"
+          alt="The Craft"
         />
-        <h3>Event blah blah</h3>
-        <p>
-          <strong>Event blah blah</strong>
-        </p>
-      </div>
-      <div style={{ flexGrow: 1, flexBasis: 0, paddingRight: 10 }}>
+      </Link>
+      <Link to="/the-power-of-dialogue#in-action">
         <Image
-          src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
+          src={v2}
+          rawWidth={1800}
+          rawHeight={450}
           style={{
             height: 'auto',
             width: '100%',
@@ -101,16 +129,14 @@ const Page = () => (
             background: 'transparent',
             marginBottom: 10,
           }}
-          alt="Restorative Auroville"
+          alt="In Action"
         />
-        <h3>Event blah bleh</h3>
-        <p>
-          <strong>Event blah bleh</strong>
-        </p>
-      </div>
-      <div style={{ flexGrow: 1, flexBasis: 0 }}>
+      </Link>
+      <Link to="/the-power-of-dialogue#the-restorative-system">
         <Image
-          src="https://images.unsplash.com/photo-1472722266948-a898ab5ff257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd8bab6c7d222fec4d2f89a12db3fe66&auto=format&fit=crop&w=1400&h=700&q=80"
+          src={v3}
+          rawWidth={1800}
+          rawHeight={450}
           style={{
             height: 'auto',
             width: '100%',
@@ -118,18 +144,219 @@ const Page = () => (
             background: 'transparent',
             marginBottom: 10,
           }}
-          alt="Restorative Auroville"
+          alt="The Restorative System"
         />
-        <h3>Event bluh bleh</h3>
-        <p>
-          <strong>Event bluh bleh</strong>
-        </p>
-      </div>
-    </div>
-  </StandardPage>
+      </Link>
+      <Link to="/the-power-of-dialogue#experiences">
+        <Image
+          src={v4}
+          rawWidth={1800}
+          rawHeight={450}
+          style={{
+            height: 'auto',
+            width: '100%',
+            border: 0,
+            background: 'transparent',
+            marginBottom: 10,
+          }}
+          alt="Experiences"
+        />
+      </Link>
+    </Col>
+  </Row>
 )
+
+/**
+ * [description]
+ * @return {[type]} [description]
+ */
+const VideoSeriesBlock2 = () => (
+  <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
+    <Col sm={24} md={24} lg={15}>
+      <h2 className="mask-h3">The Power of Dialogue - Video Series</h2>
+      <Video url="https://www.youtube.com/watch?v=ur4OvDPkoSE" />
+      <p>
+        <strong>3.2 – Designing our Justice System Consciously</strong>
+        <br />
+        We all have preferences and biases. For instance, do you have a bias for
+        clarity/formalization or for ambiguity/emergence? It's helpful to know
+        your preferences, to become more flexible and adapt to what's needed.{' '}
+        <Link to="/the-power-of-dialogue/designing-our-justice-system-consciously">
+          Visit page ⇝
+        </Link>
+      </p>
+      <p>
+        <Link to="/the-power-of-dialogue">See more videos ⇝</Link>
+      </p>
+    </Col>
+    <Col sm={24} md={24} lg={9}>
+      <h2 className="mask-h3">Testimonials</h2>
+      <p>
+        <i>
+          "I've done a lot of learning with L'aura, including a three day
+          conference & a ten week webinar, on the topic of Restorative Circles.
+          She is fantastic, is really insightful with first-hand experience
+          creating an RC system in a cross-cultural community. I love her
+          perspective and experience in NVC stuff as well. I sooo heartily
+          encourage you to check out her webinar series if you have any interest
+          (it's open to people outside of India too)."
+        </i>
+        &nbsp;~ Naomi Christine
+      </p>
+      <p>
+        <Link to="/the-power-of-dialogue">See more testimonials ⇝</Link>
+      </p>
+    </Col>
+  </Row>
+)
+
+/** Page */
+const Page = props => {
+  const { data, isMobile } = props
+  const today = moment()
+  const postEdges = data.allMarkdownRemark.edges
+  const upcoming = filter(
+    postEdges,
+    o => moment(o.node.frontmatter.date).isSameOrAfter(today) === true
+  )
+  const three = slice(upcoming, 0, 3)
+
+  return (
+    <StandardPage className={pageStyle} seoData={seoData}>
+      <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
+        <Col sm={24} md={24} lg={15}>
+          <Image
+            src={banner}
+            style={{
+              height: 'auto',
+              width: '100%',
+              border: 0,
+              background: 'transparent',
+              marginBottom: 10,
+            }}
+            alt="Restorative Auroville"
+          />
+        </Col>
+        <Col sm={24} md={24} lg={9}>
+          <h1 className="mask-h3">Restorative Auroville</h1>
+          <p>
+            Restorative Auroville is an independent project that aims to bring
+            the practice of&nbsp;
+            <Link to="www.restorativecircles.org">Restorative Circles</Link>, a
+            holistic, community-based form of conflict resolution, to Auroville,
+            and to explore what a consciously designed justice system could look
+            like here – one that reflects our ideals, but that is also effective
+            and has the power to bring about constructive change, both on the
+            individual and community levels.
+          </p>
+        </Col>
+      </Row>
+
+      <ProjectHighlight />
+      <VideoSeriesBlock2 />
+
+      <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
+        <Col sm={24} md={24} lg={12}>
+          <h2 className="mask-h3">Volunteer & Apprentice</h2>
+          <p>
+            In order for this work to develop fully in Auroville, we need more
+            ambassadors who are willing to do the research, the teaching and the
+            experimenting.
+          </p>
+          <p>
+            <Link to="/the-power-of-dialogue">Apply now ⇝</Link>
+          </p>
+        </Col>
+        <Col sm={24} md={24} lg={12}>
+          <h2 className="mask-h3">Newsletter</h2>
+          <p>Signup for our occasional newsletter about Restorative Circles.</p>
+          <p>
+            <Link to="/newsletter">Signup now ⇝</Link>
+          </p>
+        </Col>
+      </Row>
+
+      <div style={{ position: 'relative' }}>
+        <h1 className="mask-h3">Upcoming Events</h1>
+        <p>
+          We offer learning opportunities through workshops and practice groups
+          on Restorative Circles. We are also available for individual coaching
+          and mediation, and we are happy to consult with community-based
+          projects that are seeking to shift paradigms. Upcoming Events –
+        </p>
+        <EventListing events={three} />
+        <p
+          style={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            marginBottom: 0,
+            marginTop: 0,
+          }}
+        >
+          <Link to="/events">See all events ⇝</Link>
+        </p>
+      </div>
+
+      <TeamHighlight />
+    </StandardPage>
+  )
+}
+
+// ----------------------------------------------------------------------------
+// ---------------------------------------------------------------------- Query
+// ----------------------------------------------------------------------------
+/* eslint-disable no-undef */
+export const pageQuery = graphql`
+  query HomepageQuery {
+    allMarkdownRemark(
+      limit: 365
+      sort: { fields: [frontmatter___date], order: ASC }
+      filter: { frontmatter: { type: { eq: "event" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            route
+            humanDate
+            elapsed
+            beginDateInt
+            diff
+            year
+            month
+            monthN
+            dayOfMonth
+            displayDate
+            formattedDate
+          }
+          frontmatter {
+            abstract
+            title
+            subTitle
+            cover
+            date
+            startDate
+            finishDate
+            fromTime
+            toTime
+            category
+            tags
+            type
+            cost
+          }
+        }
+      }
+    }
+  }
+`
+/* eslint-enable no-undef */
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Export
 // ----------------------------------------------------------------------------
-export default Page
+/** mapSizesToProps */
+const mapSizesToProps = ({ width }) => ({
+  isMobile: width <= 768,
+})
+
+export default withSizes(mapSizesToProps)(Page)

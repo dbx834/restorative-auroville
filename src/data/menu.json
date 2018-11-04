@@ -41,6 +41,7 @@
       { "title": "Archives", "link": "/archives" },
       { "title": "Gallery", "link": "/gallery" },
       { "title": "Newsletter", "link": "/newsletter" },
+      { "title": "Testimonials", "link": "/testimonials" },
       { "title": "Pay Fee", "link": "/pay-fee" }
     ]
   },

@@ -145,7 +145,7 @@ const pageStyle = css({
       '& h2': {
         margin: 0,
         position: 'absolute',
-        right: 25,
+        left: 24,
         lineHeight: '50px',
         height: 50,
         fontWeight: 700,
@@ -200,6 +200,18 @@ const pageStyle = css({
           letterSpacing: '-0.2ex',
         },
       },
+    },
+  },
+
+  '& .old-events': {
+    '& .not-practice-group': {
+      backgroundColor: '#e5e5e5 !important',
+      color: '#2c2c2c !important',
+    },
+
+    '& .practice-group': {
+      backgroundColor: '#cccccc !important',
+      color: '#2c2c2c !important',
     },
   },
 })
@@ -389,7 +401,7 @@ class Events extends React.Component {
     return (
       <StandardPage className={pageStyles} seoData={seoData}>
         <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-          <Col sm={24} md={15}>
+          <Col sm={24} md={24} xl={15}>
             <div style={{ position: 'relative' }}>
               <h1 className="mask-h3">Workshops & Events</h1>
               <div style={{ position: 'absolute', top: 0, right: 0 }}>
@@ -441,7 +453,7 @@ class Events extends React.Component {
                               })}
                             </Fragment>
                           ) : (
-                            <Fragment>
+                            <div className="old-events">
                               {map(previousMonths, (month, monthKey) => {
                                 return (
                                   <Month
@@ -459,7 +471,7 @@ class Events extends React.Component {
                                   />
                                 )
                               })}
-                            </Fragment>
+                            </div>
                           )}
                         </Fragment>
                       )}
@@ -495,7 +507,7 @@ class Events extends React.Component {
               })}
             </Tabs>
           </Col>
-          <Col span={9} className="hidden-sm">
+          <Col sm={24} md={24} xl={9}>
             {!isUndefined(extraData) && (
               <div>
                 <Image

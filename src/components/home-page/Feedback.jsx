@@ -7,50 +7,39 @@ import React from 'react'
 import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
-import sortBy from 'lodash/sortBy'
-import reverse from 'lodash/reverse'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
+import { Link } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-// import Image from '@bodhi-project/components/lib/Image'
+import OutLink from '@bodhi-project/components/lib/OutLink'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
+import Row from 'antd/lib/row'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+
+import Col from 'antd/lib/col'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../components/StandardPage'
-import BlogListing from '../components/BlogListing'
-
-import seoHelper from '../methods/seoHelper'
-
-import blogPosts from '../data/blog.json'
+import Video from '../Video'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-
-const sorted = reverse(sortBy(blogPosts, [o => o.publishedTimestamp]))
-
-const pageData = {
-  pageTitle: 'Writings',
-  nakedPageSlug: 'writings',
-  pageAbstract:
-    'Our mission is to live and share the principles of Nonviolence, not only in terms of an individual practice and way of life, but also in its application to social structures, such as in our families, schools, and organizations.',
-}
-
-const seoData = seoHelper(pageData)
+const { Fragment: Frag } = React
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 const pageStyles = css({
-  marginBottom: 60,
+  marginBottom: 40,
+  display: 'block',
 
   '& .ant-card': {
-    boxShadow: '1px 2px 0 0 #FF7D00',
+    boxShadow: '1px 2px 0 0 rgba(0, 0, 111, 1)',
 
     '&:hover': {
-      boxShadow: '2px 4px 0 0 #FF7D00',
+      boxShadow: '2px 4px 0 0 rgba(0, 0, 111, 1)',
     },
   },
 })
@@ -64,12 +53,30 @@ const Page = props => {
   const { isMobile } = props
 
   return (
-    <StandardPage className={pageStyle} seoData={seoData}>
-      <h1 className="mask-h3" style={{ marginBottom: 10 }}>
-        Articles
-      </h1>
-      <BlogListing data={sorted} isMobile={isMobile} showFilter />
-    </StandardPage>
+    <section className={pageStyle}>
+      <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
+        <Col sm={24} md={24} lg={15}>
+          <h2 className="mask-h3">The Power of Dialogue - Video Series</h2>
+          <Video url="https://www.youtube.com/watch?v=tuJrfIFd3IY" />
+        </Col>
+        <Col sm={24} md={24} lg={9}>
+          <h2 className="mask-h3">Testimonial</h2>
+          <p>
+            <i>
+              "I've done a lot of learning with L'aura, including a three day
+              conference & a ten week webinar, on the topic of Restorative
+              Circles. She is fantastic, is really insightful with first-hand
+              experience creating an RC system in a cross-cultural community. I
+              love her perspective and experience in NVC stuff as well. I sooo
+              heartily encourage you to check out her webinar series if you have
+              any interest (it's open to people outside of India too)."
+            </i>
+            <br />
+            <br />~ Naomi Christine
+          </p>
+        </Col>
+      </Row>
+    </section>
   )
 }
 

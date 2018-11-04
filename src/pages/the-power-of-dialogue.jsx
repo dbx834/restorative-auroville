@@ -65,7 +65,9 @@ const Page = () => (
       talking about here, I've noticed that the models we have tend not to be
       useful. We all have quite a bit of unlearning and relearning to do.
     </p>
-    <h1 className="mask-h3">1. The Craft</h1>
+    <h1 className="mask-h3" id="the-craft">
+      1. The Craft
+    </h1>
     <Row gutter={{ md: 24 }}>
       <Col md={12}>
         <Image
@@ -97,7 +99,9 @@ const Page = () => (
       organization to truly transform: the top leader is the one wanting and
       driving the change, and the board is supportive.
     </p>
-    <h1 className="mask-h3">2. In Action</h1>
+    <h1 className="mask-h3" id="in-action">
+      2. In Action
+    </h1>
     <p>
       These videos are meant for the top leader ("CEO") of the organization, but
       they are equally relevant for other leaders championing the
@@ -151,7 +155,9 @@ const Page = () => (
         </p>
       </Col>
     </Row>
-    <h1 className="mask-h3">3. The Restorative System</h1>
+    <h1 className="mask-h3" id="the-restorative-system">
+      3. The Restorative System
+    </h1>
     <p>
       These videos are meant for the top leader ("CEO") of the organization, but
       they are equally relevant for other leaders championing the
@@ -231,7 +237,9 @@ const Page = () => (
       </Col>
       <Col md={12}>&nbsp;</Col>
     </Row>
-    <h1 className="mask-h3">4. Experiences</h1>
+    <h1 className="mask-h3" id="experiences">
+      4. Experiences
+    </h1>
     <p>
       These videos are meant for the top leader ("CEO") of the organization, but
       they are equally relevant for other leaders championing the

@@ -108,7 +108,7 @@ class Block extends React.Component {
 
   /** standard renderer */
   render() {
-    const { data, isMobile } = this.props
+    const { data, isMobile, showFilter } = this.props
     const { filter: filterByAuthor } = this.state
     const uniqueSortedAuthors = uniq(map(data, 'author')).sort((a, b) => {
       if (a < b) return -1
@@ -122,42 +122,46 @@ class Block extends React.Component {
 
     return (
       <div className={blockStyleClass}>
-        {filterByAuthor === 'all' ? (
-          <CheckableTag
-            checked
-            onClick={() => this.applyFilter('all')}
-            style={{ marginBottom: 10 }}
-          >
-            All Posts
-          </CheckableTag>
-        ) : (
-          <Tag
-            onClick={() => this.applyFilter('all')}
-            style={{ marginBottom: 10 }}
-          >
-            All Posts
-          </Tag>
-        )}
-        {map(uniqueSortedAuthors, author => (
-          <Fragment key={author}>
-            {filterByAuthor === author ? (
+        {showFilter === true && (
+          <Fragment>
+            {filterByAuthor === 'all' ? (
               <CheckableTag
                 checked
-                onClick={() => this.applyFilter(author)}
+                onClick={() => this.applyFilter('all')}
                 style={{ marginBottom: 10 }}
               >
-                {author}
+                All Posts
               </CheckableTag>
             ) : (
               <Tag
-                onClick={() => this.applyFilter(author)}
+                onClick={() => this.applyFilter('all')}
                 style={{ marginBottom: 10 }}
               >
-                {author}
+                All Posts
               </Tag>
             )}
+            {map(uniqueSortedAuthors, author => (
+              <Fragment key={author}>
+                {filterByAuthor === author ? (
+                  <CheckableTag
+                    checked
+                    onClick={() => this.applyFilter(author)}
+                    style={{ marginBottom: 10 }}
+                  >
+                    {author}
+                  </CheckableTag>
+                ) : (
+                  <Tag
+                    onClick={() => this.applyFilter(author)}
+                    style={{ marginBottom: 10 }}
+                  >
+                    {author}
+                  </Tag>
+                )}
+              </Fragment>
+            ))}
           </Fragment>
-        ))}
+        )}
 
         <StackGrid
           columnWidth={isMobile ? '100%' : '33%'}

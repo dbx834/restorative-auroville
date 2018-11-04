@@ -69,7 +69,8 @@ const footerStyle = css({
   paddingLeft: 12,
   paddingRight: 12,
   paddingTop: 12,
-  paddingBottom: 24,
+  paddingBottom: 12,
+  marginBottom: 24,
   background: '#f2f2f2',
 
   '& .apply-filter': {
@@ -78,6 +79,26 @@ const footerStyle = css({
     '&:hover': {
       filter:
         'invert(100%) sepia(100%) saturate(1000%) hue-rotate(-60deg) saturate(500%)',
+    },
+  },
+
+  '& li': {
+    marginBottom: '0px !important',
+  },
+
+  '& .stuff-and-social-media': {
+    display: 'flex',
+    paddingTop: 9,
+    paddingBottom: 9,
+
+    '& .project-highlight': {
+      flexGrow: 1,
+      paddingRight: 12,
+    },
+
+    '& .social-media': {
+      maxWidth: 340,
+      minWidth: 340,
     },
   },
 })
@@ -112,309 +133,308 @@ const Footer = props => {
         alt="Restorative Auroville"
       />
       <SemanticFooter className={footerStyles}>
-        <h1 className="mask-h3">More Information</h1>
-        <div style={{ borderBottom: '1px dotted #00006F', paddingBottom: 24 }}>
-          <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
-            <Col span={16}>
-              <div
-                style={{
-                  borderBottom: '1px dotted #00006F',
-                  paddingBottom: 24,
-                }}
-              >
-                <Row gutter={{ xs: 12, sm: 12, md: 12 }}>
-                  <Col span={8}>
-                    <h3 className="mask-h6">About</h3>
-                    <ul
-                      className="mask-p"
-                      style={{
-                        listStyle: 'none',
-                        paddingLeft: 0,
-                        marginBottom: 0,
-                      }}
-                    >
-                      <li>
-                        <Link to="/about-restorative-auroville">
-                          Our Project
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/our-team">Our Team</Link>
-                      </li>
-                    </ul>
-                  </Col>
-                  <Col span={8}>
-                    <h3 className="mask-h6">Our Work</h3>
-                    <ul
-                      className="mask-p"
-                      style={{
-                        listStyle: 'none',
-                        paddingLeft: 0,
-                        marginBottom: 0,
-                      }}
-                    >
-                      <li>
-                        <Link to="/projects/ongoing">Projects</Link>
-                      </li>
-                      <li>
-                        <Link to="/archives">Archives</Link>
-                      </li>
-                      <li>
-                        <Link to="/writings">Articles</Link>
-                      </li>
-                      <li>
-                        <Link to="/gallery">Gallery</Link>
-                      </li>
-                    </ul>
-                  </Col>
-                  <Col span={8}>
-                    <h3 className="mask-h6">External Links</h3>
-                    <ul
-                      className="mask-p"
-                      style={{
-                        listStyle: 'none',
-                        paddingLeft: 0,
-                        marginBottom: 0,
-                      }}
-                    >
-                      <li>
-                        <OutLink to="https://www.joylivinglearning.org/">
-                          Joy Living Learning
-                        </OutLink>
-                      </li>
-                      <li>
-                        <OutLink to="https://www.restorativecircles.org/">
-                          Dominic's Website
-                        </OutLink>
-                      </li>
-                      <li>
-                        <OutLink to="https://www.indianvc.org/">
-                          NVC India
-                        </OutLink>
-                      </li>
-                      <li>
-                        <OutLink to="https://www.auroville.org/">
-                          Auroville
-                        </OutLink>
-                      </li>
-                    </ul>
-                  </Col>
-                </Row>
-              </div>
-              <div
-                style={{
-                  paddingTop: 24,
-                  paddingBottom: 24,
-                  borderBottom: '1px dotted #00006F',
-                }}
-              >
-                <h3 className="mask-h6">Connect With Us</h3>
-                <div
-                  style={{ display: 'flex', justifyContent: 'space-between' }}
-                >
-                  <OutLink
-                    to="https://www.facebook.com/RestorativeAuroville/"
-                    title="Facebook"
-                  >
-                    <Image
-                      src={facebook}
-                      rawWidth={450}
-                      rawHeight={450}
-                      style={{
-                        display: 'inline-block',
-                        border: 'none',
-                        background: 'none',
-                        height: 45,
-                        width: 45,
-                      }}
-                      className="apply-filter"
-                      alt="Follow us on Facebook - https://www.facebook.com/RestorativeAuroville"
-                    />
-                  </OutLink>
-                  <OutLink
-                    to="https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF"
-                    style={{ marginLeft: 17 }}
-                  >
-                    <Image
-                      src={youtube}
-                      rawWidth={450}
-                      rawHeight={450}
-                      style={{
-                        display: 'inline-block',
-                        border: 'none',
-                        background: 'none',
-                        height: 45,
-                        width: 45,
-                      }}
-                      className="apply-filter"
-                      alt="See more videos on YouTube - https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF"
-                    />
-                  </OutLink>
-                  <OutLink
-                    to="https://vimeo.com/laurajoyful"
-                    style={{ marginLeft: 17 }}
-                  >
-                    <Image
-                      src={vimeo}
-                      rawWidth={450}
-                      rawHeight={450}
-                      style={{
-                        display: 'inline-block',
-                        border: 'none',
-                        background: 'none',
-                        height: 42,
-                        width: 42,
-                      }}
-                      className="apply-filter"
-                      alt="See more videos on Vimeo - https://vimeo.com/laurajoyful"
-                    />
-                  </OutLink>
-                  <OutLink
-                    to="https://soundcloud.com/laura-joy-145472107"
-                    style={{ marginLeft: 17 }}
-                  >
-                    <Image
-                      src={soundcloud}
-                      rawWidth={450}
-                      rawHeight={450}
-                      style={{
-                        display: 'inline-block',
-                        border: 'none',
-                        background: 'none',
-                        height: 42,
-                        width: 42,
-                      }}
-                      className="apply-filter"
-                      alt="Listen to our dialogues on Soundcloud - https://soundcloud.com/laura-joy-145472107"
-                    />
-                  </OutLink>
-                  <OutLink
-                    to="https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
-                    style={{ marginLeft: 17 }}
-                  >
-                    <Image
-                      src={payu}
-                      rawWidth={450}
-                      rawHeight={450}
-                      style={{
-                        display: 'inline-block',
-                        border: 'none',
-                        background: 'none',
-                        height: 42,
-                        width: 42,
-                      }}
-                      className="apply-filter"
-                      alt="Donate or pay fees through PayU - https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
-                    />
-                  </OutLink>
-                  <form
-                    action="https://www.paypal.com/cgi-bin/webscr"
-                    method="post"
-                    target="_blank"
-                    style={{ display: 'inline-block', marginLeft: 17 }}
-                    className="hover apply-filter"
-                  >
-                    <input type="hidden" name="cmd" value="_s-xclick" />
-                    <input
-                      type="hidden"
-                      name="hosted_button_id"
-                      value="WFXM5RNDGBXL4"
-                    />
-                    <input
-                      type="image"
-                      src={paypal}
-                      border="0"
-                      name="submit"
-                      alt="PayPal – The safer, easier way to pay online!"
-                      style={{
-                        height: 42,
-                        width: 42,
-                      }}
-                    />
-                    <img
-                      alt=""
-                      border="0"
-                      src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif"
-                      width="1"
-                      height="1"
-                    />
-                  </form>
-                </div>
-              </div>
-              <div style={{ paddingTop: 24 }}>
-                <p
+        <div className="stuff-and-social-media">
+          <div className="project-highlight">
+            <h1
+              className="mask-h3"
+              style={{ textIndent: '-9999em', marginBottom: 0, marginTop: -40 }}
+            >
+              More Information
+            </h1>
+            <Row gutter={{ xs: 12, sm: 12, md: 12 }}>
+              <Col span={8}>
+                <h3 className="mask-h6">About</h3>
+                <ul
+                  className="mask-p"
                   style={{
-                    textAlign: 'center',
+                    listStyle: 'none',
+                    paddingLeft: 0,
+                    marginBottom: 0,
                   }}
                 >
-                  {isString(quote) && (
-                    <Fragment>
-                      "<i>{quote}</i>"
-                    </Fragment>
-                  )}
-                  {isArray(quote) && (
-                    <Fragment>
-                      "
-                      <i>
-                        {map(quote, (quotelet, index) => (
-                          <Fragment key={index}>
-                            {index !== 0 && <br />}
-                            {quotelet}
-                          </Fragment>
-                        ))}
-                      </i>
-                      "
-                    </Fragment>
-                  )}
-                  <br />~ {author}
-                </p>
-              </div>
-            </Col>
-            <Col span={8} style={{ borderLeft: '1px dotted #00006F' }}>
+                  <li>
+                    <Link to="/about-restorative-auroville">Our Project</Link>
+                  </li>
+                  <li>
+                    <Link to="/our-team">Our Team</Link>
+                  </li>
+                </ul>
+              </Col>
+              <Col span={8}>
+                <h3 className="mask-h6">Our Work</h3>
+                <ul
+                  className="mask-p"
+                  style={{
+                    listStyle: 'none',
+                    paddingLeft: 0,
+                    marginBottom: 0,
+                  }}
+                >
+                  <li>
+                    <Link to="/projects/ongoing">Projects</Link>
+                  </li>
+                  <li>
+                    <Link to="/archives">Archives</Link>
+                  </li>
+                  <li>
+                    <Link to="/writings">Articles</Link>
+                  </li>
+                  <li>
+                    <Link to="/gallery">Gallery</Link>
+                  </li>
+                </ul>
+              </Col>
+              <Col span={8}>
+                <h3 className="mask-h6">External Links</h3>
+                <ul
+                  className="mask-p"
+                  style={{
+                    listStyle: 'none',
+                    paddingLeft: 0,
+                    marginBottom: 0,
+                  }}
+                >
+                  <li>
+                    <OutLink to="https://www.joylivinglearning.org/">
+                      Joy Living Learning
+                    </OutLink>
+                  </li>
+                  <li>
+                    <OutLink to="https://www.restorativecircles.org/">
+                      Dominic's Website
+                    </OutLink>
+                  </li>
+                  <li>
+                    <OutLink to="https://www.indianvc.org/">NVC India</OutLink>
+                  </li>
+                  <li>
+                    <OutLink to="https://www.auroville.org/">Auroville</OutLink>
+                  </li>
+                </ul>
+              </Col>
+            </Row>
+            <div
+              style={{
+                marginTop: 9,
+                paddingTop: 9,
+                borderTop: '1px dotted rgba(0, 0, 111, 0.5)',
+              }}
+            >
+              <h3 className="mask-h6">Connect With Us</h3>
               <div
                 style={{
-                  flexGrow: 1,
-                  maxWidth: 340,
-                  minWidth: 340,
-                  paddingLeft: 12,
+                  display: 'flex',
+                  marginBottom: 20,
                 }}
               >
-                <h3 className="mask-h6">Find Us On Facebook</h3>
-                <div style={{ maxHeight: 500, overflow: 'hidden' }}>
-                  <FacebookProvider appId="218604115574634">
-                    <FBPage
-                      href="https://www.facebook.com/RestorativeAuroville"
-                      tabs="timeline,events,messages"
-                    />
-                  </FacebookProvider>
-                </div>
+                <OutLink
+                  to="https://www.facebook.com/RestorativeAuroville/"
+                  title="Facebook"
+                >
+                  <Image
+                    src={facebook}
+                    rawWidth={450}
+                    rawHeight={450}
+                    style={{
+                      display: 'inline-block',
+                      border: 'none',
+                      background: 'none',
+                      height: 36,
+                      width: 36,
+                    }}
+                    className="apply-filter"
+                    alt="Follow us on Facebook - https://www.facebook.com/RestorativeAuroville"
+                  />
+                </OutLink>
+                <OutLink
+                  to="https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF"
+                  style={{ marginLeft: 17 }}
+                >
+                  <Image
+                    src={youtube}
+                    rawWidth={450}
+                    rawHeight={450}
+                    style={{
+                      display: 'inline-block',
+                      border: 'none',
+                      background: 'none',
+                      height: 36,
+                      width: 36,
+                    }}
+                    className="apply-filter"
+                    alt="See more videos on YouTube - https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF"
+                  />
+                </OutLink>
+                <OutLink
+                  to="https://vimeo.com/laurajoyful"
+                  style={{ marginLeft: 17 }}
+                >
+                  <Image
+                    src={vimeo}
+                    rawWidth={450}
+                    rawHeight={450}
+                    style={{
+                      display: 'inline-block',
+                      border: 'none',
+                      background: 'none',
+                      height: 33,
+                      width: 33,
+                    }}
+                    className="apply-filter"
+                    alt="See more videos on Vimeo - https://vimeo.com/laurajoyful"
+                  />
+                </OutLink>
+                <OutLink
+                  to="https://soundcloud.com/laura-joy-145472107"
+                  style={{ marginLeft: 17 }}
+                >
+                  <Image
+                    src={soundcloud}
+                    rawWidth={450}
+                    rawHeight={450}
+                    style={{
+                      display: 'inline-block',
+                      border: 'none',
+                      background: 'none',
+                      height: 33,
+                      width: 33,
+                    }}
+                    className="apply-filter"
+                    alt="Listen to our dialogues on Soundcloud - https://soundcloud.com/laura-joy-145472107"
+                  />
+                </OutLink>
+                <OutLink
+                  to="https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
+                  style={{ marginLeft: 17 }}
+                >
+                  <Image
+                    src={payu}
+                    rawWidth={450}
+                    rawHeight={450}
+                    style={{
+                      display: 'inline-block',
+                      border: 'none',
+                      background: 'none',
+                      height: 33,
+                      width: 33,
+                    }}
+                    className="apply-filter"
+                    alt="Donate or pay fees through PayU - https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
+                  />
+                </OutLink>
+                <form
+                  action="https://www.paypal.com/cgi-bin/webscr"
+                  method="post"
+                  target="_blank"
+                  style={{ display: 'inline-block', marginLeft: 17 }}
+                  className="hover apply-filter"
+                >
+                  <input type="hidden" name="cmd" value="_s-xclick" />
+                  <input
+                    type="hidden"
+                    name="hosted_button_id"
+                    value="WFXM5RNDGBXL4"
+                  />
+                  <input
+                    type="image"
+                    src={paypal}
+                    border="0"
+                    name="submit"
+                    alt="PayPal – The safer, easier way to pay online!"
+                    style={{
+                      height: 33,
+                      width: 33,
+                    }}
+                  />
+                  <img
+                    alt=""
+                    border="0"
+                    src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif"
+                    width="1"
+                    height="1"
+                  />
+                </form>
               </div>
-            </Col>
-          </Row>
-        </div>
-        <div
-          style={{
-            paddingTop: 24,
-          }}
-        >
-          <p
-            style={{
-              textAlign: 'center',
-            }}
-          >
-            Made with&nbsp;
-            <Icon type="heart" style={{ fontSize: '80%', color: '#00006F' }} />
-            &nbsp;by&nbsp;
-            <OutLink to="https://www.bodhiproject.org/">Bodhi Project</OutLink>
-          </p>
-          <p
-            style={{
-              textAlign: 'center',
-              marginBottom: 20,
-            }}
-          >
-            Copyright © 2018 Restorative Auroville & Joy Living Learning
-          </p>
+            </div>
+            <div
+              style={{
+                marginTop: 9,
+                marginBottom: 9,
+                paddingTop: 9,
+                paddingBottom: 9,
+                borderTop: '1px dotted rgba(0, 0, 111, 0.5)',
+                borderBottom: '1px dotted rgba(0, 0, 111, 0.5)',
+              }}
+            >
+              <p
+                style={{
+                  textAlign: 'center',
+                  marginBottom: 0,
+                }}
+              >
+                {isString(quote) && (
+                  <Fragment>
+                    "<i>{quote}</i>"
+                  </Fragment>
+                )}
+                {isArray(quote) && (
+                  <Fragment>
+                    "
+                    <i>
+                      {map(quote, (quotelet, index) => (
+                        <Fragment key={index}>
+                          {index !== 0 && <br />}
+                          {quotelet}
+                        </Fragment>
+                      ))}
+                    </i>
+                    "
+                  </Fragment>
+                )}
+                <br />~ {author}
+              </p>
+            </div>
+            <div
+              style={{
+                paddingTop: 9,
+              }}
+            >
+              <p
+                style={{
+                  textAlign: 'center',
+                }}
+              >
+                Made with&nbsp;
+                <Icon
+                  type="heart"
+                  style={{ fontSize: '80%', color: 'rgba(0, 0, 111, 0.5)' }}
+                />
+                &nbsp;by&nbsp;
+                <OutLink to="https://www.bodhiproject.org/">
+                  Bodhi Project
+                </OutLink>
+              </p>
+              <p
+                style={{
+                  textAlign: 'center',
+                  marginBottom: 20,
+                }}
+              >
+                Copyright © 2018 Restorative Auroville & Joy Living Learning
+              </p>
+            </div>
+          </div>
+          <div className="social-media">
+            <h2 className="mask-h6">Find Us On Facebook</h2>
+            <div style={{ maxHeight: 500, overflow: 'hidden' }}>
+              <FacebookProvider appId="218604115574634">
+                <FBPage
+                  href="https://www.facebook.com/RestorativeAuroville/"
+                  tabs="timeline,events,messages"
+                />
+              </FacebookProvider>
+            </div>
+          </div>
         </div>
       </SemanticFooter>
     </div>

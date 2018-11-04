@@ -68,7 +68,7 @@ class Month extends React.Component {
             >
               <h2
                 style={{
-                  color: past === true ? '#ffffff' : '#ffffff',
+                  color: past === true ? '#171717' : '#ffffff',
                 }}
                 className="mask-h4"
               >

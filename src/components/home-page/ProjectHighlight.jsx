@@ -19,69 +19,62 @@ import withSizes from 'react-sizes'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../../components/StandardPage'
-import ProjectListing from '../../components/ProjectListing'
-
-import seoHelper from '../../methods/seoHelper'
-
+import ProjectListing from '../ProjectListing'
 import projects from '../../data/projects.json'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
 const ongoingProjects = reverse(
-  sortBy(filter(projects, 'ongoing'), [
+  sortBy(filter(projects, 'highlight'), [
     o => o.beginTimestamp,
     o => o.endTimestamp,
   ])
 )
 
-const pageData = {
-  pageTitle: 'Ongoing projects',
-  nakedPageSlug: 'projects/ongoing',
-  pageAbstract: 'Page abstract.',
-}
-
-const seoData = seoHelper(pageData)
-
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
-const pageStyle = css({
+const styleObject = css({
+  marginBottom: 40,
   display: 'block',
 
   '& .ant-card': {
-    boxShadow: '1px 2px 0 0 #FF7D00',
+    boxShadow: '1px 2px 0 0 rgba(0, 0, 111, 1)',
 
     '&:hover': {
-      boxShadow: '2px 4px 0 0 #FF7D00',
+      boxShadow: '2px 4px 0 0 rgba(0, 0, 111, 1)',
     },
   },
 })
-const pageStyles = pageStyle.toString()
+const blockStyle = styleObject.toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** Ongoingprojects */
-const Ongoingprojects = props => {
+/**
+ * ProjectHighlight
+ * @param  {[type]} props [description]
+ * @return {[type]}       [description]
+ */
+const ProjectHighlight = props => {
   const { isMobile } = props
 
   return (
-    <StandardPage className={pageStyles} seoData={seoData}>
-      <h1 className="mask-h3">Ongoing projects</h1>
+    <section className={blockStyle}>
+      <h2 className="mask-h3">Project Highlights</h2>
       <p>
         Our approach incorporates different strategies, with the hope to connect
         with different aspects of our community life, so that we can better
         understand how to build systems that respond to our unique and complex
-        reality.
+        reality. Some projects –
       </p>
       <ProjectListing data={ongoingProjects} isMobile={isMobile} />
-    </StandardPage>
+    </section>
   )
 }
 
-Ongoingprojects.propTypes = {
-  data: PropTypes.object,
+ProjectHighlight.propTypes = {
+  isMobile: PropTypes.bool,
 }
 
 // ----------------------------------------------------------------------------
@@ -92,4 +85,4 @@ const mapSizesToProps = ({ width }) => ({
   isMobile: width <= 768,
 })
 
-export default withSizes(mapSizesToProps)(Ongoingprojects)
+export default withSizes(mapSizesToProps)(ProjectHighlight)

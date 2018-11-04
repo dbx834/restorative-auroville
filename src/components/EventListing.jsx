@@ -9,10 +9,10 @@ import moment from 'moment'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import map from 'lodash/map'
-import isUndefined from 'lodash/isUndefined'
+import join from 'lodash/join'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { Link } from 'gatsby'
+import { Link, withPrefix } from 'gatsby'
 import StackGrid from 'react-stack-grid'
 import { Header, Article } from '@bodhi-project/semantic-webflow'
 
@@ -26,6 +26,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/card/style/css'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -79,6 +80,18 @@ const Cover = ({ image, pageTitle }) => (
   />
 )
 
+/** getBanner */
+const getBanner = (cover, tags) => {
+  let eventBanner = null
+  if (cover === 'fallback') {
+    const coverHint = join(tags, '-')
+    eventBanner = withPrefix(`/content-assets/event-fallbacks/${coverHint}.jpg`)
+  } else {
+    eventBanner = withPrefix(cover)
+  }
+  return eventBanner
+}
+
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
@@ -102,45 +115,38 @@ class Block extends React.Component {
 
   /** standard renderer */
   render() {
-    const { data, isMobile } = this.props
+    const { events, isMobile } = this.props
 
     return (
       <div className={`${blockStyleClass} mask-p`}>
         <StackGrid
-          columnWidth={isMobile ? '100%' : '49%'}
+          columnWidth={isMobile ? '100%' : '33%'}
           duration={360}
           gutterWidth={20}
           gutterHeight={42}
           monitorImagesLoaded={true}
         >
-          {map(data, (card, index) => {
-            const {
-              pageTitle,
-              nakedPageSlug,
-              pageAbstract,
-              cover,
-              beginTimestamp,
-              endTimestamp,
-              // category,
-              // author,
-            } = card
+          {map(events, (card, index) => {
+            console.log(card)
+            const { node } = card
+            const { fields, frontmatter } = node
+            const { route } = fields
+            const { cover, tags, title, abstract } = frontmatter
 
             return (
-              <div className="card" key={nakedPageSlug}>
-                <Link to={`/${nakedPageSlug}`}>
+              <div className="card" key={route}>
+                <Link to={`/${route}`}>
                   <Card
-                    cover={<Cover image={cover} pageTitle={pageTitle} />}
+                    cover={
+                      <Cover image={getBanner(cover, tags)} pageTitle={title} />
+                    }
                     bordered={false}
                   >
                     <Article>
                       <Header>
-                        <span className="date">
-                          {moment.unix(beginTimestamp).format('YYYY')}
-                          {!isUndefined(endTimestamp) &&
-                            ` – ${moment.unix(endTimestamp).format('YYYY')}`}
-                        </span>
-                        <h1 className="mask-h5">{pageTitle}</h1>
-                        <p style={{ marginBottom: 0 }}>{pageAbstract}</p>
+                        <span className="date">{fields.formattedDate}</span>
+                        <h1 className="mask-h5">{title}</h1>
+                        <p style={{ marginBottom: 0 }}>{abstract}</p>
                       </Header>
                     </Article>
                   </Card>

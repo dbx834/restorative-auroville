@@ -15,7 +15,7 @@ import withSizes from 'react-sizes'
 import { Link } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-// import Image from '@bodhi-project/components/lib/Image'
+import OutLink from '@bodhi-project/components/lib/OutLink'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
@@ -55,12 +55,12 @@ const Page = props => {
       <p className="mask-p">
         Restorative Auroville is an independent project that aims to bring the
         practice of{' '}
-        <Link to="www.restorativecircles.org">Restorative Circles</Link>, a
-        holistic, community-based form of conflict resolution, to Auroville, and
-        to explore what a consciously designed justice system could look like
-        here – one that reflects our ideals, but that is also effective and has
-        the power to bring about constructive change, both on the individual and
-        community levels.
+        <OutLink to="www.restorativecircles.org">Restorative Circles</OutLink>,
+        a holistic, community-based form of conflict resolution, to Auroville,
+        and to explore what a consciously designed justice system could look
+        like here – one that reflects our ideals, but that is also effective and
+        has the power to bring about constructive change, both on the individual
+        and community levels.
       </p>
       <ProjectWorkingTeam isMobile={isMobile} />
       <FacilitatorsTeam isMobile={isMobile} />

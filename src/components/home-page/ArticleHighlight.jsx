@@ -7,7 +7,7 @@ import React from 'react'
 import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
+import filter from 'lodash/filter'
 import sortBy from 'lodash/sortBy'
 import reverse from 'lodash/reverse'
 
@@ -20,37 +20,26 @@ import withSizes from 'react-sizes'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../components/StandardPage'
-import BlogListing from '../components/BlogListing'
-
-import seoHelper from '../methods/seoHelper'
-
-import blogPosts from '../data/blog.json'
+import BlogListing from '../BlogListing'
+import blogPosts from '../../data/blog.json'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-
-const sorted = reverse(sortBy(blogPosts, [o => o.publishedTimestamp]))
-
-const pageData = {
-  pageTitle: 'Writings',
-  nakedPageSlug: 'writings',
-  pageAbstract:
-    'Our mission is to live and share the principles of Nonviolence, not only in terms of an individual practice and way of life, but also in its application to social structures, such as in our families, schools, and organizations.',
-}
-
-const seoData = seoHelper(pageData)
+const sorted = reverse(
+  sortBy(filter(blogPosts, 'highlight'), [o => o.publishedTimestamp])
+)
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 const pageStyles = css({
-  marginBottom: 60,
+  marginBottom: 40,
+  display: 'block',
 
   '& .ant-card': {
-    boxShadow: '1px 2px 0 0 #FF7D00',
+    boxShadow: '1px 2px 0 0 rgba(0, 0, 111, 1)',
 
     '&:hover': {
-      boxShadow: '2px 4px 0 0 #FF7D00',
+      boxShadow: '2px 4px 0 0 rgba(0, 0, 111, 1)',
     },
   },
 })
@@ -64,12 +53,11 @@ const Page = props => {
   const { isMobile } = props
 
   return (
-    <StandardPage className={pageStyle} seoData={seoData}>
-      <h1 className="mask-h3" style={{ marginBottom: 10 }}>
-        Articles
-      </h1>
-      <BlogListing data={sorted} isMobile={isMobile} showFilter />
-    </StandardPage>
+    <section className={pageStyle}>
+      <h2 className="mask-h3">Article Highlights</h2>
+      <p>Highlights from our blog –</p>
+      <BlogListing data={sorted} isMobile={isMobile} showFilter={false} />
+    </section>
   )
 }
 
