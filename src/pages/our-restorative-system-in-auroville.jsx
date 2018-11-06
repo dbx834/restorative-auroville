@@ -12,6 +12,7 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 // import { Link } from 'gatsby'
+import OutLink from '@bodhi-project/components/lib/OutLink'
 import { Document, Page as PDFPage } from 'react-pdf'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
@@ -21,6 +22,7 @@ import { Document, Page as PDFPage } from 'react-pdf'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../components/StandardPage'
+import PDFReader from '../components/PDFReader'
 
 // import BookReader from '../components/BookReader'
 
@@ -51,17 +53,19 @@ const Page = () => (
     <h1 className="mask-h3">Our Restorative System in Auroville</h1>
     <p>
       Conflict is a natural, inevitable part of living together, and Auroville
-      is no exception. Koodam (hyperlink:...), Auroville’s conflict resolution
-      platform, has already done so much to bring about a shift in conflict
-      resolution, and yet we believe we still a long way to go before we are
-      really able, as a community, to deal with our conflicts in ways that are
-      healthy, effective, sustainable and life-serving.
+      is no exception.{' '}
+      <OutLink to="https://www.auroville.org/contents/4360">Koodam</OutLink>,
+      Auroville’s conflict resolution platform, has already done so much to
+      bring about a shift in conflict resolution, and yet we believe we still
+      have a long way to go before we are really able, as a community, to deal
+      with our conflicts in ways that are healthy, effective, sustainable and
+      life-serving.
     </p>
     <p>
-      For RC to be fully effective on a community-level, we need to explore it
-      in more depth and to understand our resistance (both as human beings in
-      general, but also as Aurovilians aspiring to build a city of human unity)
-      to using processes such as these.
+      For Restorative Circles to be fully effective on a community-level, we
+      need to explore it in more depth and to understand our resistance (both as
+      human beings in general, but also as Aurovilians aspiring to build a city
+      of human unity) to using processes such as these.
     </p>
     <p>
       We need to start questioning our very system and re-evaluate how we want
@@ -74,18 +78,18 @@ const Page = () => (
       how we can invite people to take responsibility for their actions, and how
       we can support healing and rebuilding trust in our communities. It’s a
       process that includes all layers of the community, and it invites us to
-      co-create a justice system that works for us. On a practical level,
-      Restorative Circles also offer large-scale training, additional skills for
-      conflict transformation, a large pool of available Facilitators,
-      willingness amongst community members to participate in Circles if called
-      upon, and increased awareness about the importance of consciously choosing
-      a justice system for the growth and development of a community.
+      co-create a justice system that works for us.
     </p>
-    <div className="mask-p" style={{ border: '1px dotted #00006F' }}>
-      <Document file="/projects/filmfest.pdf">
-        <PDFPage pageNumber={1} />
-      </Document>
-    </div>
+    <p>
+      On a practical level, Restorative Circles also offers large-scale
+      training, additional skills for conflict transformation, a large pool of
+      available Facilitators, willingness amongst community members to
+      participate in Circles if called upon, and increased awareness about the
+      importance of consciously choosing a justice system for the growth and
+      development of a community.
+    </p>
+    <h2 className="mask-h4">Read more about our RC System in Auroville...</h2>
+    <PDFReader file="/av-rc-system.pdf" />
   </StandardPage>
 )
 

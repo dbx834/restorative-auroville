@@ -103,7 +103,7 @@ const Page = props => {
   return (
     <StandardPage className="" seoData={seoData}>
       <EventSchema data={eventSchemaData} />
-      <Breadcrumb className="mask-p">
+      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 10 }}>
         <BItem>
           <Link to="/">Home</Link>
         </BItem>
@@ -131,11 +131,13 @@ const Page = props => {
                 />
               </Col>
               <Col sm={24} md={15}>
-                <h1 className="mask-h3">{title}</h1>
+                <h1
+                  className="mask-h3"
+                  style={{ marginTop: -10, marginBottom: 5 }}
+                >
+                  {title}
+                </h1>
                 <p>{formattedDate}</p>
-                <p>
-                  <i>{abstract}</i>
-                </p>
                 <div style={{ position: 'relative' }} className="mask-p">
                   <div
                     style={{
@@ -189,6 +191,7 @@ const Page = props => {
         <Col sm={24} md={24} xl={9}>
           <EventRegisterationForm
             event={{ node: { frontmatter, fields: { route, humanDate } } }}
+            formattedDate={formattedDate}
           />
         </Col>
       </Row>

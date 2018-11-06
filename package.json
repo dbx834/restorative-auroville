@@ -12,7 +12,9 @@
     "type": "git",
     "url": "git@github.com:bodhi-project/web-template.git"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "scripts": {
     "start": "npm run dev",
@@ -24,13 +26,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@bodhi-project/antrd": "0.0.40",
+    "@bodhi-project/antrd": "0.0.41",
     "@bodhi-project/blocks": "0.0.95",
     "@bodhi-project/components": "1.0.0",
     "@bodhi-project/markdown-to-react": "0.1.0",
     "@bodhi-project/semantic-webflow": "0.0.13",
     "@bodhi-project/seo": "^1.0.1",
-    "@bodhi-project/typography": "0.0.59",
+    "@bodhi-project/typography": "0.1.0",
     "antd": "^3.10.1",
     "axios": "^0.18.0",
     "color": "^3.1.0",
@@ -72,6 +74,7 @@
     "react-hoverintent": "0.0.10",
     "react-loadable": "^5.5.0",
     "react-pdf": "^3.0.5",
+    "react-pdf-js": "^4.0.1",
     "react-player": "^1.6.6",
     "react-reader": "^0.17.1",
     "react-sizes": "^1.0.4",

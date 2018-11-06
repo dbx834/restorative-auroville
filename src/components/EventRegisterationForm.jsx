@@ -155,6 +155,7 @@ class EventRegisterationForm extends React.Component {
       event: {
         node: { fields, frontmatter },
       },
+      formattedDate,
     } = this.props
 
     const {
@@ -199,13 +200,15 @@ class EventRegisterationForm extends React.Component {
       <Fragment>
         {(eventStatus === 'past' || eventStatus === 'present') && (
           <Fragment>
-            <h3>Registration Closed</h3>
+            <h3 style={{ marginTop: -10, marginBottom: 5 }}>
+              Registration Closed
+            </h3>
             <p>Registration for this event is now closed.</p>
           </Fragment>
         )}
         {eventStatus === 'future' && (
           <Fragment>
-            <h3>Fee</h3>
+            <h3 style={{ marginTop: -10, marginBottom: 5 }}>Fee</h3>
             <p>
               <strong>
                 <i>{frontmatter.cost}</i>
@@ -289,12 +292,12 @@ class EventRegisterationForm extends React.Component {
               <p>
                 You are about to register for{' '}
                 <strong>{frontmatter.title}</strong> on{' '}
-                <strong>{fields.humanDate}</strong>.
+                <strong>{formattedDate}</strong>.
               </p>
             ) : (
               <p>
                 You registered for <strong>{frontmatter.title}</strong> on{' '}
-                <strong>{fields.humanDate}</strong>.
+                <strong>{formattedDate}</strong>.
               </p>
             )}
             {formSent === false && (
@@ -367,8 +370,8 @@ class EventRegisterationForm extends React.Component {
 
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Experience Level */}
                 <span style={{ marginBottom: 8, display: 'block' }}>
-                  Do you have any previous experience with NVC and/or RC (or
-                  Restorative Justice)?
+                  Do you have any previous experience RC (or Restorative Justice
+                  or Nonviolent Communication)?
                 </span>
                 <FormItem
                   validateStatus={experienceError ? 'error' : ''}
@@ -381,30 +384,21 @@ class EventRegisterationForm extends React.Component {
                     <RadioGroup>
                       <Radio
                         style={radioStyle}
-                        value="Beginner (0-5 days of NVC/RC/RJ training)"
+                        value="Beginner (0-5 days of training)"
                       >
-                        Beginner (0-5 days of NVC/RC/RJ training)
+                        Beginner (0-5 days of training)
                       </Radio>
                       <Radio
                         style={radioStyle}
-                        value="Intermediate (5-10 days of NVC/RC/RJ training)"
+                        value="Intermediate (5-10 days of training)"
                       >
-                        Intermediate (5-10 days of NVC/RC/RJ training)
+                        Intermediate (5-10 days of training)
                       </Radio>
                       <Radio
                         style={radioStyle}
-                        value="Advanced (over 10 days of NVC/RC/RJ training)"
+                        value="Advanced (over 10 days of training)"
                       >
-                        Advanced (over 10 days of NVC/RC/RJ training)
-                      </Radio>
-                      <Radio
-                        style={radioStyle}
-                        value="NVC Certification Candidate"
-                      >
-                        NVC Certification Candidate
-                      </Radio>
-                      <Radio style={radioStyle} value="NVC Trainer">
-                        NVC Trainer
+                        Advanced (over 10 days of training)
                       </Radio>
                     </RadioGroup>
                   )}
@@ -420,7 +414,7 @@ class EventRegisterationForm extends React.Component {
                     rules: [{ validator: validateComment }],
                   })(
                     <TextArea
-                      placeholder="Please share a few sentences about your NVC and/or RC journey."
+                      placeholder="Please share a few sentences about your RC (and/or RJ or NVC) journey."
                       autosize={{ minRows: 3, maxRows: 5 }}
                     />
                   )}
@@ -428,8 +422,8 @@ class EventRegisterationForm extends React.Component {
 
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ More Info. */}
                 <span style={{ marginBottom: 8, display: 'block' }}>
-                  Would you be like to receive information about future NVC
-                  and/or RC events?
+                  Would you be like to receive information about future RC
+                  (and/or NVC) events?
                 </span>
                 <FormItem
                   validateStatus={wouldLikeInfoError ? 'error' : ''}

@@ -8,9 +8,13 @@ import { css } from 'glamor'
 import moment from 'moment'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
-// import isUndefined from "lodash/isUndefined";
+import map from 'lodash/map'
 import filter from 'lodash/filter'
+import reverse from 'lodash/reverse'
+import values from 'lodash/values'
+import isUndefined from 'lodash/isUndefined'
+import join from 'lodash/join'
+import isNull from 'lodash/isNull'
 import slice from 'lodash/slice'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
@@ -33,6 +37,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 import StandardPage from '../components/StandardPage'
 import Video from '../components/Video'
 import EventListing from '../components/EventListing'
+import EventsThisMonth from '../components/EventsThisMonth'
 
 import ProjectHighlight from '../components/home-page/ProjectHighlight'
 import ArticleHighlight from '../components/home-page/ArticleHighlight'
@@ -213,13 +218,6 @@ const VideoSeriesBlock2 = () => (
 /** Page */
 const Page = props => {
   const { data, isMobile } = props
-  const today = moment()
-  const postEdges = data.allMarkdownRemark.edges
-  const upcoming = filter(
-    postEdges,
-    o => moment(o.node.frontmatter.date).isSameOrAfter(today) === true
-  )
-  const three = slice(upcoming, 0, 3)
 
   return (
     <StandardPage className={pageStyle} seoData={seoData}>
@@ -253,7 +251,7 @@ const Page = props => {
       </Row>
 
       <ProjectHighlight />
-      <VideoSeriesBlock2 />
+      <VideoSeriesBlock1 />
 
       <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
         <Col sm={24} md={24} lg={12}>
@@ -276,27 +274,7 @@ const Page = props => {
         </Col>
       </Row>
 
-      <div style={{ position: 'relative' }}>
-        <h1 className="mask-h3">Upcoming Events</h1>
-        <p>
-          We offer learning opportunities through workshops and practice groups
-          on Restorative Circles. We are also available for individual coaching
-          and mediation, and we are happy to consult with community-based
-          projects that are seeking to shift paradigms. Upcoming Events –
-        </p>
-        <EventListing events={three} />
-        <p
-          style={{
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            marginBottom: 0,
-            marginTop: 0,
-          }}
-        >
-          <Link to="/events">See all events ⇝</Link>
-        </p>
-      </div>
+      <EventsThisMonth data={data} />
 
       <TeamHighlight />
     </StandardPage>

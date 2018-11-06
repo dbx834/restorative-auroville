@@ -4,6 +4,7 @@
     "title": "Explore +",
     "menu": [
       { "title": "Our Project", "link": "/about-restorative-auroville" },
+      { "title": "Our Story", "link": "/our-story" },
       { "title": "Restorative Circles", "link": "/restorative-circles" },
       {
         "title": "Our Restorative System",
@@ -22,13 +23,7 @@
       { "title": "Volunteer & Apprentice", "link": "/volunteer" }
     ]
   },
-  {
-    "title": "Our projects +",
-    "menu": [
-      { "title": "Ongoing projects", "link": "/projects/ongoing" },
-      { "title": "Past projects", "link": "/projects/past" }
-    ]
-  },
+  { "title": "Our Projects", "link": "/projects/ongoing" },
   { "title": "Our Team", "link": "/our-team" },
   {
     "title": "Donate",

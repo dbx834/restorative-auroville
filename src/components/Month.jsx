@@ -53,6 +53,7 @@ class Month extends React.Component {
       past,
       setActive,
       active,
+      nextActive,
     } = this.props
     let counter = 0
 
@@ -93,6 +94,9 @@ class Month extends React.Component {
                 }
                 if (active === edgeIndex) {
                   className += ' is-active'
+                }
+                if (nextActive === edgeIndex) {
+                  className += ' next-active'
                 }
 
                 if (showThis === true) {

@@ -12,11 +12,14 @@ import sortBy from 'lodash/sortBy'
 import reverse from 'lodash/reverse'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { Link } from 'gatsby'
 import withSizes from 'react-sizes'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
+import Button from 'antd/lib/button'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
@@ -48,6 +51,7 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 const pageStyle = css({
   display: 'block',
+  position: 'relative',
 
   '& .ant-card': {
     boxShadow: '1px 2px 0 0 #FF7D00',
@@ -68,7 +72,14 @@ const Ongoingprojects = props => {
 
   return (
     <StandardPage className={pageStyles} seoData={seoData}>
-      <h1 className="mask-h3">Ongoing projects</h1>
+      <h1 className="mask-h3">Our Projects</h1>
+      <div style={{ position: 'absolute', top: 4, right: 0 }}>
+        <Button type="primary">
+          <Link to="projects/past">
+            <span style={{ fontSize: '125%' }}>Past Projects ⇝</span>
+          </Link>
+        </Button>
+      </div>
       <p>
         Our approach incorporates different strategies, with the hope to connect
         with different aspects of our community life, so that we can better

@@ -135,12 +135,7 @@ const Footer = props => {
       <SemanticFooter className={footerStyles}>
         <div className="stuff-and-social-media">
           <div className="project-highlight">
-            <h1
-              className="mask-h3"
-              style={{ textIndent: '-9999em', marginBottom: 0, marginTop: -40 }}
-            >
-              More Information
-            </h1>
+            <h1 className="mask-h3">More Information</h1>
             <Row gutter={{ xs: 12, sm: 12, md: 12 }}>
               <Col span={8}>
                 <h3 className="mask-h6">About</h3>
@@ -402,6 +397,33 @@ const Footer = props => {
               <p
                 style={{
                   textAlign: 'center',
+                  marginBottom: 4,
+                }}
+              >
+                Restorative Auroville is an initiative of{' '}
+                <Link to="https://www.joylivinglearning.org/">
+                  Joy Living Learning
+                </Link>
+                , which is a Unit of the&nbsp;
+                <Link to="https://www.auroville.org/">
+                  Auroville Foundation
+                </Link>
+                .
+              </p>
+              <p
+                style={{
+                  textAlign: 'center',
+                  marginBottom: 4,
+                  marginTop: 0,
+                }}
+              >
+                ∞
+              </p>
+              <p
+                style={{
+                  textAlign: 'center',
+                  marginBottom: 4,
+                  marginTop: 0,
                 }}
               >
                 Made with&nbsp;
@@ -417,16 +439,20 @@ const Footer = props => {
               <p
                 style={{
                   textAlign: 'center',
-                  marginBottom: 20,
+                  marginBottom: 0,
+                  marginTop: 0,
                 }}
               >
-                Copyright © 2018 Restorative Auroville & Joy Living Learning
+                Copyright © 2018 Restorative Auroville &{' '}
+                <Link to="https://www.joylivinglearning.org/">
+                  Joy Living Learning
+                </Link>
               </p>
             </div>
           </div>
           <div className="social-media">
             <h2 className="mask-h6">Find Us On Facebook</h2>
-            <div style={{ maxHeight: 500, overflow: 'hidden' }}>
+            <div style={{ maxHeight: 700, overflow: 'hidden' }}>
               <FacebookProvider appId="218604115574634">
                 <FBPage
                   href="https://www.facebook.com/RestorativeAuroville/"

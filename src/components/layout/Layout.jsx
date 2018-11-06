@@ -83,7 +83,6 @@ const pageStyle = css({
     paddingTop: '24px',
 
     '& #content': {
-      paddingBottom: '1em',
       minHeight: '100vh',
     },
   },

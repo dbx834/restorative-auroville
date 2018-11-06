@@ -38,6 +38,9 @@ import p31 from '../assets/engaging-with-restorative-circles-in-auroville.jpg'
 import p32 from '../assets/designing-our-justice-system-consciously.jpg'
 import p41 from '../assets/surya-on-restorative-circles.jpg'
 
+import birdsTop from '../assets/birdsTop.png'
+import grungeBox from '../assets/grungeBg.jpg'
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
   pageTitle: 'The Power of Dialogue',
@@ -58,16 +61,91 @@ const seoData = seoHelper(pageData)
 /** Page */
 const Page = () => (
   <StandardPage className="" seoData={seoData}>
-    <h1 className="mask-h3">The Power of Dialogue</h1>
-    <p>
-      We all have a certain idea - often unconscious! - about how change
-      happens. And for the kind of transformation to a new paradigm we are
-      talking about here, I've noticed that the models we have tend not to be
-      useful. We all have quite a bit of unlearning and relearning to do.
-    </p>
-    <h1 className="mask-h3" id="the-craft">
+    <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
+      <Col sm={24} md={15}>
+        <h1 className="mask-h3">"The Power of Dialogue" – Video Series</h1>
+        <p>
+          We offer this video series as an opportunity for you to journey along
+          with our journey. Restorative Circles is still very new to the world,
+          and learning material and resources are somewhat limited. So here’s
+          our attempt to celebrate this body of work and to offer back a few
+          nuggets from our unfolding journey.
+        </p>
+      </Col>
+      <Col sm={24} md={9}>
+        <div
+          style={{
+            padding: 18,
+            paddingTop: 36,
+            paddingBottom: 36,
+            borderRadius: 4,
+            position: 'relative',
+          }}
+          className="margin-p"
+        >
+          <div
+            style={{
+              position: 'absolute',
+              top: 2,
+              right: 5,
+              height: 40,
+              zIndex: -1,
+            }}
+          >
+            <Image
+              src={birdsTop}
+              style={{
+                background: 'transparent',
+                border: 'unset',
+                height: 40,
+                width: 40,
+              }}
+              rawWidth={900}
+              rawHeight={900}
+            />
+          </div>
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              height: '100%',
+              zIndex: -2,
+              borderRadius: '8px',
+              overflow: 'hidden',
+            }}
+          >
+            <Image
+              src={grungeBox}
+              style={{
+                background: 'transparent',
+                border: 'unset',
+                height: '100%',
+                width: '100%',
+              }}
+              rawWidth={1440}
+              rawHeight={900}
+            />
+          </div>
+          <p style={{ marginBottom: 0 }}>
+            Our big dream is to one day film an entire live Restorative Circle.
+            It’s an intimate and delicate space, and so we’re crossing our
+            fingers that sooner or later a group will be comfortable being
+            filmed…
+          </p>
+        </div>
+      </Col>
+    </Row>
+    <h1 className="mask-h3" id="the-craft" style={{ marginBottom: 2 }}>
       1. The Craft
     </h1>
+    <div className="margin-p">
+      <p className="mask-h5">
+        ↪&nbsp;
+        <strong>learning resource</strong>
+        &nbsp;that highlight the RC process in its different steps and stages
+      </p>
+    </div>
     <Row gutter={{ md: 24 }}>
       <Col md={12}>
         <Image
@@ -83,32 +161,21 @@ const Page = () => (
           rawWidth={1440}
           rawHeight={900}
         />
-        <p>
-          We all have preferences and biases. For instance, do you have a bias
-          for clarity/formalization or for ambiguity/emergence? It's helpful to
-          know your preferences, to become more flexible and adapt to what's
-          needed.
-        </p>
+        <p>Coming soon…</p>
       </Col>
       <Col md={12}>&nbsp;</Col>
     </Row>
-    <p>
-      These videos are meant for the top leader ("CEO") of the organization, but
-      they are equally relevant for other leaders championing the
-      transformation. Remember the two conditions I believe are necessary for an
-      organization to truly transform: the top leader is the one wanting and
-      driving the change, and the board is supportive.
-    </p>
-    <h1 className="mask-h3" id="in-action">
+    <h1 className="mask-h3" id="in-action" style={{ marginBottom: 2 }}>
       2. In Action
     </h1>
-    <p>
-      These videos are meant for the top leader ("CEO") of the organization, but
-      they are equally relevant for other leaders championing the
-      transformation. Remember the two conditions I believe are necessary for an
-      organization to truly transform: the top leader is the one wanting and
-      driving the change, and the board is supportive.
-    </p>
+    <div className="margin-p">
+      <p className="mask-h5">
+        ↪&nbsp;
+        <strong>touching “live” moments</strong>
+        &nbsp;from different stages of real Circles that have been called in the
+        community
+      </p>
+    </div>
     <Row gutter={{ md: 24 }}>
       <Col md={12}>
         <Link to="the-power-of-dialogue/genies-pre-circle-with-janet">
@@ -127,10 +194,11 @@ const Page = () => (
           />
         </Link>
         <p>
-          We all have preferences and biases. For instance, do you have a bias
-          for clarity/formalization or for ambiguity/emergence? It's helpful to
-          know your preferences, to become more flexible and adapt to what's
-          needed.
+          Before entering a Restorative Circle, Facilitators meet amongst
+          themselves to work through any challenging thoughts or feelings that
+          might interfere with their capacity to hold space during the Circle.
+          Eugenie Dumont (Genie), in her role as filmmaker, is also given an
+          opportunity to be heard for her connection to the Circle.
         </p>
       </Col>
       <Col md={12}>
@@ -147,24 +215,24 @@ const Page = () => (
           rawWidth={1440}
           rawHeight={900}
         />
-        <p>
-          We all have preferences and biases. For instance, do you have a bias
-          for clarity/formalization or for ambiguity/emergence? It's helpful to
-          know your preferences, to become more flexible and adapt to what's
-          needed.
-        </p>
+        <p>Coming soon…</p>
       </Col>
     </Row>
-    <h1 className="mask-h3" id="the-restorative-system">
+    <h1
+      className="mask-h3"
+      id="the-restorative-system"
+      style={{ marginBottom: 2 }}
+    >
       3. The Restorative System
     </h1>
-    <p>
-      These videos are meant for the top leader ("CEO") of the organization, but
-      they are equally relevant for other leaders championing the
-      transformation. Remember the two conditions I believe are necessary for an
-      organization to truly transform: the top leader is the one wanting and
-      driving the change, and the board is supportive.
-    </p>
+    <div className="margin-p">
+      <p className="mask-h5">
+        ↪&nbsp;
+        <strong>engaging with RC as a System</strong>
+        &nbsp;and highlighting the need to talk about the meaning of justice and
+        conflict in our community
+      </p>
+    </div>
     <Row gutter={{ md: 24 }}>
       <Col md={12}>
         <Link to="the-power-of-dialogue/engaging-with-restorative-circles-in-auroville">
@@ -183,10 +251,8 @@ const Page = () => (
           />
         </Link>
         <p>
-          We all have preferences and biases. For instance, do you have a bias
-          for clarity/formalization or for ambiguity/emergence? It's helpful to
-          know your preferences, to become more flexible and adapt to what's
-          needed.
+          L'aura shares about her experience of engaging with Restorative
+          Circles in Auroville and how it's received by the community.
         </p>
       </Col>
       <Col md={12}>
@@ -206,10 +272,9 @@ const Page = () => (
           />
         </Link>
         <p>
-          We all have preferences and biases. For instance, do you have a bias
-          for clarity/formalization or for ambiguity/emergence? It's helpful to
-          know your preferences, to become more flexible and adapt to what's
-          needed.
+          L'aura shares about her experience of engaging with Restorative
+          Circles in Auroville and the importance of designing a justice system
+          consciously, otherwise we'll just inherit the old ways.
         </p>
       </Col>
     </Row>
@@ -228,25 +293,20 @@ const Page = () => (
           rawWidth={1440}
           rawHeight={900}
         />
-        <p>
-          We all have preferences and biases. For instance, do you have a bias
-          for clarity/formalization or for ambiguity/emergence? It's helpful to
-          know your preferences, to become more flexible and adapt to what's
-          needed.
-        </p>
+        <p>Coming soon…</p>
       </Col>
       <Col md={12}>&nbsp;</Col>
     </Row>
-    <h1 className="mask-h3" id="experiences">
+    <h1 className="mask-h3" id="experiences" style={{ marginBottom: 2 }}>
       4. Experiences
     </h1>
-    <p>
-      These videos are meant for the top leader ("CEO") of the organization, but
-      they are equally relevant for other leaders championing the
-      transformation. Remember the two conditions I believe are necessary for an
-      organization to truly transform: the top leader is the one wanting and
-      driving the change, and the board is supportive.
-    </p>
+    <div className="margin-p">
+      <p className="mask-h5">
+        ↪&nbsp;
+        <strong>community members talk about their experience</strong>
+        &nbsp;being in live Circles
+      </p>
+    </div>
     <Row gutter={{ md: 24 }}>
       <Col md={12}>
         <Link to="the-power-of-dialogue/surya-on-restorative-circles">
@@ -264,12 +324,7 @@ const Page = () => (
             rawHeight={900}
           />
         </Link>
-        <p>
-          We all have preferences and biases. For instance, do you have a bias
-          for clarity/formalization or for ambiguity/emergence? It's helpful to
-          know your preferences, to become more flexible and adapt to what's
-          needed.
-        </p>
+        <p>Surya shares about her experiences with Restoratives Circles.</p>
       </Col>
       <Col md={12}>
         <Image
@@ -285,12 +340,7 @@ const Page = () => (
           rawWidth={1440}
           rawHeight={900}
         />
-        <p>
-          We all have preferences and biases. For instance, do you have a bias
-          for clarity/formalization or for ambiguity/emergence? It's helpful to
-          know your preferences, to become more flexible and adapt to what's
-          needed.
-        </p>
+        <p>Coming soon…</p>
       </Col>
     </Row>
   </StandardPage>

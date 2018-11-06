@@ -48,18 +48,13 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 /** Theme */
 const Theme = props => {
-  const { border, title, files, tag } = props
+  const { border, title, files, tag, text } = props
   return (
     <div style={{ paddingLeft: 12, borderLeft: `8px solid ${border}` }}>
       <h2 className="mask-h4">
         {title} <Tag color="geekblue">{tag}</Tag>
       </h2>
-      <p>
-        We want to explore and understand this question: Are we divided in
-        Auroville, as local Tamil Aurovilians and non-local Aurovilians? The
-        aquarium, which has 250 species, took more than a year to set up and was
-        funded by a group of investors.
-      </p>
+      <p>{text}</p>
       {!isUndefined(files) && (
         <Fragment>
           {map(files, file => {
@@ -94,6 +89,7 @@ const Page = () => (
       border="#FABB00"
       title="Walk of Hope in Auroville and the Bioregion (2018)"
       tag="Projects & Reports"
+      text="Dummy text."
       files={[
         {
           title: 'Project Proposal',
@@ -105,6 +101,7 @@ const Page = () => (
       border="#FABB00"
       title="Public Presentation (2017)"
       tag="Public Presentations"
+      text="Dummy text."
       files={[
         {
           title: 'At Unity Pavilion, Auroville (Part 1)',
@@ -124,6 +121,7 @@ const Page = () => (
       border="#4A01AA"
       title="Justice Questionnaire (2017)"
       tag="Projects & Reports"
+      text="Dummy text."
       files={[
         {
           title: "Justice in Auroville - What's Your Opinion?",
@@ -139,6 +137,7 @@ const Page = () => (
       border="#FAE300"
       title="Film Fest - Restoring Connection (2016)"
       tag="Projects & Reports"
+      text="Dummy text."
       files={[
         {
           title: 'Project Proposal',
@@ -154,6 +153,7 @@ const Page = () => (
       border="#FA8F00"
       title="Restorative Dialogue across Cultures (2016)"
       tag="Projects & Reports"
+      text="Dummy text."
       files={[
         {
           title: 'Project Proposal',
@@ -171,8 +171,9 @@ const Page = () => (
     />
     <Theme
       border="#0101AF"
-      title="Restorative Auroville Research Project (2015)"
+      title="Restorative Auroville Research Project (2015-17)"
       tag="Projects & Reports"
+      text="In September 2015, we applied for a 1-year grant to support our Research Project to bring Restorative Circles to Auroville and to start exploring the possibilities of developing a Restorative Justice System here."
       files={[
         {
           title: 'Project Proposal',
@@ -192,6 +193,7 @@ const Page = () => (
       border="#FABB00"
       title="Public Presentation (2014)"
       tag="Public Presentations"
+      text="Dummy text."
       files={[
         {
           title: 'At Unity Pavilion, Auroville',
@@ -209,6 +211,7 @@ const Page = () => (
       border="#FABB00"
       title="Public Presentation (2011)"
       tag="Public Presentations"
+      text="Dummy text."
       files={[
         {
           title: 'At Town Hall, Auroville',

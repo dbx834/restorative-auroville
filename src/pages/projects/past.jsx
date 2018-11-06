@@ -108,7 +108,7 @@ const pageStyles = pageStyle.toString()
 const Pastprojects = props => {
   return (
     <StandardPage className={pageStyles} seoData={seoData}>
-      <h1 className="mask-h3">Past projects</h1>
+      <h1 className="mask-h3">Past Projects</h1>
       <div>
         {map(pastProjects, project => {
           const {

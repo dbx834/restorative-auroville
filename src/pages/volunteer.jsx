@@ -11,10 +11,11 @@ import { css } from 'glamor'
 // import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// import { Link } from 'gatsby'
+import { Link } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
+import OutLink from '@bodhi-project/components/lib/OutLink'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Row from 'antd/lib/row'
@@ -29,6 +30,7 @@ import VolunteerForm from '../components/VolunteerForm'
 
 import seoHelper from '../methods/seoHelper'
 
+import nvcX80 from '../assets/gallery/nvcX80.jpg'
 import tick from '../assets/tick.png'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -84,8 +86,8 @@ const Page = () => (
     <h1 className="mask-h3">Volunteer & Apprentice</h1>
     <p>
       In order for this work to develop fully in Auroville, we need more
-      ambassadors who are willing to do the research, the teaching and the
-      experimenting.
+      ambassadors who are willing to play with us: to do the research, the
+      teaching, the experimenting, and so much more…
     </p>
     <p>Here are some ways in which you could support:</p>
     <ul className="mask-p" style={{ listStyle: 'none', padding: 0 }}>
@@ -101,7 +103,7 @@ const Page = () => (
         Facilitators, etc."
       />
       <Li
-        text="'Teach' or share the RC craft with others (workshop setting, or
+        text="&quot;Teach&quot; or share the RC craft with others (workshop setting, or
         practice group, or individual coaching, etc)."
       />
       <Li
@@ -119,17 +121,32 @@ const Page = () => (
       />
     </ul>
     <p>
-      Or, do you have any other great skills and simple willingness to offer...?
+      Or… do you have any other great skills and/or simple willingness to
+      offer…?
     </p>
 
     <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
       <Col sm={24} md={15}>
-        <h1 className="mask-h3">Volunteer Form</h1>
+        <h2 className="mask-h3">Volunteer Form</h2>
         <VolunteerForm />
       </Col>
       <Col sm={24} md={9}>
-        <h1 className="mask-h3">Something Else…</h1>
-        <p>Some other paragraph...</p>
+        <h2 className="mask-h3">Our Apprentice Pranjal Shares</h2>
+        <Link to="writings/our-apprentice-pranjal-shares">
+          <Image
+            src={nvcX80}
+            style={{
+              background: 'transparent',
+              border: 'unset',
+              height: 'auto',
+              width: '80%',
+              marginLeft: 0,
+              display: 'block',
+            }}
+            rawWidth={600}
+            rawHeight={603}
+          />
+        </Link>
       </Col>
     </Row>
   </StandardPage>

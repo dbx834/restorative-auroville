@@ -95,6 +95,8 @@ class Nav extends React.Component {
           mode={mode}
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
+          forceSubMenuRender
+          // subMenuCloseDelay={100}
         >
           {map(websiteMenu, topLevel => {
             const { title, menu, link } = topLevel
@@ -120,25 +122,11 @@ class Nav extends React.Component {
                         {isOutLink === false && (
                           <Fragment>
                             {hashLink === true ? (
-                              <a
-                                href="#"
-                                className={
-                                  pathname === split(thisLink, '?', 1)[0]
-                                    ? 'active'
-                                    : ''
-                                }
-                              >
+                              <a href="#">
                                 <span>{subTitle}</span>
                               </a>
                             ) : (
-                              <Link
-                                to={thisLink}
-                                className={
-                                  pathname === split(thisLink, '?', 1)[0]
-                                    ? 'active'
-                                    : ''
-                                }
-                              >
+                              <Link to={thisLink}>
                                 <span>{subTitle}</span>
                               </Link>
                             )}
