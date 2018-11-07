@@ -40,13 +40,14 @@ import p41 from '../assets/surya-on-restorative-circles.jpg'
 
 import birdsTop from '../assets/birdsTop.png'
 import grungeBox from '../assets/grungeBg.jpg'
+import camera from '../assets/camera.png'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
   pageTitle: 'The Power of Dialogue',
   nakedPageSlug: 'the-power-of-dialogue',
   pageAbstract:
-    "We all have a certain idea - often unconscious! - about how change happens. And for the kind of transformation to a new paradigm we are talking about here, I've noticed that the models we have tend not to be useful. We all have quite a bit of unlearning and relearning to do.",
+    'We offer this video series as an opportunity for you to journey along with our journey. Restorative Circles is still very new to the world, and learning material and resources are somewhat limited. So here’s our attempt to celebrate this body of work and to offer back a few nuggets from our unfolding journey.',
 }
 
 const seoData = seoHelper(pageData)
@@ -63,7 +64,7 @@ const Page = () => (
   <StandardPage className="" seoData={seoData}>
     <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
       <Col sm={24} md={15}>
-        <h1 className="mask-h3">"The Power of Dialogue" – Video Series</h1>
+        <h1 className="mask-h3">"The Power of Dialogue"</h1>
         <p>
           We offer this video series as an opportunity for you to journey along
           with our journey. Restorative Circles is still very new to the world,
@@ -93,7 +94,7 @@ const Page = () => (
             }}
           >
             <Image
-              src={birdsTop}
+              src={camera}
               style={{
                 background: 'transparent',
                 border: 'unset',
@@ -128,22 +129,28 @@ const Page = () => (
             />
           </div>
           <p style={{ marginBottom: 0 }}>
-            Our big dream is to one day film an entire live Restorative Circle.
-            It’s an intimate and delicate space, and so we’re crossing our
-            fingers that sooner or later a group will be comfortable being
-            filmed…
+            <Link to="/projects/filimng-a-live-restorative-circle">
+              Our big dream is to one day film an entire live Restorative Circle
+            </Link>
+            . It’s an intimate and delicate space, and so we’re crossing our
+            fingers that sooner or later a group will be comfortable with the
+            idea of being filmed…
           </p>
         </div>
       </Col>
     </Row>
-    <h1 className="mask-h3" id="the-craft" style={{ marginBottom: 2 }}>
+    <h1
+      className="mask-h3"
+      id="the-craft"
+      style={{ marginBottom: 2, borderTop: '4px solid #FFBF00' }}
+    >
       1. The Craft
     </h1>
     <div className="margin-p">
       <p className="mask-h5">
         ↪&nbsp;
-        <strong>learning resource</strong>
-        &nbsp;that highlight the RC process in its different steps and stages
+        <strong>a learning resource</strong>
+        &nbsp;to highlight the RC process in its different steps and stages
       </p>
     </div>
     <Row gutter={{ md: 24 }}>
@@ -165,7 +172,11 @@ const Page = () => (
       </Col>
       <Col md={12}>&nbsp;</Col>
     </Row>
-    <h1 className="mask-h3" id="in-action" style={{ marginBottom: 2 }}>
+    <h1
+      className="mask-h3"
+      id="in-action"
+      style={{ marginBottom: 2, borderTop: '4px solid #4949FC' }}
+    >
       2. In Action
     </h1>
     <div className="margin-p">
@@ -197,7 +208,7 @@ const Page = () => (
           Before entering a Restorative Circle, Facilitators meet amongst
           themselves to work through any challenging thoughts or feelings that
           might interfere with their capacity to hold space during the Circle.
-          Eugenie Dumont (Genie), in her role as filmmaker, is also given an
+          Eugénie Dumont (Genie), in her role as filmmaker, is also given an
           opportunity to be heard for her connection to the Circle.
         </p>
       </Col>
@@ -221,7 +232,7 @@ const Page = () => (
     <h1
       className="mask-h3"
       id="the-restorative-system"
-      style={{ marginBottom: 2 }}
+      style={{ marginBottom: 2, borderTop: '4px solid #FF4D4D' }}
     >
       3. The Restorative System
     </h1>
@@ -297,7 +308,11 @@ const Page = () => (
       </Col>
       <Col md={12}>&nbsp;</Col>
     </Row>
-    <h1 className="mask-h3" id="experiences" style={{ marginBottom: 2 }}>
+    <h1
+      className="mask-h3"
+      id="experiences"
+      style={{ marginBottom: 2, borderTop: '4px solid #5FA15F' }}
+    >
       4. Experiences
     </h1>
     <div className="margin-p">

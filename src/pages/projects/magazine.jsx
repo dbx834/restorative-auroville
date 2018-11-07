@@ -8,9 +8,9 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { Link } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import OutLink from '@bodhi-project/components/lib/OutLink'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
@@ -47,7 +47,7 @@ const Initiative = props => {
         2018, some incidents occurred that put the topic of discrimination
         firmly on the Auroville agenda. Especially Tamil Aurovilians, who
         represent one-third of the Auroville population, have expressed feelings
-        of exclusion and rejection.{' '}
+        of exclusion and rejection.
       </p>
       <p>
         Claims of discrimination are complicated as they are based on subjective
@@ -69,66 +69,19 @@ const Initiative = props => {
         mirror a mix of stories and opinions, as we are looking to reduce
         stereotypes – there is no ‘Tamil community’ speaking. Instead, there are
         individuals who are our brothers and sisters in the Auroville community,
-        with a wide variety of experiences.{' '}
+        with a wide variety of experiences.
       </p>
       <p>
         We hope to print and distribute in early 2019. In the event that enough
         funds are raised, 500 copies will be given out for free in the
-        community. If you are willing to contribute, you may choose from the
-        options below, and receipts can be provided if requested.
+        community.
       </p>
-      <ol className="mask-p">
-        <li>
-          From within Auroville:
-          <ul style={{ fontSize: 'unset' }}>
-            <li style={{ fontSize: 'unset' }}>
-              Make a transfer/deposit at Financial Services to “Joy Living
-              Projects,” acct# 252235
-              <ul style={{ fontSize: 'unset' }}>
-                <li style={{ fontSize: 'unset' }}>
-                  Please specify “for Magazine, Joy Living Learning Project.”
-                </li>
-                <li style={{ fontSize: 'unset' }}>
-                  Please notify us by email (<OutLink to="mailto:restorative@auroville.org.in">
-                    restorative@auroville.org.in
-                  </OutLink>) that you’ve made a transfer, so that we can track
-                  your contribution.
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          From within India and/or abroad:
-          <ul style={{ fontSize: 'unset' }}>
-            <li style={{ fontSize: 'unset' }}>
-              Follow the payment link{' '}
-              <OutLink to="https://donations.auroville.com/">here</OutLink>.
-              <ul style={{ fontSize: 'unset' }}>
-                <li style={{ fontSize: 'unset' }}>
-                  Please select “Other” in the Project select, specify “for
-                  Magazine, Joy Living Learning Project.”
-                </li>
-              </ul>
-            </li>
-            <li style={{ fontSize: 'unset' }}>
-              From within India and/or abroad:
-              <ul style={{ fontSize: 'unset' }}>
-                <li style={{ fontSize: 'unset' }}>
-                  Follow the payment link{' '}
-                  <OutLink to="https://donations.auroville.com/">here</OutLink>.
-                </li>
-                <li style={{ fontSize: 'unset' }}>
-                  Please notify us by email (<OutLink to="mailto:restorative@auroville.org.in">
-                    restorative@auroville.org.in
-                  </OutLink>) that you’ve made a transfer, so that we can track
-                  your contribution.
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ol>
+      <p>
+        If you’re inspired by our project and would like to help, we welcome
+        your contributions (<Link to="/donate">you can donate here</Link>
+        ).
+      </p>
+      <p>Please know that any amount is greatly appreciated.</p>
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

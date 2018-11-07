@@ -103,7 +103,7 @@ const Page = props => {
   return (
     <StandardPage className="" seoData={seoData}>
       <EventSchema data={eventSchemaData} />
-      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 10 }}>
+      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
         <BItem>
           <Link to="/">Home</Link>
         </BItem>
@@ -115,7 +115,7 @@ const Page = props => {
       <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
         <Col sm={24} md={24} xl={15}>
           <Header>
-            <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
+            <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
               <Col sm={24} md={9}>
                 <Image
                   src={cover}

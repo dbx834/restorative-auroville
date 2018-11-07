@@ -46,33 +46,39 @@ const seoData = seoHelper(pageData)
 /** Page */
 const Page = () => (
   <StandardPage className="" seoData={seoData}>
-    <h1 className="mask-h3">Donate</h1>
+    <h1 className="mask-h3">Donate to support our work!</h1>
     <p>
-      If you’d like to make a donation to Joy Living Learning, you may do so
-      below. This will link directly to the Auroville Foundation payment gateway
-      page, and you will be able to receive a tax exemption.
+      If you’d like to make a donation towards Restorative Auroville, you may do
+      so below. This will link directly to the Auroville Foundation payment
+      gateway page, and you will be able to receive a tax exemption.
     </p>
     <div className="mask-p">
       <Button type="primary" style={{ marginTop: 10, marginBottom: 10 }}>
-        <OutLink to="https://www.auroville.com/donations/">Donate Now</OutLink>
+        <OutLink to="https://www.auroville.com/donations/">Donate Here</OutLink>
       </Button>
     </div>
+    <ul className="mask-p">
+      <li>
+        Please select “Other” in the Project selection, and specify “Restorative
+        Auroville, Joy Living Learning” as the Project name.
+      </li>
+      <li>
+        Please notify us by email (
+        <OutLink to="mailto:restorative@auroville.org.in">
+          restorative@auroville.org.in
+        </OutLink>
+        ) that you’ve made a transfer, so that we can track your contribution.
+      </li>
+    </ul>
     <p>
-      Please email{' '}
-      <OutLink to="mailto:joylivinglearning@gmail.com">
-        joylivinglearning@gmail.com
-      </OutLink>{' '}
-      to let us know that you have sent a donation, so that we can track it.
+      Restorative Auroville is an initiative of Joy Living Learning, a Unit
+      under the Auroville Foundation, a Charitable Trust under the Ministry of
+      Human Resources (Indian Government). Your donation will support
+      Restorative Auroville in its mission to bring Restorative Circles to above
+      and beyond.
     </p>
     <p>
-      Joy Living Learning is a Unit under the Auroville Foundation, which is a
-      Charitable Trust under the Ministry of Human Resources (Indian
-      Government). Your donation will support Joy Living Learning in its mission
-      to share the principles of applied nonviolence in different communities
-      and sectors, such as education, governance, and the corporate world.
-    </p>
-    <p>
-      If you would like more detailed information about our projects,{' '}
+      If you would like more detailed information about our project,&nbsp;
       <Link to="/contact-us">contact us</Link>.
     </p>
   </StandardPage>

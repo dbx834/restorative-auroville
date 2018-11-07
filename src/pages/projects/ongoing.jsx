@@ -41,7 +41,8 @@ const ongoingProjects = reverse(
 const pageData = {
   pageTitle: 'Ongoing projects',
   nakedPageSlug: 'projects/ongoing',
-  pageAbstract: 'Page abstract.',
+  pageAbstract:
+    'Our approach at Restorative Auroville is to engage with the community at many levels and through different initiatives, with the hope to connect with different aspects of our community life, so that we can better understand how to build systems that respond to our unique and complex reality.',
 }
 
 const seoData = seoHelper(pageData)
@@ -81,7 +82,8 @@ const Ongoingprojects = props => {
         </Button>
       </div>
       <p>
-        Our approach incorporates different strategies, with the hope to connect
+        Our approach at Restorative Auroville is to engage with the community at
+        many levels and through different initiatives, with the hope to connect
         with different aspects of our community life, so that we can better
         understand how to build systems that respond to our unique and complex
         reality.

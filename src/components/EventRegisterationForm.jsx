@@ -370,8 +370,8 @@ class EventRegisterationForm extends React.Component {
 
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Experience Level */}
                 <span style={{ marginBottom: 8, display: 'block' }}>
-                  Do you have any previous experience RC (or Restorative Justice
-                  or Nonviolent Communication)?
+                  Do you have any previous experience with RC (or Restorative
+                  Justice or Nonviolent Communication)?
                 </span>
                 <FormItem
                   validateStatus={experienceError ? 'error' : ''}
@@ -422,8 +422,8 @@ class EventRegisterationForm extends React.Component {
 
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ More Info. */}
                 <span style={{ marginBottom: 8, display: 'block' }}>
-                  Would you be like to receive information about future RC
-                  (and/or NVC) events?
+                  Would you like to receive information about future RC (and/or
+                  NVC) events?
                 </span>
                 <FormItem
                   validateStatus={wouldLikeInfoError ? 'error' : ''}

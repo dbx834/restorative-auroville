@@ -39,7 +39,7 @@ import birdsTop from '../assets/birdsTop.png'
 const pageData = {
   pageTitle: 'Newsletter',
   nakedPageSlug: 'newsletter',
-  pageAbstract: 'Page abstract.',
+  pageAbstract: 'Signup for our occasional newsletter.',
 }
 
 const seoData = seoHelper(pageData)
@@ -91,15 +91,17 @@ const Page = () => (
           Restorative Auroville is a project of{' '}
           <OutLink to="https://www.joylivinglearning.org/">
             Joy Living Learning
-          </OutLink>, a unit of the{' '}
+          </OutLink>
+          , a unit of the{' '}
           <OutLink to="https://www.auroville.org/">
             Auroville Foundation
-          </OutLink>, India.
+          </OutLink>
+          , India.
         </p>
         <p>
           <OutLink to="mailto:restorative@auroville.org.in?Subject=Hello">
-            <Icon type="mail" theme="outlined" />&nbsp;
-            restorative@auroville.org.in
+            <Icon type="mail" theme="outlined" />
+            &nbsp; restorative@auroville.org.in
           </OutLink>
         </p>
       </Col>

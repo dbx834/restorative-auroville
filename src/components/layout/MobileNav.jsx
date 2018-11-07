@@ -72,8 +72,6 @@ class MobileNav extends React.Component {
 
   /** standard renderer */
   render() {
-    console.log(this.state)
-
     return (
       <div id="mobile-nav">
         <div

@@ -196,7 +196,7 @@ const Footer = props => {
                   </li>
                   <li>
                     <OutLink to="https://www.restorativecircles.org/">
-                      Dominic's Website
+                      Dominic Barter & RC
                     </OutLink>
                   </li>
                   <li>
@@ -404,7 +404,7 @@ const Footer = props => {
                 <Link to="https://www.joylivinglearning.org/">
                   Joy Living Learning
                 </Link>
-                , which is a Unit of the&nbsp;
+                , a Unit of the&nbsp;
                 <Link to="https://www.auroville.org/">
                   Auroville Foundation
                 </Link>

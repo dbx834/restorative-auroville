@@ -23,6 +23,8 @@ import { Document, Page as PDFPage } from 'react-pdf'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../components/StandardPage'
 import PDFReader from '../components/PDFReader'
+import EqualHalves from '../components/EqualHalves'
+import Video from '../components/Video'
 
 // import BookReader from '../components/BookReader'
 
@@ -51,6 +53,9 @@ const seoData = seoHelper(pageData)
 const Page = () => (
   <StandardPage className="" seoData={seoData}>
     <h1 className="mask-h3">Our Restorative System in Auroville</h1>
+    <div style={{ marginBottom: 10 }}>
+      <PDFReader file="/av-rc-system.pdf" />
+    </div>
     <p>
       Conflict is a natural, inevitable part of living together, and Auroville
       is no exception.{' '}
@@ -88,8 +93,21 @@ const Page = () => (
       importance of consciously choosing a justice system for the growth and
       development of a community.
     </p>
-    <h2 className="mask-h4">Read more about our RC System in Auroville...</h2>
-    <PDFReader file="/av-rc-system.pdf" />
+    <h2 className="mask-h4">Presentation in Unity Pavilion</h2>
+    <EqualHalves>
+      <div>
+        <Video url="https://www.youtube.com/watch?v=n1Uf1IYQ2_Y&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=9" />
+        <p className="mask-h5">
+          <strong>Part 1</strong>
+        </p>
+      </div>
+      <div>
+        <Video url="https://www.youtube.com/watch?v=ngOhj-NhKJo&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=8" />
+        <p className="mask-h5">
+          <strong>Part 2</strong>
+        </p>
+      </div>
+    </EqualHalves>
   </StandardPage>
 )
 

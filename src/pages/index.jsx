@@ -48,10 +48,10 @@ import seoHelper from '../methods/seoHelper'
 
 import banner from '../assets/banner.png'
 
-import v1 from '../assets/the-craft.jpg'
-import v2 from '../assets/in-action.jpg'
-import v3 from '../assets/the-restorative-system.jpg'
-import v4 from '../assets/experiences.jpg'
+import v1 from '../assets/the-craft.png'
+import v2 from '../assets/in-action.png'
+import v3 from '../assets/the-restorative-system.png'
+import v4 from '../assets/experiences.png'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
@@ -89,17 +89,14 @@ const pageStyle = styleObject.toString()
 const VideoSeriesBlock1 = () => (
   <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
     <Col sm={24} md={24} lg={15}>
-      <h2 className="mask-h3">The Power of Dialogue - Video Series</h2>
+      <h2 className="mask-h3">The Power of Dialogue</h2>
       <Video url="https://www.youtube.com/watch?v=ur4OvDPkoSE" />
       <p>
-        <strong>3.2 – Designing our Justice System Consciously</strong>
+        <strong>3.2 Designing our Justice System Consciously</strong>
         <br />
-        We all have preferences and biases. For instance, do you have a bias for
-        clarity/formalization or for ambiguity/emergence? It's helpful to know
-        your preferences, to become more flexible and adapt to what's needed.{' '}
-        <Link to="/the-power-of-dialogue/designing-our-justice-system-consciously">
-          Visit page ⇝
-        </Link>
+        L'aura shares about her experience of engaging with Restorative Circles
+        in Auroville and the importance of designing a justice system
+        consciously, otherwise we'll just inherit the old ways.
       </p>
       <p>
         <Link to="/the-power-of-dialogue">See more videos ⇝</Link>
@@ -178,14 +175,14 @@ const VideoSeriesBlock1 = () => (
 const VideoSeriesBlock2 = () => (
   <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
     <Col sm={24} md={24} lg={15}>
-      <h2 className="mask-h3">The Power of Dialogue - Video Series</h2>
+      <h2 className="mask-h3">The Power of Dialogue</h2>
       <Video url="https://www.youtube.com/watch?v=ur4OvDPkoSE" />
       <p>
-        <strong>3.2 – Designing our Justice System Consciously</strong>
+        <strong>3.2 Designing our Justice System Consciously</strong>
         <br />
-        We all have preferences and biases. For instance, do you have a bias for
-        clarity/formalization or for ambiguity/emergence? It's helpful to know
-        your preferences, to become more flexible and adapt to what's needed.{' '}
+        L'aura shares about her experience of engaging with Restorative Circles
+        in Auroville and the importance of designing a justice system
+        consciously, otherwise we'll just inherit the old ways.&nbsp;
         <Link to="/the-power-of-dialogue/designing-our-justice-system-consciously">
           Visit page ⇝
         </Link>
@@ -252,27 +249,6 @@ const Page = props => {
 
       <ProjectHighlight />
       <VideoSeriesBlock1 />
-
-      <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-        <Col sm={24} md={24} lg={12}>
-          <h2 className="mask-h3">Volunteer & Apprentice</h2>
-          <p>
-            In order for this work to develop fully in Auroville, we need more
-            ambassadors who are willing to do the research, the teaching and the
-            experimenting.
-          </p>
-          <p>
-            <Link to="/the-power-of-dialogue">Apply now ⇝</Link>
-          </p>
-        </Col>
-        <Col sm={24} md={24} lg={12}>
-          <h2 className="mask-h3">Newsletter</h2>
-          <p>Signup for our occasional newsletter about Restorative Circles.</p>
-          <p>
-            <Link to="/newsletter">Signup now ⇝</Link>
-          </p>
-        </Col>
-      </Row>
 
       <EventsThisMonth data={data} />
 

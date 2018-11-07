@@ -92,13 +92,6 @@ const Footer = props => {
     ;({ quote, author } = quoteObj)
   }
 
-  const disqusShortname = 'restorativeauroville'
-  const disqusConfig = {
-    url: 'http://localhost:8000/restorative-circles',
-    identifier: 'http://localhost:8000/restorative-circles',
-    title: 'Our Project: Restorative Auroville',
-  }
-
   return (
     <div>
       <Image
@@ -331,18 +324,19 @@ const Footer = props => {
             )}
             {isArray(quote) && (
               <Fragment>
-                "<i>
+                "
+                <i>
                   {map(quote, (quotelet, index) => (
                     <Fragment key={index}>
                       {index !== 0 && <br />}
                       {quotelet}
                     </Fragment>
                   ))}
-                </i>"
+                </i>
+                "
               </Fragment>
             )}
-            <br />
-            ~ {author}
+            <br />~ {author}
           </p>
           <p
             style={{
@@ -350,10 +344,8 @@ const Footer = props => {
             }}
           >
             Made with&nbsp;
-            <Icon
-              type="heart"
-              style={{ fontSize: '80%', color: '#00006F' }}
-            />&nbsp;by&nbsp;
+            <Icon type="heart" style={{ fontSize: '80%', color: '#00006F' }} />
+            &nbsp;by&nbsp;
             <OutLink to="https://www.bodhiproject.org/">Bodhi Project</OutLink>
           </p>
           <p

@@ -183,42 +183,42 @@ const Page = () => (
         />
       </div>
       <h2 className="mask-h4">Our Aims & Objectives:</h2>
-      <ul className="mask-p" style={{ marginBottom: 0 }}>
+      <ul className="mask-p" style={{ marginBottom: 0, paddingLeft: 23 }}>
         <li>
-          To co-create a Justice System in Auroville that reflects our values
+          to co-create a Justice System in Auroville that reflects our values
           and is effective
         </li>
         <li>
-          To continue to raise awareness in Auroville about Restorative Circles
+          to continue to raise awareness in Auroville about Restorative Circles
         </li>
         <li>
-          To have a functioning Restorative System where people can call live
+          to have a functioning Restorative System where people can call live
           Circles and a critical mass understands how the process works
         </li>
         <li>
-          To train a large number of people and to have potential Facilitators
+          to train a large number of people and to have potential Facilitators
           across the community (in different neighbourhoods, Working Groups,
           schools, Units, Services, etc)
         </li>
         <li>
-          To understand what is unique about Auroville and how to engage with RC
+          to understand what is unique about Auroville and how to engage with RC
           in ways that suit our needs and ideals
         </li>
         <li>
-          To contribute to more ease and efficiency in resolving conflicts
+          to contribute to more ease and efficiency in resolving conflicts
           (increased goodwill, creativity, and inclusion instead of exclusion)
         </li>
         <li>
-          To contribute towards a cultural shift in understanding conflict, its
+          to contribute towards a cultural shift in understanding conflict, its
           potential for transformation, and the need to take responsibility for
           our actions
         </li>
         <li>
-          To contribute to restoring trust, communication and harmony amongst
+          to contribute to restoring trust, communication and harmony amongst
           Aurovilians
         </li>
         <li>
-          To potentially be an example for other communities seeking to improve
+          to potentially be an example for other communities seeking to improve
           their peace and justice systems
         </li>
       </ul>

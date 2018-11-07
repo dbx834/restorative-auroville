@@ -121,9 +121,11 @@ const Page = () => (
             Restorative Circles are a specific restorative practice whose
             development began with the work of Dominic Barter in the favelas in
             Rio de Janeiro in the mid 1990s and continues with a growing
-            community both in Brazil and internationally. See more about
-            Dominic's work{' '}
-            <OutLink to="https://www.restorativecircles.org/">here</OutLink>.
+            community both in Brazil and internationally.&nbsp;
+            <OutLink to="https://www.restorativecircles.org/">
+              See more about Dominic's work here
+            </OutLink>
+            .
           </p>
         </div>
       </Col>
@@ -169,8 +171,8 @@ const Page = () => (
     <br />
     <h2 className="mask-h4">Learn more about Restorative Circles…</h2>
     <p>
-      See our <Link to="/events">upcoming events</Link> and join a Workshop or
-      Practice Group (in person or online).
+      See our <Link to="/events">Upcoming Events</Link> and join a workshop or
+      practice group (in person or online).
     </p>
   </StandardPage>
 )

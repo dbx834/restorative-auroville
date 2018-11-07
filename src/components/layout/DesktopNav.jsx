@@ -35,6 +35,15 @@ const desktopNavStyle = css({
   width: '100%',
   transition: 'background 0.6s cubic-bezier(0.78, 0.14, 0.15, 0.86)',
 
+  '& .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-item': {
+    paddingLeft: '0px !important',
+    paddingRight: '0px !important',
+  },
+
+  '& .ant-menu-horizontal': {
+    paddingBottom: '0px !important',
+  },
+
   '& .ant-menu': {
     '& li(:first-child)': {
       marginLeft: 0,

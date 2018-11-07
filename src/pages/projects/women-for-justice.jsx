@@ -8,10 +8,9 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { Document, Page } from 'react-pdf'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import Image from '@bodhi-project/components/lib/Image'
+import Images from '@bodhi-project/components/lib/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
@@ -20,8 +19,6 @@ import StandardPage from '../../components/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
 
-import flyer from '../../assets/women-for-justice-flyer.jpg'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
 
@@ -29,10 +26,15 @@ const pageData = {
   pageTitle: 'Women for Justice',
   nakedPageSlug: 'projects/women-for-justice',
   pageAbstract:
-    'A Story About The Power of Solidarity (53 minutes) - Violence against women is omnipresent and nearly all women, independent of class, caste and religion are affected. Because police and justice hardly give any protection or aid, women have organized to fight against this violence and injustice.',
+    "In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO 'Olakh' (Gujarat), we will present a documentary about Nimisha’s work with women’s justice. The film will be translated live into Tamil, and followed by a Q&A session with Nimisha. Additional workshops will also be organized, geared especially towards women and youth from the bioregion.",
 }
 
 const seoData = seoHelper(pageData)
+
+const photos = [
+  { src: '/project-assets/women/english.jpg', width: 598, height: 677 },
+  { src: '/project-assets/women/tamil.jpeg', width: 1012, height: 1280 },
+]
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -41,23 +43,27 @@ const seoData = seoHelper(pageData)
 const Initiative = props => {
   return (
     <StandardPage className="" seoData={seoData}>
-      <h1 className="mask-h3">Restorative Auroville presents:</h1>
-      <Image
-        src={flyer}
-        style={{
-          background: 'transparent',
-          border: 'unset',
-          height: '62vh',
-          width: 'auto',
-          marginBottom: 10,
-          display: 'block',
-        }}
-        loader="gradient"
-        rawWidth={598}
-        rawHeight={677}
-      />
-      <p>live Tamil translation and English subtitles</p>
-      <p>A Story About The Power of Solidarity (53 minutes)</p>
+      <h1 className="mask-h3">Women for Justice</h1>
+      <p>
+        <strong>To be scheduled in 2019…</strong>
+        <br />
+        In collaboration with Auroville Village Action Group and Nimisha Desai,
+        founder of the NGO 'Olakh' (Gujarat), we will present a documentary
+        about Nimisha’s work with women’s justice. The film will be translated
+        live into Tamil, and followed by a Q&A session with Nimisha. Additional
+        workshops will also be organized, geared especially towards women and
+        youth from the bioregion.
+      </p>
+      <div className="margin-p">
+        <Images photos={photos} loader="gradient" columns={2} />
+        &nbsp;
+      </div>
+      <p>
+        <strong>A Story About The Power of Solidarity (53 minutes)</strong>
+      </p>
+      <p>
+        <i>with live Tamil translation and English subtitles</i>
+      </p>
       <p>
         Violence against women is omnipresent and nearly all women, independent
         of class, caste and religion are affected. Because police and justice
@@ -79,12 +85,7 @@ const Initiative = props => {
         Nimisha to introduce further the work of the Women for Justice.
       </p>
       <p>All are welcome,</p>
-      <p>women & men, girls & boys !</p>
-      <div className="mask-p" style={{ border: '1px dotted #00006F' }}>
-        <Document file="/projects/women-for-justice-tamil-flyer.pdf">
-          <Page pageNumber={1} />
-        </Document>
-      </div>
+      <p>Women & men, girls & boys!</p>
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )
