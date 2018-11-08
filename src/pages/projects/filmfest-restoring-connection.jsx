@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { Link } from 'gatsby'
+import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Images from '@bodhi-project/components/lib/Images'
@@ -21,7 +21,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/c
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
-import BookReader from '../../components/BookReader'
+import PDFReader from '../../components/PDFReader'
 import seoHelper from '../../methods/seoHelper'
 
 import nvcX42 from '../../assets/gallery/nvcX42.jpg'
@@ -128,7 +128,7 @@ const Initiative = props => {
         love, to forgive, to share, and to overcome our conditioned ideas of
         superiority versus inferiority.
       </p>
-      <BookReader title="Flow" url="/rev4.epub" />
+      <PDFReader title="Flow" url="/project-assets/filmfest/filmfest.pdf" />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

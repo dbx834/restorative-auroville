@@ -4,14 +4,16 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 import PropTypes from 'prop-types'
+import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import PDF from 'react-pdf-js'
+// import PDF from 'react-pdf-js'
+// let PDF = () => true
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-// const { Fragment } = React
+const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -23,12 +25,27 @@ class PDFReader extends React.Component {
   /** standard constructor */
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      check: false,
+      canRender: false,
+    }
+    this.PDF = () => true
 
     this.onDocumentComplete = this.onDocumentComplete.bind(this)
     this.handlePrevious = this.handlePrevious.bind(this)
     this.handleNext = this.handleNext.bind(this)
     this.renderPagination = this.renderPagination.bind(this)
+  }
+
+  /** componentDidMount */
+  componentDidMount() {
+    const { check, canRender } = this.state
+    if (check === false) {
+      if (!isUndefined(window)) {
+        this.setState({ canRender: true })
+        this.PDF = require('react-pdf-js')
+      }
+    }
   }
 
   /**
@@ -127,9 +144,12 @@ class PDFReader extends React.Component {
     console.log('hit')
     const { file } = this.props
     let pagination = null
+    const { canRender } = this.state
     if (this.state.pages) {
       pagination = this.renderPagination(this.state.page, this.state.pages)
     }
+    const PDF = this.PDF
+
     return (
       <div
         className="margin-p"
@@ -149,13 +169,19 @@ class PDFReader extends React.Component {
           }}
         >
           <div>
-            <PDF
-              file={file}
-              onDocumentComplete={this.onDocumentComplete}
-              page={this.state.page}
-            />
-            &nbsp;
-            {pagination}
+            {canRender === true ? (
+              <Fragment>
+                <PDF
+                  file={file}
+                  onDocumentComplete={this.onDocumentComplete}
+                  page={this.state.page}
+                />
+                &nbsp;
+                {pagination}
+              </Fragment>
+            ) : (
+              <Fragment>SSR PDF</Fragment>
+            )}
           </div>
         </div>
       </div>

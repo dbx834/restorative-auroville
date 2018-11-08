@@ -8,11 +8,9 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Loadable from 'react-loadable'
-import { Link } from 'gatsby'
+import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import Loader from '@bodhi-project/components/lib/Loader'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
@@ -22,6 +20,8 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/c
 import StandardPage from '../../components/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
+
+import PDFReader from '../../components/PDFReader'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
@@ -34,15 +34,6 @@ const pageData = {
 }
 
 const seoData = seoHelper(pageData)
-
-const LazyPDFReader = Loadable({
-  loader: () => import('../../components/PDFReader'),
-  loading: Loader,
-  render(loaded, props) {
-    const Component = loaded.default
-    return <Component {...props} />
-  },
-})
 
 const { Item: BItem } = Breadcrumb
 
@@ -113,7 +104,7 @@ const Initiative = props => {
       </p>
       <p>Please know that any amount is greatly appreciated.</p>
       <div className="margin-p">
-        <LazyPDFReader file="/project-assets/magazine/proposal.pdf" />
+        <PDFReader file="/project-assets/magazine/proposal.pdf" />
         &nbsp;
       </div>
       <DisqusComments pageData={pageData} />

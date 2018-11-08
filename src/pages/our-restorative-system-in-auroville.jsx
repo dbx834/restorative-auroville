@@ -11,9 +11,8 @@ import React from 'react'
 // import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// import { Link } from 'gatsby'
+// import Link from 'gatsby-link';
 import OutLink from '@bodhi-project/components/lib/OutLink'
-import { Document, Page as PDFPage } from 'react-pdf'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 // import Image from '@bodhi-project/components/lib/Image'

@@ -8,12 +8,10 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Loadable from 'react-loadable'
-import { Link } from 'gatsby'
+import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
-import Loader from '@bodhi-project/components/lib/Loader'
 import Images from '@bodhi-project/components/lib/Images'
 import OutLink from '@bodhi-project/components/lib/OutLink'
 
@@ -24,6 +22,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/c
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
 import EqualHalves from '../../components/EqualHalves'
+import PDFReader from '../../components/PDFReader'
 
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
@@ -39,15 +38,6 @@ const pageData = {
 }
 
 const seoData = seoHelper(pageData)
-
-const LazyPDFReader = Loadable({
-  loader: () => import('../../components/PDFReader'),
-  loading: Loader,
-  render(loaded, props) {
-    const Component = loaded.default
-    return <Component {...props} />
-  },
-})
 
 const photos = [
   { src: '/project-assets/aikiyam/aikiyam1.jpeg', width: 1280, height: 960 },
@@ -83,8 +73,8 @@ const Initiative = props => {
         us to support them with conflict resolution, and so we’ve been helping
         the teachers build an RC System amongst themselves.
       </p>
-      <LazyPDFReader file="/project-assets/aikiyam/conflict-resolution.pdf" />
-      <LazyPDFReader file="/project-assets/aikiyam/intensive.pdf" />
+      <PDFReader file="/project-assets/aikiyam/conflict-resolution.pdf" />
+      <PDFReader file="/project-assets/aikiyam/intensive.pdf" />
       <Images photos={photos} loader="gradient" columns={3} />
       <DisqusComments pageData={pageData} />
     </StandardPage>

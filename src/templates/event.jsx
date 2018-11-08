@@ -13,7 +13,7 @@ import startsWith from 'lodash/startsWith'
 import join from 'lodash/join'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { Link, withPrefix } from 'gatsby'
+import Link, { withPrefix } from 'gatsby-link'
 import treeParser from '@bodhi-project/markdown-to-react/lib/treeParser'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components

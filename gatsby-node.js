@@ -1,12 +1,15 @@
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Imports
 // ----------------------------------------------------------------------------
-const path = require('path')
+const twix = require('twix')
 const moment = require('moment')
+const path = require('path')
 const _ = require('lodash')
 const unified = require('unified')
 const markdown = require('remark-parse')
-const twix = require('twix')
+// const webpackLodashPlugin = require("lodash-webpack-plugin");
+
+// console.log(unified().use(markdown).parse(testMd));
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Functions
@@ -131,11 +134,10 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   }
 }
 
-// ----------------------------------------------------------------------------
-// ---------------------------------------------------------------- Create Node
-// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------- Create Pages
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
+
   return new Promise((resolve, reject) => {
     const event = path.resolve('src/templates/event.jsx')
     resolve(

@@ -1,0 +1,44 @@
+[
+  { "title": "Home", "link": "/" },
+  {
+    "title": "Explore +",
+    "menu": [
+      { "title": "Our Project", "link": "/about-restorative-auroville" },
+      { "title": "Restorative Circles", "link": "/restorative-circles" },
+      {
+        "title": "Our Restorative System",
+        "link": "/our-restorative-system-in-auroville"
+      },
+      { "title": "Our Story", "link": "/our-story" }
+    ]
+  },
+  {
+    "title": "Learn +",
+    "menu": [
+      { "title": "Upcoming Events", "link": "/events" },
+      {
+        "title": "The Power of Dialogue",
+        "link": "/the-power-of-dialogue"
+      },
+      { "title": "Volunteer & Apprentice", "link": "/volunteer" }
+    ]
+  },
+  { "title": "Our Projects", "link": "/projects/ongoing" },
+  { "title": "Our Team", "link": "/our-team" },
+  {
+    "title": "Donate",
+    "link": "/donate"
+  },
+  {
+    "title": "More +",
+    "menu": [
+      { "title": "Articles", "link": "/writings" },
+      { "title": "Archives", "link": "/archives" },
+      { "title": "Gallery", "link": "/gallery" },
+      { "title": "Newsletter", "link": "/newsletter" },
+      { "title": "Testimonials", "link": "/testimonials" },
+      { "title": "Pay Fee", "link": "/pay-fee" }
+    ]
+  },
+  { "title": "Contact Us", "link": "/contact-us" }
+]

@@ -18,7 +18,7 @@ import join from 'lodash/join'
 import isNull from 'lodash/isNull'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { Link, withPrefix } from 'gatsby'
+import Link, { withPrefix } from 'gatsby-link'
 import withSizes from 'react-sizes'
 import 'moment/locale/en-gb'
 

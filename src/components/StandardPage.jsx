@@ -24,10 +24,10 @@ import {
 } from '@bodhi-project/seo'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import Layout from './layout/Layout'
+// import Layout from './layout/Layout'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-// const { Fragment } = React
+const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -60,7 +60,7 @@ const StandardPage = props => {
   } = seoData
 
   return (
-    <Layout>
+    <Fragment>
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
       <UpdateTitle title={pageTitle} />
       <GeneralMeta data={generalMetaData} />
@@ -71,7 +71,7 @@ const StandardPage = props => {
 
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
       <Page className={`${pageStyles} ${className}`}>{children}</Page>
-    </Layout>
+    </Fragment>
   )
 }
 

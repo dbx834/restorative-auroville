@@ -12,7 +12,7 @@ import map from 'lodash/map'
 import join from 'lodash/join'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { Link, withPrefix } from 'gatsby'
+import Link, { withPrefix } from 'gatsby-link'
 import StackGrid from 'react-stack-grid'
 import { Header, Article } from '@bodhi-project/semantic-webflow'
 

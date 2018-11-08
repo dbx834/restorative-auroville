@@ -10,12 +10,10 @@ import PropTypes from 'prop-types'
 // import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { Link } from 'gatsby'
-import Loadable from 'react-loadable'
+import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
-import Loader from '@bodhi-project/components/lib/Loader'
 import Images from '@bodhi-project/components/lib/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
@@ -27,6 +25,7 @@ import StandardPage from '../../components/StandardPage'
 import EqualHalves from '../../components/EqualHalves'
 import GoldenMajorHalves from '../../components/GoldenMajorHalves'
 import GrungeBox from '../../components/GrungeBox'
+import PDFReader from '../../components/PDFReader'
 
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
@@ -41,15 +40,6 @@ const pageData = {
 }
 
 const seoData = seoHelper(pageData)
-
-const LazyPDFReader = Loadable({
-  loader: () => import('../../components/PDFReader'),
-  loading: Loader,
-  render(loaded, props) {
-    const Component = loaded.default
-    return <Component {...props} />
-  },
-})
 
 const photos = [
   { src: '/project-assets/ccd/ccd3.jpeg', width: 1280, height: 852 },
@@ -112,15 +102,15 @@ const Initiative = props => {
         </div>
       </EqualHalves>
       <div className="margin-p">
-        <LazyPDFReader file="/project-assets/ccd/ccd-english.pdf" />
+        <PDFReader file="/project-assets/ccd/ccd-english.pdf" />
         &nbsp;
       </div>
       <div className="margin-p">
-        <LazyPDFReader file="/project-assets/ccd/ccd-tamil.pdf" />
+        <PDFReader file="/project-assets/ccd/ccd-tamil.pdf" />
         &nbsp;
       </div>
       <div className="margin-p">
-        <LazyPDFReader file="/project-assets/ccd/ccd-action-list.pdf" />
+        <PDFReader file="/project-assets/ccd/ccd-action-list.pdf" />
         &nbsp;
       </div>
       <div className="margin-p">
