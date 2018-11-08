@@ -178,6 +178,9 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-offline`, // https://www.gatsbyjs.org/packages/gatsby-plugin-offline
+      options: {
+        navigateFallbackWhitelist: [],
+      },
     },
     {
       resolve: `gatsby-plugin-canonical-urls`, // https://www.gatsbyjs.org/packages/gatsby-plugin-canonical-urls
