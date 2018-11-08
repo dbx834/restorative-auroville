@@ -53,6 +53,9 @@ import v2 from '../assets/in-action.png'
 import v3 from '../assets/the-restorative-system.png'
 import v4 from '../assets/experiences.png'
 
+import blueGrunge from '../assets/blueGrunge.png'
+import bluePaintbrush from '../assets/bluePaintbrush.png'
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
   pageTitle: 'Restorative Circles in Auroville',
@@ -238,82 +241,113 @@ const VideoSeriesBlock2 = () => (
  * @return {[type]} [description]
  */
 const SummaryBlock = () => (
-  <div style={{ background: '#00006F', padding: 24 }} className="margin-p">
-    <h2
-      className="mask-h2"
+  <div
+    style={{
+      paddingTop: 64,
+      paddingBottom: 12,
+      paddingLeft: '12.5%',
+      paddingRight: '12.5%',
+      position: 'relative',
+    }}
+    className="margin-p"
+  >
+    <div
       style={{
-        color: '#FFFFFF',
-        textTransform: 'uppercase',
-        fontWeight: 200,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        height: '100%',
+        zIndex: -2,
+        overflow: 'hidden',
       }}
     >
-      Restorative Auroville offers…
-    </h2>
-    <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-      <Col sm={24} md={24} lg={8}>
-        <hr
-          style={{
-            borderTop: '6px solid #FFFFFF',
-            width: '12%',
-            marginLeft: 0,
-          }}
-        />
-        <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
-          Conflict Resolution
-        </h3>
-        <p style={{ color: '#FFFFFF' }}>
-          In order for this work to develop fully in Auroville, we need more
-          ambassadors who are willing to play with us: to do the research, the
-          teaching, the experimenting, and so much more…
-        </p>
-        <p>
-          <Link to="/volunteer" className="white">
-            See more ⇝
-          </Link>
-        </p>
-      </Col>
-      <Col sm={24} md={24} lg={8}>
-        <hr
-          style={{
-            borderTop: '6px solid #FFFFFF',
-            width: '12%',
-            marginLeft: 0,
-          }}
-        />
-        <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
-          Mediation
-        </h3>
-        <p style={{ color: '#FFFFFF' }}>
-          Please consider donating to our project because...
-        </p>
-        <p>
-          <Link to="/donate" className="white">
-            Donate now ⇝
-          </Link>
-        </p>
-      </Col>
-      <Col sm={24} md={24} lg={8}>
-        <hr
-          style={{
-            borderTop: '6px solid #FFFFFF',
-            width: '12%',
-            marginLeft: 0,
-          }}
-        />
-        <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
-          Learning Opportunities
-        </h3>
-        <p style={{ color: '#FFFFFF' }}>
-          Signup for our occasional newsletter and receive information about
-          future RC (and/or NVC) events.
-        </p>
-        <p>
-          <Link to="/newsletter" className="white">
-            Signup now ⇝
-          </Link>
-        </p>
-      </Col>
-    </Row>
+      <Image
+        src={bluePaintbrush}
+        style={{
+          background: 'transparent',
+          border: 'unset',
+          height: '100%',
+          width: '100%',
+        }}
+        rawWidth={1440}
+        rawHeight={900}
+      />
+    </div>
+    <div className="margin-p">
+      <h2
+        className="mask-h2"
+        style={{
+          color: '#FFFFFF',
+        }}
+      >
+        Restorative Auroville offers…
+      </h2>
+      <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
+        <Col sm={24} md={24} lg={8}>
+          <hr
+            style={{
+              borderTop: '6px solid #FFFFFF',
+              width: '12%',
+              marginLeft: 0,
+            }}
+          />
+          <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
+            Conflict Resolution
+          </h3>
+          <p style={{ color: '#FFFFFF' }}>
+            In order for this work to develop fully in Auroville, we need more
+            ambassadors who are willing to play with us: to do the research, the
+            teaching, the experimenting, and so much more…
+          </p>
+          <p>
+            <Link to="/volunteer" className="white">
+              See more ⇝
+            </Link>
+          </p>
+        </Col>
+        <Col sm={24} md={24} lg={8}>
+          <hr
+            style={{
+              borderTop: '6px solid #FFFFFF',
+              width: '12%',
+              marginLeft: 0,
+            }}
+          />
+          <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
+            Mediation
+          </h3>
+          <p style={{ color: '#FFFFFF' }}>
+            Please consider donating to our project because...
+          </p>
+          <p>
+            <Link to="/donate" className="white">
+              Donate now ⇝
+            </Link>
+          </p>
+        </Col>
+        <Col sm={24} md={24} lg={8}>
+          <hr
+            style={{
+              borderTop: '6px solid #FFFFFF',
+              width: '12%',
+              marginLeft: 0,
+            }}
+          />
+          <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
+            Learning Opportunities
+          </h3>
+          <p style={{ color: '#FFFFFF' }}>
+            Signup for our occasional newsletter and receive information about
+            future RC (and/or NVC) events.
+          </p>
+          <p>
+            <Link to="/newsletter" className="white">
+              Signup now ⇝
+            </Link>
+          </p>
+        </Col>
+      </Row>
+    </div>
   </div>
 )
 
@@ -338,7 +372,18 @@ const Page = props => {
           />
         </Col>
         <Col sm={24} md={24} lg={9}>
-          <h1 className="mask-h3">Restorative Auroville</h1>
+          <h1
+            className="mask-h3"
+            style={{
+              textIndent: '-9999em',
+              marginTop: -30,
+              lineHeight: '30px',
+              height: '30px',
+              marginBottom: 5,
+            }}
+          >
+            Restorative Auroville
+          </h1>
           <p>
             Restorative Auroville is an independent project that aims to bring
             the practice of&nbsp;
@@ -352,87 +397,119 @@ const Page = props => {
         </Col>
       </Row>
 
+      <ProjectHighlight />
+
       <SummaryBlock />
 
-      <ProjectHighlight />
       <VideoSeriesBlock1 />
 
-      <div style={{ background: '#00006F', padding: 24 }} className="margin-p">
-        <h2
-          className="mask-h2"
+      <div
+        style={{
+          paddingTop: 64,
+          paddingBottom: 12,
+          paddingLeft: '12.5%',
+          paddingRight: '12.5%',
+          position: 'relative',
+        }}
+        className="margin-p"
+      >
+        <div
           style={{
-            color: '#FFFFFF',
-            textTransform: 'uppercase',
-            fontWeight: 200,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            height: '100%',
+            zIndex: -2,
+            overflow: 'hidden',
           }}
         >
-          Get Involved Today!
-        </h2>
-        <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-          <Col sm={24} md={24} lg={8}>
-            <hr
-              style={{
-                borderTop: '6px solid #FFFFFF',
-                width: '12%',
-                marginLeft: 0,
-              }}
-            />
-            <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
-              Volunteer & Apprentice
-            </h3>
-            <p style={{ color: '#FFFFFF' }}>
-              In order for this work to develop fully in Auroville, we need more
-              ambassadors who are willing to play with us: to do the research,
-              the teaching, the experimenting, and so much more…
-            </p>
-            <p>
-              <Link to="/volunteer" className="white">
-                See more ⇝
-              </Link>
-            </p>
-          </Col>
-          <Col sm={24} md={24} lg={8}>
-            <hr
-              style={{
-                borderTop: '6px solid #FFFFFF',
-                width: '12%',
-                marginLeft: 0,
-              }}
-            />
-            <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
-              Donate
-            </h3>
-            <p style={{ color: '#FFFFFF' }}>
-              Please consider donating to our project because...
-            </p>
-            <p>
-              <Link to="/donate" className="white">
-                Donate now ⇝
-              </Link>
-            </p>
-          </Col>
-          <Col sm={24} md={24} lg={8}>
-            <hr
-              style={{
-                borderTop: '6px solid #FFFFFF',
-                width: '12%',
-                marginLeft: 0,
-              }}
-            />
-            <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
-              Newsletter
-            </h3>
-            <p style={{ color: '#FFFFFF' }}>
-              Signup for our occasional newsletter and receive information about
-              future RC (and/or NVC) events.
-            </p>
-            <p>
-              <Link to="/newsletter" className="white">
-                Signup now ⇝
-              </Link>
-            </p>
-          </Col>
-        </Row>
+          <Image
+            src={bluePaintbrush}
+            style={{
+              background: 'transparent',
+              border: 'unset',
+              height: '100%',
+              width: '100%',
+            }}
+            rawWidth={1440}
+            rawHeight={900}
+          />
+        </div>
+        <div className="margin-p">
+          <h2
+            className="mask-h2"
+            style={{
+              color: '#FFFFFF',
+            }}
+          >
+            Get Involved Today…
+          </h2>
+          <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
+            <Col sm={24} md={24} lg={8}>
+              <hr
+                style={{
+                  borderTop: '6px solid #FFFFFF',
+                  width: '12%',
+                  marginLeft: 0,
+                }}
+              />
+              <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
+                Volunteer & Apprentice
+              </h3>
+              <p style={{ color: '#FFFFFF' }}>
+                In order for this work to develop fully in Auroville, we need
+                more ambassadors who are willing to play with us: to do the
+                research, the teaching, the experimenting, and so much more…
+              </p>
+              <p>
+                <Link to="/volunteer" className="white">
+                  See more ⇝
+                </Link>
+              </p>
+            </Col>
+            <Col sm={24} md={24} lg={8}>
+              <hr
+                style={{
+                  borderTop: '6px solid #FFFFFF',
+                  width: '12%',
+                  marginLeft: 0,
+                }}
+              />
+              <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
+                Donate
+              </h3>
+              <p style={{ color: '#FFFFFF' }}>
+                Please consider donating to our project because...
+              </p>
+              <p>
+                <Link to="/donate" className="white">
+                  Donate now ⇝
+                </Link>
+              </p>
+            </Col>
+            <Col sm={24} md={24} lg={8}>
+              <hr
+                style={{
+                  borderTop: '6px solid #FFFFFF',
+                  width: '12%',
+                  marginLeft: 0,
+                }}
+              />
+              <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
+                Newsletter
+              </h3>
+              <p style={{ color: '#FFFFFF' }}>
+                Signup for our occasional newsletter and receive information
+                about future RC (and/or NVC) events.
+              </p>
+              <p>
+                <Link to="/newsletter" className="white">
+                  Signup now ⇝
+                </Link>
+              </p>
+            </Col>
+          </Row>
+        </div>
       </div>
 
       <EventsThisMonth data={data} />

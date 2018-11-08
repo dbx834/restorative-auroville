@@ -27,6 +27,9 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../components/StandardPage'
 
+import GoldenMajorHalves from '../components/GoldenMajorHalves'
+import Video from '../components/Video'
+
 import seoHelper from '../methods/seoHelper'
 
 import birdsTop from '../assets/birdsTop.png'
@@ -243,6 +246,24 @@ const Page = () => (
         },
       ]}
     />
+    <div
+      style={{
+        marginLeft: '6.25vw',
+        marginRight: '6.25vw',
+      }}
+      className="margin-p"
+    >
+      <GoldenMajorHalves>
+        <div>
+          <h2 className="mask-h5">Video Title</h2>
+          <Video url="https://www.youtube.com/watch?v=kqBM5Xr5VfI&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=10" />
+        </div>
+        <div>
+          <h2 className="mask-h5">Extra content…</h2>
+          <p>Some content...</p>
+        </div>
+      </GoldenMajorHalves>
+    </div>
   </StandardPage>
 )
 

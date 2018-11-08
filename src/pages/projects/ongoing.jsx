@@ -22,8 +22,6 @@ import withSizes from 'react-sizes'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
 import ProjectListing from '../../components/ProjectListing'
-import GoldenMajorHalves from '../../components/GoldenMajorHalves'
-import Video from '../../components/Video'
 
 import seoHelper from '../../methods/seoHelper'
 
@@ -93,16 +91,6 @@ const Ongoingprojects = props => {
           itemWidth="33%"
         />
       </div>
-      <GoldenMajorHalves>
-        <div>
-          <h2 className="mask-h5">Video Title</h2>
-          <Video url="https://www.youtube.com/watch?v=kqBM5Xr5VfI&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=10" />
-        </div>
-        <div>
-          <h2 className="mask-h5">Extra content…</h2>
-          <p>Some content...</p>
-        </div>
-      </GoldenMajorHalves>
     </StandardPage>
   )
 }
