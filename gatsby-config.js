@@ -30,13 +30,13 @@ module.exports = {
     siteUrl,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-webpack-bundle-analyzer`, // https://www.gatsbyjs.org/packages/gatsby-plugin-webpack-bundle-analyzer
-      options: {
-        // https://www.gatsbyjs.org/packages/gatsby-plugin-webpack-bundle-analyzer/?=#options
-        disable: true, // set to false to see bundle analytics
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-webpack-bundle-analyzer`, // https://www.gatsbyjs.org/packages/gatsby-plugin-webpack-bundle-analyzer
+    //   options: {
+    //     // https://www.gatsbyjs.org/packages/gatsby-plugin-webpack-bundle-analyzer/?=#options
+    //     disable: true, // set to false to see bundle analytics
+    //   },
+    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -66,12 +66,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`, // https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap
     },
-    {
-      resolve: `gatsby-plugin-netlify`, // https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/
-    },
-    {
-      resolve: `gatsby-plugin-netlify-cache`, // https://github.com/axe312ger/gatsby-plugin-netlify-cache
-    },
+    // {
+    //   resolve: `gatsby-plugin-netlify`, // https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/
+    // },
+    // {
+    //   resolve: `gatsby-plugin-netlify-cache`, // https://github.com/axe312ger/gatsby-plugin-netlify-cache
+    // },
     {
       resolve: `gatsby-plugin-nprogress`, // https://www.gatsbyjs.org/packages/gatsby-plugin-nprogress/
       options: {
