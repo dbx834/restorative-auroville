@@ -8,10 +8,13 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { Link } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
+import Breadcrumb from 'antd/lib/breadcrumb'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
@@ -30,6 +33,8 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
+const { Item: BItem } = Breadcrumb
+
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
@@ -37,6 +42,15 @@ const seoData = seoHelper(pageData)
 const Initiative = props => {
   return (
     <StandardPage className="" seoData={seoData}>
+      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
+        <BItem>
+          <Link to="/">Home</Link>
+        </BItem>
+        <BItem>
+          <Link to="/projects/past">Past Projects</Link>
+        </BItem>
+        <BItem>Restorative Circles in The Learning Community School</BItem>
+      </Breadcrumb>
       <h1 className="mask-h3">
         Restorative Circles in The Learning Community School
       </h1>

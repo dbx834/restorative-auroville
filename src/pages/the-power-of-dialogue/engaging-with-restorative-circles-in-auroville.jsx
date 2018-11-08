@@ -19,7 +19,8 @@ const pageData = {
   pageTitle: 'Engaging with Restorative Circles in Auroville',
   nakedPageSlug:
     'the-power-of-dialogue/engaging-with-restorative-circles-in-auroville',
-  pageAbstract: 'Page abstract.',
+  pageAbstract:
+    "L'aura shares about her experience of engaging with Restorative Circles in Auroville and how it's received by the community.",
 }
 
 const seoData = seoHelper(pageData)
@@ -36,9 +37,8 @@ const Page = () => (
   <StandardPage className="" seoData={seoData}>
     <h1 className="mask-h3">Engaging with Restorative Circles in Auroville</h1>
     <p>
-      We all have preferences and biases. For instance, do you have a bias for
-      clarity/formalization or for ambiguity/emergence? It's helpful to know
-      your preferences, to become more flexible and adapt to what's needed.
+      L'aura shares about her experience of engaging with Restorative Circles in
+      Auroville and how it's received by the community.
     </p>
     <Video url="https://www.youtube.com/watch?v=tuJrfIFd3IY" />
     <DisqusComments pageData={pageData} />

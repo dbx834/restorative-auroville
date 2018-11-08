@@ -258,6 +258,7 @@ const registerLink = (extraData, registerForEvent) => {
         href="#"
         title="Register now"
         onClick={e => registerForEvent(e, extraData.edgeIndex)}
+        className="ant-btn"
       >
         <span style={{ fontSize: '125%' }}>Quick register ⇝</span>
       </a>
@@ -588,15 +589,11 @@ class EventsGrid extends React.Component {
                 </p>
                 <p>{extraData.node.frontmatter.abstract}</p>
                 <div className="margin-p">
-                  <Button>
-                    <Link to={extraData.node.fields.route}>
-                      <span style={{ fontSize: '125%' }}>More details ⇝</span>
-                    </Link>
-                  </Button>
+                  <Link to={extraData.node.fields.route} className="ant-btn">
+                    <span style={{ fontSize: '125%' }}>More details ⇝</span>
+                  </Link>
                   &nbsp;
-                  <Button>
-                    {registerLink(extraData, this.registerForEvent)}
-                  </Button>
+                  {registerLink(extraData, this.registerForEvent)}
                 </div>
               </div>
             )}

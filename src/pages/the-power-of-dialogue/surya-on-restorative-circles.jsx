@@ -18,7 +18,7 @@ import seoHelper from '../../methods/seoHelper'
 const pageData = {
   pageTitle: 'Surya on Restorative Circles',
   nakedPageSlug: 'the-power-of-dialogue/surya-on-restorative-circles',
-  pageAbstract: 'Page abstract.',
+  pageAbstract: 'Surya shares about her experiences with Restoratives Circles.',
 }
 
 const seoData = seoHelper(pageData)
@@ -34,11 +34,7 @@ const seoData = seoHelper(pageData)
 const Page = () => (
   <StandardPage className="" seoData={seoData}>
     <h1 className="mask-h3">Surya on Restorative Circles</h1>
-    <p>
-      We all have preferences and biases. For instance, do you have a bias for
-      clarity/formalization or for ambiguity/emergence? It's helpful to know
-      your preferences, to become more flexible and adapt to what's needed.
-    </p>
+    <p>Surya shares about her experiences with Restoratives Circles.</p>
     <Video url="https://www.youtube.com/watch?v=uIyY6TDbnSQ" />
     <DisqusComments pageData={pageData} />
   </StandardPage>

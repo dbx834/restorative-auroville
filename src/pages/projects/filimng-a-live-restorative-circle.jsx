@@ -8,11 +8,14 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { Link } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Images from '@bodhi-project/components/lib/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
+import Breadcrumb from 'antd/lib/breadcrumb'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
@@ -36,6 +39,8 @@ const photos = [
   { src: '/project-assets/filming/img2.jpg', width: 594, height: 421 },
 ]
 
+const { Item: BItem } = Breadcrumb
+
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
@@ -43,6 +48,15 @@ const photos = [
 const Initiative = props => {
   return (
     <StandardPage className="" seoData={seoData}>
+      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
+        <BItem>
+          <Link to="/">Home</Link>
+        </BItem>
+        <BItem>
+          <Link to="/projects/ongoing">Ongoing Projects</Link>
+        </BItem>
+        <BItem>Filming a Live Restorative Circle</BItem>
+      </Breadcrumb>
       <h1 className="mask-h3">Filming a Live Restorative Circle</h1>
       <p>
         We have a big, big, big dream to one day film a live Circle, so that we

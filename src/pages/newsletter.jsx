@@ -57,7 +57,10 @@ const Page = () => (
     <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
       <Col sm={24} md={15}>
         <h1 className="mask-h3">Newsletter</h1>
-        <p>Signup for our occasional newsletter.</p>
+        <p>
+          Signup for our occasional newsletter and receive information about
+          future RC (and/or NVC) events.
+        </p>
         <NewsletterForm />
       </Col>
       <Col sm={24} md={9}>

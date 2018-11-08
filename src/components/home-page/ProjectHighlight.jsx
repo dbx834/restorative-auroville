@@ -68,7 +68,11 @@ const ProjectHighlight = props => {
         understand how to build systems that respond to our unique and complex
         reality. Some projects –
       </p>
-      <ProjectListing data={ongoingProjects} isMobile={isMobile} />
+      <ProjectListing
+        data={ongoingProjects}
+        isMobile={isMobile}
+        itemWidth="33%"
+      />
     </section>
   )
 }

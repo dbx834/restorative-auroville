@@ -8,11 +8,14 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { Link } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Images from '@bodhi-project/components/lib/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
+import Breadcrumb from 'antd/lib/breadcrumb'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
@@ -36,6 +39,8 @@ const photos = [
   { src: '/project-assets/women/tamil.jpeg', width: 1012, height: 1280 },
 ]
 
+const { Item: BItem } = Breadcrumb
+
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
@@ -43,6 +48,15 @@ const photos = [
 const Initiative = props => {
   return (
     <StandardPage className="" seoData={seoData}>
+      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
+        <BItem>
+          <Link to="/">Home</Link>
+        </BItem>
+        <BItem>
+          <Link to="/projects/ongoing">Ongoing Projects</Link>
+        </BItem>
+        <BItem>Women for Justice</BItem>
+      </Breadcrumb>
       <h1 className="mask-h3">Women for Justice</h1>
       <p>
         <strong>To be scheduled in 2019…</strong>
@@ -60,32 +74,23 @@ const Initiative = props => {
       </div>
       <p>
         <strong>A Story About The Power of Solidarity (53 minutes)</strong>
+        <br />
+        <i>[live Tamil translation and English subtitles]</i>
       </p>
       <p>
-        <i>with live Tamil translation and English subtitles</i>
+        Synopsis: Violence against women is omnipresent and nearly all women,
+        independent of class, caste and religion are affected. Because police
+        and justice hardly give any protection or aid, women have organized to
+        fight against this violence and injustice. In Gujarat, they founded the
+        “Women for Justice” and the “Nari Adalat” women’s courts. Every week
+        they gather on the roof terrace of the local government or under a tree
+        and dispense justice themselves. With quick-wittedness and creativity
+        they put beating husbands and quarrelsome mother-in-laws in their place.
+        And – if necessary – they go in as a “heavy squad” to help a poor widow,
+        who was thrown out of the house with her little daughter after the death
+        of her husband, to regain her belongings.
       </p>
-      <p>
-        Violence against women is omnipresent and nearly all women, independent
-        of class, caste and religion are affected. Because police and justice
-        hardly give any protection or aid, women have organized to fight against
-        this violence and injustice. In Gujarat, they founded the “Women for
-        Justice” and the “Nari Adalat” women´s courts. Every week they gather on
-        the roof terrace of the local government or under a tree and dispense
-        justice themselves. With quick-wittedness and creativity they put
-        beating husbands and quarrelsome mother-in-laws in their place. And – if
-        necessary – they go in as a “heavy squad” to help a poor widow, who was
-        thrown out of the house with her little daughter after the death of her
-        husband, to regain her belongings.
-      </p>
-      <p>
-        The movie will be presented by Nimisha Desai, Women-NGO "Olakh", Gujarat
-      </p>
-      <p>
-        After the movie is enough time for discussion and for special guest
-        Nimisha to introduce further the work of the Women for Justice.
-      </p>
-      <p>All are welcome,</p>
-      <p>Women & men, girls & boys!</p>
+      <p>All are welcome, women and men, girls and boys!</p>
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

@@ -34,18 +34,22 @@ const DisqusComments = props => {
   }
 
   return (
-    <Fragment>
+    <div
+      style={{
+        background: '#f8f8ff',
+        border: '1px solid #00006F',
+        padding: 16,
+      }}
+    >
       <h2 className="mask-h6">Leave a comment…</h2>
       <p>
-        Our hope is for the comments below to bring to surface our collective
-        wisdom on the topic.
+        Please share your thoughts and inspiration. Our hope is for these
+        comments to create a space for collective wisdom to emerge on
+        Restorative Circles and justice.
       </p>
       <p>
-        If you have something to share, please add a link to an article, a
-        video... Feel free to agree or disagree with what I say, but always:
-        please keep it on topic, relevant, practical. And of course, let's keep
-        things respectful and kind. Please don't comment if what you say is
-        off-topic or wouldn't benefit viewers of this page.
+        And a little request to please stay on topic and to keep your comments
+        relevant and practical, so that other viewers are benefited.
       </p>
       <div className="mask-p">
         <Disqus.DiscussionEmbed
@@ -53,7 +57,7 @@ const DisqusComments = props => {
           config={disqusConfig}
         />
       </div>
-    </Fragment>
+    </div>
   )
 }
 

@@ -8,11 +8,15 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Loadable from 'react-loadable'
 import { Link } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
+import Loader from '@bodhi-project/components/lib/Loader'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
+import Breadcrumb from 'antd/lib/breadcrumb'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
@@ -31,6 +35,17 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
+const LazyPDFReader = Loadable({
+  loader: () => import('../../components/PDFReader'),
+  loading: Loader,
+  render(loaded, props) {
+    const Component = loaded.default
+    return <Component {...props} />
+  },
+})
+
+const { Item: BItem } = Breadcrumb
+
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
@@ -38,7 +53,22 @@ const seoData = seoHelper(pageData)
 const Initiative = props => {
   return (
     <StandardPage className="" seoData={seoData}>
-      <h1 className="mask-h3">Magazine</h1>
+      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
+        <BItem>
+          <Link to="/">Home</Link>
+        </BItem>
+        <BItem>
+          <Link to="/projects/ongoing">Ongoing Projects</Link>
+        </BItem>
+        <BItem>
+          Magazine: "Restoring Connection & Building Bridges – Tamil Aurovilian
+          Journeys"
+        </BItem>
+      </Breadcrumb>
+      <h1 className="mask-h3">
+        Magazine: "Restoring Connection & Building Bridges – Tamil Aurovilian
+        Journeys"
+      </h1>
       <p>
         In an international township like Auroville, where many different people
         come together, it seems inevitable that at times disconnect arises due
@@ -82,6 +112,10 @@ const Initiative = props => {
         ).
       </p>
       <p>Please know that any amount is greatly appreciated.</p>
+      <div className="margin-p">
+        <LazyPDFReader file="/project-assets/magazine/proposal.pdf" />
+        &nbsp;
+      </div>
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

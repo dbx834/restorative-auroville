@@ -153,6 +153,9 @@ const Footer = props => {
                   <li>
                     <Link to="/our-team">Our Team</Link>
                   </li>
+                  <li>
+                    <Link to="/our-history">Our History</Link>
+                  </li>
                 </ul>
               </Col>
               <Col span={8}>
@@ -208,149 +211,172 @@ const Footer = props => {
                 </ul>
               </Col>
             </Row>
-            <div
+            <Row
+              gutter={{ xs: 12, sm: 12, md: 12 }}
               style={{
                 marginTop: 9,
                 paddingTop: 9,
                 borderTop: '1px dotted rgba(0, 0, 111, 0.5)',
               }}
             >
-              <h3 className="mask-h6">Connect With Us</h3>
-              <div
-                style={{
-                  display: 'flex',
-                  marginBottom: 20,
-                }}
-              >
-                <OutLink
-                  to="https://www.facebook.com/RestorativeAuroville/"
-                  title="Facebook"
-                >
-                  <Image
-                    src={facebook}
-                    rawWidth={450}
-                    rawHeight={450}
+              <Col span={16}>
+                <div>
+                  <h3 className="mask-h6">Connect With Us</h3>
+                  <div
                     style={{
-                      display: 'inline-block',
-                      border: 'none',
-                      background: 'none',
-                      height: 36,
-                      width: 36,
+                      display: 'flex',
+                      marginBottom: 20,
                     }}
-                    className="apply-filter"
-                    alt="Follow us on Facebook - https://www.facebook.com/RestorativeAuroville"
-                  />
-                </OutLink>
-                <OutLink
-                  to="https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF"
-                  style={{ marginLeft: 17 }}
+                  >
+                    <OutLink
+                      to="https://www.facebook.com/RestorativeAuroville/"
+                      title="Facebook"
+                    >
+                      <Image
+                        src={facebook}
+                        rawWidth={450}
+                        rawHeight={450}
+                        style={{
+                          display: 'inline-block',
+                          border: 'none',
+                          background: 'none',
+                          height: 36,
+                          width: 36,
+                        }}
+                        className="apply-filter"
+                        alt="Follow us on Facebook - https://www.facebook.com/RestorativeAuroville"
+                      />
+                    </OutLink>
+                    <OutLink
+                      to="https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF"
+                      style={{ marginLeft: 17 }}
+                    >
+                      <Image
+                        src={youtube}
+                        rawWidth={450}
+                        rawHeight={450}
+                        style={{
+                          display: 'inline-block',
+                          border: 'none',
+                          background: 'none',
+                          height: 36,
+                          width: 36,
+                        }}
+                        className="apply-filter"
+                        alt="See more videos on YouTube - https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF"
+                      />
+                    </OutLink>
+                    <OutLink
+                      to="https://vimeo.com/laurajoyful"
+                      style={{ marginLeft: 17 }}
+                    >
+                      <Image
+                        src={vimeo}
+                        rawWidth={450}
+                        rawHeight={450}
+                        style={{
+                          display: 'inline-block',
+                          border: 'none',
+                          background: 'none',
+                          height: 33,
+                          width: 33,
+                        }}
+                        className="apply-filter"
+                        alt="See more videos on Vimeo - https://vimeo.com/laurajoyful"
+                      />
+                    </OutLink>
+                    <OutLink
+                      to="https://soundcloud.com/laura-joy-145472107"
+                      style={{ marginLeft: 17 }}
+                    >
+                      <Image
+                        src={soundcloud}
+                        rawWidth={450}
+                        rawHeight={450}
+                        style={{
+                          display: 'inline-block',
+                          border: 'none',
+                          background: 'none',
+                          height: 33,
+                          width: 33,
+                        }}
+                        className="apply-filter"
+                        alt="Listen to our dialogues on Soundcloud - https://soundcloud.com/laura-joy-145472107"
+                      />
+                    </OutLink>
+                    <OutLink
+                      to="https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
+                      style={{ marginLeft: 17 }}
+                    >
+                      <Image
+                        src={payu}
+                        rawWidth={450}
+                        rawHeight={450}
+                        style={{
+                          display: 'inline-block',
+                          border: 'none',
+                          background: 'none',
+                          height: 33,
+                          width: 33,
+                        }}
+                        className="apply-filter"
+                        alt="Donate or pay fees through PayU - https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
+                      />
+                    </OutLink>
+                    <form
+                      action="https://www.paypal.com/cgi-bin/webscr"
+                      method="post"
+                      target="_blank"
+                      style={{ display: 'inline-block', marginLeft: 17 }}
+                      className="hover apply-filter"
+                    >
+                      <input type="hidden" name="cmd" value="_s-xclick" />
+                      <input
+                        type="hidden"
+                        name="hosted_button_id"
+                        value="WFXM5RNDGBXL4"
+                      />
+                      <input
+                        type="image"
+                        src={paypal}
+                        border="0"
+                        name="submit"
+                        alt="PayPal – The safer, easier way to pay online!"
+                        style={{
+                          height: 33,
+                          width: 33,
+                        }}
+                      />
+                      <img
+                        alt=""
+                        border="0"
+                        src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif"
+                        width="1"
+                        height="1"
+                      />
+                    </form>
+                  </div>
+                </div>
+              </Col>
+              <Col span={8}>
+                <h3 className="mask-h6">Get Involved</h3>
+                <ul
+                  className="mask-p"
+                  style={{
+                    listStyle: 'none',
+                    paddingLeft: 0,
+                    marginBottom: 0,
+                  }}
                 >
-                  <Image
-                    src={youtube}
-                    rawWidth={450}
-                    rawHeight={450}
-                    style={{
-                      display: 'inline-block',
-                      border: 'none',
-                      background: 'none',
-                      height: 36,
-                      width: 36,
-                    }}
-                    className="apply-filter"
-                    alt="See more videos on YouTube - https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF"
-                  />
-                </OutLink>
-                <OutLink
-                  to="https://vimeo.com/laurajoyful"
-                  style={{ marginLeft: 17 }}
-                >
-                  <Image
-                    src={vimeo}
-                    rawWidth={450}
-                    rawHeight={450}
-                    style={{
-                      display: 'inline-block',
-                      border: 'none',
-                      background: 'none',
-                      height: 33,
-                      width: 33,
-                    }}
-                    className="apply-filter"
-                    alt="See more videos on Vimeo - https://vimeo.com/laurajoyful"
-                  />
-                </OutLink>
-                <OutLink
-                  to="https://soundcloud.com/laura-joy-145472107"
-                  style={{ marginLeft: 17 }}
-                >
-                  <Image
-                    src={soundcloud}
-                    rawWidth={450}
-                    rawHeight={450}
-                    style={{
-                      display: 'inline-block',
-                      border: 'none',
-                      background: 'none',
-                      height: 33,
-                      width: 33,
-                    }}
-                    className="apply-filter"
-                    alt="Listen to our dialogues on Soundcloud - https://soundcloud.com/laura-joy-145472107"
-                  />
-                </OutLink>
-                <OutLink
-                  to="https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
-                  style={{ marginLeft: 17 }}
-                >
-                  <Image
-                    src={payu}
-                    rawWidth={450}
-                    rawHeight={450}
-                    style={{
-                      display: 'inline-block',
-                      border: 'none',
-                      background: 'none',
-                      height: 33,
-                      width: 33,
-                    }}
-                    className="apply-filter"
-                    alt="Donate or pay fees through PayU - https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
-                  />
-                </OutLink>
-                <form
-                  action="https://www.paypal.com/cgi-bin/webscr"
-                  method="post"
-                  target="_blank"
-                  style={{ display: 'inline-block', marginLeft: 17 }}
-                  className="hover apply-filter"
-                >
-                  <input type="hidden" name="cmd" value="_s-xclick" />
-                  <input
-                    type="hidden"
-                    name="hosted_button_id"
-                    value="WFXM5RNDGBXL4"
-                  />
-                  <input
-                    type="image"
-                    src={paypal}
-                    border="0"
-                    name="submit"
-                    alt="PayPal – The safer, easier way to pay online!"
-                    style={{
-                      height: 33,
-                      width: 33,
-                    }}
-                  />
-                  <img
-                    alt=""
-                    border="0"
-                    src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif"
-                    width="1"
-                    height="1"
-                  />
-                </form>
-              </div>
-            </div>
+                  <li>
+                    <Link to="/volunteer">Volunteer & Apprentice</Link>
+                  </li>
+                  <li>
+                    <Link to="/volunteer">Newsletter</Link>
+                  </li>
+                </ul>
+              </Col>
+            </Row>
             <div
               style={{
                 marginTop: 9,

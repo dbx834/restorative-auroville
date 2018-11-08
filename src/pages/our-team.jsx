@@ -54,9 +54,11 @@ const Page = props => {
       <h1 className="mask-h3">About Our Team</h1>
       <p className="mask-p">
         Restorative Auroville is an independent project that aims to bring the
-        practice of{' '}
-        <OutLink to="www.restorativecircles.org">Restorative Circles</OutLink>,
-        a holistic, community-based form of conflict resolution, to Auroville,
+        practice of&nbsp;
+        <OutLink to="https://www.restorativecircles.org">
+          Restorative Circles
+        </OutLink>
+        , a holistic, community-based form of conflict resolution, to Auroville,
         and to explore what a consciously designed justice system could look
         like here – one that reflects our ideals, but that is also effective and
         has the power to bring about constructive change, both on the individual

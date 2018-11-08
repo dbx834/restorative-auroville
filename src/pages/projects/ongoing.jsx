@@ -18,12 +18,12 @@ import withSizes from 'react-sizes'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-import Button from 'antd/lib/button'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
 import ProjectListing from '../../components/ProjectListing'
+import GoldenMajorHalves from '../../components/GoldenMajorHalves'
+import Video from '../../components/Video'
 
 import seoHelper from '../../methods/seoHelper'
 
@@ -75,11 +75,9 @@ const Ongoingprojects = props => {
     <StandardPage className={pageStyles} seoData={seoData}>
       <h1 className="mask-h3">Our Projects</h1>
       <div style={{ position: 'absolute', top: 4, right: 0 }}>
-        <Button type="primary">
-          <Link to="projects/past">
-            <span style={{ fontSize: '125%' }}>Past Projects ⇝</span>
-          </Link>
-        </Button>
+        <Link to="projects/past" className="ant-btn ant-btn-primary">
+          <span style={{ fontSize: '125%' }}>Past Projects ⇝</span>
+        </Link>
       </div>
       <p>
         Our approach at Restorative Auroville is to engage with the community at
@@ -88,7 +86,23 @@ const Ongoingprojects = props => {
         understand how to build systems that respond to our unique and complex
         reality.
       </p>
-      <ProjectListing data={ongoingProjects} isMobile={isMobile} />
+      <div className="margin-p">
+        <ProjectListing
+          data={ongoingProjects}
+          isMobile={isMobile}
+          itemWidth="33%"
+        />
+      </div>
+      <GoldenMajorHalves>
+        <div>
+          <h2 className="mask-h5">Video Title</h2>
+          <Video url="https://www.youtube.com/watch?v=kqBM5Xr5VfI&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=10" />
+        </div>
+        <div>
+          <h2 className="mask-h5">Extra content…</h2>
+          <p>Some content...</p>
+        </div>
+      </GoldenMajorHalves>
     </StandardPage>
   )
 }

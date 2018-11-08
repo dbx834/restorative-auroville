@@ -19,6 +19,8 @@ import Loader from '@bodhi-project/components/lib/Loader'
 import Images from '@bodhi-project/components/lib/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
+import Breadcrumb from 'antd/lib/breadcrumb'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
@@ -56,6 +58,8 @@ const photos = [
   { src: '/project-assets/ccd/ccd4.jpeg', width: 1280, height: 852 },
 ]
 
+const { Item: BItem } = Breadcrumb
+
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
@@ -63,6 +67,15 @@ const photos = [
 const Initiative = props => {
   return (
     <StandardPage className="" seoData={seoData}>
+      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
+        <BItem>
+          <Link to="/">Home</Link>
+        </BItem>
+        <BItem>
+          <Link to="/projects/ongoing">Projects</Link>
+        </BItem>
+        <BItem>Cross-Cultural Dialogue</BItem>
+      </Breadcrumb>
       <h1 className="mask-h3">Cross-Cultural Dialogue</h1>
       <EqualHalves>
         <div>

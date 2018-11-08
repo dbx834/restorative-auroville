@@ -53,9 +53,13 @@ const Page = () => (
       gateway page, and you will be able to receive a tax exemption.
     </p>
     <div className="mask-p">
-      <Button type="primary" style={{ marginTop: 10, marginBottom: 10 }}>
-        <OutLink to="https://www.auroville.com/donations/">Donate Here</OutLink>
-      </Button>
+      <OutLink
+        to="https://www.auroville.com/donations/"
+        style={{ marginTop: 10, marginBottom: 10 }}
+        className="ant-btn ant-btn-primary"
+      >
+        Donate Here
+      </OutLink>
     </div>
     <ul className="mask-p">
       <li>
