@@ -30,13 +30,6 @@ module.exports = {
     siteUrl,
   },
   plugins: [
-    // {
-    //   resolve: `gatsby-plugin-webpack-bundle-analyzer`, // https://www.gatsbyjs.org/packages/gatsby-plugin-webpack-bundle-analyzer
-    //   options: {
-    //     // https://www.gatsbyjs.org/packages/gatsby-plugin-webpack-bundle-analyzer/?=#options
-    //     disable: true, // set to false to see bundle analytics
-    //   },
-    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -45,21 +38,6 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
-    {
-      resolve: `gatsby-source-mongodb`, // https://www.gatsbyjs.org/packages/gatsby-source-mongodb/?=gatsby-source-mongodb
-      options: {
-        dbName: data.db.dbName,
-        collection: data.db.collections,
-        server: {
-          address: data.db.server.address,
-          port: data.db.server.port,
-        },
-        auth: {
-          user: data.db.auth.user,
-          password: data.db.auth.password,
-        },
-      },
-    },
     {
       resolve: `gatsby-plugin-react-helmet`, // https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     },
@@ -97,27 +75,6 @@ module.exports = {
       resolve: `gatsby-plugin-remove-trailing-slashes`, // https://www.npmjs.com/package/gatsby-plugin-remove-trailing-slashes
     },
     {
-      resolve: `gatsby-plugin-sentry`, // https://next.gatsbyjs.org/packages/gatsby-plugin-sentry/?=
-      options: {
-        dsn: 'https://1d927ed984d5497e8fe3730382a5777e@sentry.io/1294144',
-        config: {
-          // Optional settings, see https://docs.sentry.io/clients/node/config/#optional-settings
-          extra: { website: { url: siteUrl } },
-        },
-      },
-    },
-    // {
-    //   resolve: `gatsby-plugin-purgecss`, // https://next.gatsbyjs.org/packages/gatsby-plugin-purgecss/?=
-    //   options: {
-    //     rejected: true,
-    //     printRejected: true,
-    //     content: [
-    //       path.join(cwd, `src/**/${purgeCssCheck}`),
-    //       path.join(cwd, `node_modules/antd/lib/${purgeCssCheck}`),
-    //     ],
-    //   },
-    // },
-    {
       resolve: `gatsby-plugin-fastclick`, // https://github.com/escaladesports/gatsby-plugin-fastclick
     },
     {
@@ -126,19 +83,6 @@ module.exports = {
         trackingId: data.googleAnalyticsID,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-guess-js', // https://next.gatsbyjs.org/packages/gatsby-plugin-guess-js/?=
-    //   options: {
-    //     key: googleServiceAccountKey,
-    //     GAViewID: data.googleAnalyticsViewID, // Find the view id in the GA admin in a section labeled "views"
-    //     minimumThreshold: 0.03,
-    //     period: {
-    //       // The "period" for fetching analytic data.
-    //       startDate: new Date('2018-1-1'),
-    //       endDate: new Date(),
-    //     },
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-favicon`, // https://www.npmjs.com/package/gatsby-plugin-favicon
       options: {
@@ -175,15 +119,6 @@ module.exports = {
       options: {
         siteUrl,
       },
-    },
-    // {
-    //   resolve: `gatsby-plugin-sri`, // https://www.gatsbyjs.org/packages/gatsby-plugin-sri
-    //   options: {
-    //     hash: 'sha512',
-    //   },
-    // },
-    {
-      resolve: `gatsby-plugin-zopfli`, // https://www.gatsbyjs.org/packages/gatsby-plugin-zopfli
     },
     {
       resolve: `gatsby-plugin-less`, // https://www.gatsbyjs.org/packages/gatsby-plugin-less/

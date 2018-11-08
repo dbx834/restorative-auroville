@@ -2,14 +2,10 @@
 // -------------------------------------------------------------------- Imports
 // ----------------------------------------------------------------------------
 const path = require('path')
-const map = require('lodash/map')
-const replace = require('lodash/replace')
-const twix = require('twix')
 const moment = require('moment')
 const _ = require('lodash')
 const unified = require('unified')
 const markdown = require('remark-parse')
-const jsonfile = require('jsonfile')
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Functions
@@ -137,49 +133,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 // ----------------------------------------------------------------------------
 // ---------------------------------------------------------------- Create Node
 // ----------------------------------------------------------------------------
-// exports.createPages = ({ graphql, actions }) => {
-//   const { createPage } = actions
-//   return new Promise((resolve, reject) => {
-//     const blogPostTemplate = path.resolve(`src/templates/post.jsx`)
-//     // Query for markdown nodes to use in creating pages.
-//     resolve(
-//       graphql(
-//         `
-//           query {
-//             allMongodbMonolithPosts {
-//               edges {
-//                 node {
-//                   title
-//                 }
-//               }
-//             }
-//           }
-//         `
-//       ).then(result => {
-//         if (result.errors) {
-//           reject(result.errors)
-//         }
-//         const { edges } = result.data.allMongodbMonolithPosts
-//         map(edges, ({ node }) => {
-//           const { title } = node
-//           const url = replace(title, ' ', '-')
-//           console.log(`/blog/${url}`)
-//           createPage({
-//             path: `/blog/${url}`, // required
-//             component: blogPostTemplate,
-//             context: {
-//               dummy: 'hello world',
-//             },
-//           })
-//         })
-
-//         return
-//       })
-//     )
-//   })
-// }
 exports.createPages = ({ graphql, boundActionCreators }) => {
-  console.log('hit createPages')
   const { createPage } = boundActionCreators
   return new Promise((resolve, reject) => {
     const event = path.resolve('src/templates/event.jsx')
@@ -276,115 +230,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             component: event,
             context,
           })
-        })
-      })
-    )
-  })
-}
-
-// ----------------------------------------------------------------------------
-// ----------------------------------------------------------------- Post Build
-// ----------------------------------------------------------------------------
-exports.onPostBuild = ({ graphql }) => {
-  console.log('hit onPostBuild')
-  return new Promise((resolve, reject) => {
-    resolve(
-      graphql(
-        `
-          {
-            allMarkdownRemark {
-              edges {
-                node {
-                  frontmatter {
-                    category
-                    title
-                    subTitle
-                    cover
-                    date
-                    startDate
-                    finishDate
-                    fromTime
-                    toTime
-                    category
-                    tags
-                    cost
-                    abstract
-                  }
-                  headings {
-                    depth
-                    value
-                  }
-                  fields {
-                    route
-                    rawContent
-                    elapsed
-                    humanDate
-                    isoDate
-                    beginHumanDate
-                    beginIsoDate
-                    endHumanDate
-                    endIsoDate
-                    beginDateInt
-                    diff
-                    year
-                    month
-                    monthN
-                    dayOfMonth
-                    displayDate
-                    formattedDate
-                  }
-                }
-              }
-            }
-          }
-        `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors) // eslint-disable-line no-console
-          reject(result.errors)
-        }
-
-        const { edges } = result.data.allMarkdownRemark
-
-        edges.sort((a, b) => {
-          const aNode = a.node.frontmatter
-          const bNode = b.node.frontmatter
-          const A = !_.isNull(aNode.startDate) ? aNode.startDate : aNode.date
-          const B = !_.isNull(bNode.startDate) ? bNode.startDate : bNode.date
-          const dateA = new Date(A)
-          const dateB = new Date(B)
-          return dateA - dateB
-        })
-
-        // Loop through markdown nodes
-        edges.forEach((edge, i) => {
-          const trimmedRoute = _.trim(edge.node.fields.route)
-          const prev = i === 0 ? null : getPrev(i, edges, edge)
-          const next = i === edges.length - 1 ? null : getNext(i, edges, edge)
-
-          const context = {
-            frontmatter: edge.node.frontmatter,
-            headings: edge.node.headings,
-            route: edge.node.fields.route,
-            elapsed: edge.node.fields.elapsed,
-            humanDate: edge.node.fields.humanDate,
-            formattedDate: edge.node.fields.formattedDate,
-            markdownAst: unified()
-              .use(markdown)
-              .parse(edge.node.fields.rawContent),
-            prev,
-            next,
-          }
-          const pathX = edge.node.fields.route
-          // console.log(context)
-
-          if (_.startsWith(trimmedRoute, 'events')) {
-            jsonfile.writeFileSync(`public/${pathX}.json`, context, err => {
-              if (err) {
-                console.error(err)
-              }
-            })
-          }
         })
       })
     )
