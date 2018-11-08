@@ -66,12 +66,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`, // https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap
     },
-    // {
-    //   resolve: `gatsby-plugin-netlify`, // https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/
-    // },
-    // {
-    //   resolve: `gatsby-plugin-netlify-cache`, // https://github.com/axe312ger/gatsby-plugin-netlify-cache
-    // },
     {
       resolve: `gatsby-plugin-nprogress`, // https://www.gatsbyjs.org/packages/gatsby-plugin-nprogress/
       options: {
