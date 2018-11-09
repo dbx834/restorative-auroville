@@ -184,7 +184,7 @@ class Layout extends React.Component {
                 id="content"
                 style={{ paddingLeft: 6, paddingRight: 6 }}
               >
-                {children}
+                {children()}
                 <MobileFooter />
               </Container>
             </div>
