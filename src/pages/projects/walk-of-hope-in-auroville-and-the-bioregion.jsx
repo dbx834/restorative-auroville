@@ -23,6 +23,8 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/c
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
+import Video from '../../components/Video'
+
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -70,6 +72,9 @@ const Initiative = props => {
         <BItem>Walk of Hope in Auroville and the Bioregion</BItem>
       </Breadcrumb>
       <h1 className="mask-h3">Walk of Hope in Auroville and the Bioregion</h1>
+      <div style={{ maxWidth: '600px' }}>
+        <Video url="https://www.youtube.com/watch?v=I79YcKxzhYo" />
+      </div>
       <p>- walking together for Peace and Human Unity</p>
       <p>on January 28th & 29th, 2018.</p>
       <p>

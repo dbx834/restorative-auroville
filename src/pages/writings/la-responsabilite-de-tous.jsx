@@ -32,7 +32,7 @@ const pageData = {
   cover: '/content-assets/covers/la-responsabilite-de-tous.jpg',
   publishedTimestamp: 1462106150,
   category: 'Restorative Circle',
-  author: "L'aura Joy",
+  author: 'La Revue D’Auroville',
 }
 
 // const seoData = seoHelper(pageData)

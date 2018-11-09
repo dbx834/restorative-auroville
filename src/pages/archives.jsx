@@ -92,6 +92,20 @@ const Page = () => (
       Auroville, as local Tamil Aurovilians and non-local Aurovilians?
     </p>
     <Theme
+      border="#FAE300"
+      title="Experiences with training and facilitating Restorative Circles and conflict resolution."
+      tag="Interview"
+      text="Dummy text."
+      files={[
+        {
+          title: 'Interview with L’aura Joy, by Edwin Rutsch',
+          icon: 'youtube',
+          link:
+            'https://www.youtube.com/watch?time_continue=2570&v=jy9C8tyCxkg',
+        },
+      ]}
+    />
+    <Theme
       border="#FABB00"
       title="Walk of Hope in Auroville and the Bioregion (2018)"
       tag="Projects & Reports"

@@ -25,6 +25,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../components/StandardPage'
+import DisqusComments from '../components/DisqusComments'
 
 import seoHelper from '../methods/seoHelper'
 
@@ -392,6 +393,7 @@ const Page = () => (
       </Col>
       <Col md={8}>&nbsp;</Col>
     </Row>
+    <DisqusComments pageData={pageData} />
   </StandardPage>
 )
 

@@ -48,6 +48,7 @@ import Feedback from '../components/home-page/Feedback'
 import seoHelper from '../methods/seoHelper'
 
 import banner from '../assets/banner.png'
+import banner2 from '../assets/banner2.png'
 
 import p32 from '../assets/designing-our-justice-system-consciously.jpg'
 import bluePaintbrush from '../assets/bluePaintbrush.png'
@@ -372,48 +373,48 @@ const Page = props => {
   return (
     <StandardPage className={pageStyle} seoData={seoData}>
       <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-        <Col sm={24} md={24} lg={15}>
+        <Col sm={24} md={24} lg={16}>
           <Image
             src={banner}
+            rawWidth={1440}
+            rawHeight={900}
             style={{
               height: 'auto',
               width: '100%',
               border: 0,
               background: 'transparent',
-              marginBottom: 10,
             }}
             alt="Restorative Auroville"
           />
         </Col>
-        <Col sm={24} md={24} lg={9}>
-          <h1
-            className="mask-h3"
+        <Col sm={24} md={24} lg={8}>
+          <Image
+            src={banner2}
+            rawWidth={720}
+            rawHeight={900}
             style={{
-              textIndent: '-9999em',
-              marginTop: -30,
-              lineHeight: '30px',
-              height: '30px',
-              marginBottom: 5,
+              height: 'auto',
+              width: '100%',
+              border: 0,
+              background: 'transparent',
             }}
-          >
-            Restorative Auroville
-          </h1>
-          <p>
-            Restorative Auroville is an independent project that aims to bring
-            the practice of&nbsp;
-            <OutLink to="https://www.restorativecircles.org">
-              Restorative Circles
-            </OutLink>
-            , a holistic, community-based form of conflict resolution, to
-            Auroville, and to explore what a consciously designed justice system
-            could look like here – one that reflects our ideals, but that is
-            also effective and has the power to bring about constructive change,
-            both on the individual and community levels.
-          </p>
+            alt="Restorative Auroville"
+          />
         </Col>
       </Row>
-
-      <SummaryBlock />
+      <h1 className="mask-h3">Restorative Auroville</h1>
+      <p>
+        Restorative Auroville is an independent project that aims to bring the
+        practice of&nbsp;
+        <OutLink to="https://www.restorativecircles.org">
+          Restorative Circles
+        </OutLink>
+        , a holistic, community-based form of conflict resolution, to Auroville,
+        and to explore what a consciously designed justice system could look
+        like here – one that reflects our ideals, but that is also effective and
+        has the power to bring about constructive change, both on the individual
+        and community levels.
+      </p>
 
       <ProjectHighlight />
 

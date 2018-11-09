@@ -29,6 +29,8 @@ import StandardPage from '../components/StandardPage'
 
 import seoHelper from '../methods/seoHelper'
 
+import DisqusComments from '../components/DisqusComments'
+
 import newRestorativeSystemFlyer from '../assets/newRestorativeSystemFlyer.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -174,6 +176,7 @@ const Page = () => (
       See our <Link to="/events">Upcoming Events</Link> and join a workshop or
       practice group (in person or online).
     </p>
+    <DisqusComments pageData={pageData} />
   </StandardPage>
 )
 

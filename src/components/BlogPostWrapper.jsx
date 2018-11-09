@@ -11,7 +11,7 @@ import moment from 'moment'
 // import startsWith from 'lodash/startsWith'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// import Link from 'gatsby-link';
+import Link from 'gatsby-link'
 import { BlogPostSchema } from '@bodhi-project/seo'
 import { Header } from '@bodhi-project/semantic-webflow'
 import { FacebookProvider, Like as FBLike } from 'react-facebook'
@@ -23,6 +23,9 @@ import Image from '@bodhi-project/components/lib/Image'
 import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 
+import Breadcrumb from 'antd/lib/breadcrumb'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from './StandardPage'
 
@@ -30,6 +33,8 @@ import seoHelper from '../methods/seoHelper'
 import withUrl from '../methods/withUrl'
 
 import data from '../data/website.json'
+
+const { Item: BItem } = Breadcrumb
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -65,6 +70,15 @@ const Page = props => {
   return (
     <StandardPage className="" seoData={seoData}>
       <BlogPostSchema data={blogPageSchemaData} />
+      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
+        <BItem>
+          <Link to="/">Home</Link>
+        </BItem>
+        <BItem>
+          <Link to="/writings">Articles</Link>
+        </BItem>
+        <BItem>{title}</BItem>
+      </Breadcrumb>
       <Header>
         <div style={{ display: 'flex' }}>
           <div style={{ flexGrow: 1 }}>

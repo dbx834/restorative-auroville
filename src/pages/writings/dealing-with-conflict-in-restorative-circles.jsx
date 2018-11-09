@@ -33,7 +33,7 @@ const pageData = {
     '/content-assets/covers/dealing-with-conflict-in-restorative-circles.jpg',
   publishedTimestamp: 1312202150,
   category: 'Restorative Circle',
-  author: "L'aura Joy",
+  author: 'Auroville Today',
 }
 
 // const seoData = seoHelper(pageData)

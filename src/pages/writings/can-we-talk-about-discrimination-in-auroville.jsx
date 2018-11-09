@@ -33,7 +33,7 @@ const pageData = {
     '/content-assets/covers/can-we-talk-about-discrimination-in-auroville.jpg',
   publishedTimestamp: 1527251750,
   category: 'Restorative Circle',
-  author: "L'aura Joy",
+  author: 'Auroville Today',
 }
 
 // const seoData = seoHelper(pageData)

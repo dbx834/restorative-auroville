@@ -27,6 +27,8 @@ import Video from '../components/Video'
 
 // import BookReader from '../components/BookReader'
 
+import DisqusComments from '../components/DisqusComments'
+
 import seoHelper from '../methods/seoHelper'
 
 // import galaxy from '../assets/galaxy.png'
@@ -107,6 +109,10 @@ const Page = () => (
         </p>
       </div>
     </EqualHalves>
+    <br />
+    <br />
+    <br />
+    <DisqusComments pageData={pageData} />
   </StandardPage>
 )
 

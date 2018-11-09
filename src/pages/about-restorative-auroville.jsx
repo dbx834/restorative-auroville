@@ -28,6 +28,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 import StandardPage from '../components/StandardPage'
 
 import GoldenMajorHalves from '../components/GoldenMajorHalves'
+import DisqusComments from '../components/DisqusComments'
 import Video from '../components/Video'
 
 import seoHelper from '../methods/seoHelper'
@@ -266,6 +267,7 @@ const Page = () => (
         </div>
       </GoldenMajorHalves>
     </div>
+    <DisqusComments pageData={pageData} />
   </StandardPage>
 )
 
