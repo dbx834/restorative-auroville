@@ -34,7 +34,7 @@ const pageData = {
   pageTitle: 'Restorative Circles in Aikiyam School',
   nakedPageSlug: 'projects/restorative-circles-in-aikiyam-school',
   pageAbstract:
-    'Aikiyam Schoolis one of Auroville’s outreach schools. The staff and teachers there asked us to support them with conflict resolution, and so we’ve been helping the teachers build an RC System amongst themselves.',
+    'We are sharing RC in Aikiyam School, one of Auroville’s outreach schools for children from Kindergarten to 8th Grade. After discussions with the administration and teachers of the school, a group of ten teachers have committed to learn about this process. It has been met with enthusiasm and curiosity, and we look forward to seeing how we can co-create an RC System for the school. The school has an overwhelming majority of teachers who are originally from the bioregion, and we are looking forward to seeing how they can adapt it to their cultural context.',
 }
 
 const seoData = seoHelper(pageData)
@@ -68,14 +68,23 @@ const Initiative = props => {
       </Breadcrumb>
       <h1 className="mask-h3">Restorative Circles in Aikiyam School</h1>
       <p>
-        <OutLink to="https://www.aikiyamschool.org/">Aikiyam School</OutLink> is
-        one of Auroville’s outreach schools. The staff and teachers there asked
-        us to support them with conflict resolution, and so we’ve been helping
-        the teachers build an RC System amongst themselves.
+        We are sharing RC in&nbsp;
+        <OutLink to="https://www.aikiyamschool.org/">Aikiyam School</OutLink>,
+        one of Auroville’s outreach schools for children from Kindergarten to
+        8th Grade. After discussions with the administration and teachers of the
+        school, a group of ten teachers have committed to learn about this
+        process. It has been met with enthusiasm and curiosity, and we look
+        forward to seeing how we can co-create an RC System for the school. The
+        school has an overwhelming majority of teachers who are originally from
+        the bioregion, and we are looking forward to seeing how they can adapt
+        it to their cultural context.
       </p>
+      <div className="mask-p">
+        <Images photos={photos} loader="gradient" columns={3} />
+      </div>
       <PDFReader file="/project-assets/aikiyam/conflict-resolution.pdf" />
       <PDFReader file="/project-assets/aikiyam/intensive.pdf" />
-      <Images photos={photos} loader="gradient" columns={3} />
+      &nbsp;
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

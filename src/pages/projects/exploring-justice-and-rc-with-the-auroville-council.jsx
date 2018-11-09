@@ -12,7 +12,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-// import Image from "@bodhi-project/components/lib/Image";
+import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
@@ -21,6 +21,8 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/c
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
+import PDFReader from '../../components/PDFReader'
+
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -48,6 +50,9 @@ const Initiative = props => {
           <Link to="/">Home</Link>
         </BItem>
         <BItem>
+          <Link to="/projects/ongoing">Projects</Link>
+        </BItem>
+        <BItem>
           <Link to="/projects/past">Past Projects</Link>
         </BItem>
         <BItem>Exploring Justice and RC with the Auroville Council</BItem>
@@ -55,7 +60,25 @@ const Initiative = props => {
       <h1 className="mask-h3">
         Exploring Justice and RC with the Auroville Council
       </h1>
-      <p>...</p>
+      <Image
+        src="/projects/avCouncil.jpg"
+        rawWidth={1440}
+        rawHeight={900}
+        style={{
+          height: 'auto',
+          maxWidth: '600px',
+          border: 0,
+          background: 'transparent',
+          marginBottom: 10,
+          display: 'block',
+          marginLeft: 0,
+        }}
+        alt="Exploring Justice and RC with the Auroville Council"
+      />
+      <div className="margin-p">
+        <PDFReader file="/project-assets/avc/avc.pdf" />
+        &nbsp;
+      </div>
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

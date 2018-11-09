@@ -13,6 +13,7 @@ import reverse from 'lodash/reverse'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
+import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 
@@ -61,12 +62,12 @@ const ProjectHighlight = props => {
 
   return (
     <section className={blockStyle}>
-      <h2 className="mask-h3">Project Highlights</h2>
+      <h2 className="mask-h3">Highlights: Some of our Ongoing Projects</h2>
       <p>
-        Our approach incorporates different strategies, with the hope to connect
-        with different aspects of our community life, so that we can better
-        understand how to build systems that respond to our unique and complex
-        reality. Some projects –
+        Our approach at Restorative Auroville is to engage with the community at
+        many levels and through different initiatives, with a real longing to
+        grow and transform our systems together.&nbsp;
+        <Link to="/projects/ongoing">See Our Projects ⇝</Link>
       </p>
       <ProjectListing
         data={ongoingProjects}

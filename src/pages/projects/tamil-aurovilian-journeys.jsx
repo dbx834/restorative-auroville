@@ -11,6 +11,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
+import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
@@ -19,6 +20,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/c
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
+import GoldenMajorHalvesAlt from '../../components/GoldenMajorHalvesAlt'
 import seoHelper from '../../methods/seoHelper'
 
 import PDFReader from '../../components/PDFReader'
@@ -27,8 +29,8 @@ import PDFReader from '../../components/PDFReader'
 // const { Fragment } = React;
 
 const pageData = {
-  pageTitle: 'Magazine',
-  nakedPageSlug: 'projects/magazine',
+  pageTitle: 'Tamil Aurovilian Journeys',
+  nakedPageSlug: 'projects/tamil-aurovilian-journeys',
   pageAbstract:
     'We are creating a magazine focusing on the experiences of Tamil Aurovilians, their journeys into Auroville, and their feelings of belonging and exclusion.',
 }
@@ -52,14 +54,30 @@ const Initiative = props => {
           <Link to="/projects/ongoing">Ongoing Projects</Link>
         </BItem>
         <BItem>
-          Magazine: "Restoring Connection & Building Bridges – Tamil Aurovilian
-          Journeys"
+          "Restoring Connection & Building Bridges – Tamil Aurovilian Journeys"
+          (Printed Publication)
         </BItem>
       </Breadcrumb>
       <h1 className="mask-h3">
-        Magazine: "Restoring Connection & Building Bridges – Tamil Aurovilian
-        Journeys"
+        "Restoring Connection & Building Bridges – Tamil Aurovilian Journeys"
+        (Printed Publication)
       </h1>
+      <div className="mask-p">
+        <Image
+          src="/project-assets/magazine/img2.jpeg"
+          rawWidth={1280}
+          rawHeight={960}
+          style={{
+            height: 'auto',
+            maxWidth: '600px',
+            border: 0,
+            background: 'transparent',
+            marginLeft: 0,
+            display: 'block',
+          }}
+          alt="Restoring Connection & Building Bridges – Tamil Aurovilian Journeys"
+        />
+      </div>
       <p>
         In an international township like Auroville, where many different people
         come together, it seems inevitable that at times disconnect arises due
@@ -98,11 +116,13 @@ const Initiative = props => {
         community.
       </p>
       <p>
-        If you’re inspired by our project and would like to help, we welcome
-        your contributions (<Link to="/donate">you can donate here</Link>
-        ).
+        <Link to="/donate">
+          If you’re inspired by our project and would like to help, we welcome
+          your contributions you can donate here.
+        </Link>
       </p>
       <p>Please know that any amount is greatly appreciated.</p>
+
       <div className="margin-p">
         <PDFReader file="/project-assets/magazine/proposal.pdf" />
         &nbsp;

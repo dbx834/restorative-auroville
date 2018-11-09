@@ -27,7 +27,7 @@ import seoHelper from '../../methods/seoHelper'
 
 const pageData = {
   pageTitle: 'Filming a Live Restorative Circle',
-  nakedPageSlug: 'projects/filimng-a-live-restorative-circle',
+  nakedPageSlug: 'projects/filming-a-live-restorative-circle',
   pageAbstract:
     'We have a big, big, big dream to one day film a live Circle, so that we can document the entire process and share this beautiful work with the rest of the world.',
 }
@@ -67,6 +67,10 @@ const Initiative = props => {
         filming a big Circle that was called within an alternative school
         community, but not everyone was on board with having this “public eye”
         in their intimate space.
+      </p>
+      <p>
+        Would you like this Circle to be yours?&nbsp;
+        <Link to="/contact-us">Contact us ⇝</Link>
       </p>
       <div className="margin-p">
         <Images photos={photos} loader="gradient" columns={2} />

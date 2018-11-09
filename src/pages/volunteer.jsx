@@ -132,7 +132,7 @@ const Page = () => (
       </Col>
       <Col sm={24} md={9}>
         <h2 className="mask-h3">Our Apprentice Pranjal Shares</h2>
-        <Link to="writings/our-apprentice-pranjal-shares">
+        <Link to="/writings/our-apprentice-pranjal-shares">
           <Image
             src={nvcX80}
             style={{

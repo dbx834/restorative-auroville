@@ -16,6 +16,7 @@ import map from 'lodash/map'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 // import Image from '@bodhi-project/components/lib/Image'
 import OutLink from '@bodhi-project/components/lib/OutLink'
+import Images from '@bodhi-project/components/lib/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Icon from 'antd/lib/icon'
@@ -48,13 +49,18 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 /** Theme */
 const Theme = props => {
-  const { border, title, files, tag, text } = props
+  const { border, title, files, tag, text, photos, columns } = props
   return (
     <div style={{ paddingLeft: 12, borderLeft: `8px solid ${border}` }}>
       <h2 className="mask-h4">
         {title} <Tag color="geekblue">{tag}</Tag>
       </h2>
       <p>{text}</p>
+      {!isUndefined(photos) && (
+        <div className="mask-p">
+          <Images photos={photos} loader="gradient" columns={columns} />
+        </div>
+      )}
       {!isUndefined(files) && (
         <Fragment>
           {map(files, file => {
@@ -99,9 +105,15 @@ const Page = () => (
     />
     <Theme
       border="#FABB00"
-      title="Public Presentation (2017)"
+      title="Public Presentation: &quot;Create Auroville Together - Restorative Circles&quot; (2017)"
       tag="Public Presentations"
       text="Dummy text."
+      photos={[
+        { src: '/archives/public2017/img1.jpg', width: 600, height: 450 },
+        { src: '/archives/public2017/img3.jpg', width: 600, height: 778 },
+        { src: '/archives/public2017/img2.jpg', width: 600, height: 450 },
+      ]}
+      columns={3}
       files={[
         {
           title: 'At Unity Pavilion, Auroville (Part 1)',

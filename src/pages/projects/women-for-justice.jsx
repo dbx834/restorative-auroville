@@ -62,7 +62,7 @@ const Initiative = props => {
         <strong>To be scheduled in 2019…</strong>
         <br />
         In collaboration with Auroville Village Action Group and Nimisha Desai,
-        founder of the NGO 'Olakh' (Gujarat), we will present a documentary
+        founder of the NGO "Olakh" (Gujarat), we will present a documentary
         about Nimisha’s work with women’s justice. The film will be translated
         live into Tamil, and followed by a Q&A session with Nimisha. Additional
         workshops will also be organized, geared especially towards women and
@@ -75,7 +75,7 @@ const Initiative = props => {
       <p>
         <strong>A Story About The Power of Solidarity (53 minutes)</strong>
         <br />
-        <i>[live Tamil translation and English subtitles]</i>
+        <i>[with live Tamil translation and English subtitles]</i>
       </p>
       <p>
         Synopsis: Violence against women is omnipresent and nearly all women,

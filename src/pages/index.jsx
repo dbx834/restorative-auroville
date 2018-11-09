@@ -23,6 +23,7 @@ import withSizes from 'react-sizes'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
+import OutLink from '@bodhi-project/components/lib/OutLink'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Row from 'antd/lib/row'
@@ -48,12 +49,7 @@ import seoHelper from '../methods/seoHelper'
 
 import banner from '../assets/banner.png'
 
-import v1 from '../assets/the-craft.png'
-import v2 from '../assets/in-action.png'
-import v3 from '../assets/the-restorative-system.png'
-import v4 from '../assets/experiences.png'
-
-import blueGrunge from '../assets/blueGrunge.png'
+import p32 from '../assets/designing-our-justice-system-consciously.jpg'
 import bluePaintbrush from '../assets/bluePaintbrush.png'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -92,21 +88,31 @@ const pageStyle = styleObject.toString()
 const VideoSeriesBlock1 = () => (
   <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
     <Col sm={24} md={24} lg={15}>
-      <h2 className="mask-h3">The Power of Dialogue</h2>
-      <Video url="https://www.youtube.com/watch?v=ur4OvDPkoSE" />
+      <h2 className="mask-h3">"The Power of Dialogue"</h2>
+      <Image
+        src={p32}
+        style={{
+          background: 'transparent',
+          border: 'unset',
+          height: 'auto',
+          width: '100%',
+          marginBottom: 10,
+        }}
+        loader="gradient"
+        rawWidth={1440}
+        rawHeight={900}
+      />
       <p>
         <strong>3.2 Designing our Justice System Consciously</strong>
         <br />
         L'aura shares about her experience of engaging with Restorative Circles
         in Auroville and the importance of designing a justice system
-        consciously, otherwise we'll just inherit the old ways.
-      </p>
-      <p>
+        consciously, otherwise we'll just inherit the old ways.&nbsp;
         <Link to="/the-power-of-dialogue">See more videos ⇝</Link>
       </p>
     </Col>
     <Col sm={24} md={24} lg={9}>
-      <h3 className="mask-h3">From The Series</h3>
+      <h3 className="mask-h3">Our Video Series</h3>
       <div
         style={{
           display: 'flex',
@@ -121,6 +127,7 @@ const VideoSeriesBlock1 = () => (
             style={{
               marginBottom: 0,
               borderLeft: '4px solid #FFBF00',
+              borderTop: '4px solid #FFBF00',
               display: 'block',
               paddingLeft: 12,
             }}
@@ -139,15 +146,17 @@ const VideoSeriesBlock1 = () => (
             style={{
               marginBottom: 0,
               borderLeft: '4px solid #4949FC',
+              borderTop: '4px solid #4949FC',
               display: 'block',
               paddingLeft: 12,
+              marginLeft: '1vw',
             }}
           >
             <h4 className="mask-h4" style={{ marginBottom: 0 }}>
               In Action
             </h4>
             <p style={{ marginBottom: 30 }}>
-              <i>Excerpts from live Circles</i>
+              <i>Snippets from live Circles</i>
             </p>
           </Link>
         </div>
@@ -157,8 +166,10 @@ const VideoSeriesBlock1 = () => (
             style={{
               marginBottom: 0,
               borderLeft: '4px solid #FF4D4D',
+              borderTop: '4px solid #FF4D4D',
               display: 'block',
               paddingLeft: 12,
+              marginLeft: '2vw',
             }}
           >
             <h4 className="mask-h4" style={{ marginBottom: 0 }}>
@@ -175,8 +186,10 @@ const VideoSeriesBlock1 = () => (
             style={{
               marginBottom: 0,
               borderLeft: '4px solid #5FA15F',
+              borderTop: '4px solid #5FA15F',
               display: 'block',
               paddingLeft: 12,
+              marginLeft: '3vw',
             }}
           >
             <h4 className="mask-h4" style={{ marginBottom: 0 }}>
@@ -199,7 +212,7 @@ const VideoSeriesBlock1 = () => (
 const VideoSeriesBlock2 = () => (
   <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
     <Col sm={24} md={24} lg={15}>
-      <h2 className="mask-h3">The Power of Dialogue</h2>
+      <h2 className="mask-h3">"The Power of Dialogue"</h2>
       <Video url="https://www.youtube.com/watch?v=ur4OvDPkoSE" />
       <p>
         <strong>3.2 Designing our Justice System Consciously</strong>
@@ -280,7 +293,7 @@ const SummaryBlock = () => (
           color: '#FFFFFF',
         }}
       >
-        Restorative Auroville offers…
+        Some of Our Offers…
       </h2>
       <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
         <Col sm={24} md={24} lg={8}>
@@ -292,15 +305,14 @@ const SummaryBlock = () => (
             }}
           />
           <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
-            Conflict Resolution
+            Facilitate Circles
           </h3>
           <p style={{ color: '#FFFFFF' }}>
-            In order for this work to develop fully in Auroville, we need more
-            ambassadors who are willing to play with us: to do the research, the
-            teaching, the experimenting, and so much more…
+            We facilitate Circles. Would you like a space to dialogue within the
+            context of community about something that’s challenging you?
           </p>
           <p>
-            <Link to="/volunteer" className="white">
+            <Link to="/restorative-circles" className="white">
               See more ⇝
             </Link>
           </p>
@@ -314,14 +326,16 @@ const SummaryBlock = () => (
             }}
           />
           <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
-            Mediation
+            Bring RC to You
           </h3>
           <p style={{ color: '#FFFFFF' }}>
-            Please consider donating to our project because...
+            If you’d like Circles to be better understood and more widely used
+            within your networks (community, work place, schools), we’d love to
+            collaborate.
           </p>
           <p>
-            <Link to="/donate" className="white">
-              Donate now ⇝
+            <Link to="/projects/ongoing" className="white">
+              See more ⇝
             </Link>
           </p>
         </Col>
@@ -334,15 +348,15 @@ const SummaryBlock = () => (
             }}
           />
           <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
-            Learning Opportunities
+            Learn Together
           </h3>
           <p style={{ color: '#FFFFFF' }}>
-            Signup for our occasional newsletter and receive information about
-            future RC (and/or NVC) events.
+            We offer regular workshops and practice groups, both in person and
+            online. Join us!
           </p>
           <p>
-            <Link to="/newsletter" className="white">
-              Signup now ⇝
+            <Link to="/events" className="white">
+              See more ⇝
             </Link>
           </p>
         </Col>
@@ -387,19 +401,21 @@ const Page = props => {
           <p>
             Restorative Auroville is an independent project that aims to bring
             the practice of&nbsp;
-            <Link to="www.restorativecircles.org">Restorative Circles</Link>, a
-            holistic, community-based form of conflict resolution, to Auroville,
-            and to explore what a consciously designed justice system could look
-            like here – one that reflects our ideals, but that is also effective
-            and has the power to bring about constructive change, both on the
-            individual and community levels.
+            <OutLink to="https://www.restorativecircles.org">
+              Restorative Circles
+            </OutLink>
+            , a holistic, community-based form of conflict resolution, to
+            Auroville, and to explore what a consciously designed justice system
+            could look like here – one that reflects our ideals, but that is
+            also effective and has the power to bring about constructive change,
+            both on the individual and community levels.
           </p>
         </Col>
       </Row>
 
-      <ProjectHighlight />
-
       <SummaryBlock />
+
+      <ProjectHighlight />
 
       <VideoSeriesBlock1 />
 
@@ -457,9 +473,8 @@ const Page = props => {
                 Volunteer & Apprentice
               </h3>
               <p style={{ color: '#FFFFFF' }}>
-                In order for this work to develop fully in Auroville, we need
-                more ambassadors who are willing to play with us: to do the
-                research, the teaching, the experimenting, and so much more…
+                Would you like to immerse yourself in this work and learn by
+                doing? We’re looking for support!
               </p>
               <p>
                 <Link to="/volunteer" className="white">
@@ -479,7 +494,9 @@ const Page = props => {
                 Donate
               </h3>
               <p style={{ color: '#FFFFFF' }}>
-                Please consider donating to our project because...
+                Passion is what drives our project, and financial support would
+                allow our passion to manifest even more powerfully! Please
+                consider donating.
               </p>
               <p>
                 <Link to="/donate" className="white">
@@ -496,15 +513,18 @@ const Page = props => {
                 }}
               />
               <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
-                Newsletter
+                Be Our Film
               </h3>
               <p style={{ color: '#FFFFFF' }}>
-                Signup for our occasional newsletter and receive information
-                about future RC (and/or NVC) events.
+                We’re wanting to film a live Circle and to share this work with
+                the rest of the world. Would you like that Circle to be yours?
               </p>
               <p>
-                <Link to="/newsletter" className="white">
-                  Signup now ⇝
+                <Link
+                  to="/projects/filming-a-live-restorative-circle"
+                  className="white"
+                >
+                  See more ⇝
                 </Link>
               </p>
             </Col>

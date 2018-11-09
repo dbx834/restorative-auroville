@@ -13,11 +13,22 @@ import isUndefined from 'lodash/isUndefined'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { Type } from '@bodhi-project/typography'
 import {
+  // --------------- Startup
   InitializeMeta,
+  // --------------- Basic
   UpdateTitle,
+  GeneralMeta,
+  // --------------- Twitter
+  TwitterSummaryCard,
+  // --------------- Open Graph
+  OpenGraphSummary,
+  // --------------- Schema.org JSON-LD
   WebsiteSchema,
   OrganisationSchema,
+  WebpageSchema,
+  BreadcrumbSchema,
 } from '@bodhi-project/seo'
+
 import { StickyContainer, Sticky } from 'react-sticky'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
@@ -28,6 +39,7 @@ import Container from '@bodhi-project/components/lib/Container'
 import '../styles/index.less'
 import indexImage from '../assets/launch.jpg'
 import data from '../data/website.json'
+import seoHelper from '../methods/seoHelper'
 
 import WebsiteTitle from '../components/sandbox/WebsiteTitle'
 import MobileNav from '../components/layout/MobileNav'
@@ -66,6 +78,15 @@ const organisationSchemaData = {
   sameAs: data.orgSocialMediaProfiles,
   image: indexImage,
 }
+
+const pageData = {
+  pageTitle: 'Restorative Circles in Auroville',
+  nakedPageSlug: '',
+  pageAbstract:
+    'Restorative Auroville is an independent project that aims to bring the practice of Restorative Circles, a holistic, community-based form of conflict resolution, to Auroville, and to explore what a consciously designed justice system could look like here – one that reflects our ideals, but that is also effective and has the power to bring about constructive change, both on the individual and community levels.',
+}
+
+const seoData = seoHelper(pageData)
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -127,16 +148,30 @@ class Layout extends React.Component {
   /** standard renderer */
   render() {
     const { children } = this.props
+    const {
+      pageTitle,
+      generalMetaData,
+      twitterSummaryCardData,
+      openGraphSummaryData,
+      webpageSchemaData,
+      breadcrumbSchemaData,
+    } = seoData
 
     return (
       <Type kit="dkc2ilk" style={{ minHeight: '100vh' }} className={pageStyles}>
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
         <InitializeMeta
-          data={{ titleTemplate: '%s | Restorative Auroville' }}
+          data={{ titleTemplate: `${pageTitle} | Restorative Auroville` }}
         />
-        <UpdateTitle title="Loading..." />
         <WebsiteSchema data={websiteSchemaData} />
         <OrganisationSchema data={organisationSchemaData} />
+        <UpdateTitle title={pageTitle} />
+        <GeneralMeta data={generalMetaData} />
+        <TwitterSummaryCard data={twitterSummaryCardData} />
+        <OpenGraphSummary data={openGraphSummaryData} />
+        <WebpageSchema data={webpageSchemaData} />
+        <BreadcrumbSchema data={breadcrumbSchemaData} />
+
         <ResponsiveToggle id="appWrapper">
           {/* Mobile view */}
           <div id="mobile-app">

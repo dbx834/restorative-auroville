@@ -336,11 +336,10 @@ class EventsGrid extends React.Component {
           <Col sm={24} md={24} xl={15}>
             <h1 className="mask-h3">Workshops & Events</h1>
             <p>
-              We offer learning opportunities through workshops and practice
-              groups on Restorative Circles. We are also available for
-              individual coaching and mediation, and we are happy to consult
-              with community-based projects that are seeking to shift paradigms.
-              Events in this month –
+              We offer regular learning opportunities through workshops and
+              practice groups, in person and online. And from time to time, we
+              also organize cool community-based events! Join us!&nbsp;
+              <Link to="/events">See all events here ⇝</Link>
             </p>
             <div className="margin-p">
               <Month
@@ -359,9 +358,6 @@ class EventsGrid extends React.Component {
               />
               <br />
             </div>
-            <p>
-              <Link to="/events">See all events ⇝</Link>
-            </p>
           </Col>
           <Col sm={24} md={24} xl={9}>
             {!isUndefined(extraData) && (

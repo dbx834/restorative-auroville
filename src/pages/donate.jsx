@@ -61,7 +61,7 @@ const Page = () => (
         Donate Here
       </OutLink>
     </div>
-    <ul className="mask-p">
+    <ul className="mask-p" style={{ paddingLeft: 20 }}>
       <li>
         Please select “Other” in the Project selection, and specify “Restorative
         Auroville, Joy Living Learning” as the Project name.

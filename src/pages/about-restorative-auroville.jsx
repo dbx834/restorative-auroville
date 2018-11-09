@@ -186,7 +186,7 @@ const Page = () => (
         />
       </div>
       <h2 className="mask-h4">Our Aims & Objectives:</h2>
-      <ul className="mask-p" style={{ marginBottom: 0, paddingLeft: 23 }}>
+      <ul className="mask-p" style={{ marginBottom: 0, paddingLeft: 22 }}>
         <li>
           to co-create a Justice System in Auroville that reflects our values
           and is effective
@@ -255,7 +255,9 @@ const Page = () => (
     >
       <GoldenMajorHalves>
         <div>
-          <h2 className="mask-h5">Video Title</h2>
+          <h2 className="mask-h5">
+            Justice & Restorative Circles in Auroville
+          </h2>
           <Video url="https://www.youtube.com/watch?v=kqBM5Xr5VfI&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=10" />
         </div>
         <div>

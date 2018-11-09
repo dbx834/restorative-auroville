@@ -12,9 +12,12 @@ import sortBy from 'lodash/sortBy'
 import reverse from 'lodash/reverse'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Link from 'gatsby-link'
 import withSizes from 'react-sizes'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
+import Breadcrumb from 'antd/lib/breadcrumb'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../../components/StandardPage'
@@ -41,6 +44,8 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
+const { Item: BItem } = Breadcrumb
+
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
@@ -66,6 +71,15 @@ const Pastprojects = props => {
 
   return (
     <StandardPage className={pageStyles} seoData={seoData}>
+      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
+        <BItem>
+          <Link to="/">Home</Link>
+        </BItem>
+        <BItem>
+          <Link to="/projects/ongoing">Ongoing Projects</Link>
+        </BItem>
+        <BItem>Past Projects</BItem>
+      </Breadcrumb>
       <h1 className="mask-h3">Past Projects</h1>
       <ProjectListing data={pastProjects} isMobile={isMobile} itemWidth="33%" />
     </StandardPage>

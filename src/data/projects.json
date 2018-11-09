@@ -1,114 +1,124 @@
 [
-  {
-    "pageTitle": "Cross-Cultural Dialogue",
-    "nakedPageSlug": "projects/cross-cultural-dialogue",
-    "pageAbstract": "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
-    "cover": "/projects/ccd.jpg",
-    "beginTimestamp": 1514801319,
-    "category": "Restorative Circles",
-    "ongoing": true,
-    "highlight": true
-  },
-  {
-    "pageTitle": "Magazine: \"Restoring Connection & Building Bridges – Tamil Aurovilian Journeys\"",
-    "nakedPageSlug": "projects/magazine",
-    "pageAbstract": "We are creating a magazine focusing on the experiences of Tamil Aurovilians, their journeys into Auroville, and their feelings of belonging and exclusion.",
-    "cover": "/project-assets/magazine/img1.jpg",
-    "beginTimestamp": 1483265319,
-    "endTimestamp": 1514801319,
-    "category": "Restorative Circles",
-    "highlight": false,
-    "ongoing": true
-  },
-  {
-    "pageTitle": "Restorative Circles in Aikiyam School",
-    "nakedPageSlug": "projects/restorative-circles-in-aikiyam-school",
-    "pageAbstract": "Aikiyam School is one of Auroville’s outreach schools. The staff and teachers there asked us to support them with conflict resolution, and so we’ve been helping the teachers build an RC System amongst themselves.",
-    "cover": "/projects/aikiyam.jpg",
-    "beginTimestamp": 1483265319,
-    "endTimestamp": 1514801319,
-    "category": "Restorative Circles",
-    "highlight": true,
-    "ongoing": true
-  },
-  {
-    "pageTitle": "Filming a live Restorative Circle",
-    "nakedPageSlug": "projects/filimng-a-live-restorative-circle",
-    "pageAbstract": "We have a big, big, big dream to one day film a live Circle, so that we can document the entire process and share this beautiful work with the rest of the world.",
-    "cover": "/project-assets/filming/img2.jpg",
-    "beginTimestamp": 1573109111,
-    "category": "Restorative Circles",
-    "highlight": true,
-    "ongoing": true
-  },
-  {
-    "pageTitle": "Building an RC Yurt",
-    "nakedPageSlug": "projects/building-an-rc-yurt",
-    "pageAbstract": "With our work growing, it’s high-time that we build a physical structure for our RC gatherings. We’re hoping to raise Rs.5 lakhs, in order to set up a dismountable yurt.",
-    "cover": "/projects/yurt.jpg",
-    "beginTimestamp": 1573109111,
-    "category": "Restorative Circles",
-    "highlight": false,
-    "ongoing": true
-  },
-  {
-    "pageTitle": "Women for Justice",
-    "nakedPageSlug": "projects/women-for-justice",
-    "pageAbstract": "In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO 'Olakh' (Gujarat), we will present a documentary about Nimisha’s work with women’s justice. The film will be translated live into Tamil, and followed by a Q&A session with Nimisha. Additional workshops will also be organized, geared especially towards women and youth from the bioregion.",
-    "cover": "/projects/women.jpg",
-    "beginTimestamp": 1573109111,
-    "category": "Restorative Circles",
-    "highlight": false,
-    "ongoing": true
-  },
-  {
-    "pageTitle": "Walk of Hope in Auroville and the Bioregion",
-    "nakedPageSlug": "projects/walk-of-hope-in-auroville-and-the-bioregion",
-    "pageAbstract": "The Walk was led by Sri M, an eminent spiritual guide, educationist and social activist. Sri M became known for his Walk of Hope from Kanyakumari to Kashmir, over 7000 km through India in 2015-16.",
-    "cover": "/projects/woh.jpg",
-    "beginTimestamp": 1514801319,
-    "category": "Restorative Circles",
-    "highlight": false,
-    "ongoing": false
-  },
-  {
-    "pageTitle": "Exploring Justice and RC with the Auroville Council",
-    "nakedPageSlug": "projects/exploring-justice-and-rc-with-the-auroville-council",
-    "pageAbstract": "AV Council initiative abstract.",
-    "cover": "/projects/avCouncil.jpg",
-    "beginTimestamp": 1514801319,
-    "category": "Restorative Circles",
-    "highlight": false,
-    "ongoing": false
-  },
-  {
-    "pageTitle": "Restorative Dialogue across Cultures",
-    "nakedPageSlug": "projects/restorative-dialogue-across-cultures",
-    "pageAbstract": "Restorative Dialogue initiative abstract.",
-    "cover": "/projects/restorativeDialogueAcrossCultures.jpg",
-    "beginTimestamp": 1451642919,
-    "category": "Restorative Circles",
-    "highlight": false,
-    "ongoing": false
-  },
-  {
-    "pageTitle": "\"Restoring Connection\" FilmFest",
-    "nakedPageSlug": "projects/filmfest-restoring-connection",
-    "pageAbstract": "Restorative Auroville hosted a 6-day Film Festival on the theme of “Restoring Connection” in October 2016 as part of our larger Restorative Circles project in Auroville, where we are working to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values.",
-    "cover": "/projects/filmFest.jpg",
-    "beginTimestamp": 1451642919,
-    "category": "Restorative Circles",
-    "highlight": false,
-    "ongoing": false
-  },
-  {
-    "pageTitle": "Restorative Circles in The Learning Community School",
-    "nakedPageSlug": "projects/restorative-circles-in-the-learning-community-school",
-    "pageAbstract": "TLC abstract.",
-    "cover": "/projects/tlc.jpg",
-    "beginTimestamp": 1451642919,
-    "category": "Restorative Circles",
-    "highlight": false,
-    "ongoing": false
-  }
+    {
+        "pageTitle": "Taking RC to Units, Schools and Residential Communities",
+        "nakedPageSlug": "projects/taking-rc-to-units-schools-and-residential-communities",
+        "pageAbstract": "In our aim to bring about a cultural shift in Auroville in how we engage with conflict, we’re taking RC and its principles to the Units, schools and residential communities. Our experience of living and working in community is that it can be challenging at times, as we can get stuck in our differences and disagreements. It can be difficult to handle such situations, and even with the best of intentions, we can experience disconnection and widening communication gaps.",
+        "cover": "/project-assets/rc-to-communities/img1.jpeg",
+        "beginTimestamp": 1514801319,
+        "endTimestamp": 1573109111,
+        "category": "Restorative Circles",
+        "ongoing": true,
+        "highlight": false
+    },
+    {
+        "pageTitle": "Cross-Cultural Dialogue: Discrimination in Auroville",
+        "nakedPageSlug": "projects/cross-cultural-dialogue",
+        "pageAbstract": "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
+        "cover": "/projects/ccd.jpg",
+        "beginTimestamp": 1514801319,
+        "category": "Restorative Circles",
+        "ongoing": true,
+        "highlight": true
+    },
+    {
+        "pageTitle": "\"Restoring Connection & Building Bridges – Tamil Aurovilian Journeys\" (Printed Publication)",
+        "nakedPageSlug": "projects/tamil-aurovilian-journeys",
+        "pageAbstract": "We are creating a magazine focusing on the experiences of Tamil Aurovilians, their journeys into Auroville, and their feelings of belonging and exclusion.",
+        "cover": "/project-assets/magazine/img2.jpeg",
+        "beginTimestamp": 1573109111,
+        "category": "Restorative Circles",
+        "highlight": false,
+        "ongoing": true
+    },
+    {
+        "pageTitle": "Restorative Circles in Aikiyam School",
+        "nakedPageSlug": "projects/restorative-circles-in-aikiyam-school",
+        "pageAbstract": "We are sharing RC in Aikiyam School, one of Auroville’s outreach schools for children from Kindergarten to 8th Grade. After discussions with the administration and teachers of the school, a group of ten teachers have committed to learn about this process. It has been met with enthusiasm and curiosity, and we look forward to seeing how we can co-create an RC System for the school. The school has an overwhelming majority of teachers who are originally from the bioregion, and we are looking forward to seeing how they can adapt it to their cultural context.",
+        "cover": "/projects/aikiyam.jpg",
+        "beginTimestamp": 1483265319,
+        "endTimestamp": 1514801319,
+        "category": "Restorative Circles",
+        "highlight": true,
+        "ongoing": true
+    },
+    {
+        "pageTitle": "Filming a live Restorative Circle",
+        "nakedPageSlug": "projects/filming-a-live-restorative-circle",
+        "pageAbstract": "We have a big, big, big dream to one day film a live Circle, so that we can document the entire process and share this beautiful work with the rest of the world.",
+        "cover": "/project-assets/filming/img2.jpg",
+        "beginTimestamp": 1573109111,
+        "category": "Restorative Circles",
+        "highlight": true,
+        "ongoing": true
+    },
+    {
+        "pageTitle": "Building an RC Yurt",
+        "nakedPageSlug": "projects/building-an-rc-yurt",
+        "pageAbstract": "With our work growing, it’s high-time that we build a physical structure for our RC gatherings. We’re hoping to raise Rs.5 lakhs, in order to set up a dismountable yurt.",
+        "cover": "/projects/yurt.jpg",
+        "beginTimestamp": 1573109111,
+        "category": "Restorative Circles",
+        "highlight": false,
+        "ongoing": true
+    },
+    {
+        "pageTitle": "Women for Justice",
+        "nakedPageSlug": "projects/women-for-justice",
+        "pageAbstract": "In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO \"Olakh\" (Gujarat), we will present a documentary about Nimisha’s work with women’s justice. The film will be translated live into Tamil, and followed by a Q&A session with Nimisha. Additional workshops will also be organized, geared especially towards women and youth from the bioregion.",
+        "cover": "/projects/women.jpg",
+        "beginTimestamp": 1573109111,
+        "category": "Restorative Circles",
+        "highlight": false,
+        "ongoing": true
+    },
+    {
+        "pageTitle": "Walk of Hope in Auroville and the Bioregion",
+        "nakedPageSlug": "projects/walk-of-hope-in-auroville-and-the-bioregion",
+        "pageAbstract": "The Walk was led by Sri M, an eminent spiritual guide, educationist and social activist. Sri M became known for his Walk of Hope from Kanyakumari to Kashmir, over 7000 km through India in 2015-16.",
+        "cover": "/projects/woh.jpg",
+        "beginTimestamp": 1514801319,
+        "category": "Restorative Circles",
+        "highlight": false,
+        "ongoing": false
+    },
+    {
+        "pageTitle": "Exploring Justice and RC with the Auroville Council",
+        "nakedPageSlug": "projects/exploring-justice-and-rc-with-the-auroville-council",
+        "pageAbstract": "AV Council initiative abstract.",
+        "cover": "/projects/avCouncil.jpg",
+        "beginTimestamp": 1514801319,
+        "category": "Restorative Circles",
+        "highlight": false,
+        "ongoing": false
+    },
+    {
+        "pageTitle": "Restorative Dialogue across Cultures",
+        "nakedPageSlug": "projects/restorative-dialogue-across-cultures",
+        "pageAbstract": "Restorative Dialogue initiative abstract.",
+        "cover": "/projects/restorativeDialogueAcrossCultures.jpg",
+        "beginTimestamp": 1451642919,
+        "category": "Restorative Circles",
+        "highlight": false,
+        "ongoing": false
+    },
+    {
+        "pageTitle": "\"Restoring Connection\" FilmFest",
+        "nakedPageSlug": "projects/filmfest-restoring-connection",
+        "pageAbstract": "Restorative Auroville hosted a 6-day Film Festival on the theme of “Restoring Connection” in October 2016 as part of our larger Restorative Circles project in Auroville, where we are working to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values.",
+        "cover": "/projects/filmFest.jpg",
+        "beginTimestamp": 1451642919,
+        "category": "Restorative Circles",
+        "highlight": false,
+        "ongoing": false
+    },
+    {
+        "pageTitle": "Restorative Circles in The Learning Community School",
+        "nakedPageSlug": "projects/restorative-circles-in-the-learning-community-school",
+        "pageAbstract": "TLC abstract.",
+        "cover": "/projects/tlc.jpg",
+        "beginTimestamp": 1451642919,
+        "category": "Restorative Circles",
+        "highlight": false,
+        "ongoing": false
+    }
 ]

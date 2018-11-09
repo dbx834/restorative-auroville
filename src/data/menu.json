@@ -3,7 +3,10 @@
   {
     "title": "Explore +",
     "menu": [
-      { "title": "Our Project", "link": "/about-restorative-auroville" },
+      {
+        "title": "Our Project: Restorative Auroville",
+        "link": "/about-restorative-auroville"
+      },
       { "title": "Restorative Circles", "link": "/restorative-circles" },
       {
         "title": "Our Restorative System",

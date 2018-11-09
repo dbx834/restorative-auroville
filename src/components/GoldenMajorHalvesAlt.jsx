@@ -5,16 +5,16 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 // import { css } from "glamor"
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import ReactPlayer from 'react-player'
-import ContainerDimensions from 'react-container-dimensions'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
+import Row from 'antd/lib/row'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+
+import Col from 'antd/lib/col'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 
@@ -23,34 +23,27 @@ import ContainerDimensions from 'react-container-dimensions'
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** Video */
-const Video = props => {
-  const { url } = props
+/** EqualHalves */
+const EqualHalves = props => {
+  const { children } = props
+  const div0 = children[0]
+  const div1 = children[1]
+
   return (
-    <div className="mask-p" style={{ display: 'block' }} {...props}>
-      <ContainerDimensions>
-        {({ width }) => {
-          const playerWidth = width
-          const playerHeight = width * 0.62
-          return (
-            <div
-              style={{
-                width: playerWidth,
-                height: playerHeight,
-              }}
-            >
-              <ReactPlayer url={url} width="inherit" height="inherit" />
-            </div>
-          )
-        }}
-      </ContainerDimensions>
-    </div>
+    <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
+      <Col sm={24} md={9}>
+        {div0}
+      </Col>
+      <Col sm={24} md={15}>
+        {div1}
+      </Col>
+    </Row>
   )
 }
 
-Video.propTypes = {}
+EqualHalves.propTypes = {}
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default Video
+export default EqualHalves

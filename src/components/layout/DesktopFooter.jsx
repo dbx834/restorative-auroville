@@ -148,13 +148,17 @@ const Footer = props => {
                   }}
                 >
                   <li>
-                    <Link to="/about-restorative-auroville">Our Project</Link>
+                    <Link to="/about-restorative-auroville">
+                      Restorative Auroville
+                    </Link>
                   </li>
                   <li>
                     <Link to="/our-team">Our Team</Link>
                   </li>
                   <li>
-                    <Link to="/our-history">Our History</Link>
+                    <Link to="/our-restorative-system-in-auroville">
+                      Our RC System
+                    </Link>
                   </li>
                 </ul>
               </Col>
@@ -372,7 +376,7 @@ const Footer = props => {
                     <Link to="/volunteer">Volunteer & Apprentice</Link>
                   </li>
                   <li>
-                    <Link to="/volunteer">Newsletter</Link>
+                    <Link to="/newsletter">Newsletter</Link>
                   </li>
                 </ul>
               </Col>
@@ -427,13 +431,13 @@ const Footer = props => {
                 }}
               >
                 Restorative Auroville is an initiative of{' '}
-                <Link to="https://www.joylivinglearning.org/">
+                <OutLink to="https://www.joylivinglearning.org/">
                   Joy Living Learning
-                </Link>
+                </OutLink>
                 , a Unit of the&nbsp;
-                <Link to="https://www.auroville.org/">
+                <OutLink to="https://www.auroville.org/">
                   Auroville Foundation
-                </Link>
+                </OutLink>
                 .
               </p>
               <p
@@ -455,7 +459,8 @@ const Footer = props => {
                 Made with&nbsp;
                 <Icon
                   type="heart"
-                  style={{ fontSize: '80%', color: 'rgba(0, 0, 111, 0.5)' }}
+                  theme="filled"
+                  style={{ fontSize: '80%', color: '#e67100' }}
                 />
                 &nbsp;by&nbsp;
                 <OutLink to="https://www.bodhiproject.org/">
@@ -470,9 +475,9 @@ const Footer = props => {
                 }}
               >
                 Copyright © 2018 Restorative Auroville &{' '}
-                <Link to="https://www.joylivinglearning.org/">
+                <OutLink to="https://www.joylivinglearning.org/">
                   Joy Living Learning
-                </Link>
+                </OutLink>
               </p>
             </div>
           </div>

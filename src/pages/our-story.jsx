@@ -134,14 +134,19 @@ const Page = () => (
       className="margin-p"
     >
       <p style={{ marginBottom: 0 }}>
-        <sup>*</sup> This funding was for L’aura’s “Auroville Maintenance”
-        (honorary volunteer stipend), Rs.15,000/month for 1 year (2016). Janet
-        and Shanti, along with others who joined the team and supported the
-        project along the way, have offered all their time and love for free.
-        Beyond that financial support in 2016, this project has been running
-        without a budget, amazingly. What Grace! If you’d like to support this
-        work and make a financial contribution to keep it going,&nbsp;
-        <Link to="/donate">please donate here</Link>.
+        <sup style={{ marginLeft: -10 }}>*</sup> This funding was for L’aura’s
+        “Auroville Maintenance” (honorary volunteer stipend), Rs.15,000/month
+        for 1 year (2016). Janet and Shanti, along with others who joined the
+        team and supported the project along the way, have offered all their
+        time and love for free. Beyond that financial support in 2016, this
+        project has been running without a budget, amazingly. What Grace!
+        <br />
+        <br />
+        <Link to="/donate">
+          If you’d like to support this work and make a financial contribution
+          to keep it going, please donate here
+        </Link>
+        .
       </p>
     </div>
   </StandardPage>

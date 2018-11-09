@@ -73,16 +73,17 @@ const Ongoingprojects = props => {
     <StandardPage className={pageStyles} seoData={seoData}>
       <h1 className="mask-h3">Our Projects</h1>
       <div style={{ position: 'absolute', top: 4, right: 0 }}>
-        <Link to="projects/past" className="ant-btn ant-btn-primary">
+        <Link to="/projects/past" className="ant-btn ant-btn-primary">
           <span style={{ fontSize: '125%' }}>Past Projects ⇝</span>
         </Link>
       </div>
       <p>
-        Our approach at Restorative Auroville is to engage with the community at
-        many levels and through different initiatives, with the hope to connect
-        with different aspects of our community life, so that we can better
-        understand how to build systems that respond to our unique and complex
-        reality.
+        Our approach is to engage with the community at many levels and through
+        different initiatives, with a real longing to grow and transform our
+        systems together. Our activities range from large-scale community events
+        (like a FilmFest on peace and reconciliation work around the world, or a
+        Cross-Cultural Dialogue on Discrimination), to taking RC to schools, to
+        fundraising to build an RC Yurt for our Circles, and more…
       </p>
       <div className="margin-p">
         <ProjectListing
