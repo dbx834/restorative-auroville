@@ -131,7 +131,7 @@ const Page = () => (
         <VolunteerForm />
       </Col>
       <Col sm={24} md={9}>
-        <h2 className="mask-h3">Our Apprentice Pranjal Shares</h2>
+        <h2 className="mask-h3">Our Apprentice, Pranjal, shares…</h2>
         <Link to="/writings/our-apprentice-pranjal-shares">
           <Image
             src={nvcX80}
@@ -142,11 +142,13 @@ const Page = () => (
               width: '80%',
               marginLeft: 0,
               display: 'block',
+              marginBottom: 10,
             }}
             rawWidth={600}
             rawHeight={603}
           />
         </Link>
+        <p>Coming soon…</p>
       </Col>
     </Row>
   </StandardPage>

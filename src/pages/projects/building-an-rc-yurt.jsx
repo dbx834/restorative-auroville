@@ -95,10 +95,12 @@ const Initiative = props => {
       </p>
       <p>
         The estimated cost to put up this yurt is Rs.5 lakhs, and we’re looking
-        for financial support. If you’re inspired by our project and would like
-        to help, we welcome your contributions (
-        <Link to="/donate">you can donate here</Link>
-        ).
+        for financial support.{' '}
+        <Link to="/donate">
+          If you’re inspired by our project and would like to help, we welcome
+          your contributions you can donate here
+        </Link>
+        .
       </p>
       <p>Please know that any amount is greatly appreciated.</p>
       <p>We look forward to providing a new space for community growth.</p>

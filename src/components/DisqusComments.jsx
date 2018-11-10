@@ -39,6 +39,7 @@ const DisqusComments = props => {
         background: '#f8f8ff',
         border: '1px solid #00006F',
         padding: 16,
+        borderRadius: 8,
       }}
     >
       <h2 className="mask-h6">Leave a comment…</h2>

@@ -52,6 +52,7 @@ import banner2 from '../assets/banner2.png'
 
 import p32 from '../assets/designing-our-justice-system-consciously.jpg'
 import p41 from '../assets/surya-on-restorative-circles.jpg'
+import playNow from '../assets/playNow.jpg'
 import bluePaintbrush from '../assets/bluePaintbrush.png'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -109,6 +110,29 @@ const styleObject = css({
       background: '#bfd9bf',
     },
   },
+
+  '& .play-hover': {
+    position: 'relative',
+    cursor: 'pointer',
+
+    '& .hover-this': {
+      height: '100%',
+      width: '100%',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      opacity: 0,
+      transition: 'all 300ms ease-in',
+    },
+
+    '&:hover': {
+      background: 'red',
+
+      '& .hover-this': {
+        opacity: 0.6,
+      },
+    },
+  },
 })
 const pageStyle = styleObject.toString()
 
@@ -125,7 +149,7 @@ const VideoSeriesBlock1 = () => (
       "The Power of Dialogue"
     </h2>
     <p style={{ marginBottom: 30 }}>
-      <Link to="/the-power-of-dialogue">See more videos ⇝</Link>
+      <Link to="/the-power-of-dialogue">See video series ⇝</Link>
     </p>
     <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
       <Col sm={24} md={24} lg={8}>
@@ -152,28 +176,42 @@ const VideoSeriesBlock1 = () => (
         </p>
       </Col>
       <Col sm={24} md={24} lg={8}>
-        <Image
-          src={p41}
-          style={{
-            background: 'transparent',
-            border: 'unset',
-            height: 'auto',
-            width: '100%',
-            marginBottom: 10,
-          }}
-          loader="gradient"
-          rawWidth={1440}
-          rawHeight={900}
-        />
-        <p>
-          Surya shares about her experiences with Restoratives Circles.&nbsp;
-          <Link to="/the-power-of-dialogue/surya-on-restorative-circles">
-            See video ⇝
-          </Link>
-        </p>
+        <Link to="/the-power-of-dialogue/surya-on-restorative-circles">
+          <div className="play-hover">
+            <Image
+              src={p41}
+              style={{
+                background: 'transparent',
+                border: 'unset',
+                height: 'auto',
+                width: '100%',
+                marginBottom: 10,
+              }}
+              loader="gradient"
+              rawWidth={1440}
+              rawHeight={900}
+            />
+            <div className="hover-this">
+              <Image
+                src={playNow}
+                style={{
+                  background: 'transparent',
+                  border: 'unset',
+                  height: 'auto',
+                  width: '100%',
+                  marginBottom: 10,
+                }}
+                loader="gradient"
+                rawWidth={1440}
+                rawHeight={900}
+              />
+            </div>
+          </div>
+        </Link>
+        <p>Surya shares about her experiences with Restoratives Circles.</p>
       </Col>
       <Col sm={24} md={24} lg={8}>
-        <h3 className="mask-h3">Our Video Series</h3>
+        <h3 className="mask-h4">Our Video Series</h3>
         <div
           style={{
             display: 'flex',
@@ -327,8 +365,8 @@ const Page = props => {
 
       <div
         style={{
-          paddingTop: 48,
-          paddingBottom: 48,
+          paddingTop: 12,
+          paddingBottom: 28,
           paddingLeft: '10%',
           paddingRight: '10%',
           position: 'relative',
@@ -362,7 +400,7 @@ const Page = props => {
             className="mask-h2"
             style={{
               color: '#FFFFFF',
-              marginBottom: 20,
+              marginBottom: 10,
             }}
           >
             Get Involved Today…
@@ -378,7 +416,11 @@ const Page = props => {
               />
               <h3
                 className="mask-h3"
-                style={{ color: '#FFFFFF', marginBottom: 10 }}
+                style={{
+                  color: '#FFFFFF',
+                  marginBottom: 10,
+                  lineHeight: '30px',
+                }}
               >
                 Volunteer & Apprentice
               </h3>
@@ -402,7 +444,11 @@ const Page = props => {
               />
               <h3
                 className="mask-h3"
-                style={{ color: '#FFFFFF', marginBottom: 10 }}
+                style={{
+                  color: '#FFFFFF',
+                  marginBottom: 10,
+                  lineHeight: '30px',
+                }}
               >
                 Donate
               </h3>
@@ -427,7 +473,11 @@ const Page = props => {
               />
               <h3
                 className="mask-h3"
-                style={{ color: '#FFFFFF', marginBottom: 10 }}
+                style={{
+                  color: '#FFFFFF',
+                  marginBottom: 10,
+                  lineHeight: '30px',
+                }}
               >
                 Be Our Film
               </h3>

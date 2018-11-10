@@ -64,10 +64,10 @@ const circleStylesObject = css({
   '& .child-circle-highlight:nth-child(1)::after': {
     content: `"L'aura"`,
   },
-  '& .child-circle-highlight:nth-child(4)::after': {
+  '& .child-circle-highlight:nth-child(5)::after': {
     content: `"Henrike"`,
   },
-  '& .child-circle-highlight:nth-child(5)::after': {
+  '& .child-circle-highlight:nth-child(4)::after': {
     content: `"Pranjal"`,
   },
 })
@@ -89,9 +89,10 @@ const Page = props => {
             We're a small group of people passionate about human connection and
             committed to walking towards increased community resilience. We lead
             the larger Restorative Auroville project, we facilitate Circles,
-            some of us teach, some of us run our different initiatives, etc. And
-            we’re wanting to expand our team and reach.&nbsp;
-            <Link to="/our-team">Read more ⇝</Link>
+            some of us teach, some of us run our different initiatives, and
+            more. And we’re wanting to expand our team and our reach in the
+            community.&nbsp;
+            <Link to="/our-team">Read more about us ⇝</Link>
           </p>
         </Col>
         <Col sm={24} md={24} lg={24} xl={9}>
@@ -99,24 +100,12 @@ const Page = props => {
             <PersonCircle
               image={lauraSquare}
               className="child-circle-highlight"
-              role={
-                <Frag>
-                  Core Team
-                  <br />
-                  &nbsp;&nbsp;Member
-                </Frag>
-              }
+              role={<Frag>Founder</Frag>}
             />
             <PersonCircle
               image={janetSquare}
               className="child-circle-highlight"
-              role={
-                <Frag>
-                  Core Team
-                  <br />
-                  &nbsp;&nbsp;Member
-                </Frag>
-              }
+              role={<Frag>Founder</Frag>}
             />
             <PersonCircle
               image={katiSquare}
@@ -130,7 +119,7 @@ const Page = props => {
               }
             />
             <PersonCircle
-              image={henrikeSquare}
+              image={pranjalSquare}
               className="child-circle-highlight"
               role={
                 <Frag>
@@ -141,7 +130,7 @@ const Page = props => {
               }
             />
             <PersonCircle
-              image={pranjalSquare}
+              image={henrikeSquare}
               className="child-circle-highlight"
               role={
                 <Frag>

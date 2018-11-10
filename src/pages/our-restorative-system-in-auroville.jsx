@@ -94,7 +94,12 @@ const Page = () => (
       importance of consciously choosing a justice system for the growth and
       development of a community.
     </p>
-    <h2 className="mask-h4">Presentation in Unity Pavilion</h2>
+    <h2 className="mask-h4" style={{ marginBottom: 0 }}>
+      "Create Auroville Together: Restorative Circles"
+    </h2>
+    <p style={{ marginBottom: 30 }}>
+      <i>Public presentation at Unity Pavilion, Auroville (2017)</i>
+    </p>
     <EqualHalves>
       <div>
         <Video url="https://www.youtube.com/watch?v=n1Uf1IYQ2_Y&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=9" />

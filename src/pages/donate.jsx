@@ -46,7 +46,7 @@ const seoData = seoHelper(pageData)
 /** Page */
 const Page = () => (
   <StandardPage className="" seoData={seoData}>
-    <h1 className="mask-h3">Donate to support our work!</h1>
+    <h1 className="mask-h3">Donate to Support Our Work!</h1>
     <p>
       If you’d like to make a donation towards Restorative Auroville, you may do
       so below. This will link directly to the Auroville Foundation payment
@@ -82,8 +82,11 @@ const Page = () => (
       and beyond.
     </p>
     <p>
-      If you would like more detailed information about our project,&nbsp;
-      <Link to="/contact-us">contact us</Link>.
+      <Link to="/contact-us">
+        If you would like more detailed information about our project, contact
+        us
+      </Link>
+      .
     </p>
   </StandardPage>
 )

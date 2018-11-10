@@ -60,8 +60,6 @@ const Theme = props => {
   return (
     <div
       style={{
-        marginLeft: '6.25vw',
-        marginRight: '6.25vw',
         paddingLeft: 12,
         borderLeft: `8px solid ${border}`,
       }}
@@ -227,43 +225,36 @@ const Page = () => (
         </li>
       </ul>
     </div>
-    <Theme
-      border="#0101AF"
-      title="Restorative Auroville Research Project (2015-17)"
-      tag="Projects & Reports"
-      text="In September 2015, we applied for a 1-year grant to support our Research Project to bring Restorative Circles to Auroville and to start exploring the possibilities of developing a Restorative Justice System here."
-      files={[
-        {
-          title: 'Project Proposal',
-          link: '/applied-research-restorative-circles-in-auroville.pdf',
-        },
-        {
-          title: '6-month Report',
-          link: '/restorative-auroville-6-month-report.pdf',
-        },
-        {
-          title: '1-year Report',
-          link: '/restorative-auroville-year-end-report.pdf',
-        },
-      ]}
-    />
-    <div
-      style={{
-        marginLeft: '6.25vw',
-        marginRight: '6.25vw',
-      }}
-      className="margin-p"
-    >
+
+    <div className="margin-p">
       <GoldenMajorHalves>
+        <div>
+          <Theme
+            border="#0101AF"
+            title="Restorative Auroville Research Project (2015-17)"
+            tag="Projects & Reports"
+            text="In September 2015, we applied for a 1-year grant to support our Research Project to bring Restorative Circles to Auroville and to start exploring the possibilities of developing a Restorative Justice System here."
+            files={[
+              {
+                title: 'Project Proposal',
+                link: '/applied-research-restorative-circles-in-auroville.pdf',
+              },
+              {
+                title: '6-month Report',
+                link: '/restorative-auroville-6-month-report.pdf',
+              },
+              {
+                title: '1-year Report',
+                link: '/restorative-auroville-year-end-report.pdf',
+              },
+            ]}
+          />
+        </div>
         <div>
           <h2 className="mask-h5">
             Justice & Restorative Circles in Auroville
           </h2>
           <Video url="https://www.youtube.com/watch?v=kqBM5Xr5VfI&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=10" />
-        </div>
-        <div>
-          <h2 className="mask-h5">Extra content…</h2>
-          <p>Some content...</p>
         </div>
       </GoldenMajorHalves>
     </div>

@@ -62,7 +62,7 @@ const ProjectHighlight = props => {
 
   return (
     <section className={blockStyle}>
-      <h2 className="mask-h3">Some of our Projects</h2>
+      <h2 className="mask-h3">Some of Our Projects</h2>
       <p>
         Our approach at Restorative Auroville is to engage with the community at
         many levels and through different initiatives, with a real longing to

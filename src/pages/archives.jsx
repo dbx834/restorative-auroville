@@ -88,17 +88,25 @@ const Page = () => (
   <StandardPage className="" seoData={seoData}>
     <h1 className="mask-h3">Archives</h1>
     <p>
-      We want to explore and understand this question: Are we divided in
-      Auroville, as local Tamil Aurovilians and non-local Aurovilians?
+      Here’s a compilation of our different project proposals, reports, and
+      more.
     </p>
     <Theme
       border="#FAE300"
-      title="Experiences with training and facilitating Restorative Circles and conflict resolution."
+      title="&quot;Experiences with training and facilitating Restorative Circles and conflict resolution&quot;"
       tag="Interview"
-      text="Dummy text."
+      text={
+        <span>
+          Edwin Rutsch, of "
+          <OutLink to="http://cultureofempathy.com">
+            Center for Building a Culture of Empathy
+          </OutLink>
+          ," interviewed L’aura on her RC work in Auroville.
+        </span>
+      }
       files={[
         {
-          title: 'Interview with L’aura Joy, by Edwin Rutsch',
+          title: 'Watch interview',
           icon: 'youtube',
           link:
             'https://www.youtube.com/watch?time_continue=2570&v=jy9C8tyCxkg',
@@ -107,9 +115,17 @@ const Page = () => (
     />
     <Theme
       border="#FABB00"
-      title="Walk of Hope in Auroville and the Bioregion (2018)"
+      title="Walk of Hope in Auroville & the Bioregion (2018)"
       tag="Projects & Reports"
-      text="Dummy text."
+      text={
+        <span>
+          We invited{' '}
+          <OutLink to="http://satsang-foundation.org/">
+            Sri M to offer a "Walk of Hope"
+          </OutLink>{' '}
+          through Auroville and the bioregion, as a symbol of togetherness.
+        </span>
+      }
       files={[
         {
           title: 'Project Proposal',
@@ -119,9 +135,9 @@ const Page = () => (
     />
     <Theme
       border="#FABB00"
-      title="Public Presentation: &quot;Create Auroville Together - Restorative Circles&quot; (2017)"
+      title="&quot;Create Auroville Together: Restorative Circles&quot; (2017)"
       tag="Public Presentations"
-      text="Dummy text."
+      text="A public presentation about RC at Unity Pavilion, Auroville."
       photos={[
         { src: '/archives/public2017/img1.jpg', width: 600, height: 450 },
         { src: '/archives/public2017/img3.jpg', width: 600, height: 778 },
@@ -130,13 +146,13 @@ const Page = () => (
       columns={3}
       files={[
         {
-          title: 'At Unity Pavilion, Auroville (Part 1)',
+          title: 'Watch video, Part 1',
           icon: 'youtube',
           link:
             'https://www.youtube.com/watch?v=n1Uf1IYQ2_Y&t=10s&index=9&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF',
         },
         {
-          title: 'At Unity Pavilion, Auroville (Part 2)',
+          title: 'Watch video, Part 2',
           icon: 'youtube',
           link:
             'https://www.youtube.com/watch?v=ngOhj-NhKJo&t=0s&index=8&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF',
@@ -147,10 +163,10 @@ const Page = () => (
       border="#4A01AA"
       title="Justice Questionnaire (2017)"
       tag="Projects & Reports"
-      text="Dummy text."
+      text="We sent out a questionnaire to the entire Auroville community in an attempt to raise awareness about our very basic human need for justice, and to hear the community’s thoughts on this topic."
       files={[
         {
-          title: "Justice in Auroville - What's Your Opinion?",
+          title: "Justice in Auroville – What's Your Opinion?",
           link: '/justice-in-auroville-what-is-your-opinion.pdf',
         },
         {
@@ -161,9 +177,9 @@ const Page = () => (
     />
     <Theme
       border="#FAE300"
-      title="Film Fest - Restoring Connection (2016)"
+      title="FilmFest: &quot;Restoring Connection&quot; (2016)"
       tag="Projects & Reports"
-      text="Dummy text."
+      text="We screened documentaries and feature films about peace and reconciliation work from around the world, in an attempt to inspire a movement towards restorative justice in Auroville."
       files={[
         {
           title: 'Project Proposal',
@@ -179,7 +195,7 @@ const Page = () => (
       border="#FA8F00"
       title="Restorative Dialogue across Cultures (2016)"
       tag="Projects & Reports"
-      text="Dummy text."
+      text="We invited Duke Duchscherer (USA, Canada) to co-host a Restorative Dialogue with us, in an attempt to bridge the gap between Aurovilians from the locality and Aurovilians from other places in the world."
       files={[
         {
           title: 'Project Proposal',
@@ -217,17 +233,17 @@ const Page = () => (
     />
     <Theme
       border="#FABB00"
-      title="Public Presentation (2014)"
+      title="How Do We Dream It Could Be? (2014)"
       tag="Public Presentations"
-      text="Dummy text."
+      text="We offered a public presentation about RC at Unity Pavilion, and explored about the question: &quot;How do we dream justice could be in Auroville?&quot;"
       files={[
         {
-          title: 'At Unity Pavilion, Auroville',
+          title: 'Watch video',
           icon: 'youtube',
           link: 'https://www.youtube.com/watch?v=34yV9adMWNY',
         },
         {
-          title: 'Full Audio Clip',
+          title: 'Listen to radio recording',
           icon: 'sound',
           link: 'https://www.aurovilleradio.org/restorative-circles/',
         },
@@ -235,12 +251,12 @@ const Page = () => (
     />
     <Theme
       border="#FABB00"
-      title="Public Presentation (2011)"
+      title="First-Ever RC Presentation in Auroville! (2011)"
       tag="Public Presentations"
-      text="Dummy text."
+      text="Soon after Jason and L’aura returned from a training with Dominic Barter in the USA, they presented RC at Town Hall, Auroville. (Please excuse the terrible video quality!)"
       files={[
         {
-          title: 'At Town Hall, Auroville',
+          title: 'Watch video',
           icon: 'youtube',
           link:
             'https://www.youtube.com/watch?v=YIUFjSzXn1Y&t=0s&index=7&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF',

@@ -32,6 +32,7 @@ module.exports = {
     'gatsby-plugin-remove-trailing-slashes',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-less',
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -39,7 +40,6 @@ module.exports = {
         path: `${__dirname}/content/`,
       },
     },
-    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {

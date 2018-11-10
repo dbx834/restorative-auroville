@@ -58,13 +58,13 @@ const Page = () => (
       <Col sm={24} md={15}>
         <h1 className="mask-h3">Newsletter</h1>
         <p>
-          Signup for our occasional newsletter and receive information about
-          future RC (and/or NVC) events.
+          Sign up for our occasional newsletter and receive information about
+          future RC (and/or Nonviolent Communication) events.
         </p>
         <NewsletterForm />
       </Col>
       <Col sm={24} md={9}>
-        <h1
+        <h2
           className="mask-h3"
           style={{ display: 'inline-block', position: 'relative' }}
         >
@@ -89,13 +89,13 @@ const Page = () => (
               rawHeight={900}
             />
           </div>
-        </h1>
+        </h2>
         <p>
-          Restorative Auroville is a project of{' '}
+          Restorative Auroville is an initative of&nbsp;
           <OutLink to="https://www.joylivinglearning.org/">
             Joy Living Learning
           </OutLink>
-          , a unit of the{' '}
+          , a unit of the&nbsp;
           <OutLink to="https://www.auroville.org/">
             Auroville Foundation
           </OutLink>

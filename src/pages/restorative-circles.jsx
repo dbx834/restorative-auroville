@@ -160,11 +160,14 @@ const Page = () => (
       </p>
 
       <p style={{ marginBottom: 0 }}>
-        <strong>How to Call a Circle</strong>: Send an email to
-        restorative@auroville.org.in, or speak in person to a member of{' '}
-        <Link to="/our-team">our team</Link>. A Facilitator will follow up with
-        you, hear your concerns, explain the RC process, and confirm whether
-        you’d like to go ahead with a Circle or not.
+        <strong>How to Call a Circle</strong>: Send an email to&nbsp;
+        <OutLink to="mailto:restorative@auroville.org.in">
+          restorative@auroville.org.in
+        </OutLink>
+        , or <Link to="/our-team">speak in person to a member of our team</Link>
+        . A Facilitator will follow up with you, hear your concerns, explain the
+        RC process, and confirm whether you’d like to go ahead with a Circle or
+        not.
       </p>
     </div>
 

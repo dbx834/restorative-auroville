@@ -131,7 +131,7 @@ const Initiative = props => {
         love, to forgive, to share, and to overcome our conditioned ideas of
         superiority versus inferiority.
       </p>
-      <PDFReader title="Flow" url="/project-assets/filmfest/filmfest.pdf" />
+      <PDFReader file="/project-assets/filmfest/filmfest.pdf" />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

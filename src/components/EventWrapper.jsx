@@ -99,6 +99,7 @@ const Page = props => {
     },
   }
   const dateStr = moment(frontmatter.date).format('ddd, MMMM D, YYYY')
+  console.log(children)
 
   return (
     <StandardPage className="" seoData={seoData}>

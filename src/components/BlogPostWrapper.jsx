@@ -84,11 +84,6 @@ const Page = props => {
           <div style={{ flexGrow: 1 }}>
             <h1 className="mask-h3">{title}</h1>
           </div>
-          <div style={{ flexGrow: 0, flexBasis: 0, paddingTop: 10 }}>
-            <Tag color="geekblue" style={{ cursor: 'unset' }}>
-              {category}
-            </Tag>
-          </div>
         </div>
         <p>
           {author}
@@ -125,7 +120,12 @@ const Page = props => {
           src={cover}
           rawWidth={1440}
           rawHeight={900}
-          style={{ border: 0, height: 'auto !important', marginBottom: 11 }}
+          style={{
+            marginBottom: 11,
+            maxWidth: 450,
+            height: 'auto',
+            border: 'unset',
+          }}
           className="mask-p"
         />
       </Header>

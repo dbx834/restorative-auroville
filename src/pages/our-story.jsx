@@ -143,8 +143,8 @@ const Page = () => (
         <br />
         <br />
         <Link to="/donate">
-          If you’d like to support this work and make a financial contribution
-          to keep it going, please donate here
+          If you’d like to support our work and make a financial contribution to
+          keep it going, please donate here
         </Link>
         .
       </p>

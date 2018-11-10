@@ -42,7 +42,7 @@ const pageData = {
 /** Page */
 const Page = () => (
   <BlogPostWrapper className="" pageData={pageData}>
-    Coming soon…
+    <p>Coming soon…</p>
     <DisqusComments pageData={pageData} />
   </BlogPostWrapper>
 )

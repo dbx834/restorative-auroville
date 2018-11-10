@@ -361,7 +361,13 @@ class EventsGrid extends React.Component {
           </Col>
           <Col sm={24} md={24} xl={9}>
             {!isUndefined(extraData) && (
-              <div>
+              <div
+                style={{
+                  background: '#f2f2f2',
+                  borderBottomLeftRadius: 8,
+                  borderBottomRightRadius: 8,
+                }}
+              >
                 <Image
                   src={getBanner(
                     extraData.node.frontmatter.cover,
@@ -373,31 +379,35 @@ class EventsGrid extends React.Component {
                     border: '1px solid #00006F',
                     height: 'auto',
                     width: '100%',
-                    marginBottom: 11,
+                    marginBottom: 5,
                   }}
                   className="mask-p"
                 />
-                <Link to={extraData.node.fields.route}>
-                  <h3 className="mask-h4">
-                    {extraData.node.frontmatter.title} ⇝
-                  </h3>
-                </Link>
-                <p>
-                  <AnimateOnChange
-                    baseClassName="animated"
-                    animationClassName="flash"
-                    animate={animate}
-                    onAnimationEnd={() => this.doneAnimating()}
-                  >
-                    <i>
-                      {extraData.node.fields.formattedDate}
-                      <br />
-                      {extraData.node.frontmatter.fromTime} -{' '}
-                      {extraData.node.frontmatter.toTime}
-                    </i>
-                  </AnimateOnChange>
-                </p>
-                <p>{extraData.node.frontmatter.abstract}</p>
+                <div style={{ padding: '0px 9px 9px' }}>
+                  <Link to={extraData.node.fields.route}>
+                    <h3 className="mask-h4">
+                      {extraData.node.frontmatter.title} ⇝
+                    </h3>
+                  </Link>
+                  <p>
+                    <AnimateOnChange
+                      baseClassName="animated"
+                      animationClassName="flash"
+                      animate={animate}
+                      onAnimationEnd={() => this.doneAnimating()}
+                    >
+                      <i>
+                        {extraData.node.fields.formattedDate}
+                        <br />
+                        {extraData.node.frontmatter.fromTime} -{' '}
+                        {extraData.node.frontmatter.toTime}
+                      </i>
+                    </AnimateOnChange>
+                  </p>
+                  <p style={{ marginBottom: 0 }}>
+                    {extraData.node.frontmatter.abstract}
+                  </p>
+                </div>
               </div>
             )}
           </Col>

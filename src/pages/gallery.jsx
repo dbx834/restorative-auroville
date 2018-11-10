@@ -192,7 +192,6 @@ const photos = [
   { src: nvcX81, width: 600, height: 415 },
   { src: nvcX82, width: 600, height: 555 },
   { src: nvcX83, width: 600, height: 450 },
-  { src: nvcX84, width: 600, height: 889 },
 ]
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -216,8 +215,7 @@ const seoData = seoHelper(pageData)
 const Page = () => (
   <StandardPage className="" seoData={seoData}>
     <Header>
-      <h1 className="mask-h3">Gallery</h1>
-      <p>Abstract</p>
+      <h1 className="mask-h3">Gallery – Restorative Auroville in Action…</h1>
     </Header>
     <Images photos={photos} loader="gradient" />
   </StandardPage>
