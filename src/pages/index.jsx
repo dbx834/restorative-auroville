@@ -51,6 +51,7 @@ import banner from '../assets/banner.png'
 import banner2 from '../assets/banner2.png'
 
 import p32 from '../assets/designing-our-justice-system-consciously.jpg'
+import p41 from '../assets/surya-on-restorative-circles.jpg'
 import bluePaintbrush from '../assets/bluePaintbrush.png'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -76,6 +77,38 @@ const styleObject = css({
       boxShadow: '2px 4px 0 0 #FF7D00',
     },
   },
+
+  '& .one': {
+    transition: 'all 300ms ease-in',
+
+    '&:hover': {
+      background: '#ffe59a',
+    },
+  },
+
+  '& .two': {
+    transition: 'all 300ms ease-in',
+
+    '&:hover': {
+      background: '#dfdffe',
+    },
+  },
+
+  '& .three': {
+    transition: 'all 300ms ease-in',
+
+    '&:hover': {
+      background: '#ffe7e7',
+    },
+  },
+
+  '& .four': {
+    transition: 'all 300ms ease-in',
+
+    '&:hover': {
+      background: '#bfd9bf',
+    },
+  },
 })
 const pageStyle = styleObject.toString()
 
@@ -87,282 +120,154 @@ const pageStyle = styleObject.toString()
  * @return {[type]} [description]
  */
 const VideoSeriesBlock1 = () => (
-  <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-    <Col sm={24} md={24} lg={15}>
-      <h2 className="mask-h3">"The Power of Dialogue"</h2>
-      <Image
-        src={p32}
-        style={{
-          background: 'transparent',
-          border: 'unset',
-          height: 'auto',
-          width: '100%',
-          marginBottom: 10,
-        }}
-        loader="gradient"
-        rawWidth={1440}
-        rawHeight={900}
-      />
-      <p>
-        <strong>3.2 Designing our Justice System Consciously</strong>
-        <br />
-        L'aura shares about her experience of engaging with Restorative Circles
-        in Auroville and the importance of designing a justice system
-        consciously, otherwise we'll just inherit the old ways.&nbsp;
-        <Link to="/the-power-of-dialogue">See more videos ⇝</Link>
-      </p>
-    </Col>
-    <Col sm={24} md={24} lg={9}>
-      <h3 className="mask-h3">Our Video Series</h3>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          height: '100%',
-        }}
-      >
-        <div>
-          <Link
-            to="/the-power-of-dialogue#the-craft"
-            style={{
-              marginBottom: 0,
-              borderLeft: '4px solid #FFBF00',
-              borderTop: '4px solid #FFBF00',
-              display: 'block',
-              paddingLeft: 12,
-            }}
-          >
-            <h4 className="mask-h4" style={{ marginBottom: 0 }}>
-              The Craft
-            </h4>
-            <p style={{ marginBottom: 30 }}>
-              <i>Learning the steps</i>
-            </p>
+  <div>
+    <h2 className="mask-h3" style={{ marginBottom: 0 }}>
+      "The Power of Dialogue"
+    </h2>
+    <p style={{ marginBottom: 30 }}>
+      <Link to="/the-power-of-dialogue">See more videos ⇝</Link>
+    </p>
+    <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
+      <Col sm={24} md={24} lg={8}>
+        <Image
+          src={p32}
+          style={{
+            background: 'transparent',
+            border: 'unset',
+            height: 'auto',
+            width: '100%',
+            marginBottom: 10,
+          }}
+          loader="gradient"
+          rawWidth={1440}
+          rawHeight={900}
+        />
+        <p>
+          L'aura shares about her experience of engaging with Restorative
+          Circles in Auroville and the importance of designing a justice system
+          consciously, otherwise we'll just inherit the old ways.&nbsp;
+          <Link to="/the-power-of-dialogue/designing-our-justice-system-consciously">
+            See video ⇝
           </Link>
-        </div>
-        <div>
-          <Link
-            to="/the-power-of-dialogue#in-action"
-            style={{
-              marginBottom: 0,
-              borderLeft: '4px solid #4949FC',
-              borderTop: '4px solid #4949FC',
-              display: 'block',
-              paddingLeft: 12,
-              marginLeft: '1vw',
-            }}
-          >
-            <h4 className="mask-h4" style={{ marginBottom: 0 }}>
-              In Action
-            </h4>
-            <p style={{ marginBottom: 30 }}>
-              <i>Snippets from live Circles</i>
-            </p>
+        </p>
+      </Col>
+      <Col sm={24} md={24} lg={8}>
+        <Image
+          src={p41}
+          style={{
+            background: 'transparent',
+            border: 'unset',
+            height: 'auto',
+            width: '100%',
+            marginBottom: 10,
+          }}
+          loader="gradient"
+          rawWidth={1440}
+          rawHeight={900}
+        />
+        <p>
+          Surya shares about her experiences with Restoratives Circles.&nbsp;
+          <Link to="/the-power-of-dialogue/surya-on-restorative-circles">
+            See video ⇝
           </Link>
-        </div>
-        <div>
-          <Link
-            to="/the-power-of-dialogue#the-restorative-system"
-            style={{
-              marginBottom: 0,
-              borderLeft: '4px solid #FF4D4D',
-              borderTop: '4px solid #FF4D4D',
-              display: 'block',
-              paddingLeft: 12,
-              marginLeft: '2vw',
-            }}
-          >
-            <h4 className="mask-h4" style={{ marginBottom: 0 }}>
-              The Restorative System
-            </h4>
-            <p style={{ marginBottom: 30 }}>
-              <i>Exploring justice in community</i>
-            </p>
-          </Link>
-        </div>
-        <div>
-          <Link
-            to="/the-power-of-dialogue#experiences"
-            style={{
-              marginBottom: 0,
-              borderLeft: '4px solid #5FA15F',
-              borderTop: '4px solid #5FA15F',
-              display: 'block',
-              paddingLeft: 12,
-              marginLeft: '3vw',
-            }}
-          >
-            <h4 className="mask-h4" style={{ marginBottom: 0 }}>
-              Experiences
-            </h4>
-            <p style={{ marginBottom: 30 }}>
-              <i>Participants share</i>
-            </p>
-          </Link>
-        </div>
-      </div>
-    </Col>
-  </Row>
-)
-
-/**
- * [description]
- * @return {[type]} [description]
- */
-const VideoSeriesBlock2 = () => (
-  <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-    <Col sm={24} md={24} lg={15}>
-      <h2 className="mask-h3">"The Power of Dialogue"</h2>
-      <Video url="https://www.youtube.com/watch?v=ur4OvDPkoSE" />
-      <p>
-        <strong>3.2 Designing our Justice System Consciously</strong>
-        <br />
-        L'aura shares about her experience of engaging with Restorative Circles
-        in Auroville and the importance of designing a justice system
-        consciously, otherwise we'll just inherit the old ways.&nbsp;
-        <Link to="/the-power-of-dialogue/designing-our-justice-system-consciously">
-          Visit page ⇝
-        </Link>
-      </p>
-      <p>
-        <Link to="/the-power-of-dialogue">See more videos ⇝</Link>
-      </p>
-    </Col>
-    <Col sm={24} md={24} lg={9}>
-      <h2 className="mask-h3">Testimonials</h2>
-      <p>
-        <i>
-          "I've done a lot of learning with L'aura, including a three day
-          conference & a ten week webinar, on the topic of Restorative Circles.
-          She is fantastic, is really insightful with first-hand experience
-          creating an RC system in a cross-cultural community. I love her
-          perspective and experience in NVC stuff as well. I sooo heartily
-          encourage you to check out her webinar series if you have any interest
-          (it's open to people outside of India too)."
-        </i>
-        &nbsp;~ Naomi Christine
-      </p>
-      <p>
-        <Link to="/the-power-of-dialogue">See more testimonials ⇝</Link>
-      </p>
-    </Col>
-  </Row>
-)
-
-/**
- * [description]
- * @return {[type]} [description]
- */
-const SummaryBlock = () => (
-  <div
-    style={{
-      paddingTop: 64,
-      paddingBottom: 12,
-      paddingLeft: '12.5%',
-      paddingRight: '12.5%',
-      position: 'relative',
-    }}
-    className="margin-p"
-  >
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        height: '100%',
-        zIndex: -2,
-        overflow: 'hidden',
-      }}
-    >
-      <Image
-        src={bluePaintbrush}
-        style={{
-          background: 'transparent',
-          border: 'unset',
-          height: '100%',
-          width: '100%',
-        }}
-        rawWidth={1440}
-        rawHeight={900}
-      />
-    </div>
-    <div className="margin-p">
-      <h2
-        className="mask-h2"
-        style={{
-          color: '#FFFFFF',
-        }}
-      >
-        Some of Our Offers…
-      </h2>
-      <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-        <Col sm={24} md={24} lg={8}>
-          <hr
-            style={{
-              borderTop: '6px solid #FFFFFF',
-              width: '12%',
-              marginLeft: 0,
-            }}
-          />
-          <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
-            Facilitate Circles
-          </h3>
-          <p style={{ color: '#FFFFFF' }}>
-            We facilitate Circles. Would you like a space to dialogue within the
-            context of community about something that’s challenging you?
-          </p>
-          <p>
-            <Link to="/restorative-circles" className="white">
-              See more ⇝
+        </p>
+      </Col>
+      <Col sm={24} md={24} lg={8}>
+        <h3 className="mask-h3">Our Video Series</h3>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            height: '100%',
+          }}
+        >
+          <div>
+            <Link
+              to="/the-power-of-dialogue#the-craft"
+              className="one"
+              style={{
+                marginBottom: 0,
+                borderLeft: '4px solid #FFBF00',
+                borderTop: '4px solid #FFBF00',
+                display: 'block',
+                paddingLeft: 12,
+              }}
+            >
+              <h4 className="mask-h5" style={{ marginBottom: 0 }}>
+                1. The Craft
+              </h4>
+              <p style={{ marginBottom: 20 }}>
+                <i>Learning the steps</i>
+              </p>
             </Link>
-          </p>
-        </Col>
-        <Col sm={24} md={24} lg={8}>
-          <hr
-            style={{
-              borderTop: '6px solid #FFFFFF',
-              width: '12%',
-              marginLeft: 0,
-            }}
-          />
-          <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
-            Bring RC to You
-          </h3>
-          <p style={{ color: '#FFFFFF' }}>
-            If you’d like Circles to be better understood and more widely used
-            within your networks (community, work place, schools), we’d love to
-            collaborate.
-          </p>
-          <p>
-            <Link to="/projects/ongoing" className="white">
-              See more ⇝
+          </div>
+          <div>
+            <Link
+              to="/the-power-of-dialogue#in-action"
+              className="two"
+              style={{
+                marginBottom: 0,
+                borderLeft: '4px solid #4949FC',
+                borderTop: '4px solid #4949FC',
+                display: 'block',
+                paddingLeft: 12,
+                marginLeft: '1vw',
+              }}
+            >
+              <h4 className="mask-h5" style={{ marginBottom: 0 }}>
+                2. In Action
+              </h4>
+              <p style={{ marginBottom: 20 }}>
+                <i>Snippets from live Circles</i>
+              </p>
             </Link>
-          </p>
-        </Col>
-        <Col sm={24} md={24} lg={8}>
-          <hr
-            style={{
-              borderTop: '6px solid #FFFFFF',
-              width: '12%',
-              marginLeft: 0,
-            }}
-          />
-          <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
-            Learn Together
-          </h3>
-          <p style={{ color: '#FFFFFF' }}>
-            We offer regular workshops and practice groups, both in person and
-            online. Join us!
-          </p>
-          <p>
-            <Link to="/events" className="white">
-              See more ⇝
+          </div>
+          <div>
+            <Link
+              to="/the-power-of-dialogue#the-restorative-system"
+              className="three"
+              style={{
+                marginBottom: 0,
+                borderLeft: '4px solid #FF4D4D',
+                borderTop: '4px solid #FF4D4D',
+                display: 'block',
+                paddingLeft: 12,
+                marginLeft: '2vw',
+              }}
+            >
+              <h4 className="mask-h5" style={{ marginBottom: 0 }}>
+                3. The Restorative System
+              </h4>
+              <p style={{ marginBottom: 20 }}>
+                <i>Exploring justice in community</i>
+              </p>
             </Link>
-          </p>
-        </Col>
-      </Row>
-    </div>
+          </div>
+          <div>
+            <Link
+              to="/the-power-of-dialogue#experiences"
+              className="four"
+              style={{
+                marginBottom: 0,
+                borderLeft: '4px solid #5FA15F',
+                borderTop: '4px solid #5FA15F',
+                display: 'block',
+                paddingLeft: 12,
+                marginLeft: '3vw',
+              }}
+            >
+              <h4 className="mask-h5" style={{ marginBottom: 0 }}>
+                4. Experiences
+              </h4>
+              <p style={{ marginBottom: 20 }}>
+                <i>Participants share</i>
+              </p>
+            </Link>
+          </div>
+        </div>
+      </Col>
+    </Row>
   </div>
 )
 
@@ -406,15 +311,15 @@ const Page = props => {
       <p>
         Restorative Auroville is an independent project that aims to bring the
         practice of&nbsp;
-        <OutLink to="https://www.restorativecircles.org">
-          Restorative Circles
-        </OutLink>
-        , a holistic, community-based form of conflict resolution, to Auroville,
-        and to explore what a consciously designed justice system could look
-        like here – one that reflects our ideals, but that is also effective and
-        has the power to bring about constructive change, both on the individual
-        and community levels.
+        <Link to="/restorative-circles">Restorative Circles</Link>, a holistic,
+        community-based form of conflict resolution, to Auroville, and to
+        explore what a consciously designed justice system could look like here
+        – one that reflects our ideals, but that is also effective and has the
+        power to bring about constructive change, both on the individual and
+        community levels.
       </p>
+
+      <EventsThisMonth data={data} />
 
       <ProjectHighlight />
 
@@ -422,10 +327,10 @@ const Page = props => {
 
       <div
         style={{
-          paddingTop: 64,
-          paddingBottom: 12,
-          paddingLeft: '12.5%',
-          paddingRight: '12.5%',
+          paddingTop: 48,
+          paddingBottom: 48,
+          paddingLeft: '10%',
+          paddingRight: '10%',
           position: 'relative',
         }}
         className="margin-p"
@@ -457,6 +362,7 @@ const Page = props => {
             className="mask-h2"
             style={{
               color: '#FFFFFF',
+              marginBottom: 20,
             }}
           >
             Get Involved Today…
@@ -470,14 +376,17 @@ const Page = props => {
                   marginLeft: 0,
                 }}
               />
-              <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
+              <h3
+                className="mask-h3"
+                style={{ color: '#FFFFFF', marginBottom: 10 }}
+              >
                 Volunteer & Apprentice
               </h3>
               <p style={{ color: '#FFFFFF' }}>
                 Would you like to immerse yourself in this work and learn by
                 doing? We’re looking for support!
               </p>
-              <p>
+              <p style={{ marginBottom: 0 }}>
                 <Link to="/volunteer" className="white">
                   See more ⇝
                 </Link>
@@ -491,7 +400,10 @@ const Page = props => {
                   marginLeft: 0,
                 }}
               />
-              <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
+              <h3
+                className="mask-h3"
+                style={{ color: '#FFFFFF', marginBottom: 10 }}
+              >
                 Donate
               </h3>
               <p style={{ color: '#FFFFFF' }}>
@@ -499,7 +411,7 @@ const Page = props => {
                 allow our passion to manifest even more powerfully! Please
                 consider donating.
               </p>
-              <p>
+              <p style={{ marginBottom: 0 }}>
                 <Link to="/donate" className="white">
                   Donate now ⇝
                 </Link>
@@ -513,14 +425,17 @@ const Page = props => {
                   marginLeft: 0,
                 }}
               />
-              <h3 className="mask-h3" style={{ color: '#FFFFFF' }}>
+              <h3
+                className="mask-h3"
+                style={{ color: '#FFFFFF', marginBottom: 10 }}
+              >
                 Be Our Film
               </h3>
               <p style={{ color: '#FFFFFF' }}>
                 We’re wanting to film a live Circle and to share this work with
                 the rest of the world. Would you like that Circle to be yours?
               </p>
-              <p>
+              <p style={{ marginBottom: 0 }}>
                 <Link
                   to="/projects/filming-a-live-restorative-circle"
                   className="white"
@@ -532,8 +447,6 @@ const Page = props => {
           </Row>
         </div>
       </div>
-
-      <EventsThisMonth data={data} />
 
       <TeamHighlight />
     </StandardPage>

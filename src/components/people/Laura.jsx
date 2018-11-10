@@ -21,7 +21,7 @@ import React from 'react'
 /** Person */
 const Person = () => (
   <div>
-    <h1 className="mask-h4">L'aura Joy</h1>
+    <h1 className="mask-h4">L'aura Joy – Founder</h1>
     <p>
       I was born and raised in Auroville, and life has lead me to work with
       nonviolence, peace and justice. I went to university to become a high
@@ -40,7 +40,7 @@ const Person = () => (
       October 2010. What I discovered was a whole new paradigm, and an
       absolutely transformative perspective into conflict and community.
     </p>
-    <p>
+    <p style={{ marginBottom: 0 }}>
       Given my NVC background and having grown up and lived most of my life in
       community, engaging with Restorative Circles felt like a natural next step
       – immersing myself and applying these principles into a dynamic, living

@@ -36,7 +36,7 @@ const Person = () => (
       sessions with children and adults, and starting a new housing project in
       which I faced many conflicts.
     </p>
-    <p>
+    <p style={{ marginBottom: 0 }}>
       In 2015 I took a Restorative Circles workshop and I was amazed by what was
       possible, how deep transformation could be if we were sincere and willing
       to enter into it. I joined the team, learned and practised the fundamental

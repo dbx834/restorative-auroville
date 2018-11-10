@@ -48,6 +48,12 @@ const renderSwitch = person => {
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 const circleStylesObject = css({
+  '& .child-circle.circle-active::after': {
+    fontWeight: 700,
+    textDecoration: 'underline',
+    fontSize: '15px',
+    color: '#e67100',
+  },
   '& .child-circle:nth-child(1)::after': {
     content: `"Shanti \\A 2015-2018"`,
     whiteSpace: 'pre',
@@ -111,18 +117,25 @@ class PastMembers extends React.Component {
     const { isMobile } = this.props
 
     return (
-      <div>
-        <h1 className="mask-h3">Past Members</h1>
+      <div
+        style={{
+          paddingLeft: 12,
+          borderLeft: `8px solid #1F1FFF`,
+          marginBottom: 48,
+        }}
+      >
+        <h1 className="mask-h3" style={{ marginBottom: 0 }}>
+          Past Members
+        </h1>
         <p>
-          But I somehow didn’t find this work as fulfilling as I had expected,
-          so I quit, not knowing what was coming next. In 2007, I
-          serendipitously ended up in a Nonviolent Communication workshop, and
-          this was the beginning of a new passion and career...
+          ↪ community members who have contributed to our project, and to whom
+          we are immensely grateful…
         </p>
         <div style={{ display: isMobile ? 'block' : 'flex' }}>
           <div className={`parent-circle ${circleStyles}`} ref="parent">
             <div
-              className="child-circle"
+              className={`${person === 'shanti' &&
+                'circle-active'} child-circle`}
               ref="child1"
               style={{
                 backgroundImage: `url(${shantiSquare})`,
@@ -137,7 +150,8 @@ class PastMembers extends React.Component {
               </p>
             </div>
             <div
-              className="child-circle"
+              className={`${person === 'helene' &&
+                'circle-active'} child-circle`}
               ref="child2"
               style={{
                 backgroundImage: `url(${heleneSquare})`,
@@ -149,12 +163,14 @@ class PastMembers extends React.Component {
             >
               <p>
                 <strong>
-                  Core Team<br />&nbsp;&nbsp;Member
+                  Core Team
+                  <br />
+                  &nbsp;&nbsp;Member
                 </strong>
               </p>
             </div>
             <div
-              className="child-circle"
+              className={`${person === 'rita' && 'circle-active'} child-circle`}
               ref="child3"
               style={{
                 backgroundImage: `url(${blueSquare})`,

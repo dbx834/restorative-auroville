@@ -21,7 +21,7 @@ import React from 'react'
 /** Person */
 const Person = () => (
   <div>
-    <h1 className="mask-h4">Kati Hötger</h1>
+    <h1 className="mask-h4">Kati Hötger – Core Team Member</h1>
     <p>I was born, raised and educated in Germany.</p>
     <p>
       Based in the city of Köln (Cologne) for 44 years, I made my professional
@@ -35,7 +35,7 @@ const Person = () => (
       Lanka and 18 months in Georgia/Central Asia) proved that I was on the
       right track.
     </p>
-    <p>
+    <p style={{ marginBottom: 0 }}>
       Learning and implementing Restorative Circles with L'aura and the
       Restorative Auroville team is another milestone in my never-ending
       learning process. I feel blessed that I can join our steps towards a

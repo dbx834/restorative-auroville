@@ -56,6 +56,12 @@ const renderSwitch = person => {
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 const circleStylesObject = css({
+  '& .child-circle.circle-active::after': {
+    fontWeight: 700,
+    textDecoration: 'underline',
+    fontSize: '15px',
+    color: '#e67100',
+  },
   '& .child-circle:nth-child(1)::after': {
     content: `"Kati"`,
   },
@@ -122,18 +128,21 @@ class ProjectWorkingTeam extends React.Component {
     const { person } = this.state
 
     return (
-      <div>
-        <h1 className="mask-h3">Project Working Team</h1>
-        <p>
-          But I somehow didn’t find this work as fulfilling as I had expected,
-          so I quit, not knowing what was coming next. In 2007, I
-          serendipitously ended up in a Nonviolent Communication workshop, and
-          this was the beginning of a new passion and career.
-        </p>
+      <div
+        style={{
+          paddingLeft: 12,
+          borderLeft: `8px solid #FABB00`,
+          marginBottom: 48,
+        }}
+      >
+        <h1 className="mask-h3" style={{ marginBottom: 0 }}>
+          Project Working Team
+        </h1>
+        <p>↪ run the larger project in all its aspects, from small to big…</p>
         <div style={{ display: isMobile ? 'block' : 'flex' }}>
           <div className={`parent-circle ${circleStyles}`} ref="parent">
             <div
-              className="child-circle"
+              className={`${person === 'kati' && 'circle-active'} child-circle`}
               ref="child1"
               style={{
                 backgroundImage: `url(${katiSquare})`,
@@ -145,12 +154,15 @@ class ProjectWorkingTeam extends React.Component {
             >
               <p>
                 <strong>
-                  Core Team<br />&nbsp;&nbsp;Member
+                  Core Team
+                  <br />
+                  &nbsp;&nbsp;Member
                 </strong>
               </p>
             </div>
             <div
-              className="child-circle"
+              className={`${person === 'janet' &&
+                'circle-active'} child-circle`}
               ref="child2"
               style={{
                 backgroundImage: `url(${janetSquare})`,
@@ -165,7 +177,8 @@ class ProjectWorkingTeam extends React.Component {
               </p>
             </div>
             <div
-              className="child-circle"
+              className={`${person === 'laura' &&
+                'circle-active'} child-circle`}
               ref="child3"
               style={{
                 backgroundImage: `url(${lauraSquare})`,
@@ -180,7 +193,8 @@ class ProjectWorkingTeam extends React.Component {
               </p>
             </div>
             <div
-              className="child-circle"
+              className={`${person === 'henrike' &&
+                'circle-active'} child-circle`}
               ref="child4"
               style={{
                 backgroundImage: `url(${henrikeSquare})`,
@@ -191,11 +205,16 @@ class ProjectWorkingTeam extends React.Component {
               onClick={() => this.showPerson('henrike')}
             >
               <p>
-                <strong>Apprentice</strong>
+                <strong>
+                  Core Team
+                  <br />
+                  &nbsp;&nbsp;Member
+                </strong>
               </p>
             </div>
             <div
-              className="child-circle"
+              className={`${person === 'pranjal' &&
+                'circle-active'} child-circle`}
               ref="child5"
               style={{
                 backgroundImage: `url(${pranjalSquare})`,
@@ -206,7 +225,11 @@ class ProjectWorkingTeam extends React.Component {
               onClick={() => this.showPerson('pranjal')}
             >
               <p>
-                <strong>Apprentice</strong>
+                <strong>
+                  Core Team
+                  <br />
+                  &nbsp;&nbsp;Member
+                </strong>
               </p>
             </div>
           </div>

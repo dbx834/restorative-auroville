@@ -21,8 +21,8 @@ import React from 'react'
 /** Person */
 const Person = () => (
   <div>
-    <h1 className="mask-h3">Rita</h1>
-    <p>Blah blah...</p>
+    <h1 className="mask-h4">Rita D'Souza-Lachaux</h1>
+    <p style={{ marginBottom: 0 }}>Coming soon...</p>
   </div>
 )
 

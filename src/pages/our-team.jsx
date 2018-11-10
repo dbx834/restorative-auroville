@@ -12,10 +12,10 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
-import Link from 'gatsby-link'
+// import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import OutLink from '@bodhi-project/components/lib/OutLink'
+// import OutLink from '@bodhi-project/components/lib/OutLink'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
@@ -51,18 +51,13 @@ const Page = props => {
   const { isMobile } = props
   return (
     <StandardPage className="" seoData={seoData}>
-      <h1 className="mask-h3">About Our Team</h1>
-      <p className="mask-p">
-        Restorative Auroville is an independent project that aims to bring the
-        practice of&nbsp;
-        <OutLink to="https://www.restorativecircles.org">
-          Restorative Circles
-        </OutLink>
-        , a holistic, community-based form of conflict resolution, to Auroville,
-        and to explore what a consciously designed justice system could look
-        like here – one that reflects our ideals, but that is also effective and
-        has the power to bring about constructive change, both on the individual
-        and community levels.
+      <h1 className="mask-h3">Our Teams</h1>
+      <p className="mask-p" style={{ marginBottom: 30 }}>
+        Who Are We? A small group of people passionate about human connection
+        and committed to walking towards increased community resilience. We lead
+        the larger Restorative Auroville project, we facilitate Circles, some of
+        us teach, some of us run our different initiatives, and more... And
+        we’re wanting to expand our team and our reach in the community.
       </p>
       <ProjectWorkingTeam isMobile={isMobile} />
       <FacilitatorsTeam isMobile={isMobile} />

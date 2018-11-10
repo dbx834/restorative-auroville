@@ -21,7 +21,7 @@ import React from 'react'
 /** Person */
 const Person = () => (
   <div>
-    <h1 className="mask-h4">Janet Fearn</h1>
+    <h1 className="mask-h4">Janet Fearn – Founder</h1>
     <p>
       In 1967 I left my job in Toronto, Canada as a psychiatric social worker,
       and bought an around the world plane ticket. I spent several months
@@ -39,7 +39,7 @@ const Person = () => (
       Auroville Councils, where I became more aware of Auroville’s need for
       better communication skills, and the tools to resolve conflict.
     </p>
-    <p>
+    <p style={{ marginBottom: 0 }}>
       I heard about Restorative Circles in 2010 from L’aura (my daughter) and
       Jason after they returned from a workshop in the US with Dominic Barter
       and immediately saw its potential for Auroville. Since that time I have

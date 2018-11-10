@@ -38,9 +38,9 @@ const toDegrees = angle => angle * (Math.PI / 180)
 const renderSwitch = person => {
   switch (person) {
     case 'henrike':
-      return <Henrike />
+      return <Henrike show={false} />
     case 'pranjal':
-      return <Pranjal />
+      return <Pranjal show={false} />
     case 'stefan':
       return <Stefan />
     case 'michelle':
@@ -58,6 +58,12 @@ const renderSwitch = person => {
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 const circleStylesObject = css({
+  '& .child-circle.circle-active::after': {
+    fontWeight: 700,
+    textDecoration: 'underline',
+    fontSize: '15px',
+    color: '#e67100',
+  },
   '& .child-circle:nth-child(1)::after': {
     content: `"Stefan"`,
   },
@@ -127,18 +133,25 @@ class Apprentices extends React.Component {
     const { isMobile } = this.props
 
     return (
-      <div>
-        <h1 className="mask-h3">Apprentices</h1>
+      <div
+        style={{
+          paddingLeft: 12,
+          borderLeft: `8px solid #8E3CFC`,
+          marginBottom: 48,
+        }}
+      >
+        <h1 className="mask-h3" style={{ marginBottom: 0 }}>
+          Apprentices
+        </h1>
         <p>
-          But I somehow didn’t find this work as fulfilling as I had expected,
-          so I quit, not knowing what was coming next. In 2007, I
-          serendipitously ended up in a Nonviolent Communication workshop, and
-          this was the beginning of a new passion and career…
+          ↪ community members who are journeying with us and integrating the RC
+          process and principles…
         </p>
         <div style={{ display: isMobile ? 'block' : 'flex' }}>
           <div className={`parent-circle ${circleStyles}`} ref="parent">
             <div
-              className="child-circle s"
+              className={`${person === 'stefan' &&
+                'circle-active'} child-circle s`}
               ref="child1"
               style={{
                 backgroundImage: `url(${stefanSquare})`,
@@ -153,7 +166,8 @@ class Apprentices extends React.Component {
               </p>
             </div>
             <div
-              className="child-circle s"
+              className={`${person === 'henrike' &&
+                'circle-active'} child-circle s`}
               ref="child2"
               style={{
                 backgroundImage: `url(${henrikeSquare})`,
@@ -168,7 +182,8 @@ class Apprentices extends React.Component {
               </p>
             </div>
             <div
-              className="child-circle s"
+              className={`${person === 'pranjal' &&
+                'circle-active'} child-circle s`}
               ref="child3"
               style={{
                 backgroundImage: `url(${pranjalSquare})`,
@@ -180,12 +195,14 @@ class Apprentices extends React.Component {
             >
               <p>
                 <strong>
-                  2017 -<br />present
+                  2017 -<br />
+                  present
                 </strong>
               </p>
             </div>
             <div
-              className="child-circle s"
+              className={`${person === 'michelle' &&
+                'circle-active'} child-circle s`}
               ref="child4"
               style={{
                 backgroundImage: `url(${blueSquare})`,
@@ -200,7 +217,8 @@ class Apprentices extends React.Component {
               </p>
             </div>
             <div
-              className="child-circle s"
+              className={`${person === 'celia' &&
+                'circle-active'} child-circle s`}
               ref="child5"
               style={{
                 backgroundImage: `url(${blueSquare})`,
@@ -215,7 +233,8 @@ class Apprentices extends React.Component {
               </p>
             </div>
             <div
-              className="child-circle s"
+              className={`${person === 'hamsini' &&
+                'circle-active'} child-circle s`}
               ref="child6"
               style={{
                 backgroundImage: `url(${blueSquare})`,

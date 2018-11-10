@@ -14,34 +14,43 @@ import React from 'react'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Person */
-const Person = () => (
+const Person = ({ show = true }) => (
   <div>
-    <h1 className="mask-h4">Pranjal Tiwari</h1>
+    <h1 className="mask-h4">
+      Pranjal Tiwari
+      <Fragment>{show === true && '– Core Team Member'}</Fragment>
+    </h1>
     <p>
-      Originally from the north of India, I grew up in Pondicherry at the Sri
-      Aurobindo Ashram School. I graduated in Political Science and
-      International Relations and then studied Peace and Conflict. To better
-      understand the ground realities of conflict, I volunteered in Jammu and
-      Kashmir, India where I was able to understand a little bit of its
-      complexity. I found myself lacking in skills to participate in any
-      resolution.
+      I grew up in Pondicherry and studied at the Sri Aurobindo International
+      Center of Education. In this environment of an integral education, I
+      graduated in Political Science and International Relations, studying Sri
+      Aurobindo’s social and political thought. In 2015, after having studied
+      Peace and Conflict with a focus on Jammu and Kashmir, I volunteered in the
+      Indo-Pak border area, to better understand the ground realities of
+      conflict. My time there gave me an understanding of the socio-political
+      complexity of a conflict but also made me feel frustrated as I longed to
+      contribute to conflict resolution and dialogue in the region.
     </p>
-    <p>
+    <p style={{ marginBottom: 0 }}>
       In my search for meaningful engagements with conflicts I came to
       Auroville, hoping to learn new ways to manage conflicts at the ‘City of
-      Dawn’. When I heard about mediating through restorative circles I was
-      naturally drawn to its attitude towards conflict, as a natural phenomenon
-      that needs understanding. I have been an apprentice at Restorative
-      Auroville since October 2017 and have learnt deeply about how to engage
-      with conflict. During my time as a volunteer, I’ve assisted in circles,
-      helped organize events like the Walk of Hope and Cross-cultural dialogue.
-      I’m convinced that the principles of Restorative circles are the way
-      forward to greater understanding and lasting harmony.
+      Dawn.’ When I attended a workshop in Restorative Circles I was intuitively
+      drawn to its attitude towards conflict, as a natural phenomenon that needs
+      understanding. I have been an apprentice at Restorative Auroville since
+      October 2017, and have had the opportunity to assist live Circles and
+      facilitate Pre-Circles and Semi-simulated Circles. I have been able to
+      integrate the qualities of presence and hearing and reflecting meaning
+      during difficult conversations. As a volunteer, I helped organize events
+      like the Walk of Hope and Cross-cultural Dialogue and assist in raising
+      awareness within the community. I’m convinced that the principles of
+      restorative justice are the way forward to greater understanding and
+      lasting harmony.
     </p>
   </div>
 )

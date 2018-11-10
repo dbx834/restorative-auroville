@@ -62,12 +62,12 @@ const ProjectHighlight = props => {
 
   return (
     <section className={blockStyle}>
-      <h2 className="mask-h3">Highlights: Some of our Ongoing Projects</h2>
+      <h2 className="mask-h3">Some of our Projects</h2>
       <p>
         Our approach at Restorative Auroville is to engage with the community at
         many levels and through different initiatives, with a real longing to
         grow and transform our systems together.&nbsp;
-        <Link to="/projects/ongoing">See Our Projects ⇝</Link>
+        <Link to="/projects/ongoing">See more projects ⇝</Link>
       </p>
       <ProjectListing
         data={ongoingProjects}
