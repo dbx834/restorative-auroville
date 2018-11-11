@@ -56,6 +56,37 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
     {
+      resolve: `gatsby-plugin-favicon`, // https://www.npmjs.com/package/gatsby-plugin-favicon
+      options: {
+        logo: './src/assets/logo.png',
+        // WebApp Manifest Configuration
+        appName: data.websiteName,
+        appDescription: data.websiteDescription,
+        developerName: data.org.name,
+        developerURL: data.org.url,
+        dir: 'auto',
+        lang: 'en-US',
+        background: '#fff',
+        theme_color: '#fff',
+        display: 'standalone',
+        orientation: 'any',
+        start_url: '/?homescreen=1',
+        version: '1.0',
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: true,
+          favicons: true,
+          firefox: true,
+          opengraph: true,
+          twitter: true,
+          yandex: true,
+          windows: true,
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: data.websiteName,

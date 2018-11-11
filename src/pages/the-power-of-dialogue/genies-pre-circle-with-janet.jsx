@@ -40,7 +40,9 @@ const Page = () => (
       (Genie), in her role as filmmaker, is also given an opportunity to be
       heard for her connection to the Circle.
     </p>
-    <Video url="https://www.youtube.com/watch?v=jbDGU3C_xww" />
+    <div style={{ maxWidth: '60em' }} className="margin-p">
+      <Video url="https://www.youtube.com/watch?v=jbDGU3C_xww" />
+    </div>
   </VideoWrapper>
 )
 

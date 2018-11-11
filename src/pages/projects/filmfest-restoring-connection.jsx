@@ -40,9 +40,10 @@ const photos = [
 // const { Fragment } = React;
 
 const pageData = {
-  pageTitle: 'FilmFest: Restoring Connection',
+  pageTitle: 'FilmFest: "Restoring Connection"',
   nakedPageSlug: 'projects/filmfest-restoring-connection',
-  pageAbstract: 'Page abstract.',
+  pageAbstract:
+    'Restorative Auroville hosted a 6-day Film Festival on the theme of “Restoring Connection” in October 2016 as part of our larger Restorative Circles project in Auroville, where we are working to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values.',
 }
 
 const seoData = seoHelper(pageData)
@@ -66,9 +67,9 @@ const Initiative = props => {
         <BItem>
           <Link to="/projects/past">Past Projects</Link>
         </BItem>
-        <BItem>"Restoring Connection" FilmFest</BItem>
+        <BItem>FilmFest: "Restoring Connection"</BItem>
       </Breadcrumb>
-      <h1 className="mask-h3">"Restoring Connection" FilmFest</h1>
+      <h1 className="mask-h3">FilmFest: "Restoring Connection"</h1>
       <p>
         Restorative Auroville hosted a 6-day Film Festival on the theme of
         “Restoring Connection” in October 2016 as part of our larger Restorative

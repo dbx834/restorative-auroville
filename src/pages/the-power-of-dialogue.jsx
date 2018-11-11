@@ -384,7 +384,7 @@ const Page = () => (
     </Row>
     <Theme
       border="#4A01AA"
-      title="Additional RC-Related Videos (2011 - present)"
+      title="Additional RC–Related Videos (2011 - present)"
       tag="Videos"
       text="Our RC-channel on YouTube, with somewhat regular updates."
       files={[

@@ -138,7 +138,11 @@ class ProjectWorkingTeam extends React.Component {
         <h1 className="mask-h3" style={{ marginBottom: 0 }}>
           Project Working Team
         </h1>
-        <p>↪ run the larger project in all its aspects, from small to big…</p>
+        <p>
+          <strong>
+            ↪ run the larger project in all its aspects, from small to big…
+          </strong>
+        </p>
         <div style={{ display: isMobile ? 'block' : 'flex' }}>
           <div className={`parent-circle ${circleStyles}`} ref="parent">
             <div

@@ -31,7 +31,8 @@ import seoHelper from '../../methods/seoHelper'
 const pageData = {
   pageTitle: 'Exploring Justice and RC with the Auroville Council',
   nakedPageSlug: 'projects/exploring-justice-and-rc-with-the-auroville-council',
-  pageAbstract: 'Page abstract.',
+  pageAbstract:
+    'Our dream: that our collective processes and individual posture would include: Being rooted in oneness; feeling a lived aspiration for this oneness, Walking towards each other with an open heart...',
 }
 
 const seoData = seoHelper(pageData)

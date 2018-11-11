@@ -41,7 +41,8 @@ const { Fragment } = React
 const pageData = {
   pageTitle: 'Restorative Dialogue across Cultures',
   nakedPageSlug: 'projects/restorative-dialogue-across-cultures',
-  pageAbstract: 'Page abstract.',
+  pageAbstract:
+    'We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?',
 }
 
 const seoData = seoHelper(pageData)
@@ -64,7 +65,9 @@ const Theme = props => {
       <h2 className="mask-h4">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <span>{title}</span>
-          <Tag color="geekblue">...from our Archives</Tag>
+          <Link to="/archives">
+            <Tag color="geekblue">...from our Archives</Tag>
+          </Link>
         </div>
       </h2>
       <p>{text}</p>
@@ -153,7 +156,7 @@ const Initiative = props => {
               border="#FA8F00"
               title="Restorative Dialogue across Cultures (2016)"
               tag="Projects & Reports"
-              text="Dummy text."
+              text="We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?"
               files={[
                 {
                   title: 'Project Proposal',

@@ -26,7 +26,13 @@
       { "title": "Volunteer & Apprentice", "link": "/volunteer" }
     ]
   },
-  { "title": "Our Projects", "link": "/projects/ongoing" },
+  {
+    "title": "Our Projects +",
+    "menu": [
+      { "title": "Ongoing Projects", "link": "/projects/ongoing" },
+      { "title": "Past Projects", "link": "/projects/past" }
+    ]
+  },
   { "title": "Our Team", "link": "/our-team" },
   {
     "title": "Donate",

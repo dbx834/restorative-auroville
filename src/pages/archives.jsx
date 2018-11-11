@@ -53,7 +53,10 @@ const Theme = props => {
   return (
     <div style={{ paddingLeft: 12, borderLeft: `8px solid ${border}` }}>
       <h2 className="mask-h4">
-        {title} <Tag color="geekblue">{tag}</Tag>
+        {title}{' '}
+        <Tag color="geekblue" style={{ cursor: 'default' }}>
+          {tag}
+        </Tag>
       </h2>
       <p>{text}</p>
       {!isUndefined(photos) && (
@@ -93,7 +96,7 @@ const Page = () => (
     </p>
     <Theme
       border="#4A01AA"
-      title="Additional RC-Related Videos (2011 - present)"
+      title="Additional RC–Related Videos (2011 - present)"
       tag="Videos"
       text="Our RC-channel on YouTube, with somewhat regular updates."
       files={[

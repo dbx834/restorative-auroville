@@ -144,8 +144,10 @@ class Apprentices extends React.Component {
           Apprentices
         </h1>
         <p>
-          ↪ community members who are journeying with us and integrating the RC
-          process and principles…
+          <strong>
+            ↪ community members who are journeying with us and integrating the
+            RC process and principles…
+          </strong>
         </p>
         <div style={{ display: isMobile ? 'block' : 'flex' }}>
           <div className={`parent-circle ${circleStyles}`} ref="parent">

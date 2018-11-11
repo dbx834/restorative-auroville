@@ -335,7 +335,7 @@ const Page = props => {
               flexDirection: 'column',
             }}
           >
-            <div style={{ flexGrow: 225, flexBasis: 0 }}>
+            <div style={{ flexGrow: 165, flexBasis: 0 }}>
               <Image
                 src={banner21}
                 rawWidth={1440}
@@ -349,7 +349,7 @@ const Page = props => {
                 alt="Restorative Auroville"
               />
             </div>
-            <div style={{ flexGrow: 175, flexBasis: 0 }}>
+            <div style={{ flexGrow: 195, flexBasis: 0 }}>
               <BannerLink
                 to="/restorative-circles"
                 bannerImage={banner22}
@@ -357,7 +357,7 @@ const Page = props => {
                 bannerHover={banner22Hover}
               />
             </div>
-            <div style={{ flexGrow: 175, flexBasis: 0 }}>
+            <div style={{ flexGrow: 195, flexBasis: 0 }}>
               <BannerLink
                 to="/projects/taking-rc-to-units-schools-and-residential-communities"
                 bannerImage={banner23}
@@ -365,7 +365,7 @@ const Page = props => {
                 bannerHover={banner23Hover}
               />
             </div>
-            <div style={{ flexGrow: 175, flexBasis: 0 }}>
+            <div style={{ flexGrow: 195, flexBasis: 0 }}>
               <BannerLink
                 to="/events"
                 bannerImage={banner24}

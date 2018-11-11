@@ -45,7 +45,8 @@ const photos = [
 const pageData = {
   pageTitle: 'Walk of Hope in Auroville and the Bioregion',
   nakedPageSlug: 'projects/walk-of-hope-in-auroville-and-the-bioregion',
-  pageAbstract: 'Page abstract.',
+  pageAbstract:
+    'Spreading the message of oneness, inclusion and respect and (re-)connect as Aurovilians, and with our neighbours in the surrounding villages.',
 }
 
 const seoData = seoHelper(pageData)
@@ -135,7 +136,7 @@ const Initiative = props => {
       </p>
       <p>
         The idea for a peace walk emerged from our projects like the FilmFest
-        "restoring connection" and the Cross-Cultural Dialogue, where many
+        "Restoring Connection" and the Cross-Cultural Dialogue, where many
         shared a real longing to feel more unity among Aurovilians, and between
         Auroville and the bioregion. Several also expressed a real fear and
         concern that if we do not work on our relationship and collaboration

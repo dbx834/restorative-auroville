@@ -36,7 +36,8 @@ import seoHelper from '../../methods/seoHelper'
 const pageData = {
   pageTitle: 'Cross-Cultural Dialogue',
   nakedPageSlug: 'projects/cross-cultural-dialogue',
-  pageAbstract: 'Page abstract.',
+  pageAbstract:
+    'In response to the recent claim of discrimination against some in the Tamil community in Auroville, we are hosting a 2-day Cross-Cultural Dialogue. We offer a space to explore this topic further and to have a deep sharing about our experiences and pain, as well as our felt sense of togetherness and aspiration to manifest Human Unity.',
 }
 
 const seoData = seoHelper(pageData)

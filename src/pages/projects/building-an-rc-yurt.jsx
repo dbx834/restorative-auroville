@@ -61,7 +61,7 @@ const Initiative = props => {
           <Link to="/">Home</Link>
         </BItem>
         <BItem>
-          <Link to="/projects/ongoing">Ongoing Projects</Link>
+          <Link to="/projects/ongoing">Projects</Link>
         </BItem>
         <BItem>Building an RC Yurt</BItem>
       </Breadcrumb>

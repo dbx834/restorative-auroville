@@ -43,7 +43,9 @@ const Page = () => (
       L'aura shares about her experience of engaging with Restorative Circles in
       Auroville and how it's received by the community.
     </p>
-    <Video url="https://www.youtube.com/watch?v=tuJrfIFd3IY" />
+    <div style={{ maxWidth: '60em' }} className="margin-p">
+      <Video url="https://www.youtube.com/watch?v=tuJrfIFd3IY" />
+    </div>
   </VideoWrapper>
 )
 

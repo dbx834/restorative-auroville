@@ -128,8 +128,10 @@ class PastMembers extends React.Component {
           Past Members
         </h1>
         <p>
-          ↪ community members who have contributed to our project, and to whom
-          we are immensely grateful…
+          <strong>
+            ↪ community members who have contributed to our project, and to whom
+            we are immensely grateful…
+          </strong>
         </p>
         <div style={{ display: isMobile ? 'block' : 'flex' }}>
           <div className={`parent-circle ${circleStyles}`} ref="parent">

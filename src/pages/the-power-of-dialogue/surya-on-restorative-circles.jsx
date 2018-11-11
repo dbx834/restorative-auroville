@@ -33,7 +33,9 @@ const seoData = seoHelper(pageData)
 const Page = () => (
   <VideoWrapper className="" seoData={seoData} pageData={pageData}>
     <p>Surya shares about her experiences with Restoratives Circles.</p>
-    <Video url="https://www.youtube.com/watch?v=uIyY6TDbnSQ" />
+    <div style={{ maxWidth: '60em' }} className="margin-p">
+      <Video url="https://www.youtube.com/watch?v=uIyY6TDbnSQ" />
+    </div>
   </VideoWrapper>
 )
 
