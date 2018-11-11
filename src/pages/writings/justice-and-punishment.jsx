@@ -19,7 +19,6 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import BlogPostWrapper from '../../components/BlogPostWrapper'
-import DisqusComments from '../../components/DisqusComments'
 
 // import seoHelper from '../../methods/seoHelper'
 
@@ -33,6 +32,12 @@ const pageData = {
   publishedTimestamp: 1446381350,
   category: 'Restorative Circle',
   author: "L'aura Joy",
+  next: {
+    nakedPageSlug: 'writings/la-responsabilite-de-tous',
+  },
+  prev: {
+    nakedPageSlug: 'writings/justice-in-auroville',
+  },
 }
 
 // const seoData = seoHelper(pageData)
@@ -248,7 +253,6 @@ const Page = () => (
       serious dialogue about these issues in Auroville – that we desperately
       lack a justice system.
     </p>
-    <DisqusComments pageData={pageData} />
   </BlogPostWrapper>
 )
 

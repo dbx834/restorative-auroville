@@ -7,14 +7,16 @@ import React from 'react'
 // import { css } from "glamor";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
-// import isUndefined from "lodash/isUndefined";
+import isUndefined from 'lodash/isUndefined'
+import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
+import OutLink from '@bodhi-project/components/lib/OutLink'
+import Images from '@bodhi-project/components/lib/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Row from 'antd/lib/row'
@@ -23,9 +25,16 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import Col from 'antd/lib/col'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
+import Tag from 'antd/lib/tag'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
+
+import Icon from 'antd/lib/icon'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../components/StandardPage'
 import DisqusComments from '../components/DisqusComments'
+import VideoCover from '../components/VideoCover'
 
 import seoHelper from '../methods/seoHelper'
 
@@ -48,6 +57,7 @@ import grungeBox from '../assets/grungeBg.jpg'
 import camera from '../assets/camera.png'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
 const pageData = {
   pageTitle: 'The Power of Dialogue',
   nakedPageSlug: 'the-power-of-dialogue',
@@ -64,6 +74,42 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
+/** Theme */
+const Theme = props => {
+  const { border, title, files, tag, text, photos, columns } = props
+  return (
+    <div style={{ paddingLeft: 12, borderLeft: `8px solid ${border}` }}>
+      <h2 className="mask-h4">
+        {title} <Tag color="geekblue">{tag}</Tag>
+      </h2>
+      <p>{text}</p>
+      {!isUndefined(photos) && (
+        <div className="mask-p">
+          <Images photos={photos} loader="gradient" columns={columns} />
+        </div>
+      )}
+      {!isUndefined(files) && (
+        <Fragment>
+          {map(files, file => {
+            return (
+              <p>
+                <OutLink to={file.link}>
+                  <Icon
+                    type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
+                    theme="outlined"
+                  />
+                  &nbsp;
+                  {file.title}
+                </OutLink>
+              </p>
+            )
+          })}
+        </Fragment>
+      )}
+    </div>
+  )
+}
+
 /** Page */
 const Page = () => (
   <StandardPage className="" seoData={seoData}>
@@ -208,28 +254,11 @@ const Page = () => (
     </div>
     <Row gutter={{ md: 24 }}>
       <Col md={8}>
-        <Link to="/the-power-of-dialogue/genies-pre-circle-with-janet">
-          <Image
-            src={p21}
-            style={{
-              background: 'transparent',
-              border: 'unset',
-              height: 'auto',
-              width: '100%',
-              marginBottom: 10,
-            }}
-            loader="gradient"
-            rawWidth={1440}
-            rawHeight={900}
-          />
-        </Link>
-        <p>
-          Before entering a Restorative Circle, Facilitators meet amongst
-          themselves to work through any challenging thoughts or feelings that
-          might interfere with their capacity to hold space during the Circle.
-          Eugénie Dumont (Genie), in her role as filmmaker, is also given an
-          opportunity to be heard for her connection to the Circle.
-        </p>
+        <VideoCover
+          to="/the-power-of-dialogue/genies-pre-circle-with-janet"
+          cover={p21}
+          text="Before entering a Restorative Circle, Facilitators meet amongst themselves to work through any challenging thoughts or feelings that might interfere with their capacity to hold space during the Circle. Eugénie Dumont (Genie), in her role as filmmaker, is also given an opportunity to be heard for her connection to the Circle."
+        />
       </Col>
       <Col md={8}>
         <Image
@@ -276,47 +305,18 @@ const Page = () => (
     </div>
     <Row gutter={{ md: 24 }}>
       <Col md={8}>
-        <Link to="/the-power-of-dialogue/engaging-with-restorative-circles-in-auroville">
-          <Image
-            src={p31}
-            style={{
-              background: 'transparent',
-              border: 'unset',
-              height: 'auto',
-              width: '100%',
-              marginBottom: 10,
-            }}
-            loader="gradient"
-            rawWidth={1440}
-            rawHeight={900}
-          />
-        </Link>
-        <p>
-          L'aura shares about her experience of engaging with Restorative
-          Circles in Auroville and how it's received by the community.
-        </p>
+        <VideoCover
+          to="/the-power-of-dialogue/engaging-with-restorative-circles-in-auroville"
+          cover={p31}
+          text="L'aura shares about her experience of engaging with Restorative Circles in Auroville and how it's received by the community."
+        />
       </Col>
       <Col md={8}>
-        <Link to="/the-power-of-dialogue/designing-our-justice-system-consciously">
-          <Image
-            src={p32}
-            style={{
-              background: 'transparent',
-              border: 'unset',
-              height: 'auto',
-              width: '100%',
-              marginBottom: 10,
-            }}
-            loader="gradient"
-            rawWidth={1440}
-            rawHeight={900}
-          />
-        </Link>
-        <p>
-          L'aura shares about her experience of engaging with Restorative
-          Circles in Auroville and the importance of designing a justice system
-          consciously, otherwise we'll just inherit the old ways.
-        </p>
+        <VideoCover
+          to="/the-power-of-dialogue/designing-our-justice-system-consciously"
+          cover={p32}
+          text="L'aura shares about her experience of engaging with Restorative Circles in Auroville and the importance of designing a justice system consciously, otherwise we'll just inherit the old ways."
+        />
       </Col>
       <Col md={8}>
         <Image
@@ -358,22 +358,11 @@ const Page = () => (
     </div>
     <Row gutter={{ md: 24 }}>
       <Col md={8}>
-        <Link to="/the-power-of-dialogue/surya-on-restorative-circles">
-          <Image
-            src={p41}
-            style={{
-              background: 'transparent',
-              border: 'unset',
-              height: 'auto',
-              width: '100%',
-              marginBottom: 10,
-            }}
-            loader="gradient"
-            rawWidth={1440}
-            rawHeight={900}
-          />
-        </Link>
-        <p>Surya shares about her experiences with Restoratives Circles.</p>
+        <VideoCover
+          to="/the-power-of-dialogue/surya-on-restorative-circles"
+          cover={p41}
+          text="Surya shares about her experiences with Restoratives Circles."
+        />
       </Col>
       <Col md={8}>
         <Image
@@ -393,6 +382,20 @@ const Page = () => (
       </Col>
       <Col md={8}>&nbsp;</Col>
     </Row>
+    <Theme
+      border="#4A01AA"
+      title="Additional RC-Related Videos (2011 - present)"
+      tag="Videos"
+      text="Our RC-channel on YouTube, with somewhat regular updates."
+      files={[
+        {
+          title: 'See videos',
+          icon: 'youtube',
+          link:
+            'https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF',
+        },
+      ]}
+    />
     <DisqusComments pageData={pageData} />
   </StandardPage>
 )

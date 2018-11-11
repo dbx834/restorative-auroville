@@ -112,10 +112,21 @@
         "ongoing": false
     },
     {
-        "pageTitle": "Restorative Circles in The Learning Community School",
+        "pageTitle": "Restorative Circles in TLC (the Learning Community School)",
         "nakedPageSlug": "projects/restorative-circles-in-the-learning-community-school",
-        "pageAbstract": "TLC abstract.",
-        "cover": "/projects/tlc.jpg",
+        "pageAbstract": "Coming soon.",
+        "cover": "/project-assets/tlc/cover.jpg",
+        "beginTimestamp": 1447239294,
+        "endTimestamp": 1451642919,
+        "category": "Restorative Circles",
+        "highlight": false,
+        "ongoing": false
+    },
+    {
+        "pageTitle": "World Cafés on Peace & Justice",
+        "nakedPageSlug": "projects/world-cafes-on-peace-and-justice",
+        "pageAbstract": "Coming soon.",
+        "cover": "/project-assets/world-cafes-on-peace-and-justice/cover.jpg",
         "beginTimestamp": 1451642919,
         "category": "Restorative Circles",
         "highlight": false,

@@ -19,7 +19,6 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import BlogPostWrapper from '../../components/BlogPostWrapper'
-import DisqusComments from '../../components/DisqusComments'
 
 // import seoHelper from '../../methods/seoHelper'
 
@@ -32,6 +31,12 @@ const pageData = {
   publishedTimestamp: 1527251750,
   category: 'Restorative Circle',
   author: 'Pranjal Tiwari',
+  next: {
+    nakedPageSlug: 'writings/can-we-talk-about-discrimination-in-auroville',
+  },
+  prev: {
+    nakedPageSlug: 'writings/restoring-connection',
+  },
 }
 
 // const seoData = seoHelper(pageData)
@@ -43,7 +48,6 @@ const pageData = {
 const Page = () => (
   <BlogPostWrapper className="" pageData={pageData}>
     <p>Coming soon…</p>
-    <DisqusComments pageData={pageData} />
   </BlogPostWrapper>
 )
 

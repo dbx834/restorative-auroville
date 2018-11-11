@@ -19,7 +19,6 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import BlogPostWrapper from '../../components/BlogPostWrapper'
-import DisqusComments from '../../components/DisqusComments'
 
 // import seoHelper from '../../methods/seoHelper'
 
@@ -33,6 +32,12 @@ const pageData = {
   publishedTimestamp: 1403699750,
   category: 'Restorative Circle',
   author: "L'aura Joy",
+  prev: {
+    nakedPageSlug: 'writings/dealing-with-conflict-in-restorative-circles',
+  },
+  next: {
+    nakedPageSlug: 'writings/justice-in-auroville',
+  },
 }
 
 // const seoData = seoHelper(pageData)
@@ -130,7 +135,6 @@ const Page = () => (
       how to move towards reconciliation, re-integration and willingness to
       co-exist…
     </p>
-    <DisqusComments pageData={pageData} />
   </BlogPostWrapper>
 )
 

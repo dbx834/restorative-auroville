@@ -92,8 +92,22 @@ const Page = () => (
       more.
     </p>
     <Theme
+      border="#4A01AA"
+      title="Additional RC-Related Videos (2011 - present)"
+      tag="Videos"
+      text="Our RC-channel on YouTube, with somewhat regular updates."
+      files={[
+        {
+          title: 'See videos',
+          icon: 'youtube',
+          link:
+            'https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF',
+        },
+      ]}
+    />
+    <Theme
       border="#FAE300"
-      title="&quot;Experiences with training and facilitating Restorative Circles and conflict resolution&quot;"
+      title='"Experiences with training and facilitating Restorative Circles and conflict resolution"'
       tag="Interview"
       text={
         <span>
@@ -135,7 +149,7 @@ const Page = () => (
     />
     <Theme
       border="#FABB00"
-      title="&quot;Create Auroville Together: Restorative Circles&quot; (2017)"
+      title='"Create Auroville Together: Restorative Circles" (2017)'
       tag="Public Presentations"
       text="A public presentation about RC at Unity Pavilion, Auroville."
       photos={[
@@ -177,7 +191,7 @@ const Page = () => (
     />
     <Theme
       border="#FAE300"
-      title="FilmFest: &quot;Restoring Connection&quot; (2016)"
+      title='FilmFest: "Restoring Connection" (2016)'
       tag="Projects & Reports"
       text="We screened documentaries and feature films about peace and reconciliation work from around the world, in an attempt to inspire a movement towards restorative justice in Auroville."
       files={[
@@ -235,7 +249,7 @@ const Page = () => (
       border="#FABB00"
       title="How Do We Dream It Could Be? (2014)"
       tag="Public Presentations"
-      text="We offered a public presentation about RC at Unity Pavilion, and explored about the question: &quot;How do we dream justice could be in Auroville?&quot;"
+      text='We offered a public presentation about RC at Unity Pavilion, and explored about the question: "How do we dream justice could be in Auroville?"'
       files={[
         {
           title: 'Watch video',

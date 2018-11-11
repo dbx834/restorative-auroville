@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 import map from 'lodash/map'
 import startsWith from 'lodash/startsWith'
 import isUndefined from 'lodash/isUndefined'
-import split from 'lodash/split'
+import replace from 'lodash/replace'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Link from 'gatsby-link'
@@ -96,7 +96,6 @@ class Nav extends React.Component {
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
           forceSubMenuRender
-          // subMenuCloseDelay={100}
         >
           {map(websiteMenu, topLevel => {
             const { title, menu, link } = topLevel
@@ -105,7 +104,7 @@ class Nav extends React.Component {
               returnObj = (
                 <SubMenu
                   title={<span style={{ fontSize: '82%' }}>{title}</span>}
-                  key={`${title}-${link}`}
+                  key={replace(title, ' +', '')}
                 >
                   {map(menu, subMenu => {
                     const { title: subTitle, link: thisLink } = subMenu

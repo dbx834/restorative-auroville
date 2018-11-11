@@ -5,7 +5,7 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 // import { css } from "glamor";
-import moment from 'moment'
+// import moment from 'moment'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import isNull from 'lodash/isNull'
@@ -63,8 +63,8 @@ const Page = props => {
     // pageTitle,
     pageTitle: title,
     nakedPageSlug: route,
-    publishedTimestamp,
-    author,
+    // publishedTimestamp,
+    // author,
     pageAbstract: abstract,
     cover,
     begins,
@@ -98,8 +98,7 @@ const Page = props => {
       url: `${data.websiteUrl}${route}`,
     },
   }
-  const dateStr = moment(frontmatter.date).format('ddd, MMMM D, YYYY')
-  console.log(children)
+  // const dateStr = moment(frontmatter.date).format('ddd, MMMM D, YYYY')
 
   return (
     <StandardPage className="" seoData={seoData}>

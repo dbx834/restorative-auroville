@@ -19,7 +19,6 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import BlogPostWrapper from '../../components/BlogPostWrapper'
-import DisqusComments from '../../components/DisqusComments'
 
 // import seoHelper from '../../methods/seoHelper'
 
@@ -34,6 +33,9 @@ const pageData = {
   publishedTimestamp: 1312202150,
   category: 'Restorative Circle',
   author: 'Auroville Today',
+  next: {
+    nakedPageSlug: 'writings/our-justice-system',
+  },
 }
 
 // const seoData = seoHelper(pageData)
@@ -160,7 +162,6 @@ const Page = () => (
     <p>
       <i>Elaine and Alan</i>
     </p>
-    <DisqusComments pageData={pageData} />
   </BlogPostWrapper>
 )
 

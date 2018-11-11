@@ -19,7 +19,6 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import BlogPostWrapper from '../../components/BlogPostWrapper'
-import DisqusComments from '../../components/DisqusComments'
 
 // import seoHelper from '../../methods/seoHelper'
 
@@ -33,6 +32,12 @@ const pageData = {
   publishedTimestamp: 1480595750,
   category: 'Restorative Circle',
   author: "L'aura Joy",
+  next: {
+    nakedPageSlug: 'writings/our-apprentice-pranjal-shares',
+  },
+  prev: {
+    nakedPageSlug: 'writings/la-responsabilite-de-tous',
+  },
 }
 
 // const seoData = seoHelper(pageData)
@@ -288,7 +293,6 @@ const Page = () => (
     <p>
       <i>From an interview by Alan</i>
     </p>
-    <DisqusComments pageData={pageData} />
   </BlogPostWrapper>
 )
 

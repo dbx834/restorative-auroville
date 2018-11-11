@@ -19,7 +19,6 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import BlogPostWrapper from '../../components/BlogPostWrapper'
-import DisqusComments from '../../components/DisqusComments'
 
 // import seoHelper from '../../methods/seoHelper'
 
@@ -33,6 +32,12 @@ const pageData = {
   publishedTimestamp: 1462106150,
   category: 'Restorative Circle',
   author: 'La Revue D’Auroville',
+  next: {
+    nakedPageSlug: 'writings/restoring-connection',
+  },
+  prev: {
+    nakedPageSlug: 'writings/justice-and-punishment',
+  },
 }
 
 // const seoData = seoHelper(pageData)
@@ -240,7 +245,6 @@ const Page = () => (
     <p>
       <i>Interview recueillie par Hamsini</i>
     </p>
-    <DisqusComments pageData={pageData} />
   </BlogPostWrapper>
 )
 

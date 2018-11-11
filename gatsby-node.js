@@ -127,7 +127,13 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     createNodeField({ node, name: 'humanDate', value: humanDate })
     createNodeField({ node, name: 'displayDate', value: displayDate })
     createNodeField({ node, name: 'route', value: route })
-    createNodeField({ node, name: 'rawContent', value: node.internal.content })
+
+    const regex = new RegExp('---([\\s\\S]*?)---')
+    createNodeField({
+      node,
+      name: 'rawContent',
+      value: _.replace(node.internal.content, regex, ' '),
+    })
     createNodeField({ node, name: 'beginDateInt', value: beginDateInt })
     createNodeField({ node, name: 'diff', value: diff })
     // console.log(node.internal.content);

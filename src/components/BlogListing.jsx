@@ -15,6 +15,7 @@ import map from 'lodash/map'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Link from 'gatsby-link'
 import StackGrid from 'react-stack-grid'
+import ContainerDimensions from 'react-container-dimensions'
 import { Header, Article } from '@bodhi-project/semantic-webflow'
 
 // // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
@@ -71,18 +72,49 @@ const blockStyleClass = blockStyle.toString()
 
 /** Cover */
 const Cover = ({ image, pageTitle }) => (
-  <Image
-    src={image}
-    rawWidth={1440}
-    rawHeight={900}
-    style={{
-      height: 'auto',
-      width: '100%',
-      border: 0,
-      background: 'transparent',
-    }}
-    alt={pageTitle}
-  />
+  <div>
+    <ContainerDimensions>
+      {({ width }) => {
+        const imageHeight = Math.round(width * 0.625)
+        return (
+          <div
+            style={{
+              height: imageHeight,
+              width: '100%',
+              display: 'block',
+              position: 'relative',
+            }}
+          >
+            <div
+              style={{
+                height: imageHeight,
+                width: '100%',
+                display: 'block',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                zIndex: -100,
+              }}
+            >
+              &nbsp;
+            </div>
+            <Image
+              src={image}
+              rawWidth={1440}
+              rawHeight={900}
+              style={{
+                height: 'auto',
+                width: '100%',
+                border: 0,
+                background: 'transparent',
+              }}
+              alt={pageTitle}
+            />
+          </div>
+        )
+      }}
+    </ContainerDimensions>
+  </div>
 )
 
 // ----------------------------------------------------------------------------
@@ -96,14 +128,30 @@ class Block extends React.Component {
 
     this.state = {
       filter: 'all',
+      alreadyRendered: false,
     }
 
+    this.grid = undefined
+
     this.applyFilter = this.applyFilter.bind(this)
+    this.reRender = this.reRender.bind(this)
   }
 
   /** applyFilter */
   applyFilter(f) {
     this.setState({ filter: f })
+  }
+
+  /** reRender */
+  reRender() {
+    const { alreadyRendered } = this.state
+    if (alreadyRendered === false) {
+      this.setState({ alreadyRendered: true })
+      setTimeout(() => {
+        this.grid.updateLayout()
+        this.setState({ alreadyRendered: false })
+      }, 50)
+    }
   }
 
   /** standard renderer */
@@ -168,7 +216,9 @@ class Block extends React.Component {
           duration={360}
           gutterWidth={20}
           gutterHeight={42}
-          monitorImagesLoaded={true}
+          monitorImagesLoaded={false}
+          gridRef={grid => (this.grid = grid)}
+          onLayout={this.reRender}
         >
           {map(filteredData, (card, index) => {
             const {

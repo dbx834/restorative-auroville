@@ -15,18 +15,9 @@ import { Type } from '@bodhi-project/typography'
 import {
   // --------------- Startup
   InitializeMeta,
-  // --------------- Basic
-  UpdateTitle,
-  GeneralMeta,
-  // --------------- Twitter
-  TwitterSummaryCard,
-  // --------------- Open Graph
-  OpenGraphSummary,
   // --------------- Schema.org JSON-LD
   WebsiteSchema,
   OrganisationSchema,
-  WebpageSchema,
-  BreadcrumbSchema,
 } from '@bodhi-project/seo'
 
 import { StickyContainer, Sticky } from 'react-sticky'
@@ -161,16 +152,10 @@ class Layout extends React.Component {
       <Type kit="dkc2ilk" style={{ minHeight: '100vh' }} className={pageStyles}>
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
         <InitializeMeta
-          data={{ titleTemplate: `${pageTitle} | Restorative Auroville` }}
+          data={{ titleTemplate: `%s | Restorative Auroville` }}
         />
         <WebsiteSchema data={websiteSchemaData} />
         <OrganisationSchema data={organisationSchemaData} />
-        <UpdateTitle title={pageTitle} />
-        <GeneralMeta data={generalMetaData} />
-        <TwitterSummaryCard data={twitterSummaryCardData} />
-        <OpenGraphSummary data={openGraphSummaryData} />
-        <WebpageSchema data={webpageSchemaData} />
-        <BreadcrumbSchema data={breadcrumbSchemaData} />
 
         <ResponsiveToggle id="appWrapper">
           {/* Mobile view */}

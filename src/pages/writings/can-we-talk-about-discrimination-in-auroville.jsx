@@ -19,7 +19,6 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import BlogPostWrapper from '../../components/BlogPostWrapper'
-import DisqusComments from '../../components/DisqusComments'
 
 // import seoHelper from '../../methods/seoHelper'
 
@@ -34,6 +33,9 @@ const pageData = {
   publishedTimestamp: 1527251750,
   category: 'Restorative Circle',
   author: 'Auroville Today',
+  prev: {
+    nakedPageSlug: 'writings/our-apprentice-pranjal-shares',
+  },
 }
 
 // const seoData = seoHelper(pageData)
@@ -162,7 +164,6 @@ const Page = () => (
       </i>
     </p>
     <p>~ Mother on Auroville, 8.2.1972</p>
-    <DisqusComments pageData={pageData} />
   </BlogPostWrapper>
 )
 

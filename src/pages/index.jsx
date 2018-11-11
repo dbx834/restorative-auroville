@@ -5,17 +5,8 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import { css } from 'glamor'
-import moment from 'moment'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-import map from 'lodash/map'
-import filter from 'lodash/filter'
-import reverse from 'lodash/reverse'
-import values from 'lodash/values'
-import isUndefined from 'lodash/isUndefined'
-import join from 'lodash/join'
-import isNull from 'lodash/isNull'
-import slice from 'lodash/slice'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Link from 'gatsby-link'
@@ -23,7 +14,6 @@ import withSizes from 'react-sizes'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
-import OutLink from '@bodhi-project/components/lib/OutLink'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Row from 'antd/lib/row'
@@ -36,24 +26,28 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../components/StandardPage'
-import Video from '../components/Video'
-import EventListing from '../components/EventListing'
 import EventsThisMonth from '../components/EventsThisMonth'
 
 import ProjectHighlight from '../components/home-page/ProjectHighlight'
-import ArticleHighlight from '../components/home-page/ArticleHighlight'
 import TeamHighlight from '../components/home-page/TeamHighlight'
-import Feedback from '../components/home-page/Feedback'
+import VideoCover from '../components/VideoCover'
 
 import seoHelper from '../methods/seoHelper'
 
 import banner from '../assets/banner.png'
-import banner2 from '../assets/banner2.png'
 
 import p32 from '../assets/designing-our-justice-system-consciously.jpg'
 import p41 from '../assets/surya-on-restorative-circles.jpg'
-import playNow from '../assets/playNow.jpg'
 import bluePaintbrush from '../assets/bluePaintbrush.png'
+
+import banner21 from '../assets/banner2-1.png'
+import banner25 from '../assets/banner2-5.png'
+import banner24Hover from '../assets/banner2-4-hover.png'
+import banner23Hover from '../assets/banner2-3-hover.png'
+import banner22Hover from '../assets/banner2-2-hover.png'
+import banner24 from '../assets/banner2-4.png'
+import banner23 from '../assets/banner2-3.png'
+import banner22 from '../assets/banner2-2.png'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
@@ -111,25 +105,15 @@ const styleObject = css({
     },
   },
 
-  '& .play-hover': {
-    position: 'relative',
-    cursor: 'pointer',
-
-    '& .hover-this': {
-      height: '100%',
-      width: '100%',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      opacity: 0,
+  '& .banner-hover': {
+    '& .hover': {
       transition: 'all 300ms ease-in',
+      opacity: 0,
     },
 
     '&:hover': {
-      background: 'red',
-
-      '& .hover-this': {
-        opacity: 0.6,
+      '& .hover': {
+        opacity: 1,
       },
     },
   },
@@ -153,62 +137,18 @@ const VideoSeriesBlock1 = () => (
     </p>
     <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
       <Col sm={24} md={24} lg={8}>
-        <Image
-          src={p32}
-          style={{
-            background: 'transparent',
-            border: 'unset',
-            height: 'auto',
-            width: '100%',
-            marginBottom: 10,
-          }}
-          loader="gradient"
-          rawWidth={1440}
-          rawHeight={900}
+        <VideoCover
+          to="/the-power-of-dialogue/designing-our-justice-system-consciously"
+          cover={p32}
+          text="L'aura shares about her experience of engaging with Restorative Circles in Auroville and the importance of designing a justice system consciously, otherwise we'll just inherit the old ways."
         />
-        <p>
-          L'aura shares about her experience of engaging with Restorative
-          Circles in Auroville and the importance of designing a justice system
-          consciously, otherwise we'll just inherit the old ways.&nbsp;
-          <Link to="/the-power-of-dialogue/designing-our-justice-system-consciously">
-            See video ⇝
-          </Link>
-        </p>
       </Col>
       <Col sm={24} md={24} lg={8}>
-        <Link to="/the-power-of-dialogue/surya-on-restorative-circles">
-          <div className="play-hover">
-            <Image
-              src={p41}
-              style={{
-                background: 'transparent',
-                border: 'unset',
-                height: 'auto',
-                width: '100%',
-                marginBottom: 10,
-              }}
-              loader="gradient"
-              rawWidth={1440}
-              rawHeight={900}
-            />
-            <div className="hover-this">
-              <Image
-                src={playNow}
-                style={{
-                  background: 'transparent',
-                  border: 'unset',
-                  height: 'auto',
-                  width: '100%',
-                  marginBottom: 10,
-                }}
-                loader="gradient"
-                rawWidth={1440}
-                rawHeight={900}
-              />
-            </div>
-          </div>
-        </Link>
-        <p>Surya shares about her experiences with Restoratives Circles.</p>
+        <VideoCover
+          to="/the-power-of-dialogue/surya-on-restorative-circles"
+          cover={p41}
+          text="Surya shares about her experiences with Restoratives Circles."
+        />
       </Col>
       <Col sm={24} md={24} lg={8}>
         <h3 className="mask-h4">Our Video Series</h3>
@@ -309,13 +249,70 @@ const VideoSeriesBlock1 = () => (
   </div>
 )
 
+/**
+ * [description]
+ * @param  {[type]} banner      [description]
+ * @param  {[type]} bannerHover [description]
+ * @return {[type]}             [description]
+ */
+const BannerLink = ({ to, alt, bannerImage, bannerHover }) => (
+  <Link to={to}>
+    <div
+      style={{
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        display: 'block',
+      }}
+      className="banner-hover"
+    >
+      <Image
+        src={bannerImage}
+        rawWidth={1440}
+        rawHeight={350}
+        style={{
+          height: 'auto',
+          width: '100%',
+          border: 0,
+          background: 'transparent',
+        }}
+        alt={alt}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          display: 'block',
+        }}
+        className="hover"
+      >
+        <Image
+          src={bannerHover}
+          rawWidth={1440}
+          rawHeight={350}
+          style={{
+            height: 'auto',
+            width: '100%',
+            border: 0,
+            background: 'transparent',
+          }}
+          alt={alt}
+        />
+      </div>
+    </div>
+  </Link>
+)
+
 /** Page */
 const Page = props => {
   const { data, isMobile } = props
 
   return (
     <StandardPage className={pageStyle} seoData={seoData}>
-      <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
+      <Row gutter={{ xs: 4, sm: 6, md: 8 }}>
         <Col sm={24} md={24} lg={16}>
           <Image
             src={banner}
@@ -331,18 +328,66 @@ const Page = props => {
           />
         </Col>
         <Col sm={24} md={24} lg={8}>
-          <Image
-            src={banner2}
-            rawWidth={720}
-            rawHeight={900}
+          <div
             style={{
-              height: 'auto',
-              width: '100%',
-              border: 0,
-              background: 'transparent',
+              display: 'flex',
+              justifyContent: 'flex-start',
+              flexDirection: 'column',
             }}
-            alt="Restorative Auroville"
-          />
+          >
+            <div style={{ flexGrow: 225, flexBasis: 0 }}>
+              <Image
+                src={banner21}
+                rawWidth={1440}
+                rawHeight={450}
+                style={{
+                  height: 'auto',
+                  width: '100%',
+                  border: 0,
+                  background: 'transparent',
+                }}
+                alt="Restorative Auroville"
+              />
+            </div>
+            <div style={{ flexGrow: 175, flexBasis: 0 }}>
+              <BannerLink
+                to="/restorative-circles"
+                bannerImage={banner22}
+                alt="We offer Restorative Circles"
+                bannerHover={banner22Hover}
+              />
+            </div>
+            <div style={{ flexGrow: 175, flexBasis: 0 }}>
+              <BannerLink
+                to="/projects/taking-rc-to-units-schools-and-residential-communities"
+                bannerImage={banner23}
+                alt="We can bring Restorative Circles to your community"
+                bannerHover={banner23Hover}
+              />
+            </div>
+            <div style={{ flexGrow: 175, flexBasis: 0 }}>
+              <BannerLink
+                to="/events"
+                bannerImage={banner24}
+                alt="We offer learning opportunities"
+                bannerHover={banner24Hover}
+              />
+            </div>
+            <div style={{ flexGrow: 150, flexBasis: 0 }}>
+              <Image
+                src={banner25}
+                rawWidth={1440}
+                rawHeight={300}
+                style={{
+                  height: 'auto',
+                  width: '100%',
+                  border: 0,
+                  background: 'transparent',
+                }}
+                alt="Restorative Auroville"
+              />
+            </div>
+          </div>
         </Col>
       </Row>
       <h1 className="mask-h3">Restorative Auroville</h1>

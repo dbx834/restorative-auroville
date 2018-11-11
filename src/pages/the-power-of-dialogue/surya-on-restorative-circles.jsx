@@ -9,8 +9,7 @@ import React from 'react'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../../components/StandardPage'
-import DisqusComments from '../../components/DisqusComments'
+import VideoWrapper from '../../components/VideoWrapper'
 import Video from '../../components/Video'
 import seoHelper from '../../methods/seoHelper'
 
@@ -32,12 +31,10 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 /** Page */
 const Page = () => (
-  <StandardPage className="" seoData={seoData}>
-    <h1 className="mask-h3">Surya on Restorative Circles</h1>
+  <VideoWrapper className="" seoData={seoData} pageData={pageData}>
     <p>Surya shares about her experiences with Restoratives Circles.</p>
     <Video url="https://www.youtube.com/watch?v=uIyY6TDbnSQ" />
-    <DisqusComments pageData={pageData} />
-  </StandardPage>
+  </VideoWrapper>
 )
 
 // ----------------------------------------------------------------------------

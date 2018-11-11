@@ -9,14 +9,13 @@ import React from 'react'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../../components/StandardPage'
-import DisqusComments from '../../components/DisqusComments'
+import VideoWrapper from '../../components/VideoWrapper'
 import Video from '../../components/Video'
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: 'Engaging with Restorative Circles in Auroville',
+  pageTitle: '3.1 Engaging with Restorative Circles in Auroville',
   nakedPageSlug:
     'the-power-of-dialogue/engaging-with-restorative-circles-in-auroville',
   pageAbstract:
@@ -24,6 +23,11 @@ const pageData = {
 }
 
 const seoData = seoHelper(pageData)
+
+const next = {
+  nakedPageSlug:
+    'the-power-of-dialogue/designing-our-justice-system-consciously',
+}
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -34,15 +38,13 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 /** Page */
 const Page = () => (
-  <StandardPage className="" seoData={seoData}>
-    <h1 className="mask-h3">Engaging with Restorative Circles in Auroville</h1>
+  <VideoWrapper className="" seoData={seoData} pageData={pageData} next={next}>
     <p>
       L'aura shares about her experience of engaging with Restorative Circles in
       Auroville and how it's received by the community.
     </p>
     <Video url="https://www.youtube.com/watch?v=tuJrfIFd3IY" />
-    <DisqusComments pageData={pageData} />
-  </StandardPage>
+  </VideoWrapper>
 )
 
 // ----------------------------------------------------------------------------

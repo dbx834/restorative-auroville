@@ -108,6 +108,89 @@ const Footer = props => {
       />
       <SemanticFooter className={footerStyles}>
         <h1 className="mask-h3">More Information</h1>
+        <h3 className="mask-h6">About</h3>
+        <ul
+          className="mask-p"
+          style={{
+            listStyle: 'none',
+            paddingLeft: 0,
+            marginBottom: 0,
+          }}
+        >
+          <li>
+            <Link to="/about-restorative-auroville">Restorative Auroville</Link>
+          </li>
+          <li>
+            <Link to="/our-team">Our Team</Link>
+          </li>
+          <li>
+            <Link to="/our-restorative-system-in-auroville">Our RC System</Link>
+          </li>
+        </ul>
+        <h3 className="mask-h6">Our Work</h3>
+        <ul
+          className="mask-p"
+          style={{
+            listStyle: 'none',
+            paddingLeft: 0,
+            marginBottom: 0,
+          }}
+        >
+          <li>
+            <Link to="/projects/ongoing">Projects</Link>
+          </li>
+          <li>
+            <Link to="/archives">Archives</Link>
+          </li>
+          <li>
+            <Link to="/writings">Articles</Link>
+          </li>
+          <li>
+            <Link to="/gallery">Gallery</Link>
+          </li>
+        </ul>
+        <h3 className="mask-h6">External Links</h3>
+        <ul
+          className="mask-p"
+          style={{
+            listStyle: 'none',
+            paddingLeft: 0,
+            marginBottom: 0,
+          }}
+        >
+          <li>
+            <OutLink to="https://www.joylivinglearning.org/">
+              Joy Living Learning
+            </OutLink>
+          </li>
+          <li>
+            <OutLink to="https://www.restorativecircles.org/">
+              Dominic Barter & RC
+            </OutLink>
+          </li>
+          <li>
+            <OutLink to="https://www.indianvc.org/">NVC India</OutLink>
+          </li>
+          <li>
+            <OutLink to="https://www.auroville.org/">Auroville</OutLink>
+          </li>
+        </ul>
+        <h3 className="mask-h6">Get Involved</h3>
+        <ul
+          className="mask-p"
+          style={{
+            listStyle: 'none',
+            paddingLeft: 0,
+            marginBottom: 0,
+          }}
+        >
+          <li>
+            <Link to="/volunteer">Volunteer & Apprentice</Link>
+          </li>
+          <li>
+            <Link to="/newsletter">Newsletter</Link>
+          </li>
+        </ul>
         <div
           style={{
             borderBottom: '1px dotted #00006F',
@@ -175,6 +258,8 @@ const Footer = props => {
                 alt="See more videos on Vimeo - https://vimeo.com/laurajoyful"
               />
             </OutLink>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <OutLink
               to="https://soundcloud.com/laura-joy-145472107"
               style={{ marginLeft: 17 }}
@@ -245,37 +330,6 @@ const Footer = props => {
                 height="1"
               />
             </form>
-          </div>
-        </div>
-        <div
-          style={{
-            borderBottom: '1px dotted #00006F',
-            paddingBottom: 12,
-            paddingTop: 12,
-          }}
-        >
-          <h3 className="mask-h6">Project Highlight</h3>
-          <div className="mask-p">
-            <Image
-              src={nvcX62}
-              rawWidth={1440}
-              rawHeight={900}
-              style={{
-                border: 0,
-                background: 'transparent',
-              }}
-            />
-          </div>
-          <p>
-            <strong>Cross-Cultural Dialogue</strong>
-            <br />
-            2018
-            <br />
-            We want to explore and understand this question: Are we divided in
-            Auroville, as local Tamil Aurovilians and non-local Aurovilians?
-          </p>
-          <div className="mask-p" style={{ marginBottom: 0 }}>
-            <Link to="/projects/cross-cultural-dialogue">Read more ⇝</Link>
           </div>
         </div>
         <div
