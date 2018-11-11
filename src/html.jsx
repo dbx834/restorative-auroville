@@ -30,6 +30,10 @@ export default class HTML extends React.Component {
       <html lang="en" className="lk-loading">
         <head>
           <meta name="fragment" content="!" />
+          <meta
+            name="google-site-verification"
+            content="n2SY_8oYGU5Ah3Wtv_67FE5ldl9cQb8Ru8G9guzxPjI"
+          />
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
