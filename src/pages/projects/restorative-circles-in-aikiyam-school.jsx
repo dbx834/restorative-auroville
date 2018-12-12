@@ -20,8 +20,7 @@ import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../../components/StandardPage'
-import EqualHalves from '../../components/EqualHalves'
+import StandardPage from '../../components/wrappers/StandardPage'
 import PDFReader from '../../components/PDFReader'
 
 import DisqusComments from '../../components/DisqusComments'

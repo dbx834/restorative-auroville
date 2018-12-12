@@ -21,11 +21,10 @@ import {
 import { StickyContainer, Sticky } from 'react-sticky'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import ResponsiveToggle from '@bodhi-project/components/lib/ResponsiveToggle'
 import Container from '@bodhi-project/components/lib/Container'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import '../../styles/index.less'
+import '../../styles/index.css'
 import indexImage from '../../assets/launch.jpg'
 import data from '../../data/website.json'
 
@@ -137,50 +136,38 @@ class Layout extends React.Component {
         <UpdateTitle title="Loading..." />
         <WebsiteSchema data={websiteSchemaData} />
         <OrganisationSchema data={organisationSchemaData} />
-        <ResponsiveToggle id="appWrapper">
-          {/* Mobile view */}
-          <div id="mobile-app">
-            <MobileNav {...this.props} />
-            <div id="contentWrapper">
-              <Container
-                noFade
-                bleed
-                block
-                id="content"
-                style={{ paddingLeft: 6, paddingRight: 6 }}
-              >
-                {children}
-                <MobileFooter />
+        <StickyContainer>
+          <header className="desktop-only" id="menuWrapper">
+            <Container goldenMajor block noFade>
+              <WebsiteTitle />
+            </Container>
+            <Sticky topOffset={100}>
+              {({ style, isSticky }) => (
+                <div id="menuWrapper" style={style}>
+                  <DesktopNav isSticky={isSticky} {...this.props} />
+                </div>
+              )}
+            </Sticky>
+          </header>
+          <aside className="mobile-only">
+            <MobileNav />
+          </aside>
+          <div id="contentWrapper">
+            <Container noFade goldenMajor block id="content">
+              {children}
+              <div className="mobile-only">
+                <aside>
+                  <MobileFooter />
+                </aside>
+              </div>
+            </Container>
+            <div className="desktop-only">
+              <Container noFade goldenMajor block>
+                <DesktopFooter />
               </Container>
             </div>
           </div>
-
-          {/* Desktop view */}
-          <div id="desktop-app">
-            <StickyContainer>
-              <header>
-                <Container goldenMajor block noFade>
-                  <WebsiteTitle />
-                </Container>
-                <Sticky topOffset={100}>
-                  {({ style, isSticky }) => (
-                    <div id="menuWrapper" style={style}>
-                      <DesktopNav isSticky={isSticky} {...this.props} />
-                    </div>
-                  )}
-                </Sticky>
-              </header>
-              <div id="contentWrapper">
-                <Container noFade goldenMajor block id="content">
-                  {children}
-                </Container>
-                <Container noFade goldenMajor block>
-                  <DesktopFooter />
-                </Container>
-              </div>
-            </StickyContainer>
-          </div>
-        </ResponsiveToggle>
+        </StickyContainer>
       </Type>
     )
   }

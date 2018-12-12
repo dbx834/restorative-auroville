@@ -20,10 +20,10 @@ import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../../components/StandardPage'
+import StandardPage from '../../components/wrappers/StandardPage'
 import seoHelper from '../../methods/seoHelper'
 
-import ProjectListing from '../../components/ProjectListing'
+import ProjectListing from '../../components/lists/ProjectListing'
 import projects from '../../data/projects.json'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions

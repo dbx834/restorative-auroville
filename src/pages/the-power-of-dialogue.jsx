@@ -32,7 +32,7 @@ import Icon from 'antd/lib/icon'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../components/StandardPage'
+import StandardPage from '../components/wrappers/StandardPage'
 import DisqusComments from '../components/DisqusComments'
 import VideoCover from '../components/VideoCover'
 

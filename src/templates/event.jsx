@@ -21,7 +21,7 @@ import treeParser from '@bodhi-project/markdown-to-react/lib/treeParser'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import EventWrapper from '../components/EventWrapper'
+import EventWrapper from '../components/wrappers/EventWrapper'
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component

@@ -28,8 +28,8 @@ import Icon from 'antd/lib/icon'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import ContactForm from '../components/ContactForm'
-import StandardPage from '../components/StandardPage'
+import ContactForm from '../components/forms/ContactForm'
+import StandardPage from '../components/wrappers/StandardPage'
 
 import seoHelper from '../methods/seoHelper'
 

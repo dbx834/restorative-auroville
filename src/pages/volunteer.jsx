@@ -25,7 +25,7 @@ import Col from 'antd/lib/col'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../components/StandardPage'
+import StandardPage from '../components/wrappers/StandardPage'
 import VolunteerForm from '../components/VolunteerForm'
 
 import seoHelper from '../methods/seoHelper'
@@ -103,8 +103,8 @@ const Page = () => (
         Facilitators, etc."
       />
       <Li
-        text="&quot;Teach&quot; or share the RC craft with others (workshop setting, or
-        practice group, or individual coaching, etc)."
+        text='"Teach" or share the RC craft with others (workshop setting, or
+        practice group, or individual coaching, etc).'
       />
       <Li
         text="Design additional resources/material (training material, or

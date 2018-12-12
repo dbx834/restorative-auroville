@@ -18,8 +18,8 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../components/StandardPage'
-import EventsGrid from '../components/EventsGrid'
+import StandardPage from '../components/wrappers/StandardPage'
+import EventsGrid from '../components/lists/EventsGrid'
 
 import seoHelper from '../methods/seoHelper'
 

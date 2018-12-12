@@ -31,7 +31,7 @@ import Tooltip from 'antd/lib/tooltip'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tooltip/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../components/StandardPage'
+import StandardPage from '../components/wrappers/StandardPage'
 
 import seoHelper from '../methods/seoHelper'
 

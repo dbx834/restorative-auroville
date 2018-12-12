@@ -13,6 +13,7 @@ import React from 'react'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 // import Link from 'gatsby-link';
 import OutLink from '@bodhi-project/components/lib/OutLink'
+import PDFReader from '@bodhi-project/components/lib/PDFReader'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 // import Image from '@bodhi-project/components/lib/Image'
@@ -20,8 +21,7 @@ import OutLink from '@bodhi-project/components/lib/OutLink'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../components/StandardPage'
-import PDFReader from '../components/PDFReader'
+import StandardPage from '../components/wrappers/StandardPage'
 import EqualHalves from '../components/EqualHalves'
 import Video from '../components/Video'
 
@@ -55,7 +55,7 @@ const Page = () => (
   <StandardPage className="" seoData={seoData}>
     <h1 className="mask-h3">Our Restorative System in Auroville</h1>
     <div style={{ marginBottom: 10 }}>
-      <PDFReader file="/av-rc-system.pdf" />
+      <PDFReader url="/av-rc-system.pdf" />
     </div>
     <p>
       Conflict is a natural, inevitable part of living together, and Auroville

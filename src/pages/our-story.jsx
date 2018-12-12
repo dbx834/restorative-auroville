@@ -20,7 +20,7 @@ import OutLink from '@bodhi-project/components/lib/OutLink'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../components/StandardPage'
+import StandardPage from '../components/wrappers/StandardPage'
 import GoldenMajorHalves from '../components/GoldenMajorHalves'
 
 import seoHelper from '../methods/seoHelper'

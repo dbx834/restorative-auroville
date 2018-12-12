@@ -8,7 +8,7 @@ import React from 'react'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import VideoWrapper from '../../components/VideoWrapper'
+import VideoWrapper from '../../components/wrappers/VideoWrapper'
 import Video from '../../components/Video'
 
 import seoHelper from '../../methods/seoHelper'

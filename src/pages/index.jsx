@@ -25,8 +25,8 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../components/StandardPage'
-import EventsThisMonth from '../components/EventsThisMonth'
+import StandardPage from '../components/wrappers/StandardPage'
+import EventsThisMonth from '../components/lists/EventsThisMonth'
 
 import ProjectHighlight from '../components/home-page/ProjectHighlight'
 import TeamHighlight from '../components/home-page/TeamHighlight'

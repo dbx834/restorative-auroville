@@ -18,7 +18,7 @@ import OutLink from '@bodhi-project/components/lib/OutLink'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import BlogPostWrapper from '../../components/BlogPostWrapper'
+import BlogPostWrapper from '../../components/wrappers/BlogPostWrapper'
 
 // import seoHelper from '../../methods/seoHelper'
 

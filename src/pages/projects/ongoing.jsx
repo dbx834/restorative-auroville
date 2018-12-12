@@ -20,8 +20,8 @@ import withSizes from 'react-sizes'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../../components/StandardPage'
-import ProjectListing from '../../components/ProjectListing'
+import StandardPage from '../../components/wrappers/StandardPage'
+import ProjectListing from '../../components/lists/ProjectListing'
 
 import seoHelper from '../../methods/seoHelper'
 
