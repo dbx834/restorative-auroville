@@ -140,6 +140,7 @@ class Layout extends React.Component {
         }}
         id="appWrapper"
       >
+        <div style={{ opacity: 0 }}>Hello!</div>
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
         <InitializeMeta
           data={{ titleTemplate: '%s | Restorative Auroville' }}
@@ -179,6 +180,7 @@ class Layout extends React.Component {
             </div>
           </div>
         </StickyContainer>
+        <div style={{ opacity: 0 }}>Hello2!</div>
       </Type>
     )
   }
