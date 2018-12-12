@@ -12,7 +12,6 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
-// import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 // import OutLink from '@bodhi-project/components/lib/OutLink'

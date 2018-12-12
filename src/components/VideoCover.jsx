@@ -9,7 +9,6 @@ import { css } from 'glamor'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
@@ -17,6 +16,8 @@ import Image from '@bodhi-project/components/lib/Image'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Link from './Link'
+
 import playNow from '../assets/playNow.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions

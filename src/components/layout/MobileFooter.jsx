@@ -14,7 +14,6 @@ import isString from 'lodash/isString'
 import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from 'gatsby-link'
 import { FacebookProvider, Page as FBPage } from 'react-facebook'
 import { Footer as SemanticFooter } from '@bodhi-project/semantic-webflow'
 import ContainerDimensions from 'react-container-dimensions'
@@ -38,7 +37,9 @@ import payu from '../../assets/payu.png'
 import soundcloud from '../../assets/soundcloud.png'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import nvcX62 from '../../assets/gallery/nvcX62.jpg'
+import Link from '../Link'
+
+// import nvcX62 from '../../assets/gallery/nvcX62.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React

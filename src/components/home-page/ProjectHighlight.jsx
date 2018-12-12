@@ -13,13 +13,13 @@ import reverse from 'lodash/reverse'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
-import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Link from '../Link'
 import ProjectListing from '../lists/ProjectListing'
 import projects from '../../data/projects.json'
 

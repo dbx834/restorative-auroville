@@ -11,7 +11,6 @@ import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
@@ -32,6 +31,7 @@ import Icon from 'antd/lib/icon'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 import DisqusComments from '../components/DisqusComments'
 import VideoCover from '../components/VideoCover'

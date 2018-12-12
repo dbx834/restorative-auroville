@@ -12,7 +12,6 @@ import map from 'lodash/map'
 import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from 'gatsby-link'
 import StackGrid from 'react-stack-grid'
 import ContainerDimensions from 'react-container-dimensions'
 import { Header, Article } from '@bodhi-project/semantic-webflow'
@@ -25,6 +24,7 @@ import Card from 'antd/lib/card'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/card/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Link from '../Link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 

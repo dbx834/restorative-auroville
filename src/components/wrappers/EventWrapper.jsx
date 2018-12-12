@@ -11,7 +11,6 @@ import React from 'react'
 import isNull from 'lodash/isNull'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from 'gatsby-link'
 import { EventSchema } from '@bodhi-project/seo'
 import { Header, Footer } from '@bodhi-project/semantic-webflow'
 import { FacebookProvider, Like as FBLike } from 'react-facebook'
@@ -30,6 +29,8 @@ import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Link from '../Link'
+
 import StandardPage from './StandardPage'
 
 import seoHelper from '../../methods/seoHelper'

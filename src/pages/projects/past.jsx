@@ -12,7 +12,6 @@ import sortBy from 'lodash/sortBy'
 import reverse from 'lodash/reverse'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from 'gatsby-link'
 import withSizes from 'react-sizes'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
@@ -20,6 +19,7 @@ import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Link from '../../components/Link'
 import StandardPage from '../../components/wrappers/StandardPage'
 import seoHelper from '../../methods/seoHelper'
 

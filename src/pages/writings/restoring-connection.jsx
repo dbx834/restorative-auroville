@@ -10,7 +10,6 @@ import React from 'react'
 // import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// import Link from 'gatsby-link';
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 // import Image from '@bodhi-project/components/lib/Image'

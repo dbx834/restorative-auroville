@@ -11,7 +11,6 @@ import React from 'react'
 // import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// import Link from 'gatsby-link';
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import OutLink from '@bodhi-project/components/lib/OutLink'
@@ -28,6 +27,7 @@ import Icon from 'antd/lib/icon'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+// import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 
 import seoHelper from '../methods/seoHelper'

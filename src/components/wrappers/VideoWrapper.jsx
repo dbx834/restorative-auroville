@@ -8,7 +8,6 @@ import React from 'react'
 import isNull from 'lodash/isNull'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from 'gatsby-link'
 import { FacebookProvider, Like as FBLike } from 'react-facebook'
 import { Article, Header, Footer } from '@bodhi-project/semantic-webflow'
 
@@ -17,6 +16,8 @@ import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Link from '../Link'
+
 import StandardPage from './StandardPage'
 import DisqusComments from '../DisqusComments'
 

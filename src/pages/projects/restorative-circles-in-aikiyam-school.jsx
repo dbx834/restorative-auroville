@@ -8,10 +8,9 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import Image from '@bodhi-project/components/lib/Image'
+// import Image from '@bodhi-project/components/lib/Image'
 import Images from '@bodhi-project/components/lib/Images'
 import OutLink from '@bodhi-project/components/lib/OutLink'
 
@@ -20,6 +19,7 @@ import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Link from '../../components/Link'
 import StandardPage from '../../components/wrappers/StandardPage'
 import PDFReader from '../../components/PDFReader'
 

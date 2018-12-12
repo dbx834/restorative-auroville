@@ -10,10 +10,9 @@ import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
-import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-import OutLink from '@bodhi-project/components/lib/OutLink'
+// import OutLink from '@bodhi-project/components/lib/OutLink'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Row from 'antd/lib/row'
@@ -24,6 +23,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import PersonCircle from '../PersonCircle'
+import Link from '../Link'
 
 import lauraSquare from '../../assets/lauraSquare.jpg'
 import janetSquare from '../../assets/janetSquare.jpg'

@@ -11,7 +11,6 @@ import moment from 'moment'
 import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from 'gatsby-link'
 import { BlogPostSchema } from '@bodhi-project/seo'
 import { Article, Header, Footer } from '@bodhi-project/semantic-webflow'
 import { FacebookProvider, Like as FBLike } from 'react-facebook'
@@ -24,6 +23,7 @@ import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Link from '../Link'
 import StandardPage from './StandardPage'
 
 import seoHelper from '../../methods/seoHelper'
@@ -64,6 +64,11 @@ const Page = props => {
     datePublished: 'isoDate',
     description: abstract,
     publisher: data.org.name,
+    publisherLogo: {
+      url: data.org.logo,
+      height: 900,
+      width: 900,
+    },
   }
 
   return (

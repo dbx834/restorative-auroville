@@ -13,7 +13,6 @@ import isUndefined from 'lodash/isUndefined'
 import replace from 'lodash/replace'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from 'gatsby-link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import OutLink from '@bodhi-project/components/lib/OutLink'
@@ -23,6 +22,8 @@ import Menu from 'antd/lib/menu'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/menu/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Link from '../Link'
+
 import websiteMenu from '../../data/menu.json'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions

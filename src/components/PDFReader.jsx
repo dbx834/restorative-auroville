@@ -141,7 +141,7 @@ class PDFReader extends React.Component {
    * @return {[type]} [description]
    */
   render() {
-    console.log('hit')
+    // console.log('hit')
     const { file } = this.props
     let pagination = null
     const { canRender } = this.state

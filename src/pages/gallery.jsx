@@ -11,7 +11,6 @@ import React from 'react'
 // import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from 'gatsby-link'
 import { Header } from '@bodhi-project/semantic-webflow'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
@@ -21,6 +20,7 @@ import Images from '@bodhi-project/components/lib/Images'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+// import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 
 import seoHelper from '../methods/seoHelper'

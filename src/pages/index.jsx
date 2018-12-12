@@ -9,7 +9,6 @@ import { css } from 'glamor'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from 'gatsby-link'
 import withSizes from 'react-sizes'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
@@ -25,6 +24,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 import EventsThisMonth from '../components/lists/EventsThisMonth'
 

@@ -3,50 +3,58 @@
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
-// import PropTypes from 'prop-types'
-// import { css } from "glamor";
+import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
+import startsWith from 'lodash/startsWith'
+import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { Link as GatsbyLink } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-// import Image from '@bodhi-project/components/lib/Image'
+import OutLink from '@bodhi-project/components/lib/OutLink'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import StandardPage from '../../components/wrappers/StandardPage'
-
-import seoHelper from '../../methods/seoHelper'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const pageData = {
-  pageTitle: 'Shanti',
-  nakedPageSlug: 'shanti',
-  pageAbstract: 'Page abstract.',
-}
-
-const seoData = seoHelper(pageData)
+const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** Page */
-const Page = () => (
-  <StandardPage className="" seoData={seoData}>
-    <h1 className="mask-h3">Shanti</h1>
-    <p>
-      I was born and grew up in Montreal City, Quebec (the French-speaking part
-      of Canada). After studying pure sciences at college I started to study and
-      practice painting and engraving. In parallel I started to look inside
-      myself, trying to understand who I was and what happiness was.
-    </p>
-  </StandardPage>
-)
+/** Link */
+const Link = ({ to, children, ...props }) => {
+  const isOutLink = startsWith(to, 'http') || startsWith(to, 'https')
+  const isHashLink = startsWith(to, '#') || isUndefined(to)
 
-// ----------------------------------------------------------------------------
+  return (
+    <Fragment>
+      {isOutLink === true ? (
+        <OutLink to={to} {...props}>
+          {children}
+        </OutLink>
+      ) : (
+        <Fragment>
+          {isHashLink === true ? (
+            <a href="#" {...props}>
+              {children}
+            </a>
+          ) : (
+            <GatsbyLink to={to} {...props}>
+              {children}
+            </GatsbyLink>
+          )}
+        </Fragment>
+      )}
+    </Fragment>
+  )
+}
+
+Link.propTypes = {
+  to: PropTypes.string,
+}
+
 // --------------------------------------------------------------------- Export
-// ----------------------------------------------------------------------------
-export default Page
+export default Link

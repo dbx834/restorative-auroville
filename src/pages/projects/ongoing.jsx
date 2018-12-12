@@ -12,7 +12,6 @@ import sortBy from 'lodash/sortBy'
 import reverse from 'lodash/reverse'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link from 'gatsby-link'
 import withSizes from 'react-sizes'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
@@ -20,6 +19,7 @@ import withSizes from 'react-sizes'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Link from '../../components/Link'
 import StandardPage from '../../components/wrappers/StandardPage'
 import ProjectListing from '../../components/lists/ProjectListing'
 

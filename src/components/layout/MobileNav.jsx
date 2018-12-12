@@ -22,7 +22,6 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
 import Icon from 'antd/lib/icon'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 
-import Link from 'gatsby-link'
 // import OutLink from "@bodhi-project/components/lib/OutLink";
 import Image from '@bodhi-project/components/lib/Image'
 
@@ -30,6 +29,7 @@ import Image from '@bodhi-project/components/lib/Image'
 import logo from '../../assets/logoColor.png'
 import wavesTop from '../../assets/wavesTop.png'
 
+import Link from '../Link'
 import Nav from './Nav'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions

@@ -10,7 +10,6 @@ import { css } from 'glamor'
 // import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// import Link from 'gatsby-link';
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 // import OutLink from '@bodhi-project/components/lib/OutLink'

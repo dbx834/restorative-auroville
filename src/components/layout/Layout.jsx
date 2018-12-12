@@ -24,7 +24,7 @@ import { StickyContainer, Sticky } from 'react-sticky'
 import Container from '@bodhi-project/components/lib/Container'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import '../../styles/index.css'
+import '../../styles/index.less'
 import indexImage from '../../assets/launch.jpg'
 import data from '../../data/website.json'
 
