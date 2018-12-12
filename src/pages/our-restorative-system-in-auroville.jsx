@@ -54,7 +54,7 @@ const Page = () => (
   <StandardPage className="" seoData={seoData}>
     <h1 className="mask-h3">Our Restorative System in Auroville</h1>
     <div style={{ marginBottom: 10 }}>
-      <PDFReader url="/av-rc-system.pdf" />
+      <PDFReader url="https://www.restorativeauroville.org/av-rc-system.pdf" />
     </div>
     <p>
       Conflict is a natural, inevitable part of living together, and Auroville

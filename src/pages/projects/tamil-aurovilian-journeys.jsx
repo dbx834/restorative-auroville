@@ -11,6 +11,7 @@ import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
+import PDFReader from '@bodhi-project/components/lib/PDFReader'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
@@ -21,8 +22,6 @@ import Link from '../../components/Link'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
-
-import PDFReader from '../../components/PDFReader'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
@@ -123,7 +122,7 @@ const Initiative = props => {
       <p>Please know that any amount is greatly appreciated.</p>
 
       <div className="margin-p">
-        <PDFReader file="/project-assets/magazine/proposal.pdf" />
+        <PDFReader url="https://www.restorativeauroville.org/project-assets/magazine/proposal.pdf" />
         &nbsp;
       </div>
       <DisqusComments pageData={pageData} />

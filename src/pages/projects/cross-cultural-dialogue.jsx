@@ -14,6 +14,7 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
 import Images from '@bodhi-project/components/lib/Images'
+import PDFReader from '@bodhi-project/components/lib/PDFReader'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
@@ -25,7 +26,6 @@ import StandardPage from '../../components/wrappers/StandardPage'
 import EqualHalves from '../../components/EqualHalves'
 import GoldenMajorHalves from '../../components/GoldenMajorHalves'
 import GrungeBox from '../../components/GrungeBox'
-import PDFReader from '../../components/PDFReader'
 
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
@@ -143,15 +143,15 @@ const Initiative = props => {
         </div>
       </EqualHalves>
       <div className="margin-p">
-        <PDFReader file="/project-assets/ccd/ccd-english.pdf" />
+        <PDFReader url="https://www.restorativeauroville.org/project-assets/ccd/ccd-english.pdf" />
         &nbsp;
       </div>
       <div className="margin-p">
-        <PDFReader file="/project-assets/ccd/ccd-tamil.pdf" />
+        <PDFReader url="https://www.restorativeauroville.org/project-assets/ccd/ccd-tamil.pdf" />
         &nbsp;
       </div>
       <div className="margin-p">
-        <PDFReader file="/project-assets/ccd/ccd-action-list.pdf" />
+        <PDFReader url="https://www.restorativeauroville.org/project-assets/ccd/ccd-action-list.pdf" />
         &nbsp;
       </div>
       <h2 className="mask-h4" style={{ marginBottom: 0 }}>

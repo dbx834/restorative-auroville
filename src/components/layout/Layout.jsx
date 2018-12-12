@@ -128,7 +128,18 @@ class Layout extends React.Component {
     const { children } = this.props
 
     return (
-      <Type kit="dkc2ilk" style={{ minHeight: '100vh' }} className={pageStyles}>
+      <Type
+        kit="dkc2ilk"
+        style={{ minHeight: '100vh' }}
+        className={pageStyles}
+        options={{
+          range: [12, 20], // Min and Max font-sizes
+          paragraphSpacingFactor: 1.2, // Greater for tighter paragraph-paragraph spacing
+          headingParagraphGapSpacingFactor: 0, // Greater for tighter header-paragraph spacing
+          indentParagraphs: false,
+        }}
+        id="appWrapper"
+      >
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
         <InitializeMeta
           data={{ titleTemplate: '%s | Restorative Auroville' }}

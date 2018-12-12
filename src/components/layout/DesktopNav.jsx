@@ -44,6 +44,10 @@ const desktopNavStyle = css({
   },
 
   '& .ant-menu': {
+    '&:before,:after': {
+      display: 'none',
+    },
+
     '& li(:first-child)': {
       marginLeft: 0,
     },

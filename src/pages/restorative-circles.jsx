@@ -72,6 +72,7 @@ const Page = () => (
       mutual understanding, self-responsibility and effective action within the
       community.
     </p>
+    &nbsp;
     <div
       style={{
         marginLeft: '6.25vw',
@@ -132,7 +133,6 @@ const Page = () => (
         </div>
       </Col>
     </Row>
-
     <div
       style={{
         border: '2px solid #FABB00',
@@ -170,7 +170,6 @@ const Page = () => (
         not.
       </p>
     </div>
-
     <br />
     <br />
     <br />

@@ -12,6 +12,7 @@ import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Images from '@bodhi-project/components/lib/Images'
+import PDFReader from '@bodhi-project/components/lib/PDFReader'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
@@ -21,7 +22,6 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/c
 import Link from '../../components/Link'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
-import PDFReader from '../../components/PDFReader'
 import seoHelper from '../../methods/seoHelper'
 
 import nvcX42 from '../../assets/gallery/nvcX42.jpg'
@@ -132,7 +132,7 @@ const Initiative = props => {
         love, to forgive, to share, and to overcome our conditioned ideas of
         superiority versus inferiority.
       </p>
-      <PDFReader file="/project-assets/filmfest/filmfest.pdf" />
+      <PDFReader url="https://www.restorativeauroville.org/project-assets/filmfest/filmfest.pdf" />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

@@ -129,6 +129,7 @@ const Page = () => (
       schools, public presentations and interactions, large-scale events,
       experiments, testimonials, and more.
     </p>
+    &nbsp;
     <div
       style={{
         paddingTop: 48,

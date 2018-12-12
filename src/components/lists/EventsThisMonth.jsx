@@ -330,7 +330,7 @@ class EventsGrid extends React.Component {
     const { active, nextActive } = this.state
 
     return (
-      <div className={pageStyles}>
+      <div className={`${pageStyles} desktop-only`}>
         <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
           <Col sm={24} md={24} xl={15}>
             <h1 className="mask-h3">Workshops & Events</h1>

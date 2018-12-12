@@ -327,7 +327,7 @@ const Page = props => {
             alt="Restorative Auroville"
           />
         </Col>
-        <Col sm={24} md={24} lg={8}>
+        <Col sm={0} md={0} lg={8}>
           <div
             style={{
               display: 'flex',

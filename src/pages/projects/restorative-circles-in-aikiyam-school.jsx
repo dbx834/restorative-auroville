@@ -13,6 +13,7 @@ import PropTypes from 'prop-types'
 // import Image from '@bodhi-project/components/lib/Image'
 import Images from '@bodhi-project/components/lib/Images'
 import OutLink from '@bodhi-project/components/lib/OutLink'
+import PDFReader from '@bodhi-project/components/lib/PDFReader'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
@@ -21,7 +22,6 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/c
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../../components/Link'
 import StandardPage from '../../components/wrappers/StandardPage'
-import PDFReader from '../../components/PDFReader'
 
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
@@ -81,8 +81,9 @@ const Initiative = props => {
       <div className="mask-p">
         <Images photos={photos} loader="gradient" columns={3} />
       </div>
-      <PDFReader file="/project-assets/aikiyam/conflict-resolution.pdf" />
-      <PDFReader file="/project-assets/aikiyam/intensive.pdf" />
+      <PDFReader url="https://www.restorativeauroville.org/project-assets/aikiyam/conflict-resolution.pdf" />
+      &nbsp;
+      <PDFReader url="https://www.restorativeauroville.org/project-assets/aikiyam/intensive.pdf" />
       &nbsp;
       <DisqusComments pageData={pageData} />
     </StandardPage>

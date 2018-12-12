@@ -12,6 +12,7 @@ import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
+import PDFReader from '@bodhi-project/components/lib/PDFReader'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
@@ -21,7 +22,6 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/c
 import Link from '../../components/Link'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
-import PDFReader from '../../components/PDFReader'
 
 import seoHelper from '../../methods/seoHelper'
 
@@ -77,7 +77,7 @@ const Initiative = props => {
         alt="Exploring Justice and RC with the Auroville Council"
       />
       <div className="margin-p">
-        <PDFReader file="/project-assets/avc/avc.pdf" />
+        <PDFReader url="https://www.restorativeauroville.org/project-assets/avc/avc.pdf" />
         &nbsp;
       </div>
       <DisqusComments pageData={pageData} />

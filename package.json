@@ -78,7 +78,7 @@
         "react-sizes": "^1.0.4",
         "react-stack-grid": "^0.7.1",
         "react-sticky": "^6.0.3",
-        "react-transition-group": "^2.5.1",
+        "react-transition-group": "^1.2.1",
         "remark-parse": "^6.0.3",
         "twix": "^1.2.1",
         "unified": "^7.0.2",
