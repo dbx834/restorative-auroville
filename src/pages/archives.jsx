@@ -35,7 +35,7 @@ const { Fragment } = React
 const pageData = {
   pageTitle: 'Archives',
   nakedPageSlug: 'archives',
-  pageAbstract: 'Page abstract.',
+  pageAbstract: 'From our archives…',
 }
 
 const seoData = seoHelper(pageData)
