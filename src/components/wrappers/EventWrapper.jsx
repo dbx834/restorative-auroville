@@ -76,7 +76,7 @@ const Page = props => {
   const seoData = seoHelper(pageData)
   const eventSchemaData = {
     name: title,
-    url: `${data.nakedWebsiteUrl}${route}`,
+    url: `${data.websiteUrl}${route}`,
     description: abstract,
     startDate,
     endDate,
