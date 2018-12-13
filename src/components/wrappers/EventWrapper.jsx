@@ -100,7 +100,6 @@ const Page = props => {
     },
   }
   // const dateStr = moment(frontmatter.date).format('ddd, MMMM D, YYYY')
-  console.log(eventSchemaData)
 
   return (
     <StandardPage className="" seoData={seoData}>
