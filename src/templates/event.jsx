@@ -46,10 +46,12 @@ class BlogPostTemplate extends React.Component {
     const { tags, date, startDate, finishDate, cover } = frontmatter
 
     // Date stuff
-    const begins = moment(!isNull(startDate) ? startDate : date)
-    const ends = moment(
-      !isNull(finishDate) ? finishDate : begins.clone().add(23, 'hours')
+    const beginDate = moment(!isNull(startDate) ? startDate : date)
+    const begins = beginDate.format()
+    const endDate = moment(
+      !isNull(finishDate) ? finishDate : beginDate.clone().add(23, 'hours')
     )
+    const ends = endDate.format()
 
     let eventBanner = null
     if (cover === 'fallback') {
@@ -70,8 +72,6 @@ class BlogPostTemplate extends React.Component {
       endDate: ends,
       cost: frontmatter.cost,
     }
-
-    // console.log(markdownAst)
 
     return (
       <EventWrapper

@@ -29,10 +29,7 @@
     "email": "joylivinglearning@gmail.com",
     "telephone": ["+914132622539"]
   },
-  "orgSocialMediaProfiles": [
-    "http://instagram.com/bodhisystems",
-    "https://twitter.com/_dmi_systems"
-  ],
+  "orgSocialMediaProfiles": ["https://www.facebook.com/RestorativeAuroville/"],
   "pathPrefix": "/",
   "copyright": "Copyright © 2018 L’aura Joy & Joy Living Learning",
   "googleAnalyticsID": "UA-109854711-10",

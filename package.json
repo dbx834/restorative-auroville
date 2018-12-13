@@ -31,7 +31,7 @@
         "@bodhi-project/components": "2.2.2",
         "@bodhi-project/markdown-to-react": "1.0.0",
         "@bodhi-project/semantic-webflow": "0.0.13",
-        "@bodhi-project/seo": "^1.0.8",
+        "@bodhi-project/seo": "^2.0.0",
         "@bodhi-project/typography": "1.0.5",
         "antd": "^3.10.1",
         "axios": "^0.18.0",

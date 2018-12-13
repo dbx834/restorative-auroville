@@ -68,8 +68,8 @@ const Page = props => {
     // author,
     pageAbstract: abstract,
     cover,
-    begins,
-    ends,
+    startDate,
+    endDate,
     cost,
   } = pageData
 
@@ -78,8 +78,8 @@ const Page = props => {
     name: title,
     url: `${data.nakedWebsiteUrl}${route}`,
     description: abstract,
-    startDate: begins,
-    endDate: ends,
+    startDate,
+    endDate,
     locationName: data.orgLocation.locationName,
     locationUrl: data.orgLocation.locationUrl,
     streetAddress: data.orgLocation.streetAddress,
@@ -100,6 +100,7 @@ const Page = props => {
     },
   }
   // const dateStr = moment(frontmatter.date).format('ddd, MMMM D, YYYY')
+  console.log(eventSchemaData)
 
   return (
     <StandardPage className="" seoData={seoData}>

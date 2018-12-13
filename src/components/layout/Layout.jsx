@@ -150,7 +150,7 @@ class Layout extends React.Component {
         <OrganisationSchema data={organisationSchemaData} />
         <StickyContainer>
           <header className="desktop-only" id="menuWrapper">
-            <Container goldenMajor block noFade>
+            <Container goldenMajor block>
               <WebsiteTitle />
             </Container>
             <Sticky topOffset={100}>
@@ -165,7 +165,7 @@ class Layout extends React.Component {
             <MobileNav />
           </aside>
           <div id="contentWrapper">
-            <Container noFade goldenMajor block id="content">
+            <Container goldenMajor block id="content">
               {children}
               <div className="mobile-only">
                 <aside>
@@ -174,7 +174,7 @@ class Layout extends React.Component {
               </div>
             </Container>
             <div className="desktop-only">
-              <Container noFade goldenMajor block>
+              <Container goldenMajor block>
                 <DesktopFooter />
               </Container>
             </div>

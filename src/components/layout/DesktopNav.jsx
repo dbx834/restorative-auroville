@@ -66,7 +66,7 @@ const desktopNavStyleClass = desktopNavStyle.toString()
 const DesktopNav = props => {
   return (
     <div id="desktop-nav" className={desktopNavStyleClass}>
-      <Container goldenMajor block noFade>
+      <Container goldenMajor block>
         <Nav mode="horizontal" />
         <Image
           src={wavesTop}

@@ -56,7 +56,7 @@ const seoHelper = pageData => {
       url: `${data.websiteUrl}${pageData.nakedPageSlug}`,
       name: pageData.pageTitle,
       description: pageData.pageAbstract,
-      author: data.org.name,
+      author: data.org.founders[0],
       publisher: data.org.name,
       image: ogCover,
     },

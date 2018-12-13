@@ -56,16 +56,20 @@ const Page = props => {
     next,
   } = pageData
 
+  const isoDate = moment.unix(publishedTimestamp).format()
+
   const seoData = seoHelper(pageData)
   const blogPageSchemaData = {
     headline: title,
-    image: cover,
-    url: `${data.nakedWebsiteUrl}${route}`,
-    datePublished: 'isoDate',
+    image: `${data.nakedWebsiteUrl}${cover}`,
+    url: `${data.websiteUrl}${route}`,
+    datePublished: isoDate,
+    dateModified: isoDate,
     description: abstract,
     publisher: data.org.name,
+    author: data.org.founders[0],
     publisherLogo: {
-      url: data.org.logo,
+      url: `${data.nakedWebsiteUrl}${data.org.logo}`,
       height: 900,
       width: 900,
     },
