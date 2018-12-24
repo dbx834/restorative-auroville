@@ -4,13 +4,15 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { css } from "glamor";
+import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
-// import isUndefined from "lodash/isUndefined";
+import filter from 'lodash/filter'
+import sortBy from 'lodash/sortBy'
+import reverse from 'lodash/reverse'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import withSizes from 'react-sizes'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 // import Image from '@bodhi-project/components/lib/Image'
@@ -21,7 +23,11 @@ import PropTypes from 'prop-types'
 import StandardPage from '../components/wrappers/StandardPage'
 import EventsGrid from '../components/lists/EventsGrid'
 
+import ProjectListing from '../components/lists/ProjectListing'
+
 import seoHelper from '../methods/seoHelper'
+
+import projects from '../data/events.json'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
@@ -33,17 +39,57 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
+const ongoingProjects = reverse(
+  sortBy(filter(projects, 'ongoing'), [
+    o => o.beginTimestamp,
+    o => o.endTimestamp,
+  ])
+)
+
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
+const pageStyles = css({
+  display: 'block',
+  position: 'relative',
+
+  '& .ant-card': {
+    boxShadow: '1px 2px 0 0 #FF7D00',
+
+    '&:hover': {
+      boxShadow: '2px 4px 0 0 #FF7D00',
+    },
+  },
+}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = ({ data }) => (
-  <StandardPage className="" seoData={seoData}>
+const Page = ({ data, isMobile, ...props }) => (
+  <StandardPage className={pageStyles} seoData={seoData}>
     <EventsGrid data={data} />
+    <hr
+      style={{
+        borderTop: '1px solid #00006F',
+        marginTop: 30,
+        marginBottom: 30,
+      }}
+      id="events"
+    />
+    <h2 className="mask-h3">Events</h2>
+    <p>
+      Our approach is to engage with the community at many levels and through
+      different initiatives, with a real longing to grow and transform our
+      systems together.
+    </p>
+    <div className="margin-p">
+      <ProjectListing
+        data={ongoingProjects}
+        isMobile={isMobile}
+        itemWidth="33%"
+      />
+    </div>
   </StandardPage>
 )
 
@@ -99,6 +145,11 @@ export const pageQuery = graphql`
 `
 
 // ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Export
+// -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default Page
+/** mapSizesToProps */
+const mapSizesToProps = ({ width }) => ({
+  isMobile: width <= 768,
+})
+
+export default withSizes(mapSizesToProps)(Page)

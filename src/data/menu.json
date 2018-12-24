@@ -18,7 +18,7 @@
   {
     "title": "Learn +",
     "menu": [
-      { "title": "Upcoming Events", "link": "/events" },
+      { "title": "Workshops, Practice Groups & Events", "link": "/events" },
       {
         "title": "The Power of Dialogue",
         "link": "/the-power-of-dialogue"
@@ -27,10 +27,13 @@
     ]
   },
   {
-    "title": "Our Projects +",
+    "title": "In Action +",
     "menu": [
-      { "title": "Ongoing Projects", "link": "/projects/ongoing" },
-      { "title": "Past Projects", "link": "/projects/past" }
+      { "title": "Our Circles", "link": "/our-circles" },
+      {
+        "title": "System-Building Initiatives",
+        "link": "/system-building-initiatives"
+      }
     ]
   },
   { "title": "Our Team", "link": "/our-team" },

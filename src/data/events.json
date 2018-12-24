@@ -1,0 +1,62 @@
+[
+  {
+    "pageTitle": "Cross-Cultural Dialogue: Discrimination in Auroville",
+    "nakedPageSlug": "events/cross-cultural-dialogue",
+    "pageAbstract": "In response to the recent claim of discrimination against some in the Tamil community in Auroville, we are hosting a 2-day Cross-Cultural Dialogue.",
+    "cover": "/event-assets/cross-cultural-dialogue/banner.jpg",
+    "beginTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "ongoing": true,
+    "highlight": true
+  },
+  {
+    "pageTitle": "Women for Justice",
+    "nakedPageSlug": "events/women-for-justice",
+    "pageAbstract": "In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO \"Olakh\" (Gujarat), we will present a documentary about Nimisha’s work with women’s justice.",
+    "cover": "/event-assets/women-for-justice/banner.jpg",
+    "beginTimestamp": 1573109111,
+    "category": "Restorative Circles",
+    "highlight": false,
+    "ongoing": true
+  },
+  {
+    "pageTitle": "Walk of Hope in Auroville and the Bioregion",
+    "nakedPageSlug": "events/walk-of-hope-in-auroville-and-the-bioregion",
+    "pageAbstract": "The Walk was led by Sri M, an eminent spiritual guide, educationist and social activist. Sri M became known for his Walk of Hope from Kanyakumari to Kashmir, over 7000 km through India in 2015-16.",
+    "cover": "/event-assets/walk-of-hope-in-auroville-and-the-bioregion/banner.jpg",
+    "beginTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "highlight": false,
+    "ongoing": true
+  },
+  {
+    "pageTitle": "Restorative Dialogue across Cultures",
+    "nakedPageSlug": "events/restorative-dialogue-across-cultures",
+    "pageAbstract": "We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?",
+    "cover": "/event-assets/restorative-dialogue-across-cultures/banner.jpg",
+    "beginTimestamp": 1451642919,
+    "category": "Restorative Circles",
+    "highlight": false,
+    "ongoing": true
+  },
+  {
+    "pageTitle": "FilmFest: \"Restoring Connection\"",
+    "nakedPageSlug": "events/filmfest-restoring-connection",
+    "pageAbstract": "Restorative Auroville hosted a 6-day Film Festival on the theme of “Restoring Connection” in October 2016 as part of our larger Restorative Circles project in Auroville, where we are working to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values.",
+    "cover": "/event-assets/filmfest-restoring-connection/filmFest.jpg",
+    "beginTimestamp": 1451642919,
+    "category": "Restorative Circles",
+    "highlight": false,
+    "ongoing": true
+  },
+  {
+    "pageTitle": "World Cafés on Peace & Justice",
+    "nakedPageSlug": "events/world-cafes-on-peace-and-justice",
+    "pageAbstract": "Coming soon.",
+    "cover": "/event-assets/world-cafes-on-peace-and-justice/banner.jpg",
+    "beginTimestamp": 1451642919,
+    "category": "Restorative Circles",
+    "highlight": false,
+    "ongoing": true
+  }
+]

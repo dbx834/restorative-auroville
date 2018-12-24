@@ -109,7 +109,7 @@ const Page = props => {
           <Link to="/">Home</Link>
         </BItem>
         <BItem>
-          <Link to="/events">Events</Link>
+          <Link to="/events">Workshops & Practice Groups</Link>
         </BItem>
         <BItem>{title}</BItem>
       </Breadcrumb>

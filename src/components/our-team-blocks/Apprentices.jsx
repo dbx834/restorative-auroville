@@ -22,6 +22,7 @@ import blueSquare from '../../assets/blueSquare.jpg'
 import henrikeSquare from '../../assets/henrikeSquare.jpg'
 import pranjalSquare from '../../assets/pranjalSquare.jpg'
 import stefanSquare from '../../assets/stefanSquare.jpg'
+import celiaSquare from '../../assets/celiaSquare.jpg'
 
 import Henrike from '../people/Henrike'
 import Pranjal from '../people/Pranjal'
@@ -223,7 +224,7 @@ class Apprentices extends React.Component {
                 'circle-active'} child-circle s`}
               ref="child5"
               style={{
-                backgroundImage: `url(${blueSquare})`,
+                backgroundImage: `url(${celiaSquare})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '105px 105px',
                 border: '2px solid #FFBF00',

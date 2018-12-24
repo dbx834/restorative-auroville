@@ -446,7 +446,7 @@ class EventsGrid extends React.Component {
         <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
           <Col sm={24} md={24} xl={15}>
             <div style={{ position: 'relative' }}>
-              <h1 className="mask-h3">Workshops & Events</h1>
+              <h1 className="mask-h3">Workshops & Practice Groups</h1>
               <div style={{ position: 'absolute', top: 0, right: 0 }}>
                 <h2
                   className="mask-h6"
@@ -457,7 +457,7 @@ class EventsGrid extends React.Component {
                     marginTop: 9,
                   }}
                 >
-                  Past Events
+                  Past Learnings
                 </h2>
                 &nbsp;
                 <Switch

@@ -4,13 +4,15 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 // import PropTypes from 'prop-types'
-// import { css } from "glamor";
+import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
-// import isUndefined from "lodash/isUndefined";
+import filter from 'lodash/filter'
+import sortBy from 'lodash/sortBy'
+import reverse from 'lodash/reverse'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import withSizes from 'react-sizes'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 // import Image from '@bodhi-project/components/lib/Image'
@@ -21,8 +23,11 @@ import OutLink from '@bodhi-project/components/lib/OutLink'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
+import ProjectListing from '../components/lists/ProjectListing'
 
 import seoHelper from '../methods/seoHelper'
+
+import projects from '../data/donate.json'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
@@ -34,16 +39,35 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
+const ongoingProjects = reverse(
+  sortBy(filter(projects, 'ongoing'), [
+    o => o.beginTimestamp,
+    o => o.endTimestamp,
+  ])
+)
+
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
+const pageStyles = css({
+  display: 'block',
+  position: 'relative',
+
+  '& .ant-card': {
+    boxShadow: '1px 2px 0 0 #FF7D00',
+
+    '&:hover': {
+      boxShadow: '2px 4px 0 0 #FF7D00',
+    },
+  },
+}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <StandardPage className="" seoData={seoData}>
+const Page = ({ isMobile, ...props }) => (
+  <StandardPage className={pageStyles} seoData={seoData}>
     <h1 className="mask-h3">Donate to Support Our Work!</h1>
     <p>
       If you’d like to make a donation towards Restorative Auroville, you may do
@@ -86,10 +110,24 @@ const Page = () => (
       </Link>
       .
     </p>
+    <br />
+    <h2 className="mask-h4">We need support for these projects:</h2>
+    <div className="margin-p">
+      <ProjectListing
+        data={ongoingProjects}
+        isMobile={isMobile}
+        itemWidth="33%"
+      />
+    </div>
   </StandardPage>
 )
 
 // ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Export
+// -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default Page
+/** mapSizesToProps */
+const mapSizesToProps = ({ width }) => ({
+  isMobile: width <= 768,
+})
+
+export default withSizes(mapSizesToProps)(Page)

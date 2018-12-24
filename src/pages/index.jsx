@@ -28,7 +28,6 @@ import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 import EventsThisMonth from '../components/lists/EventsThisMonth'
 
-import ProjectHighlight from '../components/home-page/ProjectHighlight'
 import TeamHighlight from '../components/home-page/TeamHighlight'
 import VideoCover from '../components/VideoCover'
 
@@ -404,12 +403,9 @@ const Page = props => {
 
       <EventsThisMonth data={data} />
 
-      <ProjectHighlight />
-
-      <VideoSeriesBlock1 />
-
       <div
         style={{
+          marginTop: 30,
           paddingTop: 12,
           paddingBottom: 28,
           paddingLeft: '10%',
@@ -542,6 +538,8 @@ const Page = props => {
           </Row>
         </div>
       </div>
+
+      <VideoSeriesBlock1 />
 
       <TeamHighlight />
     </StandardPage>

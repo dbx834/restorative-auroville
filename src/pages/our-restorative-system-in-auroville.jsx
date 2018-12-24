@@ -4,7 +4,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 // import PropTypes from 'prop-types'
-// import { css } from "glamor";
+import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 // import map from "lodash/map";
@@ -23,6 +23,7 @@ import PDFReader from '@bodhi-project/components/lib/PDFReader'
 import StandardPage from '../components/wrappers/StandardPage'
 import EqualHalves from '../components/EqualHalves'
 import Video from '../components/Video'
+import Link from '../components/Link'
 
 // import BookReader from '../components/BookReader'
 
@@ -45,16 +46,48 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
+const pageStyles = css({
+  position: 'relative',
+  display: 'block',
+}).toString()
+
+const pdfStyles = css({
+  maxHeight: '600px !important',
+  height: '600px !important',
+
+  '& > div': {
+    height: '600px !important',
+    maxHeight: '600px !important',
+
+    '& > iframe': {
+      height: '600px !important',
+      maxHeight: '600px !important',
+    },
+  },
+}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
 const Page = () => (
-  <StandardPage className="" seoData={seoData}>
+  <StandardPage className={pageStyles} seoData={seoData}>
     <h1 className="mask-h3">Our Restorative System in Auroville</h1>
+    <div style={{ position: 'absolute', top: 4, right: 0 }}>
+      <Link
+        to="/system-building-initiatives"
+        className="ant-btn ant-btn-primary"
+      >
+        <span style={{ fontSize: '125%' }}>
+          Our System-Building Initiatives ⇝
+        </span>
+      </Link>
+    </div>
     <div style={{ marginBottom: 10 }}>
-      <PDFReader url="https://www.restorativeauroville.org/av-rc-system.pdf" />
+      <PDFReader
+        url="https://www.restorativeauroville.org/av-rc-system.pdf"
+        className={pdfStyles}
+      />
     </div>
     <p>
       Conflict is a natural, inevitable part of living together, and Auroville

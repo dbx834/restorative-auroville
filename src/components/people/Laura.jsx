@@ -32,13 +32,13 @@ const Person = () => (
       was the beginning of a new passion and career.
     </p>
     <p>
-      A little while later, a friend told me about Dominic Barter’s work
-      (hyperlink: www.restorativecircles.org) and that “he was bringing
-      Nonviolent Communication to prisons.” Although I had no formal connection
-      to the world of crime and justice, I was immediately inspired and decided
-      to attend a Restorative Circles training with Dominic in Atlanta, USA in
-      October 2010. What I discovered was a whole new paradigm, and an
-      absolutely transformative perspective into conflict and community.
+      A little while later, a friend told me about Dominic Barter’s work and
+      that “he was bringing Nonviolent Communication to prisons.” Although I had
+      no formal connection to the world of crime and justice, I was immediately
+      inspired and decided to attend a Restorative Circles training with Dominic
+      in Atlanta, USA in October 2010. What I discovered was a whole new
+      paradigm, and an absolutely transformative perspective into conflict and
+      community.
     </p>
     <p style={{ marginBottom: 0 }}>
       Given my NVC background and having grown up and lived most of my life in
