@@ -29,7 +29,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 // import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
-
+import CircleByYear from '../components/graphs/CircleByYear'
 import seoHelper from '../methods/seoHelper'
 
 import birdsTop from '../assets/birdsTop.png'

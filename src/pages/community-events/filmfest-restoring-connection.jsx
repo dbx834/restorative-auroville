@@ -52,7 +52,7 @@ const photos = [
 
 const pageData = {
   pageTitle: 'FilmFest: "Restoring Connection"',
-  nakedPageSlug: 'events/filmfest-restoring-connection',
+  nakedPageSlug: 'community-events/filmfest-restoring-connection',
   pageAbstract:
     'Restorative Auroville hosted a 6-day Film Festival on the theme of “Restoring Connection” in October 2016 as part of our larger Restorative Circles project in Auroville, where we are working to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values.',
 }
@@ -73,7 +73,7 @@ const Initiative = props => {
           <Link to="/">Home</Link>
         </BItem>
         <BItem>
-          <Link to="/events#events">Events</Link>
+          <Link to="/community-events">Community Events</Link>
         </BItem>
         <BItem>FilmFest: "Restoring Connection"</BItem>
       </Breadcrumb>
@@ -107,7 +107,11 @@ const Initiative = props => {
         Forgiveness.”
       </p>
       <div className="mask-p">
-        <Images photos={photos} loader="gradient" columns={2} />
+        <Images
+          photos={photos}
+          loader="gradient"
+          columns={{ min: 2, max: 2 }}
+        />
       </div>
       <p>
         The overall feedback and response to the FilmFest was positive. Our

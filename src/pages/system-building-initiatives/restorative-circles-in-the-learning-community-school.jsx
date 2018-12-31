@@ -78,7 +78,11 @@ const Initiative = props => {
       </h1>
       <p>Coming soon...</p>
       <div className="mask-p">
-        <Images photos={photos} loader="gradient" />
+        <Images
+          photos={photos}
+          loader="gradient"
+          columns={{ min: 2, max: 3 }}
+        />
       </div>
       <DisqusComments pageData={pageData} />
     </StandardPage>

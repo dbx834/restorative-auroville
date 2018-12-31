@@ -18,7 +18,7 @@
   {
     "title": "Learn +",
     "menu": [
-      { "title": "Workshops, Practice Groups & Events", "link": "/events" },
+      { "title": "Workshops & Practice Groups", "link": "/events" },
       {
         "title": "The Power of Dialogue",
         "link": "/the-power-of-dialogue"
@@ -33,7 +33,8 @@
       {
         "title": "System-Building Initiatives",
         "link": "/system-building-initiatives"
-      }
+      },
+      { "title": "Community Events", "link": "/community-events" }
     ]
   },
   { "title": "Our Team", "link": "/our-team" },

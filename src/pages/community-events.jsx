@@ -21,7 +21,6 @@ import withSizes from 'react-sizes'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../components/wrappers/StandardPage'
-import EventsGrid from '../components/lists/EventsGrid'
 
 import ProjectListing from '../components/lists/ProjectListing'
 
@@ -31,8 +30,8 @@ import projects from '../data/events.json'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: 'Workshops & Practice Groups',
-  nakedPageSlug: 'events',
+  pageTitle: 'Community Events',
+  nakedPageSlug: 'community-events',
   pageAbstract:
     'We offer learning opportunities through workshops and practice groups on Nonviolent Communication and Restorative Circles. We are also available for individual coaching and mediation, and we are happy to consult with community-based projects that are seeking to shift paradigms.',
 }
@@ -68,60 +67,25 @@ const pageStyles = css({
 /** Page */
 const Page = ({ data, isMobile, ...props }) => (
   <StandardPage className={pageStyles} seoData={seoData}>
-    <EventsGrid data={data} />
+    <h2 className="mask-h3">Community Events</h2>
+    <p>
+      Our approach is to engage with the community at many levels and through
+      different initiatives, with a real longing to grow and transform our
+      systems together.
+    </p>
+    <div className="margin-p">
+      <ProjectListing
+        data={ongoingProjects}
+        isMobile={isMobile}
+        itemWidth="33%"
+      />
+    </div>
   </StandardPage>
 )
 
 Page.propTypes = {
   data: PropTypes.object,
 }
-
-// ----------------------------------------------------------------------------
-// ---------------------------------------------------------------------- Query
-// ----------------------------------------------------------------------------
-/* eslint-disable no-undef */
-export const pageQuery = graphql`
-  query UpcomingEventsQuery {
-    allMarkdownRemark(
-      limit: 365
-      sort: { fields: [frontmatter___date], order: ASC }
-      filter: { frontmatter: { type: { eq: "event" } } }
-    ) {
-      edges {
-        node {
-          fields {
-            route
-            humanDate
-            elapsed
-            beginDateInt
-            diff
-            year
-            month
-            monthN
-            dayOfMonth
-            displayDate
-            formattedDate
-          }
-          frontmatter {
-            abstract
-            title
-            subTitle
-            cover
-            date
-            startDate
-            finishDate
-            fromTime
-            toTime
-            category
-            tags
-            type
-            cost
-          }
-        }
-      }
-    }
-  }
-`
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports

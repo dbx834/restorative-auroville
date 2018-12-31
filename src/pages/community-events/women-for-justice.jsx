@@ -27,7 +27,7 @@ import seoHelper from '../../methods/seoHelper'
 
 const pageData = {
   pageTitle: 'Women for Justice',
-  nakedPageSlug: 'projects/women-for-justice',
+  nakedPageSlug: 'community-events/women-for-justice',
   pageAbstract:
     "In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO 'Olakh' (Gujarat), we will present a documentary about Nimisha’s work with women’s justice. The film will be translated live into Tamil, and followed by a Q&A session with Nimisha. Additional workshops will also be organized, geared especially towards women and youth from the bioregion.",
 }
@@ -61,7 +61,7 @@ const Initiative = props => {
           <Link to="/">Home</Link>
         </BItem>
         <BItem>
-          <Link to="/events#events">Events</Link>
+          <Link to="/community-events">Community Events</Link>
         </BItem>
         <BItem>Women for Justice</BItem>
       </Breadcrumb>
@@ -77,7 +77,11 @@ const Initiative = props => {
         youth from the bioregion.
       </p>
       <div className="margin-p">
-        <Images photos={photos} loader="gradient" columns={2} />
+        <Images
+          photos={photos}
+          loader="gradient"
+          columns={{ min: 2, max: 2 }}
+        />
         &nbsp;
       </div>
       <p>

@@ -82,7 +82,11 @@ const Initiative = props => {
         it to their cultural context.
       </p>
       <div className="mask-p">
-        <Images photos={photos} loader="gradient" columns={3} />
+        <Images
+          photos={photos}
+          loader="gradient"
+          columns={{ min: 2, max: 3 }}
+        />
       </div>
       <PDFReader url="https://www.restorativeauroville.org/project-assets/aikiyam/conflict-resolution.pdf" />
       &nbsp;

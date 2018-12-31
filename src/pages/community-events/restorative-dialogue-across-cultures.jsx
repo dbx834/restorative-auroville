@@ -40,7 +40,7 @@ const { Fragment } = React
 
 const pageData = {
   pageTitle: 'Restorative Dialogue across Cultures',
-  nakedPageSlug: 'events/restorative-dialogue-across-cultures',
+  nakedPageSlug: 'community-events/restorative-dialogue-across-cultures',
   pageAbstract:
     'We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?',
 }
@@ -102,7 +102,7 @@ const Initiative = props => {
           <Link to="/">Home</Link>
         </BItem>
         <BItem>
-          <Link to="/events#events">Events</Link>
+          <Link to="/community-events">Community Events</Link>
         </BItem>
         <BItem>Restorative Dialogue across Cultures</BItem>
       </Breadcrumb>

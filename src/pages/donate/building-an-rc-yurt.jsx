@@ -79,7 +79,11 @@ const Initiative = props => {
         accommodate about 30-40 people sitting in a circle.
       </p>
       <div className="margin-p">
-        <Images photos={photos} loader="gradient" columns={2} />
+        <Images
+          photos={photos}
+          loader="gradient"
+          columns={{ min: 2, max: 2 }}
+        />
         &nbsp;
       </div>
       <p>

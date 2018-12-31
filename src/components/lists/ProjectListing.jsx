@@ -27,6 +27,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/card/style/css'
 import Link from '../Link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -173,6 +174,7 @@ class Block extends React.Component {
               cover,
               beginTimestamp,
               endTimestamp,
+              dateText,
               // category,
               // author,
             } = card
@@ -187,9 +189,17 @@ class Block extends React.Component {
                     <Article>
                       <Header>
                         <span className="date">
-                          {moment.unix(beginTimestamp).format('YYYY')}
-                          {!isUndefined(endTimestamp) &&
-                            ` – ${moment.unix(endTimestamp).format('YYYY')}`}
+                          {isUndefined(dateText) ? (
+                            <Fragment>
+                              {moment.unix(beginTimestamp).format('MMMM, YYYY')}
+                              {!isUndefined(endTimestamp) &&
+                                ` - ${moment
+                                  .unix(endTimestamp)
+                                  .format('MMMM, YYYY')}`}
+                            </Fragment>
+                          ) : (
+                            <Fragment>{dateText}</Fragment>
+                          )}
                         </span>
                         <h1 className="mask-h5">{pageTitle}</h1>
                         <p style={{ marginBottom: 0 }}>{pageAbstract}</p>

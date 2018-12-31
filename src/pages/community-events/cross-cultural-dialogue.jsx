@@ -35,7 +35,7 @@ import seoHelper from '../../methods/seoHelper'
 
 const pageData = {
   pageTitle: 'Cross-Cultural Dialogue',
-  nakedPageSlug: 'events/cross-cultural-dialogue',
+  nakedPageSlug: 'community-events/cross-cultural-dialogue',
   pageAbstract:
     'In response to the recent claim of discrimination against some in the Tamil community in Auroville, we are hosting a 2-day Cross-Cultural Dialogue. We offer a space to explore this topic further and to have a deep sharing about our experiences and pain, as well as our felt sense of togetherness and aspiration to manifest Human Unity.',
 }
@@ -79,7 +79,7 @@ const Initiative = props => {
           <Link to="/">Home</Link>
         </BItem>
         <BItem>
-          <Link to="/events#events">Events</Link>
+          <Link to="/community-events">Community Events</Link>
         </BItem>
         <BItem>Cross-Cultural Dialogue: Discrimination in Auroville</BItem>
       </Breadcrumb>
@@ -121,7 +121,11 @@ const Initiative = props => {
         </div>
       </GoldenMajorHalves>
       <div className="margin-p">
-        <Images photos={photos} loader="gradient" columns={2} />
+        <Images
+          photos={photos}
+          loader="gradient"
+          columns={{ min: 2, max: 2 }}
+        />
         &nbsp;
       </div>
       <EqualHalves>

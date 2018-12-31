@@ -56,7 +56,7 @@ const photos = [
 
 const pageData = {
   pageTitle: 'Walk of Hope in Auroville and the Bioregion',
-  nakedPageSlug: 'events/walk-of-hope-in-auroville-and-the-bioregion',
+  nakedPageSlug: 'community-events/walk-of-hope-in-auroville-and-the-bioregion',
   pageAbstract:
     'Spreading the message of oneness, inclusion and respect and (re-)connect as Aurovilians, and with our neighbours in the surrounding villages.',
 }
@@ -77,7 +77,7 @@ const Initiative = props => {
           <Link to="/">Home</Link>
         </BItem>
         <BItem>
-          <Link to="/events#events">Events</Link>
+          <Link to="/community-events">Community Events</Link>
         </BItem>
         <BItem>Walk of Hope in Auroville and the Bioregion</BItem>
       </Breadcrumb>
@@ -109,7 +109,11 @@ const Initiative = props => {
         walk together and make a move (in both directions)".
       </p>
       <div className="mask-p">
-        <Images photos={photos} loader="gradient" columns={2} />
+        <Images
+          photos={photos}
+          loader="gradient"
+          columns={{ min: 2, max: 2 }}
+        />
       </div>
       <p>
         On Sunday Jan 28th, 800 people -from the villages, Aurovilians,

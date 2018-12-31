@@ -85,7 +85,11 @@ const Theme = props => {
       <p>{text}</p>
       {!isUndefined(photos) && (
         <div className="mask-p">
-          <Images photos={photos} loader="gradient" columns={columns} />
+          <Images
+            photos={photos}
+            loader="gradient"
+            columns={{ min: 2, max: columns }}
+          />
         </div>
       )}
       {!isUndefined(files) && (
@@ -384,9 +388,9 @@ const Page = () => (
     </Row>
     <Theme
       border="#4A01AA"
-      title="Additional RC–Related Videos (2011 - present)"
+      title="Our RC-channel on YouTube (2011‒present)  "
       tag="Videos"
-      text="Our RC-channel on YouTube, with somewhat regular updates."
+      text="With somewhat regular updates…"
       files={[
         {
           title: 'See videos',

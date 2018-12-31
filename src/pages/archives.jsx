@@ -61,7 +61,11 @@ const Theme = props => {
       <p>{text}</p>
       {!isUndefined(photos) && (
         <div className="mask-p">
-          <Images photos={photos} loader="gradient" columns={columns} />
+          <Images
+            photos={photos}
+            loader="gradient"
+            columns={{ min: 2, max: columns }}
+          />
         </div>
       )}
       {!isUndefined(files) && (
@@ -69,14 +73,25 @@ const Theme = props => {
           {map(files, file => {
             return (
               <p>
-                <OutLink to={file.link}>
-                  <Icon
-                    type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
-                    theme="outlined"
-                  />
-                  &nbsp;
-                  {file.title}
-                </OutLink>
+                {!isUndefined(file.link) ? (
+                  <OutLink to={file.link}>
+                    <Icon
+                      type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
+                      theme="outlined"
+                    />
+                    &nbsp;
+                    {file.title}
+                  </OutLink>
+                ) : (
+                  <a to="#" disabled className="ignore">
+                    <Icon
+                      type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
+                      theme="outlined"
+                    />
+                    &nbsp;
+                    {file.title}
+                  </a>
+                )}
               </p>
             )
           })}
@@ -95,10 +110,46 @@ const Page = () => (
       more.
     </p>
     <Theme
+      border="#0101AF"
+      title="RC Handbook – Sample Pages"
+      tag="Document"
+      files={[
+        {
+          title: 'English sample page',
+          link: '/rc-booklet-extract-english.pdf',
+        },
+        {
+          title: 'French sample page (coming soon)',
+        },
+      ]}
+    />
+    <Theme
+      border="#0101AF"
+      title="RC Poster"
+      tag="Document"
+      files={[
+        {
+          title: 'English version',
+          link: '/rc-poster-english.pdf',
+        },
+        {
+          title: 'Tamil version',
+          link: '/rc-poster-tamil.pdf',
+        },
+        {
+          title: 'French version (coming soon)',
+        },
+        {
+          title: 'Spanish version',
+          link: '/rc-poster-spanish.pdf',
+        },
+      ]}
+    />
+    <Theme
       border="#4A01AA"
-      title="Additional RC–Related Videos (2011 - present)"
+      title="Our RC-channel on YouTube (2011‒present)  "
       tag="Videos"
-      text="Our RC-channel on YouTube, with somewhat regular updates."
+      text="With somewhat regular updates…"
       files={[
         {
           title: 'See videos',
@@ -109,8 +160,22 @@ const Page = () => (
       ]}
     />
     <Theme
+      border="#A300A3"
+      title="Auroville's Conflict Resolution Policy (2018)"
+      tag="Document"
+      text="See Auroville's updated Conflict Resolution Policy."
+      // files={[
+      //   {
+      //     title: 'See Policy',
+      //     icon: 'file',
+      //     link:
+      //       'https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF',
+      //   },
+      // ]}
+    />
+    <Theme
       border="#FAE300"
-      title='"Experiences with training and facilitating Restorative Circles and conflict resolution"'
+      title='"Experiences with training and facilitating Restorative Circles and conflict resolution" (2018)'
       tag="Interview"
       text={
         <span>
@@ -249,6 +314,18 @@ const Page = () => (
       ]}
     />
     <Theme
+      border="#E00044"
+      title="Truth & Reconciliation Process (2015)"
+      tag="Document"
+      text="A process we wanted to offer the community to support healing and reconciliation, especially in connection to governance and feedback. However, it wasn't implemented."
+      files={[
+        {
+          title: 'See Our Draft',
+          link: '/truth-and-reconcilation-process.pdf',
+        },
+      ]}
+    />
+    <Theme
       border="#FABB00"
       title="How Do We Dream It Could Be? (2014)"
       tag="Public Presentations"
@@ -263,6 +340,19 @@ const Page = () => (
           title: 'Listen to radio recording',
           icon: 'sound',
           link: 'https://www.aurovilleradio.org/restorative-circles/',
+        },
+      ]}
+    />
+    <Theme
+      border="#FB9001"
+      title="Auroville Radio interviews L'aura on Restorative Circles (2014)"
+      tag="Interview"
+      text="Exploring 'justice' in Auroville, and how we can respond to conflict and so-called unacceptable behaviour in ways that hold all sides of the story and support moving forward as an entire community."
+      files={[
+        {
+          title: 'Watch interview',
+          icon: 'youtube',
+          link: 'https://www.youtube.com/watch?v=jRrurVLtprE',
         },
       ]}
     />

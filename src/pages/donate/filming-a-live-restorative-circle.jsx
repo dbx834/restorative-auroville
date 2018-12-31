@@ -73,7 +73,11 @@ const Initiative = props => {
         <Link to="/contact-us">Contact us ⇝</Link>
       </p>
       <div className="margin-p">
-        <Images photos={photos} loader="gradient" columns={2} />
+        <Images
+          photos={photos}
+          loader="gradient"
+          columns={{ min: 2, max: 2 }}
+        />
         &nbsp;
       </div>
       <DisqusComments pageData={pageData} />

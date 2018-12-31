@@ -33,6 +33,7 @@ import StandardPage from '../components/wrappers/StandardPage'
 import seoHelper from '../methods/seoHelper'
 
 import birdsTop from '../assets/birdsTop.png'
+import restorativeAurovilleArt1 from '../assets/restorativeAurovilleArt1.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
@@ -85,6 +86,17 @@ const Page = () => (
             />
           </div>
         </h2>
+        <Image
+          src={restorativeAurovilleArt1}
+          style={{
+            background: 'transparent',
+            border: 'unset',
+            height: 'auto',
+            maxWidth: 200,
+          }}
+          rawWidth={1440}
+          rawHeight={1440}
+        />
         <p>
           Restorative Auroville is an initative of&nbsp;
           <OutLink to="https://www.joylivinglearning.org/">
