@@ -440,7 +440,6 @@ class EventsGrid extends React.Component {
     const previousMonths = reverse(filter(months, (m, key) => key < thisMonth))
     const thisAndFutureMonths = filter(months, (m, key) => key >= thisMonth)
     const { active, nextActive } = this.state
-    console.log(active, nextActive)
 
     return (
       <div className={pageStyles}>
