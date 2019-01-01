@@ -440,6 +440,7 @@ class EventsGrid extends React.Component {
     const previousMonths = reverse(filter(months, (m, key) => key < thisMonth))
     const thisAndFutureMonths = filter(months, (m, key) => key >= thisMonth)
     const { active, nextActive } = this.state
+    console.log(active, nextActive)
 
     return (
       <div className={pageStyles}>
@@ -467,11 +468,11 @@ class EventsGrid extends React.Component {
                 />
               </div>
             </div>
-            <Tabs type="card" tabPosition="left">
+            <Tabs type="card" tabPosition="left" activeKey={thisYear}>
               {map(years, (year, yearKey) => {
                 const key = `${year}-${yearKey}`
                 return (
-                  <TabPane tab={year} key={key}>
+                  <TabPane tab={year} key={year}>
                     <Fragment>
                       {year === thisYear && (
                         <Fragment>
