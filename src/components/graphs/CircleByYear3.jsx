@@ -49,14 +49,14 @@ const { Fragment } = React
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
-const yellowTheme = ['#ffac80', '#ffeb80', '#d4ff80']
+const yellowTheme = ['#ffac80', '#ffeb80', '#ff8080']
 const blueTheme = ['#80ffec', '#80d3ff', '#8094ff']
 const purpleTheme = ['#9697ff', '#ca96ff', '#ff96ff']
 const redTheme = ['#ff80c0', '#ff8080', '#ffc080']
 const colors = {
-  2015: yellowTheme,
+  2015: purpleTheme,
   2016: blueTheme,
-  2017: redTheme,
+  2017: yellowTheme,
   2018: purpleTheme,
   2019: purpleTheme,
 }
@@ -123,7 +123,7 @@ class Sample3 extends React.Component {
       left: +moment('2018-01-01', 'YYYY-MM-DD'),
       right: +moment('2019-01-01', 'YYYY-MM-DD'),
       resolution: 'months',
-      allowedRange: [2015, 2016, 2017, 2018, 2019],
+      allowedRange: [2016, 2017, 2018, 2019],
       activeRangeLeft: 2018,
       activeRangeRigth: 2019,
     }
@@ -231,6 +231,7 @@ class Sample3 extends React.Component {
       activeRangeLeft,
       activeRangeRigth,
     } = this.state
+    const leftYearTemp = moment(left).format('YYYY')
 
     /**
      * [generateTicks description]
@@ -343,7 +344,7 @@ class Sample3 extends React.Component {
           }
         })
       })
-      const domain = [low - 1, max + 1]
+      const domain = [low - 0.62, max + 0.62]
 
       return { ticks, domain }
     }
@@ -363,7 +364,7 @@ class Sample3 extends React.Component {
       let thisCircleDetails = undefined
 
       if (payload.length > 0) {
-        thisCircleTime = moment(payload[0].value).format('dddd, MMMM Do YYYY')
+        thisCircleTime = moment(payload[0].value).format('ddd, MMM D, YYYY')
         circleId = payload[1].value
         index = findIndex(data, ['id', circleId])
         circleDetails = data[index]
@@ -379,32 +380,13 @@ class Sample3 extends React.Component {
           {!isUndefined(circleDetails) && (
             <Card
               title={false}
-              style={{ width: 300, border: 0, background: 'transparent' }}
+              style={{
+                width: 300,
+                border: 0,
+                background: 'transparent',
+              }}
               bodyStyle={{ padding: 0 }}
             >
-              {/*
-                <ul style={{ paddingLeft: 20 }}>
-                  {map(circleDetails.times, timeObject => {
-                    if (timeObject.type !== 0) {
-                      return (
-                        <li>
-                          {timeObject.type === 1 && 'Pre-Circle'}
-                          {timeObject.type === 2 && 'Circle'}
-                          {timeObject.type === 3 && 'Post-Circle'}
-                          <br />
-                          <small>
-                            <i>
-                              {moment(timeObject.time).format(
-                                'dddd, MMMM Do YYYY'
-                              )}
-                            </i>
-                          </small>
-                        </li>
-                      )
-                    }
-                  })}
-                </ul>
-              */}
               {!isUndefined(circleDetails.wordCloud) && (
                 <Image
                   src={circleDetails.wordCloud}
@@ -443,18 +425,25 @@ class Sample3 extends React.Component {
                   &nbsp;(Circle #{circleDetails.id})
                 </strong>
                 <br />
-                <small>
-                  <i>{thisCircleTime}</i>
-                </small>
+                {thisCircleTime}
+              </p>
+              <p
+                style={{
+                  marginBottom: 0,
+                  color: '#222222',
+                  background: '#ffe34d',
+                  padding: 15,
+                  marginTop: 0,
+                  borderBottom: '1px solid #00006F',
+                  borderLeft: '1px solid #00006F',
+                  borderRight: '1px solid #00006F',
+                  borderBottomLeftRadius: 15,
+                  borderBottomRightRadius: 15,
+                }}
+              >
+                <strong>Named:</strong> {circleDetails.named} people
                 <br />
-                <small>
-                  {!isUndefined(circleDetails.named) && (
-                    <Fragment>
-                      {circleDetails.named} named, {circleDetails.attended}{' '}
-                      attended
-                    </Fragment>
-                  )}
-                </small>
+                <strong>Attended:</strong> {circleDetails.attended} people
               </p>
             </Card>
           )}
@@ -484,7 +473,11 @@ class Sample3 extends React.Component {
               axisLine
               allowDataOverflow
               dataKey="time"
-              domain={[left - 262974300 * 2, right + 262974300 * 2]}
+              domain={[
+                left -
+                  (leftYearTemp === '2016' ? 262974300 * 12 : 262974300 * 2),
+                right + 262974300 * 2,
+              ]}
               name="Time"
               tickFormatter={unixTime => generateTickFormat(unixTime)}
               ticks={ticks}
@@ -505,7 +498,7 @@ class Sample3 extends React.Component {
               width={0}
             />
             <ZAxis dataKey="size" range={[100, 10000]} />
-            <Tooltip content={<XTooltip />} />
+            <Tooltip content={<XTooltip />} cursor={false} />
 
             {map(filteredData, (d, i) => {
               const year = moment(d.times[0].time).format('YYYY')
