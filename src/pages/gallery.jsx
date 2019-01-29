@@ -108,12 +108,21 @@ import nvcX80 from '../assets/gallery/nvcX80.jpg'
 import nvcX81 from '../assets/gallery/nvcX81.jpg'
 import nvcX82 from '../assets/gallery/nvcX82.jpg'
 import nvcX83 from '../assets/gallery/nvcX83.jpg'
-import nvcX84 from '../assets/gallery/nvcX84.jpg'
 
 const photos = [
+  {
+    src: 'https://ucarecdn.com/32b25498-cbf8-47d7-aa43-2f6c9cfcbad5/img1.jpg',
+    width: 600,
+    height: 280,
+  },
   { src: nvcX1, width: 600, height: 450 },
   { src: nvcX2, width: 600, height: 450 },
   { src: nvcX4, width: 600, height: 418 },
+  {
+    src: 'https://ucarecdn.com/1a7e0f09-7188-43b2-a47b-1d62ec1c8ce3/img2.jpg',
+    width: 600,
+    height: 277,
+  },
   { src: nvcX78, width: 600, height: 800 },
   { src: nvcX6, width: 600, height: 367 },
   { src: nvcX7, width: 600, height: 367 },

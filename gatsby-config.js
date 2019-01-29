@@ -38,9 +38,9 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
-    // {
-    //   resolve: `gatsby-plugin-offline`, // https://www.gatsbyjs.org/packages/gatsby-plugin-offline
-    // },
+    {
+      resolve: `gatsby-plugin-offline`, // https://www.gatsbyjs.org/packages/gatsby-plugin-offline
+    },
     {
       resolve: `gatsby-plugin-webpack-bundle-analyzer`, // https://www.gatsbyjs.org/packages/gatsby-plugin-webpack-bundle-analyzer
       options: {
