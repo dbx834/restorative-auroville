@@ -54,7 +54,7 @@ const blueTheme = ['#80ffec', '#80d3ff', '#8094ff']
 const purpleTheme = ['#9697ff', '#ca96ff', '#ff96ff']
 const redTheme = ['#ff80c0', '#ff8080', '#ffc080']
 const colors = {
-  2015: purpleTheme,
+  2015: blueTheme,
   2016: blueTheme,
   2017: yellowTheme,
   2018: purpleTheme,
@@ -388,51 +388,106 @@ class Sample3 extends React.Component {
               bodyStyle={{ padding: 0 }}
             >
               {!isUndefined(circleDetails.wordCloud) && (
-                <Image
-                  src={circleDetails.wordCloud}
-                  rawWidth={900}
-                  rawHeight={900}
-                  style={{
-                    height: 'auto',
-                    maxWidth: '100%',
-                    borderTop: '1px solid #00006F',
-                    borderLeft: '1px solid #00006F',
-                    borderRight: '1px solid #00006F',
-                    borderBottom: '0px solid #00006F',
-                    borderTopLeftRadius: 15,
-                    borderTopRightRadius: 15,
-                    background: '#FFF',
-                    marginBottom: 0,
-                    display: 'block',
-                  }}
-                  className="margin-p"
-                />
+                <Fragment>
+                  <Image
+                    src={circleDetails.wordCloud}
+                    rawWidth={900}
+                    rawHeight={900}
+                    style={{
+                      height: 'auto',
+                      maxWidth: '100%',
+                      borderTop: '1px solid #00006F',
+                      borderLeft: '1px solid #00006F',
+                      borderRight: '1px solid #00006F',
+                      borderBottom: '0px solid #00006F',
+                      borderTopLeftRadius: 15,
+                      borderTopRightRadius: 15,
+                      background: '#FFF',
+                      marginBottom: 0,
+                      display: 'block',
+                    }}
+                    className="margin-p"
+                  />
+                  <p
+                    style={{
+                      marginBottom: 0,
+                      padding: 8,
+                      marginTop: 0,
+                      background: '#FFF',
+                      borderLeft: '1px solid #00006F',
+                      borderRight: '1px solid #00006F',
+                    }}
+                  >
+                    <small>
+                      <strong>Word Cloud Image</strong>{' '}
+                      <i>
+                        with the Circle's data (including Act{' '}
+                        <span
+                          style={{
+                            fontFamily: 'times new roman',
+                            fontWeight: 200,
+                          }}
+                        >
+                          &
+                        </span>{' '}
+                        Action Agreements, and excluding participants'{' '}
+                        <span
+                          style={{
+                            fontFamily: 'times new roman',
+                            fontWeight: 200,
+                          }}
+                        >
+                          &
+                        </span>{' '}
+                        facilitators' names).
+                      </i>
+                    </small>
+                  </p>
+                </Fragment>
               )}
               <p
                 style={{
                   marginBottom: 0,
                   color: '#FFF',
-                  background: '#00006F',
-                  padding: 15,
+                  background: '#1a51ff',
+                  padding: 8,
                   marginTop: 0,
                 }}
               >
-                <strong>
-                  {thisCircleDetails.type === 0 && 'Pre-Circle'}
-                  {thisCircleDetails.type === 1 && 'Pre-Circle'}
-                  {thisCircleDetails.type === 2 && 'Circle'}
-                  {thisCircleDetails.type === 3 && 'Post-Circle'}
-                  &nbsp;(Circle #{circleDetails.id})
-                </strong>
-                <br />
-                {thisCircleTime}
+                <small>
+                  <strong>
+                    {thisCircleDetails.type === 0 && '1st Pre-Circle'}
+                    {thisCircleDetails.type === 1 && '1st Pre-Circle'}
+                    {thisCircleDetails.type === 2 && 'Circle'}
+                    {thisCircleDetails.type === 3 && 'Post-Circle'}
+                    &nbsp;(Circle #{circleDetails.id})
+                  </strong>
+                  {
+                    <Fragment>
+                      {thisCircleDetails.type === 0 && (
+                        <Fragment>
+                          <br />
+                          <i>with the Initiator of the Circle</i>
+                        </Fragment>
+                      )}
+                      {thisCircleDetails.type === 1 && (
+                        <Fragment>
+                          <br />
+                          <i>with the Initiator of the Circle</i>
+                        </Fragment>
+                      )}
+                    </Fragment>
+                  }
+                  <br />
+                  {thisCircleTime}
+                </small>
               </p>
               <p
                 style={{
                   marginBottom: 0,
                   color: '#222222',
-                  background: '#ffe34d',
-                  padding: 15,
+                  background: '#ffd44d',
+                  padding: 8,
                   marginTop: 0,
                   borderBottom: '1px solid #00006F',
                   borderLeft: '1px solid #00006F',
@@ -441,9 +496,11 @@ class Sample3 extends React.Component {
                   borderBottomRightRadius: 15,
                 }}
               >
-                <strong>Named:</strong> {circleDetails.named} people
-                <br />
-                <strong>Attended:</strong> {circleDetails.attended} people
+                <small>
+                  <strong>Named:</strong> {circleDetails.named} people
+                  <br />
+                  <strong>Attended:</strong> {circleDetails.attended} people
+                </small>
               </p>
             </Card>
           )}
