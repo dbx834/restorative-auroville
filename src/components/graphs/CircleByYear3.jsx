@@ -34,8 +34,14 @@ import {
 import Button from 'antd/lib/button'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
 
+import Icon from 'antd/lib/icon'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
+
 import Card from 'antd/lib/card'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/card/style/css'
+
+import Select from 'antd/lib/select'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/select/style/css'
 
 import Image from '@bodhi-project/components/lib/Image'
 
@@ -45,14 +51,15 @@ import inArray from '../../methods/inArray'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React
+const { Option } = Select
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 const yellowTheme = ['#ffac80', '#ffeb80', '#ff8080']
 const blueTheme = ['#80ffec', '#80d3ff', '#8094ff']
-const purpleTheme = ['#9697ff', '#ca96ff', '#ff96ff']
-const redTheme = ['#ff80c0', '#ff8080', '#ffc080']
+const purpleTheme = ['#a54aff', '#ca96ff', '#ff96ff']
+// const redTheme = ['#ff80c0', '#ff8080', '#ffc080']
 const colors = {
   2015: blueTheme,
   2016: blueTheme,
@@ -108,6 +115,287 @@ const between = (a, b, inclusive, number) => {
   return inclusive ? number >= a && number <= b : number > a && number < b
 }
 
+/**
+ * [description]
+ * @param  {[type]} unixTime [description]
+ * @return {[type]}          [description]
+ */
+const generateTickFormat = (unixTime, resolution, left) => {
+  let format = moment(unixTime).format("MMM'YY")
+
+  // Tick format for month resolution
+  if (resolution === 'months') {
+    const leftYear = moment(left).format('YYYY')
+    const tickYear = moment(unixTime).format('YYYY')
+    if (leftYear === tickYear) {
+      format = moment(unixTime).format('MMM')
+    } else {
+      format = moment(unixTime).format("MMM'YY")
+    }
+  }
+
+  // Tick format for year resolution
+  if (resolution === 'years') {
+    format = moment(unixTime).format('YYYY')
+  }
+  return format
+}
+
+/**
+ * [generateTicks description]
+ * @return {[type]} [description]
+ */
+const generateTicks = (left, right, resolution) => {
+  const ticks = []
+  const diff = moment.duration(right - left, 'milliseconds')
+  const lM = moment(left)
+  // const rM = moment(right)
+  if (resolution === 'years') {
+    const diffYears = Math.round(diff.asYears())
+    const leftYear = lM.format('YYYY')
+    ticks.push(left)
+    times(diffYears, x => {
+      const that = +moment(`${parseInt(leftYear, 10) + (x + 1)}`, 'YYYY')
+      ticks.push(that)
+    })
+  }
+  if (resolution === 'months') {
+    const months = Math.round(diff.asMonths())
+    // const lastMonth = +moment(lM.subtract(1, 'month').format())
+    // const nextMonth = +moment(rM.add(1, 'month').format())
+    // ticks.push(lastMonth)
+    times(months + 1, m => {
+      const that = +moment(lM.clone().add(m, 'months'))
+      ticks.push(that)
+    })
+    // ticks.push(nextMonth)
+  }
+  return ticks
+}
+
+/**
+ * [description]
+ * @param  {[type]} left  [description]
+ * @param  {[type]} right [description]
+ * @return {[type]}       [description]
+ */
+const filterData = (data, left, right) => {
+  const filteredData = []
+  map(data, d => {
+    let exists = false
+    map(d.times, timeObject => {
+      if (exists === false) {
+        if (between(left, right, true, timeObject.time) === true) {
+          exists = true
+        }
+      }
+    })
+    if (exists === true) {
+      filteredData.push(d)
+    }
+  })
+  filteredData[0].times.push({
+    value: filteredData[0].times[0].value,
+    time: filteredData[0].times[0].time,
+    size: 100,
+    type: 10,
+  })
+  filteredData[0].times.push({
+    value: filteredData[0].times[0].value,
+    time: filteredData[0].times[0].time,
+    size: 10000,
+    type: 10,
+  })
+  return filteredData
+}
+
+/**
+ * [generateTicksAndDomain]
+ * @param  {[type]} data [description]
+ * @return {[type]}      [description]
+ */
+const generateTicksAndDomain = data => {
+  let low = undefined
+  let max = undefined
+  const ticks = []
+  map(data, d => {
+    map(d.times, timeObject => {
+      if (isUndefined(low)) {
+        low = timeObject.value
+      } else if (timeObject.value < low) {
+        low = timeObject.value
+      }
+      if (isUndefined(max)) {
+        max = timeObject.value
+      } else if (timeObject.value > max) {
+        max = timeObject.value
+      }
+      if (inArray(ticks, timeObject.value) === false) {
+        ticks.push(timeObject.value)
+      }
+    })
+  })
+  const domain = [low - 0.62, max + 0.62]
+
+  return { ticks, domain }
+}
+
+/**
+ * [description]
+ * @param  {[type]} props [description]
+ * @return {[type]}       [description]
+ */
+const XTooltip = props => {
+  const { payload } = props
+  let circleId = undefined
+  let index = undefined
+  let circleDetails = undefined
+  let thisCircleIndex = undefined
+  let thisCircleTime = undefined
+  let thisCircleDetails = undefined
+
+  if (payload.length > 0) {
+    thisCircleTime = moment(payload[0].value).format('ddd, MMM D, YYYY')
+    circleId = payload[1].value
+    index = findIndex(data, ['id', circleId])
+    circleDetails = data[index]
+    thisCircleIndex = findIndex(circleDetails.times, ['time', payload[0].value])
+    thisCircleDetails = circleDetails.times[thisCircleIndex]
+  }
+
+  return (
+    <div>
+      {!isUndefined(circleDetails) && (
+        <Card
+          title={false}
+          style={{
+            width: 300,
+            border: 0,
+            background: 'transparent',
+          }}
+          bodyStyle={{ padding: 0 }}
+        >
+          {!isUndefined(circleDetails.wordCloud) && (
+            <Fragment>
+              <Image
+                src={circleDetails.wordCloud}
+                rawWidth={900}
+                rawHeight={900}
+                style={{
+                  height: 'auto',
+                  maxWidth: '100%',
+                  borderTop: '1px solid #00006F',
+                  borderLeft: '1px solid #00006F',
+                  borderRight: '1px solid #00006F',
+                  borderBottom: '0px solid #00006F',
+                  borderTopLeftRadius: 15,
+                  borderTopRightRadius: 15,
+                  background: '#FFF',
+                  marginBottom: 0,
+                  display: 'block',
+                }}
+                className="margin-p"
+              />
+              <p
+                style={{
+                  marginBottom: 0,
+                  padding: 8,
+                  marginTop: 0,
+                  background: '#FFF',
+                  borderLeft: '1px solid #00006F',
+                  borderRight: '1px solid #00006F',
+                }}
+              >
+                <small>
+                  <strong>Word Cloud Image</strong>{' '}
+                  <i>
+                    with the Circle's data (including Act{' '}
+                    <span
+                      style={{
+                        fontFamily: 'times new roman',
+                        fontWeight: 200,
+                      }}
+                    >
+                      &
+                    </span>{' '}
+                    Action Agreements, and excluding participants'{' '}
+                    <span
+                      style={{
+                        fontFamily: 'times new roman',
+                        fontWeight: 200,
+                      }}
+                    >
+                      &
+                    </span>{' '}
+                    facilitators' names).
+                  </i>
+                </small>
+              </p>
+            </Fragment>
+          )}
+          <p
+            style={{
+              marginBottom: 0,
+              color: '#FFF',
+              background: '#1a51ff',
+              padding: 8,
+              marginTop: 0,
+            }}
+          >
+            <small>
+              <strong>
+                {thisCircleDetails.type === 0 && '1st Pre-Circle'}
+                {thisCircleDetails.type === 1 && '1st Pre-Circle'}
+                {thisCircleDetails.type === 2 && 'Circle'}
+                {thisCircleDetails.type === 3 && 'Post-Circle'}
+                &nbsp;(Circle #{circleDetails.id})
+              </strong>
+              {
+                <Fragment>
+                  {thisCircleDetails.type === 0 && (
+                    <Fragment>
+                      <br />
+                      <i>with the Initiator of the Circle</i>
+                    </Fragment>
+                  )}
+                  {thisCircleDetails.type === 1 && (
+                    <Fragment>
+                      <br />
+                      <i>with the Initiator of the Circle</i>
+                    </Fragment>
+                  )}
+                </Fragment>
+              }
+              <br />
+              {thisCircleTime}
+            </small>
+          </p>
+          <p
+            style={{
+              marginBottom: 0,
+              color: '#222222',
+              background: '#ffd44d',
+              padding: 8,
+              marginTop: 0,
+              borderBottom: '1px solid #00006F',
+              borderLeft: '1px solid #00006F',
+              borderRight: '1px solid #00006F',
+              borderBottomLeftRadius: 15,
+              borderBottomRightRadius: 15,
+            }}
+          >
+            <small>
+              <strong>Named:</strong> {circleDetails.named} people
+              <br />
+              <strong>Attended:</strong> {circleDetails.attended} people
+            </small>
+          </p>
+        </Card>
+      )}
+    </div>
+  )
+}
+
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
@@ -132,6 +420,7 @@ class Sample3 extends React.Component {
     this.updateRefAreaRight = this.updateRefAreaRight.bind(this)
     this.zoom = this.zoom.bind(this)
     this.reset = this.reset.bind(this)
+    this.yearSelected = this.yearSelected.bind(this)
     this.changeActiveRange = this.changeActiveRange.bind(this)
   }
 
@@ -217,6 +506,23 @@ class Sample3 extends React.Component {
   }
 
   /**
+   * [yearSelected description]
+   * @param  {[type]} value [description]
+   * @return {[type]}       [description]
+   */
+  yearSelected(value) {
+    this.setState({
+      refAreaLeft: undefined,
+      refAreaRight: undefined,
+      left: +moment(`${value}-01-01`, 'YYYY-MM-DD'),
+      right: +moment(`${value + 1}-01-01`, 'YYYY-MM-DD'),
+      activeRangeLeft: value,
+      activeRangeRigth: value + 1,
+      resolution: 'months',
+    })
+  }
+
+  /**
    * [render description]
    * @return {[type]} [description]
    */
@@ -231,293 +537,29 @@ class Sample3 extends React.Component {
       activeRangeLeft,
       activeRangeRigth,
     } = this.state
+
     const leftYearTemp = moment(left).format('YYYY')
-
-    /**
-     * [generateTicks description]
-     * @return {[type]} [description]
-     */
-    const generateTicks = (left, right, resolution) => {
-      const ticks = []
-      const diff = moment.duration(right - left, 'milliseconds')
-      const lM = moment(left)
-      const rM = moment(right)
-      if (resolution === 'years') {
-        const diffYears = Math.round(diff.asYears())
-        const leftYear = lM.format('YYYY')
-        ticks.push(left)
-        times(diffYears, x => {
-          const that = +moment(`${parseInt(leftYear, 10) + (x + 1)}`, 'YYYY')
-          ticks.push(that)
-        })
-      }
-      if (resolution === 'months') {
-        const months = Math.round(diff.asMonths())
-        // const lastMonth = +moment(lM.subtract(1, 'month').format())
-        // const nextMonth = +moment(rM.add(1, 'month').format())
-        // ticks.push(lastMonth)
-        times(months + 1, m => {
-          const that = +moment(lM.clone().add(m, 'months'))
-          ticks.push(that)
-        })
-        // ticks.push(nextMonth)
-      }
-      return ticks
-    }
-
-    /**
-     * [description]
-     * @param  {[type]} unixTime [description]
-     * @return {[type]}          [description]
-     */
-    const generateTickFormat = unixTime => {
-      let format = moment(unixTime).format("MMM'YY")
-      if (resolution === 'years') {
-        format = moment(unixTime).format('YYYY')
-      }
-      // console.log(
-      //   'tick',
-      //   moment(unixTime).format('dddd, MMMM Do YYYY, h:mm:ss a')
-      // )
-      return format
-    }
-
-    /**
-     * [description]
-     * @param  {[type]} left  [description]
-     * @param  {[type]} right [description]
-     * @return {[type]}       [description]
-     */
-    const filterData = (data, left, right) => {
-      const filteredData = []
-      map(data, d => {
-        let exists = false
-        map(d.times, timeObject => {
-          if (exists === false) {
-            if (between(left, right, true, timeObject.time) === true) {
-              exists = true
-            }
-          }
-        })
-        if (exists === true) {
-          filteredData.push(d)
-        }
-      })
-      filteredData[0].times.push({
-        value: filteredData[0].times[0].value,
-        time: filteredData[0].times[0].time,
-        size: 100,
-        type: 10,
-      })
-      filteredData[0].times.push({
-        value: filteredData[0].times[0].value,
-        time: filteredData[0].times[0].time,
-        size: 10000,
-        type: 10,
-      })
-      return filteredData
-    }
-
-    /**
-     * [generateTicksAndDomain]
-     * @param  {[type]} data [description]
-     * @return {[type]}      [description]
-     */
-    const generateTicksAndDomain = data => {
-      let low = undefined
-      let max = undefined
-      const ticks = []
-      map(data, d => {
-        map(d.times, timeObject => {
-          if (isUndefined(low)) {
-            low = timeObject.value
-          } else if (timeObject.value < low) {
-            low = timeObject.value
-          }
-          if (isUndefined(max)) {
-            max = timeObject.value
-          } else if (timeObject.value > max) {
-            max = timeObject.value
-          }
-          if (inArray(ticks, timeObject.value) === false) {
-            ticks.push(timeObject.value)
-          }
-        })
-      })
-      const domain = [low - 0.62, max + 0.62]
-
-      return { ticks, domain }
-    }
-
-    /**
-     * [description]
-     * @param  {[type]} props [description]
-     * @return {[type]}       [description]
-     */
-    const XTooltip = props => {
-      const { payload } = props
-      let circleId = undefined
-      let index = undefined
-      let circleDetails = undefined
-      let thisCircleIndex = undefined
-      let thisCircleTime = undefined
-      let thisCircleDetails = undefined
-
-      if (payload.length > 0) {
-        thisCircleTime = moment(payload[0].value).format('ddd, MMM D, YYYY')
-        circleId = payload[1].value
-        index = findIndex(data, ['id', circleId])
-        circleDetails = data[index]
-        thisCircleIndex = findIndex(circleDetails.times, [
-          'time',
-          payload[0].value,
-        ])
-        thisCircleDetails = circleDetails.times[thisCircleIndex]
-      }
-
-      return (
-        <div>
-          {!isUndefined(circleDetails) && (
-            <Card
-              title={false}
-              style={{
-                width: 300,
-                border: 0,
-                background: 'transparent',
-              }}
-              bodyStyle={{ padding: 0 }}
-            >
-              {!isUndefined(circleDetails.wordCloud) && (
-                <Fragment>
-                  <Image
-                    src={circleDetails.wordCloud}
-                    rawWidth={900}
-                    rawHeight={900}
-                    style={{
-                      height: 'auto',
-                      maxWidth: '100%',
-                      borderTop: '1px solid #00006F',
-                      borderLeft: '1px solid #00006F',
-                      borderRight: '1px solid #00006F',
-                      borderBottom: '0px solid #00006F',
-                      borderTopLeftRadius: 15,
-                      borderTopRightRadius: 15,
-                      background: '#FFF',
-                      marginBottom: 0,
-                      display: 'block',
-                    }}
-                    className="margin-p"
-                  />
-                  <p
-                    style={{
-                      marginBottom: 0,
-                      padding: 8,
-                      marginTop: 0,
-                      background: '#FFF',
-                      borderLeft: '1px solid #00006F',
-                      borderRight: '1px solid #00006F',
-                    }}
-                  >
-                    <small>
-                      <strong>Word Cloud Image</strong>{' '}
-                      <i>
-                        with the Circle's data (including Act{' '}
-                        <span
-                          style={{
-                            fontFamily: 'times new roman',
-                            fontWeight: 200,
-                          }}
-                        >
-                          &
-                        </span>{' '}
-                        Action Agreements, and excluding participants'{' '}
-                        <span
-                          style={{
-                            fontFamily: 'times new roman',
-                            fontWeight: 200,
-                          }}
-                        >
-                          &
-                        </span>{' '}
-                        facilitators' names).
-                      </i>
-                    </small>
-                  </p>
-                </Fragment>
-              )}
-              <p
-                style={{
-                  marginBottom: 0,
-                  color: '#FFF',
-                  background: '#1a51ff',
-                  padding: 8,
-                  marginTop: 0,
-                }}
-              >
-                <small>
-                  <strong>
-                    {thisCircleDetails.type === 0 && '1st Pre-Circle'}
-                    {thisCircleDetails.type === 1 && '1st Pre-Circle'}
-                    {thisCircleDetails.type === 2 && 'Circle'}
-                    {thisCircleDetails.type === 3 && 'Post-Circle'}
-                    &nbsp;(Circle #{circleDetails.id})
-                  </strong>
-                  {
-                    <Fragment>
-                      {thisCircleDetails.type === 0 && (
-                        <Fragment>
-                          <br />
-                          <i>with the Initiator of the Circle</i>
-                        </Fragment>
-                      )}
-                      {thisCircleDetails.type === 1 && (
-                        <Fragment>
-                          <br />
-                          <i>with the Initiator of the Circle</i>
-                        </Fragment>
-                      )}
-                    </Fragment>
-                  }
-                  <br />
-                  {thisCircleTime}
-                </small>
-              </p>
-              <p
-                style={{
-                  marginBottom: 0,
-                  color: '#222222',
-                  background: '#ffd44d',
-                  padding: 8,
-                  marginTop: 0,
-                  borderBottom: '1px solid #00006F',
-                  borderLeft: '1px solid #00006F',
-                  borderRight: '1px solid #00006F',
-                  borderBottomLeftRadius: 15,
-                  borderBottomRightRadius: 15,
-                }}
-              >
-                <small>
-                  <strong>Named:</strong> {circleDetails.named} people
-                  <br />
-                  <strong>Attended:</strong> {circleDetails.attended} people
-                </small>
-              </p>
-            </Card>
-          )}
-        </div>
-      )
-    }
-
     const ticks = generateTicks(left, right, resolution)
-    // console.log('left', moment(left).format('dddd, MMMM Do YYYY, h:mm:ss a'))
-    // console.log('right', moment(right).format('dddd, MMMM Do YYYY, h:mm:ss a'))
-    // console.log('ticks', ticks)
     const years = {}
     const filteredData = filterData(data, left, right)
     const { ticks: yTicks, domain } = generateTicksAndDomain(filteredData)
 
     return (
       <div className={styles}>
+        <div style={{ textAlign: 'right' }}>
+          <Select
+            defaultValue="2018"
+            style={{ width: 120, marginRight: 10 }}
+            onChange={this.yearSelected}
+          >
+            <Option value={2016}>2016</Option>
+            <Option value={2017}>2017</Option>
+            <Option value={2018}>2018</Option>
+          </Select>
+          <Button onClick={e => this.reset(e)} style={{ marginTop: 2 }}>
+            <Icon type="zoom-out" />
+          </Button>
+        </div>
         <ResponsiveContainer width="100%" height={1000}>
           <ScatterChart
             margin={{ top: 5, right: 5, bottom: 5, left: 0 }}
@@ -536,7 +578,9 @@ class Sample3 extends React.Component {
                 right + 262974300 * 2,
               ]}
               name="Time"
-              tickFormatter={unixTime => generateTickFormat(unixTime)}
+              tickFormatter={unixTime =>
+                generateTickFormat(unixTime, resolution, left)
+              }
               ticks={ticks}
               interval={0}
               type="number"
@@ -555,7 +599,7 @@ class Sample3 extends React.Component {
               width={0}
             />
             <ZAxis dataKey="size" range={[100, 10000]} />
-            <Tooltip content={<XTooltip />} cursor={false} />
+            <Tooltip content={<XTooltip />} />
 
             {map(filteredData, (d, i) => {
               const year = moment(d.times[0].time).format('YYYY')
@@ -637,19 +681,7 @@ class Sample3 extends React.Component {
           </div>
           <div style={{ flexGrow: 1, flexBasis: 0, textAlign: 'center' }}>
             <p>
-              <strong>
-                {activeRangeLeft} – {activeRangeRigth}
-              </strong>
-            </p>
-            <p>
-              <a
-                href="javascript: void(0);"
-                className="btn update"
-                onClick={e => this.reset(e)}
-                style={{ marginRight: 20 }}
-              >
-                Zoom Out
-              </a>
+              <strong>{activeRangeLeft}</strong>
             </p>
           </div>
           <div style={{ flexGrow: 1, flexBasis: 0, textAlign: 'right' }}>
