@@ -39,10 +39,6 @@ const seoData = seoHelper(pageData)
 const Page = () => (
   <StandardPage className="" seoData={seoData}>
     <h1 className="mask-h3">Our Circles</h1>
-    <p>
-      Below you'll find our interactive database of live Circles, starting from
-      late 2015. <strong>Work in progress.</strong>
-    </p>
     <CircleByYear3 />
   </StandardPage>
 )

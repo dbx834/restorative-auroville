@@ -4,7 +4,7 @@ export const data = [
     named: 39,
     attended: 11,
     wordCloud:
-      'https://ucarecdn.com/e6184a39-7b42-425d-aa88-2b03abbb64c0/r26.jpg',
+      'https://ucarecdn.com/5fadb46a-ce0a-4e30-b01d-45fc2acb1b02/c26.webp',
     times: [
       {
         value: 26,
@@ -36,6 +36,8 @@ export const data = [
     id: 25,
     named: 30,
     attended: 19,
+    wordCloud:
+      'https://ucarecdn.com/24cfddb1-d0be-4137-b89e-5bb635dc7b0a/c25.webp',
     times: [
       {
         value: 25,
@@ -111,6 +113,8 @@ export const data = [
     id: 22,
     named: 12,
     attended: 10,
+    wordCloud:
+      'https://ucarecdn.com/a38d683a-fd43-4ed0-b829-92fdebb5f4fe/c22.webp',
     times: [
       {
         value: 22,
@@ -136,6 +140,8 @@ export const data = [
     id: 21,
     named: 10,
     attended: 6,
+    wordCloud:
+      'https://ucarecdn.com/fc08fb24-6138-41e0-9d32-a83bf3d86ccf/c21.webp',
     times: [
       {
         value: 21,
@@ -162,7 +168,7 @@ export const data = [
     named: 9,
     attended: 7,
     wordCloud:
-      'https://ucarecdn.com/f5618173-25c2-4471-a89a-259193d1702d/r20.jpg',
+      'https://ucarecdn.com/480e7abd-3b4c-4c72-8679-68604e025858/c20.webp',
     times: [
       {
         value: 20,
@@ -188,6 +194,8 @@ export const data = [
     id: 19,
     named: 11,
     attended: 10,
+    wordCloud:
+      'https://ucarecdn.com/0f4b0033-df48-48b7-8d01-2a606416eff0/c19.webp',
     times: [
       {
         value: 19,
