@@ -155,7 +155,7 @@ const Initiative = props => {
       <ol className="mask-p">
         <li>
           find our short documentary-compilation on the Truth and Reconciliation
-          Commission (13’56”) here
+          Commission (13’56”) (https://www.youtube.com/watch?v=ULePHQT4Kso)
         </li>
         <li>
           “Raamro Aakha Ma - In the Eyes of the Good” (55’18”/ full length) in 6

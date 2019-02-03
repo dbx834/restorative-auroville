@@ -1,10 +1,10 @@
 [
   { "title": "Home", "link": "/" },
   {
-    "title": "Explore +",
+    "title": "About +",
     "menu": [
       {
-        "title": "Our Project: Restorative Auroville",
+        "title": "Our Project",
         "link": "/about-restorative-auroville"
       },
       { "title": "Restorative Circles", "link": "/restorative-circles" },
@@ -20,7 +20,7 @@
     "menu": [
       { "title": "Workshops & Practice Groups", "link": "/events" },
       {
-        "title": "The Power of Dialogue",
+        "title": "Video Series: The Power of Dialogue",
         "link": "/the-power-of-dialogue"
       },
       { "title": "Volunteer & Apprentice", "link": "/volunteer" }
