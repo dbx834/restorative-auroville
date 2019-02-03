@@ -873,7 +873,10 @@ class Sample3 extends React.Component {
                     flexBasis: 0,
                   }}
                 >
-                  <h4 className="mask-h5" style={{ marginTop: -8 }}>
+                  <h4
+                    className="mask-h5"
+                    style={{ marginTop: -8, marginBottom: 0 }}
+                  >
                     <small>Circle Number</small>
                   </h4>
                   <p style={{ marginBottom: 15 }}>
@@ -916,7 +919,10 @@ class Sample3 extends React.Component {
                     flexBasis: 0,
                   }}
                 >
-                  <h4 className="mask-h5" style={{ marginTop: -8 }}>
+                  <h4
+                    className="mask-h5"
+                    style={{ marginTop: -8, marginBottom: 0 }}
+                  >
                     <small>Pre-Circle(s)</small>
                   </h4>
                   <p>
@@ -968,7 +974,10 @@ class Sample3 extends React.Component {
                     flexBasis: 0,
                   }}
                 >
-                  <h4 className="mask-h5" style={{ marginTop: -8 }}>
+                  <h4
+                    className="mask-h5"
+                    style={{ marginTop: -8, marginBottom: 0 }}
+                  >
                     <small>Circle</small>
                   </h4>
                   <p style={{ marginBottom: 15 }}>
@@ -1010,7 +1019,10 @@ class Sample3 extends React.Component {
                     flexBasis: 0,
                   }}
                 >
-                  <h4 className="mask-h5" style={{ marginTop: -8 }}>
+                  <h4
+                    className="mask-h5"
+                    style={{ marginTop: -8, marginBottom: 0 }}
+                  >
                     <small>Post-Circle(s)</small>
                   </h4>
                   <p style={{ marginBottom: 15 }}>
@@ -1050,7 +1062,10 @@ class Sample3 extends React.Component {
                     flexBasis: 0,
                   }}
                 >
-                  <h4 className="mask-h6" style={{ marginTop: -8 }}>
+                  <h4
+                    className="mask-h6"
+                    style={{ marginTop: -8, marginBottom: 0 }}
+                  >
                     <small>Pop-Up</small>
                   </h4>
                   <p style={{ marginBottom: 15 }}>
