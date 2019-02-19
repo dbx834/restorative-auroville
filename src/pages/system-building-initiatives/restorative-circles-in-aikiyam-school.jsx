@@ -14,8 +14,8 @@ import PropTypes from 'prop-types'
 import Images from '@bodhi-project/components/lib/Images'
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import PDFReader from '@bodhi-project/components/lib/PDFReader'
+import Video from '@bodhi-project/components/lib/Video'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
@@ -42,8 +42,8 @@ const seoData = seoHelper(pageData)
 const photos = [
   { src: '/sbi-assets/aikiyam/aikiyam1.jpeg', width: 1280, height: 960 },
   { src: '/sbi-assets/aikiyam/aikiyam2.jpeg', width: 1280, height: 960 },
-  { src: '/sbi-assets/aikiyam/aikiyam3.jpeg', width: 1280, height: 774 },
-  { src: '/sbi-assets/aikiyam/aikiyam4.jpeg', width: 1280, height: 774 },
+  { src: '/sbi-assets/aikiyam/aikiyam3.jpeg', width: 1032, height: 774 },
+  { src: '/sbi-assets/aikiyam/aikiyam4.jpeg', width: 1032, height: 774 },
   { src: '/sbi-assets/aikiyam/aikiyam6.jpeg', width: 1280, height: 960 },
   { src: '/sbi-assets/aikiyam/aikiyam5.jpeg', width: 1280, height: 960 },
 ]
@@ -63,7 +63,7 @@ const Initiative = props => {
         </BItem>
         <BItem>
           <Link to="/system-building-initiatives">
-            System Building Initiatives
+            System-Building Initiatives
           </Link>
         </BItem>
         <BItem>Restorative Circles in Aikiyam School</BItem>
@@ -81,16 +81,19 @@ const Initiative = props => {
         the bioregion, and we are looking forward to seeing how they can adapt
         it to their cultural context.
       </p>
-      <div className="mask-p">
+      <div style={{ maxWidth: 600 }} className="margin-p">
+        <Video url="https://www.youtube.com/watch?v=6Ma-dnG53LU" />
+      </div>
+      <div className="margin-p">
         <Images
           photos={photos}
           loader="gradient"
           columns={{ min: 2, max: 3 }}
         />
       </div>
-      <PDFReader url="https://www.restorativeauroville.org/project-assets/aikiyam/conflict-resolution.pdf" />
+      <PDFReader url="https://www.restorativeauroville.org/sbi-assets/aikiyam/conflict-resolution.pdf" />
       &nbsp;
-      <PDFReader url="https://www.restorativeauroville.org/project-assets/aikiyam/intensive.pdf" />
+      <PDFReader url="https://www.restorativeauroville.org/sbi-assets/aikiyam/intensive.pdf" />
       &nbsp;
       <DisqusComments pageData={pageData} />
     </StandardPage>

@@ -16,12 +16,14 @@ import React from 'react'
 // import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 import CircleByYear3 from '../components/graphs/CircleByYear3'
+import RadialGraph from '../components/graphs/RadialGraph'
+import PieGraph from '../components/graphs/PieGraph'
 import seoHelper from '../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: 'Our Circles',
-  nakedPageSlug: 'our-circles',
+  pageTitle: 'Circle Statistics',
+  nakedPageSlug: 'circle-statistics',
   pageAbstract:
     'Our dream: that our collective processes and individual posture would include: Being rooted in oneness; feeling a lived aspiration for this oneness, Walking towards each other with an open heart...',
 }
@@ -38,8 +40,10 @@ const seoData = seoHelper(pageData)
 /** Page */
 const Page = () => (
   <StandardPage className="" seoData={seoData}>
-    <h1 className="mask-h3">Our Circles</h1>
+    <h1 className="mask-h3">Circle Statistics</h1>
+    <h2 className="mask-h4">Circles At A Glance</h2>
     <CircleByYear3 />
+    <PieGraph />
   </StandardPage>
 )
 

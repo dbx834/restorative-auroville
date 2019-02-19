@@ -7,12 +7,7 @@
         "title": "Our Project",
         "link": "/about-restorative-auroville"
       },
-      { "title": "Restorative Circles", "link": "/restorative-circles" },
-      {
-        "title": "Our Restorative System",
-        "link": "/our-restorative-system-in-auroville"
-      },
-      { "title": "Our Story", "link": "/our-story" }
+      { "title": "Restorative Circles", "link": "/restorative-circles" }
     ]
   },
   {
@@ -29,7 +24,11 @@
   {
     "title": "In Action +",
     "menu": [
-      { "title": "Our Circles", "link": "/our-circles" },
+      {
+        "title": "Our Restorative System",
+        "link": "/our-restorative-system-in-auroville"
+      },
+      { "title": "Circle Statistics", "link": "/circle-statistics" },
       {
         "title": "System-Building Initiatives",
         "link": "/system-building-initiatives"
@@ -48,6 +47,7 @@
       { "title": "Articles", "link": "/writings" },
       { "title": "Archives", "link": "/archives" },
       { "title": "Gallery", "link": "/gallery" },
+      { "title": "Our Story", "link": "/our-story" },
       { "title": "Newsletter", "link": "/newsletter" },
       { "title": "Testimonials", "link": "/testimonials" },
       { "title": "Pay Fee", "link": "/pay-fee" }

@@ -98,7 +98,7 @@ const Theme = props => {
 /** Page */
 const Page = () => (
   <StandardPage className="" seoData={seoData}>
-    <h1 className="mask-h3">Our Project: Restorative Auroville</h1>
+    <h1 className="mask-h3">Our Project</h1>
     <p>
       Restorative Auroville is an independent project that aims to bring the
       practice of <Link to="/restorative-circles">Restorative Circles</Link>, a

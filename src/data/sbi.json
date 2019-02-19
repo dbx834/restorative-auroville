@@ -1,45 +1,45 @@
 [
-    {
-        "pageTitle": "Taking RC to Units, Schools and Residential Communities",
-        "nakedPageSlug": "system-building-initiatives/taking-rc-to-units-schools-and-residential-communities",
-        "pageAbstract": "In our aim to bring about a cultural shift in Auroville in how we engage with conflict, we’re taking RC and its principles to the Units, schools and residential communities.",
-        "cover": "/sbi-assets/rc-to-communities/img1.jpeg",
-        "beginTimestamp": 1514801319,
-        "endTimestamp": 1573109111,
-        "category": "Restorative Circles",
-        "ongoing": true,
-        "highlight": false
-    },
-    {
-        "pageTitle": "Restorative Circles in Aikiyam School",
-        "nakedPageSlug": "system-building-initiatives/restorative-circles-in-aikiyam-school",
-        "pageAbstract": "We are sharing RC in Aikiyam School, one of Auroville’s outreach schools for children from Kindergarten to 8th Grade. After discussions with the administration and teachers of the school, a group of ten teachers have committed to learn about this process.",
-        "cover": "/sbi-assets/aikiyam/aikiyam.jpg",
-        "beginTimestamp": 1483265319,
-        "endTimestamp": 1514801319,
-        "category": "Restorative Circles",
-        "highlight": true,
-        "ongoing": true
-    },
-    {
-        "pageTitle": "Exploring Justice and RC with the Auroville Council",
-        "nakedPageSlug": "system-building-initiatives/exploring-justice-and-rc-with-the-auroville-council",
-        "pageAbstract": "AV Council initiative abstract.",
-        "cover": "/sbi-assets/avc/avCouncil.jpg",
-        "beginTimestamp": 1514801319,
-        "category": "Restorative Circles",
-        "highlight": false,
-        "ongoing": true
-    },
-    {
-        "pageTitle": "Restorative Circles in TLC (the Learning Community School)",
-        "nakedPageSlug": "system-building-initiatives/restorative-circles-in-the-learning-community-school",
-        "pageAbstract": "Coming soon.",
-        "cover": "/sbi-assets/tlc/cover.jpg",
-        "beginTimestamp": 1447239294,
-        "endTimestamp": 1451642919,
-        "category": "Restorative Circles",
-        "highlight": false,
-        "ongoing": true
-    }
+  {
+    "pageTitle": "Taking RC to Units, Schools and Residential Communities",
+    "nakedPageSlug": "system-building-initiatives/taking-rc-to-units-schools-and-residential-communities",
+    "pageAbstract": "In our aim to bring about a cultural shift in Auroville in how we engage with conflict, we’re taking RC and its principles to the Units, schools and residential communities.",
+    "cover": "/sbi-assets/rc-to-communities/img1.jpeg",
+    "beginTimestamp": 1514801319,
+    "endTimestamp": 1573109111,
+    "category": "Restorative Circles",
+    "ongoing": true,
+    "highlight": false
+  },
+  {
+    "pageTitle": "Restorative Circles in Aikiyam School",
+    "nakedPageSlug": "system-building-initiatives/restorative-circles-in-aikiyam-school",
+    "pageAbstract": "We are sharing RC in Aikiyam School, one of Auroville’s outreach schools for children from Kindergarten to 8th Grade. After discussions with the administration and teachers of the school, a group of ten teachers have committed to learn about this process.",
+    "cover": "/sbi-assets/aikiyam/aikiyam.jpg",
+    "beginTimestamp": 1483265319,
+    "endTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "highlight": true,
+    "ongoing": true
+  },
+  {
+    "pageTitle": "Exploring Justice & RC with the Auroville Council",
+    "nakedPageSlug": "system-building-initiatives/exploring-justice-and-rc-with-the-auroville-council",
+    "pageAbstract": "In early 2018, we invited the Auroville Council to explore RC and justice with us, so that we could improve our collaboration and better contribute to the community.",
+    "cover": "/sbi-assets/avc/avCouncil.jpg",
+    "beginTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "highlight": false,
+    "ongoing": true
+  },
+  {
+    "pageTitle": "Restorative Circles in TLC (the Learning Community School)",
+    "nakedPageSlug": "system-building-initiatives/restorative-circles-in-the-learning-community-school",
+    "pageAbstract": "In late 2015, we were invited to share RC with the teachers at TLC (The Learning Community School).",
+    "cover": "/sbi-assets/tlc/cover.jpg",
+    "beginTimestamp": 1447239294,
+    "endTimestamp": 1451642919,
+    "category": "Restorative Circles",
+    "highlight": false,
+    "ongoing": true
+  }
 ]

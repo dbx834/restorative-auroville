@@ -29,7 +29,8 @@ const pageData = {
   pageTitle: 'Restorative Circles in TLC (the Learning Community School)',
   nakedPageSlug:
     'system-building-initiatives/restorative-circles-in-the-learning-community-school',
-  pageAbstract: 'Coming soon.',
+  pageAbstract:
+    'In late 2015, we were invited to share RC with the teachers at TLC (The Learning Community School). They developed a System and facilitated a couple of Circles among the children, while we facilitated a couple of Circles among the facilitators and parents.',
 }
 
 const seoData = seoHelper(pageData)
@@ -49,6 +50,7 @@ const photos = [
   { src: '/sbi-assets/tlc/img10.jpg', width: 600, height: 1444 },
   { src: '/sbi-assets/tlc/img11.jpg', width: 600, height: 828 },
   { src: '/sbi-assets/tlc/img12.jpg', width: 600, height: 327 },
+  { src: '/sbi-assets/tlc/img15.jpeg', width: 1280, height: 720 },
   { src: '/sbi-assets/tlc/img13.jpg', width: 600, height: 739 },
   { src: '/sbi-assets/tlc/img14.jpg', width: 600, height: 1067 },
 ]
@@ -66,17 +68,22 @@ const Initiative = props => {
         </BItem>
         <BItem>
           <Link to="/system-building-initiatives">
-            System Building Initiatives
+            System-Building Initiatives
           </Link>
         </BItem>
         <BItem>
-          Restorative Circles in TLC (the Learning Community School)
+          Restorative Circles in TLC (The Learning Community School)
         </BItem>
       </Breadcrumb>
       <h1 className="mask-h3">
-        Restorative Circles in TLC (the Learning Community School)
+        Restorative Circles in TLC (The Learning Community School)
       </h1>
-      <p>Coming soon...</p>
+      <p>
+        In late 2015, we were invited to share RC with the teachers at TLC (The
+        Learning Community School). They developed a System and facilitated a
+        couple of Circles among the children, while we facilitated a couple of
+        Circles among the facilitators and parents.
+      </p>
       <div className="mask-p">
         <Images
           photos={photos}

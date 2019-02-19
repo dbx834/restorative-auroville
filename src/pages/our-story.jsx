@@ -55,7 +55,7 @@ const Page = () => (
       </OutLink>
       &nbsp;from a traveling friend.
     </p>
-    <p>
+    <p style={{ marginBottom: 15 }}>
       Given her background in Nonviolent Communication and having grown up and
       lived most of her life in community in Auroville, she was inspired to
       learn more about Restorative Circles and its application in developing
@@ -64,42 +64,45 @@ const Page = () => (
       in October 2010, and they both came back on fire, convinced that Auroville
       would be an ideal place to experiment with this work.
     </p>
-    <GoldenMajorHalves>
-      <div>
-        <Image
-          src={ourStory1}
-          rawWidth={1146}
-          rawHeight={663}
-          style={{
-            height: 'auto',
-            maxWidth: '100%',
-            border: 0,
-            background: 'transparent',
-            marginBottom: 10,
-            display: 'block',
-          }}
-          alt="How Restorative Auroville came to be…"
-        />
-        &nbsp;
-      </div>
-      <div>
-        <p>
-          Immediately after their return, L'aura and Jason started offering
-          weekly gatherings, and together with other Aurovilians, they explored
-          what Restorative Circles could look like in Auroville, both as a
-          practice and as a larger approach to engaging with systemic change.
-        </p>
-        <p>
-          This exploration continued, on and off, for almost 5 years, and as a
-          group they also experimented with a few small live Circles amongst
-          themselves and their networks. And at several instances, the question
-          emerged about how to expand their reach and to engage with the larger
-          Auroville community. However, at the time, for some reason or the
-          other, no brave enough steps were made towards a sustained engagement
-          at the collective level.
-        </p>
-      </div>
-    </GoldenMajorHalves>
+    <div>
+      <Image
+        src={ourStory1}
+        rawWidth={1146}
+        rawHeight={663}
+        containerStyle={{
+          height: 'auto',
+          minWidth: 300,
+          width: '45%',
+          maxWidth: 600,
+          border: 0,
+          background: 'transparent',
+          marginBottom: 10,
+          display: 'block',
+          float: 'left',
+          marginRight: 20,
+        }}
+        imgStyle={{
+          height: 'auto',
+          width: '100%',
+        }}
+        alt="How Restorative Auroville came to be…"
+      />
+      <p>
+        Immediately after their return, L'aura and Jason started offering weekly
+        gatherings, and together with other Aurovilians, they explored what
+        Restorative Circles could look like in Auroville, both as a practice and
+        as a larger approach to engaging with systemic change.
+      </p>
+      <p>
+        This exploration continued, on and off, for almost 5 years, and as a
+        group they also experimented with a few small live Circles amongst
+        themselves and their networks. And at several instances, the question
+        emerged about how to expand their reach and to engage with the larger
+        Auroville community. However, at the time, for some reason or the other,
+        no brave enough steps were made towards a sustained engagement at the
+        collective level.
+      </p>
+    </div>
     <h2 className="mask-h4">The Birthing…</h2>
     <p>
       In September 2015, after a several-month lull in their RC exploration,

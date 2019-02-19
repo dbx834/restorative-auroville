@@ -75,10 +75,8 @@ const Ongoingprojects = props => {
       <p>
         Our approach is to engage with the community at many levels and through
         different initiatives, with a real longing to grow and transform our
-        systems together. Our activities range from large-scale community events
-        (like a FilmFest on peace and reconciliation work around the world, or a
-        Cross-Cultural Dialogue on Discrimination), to taking RC to schools, to
-        fundraising to build an RC Yurt for our Circles, and more…
+        systems together. Our initiatives include engagement with Working
+        Groups, Units, Services, schools and more.
       </p>
       <div className="margin-p">
         <ProjectListing

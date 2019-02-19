@@ -50,7 +50,7 @@ const Initiative = props => {
         </BItem>
         <BItem>
           <Link to="/system-building-initiatives">
-            System Building Initiatives
+            System-Building Initiatives
           </Link>
         </BItem>
         <BItem>Taking RC to Units, Schools and Residential Communities</BItem>

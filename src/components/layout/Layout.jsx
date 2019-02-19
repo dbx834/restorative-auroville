@@ -75,7 +75,7 @@ const pageStyle = css({
   padding: 0,
 
   '& #appWrapper': {
-    // background: "#f2f2f2",
+    // background: '#f2f2f2',
   },
 
   '& #contentWrapper': {
@@ -88,6 +88,30 @@ const pageStyle = css({
 
   '& #menuWrapper': {
     zIndex: 1000,
+  },
+
+  '@media(min-width: 1200px)': {
+    '& .small-only': {
+      display: 'none',
+    },
+  },
+
+  '@media(max-width: 1200px)': {
+    '& .large-only': {
+      display: 'none',
+    },
+  },
+
+  '@media(min-width: 992px)': {
+    '& .mobile-only': {
+      display: 'none',
+    },
+  },
+
+  '@media(max-width: 992px)': {
+    '& .desktop-only': {
+      display: 'none',
+    },
   },
 })
 const pageStyles = pageStyle.toString()

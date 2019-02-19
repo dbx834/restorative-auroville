@@ -33,7 +33,7 @@ const pageData = {
   pageTitle: 'Community Events',
   nakedPageSlug: 'community-events',
   pageAbstract:
-    'We offer learning opportunities through workshops and practice groups on Nonviolent Communication and Restorative Circles. We are also available for individual coaching and mediation, and we are happy to consult with community-based projects that are seeking to shift paradigms.',
+    'Our approach is to engage with the community at many levels and through different initiatives. We’ve hosted several large-scale community events, with the hope to inspire and challenge us to take a leap forward!',
 }
 
 const seoData = seoHelper(pageData)
@@ -70,8 +70,8 @@ const Page = ({ data, isMobile, ...props }) => (
     <h2 className="mask-h3">Community Events</h2>
     <p>
       Our approach is to engage with the community at many levels and through
-      different initiatives, with a real longing to grow and transform our
-      systems together.
+      different initiatives. We’ve hosted several large-scale community events,
+      with the hope to inspire and challenge us to take a leap forward!
     </p>
     <div className="margin-p">
       <ProjectListing

@@ -191,11 +191,11 @@ class Block extends React.Component {
                         <span className="date">
                           {isUndefined(dateText) ? (
                             <Fragment>
-                              {moment.unix(beginTimestamp).format('MMMM, YYYY')}
+                              {moment.unix(beginTimestamp).format('MMMM YYYY')}
                               {!isUndefined(endTimestamp) &&
                                 ` - ${moment
                                   .unix(endTimestamp)
-                                  .format('MMMM, YYYY')}`}
+                                  .format('MMMM YYYY')}`}
                             </Fragment>
                           ) : (
                             <Fragment>{dateText}</Fragment>
