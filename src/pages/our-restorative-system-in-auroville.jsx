@@ -73,16 +73,6 @@ const pdfStyles = css({
 const Page = () => (
   <StandardPage className={pageStyles} seoData={seoData}>
     <h1 className="mask-h3">Our Restorative System in Auroville</h1>
-    <div style={{ position: 'absolute', top: 4, right: 0 }}>
-      <Link
-        to="/system-building-initiatives"
-        className="ant-btn ant-btn-primary"
-      >
-        <span style={{ fontSize: '125%' }}>
-          Our System-Building Initiatives ⇝
-        </span>
-      </Link>
-    </div>
     <div style={{ background: '#d1d1d1', marginBottom: 10 }}>
       <div style={{ width: '45%', margin: 'auto' }}>
         <PDFReader

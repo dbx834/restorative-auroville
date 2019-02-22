@@ -34,7 +34,7 @@ const DisqusComments = props => {
   }
 
   return (
-    <div
+    <aside
       style={{
         background: '#f8f8ff',
         border: '1px solid #00006F',
@@ -42,7 +42,8 @@ const DisqusComments = props => {
         borderRadius: 8,
       }}
     >
-      <h2 className="mask-h6">Leave a comment…</h2>
+      <p className="mask-h6">Leave a comment…</p>
+      <br />
       <p>
         Please share your thoughts and inspiration. Our hope is for these
         comments to create a space for collective wisdom to emerge on
@@ -58,7 +59,7 @@ const DisqusComments = props => {
           config={disqusConfig}
         />
       </div>
-    </div>
+    </aside>
   )
 }
 

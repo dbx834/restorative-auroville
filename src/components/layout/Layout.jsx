@@ -191,20 +191,12 @@ class Layout extends React.Component {
           <div id="contentWrapper">
             <Container goldenMajor block id="content">
               {children}
-              <div className="mobile-only">
-                <aside>
-                  <MobileFooter />
-                </aside>
-              </div>
+              <MobileFooter />
+              <DesktopFooter />
             </Container>
-            <div className="desktop-only">
-              <Container goldenMajor block>
-                <DesktopFooter />
-              </Container>
-            </div>
           </div>
         </StickyContainer>
-        <div style={{ opacity: 0 }}>Hello2!</div>
+        <div style={{ opacity: 0 }}>RC India</div>
       </Type>
     )
   }

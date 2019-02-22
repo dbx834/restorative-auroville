@@ -120,7 +120,7 @@ const Footer = props => {
   }
 
   return (
-    <div>
+    <div className="desktop-only">
       <Image
         src={wavesBottom}
         style={{

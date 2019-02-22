@@ -10,6 +10,7 @@ import findIndex from 'lodash/findIndex'
 import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import BalanceText from 'react-balance-text'
 import { Type } from '@bodhi-project/typography'
 import { PieChart, Pie, Tooltip } from 'recharts'
 import Image from '@bodhi-project/components/lib/Image'
@@ -76,8 +77,18 @@ const avData = [
     name: 'AV Pop',
     value: 2761,
     fill: 'rgba(255,140,0,0)',
+    fillBox: 'rgba(255,140,0,1)',
+    textColor: '#2c2c2c',
+    borderColor: '#00006F',
   },
-  { name: 'Total', value: 245, fill: '#00006F' },
+  {
+    name: 'Total',
+    value: 245,
+    fill: '#00006F',
+    fillBox: '#00006F',
+    textColor: '#FFF',
+    borderColor: 'rgba(255,140,0,1)',
+  },
 ]
 
 const yearData = [
@@ -132,13 +143,13 @@ const XTooltip = props => {
         <Card
           title={false}
           style={{
-            maxWidth: 300,
+            maxWidth: 250,
             border: 0,
             borderTop: '1px solid #00006F',
             borderBottom: '1px solid #00006F',
             borderLeft: '1px solid #00006F',
             borderRight: '1px solid #00006F',
-            borderRadius: 15,
+            borderRadius: 8,
             overflow: 'hidden',
           }}
           bodyStyle={{ padding: 0 }}
@@ -146,16 +157,19 @@ const XTooltip = props => {
           <p
             style={{
               color: '#222222',
-              background: '#ffd44d',
-              paddingTop: 8,
-              paddingBottom: 8,
-              paddingLeft: 13,
-              paddingRight: 13,
+              background: yearDetails.fill,
+              paddingTop: 3,
+              paddingBottom: 3,
+              paddingLeft: 6,
+              paddingRight: 6,
               margin: 0,
             }}
           >
-            {yearDetails.name}:&nbsp;{yearDetails.value}&nbsp;
-            {yearDetails.suffix}
+            <BalanceText>
+              {yearDetails.name}:&nbsp;<strong>{yearDetails.value}</strong>
+              &nbsp;
+              {yearDetails.suffix}
+            </BalanceText>
           </p>
         </Card>
       )}
@@ -181,10 +195,11 @@ const YTooltip = props => {
 
   if (!isUndefined(avDatum)) {
     if (avDatum.value === 245) {
-      text = '245 unique Aurovilians have participated in a Circle so far'
+      text = '245 unique Aurovilians have participated Circles so far.'
     }
     if (avDatum.value === 2761) {
-      text = '2018 Census: 3006 Aurovilians and children'
+      text =
+        "Auroville's Population: 3006 (Aurovilians and children, 2018 Census)"
     }
   }
 
@@ -194,30 +209,29 @@ const YTooltip = props => {
         <Card
           title={false}
           style={{
-            maxWidth: 300,
-            border: 0,
-            borderTop: '1px solid #00006F',
-            borderBottom: '1px solid #00006F',
-            borderLeft: '1px solid #00006F',
-            borderRight: '1px solid #00006F',
-            borderRadius: 15,
+            maxWidth: 250,
+            border: `1px solid ${avDatum.borderColor}`,
+            borderRadius: 8,
             overflow: 'hidden',
           }}
           bodyStyle={{ padding: 0 }}
         >
-          <p
-            style={{
-              color: '#222222',
-              background: '#ffd44d',
-              paddingTop: 8,
-              paddingBottom: 8,
-              paddingLeft: 13,
-              paddingRight: 13,
-              margin: 0,
-            }}
-          >
-            {text}
-          </p>
+          <BalanceText>
+            <p
+              style={{
+                color: avDatum.textColor,
+                background: avDatum.fillBox,
+                paddingTop: 3,
+                paddingBottom: 3,
+                paddingLeft: 6,
+                paddingRight: 6,
+                margin: 0,
+                textWrap: 'balance',
+              }}
+            >
+              {text}
+            </p>
+          </BalanceText>
         </Card>
       )}
     </div>
@@ -228,6 +242,8 @@ const YTooltip = props => {
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 const styles = css({
+  marginTop: 40,
+
   '& .recharts-pie-labels': {
     '& text': {
       fontWeight: 700,
@@ -254,6 +270,10 @@ const styles = css({
 const legendClass = css({
   '& .ant-popover-inner-content': {
     padding: 0,
+  },
+
+  '& .ant-popover-arrow': {
+    background: '#FAFAFA',
   },
 }).toString()
 
@@ -296,7 +316,7 @@ class PieGraph extends React.Component {
     return (
       <div className={styles}>
         <div className="small-only">
-          <h3 className="mask-h4">Reality Check…</h3>
+          <h2 className="mask-h4">Reality Check…</h2>
           <p>
             On one hand, it’s a real celebration how many Circles we’ve had in
             the past few years and how many Aurovilians have participated. And
@@ -346,7 +366,7 @@ class PieGraph extends React.Component {
 
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <div>
-              <div style={{ width: 400 }}>
+              <div style={{ width: 400, paddingTop: 0 }}>
                 {view === 1 && (
                   <div
                     style={{ width: 400, height: 360, position: 'relative' }}
@@ -367,8 +387,11 @@ class PieGraph extends React.Component {
                         <Pie
                           dataKey="value"
                           data={avData}
-                          label
+                          label={{
+                            offsetRadius: 5,
+                          }}
                           labelLine={false}
+                          stroke="none"
                         />
                         <Tooltip content={<YTooltip />} />
                       </PieChart>
@@ -395,10 +418,13 @@ class PieGraph extends React.Component {
                               fill: 'rgba(255,140,0,1)',
                             },
                           ]}
-                          label
+                          label={{
+                            offsetRadius: 5,
+                          }}
                           labelLine={false}
                           innerRadius={10}
                           outerRadius={80}
+                          stroke="none"
                         />
                       </PieChart>
                     </div>
@@ -428,6 +454,7 @@ class PieGraph extends React.Component {
                           label={false}
                           labelLine={false}
                           paddingAngle={1}
+                          stroke="none"
                         />
                         <Tooltip content={<XTooltip />} />
                       </PieChart>
@@ -451,17 +478,32 @@ class PieGraph extends React.Component {
                             {
                               name: 'Total',
                               value: 245,
-                              fill: 'rgba(255,255,255,1)',
+                              fill: '#00006F',
                             },
                           ]}
-                          label={{ offsetRadius: -50, fill: '#00006F' }}
+                          label={false}
                           labelLine={false}
                           innerRadius={10}
                           outerRadius={80}
+                          stroke="none"
                         />
                       </PieChart>
                     </div>
                   </div>
+                )}
+                {view === 2 && (
+                  <p
+                    style={{
+                      textAlign: 'center',
+                      fontWeight: 700,
+                      fontFamily: `"Comic Sans MS", cursive, sans-serif`,
+                      color: '#00006F',
+                      marginBottom: 0,
+                      marginTop: -35,
+                    }}
+                  >
+                    <small>Total Participants: 245</small>
+                  </p>
                 )}
               </div>
             </div>
@@ -490,7 +532,6 @@ class PieGraph extends React.Component {
                   />
                 </Button>
                 <Popover
-                  placement="leftTop"
                   overlayClassName={legendClass}
                   content={
                     <Type
@@ -523,14 +564,15 @@ class PieGraph extends React.Component {
                     shape="circle"
                     ghost
                   >
-                    <Icon
-                      type="info"
+                    <Image
+                      src="/graphs/info2.webp"
                       style={{
                         height: 14,
-                        display: 'flex',
-                        justifyContent: 'center',
-                        verticalAlign: 'unset',
-                        color: '#2c2c2c',
+                        width: 6,
+                        display: 'block',
+                        margin: 'auto',
+                        border: 'unset',
+                        background: 'unset',
                       }}
                     />
                   </Button>
@@ -545,7 +587,7 @@ class PieGraph extends React.Component {
                     marginLeft: 0,
                   }}
                 />
-                <h3
+                <p
                   className="mask-h4"
                   style={{
                     color: '#2c2c2c',
@@ -554,19 +596,17 @@ class PieGraph extends React.Component {
                   }}
                 >
                   Reality Check…
-                </h3>
-                <p style={{ color: '#2c2c2c' }}>
-                  On one hand, it’s a real celebration how many Circles we’ve
-                  had in the past few years and how many Aurovilians have
-                  participated. And yet, in reality we’ve barely touched 10% of
-                  our population!
+                </p>
+                <p style={{ color: '#2c2c2c', marginTop: 0 }}>
+                  On one hand, it’s a celebration how many Circles we’ve had in
+                  the past few years and how many Aurovilians have participated.
+                  And yet in reality we’ve barely touched 10% of our population!
                 </p>
                 <p style={{ color: '#2c2c2c' }}>
                   Here’s a count of our unique participants (how many individual
                   Aurovilians have ever participated in a Circle), in total and
-                  per year. And we’ve of course had several Circles where
-                  participants had already attended previous Circles, and so
-                  therefore aren’t counted in these statistics.
+                  per year. Several Aurovilians have participated in more than
+                  one Circle, but in this case we've counted them only once.
                 </p>
                 <br />
               </div>

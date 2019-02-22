@@ -34,7 +34,7 @@ const pageData = {
   nakedPageSlug:
     'system-building-initiatives/restorative-circles-in-aikiyam-school',
   pageAbstract:
-    'We are sharing RC in Aikiyam School, one of Auroville’s outreach schools for children from Kindergarten to 8th Grade. After discussions with the administration and teachers of the school, a group of ten teachers have committed to learn about this process. It has been met with enthusiasm and curiosity, and we look forward to seeing how we can co-create an RC System for the school. The school has an overwhelming majority of teachers who are originally from the bioregion, and we are looking forward to seeing how they can adapt it to their cultural context.',
+    'We are sharing RC in Aikiyam School, one of Auroville’s outreach schools for children from Kindergarten to 8th Grade. After discussions with the administration and teachers of the school, a group of ten teachers has committed to learn about this process. It has been met with enthusiasm and curiosity, and we look forward to seeing how we can co-create an RC System for the school. The school has an overwhelming majority of teachers who are originally from the bioregion, and we are looking forward to seeing how they can adapt it to their cultural context.',
 }
 
 const seoData = seoHelper(pageData)
@@ -74,7 +74,7 @@ const Initiative = props => {
         <OutLink to="https://www.aikiyamschool.org/">Aikiyam School</OutLink>,
         one of Auroville’s outreach schools for children from Kindergarten to
         8th Grade. After discussions with the administration and teachers of the
-        school, a group of ten teachers have committed to learn about this
+        school, a group of ten teachers has committed to learn about this
         process. It has been met with enthusiasm and curiosity, and we look
         forward to seeing how we can co-create an RC System for the school. The
         school has an overwhelming majority of teachers who are originally from
@@ -92,8 +92,6 @@ const Initiative = props => {
         />
       </div>
       <PDFReader url="https://www.restorativeauroville.org/sbi-assets/aikiyam/conflict-resolution.pdf" />
-      &nbsp;
-      <PDFReader url="https://www.restorativeauroville.org/sbi-assets/aikiyam/intensive.pdf" />
       &nbsp;
       <DisqusComments pageData={pageData} />
     </StandardPage>

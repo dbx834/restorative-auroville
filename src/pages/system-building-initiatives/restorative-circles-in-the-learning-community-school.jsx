@@ -26,7 +26,7 @@ import seoHelper from '../../methods/seoHelper'
 // const { Fragment } = React;
 
 const pageData = {
-  pageTitle: 'Restorative Circles in TLC (the Learning Community School)',
+  pageTitle: 'Restorative Circles in TLC (The Learning Community School)',
   nakedPageSlug:
     'system-building-initiatives/restorative-circles-in-the-learning-community-school',
   pageAbstract:

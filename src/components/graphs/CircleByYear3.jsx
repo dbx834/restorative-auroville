@@ -122,11 +122,19 @@ const styles = css({
       },
     },
   },
+
+  '& .ant-select-selection': {
+    borderColor: '#2c2c2c',
+  },
 }).toString()
 
 const legendClass = css({
   '& .ant-popover-inner-content': {
     padding: 0,
+  },
+
+  '& .ant-popover-arrow': {
+    background: '#FAFAFA',
   },
 }).toString()
 
@@ -558,8 +566,8 @@ class Sample3 extends React.Component {
       <div className={`${styles} ${resolution}`}>
         <p>
           Below you'll find an interactive database of the live Circles that we
-          have facilitated from 2016 onwards. You can view the information by
-          year, or zoom out and view all years at a glance. The information
+          have facilitated (from 2016 onwards). You can view all years at a
+          glance, or zoom for detailed information by year. The information
           provided remains relatively basic, in order to care for the intimacy
           of each Circle.
         </p>
@@ -577,7 +585,13 @@ class Sample3 extends React.Component {
           </Select>
           <Button
             onClick={e => this.reset(e)}
-            style={{ boxShadow: 'unset', height: 32, marginRight: 10 }}
+            style={{
+              boxShadow: 'unset',
+              height: 32,
+              marginRight: 10,
+              borderColor: '#2c2c2c',
+            }}
+            shape="circle"
           >
             <Icon
               type="fullscreen"
@@ -601,7 +615,7 @@ class Sample3 extends React.Component {
                   headingParagraphGapSpacingFactor: 0, // Greater for tighter header-paragraph spacing
                   indentParagraphs: false,
                 }}
-                style={{ maxWidth: 900, background: '#FAFAFA', padding: 12 }}
+                style={{ maxWidth: 800, background: '#FAFAFA', padding: 9 }}
               >
                 <h3 className="mask-h5" style={{ marginBottom: 8 }}>
                   Legend
@@ -619,11 +633,11 @@ class Sample3 extends React.Component {
                         height: 'auto',
                         width: '100%',
                         display: 'block',
-                        marginBottom: 10,
+                        marginBottom: 7,
                         border: 'unset',
                       }}
                     />
-                    <p style={{ marginBottom: 15 }}>
+                    <p style={{ marginBottom: 11 }}>
                       <small>
                         An example of a Circle's complete process over time,
                         from Pre-Circle to Post-Circle.
@@ -637,7 +651,7 @@ class Sample3 extends React.Component {
                     <Popover
                       title={false}
                       content={
-                        <div style={{ width: 600 }}>
+                        <div style={{ width: 450 }}>
                           <Image
                             src="https://ucarecdn.com/2c2ee637-3701-46a3-8d7e-023f1ca29057/rcprocess.webp"
                             rawWidth={1324}
@@ -645,6 +659,7 @@ class Sample3 extends React.Component {
                             style={{
                               height: 'auto',
                               width: '100%',
+                              maxWidth: 450,
                               display: 'block',
                               marginBottom: 0,
                               border: 'unset',
@@ -663,13 +678,13 @@ class Sample3 extends React.Component {
                             height: 'auto',
                             width: '100%',
                             display: 'block',
-                            marginBottom: 10,
+                            marginBottom: 7,
                             border: 'unset',
                           }}
                         />
                       </div>
                     </Popover>
-                    <p style={{ marginBottom: 15 }}>
+                    <p style={{ marginBottom: 11 }}>
                       <small>
                         A Restorative Circle (RC) is a community process
                         designed to hold space for those in conflict.
@@ -711,11 +726,11 @@ class Sample3 extends React.Component {
                       >
                         <h4
                           className="mask-h5"
-                          style={{ marginTop: -8, marginBottom: 0 }}
+                          style={{ marginTop: -11, marginBottom: 0 }}
                         >
                           <small>Circle Number</small>
                         </h4>
-                        <p style={{ marginBottom: 15 }}>
+                        <p style={{ marginBottom: 11 }}>
                           <small>
                             Our Circles are recorded chronologically, so the
                             number indicates this order over time. The highest
@@ -757,7 +772,7 @@ class Sample3 extends React.Component {
                       >
                         <h4
                           className="mask-h5"
-                          style={{ marginTop: -8, marginBottom: 0 }}
+                          style={{ marginTop: -11, marginBottom: 0 }}
                         >
                           <small>Pre-Circle(s)</small>
                         </h4>
@@ -770,7 +785,7 @@ class Sample3 extends React.Component {
                             not indicated.)
                           </small>
                         </p>
-                        <p style={{ marginBottom: 15 }}>
+                        <p style={{ marginBottom: 11 }}>
                           <small>
                             The size of the outer bounds indicates the number of
                             people who were named (to be invited to the Circle),
@@ -813,11 +828,11 @@ class Sample3 extends React.Component {
                       >
                         <h4
                           className="mask-h5"
-                          style={{ marginTop: -8, marginBottom: 0 }}
+                          style={{ marginTop: -11, marginBottom: 0 }}
                         >
                           <small>Circle</small>
                         </h4>
-                        <p style={{ marginBottom: 15 }}>
+                        <p style={{ marginBottom: 11 }}>
                           <small>
                             Indicates when the Circle took place (sometimes in
                             multiple meetings) and its size (number of people
@@ -858,11 +873,11 @@ class Sample3 extends React.Component {
                       >
                         <h4
                           className="mask-h5"
-                          style={{ marginTop: -8, marginBottom: 0 }}
+                          style={{ marginTop: -11, marginBottom: 0 }}
                         >
                           <small>Post-Circle(s)</small>
                         </h4>
-                        <p style={{ marginBottom: 15 }}>
+                        <p style={{ marginBottom: 11 }}>
                           <small>
                             Indicates when the Post-Circle(s) took place and its
                             size (number of people who attended the Circle
@@ -902,11 +917,11 @@ class Sample3 extends React.Component {
                       >
                         <h4
                           className="mask-h6"
-                          style={{ marginTop: -8, marginBottom: 0 }}
+                          style={{ marginTop: -11, marginBottom: 0 }}
                         >
                           <small>Pop-Up</small>
                         </h4>
-                        <p style={{ marginBottom: 15 }}>
+                        <p style={{ marginBottom: 11 }}>
                           <small>
                             When you hover over the graphics, a pop-up appears
                             with additional information about each Circle: a
@@ -923,14 +938,19 @@ class Sample3 extends React.Component {
               </Type>
             }
           >
-            <Button style={{ boxShadow: 'unset', height: 32 }}>
-              <Icon
-                type="info"
+            <Button
+              style={{ boxShadow: 'unset', height: 32, borderColor: '#2c2c2c' }}
+              shape="circle"
+            >
+              <Image
+                src="/graphs/info2.webp"
                 style={{
                   height: 14,
-                  display: 'flex',
-                  justifyContent: 'center',
-                  verticalAlign: 'unset',
+                  width: 6,
+                  display: 'block',
+                  margin: 'auto',
+                  border: 'unset',
+                  background: 'unset',
                 }}
               />
             </Button>

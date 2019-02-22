@@ -4,25 +4,32 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { css } from 'glamor'
+import { css } from 'glamor'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
+import isUndefined from 'lodash/isUndefined'
+import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Images from '@bodhi-project/components/lib/Images'
 import PDFReader from '@bodhi-project/components/lib/PDFReader'
+import OutLink from '@bodhi-project/components/lib/OutLink'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
+
+import Icon from 'antd/lib/icon'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
+
+import Tag from 'antd/lib/tag'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../../components/Link'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
+
+import GoldenMajorHalves from '../../components/GoldenMajorHalves'
 
 const photos = [
   {
@@ -48,18 +55,74 @@ const photos = [
 ]
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-// const { Fragment } = React;
+const { Fragment } = React
 
 const pageData = {
   pageTitle: 'FilmFest: "Restoring Connection"',
   nakedPageSlug: 'community-events/filmfest-restoring-connection',
   pageAbstract:
-    'Restorative Auroville hosted a 6-day Film Festival on the theme of “Restoring Connection” in October 2016 as part of our larger Restorative Circles project in Auroville, where we are working to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values.',
+    'We hosted a 6-day Film Festival, in hopes to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values.',
 }
 
 const seoData = seoHelper(pageData)
 
 const { Item: BItem } = Breadcrumb
+
+/** Theme */
+const Theme = props => {
+  const { border, title, files, tag, text } = props
+  return (
+    <div
+      style={{
+        paddingLeft: 12,
+        borderLeft: `8px solid ${border}`,
+      }}
+    >
+      <h2 className="mask-h4">
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <span>{title}</span>
+          <Link to="/archives">
+            <Tag color="geekblue">...from our Archives</Tag>
+          </Link>
+        </div>
+      </h2>
+      <p>{text}</p>
+      {!isUndefined(files) && (
+        <Fragment>
+          {map(files, file => {
+            return (
+              <p>
+                <OutLink to={file.link}>
+                  <Icon
+                    type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
+                    theme="outlined"
+                  />
+                  &nbsp;
+                  {file.title}
+                </OutLink>
+              </p>
+            )
+          })}
+        </Fragment>
+      )}
+    </div>
+  )
+}
+
+const pdfStyles = css({
+  maxHeight: '600px !important',
+  height: '600px !important',
+
+  '& > div': {
+    height: '600px !important',
+    maxHeight: '600px !important',
+
+    '& > iframe': {
+      height: '600px !important',
+      maxHeight: '600px !important',
+    },
+  },
+}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -88,6 +151,21 @@ const Initiative = props => {
         which to explore the subject, as not everybody will choose to come to
         our workshops or attend a live Restorative Circle.
       </p>
+      <div className="mask-p">
+        <Images
+          photos={photos}
+          loader="gradient"
+          columns={{ min: 2, max: 2 }}
+        />
+      </div>
+      <div style={{ background: '#d1d1d1' }} className="mask-p">
+        <div style={{ width: '40%', margin: 'auto' }}>
+          <PDFReader
+            url="https://www.restorativeauroville.org/event-assets/filmfest-restoring-connection/filmfest.pdf"
+            className={pdfStyles}
+          />
+        </div>
+      </div>
       <p>
         We selected 13 documentaries and feature films about Restorative Justice
         from around the world, mostly based on true stories of pain and loss of
@@ -98,21 +176,6 @@ const Initiative = props => {
         viewers to share about their movie experience and how they might connect
         elements from the movie to Auroville.
       </p>
-      <p>
-        It was special for us as a team to receive support from friends in
-        hosting these dialogue spaces. For example, Bridget (who is Irish)
-        facilitated the dialogue after the Irish movie “Five Minutes of Heaven,”
-        Niva (who is Israeli) the Israeli movie “One Day After Peace,” and Neill
-        (who is South African) the South African movie “On the Path to
-        Forgiveness.”
-      </p>
-      <div className="mask-p">
-        <Images
-          photos={photos}
-          loader="gradient"
-          columns={{ min: 2, max: 2 }}
-        />
-      </div>
       <p>
         The overall feedback and response to the FilmFest was positive. Our
         viewers said they appreciated the depth of the movies, the selections
@@ -139,14 +202,32 @@ const Initiative = props => {
           direction.
         </li>
       </ul>
-      <p>
-        People expressed a longing that as a community we would really learn to
-        love, to forgive, to share, and to overcome our conditioned ideas of
-        superiority versus inferiority.
-      </p>
-      <div className="margin-p">
-        <PDFReader url="https://www.restorativeauroville.org/event-assets/filmfest-restoring-connection/filmfest.pdf" />
-      </div>
+      <GoldenMajorHalves>
+        <div>
+          <p>
+            People expressed a longing that as a community we would really learn
+            to love, to forgive, to share, and to overcome our conditioned ideas
+            of superiority versus inferiority.
+          </p>
+        </div>
+        <div>
+          <Theme
+            border="#FAE300"
+            title='FilmFest: "Restoring Connection" (2016)'
+            tag="Projects & Reports"
+            files={[
+              {
+                title: 'Project Proposal',
+                link: '/restoring-connection-film-fest-project-proposal.pdf',
+              },
+              {
+                title: 'Report',
+                link: '/filmfest-report.pdf',
+              },
+            ]}
+          />
+        </div>
+      </GoldenMajorHalves>
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

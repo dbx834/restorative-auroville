@@ -19,7 +19,6 @@ import withSizes from 'react-sizes'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 import ProjectListing from '../components/lists/ProjectListing'
 
@@ -33,7 +32,7 @@ const pageData = {
   pageTitle: 'System-Building Initiatives',
   nakedPageSlug: 'system-building-initiatives',
   pageAbstract:
-    'Our approach at Restorative Auroville is to engage with the community at many levels and through different initiatives, with the hope to connect with different aspects of our community life, so that we can better understand how to build systems that respond to our unique and complex reality.',
+    'Our approach is to engage with the community at many levels and through different initiatives, with a real longing to grow and transform our systems together. Our initiatives include engagement with Working Groups, Units, Services, schools, residential communities, and more.',
 }
 
 const seoData = seoHelper(pageData)
@@ -76,7 +75,7 @@ const Ongoingprojects = props => {
         Our approach is to engage with the community at many levels and through
         different initiatives, with a real longing to grow and transform our
         systems together. Our initiatives include engagement with Working
-        Groups, Units, Services, schools and more.
+        Groups, Units, Services, schools, residential communities, and more.
       </p>
       <div className="margin-p">
         <ProjectListing
@@ -84,6 +83,39 @@ const Ongoingprojects = props => {
           isMobile={isMobile}
           itemWidth="33%"
         />
+      </div>
+      <div
+        style={{
+          border: '2px solid #00006F',
+          padding: 24,
+          borderRadius: 8,
+          marginTop: 30,
+        }}
+      >
+        <p>
+          In our aim to bring about a cultural shift in Auroville and how we
+          engage with conflict, we’re hoping to bring RC and its principles to
+          different groups in the community.
+        </p>
+        <p>
+          This initiative aims to inform and empower members of the community so
+          that when conflict or misunderstanding arises, we are more aware of
+          our options and hopefully better equipped to move through the
+          challenge.
+        </p>
+        <p>
+          Restorative Auroville’s wish is to offer RC as a safe space for
+          holding difficult conversations through a process of reflective
+          listening. It’s designed to share power in the community and can
+          potentially be facilitated by anyone. When we’re better informed about
+          the process, we can use it to its fullest.
+        </p>
+        <p style={{ marginBottom: 0 }}>
+          We invite any Working Groups, Units, Services, schools and residential
+          communities that are interested in learning more to reach out, so that
+          we can design a training series together and/or look at how to
+          collaborate.
+        </p>
       </div>
     </StandardPage>
   )

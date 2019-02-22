@@ -162,6 +162,7 @@ class Block extends React.Component {
 
   /** standard renderer */
   render() {
+    const { alreadyRendered } = this.state
     const { events, isMobile } = this.props
 
     return (
@@ -173,7 +174,7 @@ class Block extends React.Component {
           gutterHeight={42}
           monitorImagesLoaded={false}
           gridRef={grid => (this.grid = grid)}
-          onLayout={this.reRender}
+          onLayout={alreadyRendered === false && this.reRender}
         >
           {map(events, (card, index) => {
             const { node } = card

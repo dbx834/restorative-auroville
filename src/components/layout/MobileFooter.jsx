@@ -15,7 +15,6 @@ import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { FacebookProvider, Page as FBPage } from 'react-facebook'
-import { Footer as SemanticFooter } from '@bodhi-project/semantic-webflow'
 import ContainerDimensions from 'react-container-dimensions'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
@@ -94,22 +93,22 @@ const Footer = props => {
   }
 
   return (
-    <div>
-      <Image
-        src={wavesBottom}
-        style={{
-          height: 30,
-          width: '100%',
-          border: 0,
-          background: 'transparent',
-          marginBottom: 0,
-          marginTop: 64,
-        }}
-        alt="Restorative Auroville"
-      />
-      <SemanticFooter className={footerStyles}>
-        <h1 className="mask-h3">More Information</h1>
-        <h3 className="mask-h6">About</h3>
+    <div className="mobile-only">
+      <aside>
+        <Image
+          src={wavesBottom}
+          style={{
+            height: 30,
+            width: '100%',
+            border: 0,
+            background: 'transparent',
+            marginBottom: 0,
+            marginTop: 64,
+          }}
+          alt="Restorative Auroville"
+        />
+        <p className="mask-h3">More Information</p>
+        <p className="mask-h6">About</p>
         <ul
           className="mask-p"
           style={{
@@ -128,7 +127,7 @@ const Footer = props => {
             <Link to="/our-restorative-system-in-auroville">Our RC System</Link>
           </li>
         </ul>
-        <h3 className="mask-h6">Our Work</h3>
+        <p className="mask-h6">Our Work</p>
         <ul
           className="mask-p"
           style={{
@@ -150,7 +149,7 @@ const Footer = props => {
             <Link to="/gallery">Gallery</Link>
           </li>
         </ul>
-        <h3 className="mask-h6">External Links</h3>
+        <p className="mask-h6">External Links</p>
         <ul
           className="mask-p"
           style={{
@@ -176,7 +175,7 @@ const Footer = props => {
             <OutLink to="https://www.auroville.org/">Auroville</OutLink>
           </li>
         </ul>
-        <h3 className="mask-h6">Get Involved</h3>
+        <p className="mask-h6">Get Involved</p>
         <ul
           className="mask-p"
           style={{
@@ -200,7 +199,7 @@ const Footer = props => {
             paddingTop: 12,
           }}
         >
-          <h3 className="mask-h6">Connect With Us</h3>
+          <p className="mask-h6">Connect With Us</p>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <OutLink
               to="https://www.facebook.com/RestorativeAuroville/"
@@ -347,7 +346,7 @@ const Footer = props => {
                   width,
                 }}
               >
-                <h3 className="mask-h6">Find Us On Facebook</h3>
+                <p className="mask-h6">Find Us On Facebook</p>
                 <div style={{ maxHeight: 500, overflow: 'hidden' }}>
                   <FacebookProvider appId="218604115574634">
                     <FBPage
@@ -412,7 +411,7 @@ const Footer = props => {
             Copyright © 2018 Restorative Auroville & Joy Living Learning
           </p>
         </div>
-      </SemanticFooter>
+      </aside>
     </div>
   )
 }

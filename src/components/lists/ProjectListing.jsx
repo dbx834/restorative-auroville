@@ -152,6 +152,7 @@ class Block extends React.Component {
   /** standard renderer */
   render() {
     let { itemWidth } = this.props
+    const { alreadyRendered } = this.state
     const { data, isMobile } = this.props
     itemWidth = isUndefined(itemWidth) ? '49%' : itemWidth
 
@@ -164,7 +165,7 @@ class Block extends React.Component {
           gutterHeight={42}
           monitorImagesLoaded={false}
           gridRef={grid => (this.grid = grid)}
-          onLayout={this.reRender}
+          onLayout={alreadyRendered === false && this.reRender}
         >
           {map(data, (card, index) => {
             const {
@@ -177,6 +178,7 @@ class Block extends React.Component {
               dateText,
               // category,
               // author,
+              active,
             } = card
 
             return (
@@ -191,11 +193,25 @@ class Block extends React.Component {
                         <span className="date">
                           {isUndefined(dateText) ? (
                             <Fragment>
-                              {moment.unix(beginTimestamp).format('MMMM YYYY')}
-                              {!isUndefined(endTimestamp) &&
-                                ` - ${moment
-                                  .unix(endTimestamp)
-                                  .format('MMMM YYYY')}`}
+                              {active === true && (
+                                <Fragment>
+                                  {moment
+                                    .unix(beginTimestamp)
+                                    .format('MMMM YYYY')}
+                                  &nbsp;-&nbsp;Ongoing
+                                </Fragment>
+                              )}
+                              {active === false && (
+                                <Fragment>
+                                  {moment
+                                    .unix(beginTimestamp)
+                                    .format('MMMM YYYY')}
+                                  {!isUndefined(endTimestamp) &&
+                                    ` - ${moment
+                                      .unix(endTimestamp)
+                                      .format('MMMM YYYY')}`}
+                                </Fragment>
+                              )}
                             </Fragment>
                           ) : (
                             <Fragment>{dateText}</Fragment>

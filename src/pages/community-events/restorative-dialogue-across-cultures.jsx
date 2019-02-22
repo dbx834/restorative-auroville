@@ -153,7 +153,6 @@ const Initiative = props => {
               border="#FA8F00"
               title="Restorative Dialogue across Cultures (2016)"
               tag="Projects & Reports"
-              text="We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?"
               files={[
                 {
                   title: 'Project Proposal',

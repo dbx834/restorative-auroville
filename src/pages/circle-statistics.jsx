@@ -18,6 +18,7 @@ import StandardPage from '../components/wrappers/StandardPage'
 import CircleByYear3 from '../components/graphs/CircleByYear3'
 import RadialGraph from '../components/graphs/RadialGraph'
 import PieGraph from '../components/graphs/PieGraph'
+import FeedbackGraph from '../components/graphs/FeedbackGraph'
 import seoHelper from '../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -44,6 +45,7 @@ const Page = () => (
     <h2 className="mask-h4">Circles At A Glance</h2>
     <CircleByYear3 />
     <PieGraph />
+    <FeedbackGraph />
   </StandardPage>
 )
 
