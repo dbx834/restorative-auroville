@@ -10,7 +10,7 @@ import findIndex from 'lodash/findIndex'
 import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import BalanceText from 'react-balance-text'
+// import BalanceText from 'react-balance-text'
 import { Type } from '@bodhi-project/typography'
 import { PieChart, Pie, Tooltip } from 'recharts'
 import Image from '@bodhi-project/components/lib/Image'
@@ -165,11 +165,9 @@ const XTooltip = props => {
               margin: 0,
             }}
           >
-            <BalanceText>
-              {yearDetails.name}:&nbsp;<strong>{yearDetails.value}</strong>
-              &nbsp;
-              {yearDetails.suffix}
-            </BalanceText>
+            {yearDetails.name}:&nbsp;<strong>{yearDetails.value}</strong>
+            &nbsp;
+            {yearDetails.suffix}
           </p>
         </Card>
       )}
@@ -216,22 +214,20 @@ const YTooltip = props => {
           }}
           bodyStyle={{ padding: 0 }}
         >
-          <BalanceText>
-            <p
-              style={{
-                color: avDatum.textColor,
-                background: avDatum.fillBox,
-                paddingTop: 3,
-                paddingBottom: 3,
-                paddingLeft: 6,
-                paddingRight: 6,
-                margin: 0,
-                textWrap: 'balance',
-              }}
-            >
-              {text}
-            </p>
-          </BalanceText>
+          <p
+            style={{
+              color: avDatum.textColor,
+              background: avDatum.fillBox,
+              paddingTop: 3,
+              paddingBottom: 3,
+              paddingLeft: 6,
+              paddingRight: 6,
+              margin: 0,
+              textWrap: 'balance',
+            }}
+          >
+            {text}
+          </p>
         </Card>
       )}
     </div>
