@@ -22,6 +22,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/c
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../../components/Link'
+import PrevNext from '../../components/PrevNext'
 import StandardPage from '../../components/wrappers/StandardPage'
 import EqualHalves from '../../components/EqualHalves'
 import GoldenMajorHalves from '../../components/GoldenMajorHalves'
@@ -66,6 +67,14 @@ const photos = [
 ]
 
 const { Item: BItem } = Breadcrumb
+
+const next = {
+  nakedPageSlug: 'community-events/walk-of-hope-in-auroville-and-the-bioregion',
+}
+
+const prev = {
+  nakedPageSlug: 'community-events/women-for-justice',
+}
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -179,7 +188,7 @@ const Initiative = props => {
           </GrungeBox>
         </div>
       </GoldenMajorHalves>
-
+      <PrevNext next={next} prev={prev} />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

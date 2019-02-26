@@ -5,12 +5,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-// import Image from '@bodhi-project/components/lib/Image'
 import Images from '@bodhi-project/components/lib/Images'
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import PDFReader from '@bodhi-project/components/lib/PDFReader'
@@ -21,6 +16,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/c
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../../components/Link'
+import PrevNext from '../../components/PrevNext'
 import StandardPage from '../../components/wrappers/StandardPage'
 
 import DisqusComments from '../../components/DisqusComments'
@@ -49,6 +45,16 @@ const photos = [
 ]
 
 const { Item: BItem } = Breadcrumb
+
+const next = {
+  nakedPageSlug:
+    'system-building-initiatives/restorative-circles-in-the-learning-community-school',
+}
+
+const prev = {
+  nakedPageSlug:
+    'system-building-initiatives/exploring-justice-and-rc-with-the-auroville-council',
+}
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -93,6 +99,7 @@ const Initiative = props => {
       </div>
       <PDFReader url="https://www.restorativeauroville.org/sbi-assets/aikiyam/conflict-resolution.pdf" />
       &nbsp;
+      <PrevNext next={next} prev={prev} />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

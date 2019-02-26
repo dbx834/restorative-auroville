@@ -106,8 +106,8 @@ const Page = () => (
   <StandardPage className="" seoData={seoData}>
     <h1 className="mask-h3">Archives</h1>
     <p>
-      Here’s a compilation of our different project proposals, reports, and
-      more.
+      Here’s a compilation of our different project proposals, reports, public
+      presentations, teaching material, and more.
     </p>
     <Theme
       border="#0101AF"
@@ -331,6 +331,10 @@ const Page = () => (
       tag="Public Presentations"
       text='We offered a public presentation about RC at Unity Pavilion, and explored about the question: "How do we dream justice could be in Auroville?"'
       files={[
+        {
+          title: 'Project Proposal',
+          link: '/how-we-dream.pdf',
+        },
         {
           title: 'Watch video',
           icon: 'youtube',

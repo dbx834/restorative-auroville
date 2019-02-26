@@ -5,19 +5,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Images from '@bodhi-project/components/lib/Images'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../../components/Link'
+import PrevNext from '../../components/PrevNext'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
@@ -55,6 +51,11 @@ const photos = [
   { src: '/sbi-assets/tlc/img14.jpg', width: 600, height: 1067 },
 ]
 
+const prev = {
+  nakedPageSlug:
+    'system-building-initiatives/restorative-circles-in-aikiyam-school',
+}
+
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
@@ -91,6 +92,7 @@ const Initiative = props => {
           columns={{ min: 2, max: 3 }}
         />
       </div>
+      <PrevNext prev={prev} />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

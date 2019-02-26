@@ -18,6 +18,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/c
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../../components/Link'
+import PrevNext from '../../components/PrevNext'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
@@ -46,6 +47,10 @@ const photos = [
     height: 1280,
   },
 ]
+
+const next = {
+  nakedPageSlug: 'community-events/cross-cultural-dialogue',
+}
 
 const { Item: BItem } = Breadcrumb
 
@@ -103,6 +108,7 @@ const Initiative = props => {
         of her husband, to regain her belongings.
       </p>
       <p>All are welcome, women and men, girls and boys!</p>
+      <PrevNext next={next} />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

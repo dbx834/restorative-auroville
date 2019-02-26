@@ -177,24 +177,12 @@ class FacilitatorsTeam extends React.Component {
           <PersonCircle
             image={lauraSquare}
             className="child-circle-highlight"
-            role={
-              <Frag>
-                Core Team
-                <br />
-                &nbsp;&nbsp;Member
-              </Frag>
-            }
+            role={<Frag>Founder</Frag>}
           />
           <PersonCircle
             image={janetSquare}
             className="child-circle-highlight"
-            role={
-              <Frag>
-                Core Team
-                <br />
-                &nbsp;&nbsp;Member
-              </Frag>
-            }
+            role={<Frag>Founder</Frag>}
           />
           <PersonCircle
             image={katiSquare}

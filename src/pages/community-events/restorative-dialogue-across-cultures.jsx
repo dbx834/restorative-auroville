@@ -13,7 +13,8 @@ import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import OutLink from '@bodhi-project/components/lib/OutLink'
-import Image from '@bodhi-project/components/lib/Image'
+// import Image from '@bodhi-project/components/lib/Image'
+import Images from '@bodhi-project/components/lib/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
@@ -27,6 +28,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../../components/Link'
+import PrevNext from '../../components/PrevNext'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
 
@@ -43,6 +45,14 @@ const pageData = {
   nakedPageSlug: 'community-events/restorative-dialogue-across-cultures',
   pageAbstract:
     'We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?',
+}
+
+const next = {
+  nakedPageSlug: 'community-events/filmfest-restoring-connection',
+}
+
+const prev = {
+  nakedPageSlug: 'community-events/world-cafes-on-peace-and-justice',
 }
 
 const seoData = seoHelper(pageData)
@@ -173,22 +183,38 @@ const Initiative = props => {
         </GoldenMajorHalves>
       </div>
       <div className="margin-p">
-        <Image
-          src="/event-assets/restorative-dialogue-across-cultures/banner.jpg"
-          rawWidth={1440}
-          rawHeight={900}
-          style={{
-            height: 'auto',
-            maxWidth: '600px',
-            border: 0,
-            background: 'transparent',
-            display: 'block',
-            marginLeft: 0,
-          }}
-          alt="Restorative Dialogue across Cultures"
+        <Images
+          photos={[
+            {
+              src:
+                '/event-assets/restorative-dialogue-across-cultures/img00001.jpeg',
+              width: 600,
+              height: 400,
+            },
+            {
+              src:
+                '/event-assets/restorative-dialogue-across-cultures/img00002.jpeg',
+              width: 600,
+              height: 400,
+            },
+            {
+              src:
+                '/event-assets/restorative-dialogue-across-cultures/img00003.jpeg',
+              width: 600,
+              height: 400,
+            },
+            {
+              src:
+                '/event-assets/restorative-dialogue-across-cultures/img00004.jpeg',
+              width: 600,
+              height: 400,
+            },
+          ]}
+          loader="gradient"
+          columns={{ min: 2, max: 2 }}
         />
       </div>
-
+      <PrevNext next={next} prev={prev} />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

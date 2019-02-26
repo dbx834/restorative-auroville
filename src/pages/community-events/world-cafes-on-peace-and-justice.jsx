@@ -4,20 +4,21 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 import PropTypes from 'prop-types'
+import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
+import PDFReader from '@bodhi-project/components/lib/PDFReader'
 import Images from '@bodhi-project/components/lib/Images'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../../components/Link'
+import PrevNext from '../../components/PrevNext'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
@@ -29,6 +30,14 @@ const pageData = {
   pageTitle: 'World Cafés on Peace & Justice',
   nakedPageSlug: 'community-events/world-cafes-on-peace-and-justice',
   pageAbstract: 'Coming soon.',
+}
+
+const next = {
+  nakedPageSlug: 'community-events/restorative-dialogue-across-cultures',
+}
+
+const prev = {
+  nakedPageSlug: 'community-events/walk-of-hope-in-auroville-and-the-bioregion',
 }
 
 const seoData = seoHelper(pageData)
@@ -67,6 +76,21 @@ const photos = [
     height: 543,
   },
 ]
+
+const pdfStyles = css({
+  maxHeight: '600px !important',
+  height: '600px !important',
+
+  '& > div': {
+    height: '600px !important',
+    maxHeight: '600px !important',
+
+    '& > iframe': {
+      height: '600px !important',
+      maxHeight: '600px !important',
+    },
+  },
+}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -174,6 +198,15 @@ const Initiative = props => {
           columns={{ min: 2, max: 3 }}
         />
       </div>
+      <div style={{ background: '#d1d1d1' }} className="mask-p">
+        <div style={{ width: '40%', margin: 'auto' }}>
+          <PDFReader
+            url="https://www.restorativeauroville.org/event-assets/world-cafes-on-peace-and-justice/table-notes.pdf"
+            className={pdfStyles}
+          />
+        </div>
+      </div>
+      <PrevNext next={next} prev={prev} />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

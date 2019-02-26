@@ -26,6 +26,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../../components/Link'
+import PrevNext from '../../components/PrevNext'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
 import Video from '../../components/Video'
@@ -68,9 +69,17 @@ const pageData = {
     'Spreading the message of oneness, inclusion and respect and (re-)connect as Aurovilians, and with our neighbours in the surrounding villages.',
 }
 
+const prev = {
+  nakedPageSlug: 'community-events/cross-cultural-dialogue',
+}
+
 const seoData = seoHelper(pageData)
 
 const { Item: BItem } = Breadcrumb
+
+const next = {
+  nakedPageSlug: 'community-events/world-cafes-on-peace-and-justice',
+}
 
 /** Theme */
 const Theme = props => {
@@ -219,6 +228,7 @@ const Initiative = props => {
           />
         </div>
       </GoldenMajorHalves>
+      <PrevNext next={next} prev={prev} />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

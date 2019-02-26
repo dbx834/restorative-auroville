@@ -201,6 +201,11 @@ const photos = [
   { src: nvcX81, width: 600, height: 415 },
   { src: nvcX82, width: 600, height: 555 },
   { src: nvcX83, width: 600, height: 450 },
+  {
+    src: '/event-assets/restorative-dialogue-across-cultures/img00001.jpeg',
+    width: 600,
+    height: 400,
+  },
 ]
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions

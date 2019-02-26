@@ -20,6 +20,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/c
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../../components/Link'
+import PrevNext from '../../components/PrevNext'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
 
@@ -35,6 +36,15 @@ const pageData = {
   pageAbstract:
     'In early 2018, we invited the Auroville Council to explore RC and justice with us, so that we could improve our collaboration and better contribute to the community.',
 }
+
+const next = {
+  nakedPageSlug:
+    'system-building-initiatives/restorative-circles-in-aikiyam-school',
+}
+
+// const prev = {
+//   nakedPageSlug: 'writings/justice-in-auroville',
+// }
 
 const seoData = seoHelper(pageData)
 
@@ -116,6 +126,7 @@ const Initiative = props => {
         <PDFReader url="https://www.restorativeauroville.org/sbi-assets/avc/avc.pdf" />
         &nbsp;
       </div>
+      <PrevNext next={next} />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

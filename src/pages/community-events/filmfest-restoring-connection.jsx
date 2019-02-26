@@ -25,6 +25,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../../components/Link'
+import PrevNext from '../../components/PrevNext'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
@@ -62,6 +63,10 @@ const pageData = {
   nakedPageSlug: 'community-events/filmfest-restoring-connection',
   pageAbstract:
     'We hosted a 6-day Film Festival, in hopes to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values.',
+}
+
+const prev = {
+  nakedPageSlug: 'community-events/restorative-dialogue-across-cultures',
 }
 
 const seoData = seoHelper(pageData)
@@ -142,14 +147,15 @@ const Initiative = props => {
       </Breadcrumb>
       <h1 className="mask-h3">FilmFest: "Restoring Connection"</h1>
       <p>
-        Restorative Auroville hosted a 6-day Film Festival on the theme of
-        “Restoring Connection” in October 2016 as part of our larger Restorative
-        Circles project in Auroville, where we are working to raise awareness
-        about Restorative Justice and hopefully contribute to building a justice
-        system that is in alignment with our Auroville values. With the
-        FilmFest, we wanted to offer yet another approach and medium through
-        which to explore the subject, as not everybody will choose to come to
-        our workshops or attend a live Restorative Circle.
+        Restorative Auroville hosted a 6-day Film Festival on the theme of "
+        <Link to="/writings/restoring-connection">Restoring Connection</Link>"
+        in October 2016 as part of our larger Restorative Circles project in
+        Auroville, where we are working to raise awareness about Restorative
+        Justice and hopefully contribute to building a justice system that is in
+        alignment with our Auroville values. With the FilmFest, we wanted to
+        offer yet another approach and medium through which to explore the
+        subject, as not everybody will choose to come to our workshops or attend
+        a live Restorative Circle.
       </p>
       <div className="mask-p">
         <Images
@@ -228,6 +234,7 @@ const Initiative = props => {
           />
         </div>
       </GoldenMajorHalves>
+      <PrevNext prev={prev} />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

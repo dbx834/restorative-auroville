@@ -47,7 +47,7 @@ const renderSwitch = person => {
       return <Stefan />
     case 'michelle':
       return <Michelle />
-    case 'hamsini':
+    case ' ':
       return <Hamsini />
     case 'celia':
       return <Celia />
@@ -82,7 +82,7 @@ const circleStylesObject = css({
     content: `"Celia"`,
   },
   '& .child-circle:nth-child(6)::after': {
-    content: `"Hamsini"`,
+    content: `" "`,
   },
 })
 const circleStyles = circleStylesObject.toString()
@@ -246,10 +246,10 @@ class Apprentices extends React.Component {
                 backgroundSize: '105px 105px',
                 border: '2px solid #FFBF00',
               }}
-              onClick={() => this.showPerson('hamsini')}
+              // onClick={() => this.showPerson('hamsini')}
             >
               <p>
-                <strong>2018</strong>
+                <strong>&nbsp;</strong>
               </p>
             </div>
           </div>
