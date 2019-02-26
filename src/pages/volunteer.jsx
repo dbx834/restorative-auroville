@@ -14,6 +14,7 @@ import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
+import Video from '@bodhi-project/components/lib/Video'
 // import OutLink from '@bodhi-project/components/lib/OutLink'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
@@ -131,24 +132,8 @@ const Page = () => (
         <VolunteerForm />
       </Col>
       <Col sm={24} md={9}>
-        <h2 className="mask-h3">Our Apprentice, Pranjal, shares…</h2>
-        <Link to="/writings/our-apprentice-pranjal-shares">
-          <Image
-            src={nvcX80}
-            style={{
-              background: 'transparent',
-              border: 'unset',
-              height: 'auto',
-              width: '80%',
-              marginLeft: 0,
-              display: 'block',
-              marginBottom: 10,
-            }}
-            rawWidth={600}
-            rawHeight={603}
-          />
-        </Link>
-        <p>Coming soon…</p>
+        <h2 className="mask-h3">Our Apprentice, Henrike, shares…</h2>
+        <Video url="https://www.youtube.com/watch?v=WEc1itWPQVY" />
       </Col>
     </Row>
   </StandardPage>

@@ -353,7 +353,7 @@ const Page = props => {
             </div>
             <div style={{ flexGrow: 195, flexBasis: 0 }}>
               <BannerLink
-                to="/projects/taking-rc-to-units-schools-and-residential-communities"
+                to="/system-building-initiatives"
                 bannerImage={banner23}
                 alt="We can bring Restorative Circles to your community"
                 bannerHover={banner23Hover}

@@ -257,6 +257,14 @@ const Page = () => (
         <Video url="https://www.youtube.com/watch?v=kqBM5Xr5VfI&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=10" />
       </div>
     </GoldenMajorHalves>
+    <p>
+      Restorative Auroville is an initiative of&nbsp;
+      <OutLink to="https://www.joylivinglearning.org/">
+        Joy Living Learning
+      </OutLink>
+      , a Unit of the&nbsp;
+      <OutLink to="https://www.auroville.org/">Auroville Foundation</OutLink>
+    </p>
     <DisqusComments pageData={pageData} />
   </StandardPage>
 )

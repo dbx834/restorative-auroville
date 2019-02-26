@@ -122,7 +122,7 @@ const Initiative = props => {
       <p>Please know that any amount is greatly appreciated.</p>
 
       <div className="margin-p">
-        <PDFReader url="https://www.restorativeauroville.org/project-assets/magazine/proposal.pdf" />
+        <PDFReader url="https://www.restorativeauroville.org/donate-assets/magazine/proposal.pdf" />
         &nbsp;
       </div>
       <DisqusComments pageData={pageData} />
