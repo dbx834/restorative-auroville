@@ -147,8 +147,7 @@ const Initiative = props => {
       </Breadcrumb>
       <h1 className="mask-h3">FilmFest: "Restoring Connection"</h1>
       <p>
-        Restorative Auroville hosted a 6-day Film Festival on the theme of "
-        <Link to="/writings/restoring-connection">Restoring Connection</Link>"
+        We hosted a 6-day Film Festival on the theme of "Restoring Connection"
         in October 2016 as part of our larger Restorative Circles project in
         Auroville, where we are working to raise awareness about Restorative
         Justice and hopefully contribute to building a justice system that is in
@@ -229,6 +228,11 @@ const Initiative = props => {
               {
                 title: 'Report',
                 link: '/filmfest-report.pdf',
+              },
+              {
+                title: 'See "Auroville Today" article',
+                icon: 'copy',
+                link: '/writings/restoring-connection',
               },
             ]}
           />

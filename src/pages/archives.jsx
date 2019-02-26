@@ -271,6 +271,11 @@ const Page = () => (
           title: 'Report',
           link: '/filmfest-report.pdf',
         },
+        {
+          title: 'See "Auroville Today" article',
+          icon: 'copy',
+          link: '/writings/restoring-connection',
+        },
       ]}
     />
     <Theme
