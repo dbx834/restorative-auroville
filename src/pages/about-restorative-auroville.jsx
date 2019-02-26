@@ -263,7 +263,7 @@ const Page = () => (
         Joy Living Learning
       </OutLink>
       , a Unit of the&nbsp;
-      <OutLink to="https://www.auroville.org/">Auroville Foundation</OutLink>
+      <OutLink to="https://www.auroville.org/">Auroville Foundation</OutLink>.
     </p>
     <DisqusComments pageData={pageData} />
   </StandardPage>
