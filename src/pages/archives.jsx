@@ -350,7 +350,7 @@ const Page = () => (
         {
           src: '/assets/archive/signs/img00006.jpg',
           width: 600,
-          height: 549,
+          height: 505,
         },
       ]}
     />
