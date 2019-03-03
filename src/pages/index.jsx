@@ -6,11 +6,11 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import { css } from 'glamor'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
 import Image from '@bodhi-project/components/lib/Image'
+import Division from '@bodhi-project/components/lib/Division'
+import Video from '@bodhi-project/components/lib/Video'
 
 import Row from 'antd/lib/row'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
@@ -20,6 +20,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
+import Copy from '../components/Copy'
 import StandardPage from '../components/wrappers/StandardPage'
 import EventsThisMonth from '../components/lists/EventsThisMonth'
 
@@ -33,6 +34,7 @@ import banner from '../assets/banner.png'
 import p32 from '../assets/designing-our-justice-system-consciously.jpg'
 import p41 from '../assets/surya-on-restorative-circles.jpg'
 import bluePaintbrush from '../assets/bluePaintbrush.png'
+import orangePaintbrush from '../assets/orangePaintbrush.png'
 
 import banner21 from '../assets/banner2-1.png'
 import banner25 from '../assets/banner2-5.png'
@@ -401,8 +403,8 @@ const Page = props => {
       <div
         style={{
           marginTop: 30,
-          paddingTop: 12,
-          paddingBottom: 28,
+          paddingTop: 48,
+          paddingBottom: 48,
           paddingLeft: '10%',
           paddingRight: '10%',
           position: 'relative',
@@ -535,6 +537,106 @@ const Page = props => {
       </div>
 
       <VideoSeriesBlock1 />
+
+      <div
+        style={{
+          marginTop: 30,
+          paddingTop: 48,
+          paddingBottom: 48,
+          paddingLeft: '10%',
+          paddingRight: '10%',
+          position: 'relative',
+        }}
+        className="margin-p"
+      >
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            height: '100%',
+            zIndex: -2,
+            overflow: 'hidden',
+          }}
+        >
+          <Image
+            src={orangePaintbrush}
+            style={{
+              background: 'transparent',
+              border: 'unset',
+              height: '100%',
+              width: '100%',
+            }}
+            rawWidth={1440}
+            rawHeight={900}
+          />
+        </div>
+        <div className="margin-p">
+          <Division goldenAlt>
+            <Copy style={{ paddingTop: 10 }}>
+              <Video
+                url="https://www.youtube.com/watch?v=6Ma-dnG53LU"
+                style={{ border: 'unset' }}
+              />
+              <p
+                style={{
+                  color: '#2c2c2c',
+                  marginBottom: 0,
+                }}
+              >
+                <i>
+                  Teachers at Aikiyam School are inspired by Restorative
+                  Circles!
+                </i>
+                &nbsp;
+                <Link to="/system-building-initiatives/restorative-circles-in-aikiyam-school">
+                  See more ⇝
+                </Link>
+              </p>
+            </Copy>
+            <Copy>
+              <h2
+                style={{
+                  color: '#2c2c2c',
+                  marginBottom: 10,
+                }}
+              >
+                Bring RC to your community…
+              </h2>
+              <p
+                style={{
+                  color: '#2c2c2c',
+                }}
+              >
+                Our approach is to engage with the community at many levels and
+                through different initiatives, with a real longing to grow and
+                transform our systems together. Our initiatives include
+                engagement with Working Groups, Units, Services, schools,
+                residential communities, and more.
+              </p>
+              <p
+                style={{
+                  color: '#2c2c2c',
+                }}
+              >
+                In our aim to bring about a cultural shift in Auroville and how
+                we engage with conflict, we’re hoping to bring RC and its
+                principles to different groups in the community.
+              </p>
+              <p
+                style={{
+                  color: '#2c2c2c',
+                  marginBottom: 0,
+                }}
+              >
+                <Link to="/system-building-initiatives">
+                  See our System Building Initiatives ⇝
+                </Link>
+              </p>
+            </Copy>
+          </Division>
+        </div>
+      </div>
 
       <TeamHighlight />
     </StandardPage>

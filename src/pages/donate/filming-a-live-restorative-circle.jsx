@@ -5,14 +5,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Images from '@bodhi-project/components/lib/Images'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
@@ -21,6 +17,7 @@ import Link from '../../components/Link'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
+import PrevNext from '../../components/PrevNext'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
@@ -40,6 +37,14 @@ const photos = [
 ]
 
 const { Item: BItem } = Breadcrumb
+
+const next = {
+  nakedPageSlug: 'donate/building-an-rc-yurt',
+}
+
+const prev = {
+  nakedPageSlug: 'donate/tamil-aurovilian-journeys',
+}
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -80,6 +85,7 @@ const Initiative = props => {
         />
         &nbsp;
       </div>
+      <PrevNext next={next} prev={prev} />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

@@ -8,7 +8,6 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Images from '@bodhi-project/components/lib/Images'
 import OutLink from '@bodhi-project/components/lib/OutLink'
-import PDFReader from '@bodhi-project/components/lib/PDFReader'
 import Video from '@bodhi-project/components/lib/Video'
 
 import Breadcrumb from 'antd/lib/breadcrumb'
@@ -18,7 +17,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/c
 import Link from '../../components/Link'
 import PrevNext from '../../components/PrevNext'
 import StandardPage from '../../components/wrappers/StandardPage'
-
+import PDFViewer from '../../components/PDFViewer'
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
 
@@ -97,8 +96,10 @@ const Initiative = props => {
           columns={{ min: 2, max: 3 }}
         />
       </div>
-      <PDFReader url="https://www.restorativeauroville.org/sbi-assets/aikiyam/conflict-resolution.pdf" />
-      &nbsp;
+      <PDFViewer
+        url="https://www.restorativeauroville.org/sbi-assets/aikiyam/conflict-resolution.pdf"
+        title="Booklet"
+      />
       <PrevNext next={next} prev={prev} />
       <DisqusComments pageData={pageData} />
     </StandardPage>

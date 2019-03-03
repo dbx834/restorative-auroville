@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 import { css } from 'glamor'
 import moment from 'moment'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
@@ -20,7 +19,6 @@ import {
 } from '@bodhi-project/seo'
 import { StickyContainer, Sticky } from 'react-sticky'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Container from '@bodhi-project/components/lib/Container'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals

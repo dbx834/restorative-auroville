@@ -5,16 +5,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
-import PDFReader from '@bodhi-project/components/lib/PDFReader'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
@@ -23,6 +16,7 @@ import Link from '../../components/Link'
 import PrevNext from '../../components/PrevNext'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
+import PDFViewer from '../../components/PDFViewer'
 
 import seoHelper from '../../methods/seoHelper'
 
@@ -122,10 +116,10 @@ const Initiative = props => {
           their full potential
         </li>
       </ul>
-      <div className="margin-p">
-        <PDFReader url="https://www.restorativeauroville.org/sbi-assets/avc/avc.pdf" />
-        &nbsp;
-      </div>
+      <PDFViewer
+        url="https://www.restorativeauroville.org/sbi-assets/avc/avc.pdf"
+        title="Booklet"
+      />
       <PrevNext next={next} />
       <DisqusComments pageData={pageData} />
     </StandardPage>

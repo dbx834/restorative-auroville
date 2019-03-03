@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 // import { css } from 'glamor'
 import moment from 'moment'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import isNull from 'lodash/isNull'
 import startsWith from 'lodash/startsWith'
 import join from 'lodash/join'
@@ -15,10 +14,6 @@ import join from 'lodash/join'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Link, { withPrefix } from 'gatsby-link'
 import treeParser from '@bodhi-project/markdown-to-react/lib/treeParser'
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import EventWrapper from '../components/wrappers/EventWrapper'
@@ -72,6 +67,8 @@ class BlogPostTemplate extends React.Component {
       endDate: ends,
       cost: frontmatter.cost,
     }
+
+    console.log(markdownAst)
 
     return (
       <EventWrapper

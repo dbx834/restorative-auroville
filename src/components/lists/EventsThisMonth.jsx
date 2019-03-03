@@ -8,7 +8,6 @@ import { css } from 'glamor'
 import moment from 'moment'
 import color from 'color'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import isUndefined from 'lodash/isUndefined'
 import join from 'lodash/join'
 
@@ -383,7 +382,7 @@ class EventsGrid extends React.Component {
                   className="mask-p"
                 />
                 <div style={{ padding: '0px 9px 9px' }}>
-                  <Link to={extraData.node.fields.route}>
+                  <Link to={`/${extraData.node.fields.route}`}>
                     <h3 className="mask-h4">
                       {extraData.node.frontmatter.title} ⇝
                     </h3>

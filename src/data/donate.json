@@ -1,32 +1,38 @@
 [
-    {
-        "pageTitle": "Building an RC Yurt",
-        "nakedPageSlug": "donate/building-an-rc-yurt",
-        "pageAbstract": "With our work growing, it’s high-time that we build a physical structure for our RC gatherings. We’re hoping to raise Rs.5 lakhs, in order to set up a dismountable yurt.",
-        "cover": "/donate-assets/yurt/yurt.jpg",
-        "beginTimestamp": 1573109111,
-        "category": "Restorative Circles",
-        "highlight": false,
-        "ongoing": true
-    },
-    {
-        "pageTitle": "Filming a Live Restorative Circle",
-        "nakedPageSlug": "donate/filming-a-live-restorative-circle",
-        "pageAbstract": "We have a big, big, big dream to one day film a live Circle, so that we can document the entire process and share this beautiful work with the rest of the world.",
-        "cover": "/donate-assets/filming/img2.jpg",
-        "beginTimestamp": 1573109111,
-        "category": "Restorative Circles",
-        "highlight": true,
-        "ongoing": true
-    },
-    {
-        "pageTitle": "\"Restoring Connection & Building Bridges – Tamil Aurovilian Journeys\" (Printed Publication)",
-        "nakedPageSlug": "donate/tamil-aurovilian-journeys",
-        "pageAbstract": "We are creating a magazine focusing on the experiences of Tamil Aurovilians, their journeys into Auroville, and their feelings of belonging and exclusion.",
-        "cover": "/donate-assets/magazine/img2.jpeg",
-        "beginTimestamp": 1573109111,
-        "category": "Restorative Circles",
-        "highlight": false,
-        "ongoing": true
-    }
+  {
+    "pageTitle": "Building an RC Yurt",
+    "nakedPageSlug": "donate/building-an-rc-yurt",
+    "pageAbstract": "With our work growing, it’s high-time that we build a physical structure for our RC gatherings. We’re hoping to raise Rs.5 lakhs, in order to set up a dismountable yurt.",
+    "cover": "/donate-assets/yurt/yurt.jpg",
+    "beginTimestamp": 1483265319,
+    "endTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "highlight": true,
+    "active": true,
+    "ongoing": true
+  },
+  {
+    "pageTitle": "Filming a Live Restorative Circle",
+    "nakedPageSlug": "donate/filming-a-live-restorative-circle",
+    "pageAbstract": "We have a big, big, big dream to one day film a live Circle, so that we can document the entire process and share this beautiful work with the rest of the world.",
+    "cover": "/donate-assets/filming/img2.jpg",
+    "beginTimestamp": 1483265319,
+    "endTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "highlight": true,
+    "active": true,
+    "ongoing": true
+  },
+  {
+    "pageTitle": "Tamil Aurovilian Journeys (Publication)",
+    "nakedPageSlug": "donate/tamil-aurovilian-journeys",
+    "pageAbstract": "We are creating a one-time magazine focusing on the experiences of Tamil Aurovilians, their journeys into Auroville, and their feelings of belonging and exclusion.",
+    "cover": "/donate-assets/magazine/img2.jpeg",
+    "beginTimestamp": 1483265319,
+    "endTimestamp": 1514801319,
+    "category": "Restorative Circles",
+    "highlight": true,
+    "active": true,
+    "ongoing": true
+  }
 ]

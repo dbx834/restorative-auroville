@@ -5,12 +5,10 @@
 import React from 'react'
 // import { css } from "glamor";
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Form from 'antd/lib/form'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/form/style/css'
 

@@ -4,25 +4,25 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 // import PropTypes from 'prop-types'
-// import { css } from "glamor";
+import { css } from 'glamor'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 // import Image from '@bodhi-project/components/lib/Image'
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import Images from '@bodhi-project/components/lib/Images'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Icon from 'antd/lib/icon'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 
 import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
+
+import Collapse from 'antd/lib/collapse'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/collapse/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 // import Link from '../components/Link'
@@ -31,6 +31,7 @@ import StandardPage from '../components/wrappers/StandardPage'
 import seoHelper from '../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Panel } = Collapse
 const { Fragment } = React
 const pageData = {
   pageTitle: 'Archives',
@@ -43,6 +44,23 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
+const style = css({
+  '& .ant-collapse-header': {
+    padding: '0px !important',
+    borderRadius: '0px !important',
+  },
+  '& .ant-collapse-item': {
+    border: 'unset !important',
+  },
+  '& .ant-collapse-content-box': {
+    // border: '1px solid #00006F !important',
+    // padding: '6px !important',
+    // borderRadius: '4px !important',
+    border: 'unset !important',
+    padding: 'unset !important',
+    borderRadius: 'unset !important',
+  },
+}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -61,11 +79,31 @@ const Theme = props => {
       <p>{text}</p>
       {!isUndefined(photos) && (
         <div className="mask-p">
-          <Images
-            photos={photos}
-            loader="gradient"
-            columns={{ min: 2, max: columns }}
-          />
+          <Collapse
+            defaultActiveKey={['9']}
+            accordion
+            bordered={false}
+            className={style}
+          >
+            <Panel
+              header={
+                <p style={{ marginBottom: 0 }}>
+                  <a href="#" disabled>
+                    <Icon type="picture" theme="outlined" />
+                    &nbsp;Photos
+                  </a>
+                </p>
+              }
+              key="1"
+              showArrow={false}
+            >
+              <Images
+                photos={photos}
+                loader="gradient"
+                columns={{ min: 2, max: 3 }}
+              />
+            </Panel>
+          </Collapse>
         </div>
       )}
       {!isUndefined(files) && (
@@ -83,7 +121,7 @@ const Theme = props => {
                     {file.title}
                   </OutLink>
                 ) : (
-                  <a to="#" disabled className="ignore">
+                  <a href="#" disabled className="ignore">
                     <Icon
                       type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
                       theme="outlined"
@@ -279,6 +317,44 @@ const Page = () => (
       ]}
     />
     <Theme
+      border="#0101AF"
+      title="Flash-mob: Spontaneous (2015)"
+      tag="Flash Mob"
+      text="We spontaneously painted wooden planks with conflict-transformation-related phrases and secretly (in the middle of the night) hung them up along Auroville’s roads, to inspire the unexpected. However, it wasn’t long until someone else (who?) decided that this was too outrageous and secretly took them down. How sad."
+      photos={[
+        {
+          src: '/assets/archive/signs/img00001.jpg',
+          width: 600,
+          height: 549,
+        },
+        {
+          src: '/assets/archive/signs/img00002.jpg',
+          width: 600,
+          height: 958,
+        },
+        {
+          src: '/assets/archive/signs/img00003.jpg',
+          width: 600,
+          height: 330,
+        },
+        {
+          src: '/assets/archive/signs/img00004.jpg',
+          width: 600,
+          height: 799,
+        },
+        {
+          src: '/assets/archive/signs/img00005.jpg',
+          width: 600,
+          height: 816,
+        },
+        {
+          src: '/assets/archive/signs/img00006.jpg',
+          width: 600,
+          height: 549,
+        },
+      ]}
+    />
+    <Theme
       border="#FA8F00"
       title="Restorative Dialogue across Cultures (2016)"
       tag="Projects & Reports"
@@ -327,6 +403,59 @@ const Page = () => (
         {
           title: 'See Our Draft',
           link: '/truth-and-reconcilation-process.pdf',
+        },
+      ]}
+    />
+    <Theme
+      border="#0101AF"
+      title="Flash-mob: Eye-Gazing (2015)"
+      tag="Flash Mob"
+      text='We spontaneously joined the "World’s Biggest Eye Contact Experiment" and flash-mobbed Solar Kitchen and the Visitors’ Centre.'
+      photos={[
+        {
+          src: '/assets/archive/eye-gazing/img00001.jpg',
+          width: 600,
+          height: 400,
+        },
+        {
+          src: '/assets/archive/eye-gazing/img00002.jpg',
+          width: 600,
+          height: 400,
+        },
+        {
+          src: '/assets/archive/eye-gazing/img00003.jpg',
+          width: 600,
+          height: 400,
+        },
+        {
+          src: '/assets/archive/eye-gazing/img00004.jpg',
+          width: 600,
+          height: 400,
+        },
+        {
+          src: '/assets/archive/eye-gazing/img00005.jpg',
+          width: 600,
+          height: 421,
+        },
+        {
+          src: '/assets/archive/eye-gazing/img00006.jpg',
+          width: 600,
+          height: 400,
+        },
+        {
+          src: '/assets/archive/eye-gazing/img00007.jpg',
+          width: 600,
+          height: 424,
+        },
+        {
+          src: '/assets/archive/eye-gazing/img00008.jpg',
+          width: 600,
+          height: 391,
+        },
+        {
+          src: '/assets/archive/eye-gazing/img00009.jpg',
+          width: 600,
+          height: 400,
         },
       ]}
     />

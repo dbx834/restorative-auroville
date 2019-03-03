@@ -8,7 +8,6 @@ import { css } from 'glamor'
 import moment from 'moment'
 import color from 'color'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import map from 'lodash/map'
 import filter from 'lodash/filter'
 import reverse from 'lodash/reverse'
@@ -588,7 +587,10 @@ class EventsGrid extends React.Component {
                 </p>
                 <p>{extraData.node.frontmatter.abstract}</p>
                 <div className="margin-p">
-                  <Link to={extraData.node.fields.route} className="ant-btn">
+                  <Link
+                    to={`/${extraData.node.fields.route}`}
+                    className="ant-btn"
+                  >
                     <span style={{ fontSize: '125%' }}>More details ⇝</span>
                   </Link>
                   &nbsp;

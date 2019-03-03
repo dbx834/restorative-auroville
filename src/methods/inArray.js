@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Imports
 // ----------------------------------------------------------------------------
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
+
 import indexOf from 'lodash/indexOf'
 
 /**
@@ -11,11 +11,11 @@ import indexOf from 'lodash/indexOf'
  * @return {boolean}       [Returns true or false]
  */
 const inArray = (array, value) => {
-	let rx = false
-	if (indexOf(array, value) >= 0) {
-		rx = true
-	}
-	return rx
+  let rx = false
+  if (indexOf(array, value) >= 0) {
+    rx = true
+  }
+  return rx
 }
 
 // ----------------------------------------------------------------------------

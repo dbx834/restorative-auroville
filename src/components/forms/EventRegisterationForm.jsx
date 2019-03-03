@@ -6,16 +6,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import isUndefined from 'lodash/isUndefined'
 import isNull from 'lodash/isNull'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
+
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import Image from '@bodhi-project/components/lib/Image'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Form from 'antd/lib/form'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/form/style/css'
 

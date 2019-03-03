@@ -7,7 +7,6 @@ import React from 'react'
 import { css } from 'glamor'
 import moment from 'moment'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import map from 'lodash/map'
 import findIndex from 'lodash/findIndex'
 import isUndefined from 'lodash/isUndefined'

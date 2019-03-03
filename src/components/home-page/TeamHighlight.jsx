@@ -6,15 +6,11 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import { css } from 'glamor'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 // import OutLink from '@bodhi-project/components/lib/OutLink'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Row from 'antd/lib/row'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 

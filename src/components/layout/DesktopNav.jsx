@@ -6,17 +6,13 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import { css } from 'glamor'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 // import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 // import OutLink from '@bodhi-project/components/lib/OutLink'
 import Container from '@bodhi-project/components/lib/Container'
 import Image from '@bodhi-project/components/lib/Image'
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import wavesTop from '../../assets/wavesTop.png'

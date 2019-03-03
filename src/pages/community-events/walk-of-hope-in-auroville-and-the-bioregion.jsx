@@ -6,7 +6,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // import { css } from 'glamor'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
 
@@ -14,7 +13,6 @@ import map from 'lodash/map'
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import Images from '@bodhi-project/components/lib/Images'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
@@ -163,7 +161,14 @@ const Initiative = props => {
         </div>
         <div>
           <GrungeBox>
-            <p style={{ marginBottom: 0, fontWeight: 200 }} className="mask-h3">
+            <p
+              style={{
+                marginBottom: 0,
+                fontWeight: 200,
+                lineHeight: '1.625rem',
+              }}
+              className="mask-h3"
+            >
               <small>
                 <small>
                   "
@@ -175,7 +180,7 @@ const Initiative = props => {
                     inside and in our environment! So let's walk together and
                     make a move (in both directions).
                   </i>
-                  " – A donor and well-wisher from Auroville
+                  "<br /> – A donor and well-wisher from Auroville
                 </small>
               </small>
             </p>

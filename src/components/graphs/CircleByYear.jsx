@@ -18,7 +18,6 @@ import {
 import { event, mouse, namespace, namespaces, select } from 'd3-selection'
 import { zoom as d3z } from 'd3-zoom'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 // import startsWith from 'lodash/startsWith'
 import isUndefined from 'lodash/isUndefined'
 import noop from 'lodash/noop'

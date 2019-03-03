@@ -6,7 +6,6 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 // import { css } from "glamor";
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 // import map from "lodash/map";
 // import isUndefined from "lodash/isUndefined";
 

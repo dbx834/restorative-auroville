@@ -28,6 +28,8 @@ import Link from '../../components/Link'
 import PrevNext from '../../components/PrevNext'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
+import PDFViewer from '../../components/PDFViewer'
+
 import seoHelper from '../../methods/seoHelper'
 
 import GoldenMajorHalves from '../../components/GoldenMajorHalves'
@@ -114,21 +116,6 @@ const Theme = props => {
   )
 }
 
-const pdfStyles = css({
-  maxHeight: '600px !important',
-  height: '600px !important',
-
-  '& > div': {
-    height: '600px !important',
-    maxHeight: '600px !important',
-
-    '& > iframe': {
-      height: '600px !important',
-      maxHeight: '600px !important',
-    },
-  },
-}).toString()
-
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
@@ -162,14 +149,6 @@ const Initiative = props => {
           loader="gradient"
           columns={{ min: 2, max: 2 }}
         />
-      </div>
-      <div style={{ background: '#d1d1d1' }} className="mask-p">
-        <div style={{ width: '40%', margin: 'auto' }}>
-          <PDFReader
-            url="https://www.restorativeauroville.org/event-assets/filmfest-restoring-connection/filmfest.pdf"
-            className={pdfStyles}
-          />
-        </div>
       </div>
       <p>
         We selected 13 documentaries and feature films about Restorative Justice
@@ -207,6 +186,11 @@ const Initiative = props => {
           direction.
         </li>
       </ul>
+      <PDFViewer
+        url="https://www.restorativeauroville.org/event-assets/filmfest-restoring-connection/filmfest.pdf"
+        title="Booklet"
+        width="40%"
+      />
       <GoldenMajorHalves>
         <div>
           <p>

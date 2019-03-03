@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 import { css } from 'glamor'
 import moment from 'moment'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import filter from 'lodash/filter'
 import uniq from 'lodash/uniq'
 import map from 'lodash/map'
@@ -17,10 +16,9 @@ import StackGrid from 'react-stack-grid'
 import ContainerDimensions from 'react-container-dimensions'
 import { Header, Article } from '@bodhi-project/semantic-webflow'
 
-// // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
+//
 import Image from '@bodhi-project/components/lib/Image'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 

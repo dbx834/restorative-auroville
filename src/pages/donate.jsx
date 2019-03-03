@@ -6,7 +6,6 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import { css } from 'glamor'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import filter from 'lodash/filter'
 import sortBy from 'lodash/sortBy'
 import reverse from 'lodash/reverse'
@@ -14,16 +13,13 @@ import reverse from 'lodash/reverse'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 // import Image from '@bodhi-project/components/lib/Image'
 import OutLink from '@bodhi-project/components/lib/OutLink'
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
-import ProjectListing from '../components/lists/ProjectListing'
+import DonateListing from '../components/lists/DonateListing'
 
 import seoHelper from '../methods/seoHelper'
 
@@ -113,7 +109,7 @@ const Page = ({ isMobile, ...props }) => (
     <br />
     <h2 className="mask-h4">We need support for these projects:</h2>
     <div className="margin-p">
-      <ProjectListing
+      <DonateListing
         data={ongoingProjects}
         isMobile={isMobile}
         itemWidth="33%"

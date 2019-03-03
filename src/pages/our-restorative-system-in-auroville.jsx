@@ -6,32 +6,17 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import { css } from 'glamor'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-// import map from "lodash/map";
-// import isUndefined from "lodash/isUndefined";
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import PDFReader from '@bodhi-project/components/lib/PDFReader'
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
-// import Image from '@bodhi-project/components/lib/Image'
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../components/wrappers/StandardPage'
 import EqualHalves from '../components/EqualHalves'
 import Video from '../components/Video'
-import Link from '../components/Link'
-
-// import BookReader from '../components/BookReader'
-
 import DisqusComments from '../components/DisqusComments'
 
 import seoHelper from '../methods/seoHelper'
-
-// import galaxy from '../assets/galaxy.png'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {

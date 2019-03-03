@@ -6,14 +6,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // import { css } from 'glamor'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Images from '@bodhi-project/components/lib/Images'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
@@ -22,6 +18,7 @@ import Link from '../../components/Link'
 import StandardPage from '../../components/wrappers/StandardPage'
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
+import PrevNext from '../../components/PrevNext'
 
 const photos = [
   { src: '/donate-assets/yurt/yurt4.jpeg', width: 600, height: 450 },
@@ -43,6 +40,14 @@ const pageData = {
 const seoData = seoHelper(pageData)
 
 const { Item: BItem } = Breadcrumb
+
+const next = {
+  // nakedPageSlug: 'community-events/walk-of-hope-in-auroville-and-the-bioregion',
+}
+
+const prev = {
+  nakedPageSlug: 'donate/filming-a-live-restorative-circle',
+}
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -103,6 +108,7 @@ const Initiative = props => {
       </p>
       <p>Please know that any amount is greatly appreciated.</p>
       <p>We look forward to providing a new space for community growth.</p>
+      <PrevNext next={next} prev={prev} />
       <DisqusComments pageData={pageData} />
     </StandardPage>
   )

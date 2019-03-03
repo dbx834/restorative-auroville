@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 import { css } from 'glamor'
 // import classNames from "classnames";
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import map from 'lodash/map'
 import isArray from 'lodash/isArray'
 import isString from 'lodash/isString'
@@ -17,11 +16,9 @@ import isUndefined from 'lodash/isUndefined'
 import { FacebookProvider, Page as FBPage } from 'react-facebook'
 import ContainerDimensions from 'react-container-dimensions'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import Image from '@bodhi-project/components/lib/Image'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Icon from 'antd/lib/icon'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 

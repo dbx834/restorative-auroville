@@ -6,17 +6,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // import { css } from 'glamor'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 // import map from "lodash/map";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
 import Images from '@bodhi-project/components/lib/Images'
-import PDFReader from '@bodhi-project/components/lib/PDFReader'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
@@ -27,6 +22,7 @@ import StandardPage from '../../components/wrappers/StandardPage'
 import EqualHalves from '../../components/EqualHalves'
 import GoldenMajorHalves from '../../components/GoldenMajorHalves'
 import GrungeBox from '../../components/GrungeBox'
+import PDFViewer from '../../components/PDFViewer'
 
 import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
@@ -135,20 +131,20 @@ const Initiative = props => {
           loader="gradient"
           columns={{ min: 2, max: 2 }}
         />
-        &nbsp;
       </div>
-      <div className="margin-p">
-        <PDFReader url="https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-english.pdf" />
-        &nbsp;
-      </div>
-      <div className="margin-p">
-        <PDFReader url="https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-tamil.pdf" />
-        &nbsp;
-      </div>
-      <div className="margin-p">
-        <PDFReader url="https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-action-list.pdf" />
-        &nbsp;
-      </div>
+      <PDFViewer
+        url="https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-english.pdf"
+        title="English poster"
+      />
+      <PDFViewer
+        url="https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-tamil.pdf"
+        title="Tamil poster"
+      />
+      <PDFViewer
+        url="https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-action-list.pdf"
+        title="Action list"
+      />
+      &nbsp;
       <GoldenMajorHalves>
         <div>
           <h2 className="mask-h4" style={{ marginBottom: 0 }}>

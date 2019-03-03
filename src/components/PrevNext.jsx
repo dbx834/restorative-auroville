@@ -29,7 +29,7 @@ const PrevNext = ({ prev, next }) => {
       className="mask-p"
     >
       <div>
-        {!isUndefined(prev) ? (
+        {!isUndefined(prev) && !isUndefined(prev.nakedPageSlug) ? (
           <Link to={`/${prev.nakedPageSlug}`}>⇜ Previous</Link>
         ) : (
           <span style={{ color: '#8a8a8a', cursor: 'not-allowed' }}>
@@ -38,7 +38,7 @@ const PrevNext = ({ prev, next }) => {
         )}
       </div>
       <div>
-        {!isUndefined(next) ? (
+        {!isUndefined(next) && !isUndefined(next.nakedPageSlug) ? (
           <Link to={`/${next.nakedPageSlug}`}>Next ⇝</Link>
         ) : (
           <span style={{ color: '#8a8a8a', cursor: 'not-allowed' }}>

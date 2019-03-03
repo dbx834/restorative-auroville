@@ -6,7 +6,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // import { css } from 'glamor'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import map from 'lodash/map'
 import startsWith from 'lodash/startsWith'
 import isUndefined from 'lodash/isUndefined'
@@ -14,10 +13,8 @@ import replace from 'lodash/replace'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import OutLink from '@bodhi-project/components/lib/OutLink'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Menu from 'antd/lib/menu'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/menu/style/css'
 
