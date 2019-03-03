@@ -80,7 +80,11 @@ const pageStyle = css({
     paddingTop: '24px',
 
     '& #content': {
-      minHeight: '100vh',
+      // minHeight: '100vh',
+
+      '& #page-content': {
+        minHeight: 'calc(100vh - 400px)',
+      },
     },
   },
 
@@ -162,7 +166,6 @@ class Layout extends React.Component {
         }}
         id="appWrapper"
       >
-        <div style={{ opacity: 0 }}>Hello!</div>
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
         <InitializeMeta
           data={{ titleTemplate: '%s | Restorative Auroville' }}
@@ -188,13 +191,12 @@ class Layout extends React.Component {
           </aside>
           <div id="contentWrapper">
             <Container goldenMajor block id="content">
-              {children}
+              <div id="page-content">{children}</div>
               <MobileFooter />
               <DesktopFooter />
             </Container>
           </div>
         </StickyContainer>
-        <div style={{ opacity: 0 }}>RC India</div>
       </Type>
     )
   }
