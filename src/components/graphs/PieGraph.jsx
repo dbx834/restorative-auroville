@@ -10,8 +10,6 @@ import findIndex from 'lodash/findIndex'
 import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// import BalanceText from 'react-balance-text'
-import { Type } from '@bodhi-project/typography'
 import { PieChart, Pie, Tooltip } from 'recharts'
 import Image from '@bodhi-project/components/lib/Image'
 
@@ -23,9 +21,6 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 
 import Card from 'antd/lib/card'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/card/style/css'
-
-import Popover from 'antd/lib/popover'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/popover/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import orangePaintbrush from '../../assets/orangePaintbrush.png'
@@ -193,7 +188,7 @@ const YTooltip = props => {
 
   if (!isUndefined(avDatum)) {
     if (avDatum.value === 245) {
-      text = '245 unique Aurovilians have participated Circles so far.'
+      text = '245 unique Aurovilians have participated in Circles so far.'
     }
     if (avDatum.value === 2761) {
       text =
@@ -260,16 +255,6 @@ const styles = css({
         },
       },
     },
-  },
-}).toString()
-
-const legendClass = css({
-  '& .ant-popover-inner-content': {
-    padding: 0,
-  },
-
-  '& .ant-popover-arrow': {
-    background: '#FAFAFA',
   },
 }).toString()
 
@@ -498,7 +483,7 @@ class PieGraph extends React.Component {
                       marginTop: -35,
                     }}
                   >
-                    <small>Total Participants: 245</small>
+                    <small>Total Participants: 245 so far</small>
                   </p>
                 )}
               </div>
@@ -527,52 +512,6 @@ class PieGraph extends React.Component {
                     }}
                   />
                 </Button>
-                <Popover
-                  overlayClassName={legendClass}
-                  content={
-                    <Type
-                      kit="dkc2ilk"
-                      options={{
-                        range: [12, 20], // Min and Max font-sizes
-                        paragraphSpacingFactor: 1.2, // Greater for tighter paragraph-paragraph spacing
-                        headingParagraphGapSpacingFactor: 0, // Greater for tighter header-paragraph spacing
-                        indentParagraphs: false,
-                      }}
-                      style={{
-                        maxWidth: 450,
-                        background: '#FAFAFA',
-                        padding: 12,
-                      }}
-                    >
-                      <h3 className="mask-h5" style={{ marginBottom: 8 }}>
-                        Legend
-                      </h3>
-                      <p style={{ marginBottom: 0 }}>Legend goes here…</p>
-                    </Type>
-                  }
-                >
-                  <Button
-                    style={{
-                      boxShadow: 'unset',
-                      height: 32,
-                      borderColor: '#2c2c2c',
-                    }}
-                    shape="circle"
-                    ghost
-                  >
-                    <Image
-                      src="/graphs/info2.webp"
-                      style={{
-                        height: 14,
-                        width: 6,
-                        display: 'block',
-                        margin: 'auto',
-                        border: 'unset',
-                        background: 'unset',
-                      }}
-                    />
-                  </Button>
-                </Popover>
               </div>
               <div style={{ marginTop: -20 }}>
                 <hr

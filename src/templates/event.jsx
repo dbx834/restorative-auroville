@@ -68,8 +68,6 @@ class BlogPostTemplate extends React.Component {
       cost: frontmatter.cost,
     }
 
-    console.log(markdownAst)
-
     return (
       <EventWrapper
         className=""

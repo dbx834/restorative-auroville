@@ -135,7 +135,12 @@ const Page = props => {
                 >
                   {title}
                 </h1>
-                <p>{formattedDate}</p>
+                <p>
+                  {formattedDate}
+                  <br />
+                  {frontmatter.fromTime}&nbsp;-&nbsp;
+                  {frontmatter.toTime}
+                </p>
                 <div style={{ position: 'relative' }} className="mask-p">
                   <div
                     style={{

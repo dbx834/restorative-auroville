@@ -180,7 +180,7 @@ const Initiative = props => {
                     inside and in our environment! So let's walk together and
                     make a move (in both directions).
                   </i>
-                  "<br /> – A donor and well-wisher from Auroville
+                  "<br /> – A donor & well-wisher from Auroville
                 </small>
               </small>
             </p>

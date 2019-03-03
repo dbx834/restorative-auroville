@@ -10,8 +10,6 @@ import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-
-// import Image from '@bodhi-project/components/lib/Image'
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import Images from '@bodhi-project/components/lib/Images'
 

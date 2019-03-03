@@ -17,7 +17,7 @@ import join from 'lodash/join'
 import isNull from 'lodash/isNull'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Link, { withPrefix } from 'gatsby-link'
+import { withPrefix } from 'gatsby-link'
 import withSizes from 'react-sizes'
 import 'moment/locale/en-gb'
 
@@ -46,6 +46,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/drawer/style/css'
 import { Type } from '@bodhi-project/typography'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Link from '../Link'
 import Month from './Month'
 import EventRegisterationForm from '../forms/EventRegisterationForm'
 
@@ -456,21 +457,22 @@ class EventsGrid extends React.Component {
                     marginTop: 9,
                   }}
                 >
-                  Past Learnings
+                  <small>Past</small>
                 </h2>
                 &nbsp;
                 <Switch
                   style={{ display: 'inline-block', margin: 0, marginTop: -2 }}
                   defaultChecked={false}
                   onChange={this.toggleArchive}
+                  size="small"
                 />
               </div>
             </div>
-            <Tabs type="card" tabPosition="left" activeKey={thisYear}>
+            <Tabs type="card" tabPosition="left" defaultActiveKey={thisYear}>
               {map(years, (year, yearKey) => {
                 const key = `${year}-${yearKey}`
                 return (
-                  <TabPane tab={year} key={year}>
+                  <TabPane tab={year} key={year} id={key}>
                     <Fragment>
                       {year === thisYear && (
                         <Fragment>
@@ -519,32 +521,34 @@ class EventsGrid extends React.Component {
                           )}
                         </Fragment>
                       )}
-                      {showArchive === false && (
-                        <Fragment>
-                          {year !== thisYear && year > thisYear && (
-                            <Fragment>
-                              {map(monthsArray, (month, monthKey) => {
-                                return (
-                                  <Month
-                                    year={year}
-                                    month={month}
-                                    monthKey={monthKey}
-                                    postEdges={postEdges}
-                                    openSet={this.openSet}
-                                    registerForEvent={this.registerForEvent}
-                                    updateExtraData={this.updateExtraData}
-                                    past={false}
-                                    key={`${month}-${monthKey}`}
-                                    setActive={this.setActive}
-                                    active={active}
-                                    nextActive={nextActive}
-                                  />
-                                )
-                              })}
-                            </Fragment>
-                          )}
-                        </Fragment>
-                      )}
+                      <Fragment>
+                        {year !== thisYear && (
+                          <div
+                            className={
+                              year < thisYear ? 'old-events' : 'future-events'
+                            }
+                          >
+                            {map(monthsArray, (month, monthKey) => {
+                              return (
+                                <Month
+                                  year={year}
+                                  month={month}
+                                  monthKey={monthKey}
+                                  postEdges={postEdges}
+                                  openSet={this.openSet}
+                                  registerForEvent={this.registerForEvent}
+                                  updateExtraData={this.updateExtraData}
+                                  past={false}
+                                  key={`${month}-${monthKey}`}
+                                  setActive={this.setActive}
+                                  active={active}
+                                  nextActive={nextActive}
+                                />
+                              )
+                            })}
+                          </div>
+                        )}
+                      </Fragment>
                     </Fragment>
                   </TabPane>
                 )
@@ -593,7 +597,8 @@ class EventsGrid extends React.Component {
                   >
                     <span style={{ fontSize: '125%' }}>More details ⇝</span>
                   </Link>
-                  &nbsp;
+                </div>
+                <div className="margin-p">
                   {registerLink(extraData, this.registerForEvent)}
                 </div>
               </div>
@@ -608,7 +613,16 @@ class EventsGrid extends React.Component {
           width="38vw"
           placement="left"
         >
-          <Type kit="dkc2ilk">
+          <Type
+            kit="dkc2ilk"
+            style={{ minHeight: '100vh' }}
+            options={{
+              range: [12, 20], // Min and Max font-sizes
+              paragraphSpacingFactor: 1.2, // Greater for tighter paragraph-paragraph spacing
+              headingParagraphGapSpacingFactor: 0, // Greater for tighter header-paragraph spacing
+              indentParagraphs: false,
+            }}
+          >
             <EventRegisterationForm
               event={postEdges[indexForForm]}
               formattedDate={

@@ -129,7 +129,7 @@ const Page = () => (
         <VolunteerForm />
       </Col>
       <Col sm={24} md={9}>
-        <h2 className="mask-h3">Our Apprentice, Henrike, shares…</h2>
+        <h2 className="mask-h3">Our apprentice, Henrike, shares…</h2>
         <Video url="https://www.youtube.com/watch?v=WEc1itWPQVY" />
       </Col>
     </Row>

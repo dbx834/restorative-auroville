@@ -114,7 +114,7 @@ const Initiative = props => {
       <p>
         Our second World Café, March 7th, was focused on Nepal’s attempt to
         rebuild community following the aftermath of their 10-year armed
-        conflict. We showed excerpts from the documentary "Raamro Aakha Ma -- In
+        conflict. We showed excerpts from the documentary "Raamro Aakha Ma – In
         the Eyes of the Good.” (Watch full length [55min] documentary{' '}
         <Link to="https://www.youtube.com/watch?v=_tGu7BM-6Xw&index=7&list=PLFBWNVuESzSgxSaVatdvFeSApjj0L9OvS">
           here
@@ -147,7 +147,6 @@ const Initiative = props => {
       </div>
       <PDFViewer
         url="https://www.restorativeauroville.org/event-assets/world-cafes-on-peace-and-justice/table-notes.pdf"
-        width="40%"
         title="Booklet"
       />
       <PrevNext next={next} prev={prev} />

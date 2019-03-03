@@ -112,20 +112,14 @@ class IndexPage extends React.Component {
         {this.state.formSent === false && (
           <Form onSubmit={this.handleSubmit}>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Name */}
-            <FormItem
-              validateStatus={nameError ? 'error' : ''}
-              help={nameError || ''}
-            >
+            <FormItem validateStatus={nameError ? 'error' : ''} help="">
               {getFieldDecorator('name', {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateName }],
               })(<Input placeholder="Name" />)}
             </FormItem>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Email */}
-            <FormItem
-              validateStatus={emailError ? 'error' : ''}
-              help={emailError || ''}
-            >
+            <FormItem validateStatus={emailError ? 'error' : ''} help="">
               {getFieldDecorator('email', {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateEmail }],

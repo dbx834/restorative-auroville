@@ -121,20 +121,14 @@ class ContactForm extends React.Component {
         {this.state.formSent === false && (
           <Form onSubmit={this.handleSubmit}>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Name */}
-            <FormItem
-              validateStatus={nameError ? 'error' : ''}
-              help={nameError || ''}
-            >
+            <FormItem validateStatus={nameError ? 'error' : ''} help="">
               {getFieldDecorator('name', {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateName }],
               })(<Input placeholder="Name" />)}
             </FormItem>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Email */}
-            <FormItem
-              validateStatus={emailError ? 'error' : ''}
-              help={emailError || ''}
-            >
+            <FormItem validateStatus={emailError ? 'error' : ''} help="">
               {getFieldDecorator('email', {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateEmail }],
@@ -144,7 +138,7 @@ class ContactForm extends React.Component {
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Origin */}
             <FormItem
               validateStatus={originCountryError ? 'error' : ''}
-              help={originCountryError || ''}
+              help=""
             >
               {getFieldDecorator('originCountry', {
                 validateTrigger: ['onChange', 'onBlur'],
@@ -152,20 +146,14 @@ class ContactForm extends React.Component {
               })(<Input placeholder="What's your country of origin?" />)}
             </FormItem>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Current Place */}
-            <FormItem
-              validateStatus={currentPlaceError ? 'error' : ''}
-              help={currentPlaceError || ''}
-            >
+            <FormItem validateStatus={currentPlaceError ? 'error' : ''} help="">
               {getFieldDecorator('currentPlace', {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateCurrentLocation }],
               })(<Input placeholder="Where are you living presently?" />)}
             </FormItem>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comment */}
-            <FormItem
-              validateStatus={commentError ? 'error' : ''}
-              help={commentError || ''}
-            >
+            <FormItem validateStatus={commentError ? 'error' : ''} help="">
               {getFieldDecorator('comment', {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateComment }],

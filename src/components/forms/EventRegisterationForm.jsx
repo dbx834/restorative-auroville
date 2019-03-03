@@ -301,40 +301,28 @@ class EventRegisterationForm extends React.Component {
             {formSent === false && (
               <Form onSubmit={this.handleSubmit} className="mask-p">
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Name */}
-                <FormItem
-                  validateStatus={nameError ? 'error' : ''}
-                  help={nameError || ''}
-                >
+                <FormItem validateStatus={nameError ? 'error' : ''} help="">
                   {getFieldDecorator('name', {
                     validateTrigger: ['onChange', 'onBlur'],
                     rules: [{ validator: validateName }],
                   })(<Input placeholder="Name" />)}
                 </FormItem>
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Email */}
-                <FormItem
-                  validateStatus={emailError ? 'error' : ''}
-                  help={emailError || ''}
-                >
+                <FormItem validateStatus={emailError ? 'error' : ''} help="">
                   {getFieldDecorator('email', {
                     validateTrigger: ['onChange', 'onBlur'],
                     rules: [{ validator: validateEmail }],
                   })(<Input placeholder="Email" />)}
                 </FormItem>
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Mobile */}
-                <FormItem
-                  validateStatus={mobileError ? 'error' : ''}
-                  help={mobileError || ''}
-                >
+                <FormItem validateStatus={mobileError ? 'error' : ''} help="">
                   {getFieldDecorator('mobile', {
                     validateTrigger: ['onChange', 'onBlur'],
                     rules: [{ validator: validateMobile }],
                   })(<Input placeholder="Mobile / WhatsApp" />)}
                 </FormItem>
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Country Selection */}
-                <FormItem
-                  validateStatus={countryError ? 'error' : ''}
-                  help={countryError || ''}
-                >
+                <FormItem validateStatus={countryError ? 'error' : ''} help="">
                   {getFieldDecorator('country', {
                     validateTrigger: ['onChange', 'onBlur'],
                     rules: [{ validator: validateCountry }],
@@ -343,7 +331,7 @@ class EventRegisterationForm extends React.Component {
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Location */}
                 <FormItem
                   validateStatus={currentLocationError ? 'error' : ''}
-                  help={currentLocationError || ''}
+                  help=""
                 >
                   {getFieldDecorator('currentLocation', {
                     validateTrigger: ['onChange', 'onBlur'],
@@ -353,7 +341,7 @@ class EventRegisterationForm extends React.Component {
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ What Draws You */}
                 <FormItem
                   validateStatus={whatDrawsYouError ? 'error' : ''}
-                  help={whatDrawsYouError || ''}
+                  help=""
                 >
                   {getFieldDecorator('whatDrawsYou', {
                     validateTrigger: ['onChange', 'onBlur'],
@@ -373,7 +361,7 @@ class EventRegisterationForm extends React.Component {
                 </span>
                 <FormItem
                   validateStatus={experienceError ? 'error' : ''}
-                  help={experienceError || ''}
+                  help=""
                 >
                   {getFieldDecorator('experience', {
                     validateTrigger: ['onChange', 'onBlur'],
@@ -403,10 +391,7 @@ class EventRegisterationForm extends React.Component {
                 </FormItem>
 
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Journey */}
-                <FormItem
-                  validateStatus={journeyError ? 'error' : ''}
-                  help={journeyError || ''}
-                >
+                <FormItem validateStatus={journeyError ? 'error' : ''} help="">
                   {getFieldDecorator('journey', {
                     validateTrigger: ['onChange', 'onBlur'],
                     rules: [{ validator: validateComment }],
@@ -425,7 +410,7 @@ class EventRegisterationForm extends React.Component {
                 </span>
                 <FormItem
                   validateStatus={wouldLikeInfoError ? 'error' : ''}
-                  help={wouldLikeInfoError || ''}
+                  help=""
                 >
                   {getFieldDecorator('wouldLikeInfo', {
                     validateTrigger: ['onChange', 'onBlur'],
@@ -449,10 +434,7 @@ class EventRegisterationForm extends React.Component {
                 </FormItem>
 
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comment */}
-                <FormItem
-                  validateStatus={commentError ? 'error' : ''}
-                  help={commentError || ''}
-                >
+                <FormItem validateStatus={commentError ? 'error' : ''} help="">
                   {getFieldDecorator('comment', {
                     validateTrigger: ['onChange', 'onBlur'],
                     rules: [{ validator: validateComment }],

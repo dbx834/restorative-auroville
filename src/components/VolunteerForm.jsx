@@ -145,20 +145,14 @@ class VolunteerForm extends React.Component {
         {this.state.formSent === false && (
           <Form onSubmit={this.handleSubmit}>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Name */}
-            <FormItem
-              validateStatus={nameError ? 'error' : ''}
-              help={nameError || ''}
-            >
+            <FormItem validateStatus={nameError ? 'error' : ''} help="">
               {getFieldDecorator('name', {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateName }],
               })(<Input placeholder="Name" />)}
             </FormItem>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Email */}
-            <FormItem
-              validateStatus={emailError ? 'error' : ''}
-              help={emailError || ''}
-            >
+            <FormItem validateStatus={emailError ? 'error' : ''} help="">
               {getFieldDecorator('email', {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateEmail }],
@@ -168,7 +162,7 @@ class VolunteerForm extends React.Component {
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Origin */}
             <FormItem
               validateStatus={originCountryError ? 'error' : ''}
-              help={originCountryError || ''}
+              help=""
             >
               {getFieldDecorator('originCountry', {
                 validateTrigger: ['onChange', 'onBlur'],
@@ -176,10 +170,7 @@ class VolunteerForm extends React.Component {
               })(<Input placeholder="What's your country of origin?" />)}
             </FormItem>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Current Place */}
-            <FormItem
-              validateStatus={currentPlaceError ? 'error' : ''}
-              help={currentPlaceError || ''}
-            >
+            <FormItem validateStatus={currentPlaceError ? 'error' : ''} help="">
               {getFieldDecorator('currentPlace', {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateCurrentLocation }],
@@ -188,7 +179,7 @@ class VolunteerForm extends React.Component {
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ About Yourself */}
             <FormItem
               validateStatus={aboutYourselfError ? 'error' : ''}
-              help={aboutYourselfError || ''}
+              help=""
             >
               {getFieldDecorator('aboutYourself', {
                 validateTrigger: ['onChange', 'onBlur'],
@@ -201,10 +192,7 @@ class VolunteerForm extends React.Component {
               )}
             </FormItem>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ What Draws You */}
-            <FormItem
-              validateStatus={whatDrawsYouError ? 'error' : ''}
-              help={whatDrawsYouError || ''}
-            >
+            <FormItem validateStatus={whatDrawsYouError ? 'error' : ''} help="">
               {getFieldDecorator('whatDrawsYou', {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateComment }],
@@ -217,10 +205,7 @@ class VolunteerForm extends React.Component {
             </FormItem>
 
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ What Skills */}
-            <FormItem
-              validateStatus={whatSkillsError ? 'error' : ''}
-              help={whatSkillsError || ''}
-            >
+            <FormItem validateStatus={whatSkillsError ? 'error' : ''} help="">
               {getFieldDecorator('whatSkills', {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateComment }],
@@ -235,7 +220,7 @@ class VolunteerForm extends React.Component {
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ What Acknowledgement */}
             <FormItem
               validateStatus={whatAcknowledgementError ? 'error' : ''}
-              help={whatAcknowledgementError || ''}
+              help=""
             >
               {getFieldDecorator('whatAcknowledgement', {
                 validateTrigger: ['onChange', 'onBlur'],
@@ -251,7 +236,7 @@ class VolunteerForm extends React.Component {
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Any Other Comment */}
             <FormItem
               validateStatus={anyOtherCommentError ? 'error' : ''}
-              help={anyOtherCommentError || ''}
+              help=""
             >
               {getFieldDecorator('anyOtherComment', {
                 validateTrigger: ['onChange', 'onBlur'],

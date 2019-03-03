@@ -405,8 +405,8 @@ const Page = props => {
           marginTop: 30,
           paddingTop: 48,
           paddingBottom: 48,
-          paddingLeft: '10%',
-          paddingRight: '10%',
+          paddingLeft: '12.5%',
+          paddingRight: '12.5%',
           position: 'relative',
         }}
         className="margin-p"
@@ -525,7 +525,7 @@ const Page = props => {
               </p>
               <p style={{ marginBottom: 0 }}>
                 <Link
-                  to="/projects/filming-a-live-restorative-circle"
+                  to="/donate/filming-a-live-restorative-circle"
                   className="white"
                 >
                   See more ⇝
@@ -543,8 +543,8 @@ const Page = props => {
           marginTop: 30,
           paddingTop: 48,
           paddingBottom: 48,
-          paddingLeft: '10%',
-          paddingRight: '10%',
+          paddingLeft: '12.5%',
+          paddingRight: '12.5%',
           position: 'relative',
         }}
         className="margin-p"

@@ -77,7 +77,10 @@ const Theme = props => {
   return (
     <div style={{ paddingLeft: 12, borderLeft: `8px solid ${border}` }}>
       <h2 className="mask-h4">
-        {title} <Tag color="geekblue">{tag}</Tag>
+        <span>{title}</span>
+        <Link to="/archives">
+          <Tag color="geekblue">...from our Archives</Tag>
+        </Link>
       </h2>
       <p>{text}</p>
       {!isUndefined(photos) && (
@@ -386,7 +389,7 @@ const Page = () => (
     <Theme
       border="#4A01AA"
       title="Our RC-channel on YouTube (2011‒present)  "
-      tag="Videos"
+      tag="...from our Archives"
       text="With somewhat regular updates…"
       files={[
         {

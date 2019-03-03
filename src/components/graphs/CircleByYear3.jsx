@@ -564,11 +564,12 @@ class Sample3 extends React.Component {
     return (
       <div className={`${styles} ${resolution}`}>
         <p>
-          Below you'll find an interactive database of the live Circles that we
-          have facilitated (from 2016 onwards). You can view all years at a
-          glance, or zoom for detailed information by year. The information
-          provided remains relatively basic, in order to care for the intimacy
-          of each Circle.
+          Below you'll find an interactive database of the live Circles that
+          we've facilitated so far (from 2016 onwards). You can view all years
+          at a glance, or zoom in for detailed information by year. The
+          information provided remains relatively rudimentary, in order to care
+          for the intimacy of each Circle. A more detailed legend is provided in
+          the information section.
         </p>
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <Select

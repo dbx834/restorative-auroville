@@ -6,24 +6,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'glamor'
 
-import filter from 'lodash/filter'
-import sortBy from 'lodash/sortBy'
-import reverse from 'lodash/reverse'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import withSizes from 'react-sizes'
-
 // import Image from '@bodhi-project/components/lib/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../components/wrappers/StandardPage'
 import EventsGrid from '../components/lists/EventsGrid'
 
-import ProjectListing from '../components/lists/ProjectListing'
-
 import seoHelper from '../methods/seoHelper'
-
-import projects from '../data/events.json'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
@@ -34,13 +24,6 @@ const pageData = {
 }
 
 const seoData = seoHelper(pageData)
-
-const ongoingProjects = reverse(
-  sortBy(filter(projects, 'ongoing'), [
-    o => o.beginTimestamp,
-    o => o.endTimestamp,
-  ])
-)
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -62,7 +45,7 @@ const pageStyles = css({
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = ({ data, isMobile, ...props }) => (
+const Page = ({ data, ...props }) => (
   <StandardPage className={pageStyles} seoData={seoData}>
     <EventsGrid data={data} />
   </StandardPage>
@@ -122,9 +105,4 @@ export const pageQuery = graphql`
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-/** mapSizesToProps */
-const mapSizesToProps = ({ width }) => ({
-  isMobile: width <= 768,
-})
-
-export default withSizes(mapSizesToProps)(Page)
+export default Page
