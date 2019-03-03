@@ -460,6 +460,17 @@ const Page = () => (
       ]}
     />
     <Theme
+      border="#E00044"
+      title="Auroville Conflict Resolution Policy (2015)"
+      tag="Document"
+      files={[
+        {
+          title: 'See document',
+          link: '/auroville-conflict-resolution-policy-2015.pdf',
+        },
+      ]}
+    />
+    <Theme
       border="#FABB00"
       title="How Do We Dream It Could Be? (2014)"
       tag="Public Presentations"
