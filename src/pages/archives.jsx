@@ -196,20 +196,6 @@ const Page = () => (
       ]}
     />
     <Theme
-      border="#A300A3"
-      title="Auroville's Conflict Resolution Policy (2018)"
-      tag="Document"
-      text="See Auroville's updated Conflict Resolution Policy."
-      // files={[
-      //   {
-      //     title: 'See Policy',
-      //     icon: 'file',
-      //     link:
-      //       'https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF',
-      //   },
-      // ]}
-    />
-    <Theme
       border="#FAE300"
       title='"Experiences with training and facilitating Restorative Circles and conflict resolution" (2018)'
       tag="Interview"
@@ -459,7 +445,7 @@ const Page = () => (
     />
     <Theme
       border="#E00044"
-      title="Auroville Conflict Resolution Policy (2015)"
+      title="Auroville's Conflict Resolution Policy (2015)"
       tag="Document"
       files={[
         {
