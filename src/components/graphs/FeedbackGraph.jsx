@@ -360,7 +360,7 @@ class FeedbackGraph extends React.Component {
   render() {
     return (
       <div className={styles} id="hover">
-        <h2 className="mask-h4">Feedback from our Participants</h2>
+        <h2 className="mask-h4">Feedback from our participants</h2>
         <p>
           We generally send out feedback forms to our participants after the
           Post-Circle is over. Here are some of their responses.

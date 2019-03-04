@@ -41,7 +41,7 @@ const seoData = seoHelper(pageData)
 const Page = () => (
   <StandardPage className="" seoData={seoData}>
     <h1 className="mask-h3">Circle Statistics</h1>
-    <h2 className="mask-h4">Circles at a Glance</h2>
+    <h2 className="mask-h4">Circles at a glance</h2>
     <CircleByYear3 />
     <PieGraph />
     <FeedbackGraph />
