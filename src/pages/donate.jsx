@@ -66,9 +66,12 @@ const Page = ({ isMobile, ...props }) => (
   <StandardPage className={pageStyles} seoData={seoData}>
     <h1 className="mask-h3">Donate to Support Our Work!</h1>
     <p>
-      If you’d like to make a donation towards Restorative Auroville, you may do
-      so below. This will link directly to the Auroville Foundation payment
-      gateway page, and you will be able to receive a tax exemption.
+      If you’re inspired by our project and would like to help, we welcome your
+      contributions. Please know that any amount is greatly appreciated.
+    </p>
+    <p>
+      This will link directly to the Auroville Foundation payment gateway page,
+      and you will be able to receive a tax exemption.
     </p>
     <div className="mask-p">
       <OutLink
@@ -92,22 +95,10 @@ const Page = ({ isMobile, ...props }) => (
         ) that you’ve made a transfer, so that we can track your contribution.
       </li>
     </ul>
-    <p>
-      Restorative Auroville is an initiative of Joy Living Learning, a Unit
-      under the Auroville Foundation, a Charitable Trust under the Ministry of
-      Human Resources (Indian Government). Your donation will support
-      Restorative Auroville in its mission to bring Restorative Circles to above
-      and beyond.
-    </p>
-    <p>
-      <Link to="/contact-us">
-        If you would like more detailed information about our project, contact
-        us
-      </Link>
-      .
-    </p>
     <br />
-    <h2 className="mask-h4">We need support for these projects:</h2>
+    <h2 className="mask-h4" style={{ marginTop: -20 }}>
+      We need support for these projects:
+    </h2>
     <div className="margin-p">
       <DonateListing
         data={ongoingProjects}
@@ -115,6 +106,18 @@ const Page = ({ isMobile, ...props }) => (
         itemWidth="33%"
       />
     </div>
+    <br />
+    <p style={{ marginTop: -20 }}>
+      Restorative Auroville is an initiative of{' '}
+      <OutLink to="https://www.joylivinglearning.org/">
+        Joy Living Learning
+      </OutLink>
+      , a Unit under the{' '}
+      <OutLink to="https://www.auroville.org/">Auroville Foundation</OutLink>, a
+      Charitable Trust under the Ministry of Human Resources (Indian
+      Government). Your donation will support Restorative Auroville in its
+      mission to bring Restorative Circles to above and beyond.
+    </p>
   </StandardPage>
 )
 

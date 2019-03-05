@@ -336,7 +336,8 @@ class EventsGrid extends React.Component {
             <p>
               We offer regular learning opportunities through workshops and
               practice groups, in person and online. And from time to time, we
-              also organize cool community-based events! Join us!&nbsp;
+              also organize cool community-based events! Join us!
+              <br />
               <Link to="/events">See all events here ⇝</Link>
             </p>
             <div className="margin-p">

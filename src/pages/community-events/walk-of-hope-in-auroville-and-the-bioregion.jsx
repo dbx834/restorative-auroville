@@ -23,10 +23,9 @@ import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import CommunityEventWrapper from '../../components/wrappers/CommunityEventWrapper'
+
 import Link from '../../components/Link'
-import PrevNext from '../../components/PrevNext'
-import StandardPage from '../../components/wrappers/StandardPage'
-import DisqusComments from '../../components/DisqusComments'
 import Video from '../../components/Video'
 
 import GoldenMajorHalves from '../../components/GoldenMajorHalves'
@@ -126,7 +125,13 @@ const Theme = props => {
 /** Initiative */
 const Initiative = props => {
   return (
-    <StandardPage className="" seoData={seoData}>
+    <CommunityEventWrapper
+      className=""
+      seoData={seoData}
+      next={next}
+      prev={prev}
+      pageData={pageData}
+    >
       <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
         <BItem>
           <Link to="/">Home</Link>
@@ -171,16 +176,15 @@ const Initiative = props => {
             >
               <small>
                 <small>
-                  "
                   <i>
-                    This will be an outstanding event. Small steps towards inner
-                    and outer unity. I believe as long as we are separated from
-                    our soul, we experience separation and will project this
-                    into our outer life. But we have to start at both ends,
+                    " This will be an outstanding event. Small steps towards
+                    inner and outer unity. I believe as long as we are separated
+                    from our soul, we experience separation and will project
+                    this into our outer life. But we have to start at both ends,
                     inside and in our environment! So let's walk together and
-                    make a move (in both directions).
+                    make a move (in both directions). "
                   </i>
-                  "<br /> – A donor & well-wisher from Auroville
+                  <br /> – A donor & well-wisher from Auroville
                 </small>
               </small>
             </p>
@@ -221,21 +225,20 @@ const Initiative = props => {
         </div>
         <div>
           <Theme
-            border="#FA8F00"
+            border="#FB9001"
             title="Walk of Hope in Auroville & the Bioregion (2018)"
             tag="Projects & Reports"
             files={[
               {
                 title: 'Project Proposal',
-                link: '/walk-of-hope-project-proposal.pdf',
+                link:
+                  'https://www.restorativeauroville.org/pdf-kjol/walk-of-hope-project-proposal.pdf',
               },
             ]}
           />
         </div>
       </GoldenMajorHalves>
-      <PrevNext next={next} prev={prev} />
-      <DisqusComments pageData={pageData} />
-    </StandardPage>
+    </CommunityEventWrapper>
   )
 }
 

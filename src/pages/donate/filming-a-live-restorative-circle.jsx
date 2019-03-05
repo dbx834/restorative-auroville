@@ -6,18 +6,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-
 import Images from '@bodhi-project/components/lib/Images'
 
-import Breadcrumb from 'antd/lib/breadcrumb'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import DonateProjectWrapper from '../../components/wrappers/DonateProjectWrapper'
 import Link from '../../components/Link'
-import StandardPage from '../../components/wrappers/StandardPage'
-import DisqusComments from '../../components/DisqusComments'
+
 import seoHelper from '../../methods/seoHelper'
-import PrevNext from '../../components/PrevNext'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
@@ -36,8 +31,6 @@ const photos = [
   { src: '/donate-assets/filming/img2.jpg', width: 594, height: 421 },
 ]
 
-const { Item: BItem } = Breadcrumb
-
 const next = {
   nakedPageSlug: 'donate/building-an-rc-yurt',
 }
@@ -52,30 +45,27 @@ const prev = {
 /** Initiative */
 const Initiative = props => {
   return (
-    <StandardPage className="" seoData={seoData}>
-      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
-        <BItem>
-          <Link to="/">Home</Link>
-        </BItem>
-        <BItem>
-          <Link to="/donate">Donate</Link>
-        </BItem>
-        <BItem>Filming a Live Restorative Circle</BItem>
-      </Breadcrumb>
+    <DonateProjectWrapper
+      className=""
+      seoData={seoData}
+      prev={prev}
+      next={next}
+      pageData={pageData}
+    >
       <h1 className="mask-h3">Filming a Live Restorative Circle</h1>
       <p>
         We have a big, big, big dream to one day film a live Circle, so that we
         can document the entire process and share this beautiful work with the
         rest of the world. But given the size and complexity of Auroville, we
-        are not surprised that we haven’t yet had a Circle where people have
-        been willing to expose themselves in this way. We once came close to
-        filming a big Circle that was called within an alternative school
-        community, but not everyone was on board with having this “public eye”
-        in their intimate space.
+        are not surprised that we haven’t yet had a Circle where people are
+        willing to expose themselves in this way. We once came close to filming
+        a big Circle that was called within an alternative school community, but
+        not everyone was on board with having this “public eye” in their
+        intimate space.
       </p>
       <p>
         Would you like this Circle to be yours?&nbsp;
-        <Link to="/contact-us">Contact us ⇝</Link>
+        <Link to="/contact-us">Contact us.</Link>
       </p>
       <div className="margin-p">
         <Images
@@ -83,11 +73,14 @@ const Initiative = props => {
           loader="gradient"
           columns={{ min: 2, max: 2 }}
         />
-        &nbsp;
       </div>
-      <PrevNext next={next} prev={prev} />
-      <DisqusComments pageData={pageData} />
-    </StandardPage>
+      <p>
+        If you’re inspired by our project and would like to help, we welcome
+        your contributions. Please know that any amount is greatly
+        appreciated.&nbsp;
+        <Link to="/donate">You can donate here</Link>.
+      </p>
+    </DonateProjectWrapper>
   )
 }
 

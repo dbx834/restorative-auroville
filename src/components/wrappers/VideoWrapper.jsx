@@ -4,11 +4,11 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 
-import isNull from 'lodash/isNull'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { FacebookProvider, Like as FBLike } from 'react-facebook'
-import { Article, Header, Footer } from '@bodhi-project/semantic-webflow'
+import { Article, Header } from '@bodhi-project/semantic-webflow'
+
+import PrevNext from '@bodhi-project/components/lib/PrevNext'
 
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
@@ -84,35 +84,10 @@ const Page = ({
 
       {children}
 
-      <Footer style={{ borderTop: '1px dotted #00006F' }}>
-        <h1 className="mask-h4">More videos</h1>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}
-          className="mask-p"
-        >
-          <div>
-            {!isNull(prev) ? (
-              <Link to={`/${prev.nakedPageSlug}`}>⇜ Previous</Link>
-            ) : (
-              <span style={{ color: '#8a8a8a', cursor: 'not-allowed' }}>
-                ⇜ Previous
-              </span>
-            )}
-          </div>
-          <div>
-            {!isNull(next) ? (
-              <Link to={`/${next.nakedPageSlug}`}>Next ⇝</Link>
-            ) : (
-              <span style={{ color: '#8a8a8a', cursor: 'not-allowed' }}>
-                Next ⇝
-              </span>
-            )}
-          </div>
-        </div>
-      </Footer>
+      <div style={{ borderTop: '1px dotted #00006F' }}>
+        <h2 className="mask-h4">More in this series</h2>
+        <PrevNext next={next} prev={prev} Link={Link} />
+      </div>
     </Article>
     <DisqusComments pageData={pageData} />
   </StandardPage>

@@ -19,7 +19,9 @@ import React from 'react'
 const Person = () => (
   <div>
     <h1 className="mask-h4">Hamsini</h1>
-    <p style={{ marginBottom: 0 }}>Coming soon…</p>
+    <p style={{ marginBottom: 0 }}>
+      <i>Coming soon…</i>
+    </p>
   </div>
 )
 

@@ -8,15 +8,8 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Image from '@bodhi-project/components/lib/Image'
 
-import Breadcrumb from 'antd/lib/breadcrumb'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import Link from '../../components/Link'
-import PrevNext from '../../components/PrevNext'
-import StandardPage from '../../components/wrappers/StandardPage'
-import DisqusComments from '../../components/DisqusComments'
-import PDFViewer from '../../components/PDFViewer'
+import SystemBuildingInitiativeWrapper from '../../components/wrappers/SystemBuildingInitiativeWrapper'
 
 import seoHelper from '../../methods/seoHelper'
 
@@ -36,13 +29,16 @@ const next = {
     'system-building-initiatives/restorative-circles-in-aikiyam-school',
 }
 
-// const prev = {
-//   nakedPageSlug: 'writings/justice-in-auroville',
-// }
+const prev = {}
 
 const seoData = seoHelper(pageData)
 
-const { Item: BItem } = Breadcrumb
+const notes = [
+  {
+    url: 'https://www.restorativeauroville.org/sbi-assets/avc/avc.pdf',
+    title: 'See more notes',
+  },
+]
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -50,28 +46,29 @@ const { Item: BItem } = Breadcrumb
 /** Initiative */
 const Initiative = props => {
   return (
-    <StandardPage className="" seoData={seoData}>
-      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
-        <BItem>
-          <Link to="/">Home</Link>
-        </BItem>
-        <BItem>
-          <Link to="/system-building-initiatives">
-            System-Building Initiatives
-          </Link>
-        </BItem>
-        <BItem>Exploring Justice & RC with the Auroville Council</BItem>
-      </Breadcrumb>
+    <SystemBuildingInitiativeWrapper
+      className=""
+      seoData={seoData}
+      prev={prev}
+      next={next}
+      pageData={pageData}
+      notes={notes}
+    >
       <h1 className="mask-h3">
         Exploring Justice & RC with the Auroville Council
       </h1>
+      <p>
+        In early 2018, we invited the Auroville Council to explore RC and
+        justice with us, so that we could improve our collaboration and better
+        contribute to the community.
+      </p>
       <Image
         src="/sbi-assets/avc/avCouncil.jpg"
         rawWidth={1440}
         rawHeight={900}
         style={{
           height: 'auto',
-          maxWidth: '600px',
+          maxWidth: '45rem',
           border: 0,
           background: 'transparent',
           display: 'block',
@@ -80,11 +77,6 @@ const Initiative = props => {
         alt="Exploring Justice and RC with the Auroville Council"
         className="margin-p"
       />
-      <p>
-        In early 2018, we invited the Auroville Council to explore RC and
-        justice with us, so that we could improve our collaboration and better
-        contribute to the community.
-      </p>
       <p>Our topics included:</p>
       <ul className="mask-p">
         <li>
@@ -116,13 +108,8 @@ const Initiative = props => {
           their full potential
         </li>
       </ul>
-      <PDFViewer
-        url="https://www.restorativeauroville.org/sbi-assets/avc/avc.pdf"
-        title="Booklet"
-      />
-      <PrevNext next={next} />
-      <DisqusComments pageData={pageData} />
-    </StandardPage>
+      <br />
+    </SystemBuildingInitiativeWrapper>
   )
 }
 

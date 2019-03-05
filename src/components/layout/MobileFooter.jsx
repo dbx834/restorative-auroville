@@ -370,21 +370,21 @@ const Footer = props => {
           >
             {isString(quote) && (
               <Fragment>
-                "<i>{quote}</i>"
+                <i>"{quote}"</i>
               </Fragment>
             )}
             {isArray(quote) && (
               <Fragment>
-                "
                 <i>
+                  "
                   {map(quote, (quotelet, index) => (
                     <Fragment key={index}>
                       {index !== 0 && <br />}
                       {quotelet}
                     </Fragment>
                   ))}
+                  "
                 </i>
-                "
               </Fragment>
             )}
             <br />~ {author}
@@ -405,7 +405,7 @@ const Footer = props => {
               marginBottom: 20,
             }}
           >
-            Copyright © 2018 Restorative Auroville & Joy Living Learning
+            Copyright © 2015-2019 Restorative Auroville & Joy Living Learning
           </p>
         </div>
       </aside>

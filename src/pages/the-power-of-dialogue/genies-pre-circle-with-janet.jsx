@@ -21,6 +21,10 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
+const next = {}
+
+const prev = {}
+
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
@@ -30,7 +34,13 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 /** Page */
 const Page = () => (
-  <VideoWrapper className="" seoData={seoData} pageData={pageData}>
+  <VideoWrapper
+    className=""
+    seoData={seoData}
+    pageData={pageData}
+    prev={prev}
+    next={next}
+  >
     <p>
       Before entering a Restorative Circle, Facilitators meet amongst themselves
       to work through any challenging thoughts or feelings that might interfere
@@ -38,7 +48,7 @@ const Page = () => (
       (Genie), in her role as filmmaker, is also given an opportunity to be
       heard for her connection to the Circle.
     </p>
-    <div style={{ maxWidth: '60em' }} className="margin-p">
+    <div style={{ maxWidth: '45rem' }} className="margin-p">
       <Video url="https://www.youtube.com/watch?v=jbDGU3C_xww" />
     </div>
   </VideoWrapper>

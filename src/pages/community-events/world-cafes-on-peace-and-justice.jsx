@@ -13,11 +13,9 @@ import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import CommunityEventWrapper from '../../components/wrappers/CommunityEventWrapper'
+
 import Link from '../../components/Link'
-import PrevNext from '../../components/PrevNext'
-import StandardPage from '../../components/wrappers/StandardPage'
-import DisqusComments from '../../components/DisqusComments'
-import PDFViewer from '../../components/PDFViewer'
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -75,13 +73,28 @@ const photos = [
   },
 ]
 
+const notes = [
+  {
+    url:
+      'https://www.restorativeauroville.org/event-assets/world-cafes-on-peace-and-justice/table-notes.pdf',
+    title: 'See additional notes',
+  },
+]
+
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Initiative */
 const Initiative = props => {
   return (
-    <StandardPage className="" seoData={seoData}>
+    <CommunityEventWrapper
+      className=""
+      seoData={seoData}
+      next={next}
+      prev={prev}
+      pageData={pageData}
+      notes={notes}
+    >
       <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
         <BItem>
           <Link to="/">Home</Link>
@@ -142,16 +155,10 @@ const Initiative = props => {
         <Images
           photos={photos}
           loader="gradient"
-          columns={{ min: 2, max: 3 }}
+          columns={{ min: 3, max: 3 }}
         />
       </div>
-      <PDFViewer
-        url="https://www.restorativeauroville.org/event-assets/world-cafes-on-peace-and-justice/table-notes.pdf"
-        title="Booklet"
-      />
-      <PrevNext next={next} prev={prev} />
-      <DisqusComments pageData={pageData} />
-    </StandardPage>
+    </CommunityEventWrapper>
   )
 }
 

@@ -4,14 +4,13 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 import PropTypes from 'prop-types'
-import { css } from 'glamor'
+// import { css } from 'glamor'
 
 import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Images from '@bodhi-project/components/lib/Images'
-import PDFReader from '@bodhi-project/components/lib/PDFReader'
 import OutLink from '@bodhi-project/components/lib/OutLink'
 
 import Breadcrumb from 'antd/lib/breadcrumb'
@@ -24,15 +23,34 @@ import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import CommunityEventWrapper from '../../components/wrappers/CommunityEventWrapper'
+
 import Link from '../../components/Link'
-import PrevNext from '../../components/PrevNext'
-import StandardPage from '../../components/wrappers/StandardPage'
-import DisqusComments from '../../components/DisqusComments'
 import PDFViewer from '../../components/PDFViewer'
 
 import seoHelper from '../../methods/seoHelper'
 
 import GoldenMajorHalves from '../../components/GoldenMajorHalves'
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
+
+const pageData = {
+  pageTitle: 'FilmFest: "Restoring Connection"',
+  nakedPageSlug: 'community-events/filmfest-restoring-connection',
+  pageAbstract:
+    'We hosted a 6-day Film Festival, in hopes to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values.',
+}
+
+const prev = {
+  nakedPageSlug: 'community-events/restorative-dialogue-across-cultures',
+}
+
+const next = {}
+
+const seoData = seoHelper(pageData)
+
+const { Item: BItem } = Breadcrumb
 
 const photos = [
   {
@@ -57,23 +75,14 @@ const photos = [
   },
 ]
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment } = React
-
-const pageData = {
-  pageTitle: 'FilmFest: "Restoring Connection"',
-  nakedPageSlug: 'community-events/filmfest-restoring-connection',
-  pageAbstract:
-    'We hosted a 6-day Film Festival, in hopes to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values.',
-}
-
-const prev = {
-  nakedPageSlug: 'community-events/restorative-dialogue-across-cultures',
-}
-
-const seoData = seoHelper(pageData)
-
-const { Item: BItem } = Breadcrumb
+const notes = [
+  {
+    url:
+      'https://www.restorativeauroville.org/event-assets/filmfest-restoring-connection/filmfest.pdf',
+    title: 'See movie timetable',
+    width: '40%',
+  },
+]
 
 /** Theme */
 const Theme = props => {
@@ -122,7 +131,14 @@ const Theme = props => {
 /** Initiative */
 const Initiative = props => {
   return (
-    <StandardPage className="" seoData={seoData}>
+    <CommunityEventWrapper
+      className=""
+      seoData={seoData}
+      next={next}
+      prev={prev}
+      pageData={pageData}
+      notes={notes}
+    >
       <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
         <BItem>
           <Link to="/">Home</Link>
@@ -186,11 +202,6 @@ const Initiative = props => {
           direction.
         </li>
       </ul>
-      <PDFViewer
-        url="https://www.restorativeauroville.org/event-assets/filmfest-restoring-connection/filmfest.pdf"
-        title="Booklet"
-        width="40%"
-      />
       <GoldenMajorHalves>
         <div>
           <p>
@@ -201,7 +212,7 @@ const Initiative = props => {
         </div>
         <div>
           <Theme
-            border="#FAE300"
+            border="#FB9001"
             title='FilmFest: "Restoring Connection" (2016)'
             tag="Projects & Reports"
             files={[
@@ -222,9 +233,7 @@ const Initiative = props => {
           />
         </div>
       </GoldenMajorHalves>
-      <PrevNext prev={prev} />
-      <DisqusComments pageData={pageData} />
-    </StandardPage>
+    </CommunityEventWrapper>
   )
 }
 

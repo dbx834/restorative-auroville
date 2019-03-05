@@ -20,7 +20,6 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import Col from 'antd/lib/col'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
-import Icon from 'antd/lib/icon'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
@@ -29,7 +28,6 @@ import StandardPage from '../components/wrappers/StandardPage'
 
 import seoHelper from '../methods/seoHelper'
 
-import birdsTop from '../assets/birdsTop.png'
 import restorativeAurovilleArt1 from '../assets/restorativeAurovilleArt1.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -55,62 +53,30 @@ const Page = () => (
       <Col sm={24} md={15}>
         <h1 className="mask-h3">Contact Us</h1>
         <ContactForm />
+        <br />
+        <p>
+          You can also email us at:&nbsp;
+          <OutLink to="mailto:restorative@auroville.org.in?Subject=Hello">
+            restorative@auroville.org.in
+          </OutLink>
+        </p>
       </Col>
-      <Col sm={24} md={9}>
-        <h2
-          className="mask-h3"
-          style={{ display: 'inline-block', position: 'relative' }}
-        >
-          Restorative Auroville
-          <div
-            style={{
-              position: 'absolute',
-              top: -20,
-              right: -38,
-              height: 50,
-            }}
-          >
-            <Image
-              src={birdsTop}
-              style={{
-                background: 'transparent',
-                border: 'unset',
-                height: 50,
-                width: 50,
-              }}
-              rawWidth={900}
-              rawHeight={900}
-            />
-          </div>
+      <Col sm={24} md={9} className="desktop-only">
+        <h2 className="mask-h3" style={{ color: '#FFF' }}>
+          restorative@auroville.org.in
         </h2>
         <Image
           src={restorativeAurovilleArt1}
           style={{
+            height: 'auto',
+            width: '100%',
+            marginTop: 12,
             background: 'transparent',
             border: 'unset',
-            height: 'auto',
-            maxWidth: 200,
           }}
           rawWidth={1440}
           rawHeight={1440}
         />
-        <p>
-          Restorative Auroville is an initative of&nbsp;
-          <OutLink to="https://www.joylivinglearning.org/">
-            Joy Living Learning
-          </OutLink>
-          , a unit of the&nbsp;
-          <OutLink to="https://www.auroville.org/">
-            Auroville Foundation
-          </OutLink>
-          , India.
-        </p>
-        <p>
-          <OutLink to="mailto:restorative@auroville.org.in?Subject=Hello">
-            <Icon type="mail" theme="outlined" />
-            &nbsp; restorative@auroville.org.in
-          </OutLink>
-        </p>
       </Col>
     </Row>
   </StandardPage>

@@ -585,10 +585,11 @@ const Page = props => {
                 }}
               >
                 <i>
-                  Teachers at Aikiyam School are inspired by Restorative
-                  Circles!
+                  Teachers at Aikiyam School are
+                  <br />
+                  inspired by Restorative Circles!
                 </i>
-                &nbsp;
+                <br />
                 <Link to="/system-building-initiatives/restorative-circles-in-aikiyam-school">
                   See more ⇝
                 </Link>
@@ -601,19 +602,8 @@ const Page = props => {
                   marginBottom: 10,
                 }}
               >
-                Bring RC to your community…
+                Bringing RC to You!
               </h2>
-              <p
-                style={{
-                  color: '#2c2c2c',
-                }}
-              >
-                Our approach is to engage with the community at many levels and
-                through different initiatives, with a real longing to grow and
-                transform our systems together. Our initiatives include
-                engagement with Working Groups, Units, Services, schools,
-                residential communities, and more.
-              </p>
               <p
                 style={{
                   color: '#2c2c2c',
@@ -626,11 +616,21 @@ const Page = props => {
               <p
                 style={{
                   color: '#2c2c2c',
+                }}
+              >
+                We invite any Working Groups, commercial Units, Services,
+                schools and residential communities that are interested in
+                learning more to reach out, so that we can design a training
+                series together and/or look at how to collaborate.
+              </p>
+              <p
+                style={{
+                  color: '#2c2c2c',
                   marginBottom: 0,
                 }}
               >
                 <Link to="/system-building-initiatives">
-                  See our System Building Initiatives ⇝
+                  See our System-Building Initiatives ⇝
                 </Link>
               </p>
             </Copy>

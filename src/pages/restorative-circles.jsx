@@ -6,13 +6,19 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 // import { css } from "glamor";
 
-// import map from "lodash/map";
-// import isUndefined from "lodash/isUndefined";
+import isUndefined from 'lodash/isUndefined'
+import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-
-import Image from '@bodhi-project/components/lib/Image'
 import OutLink from '@bodhi-project/components/lib/OutLink'
+import Division from '@bodhi-project/components/lib/Division'
+import Image from '@bodhi-project/components/lib/Image'
+
+import Icon from 'antd/lib/icon'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
+
+import Tag from 'antd/lib/tag'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 
 import Row from 'antd/lib/row'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
@@ -31,6 +37,8 @@ import DisqusComments from '../components/DisqusComments'
 import newRestorativeSystemFlyer from '../assets/newRestorativeSystemFlyer.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
+
 const pageData = {
   pageTitle: 'Restorative Circles',
   nakedPageSlug: 'restorative-circles',
@@ -43,6 +51,58 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
+
+/** Theme */
+const Theme = props => {
+  const { border, title, files, tag, text } = props
+  return (
+    <div
+      style={{
+        paddingLeft: 12,
+        borderLeft: `8px solid ${border}`,
+      }}
+    >
+      <h2 className="mask-h4">
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <span>{title}</span>
+          <Link to="/archives">
+            <Tag color="geekblue">...from our Archives</Tag>
+          </Link>
+        </div>
+      </h2>
+      <p>{text}</p>
+      {!isUndefined(files) && (
+        <Fragment>
+          {map(files, file => {
+            return (
+              <p>
+                {!isUndefined(file.link) ? (
+                  <OutLink to={file.link}>
+                    <Icon
+                      type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
+                      theme="outlined"
+                    />
+                    &nbsp;
+                    {file.title}
+                  </OutLink>
+                ) : (
+                  <a href="#" disabled className="ignore">
+                    <Icon
+                      type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
+                      theme="outlined"
+                    />
+                    &nbsp;
+                    {file.title}
+                  </a>
+                )}
+              </p>
+            )
+          })}
+        </Fragment>
+      )}
+    </div>
+  )
+}
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -130,12 +190,55 @@ const Page = () => (
         </div>
       </Col>
     </Row>
+    <br />
+    <br />
+    <Division>
+      <Theme
+        border="#0101AF"
+        title="RC Handbook – Sample Pages"
+        tag="Document"
+        files={[
+          {
+            title: 'English sample page',
+            link:
+              'https://www.restorativeauroville.org/pdf-kjol/rc-booklet-extract-english.pdf',
+          },
+          {
+            title: 'French sample page (coming soon)',
+          },
+        ]}
+      />
+      <Theme
+        border="#0101AF"
+        title="RC Poster"
+        tag="Document"
+        files={[
+          {
+            title: 'English version',
+            link:
+              'https://www.restorativeauroville.org/pdf-kjol/rc-poster-english.pdf',
+          },
+          {
+            title: 'Tamil version',
+            link:
+              'https://www.restorativeauroville.org/pdf-kjol/rc-poster-tamil.pdf',
+          },
+          {
+            title: 'French version (coming soon)',
+          },
+          {
+            title: 'Spanish version',
+            link:
+              'https://www.restorativeauroville.org/pdf-kjol/rc-poster-spanish.pdf',
+          },
+        ]}
+      />
+    </Division>
     <div
       style={{
         border: '2px solid #FABB00',
         padding: 24,
         borderRadius: 8,
-        marginTop: 30,
       }}
     >
       <h2 className="mask-h4">Participating in a Circle</h2>
@@ -167,7 +270,6 @@ const Page = () => (
         not.
       </p>
     </div>
-    <br />
     <br />
     <br />
     <h2 className="mask-h4">Learn more about Restorative Circles…</h2>

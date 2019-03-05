@@ -7,13 +7,12 @@ import React from 'react'
 // import { css } from "glamor";
 import moment from 'moment'
 
-import isUndefined from 'lodash/isUndefined'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { BlogPostSchema } from '@bodhi-project/seo'
 import { Article, Header, Footer } from '@bodhi-project/semantic-webflow'
 import { FacebookProvider, Like as FBLike } from 'react-facebook'
 
+import PrevNext from '@bodhi-project/components/lib/PrevNext'
 import Image from '@bodhi-project/components/lib/Image'
 
 import Breadcrumb from 'antd/lib/breadcrumb'
@@ -139,35 +138,12 @@ const Page = props => {
             className="mask-p"
           />
         </Header>
+
         {children}
+
         <Footer style={{ borderTop: '1px dotted #00006F' }}>
           <h1 className="mask-h4">More articles</h1>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-            }}
-            className="mask-p"
-          >
-            <div>
-              {!isUndefined(prev) ? (
-                <Link to={`/${prev.nakedPageSlug}`}>⇜ Previous</Link>
-              ) : (
-                <span style={{ color: '#8a8a8a', cursor: 'not-allowed' }}>
-                  ⇜ Previous
-                </span>
-              )}
-            </div>
-            <div>
-              {!isUndefined(next) ? (
-                <Link to={`/${next.nakedPageSlug}`}>Next ⇝</Link>
-              ) : (
-                <span style={{ color: '#8a8a8a', cursor: 'not-allowed' }}>
-                  Next ⇝
-                </span>
-              )}
-            </div>
-          </div>
+          <PrevNext next={next} prev={prev} Link={Link} />
         </Footer>
       </Article>
     </StandardPage>

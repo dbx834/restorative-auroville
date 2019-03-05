@@ -70,7 +70,8 @@ const Ongoingprojects = props => {
         Our approach is to engage with the community at many levels and through
         different initiatives, with a real longing to grow and transform our
         systems together. Our initiatives include engagement with Working
-        Groups, Units, Services, schools, residential communities, and more.
+        Groups, commercial Units, Services, schools, residential communities,
+        and more.
       </p>
       <div className="margin-p">
         <ProjectListing
@@ -106,10 +107,10 @@ const Ongoingprojects = props => {
           the process, we can use it to its fullest.
         </p>
         <p style={{ marginBottom: 0 }}>
-          We invite any Working Groups, Units, Services, schools and residential
-          communities that are interested in learning more to reach out, so that
-          we can design a training series together and/or look at how to
-          collaborate.
+          We invite any Working Groups, commercial Units, Services, schools and
+          residential communities that are interested in learning more to reach
+          out, so that we can design a training series together and/or look at
+          how to collaborate.
         </p>
       </div>
     </StandardPage>

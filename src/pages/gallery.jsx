@@ -227,7 +227,7 @@ const Page = () => (
     <Header>
       <h1 className="mask-h3">Gallery: Restorative Auroville in Action…</h1>
     </Header>
-    <Images photos={photos} loader="gradient" columns={{ min: 2, max: 3 }} />
+    <Images photos={photos} loader="gradient" columns={{ min: 3, max: 3 }} />
   </StandardPage>
 )
 

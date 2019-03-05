@@ -88,7 +88,7 @@ const Theme = props => {
           <Images
             photos={photos}
             loader="gradient"
-            columns={{ min: 2, max: columns }}
+            columns={{ min: 3, max: 3 }}
           />
         </div>
       )}
@@ -133,7 +133,7 @@ const Page = () => (
           style={{
             padding: 18,
             paddingTop: 36,
-            paddingBottom: 36,
+            paddingBottom: 18,
             borderRadius: 4,
             position: 'relative',
           }}
@@ -184,7 +184,7 @@ const Page = () => (
             />
           </div>
           <p style={{ marginBottom: 0 }}>
-            <Link to="/projects/filming-a-live-restorative-circle">
+            <Link to="/donate/filming-a-live-restorative-circle">
               Our big dream is to one day film an entire live Restorative Circle
             </Link>
             . It’s an intimate and delicate space, and so we’re crossing our
@@ -387,7 +387,7 @@ const Page = () => (
       <Col md={8}>&nbsp;</Col>
     </Row>
     <Theme
-      border="#4A01AA"
+      border="#FAE300"
       title="Our RC-channel on YouTube (2011‒present)  "
       tag="...from our Archives"
       text="With somewhat regular updates…"

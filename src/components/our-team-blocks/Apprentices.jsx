@@ -162,7 +162,11 @@ class Apprentices extends React.Component {
               onClick={() => this.showPerson('stefan')}
             >
               <p>
-                <strong>2018</strong>
+                <strong>
+                  2018 -
+                  <br />
+                  present
+                </strong>
               </p>
             </div>
             <div
@@ -178,7 +182,11 @@ class Apprentices extends React.Component {
               onClick={() => this.showPerson('henrike')}
             >
               <p>
-                <strong>2018</strong>
+                <strong>
+                  2018 -
+                  <br />
+                  present
+                </strong>
               </p>
             </div>
             <div
@@ -195,7 +203,8 @@ class Apprentices extends React.Component {
             >
               <p>
                 <strong>
-                  2017 -<br />
+                  2017 -
+                  <br />
                   present
                 </strong>
               </p>
@@ -213,7 +222,11 @@ class Apprentices extends React.Component {
               onClick={() => this.showPerson('michelle')}
             >
               <p>
-                <strong>2018</strong>
+                <strong>
+                  2018 -
+                  <br />
+                  present
+                </strong>
               </p>
             </div>
             <div
@@ -229,7 +242,11 @@ class Apprentices extends React.Component {
               onClick={() => this.showPerson('celia')}
             >
               <p>
-                <strong>2018</strong>
+                <strong>
+                  2018-
+                  <br />
+                  present
+                </strong>
               </p>
             </div>
             <div

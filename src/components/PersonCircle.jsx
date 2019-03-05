@@ -37,7 +37,7 @@ import React from 'react'
  * @return {[type]}       [description]
  */
 const PersonCircle = props => {
-  const { image, role, className } = props
+  const { image, role, className, style = {} } = props
 
   return (
     <div
@@ -47,6 +47,7 @@ const PersonCircle = props => {
         backgroundRepeat: 'no-repeat',
         backgroundSize: '6.25vw 6.25vw',
         border: '2px solid #FFBF00',
+        ...style,
       }}
     >
       <p>

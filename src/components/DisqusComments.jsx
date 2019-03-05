@@ -9,7 +9,8 @@ import { css } from 'glamor'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Disqus from 'disqus-react'
 
-//
+import Image from '@bodhi-project/components/lib/Image'
+
 import Collapse from 'antd/lib/collapse'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/collapse/style/css'
 
@@ -27,9 +28,29 @@ const style = css({
   '& .ant-collapse-header': {
     background: '#f8f8ff !important',
     border: '1px solid #00006F !important',
-    padding: '16px !important',
+    paddingLeft: '16px !important',
+    paddingRight: '16px !important',
+    paddingTop: '8px !important',
+    paddingBottom: '8px !important',
     borderRadius: '8px !important',
     marginBottom: '10px !important',
+    display: 'flex',
+    alignItems: 'flex-start',
+
+    '& .anticon': {
+      verticalAlign: 'unset !important',
+      top: 'unset !important',
+      transform: 'unset !important',
+      lineHeight: '34px !important',
+    },
+
+    '& > div': {
+      '& > p': {
+        '& > span': {
+          fontSize: '90%',
+        },
+      },
+    },
   },
 
   '& .ant-collapse-item': {
@@ -59,43 +80,73 @@ const DisqusComments = props => {
   }
 
   return (
-    <Collapse
-      defaultActiveKey={['9']}
-      accordion
-      bordered={false}
-      className={style}
-    >
-      <Panel
-        header={
-          <div style={{ paddingLeft: 20 }}>
-            <p className="mask-h6" style={{ marginBottom: 0 }}>
-              Leave a comment…
-            </p>
-          </div>
-        }
-        key="1"
-        showArrow
+    <div className="mask-p">
+      <Collapse
+        defaultActiveKey={['9']}
+        accordion
+        bordered={false}
+        className={style}
       >
-        <aside>
-          <p>
-            Please share your thoughts and inspiration. Our hope is for these
-            comments to create a space for collective wisdom to emerge on
-            Restorative Circles and justice.
-          </p>
-          <p>
-            And a little request to please stay on topic and to keep your
-            comments relevant and practical, so that other viewers are
-            benefited.
-          </p>
-          <div className="mask-p">
+        <Panel
+          header={
+            <div
+              style={{
+                position: 'relative',
+                width: '100%',
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: -8,
+                  right: -3,
+                  height: 75,
+                  zIndex: 100,
+                }}
+              >
+                <Image
+                  src="/assets/chirp.webp"
+                  style={{
+                    background: 'transparent',
+                    border: 'unset',
+                    height: 75,
+                    width: 150,
+                  }}
+                  rawWidth={1800}
+                  rawHeight={900}
+                />
+              </div>
+              <div style={{ paddingLeft: 20, width: 'calc(100% - 160px)' }}>
+                <p className="mask-h6">
+                  <span>Read and/or leave a comment...</span>
+                </p>
+                <p style={{ marginTop: 0 }}>
+                  <span>
+                    Please share your thoughts and inspiration. Our hope is for
+                    these comments to create a space for collective wisdom to
+                    emerge on Restorative Circles and justice. And a little
+                    request to please stay on topic and to keep your comments
+                    relevant and practical, so that other viewers are benefited.
+                  </span>
+                </p>
+                <p style={{ marginBottom: 0 }}>
+                  <span>Click to open the Disqus window.</span>
+                </p>
+              </div>
+            </div>
+          }
+          key="1"
+          showArrow
+        >
+          <aside>
             <Disqus.DiscussionEmbed
               shortname={disqusShortname}
               config={disqusConfig}
             />
-          </div>
-        </aside>
-      </Panel>
-    </Collapse>
+          </aside>
+        </Panel>
+      </Collapse>
+    </div>
   )
 }
 

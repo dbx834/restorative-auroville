@@ -7,13 +7,12 @@ import React from 'react'
 // import { css } from "glamor";
 // import moment from 'moment'
 
-import isNull from 'lodash/isNull'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { EventSchema } from '@bodhi-project/seo'
 import { Header, Footer } from '@bodhi-project/semantic-webflow'
 import { FacebookProvider, Like as FBLike } from 'react-facebook'
 
+import PrevNext from '@bodhi-project/components/lib/PrevNext'
 import Image from '@bodhi-project/components/lib/Image'
 
 import Row from 'antd/lib/row'
@@ -136,10 +135,12 @@ const Page = props => {
                   {title}
                 </h1>
                 <p>
-                  {formattedDate}
-                  <br />
-                  {frontmatter.fromTime}&nbsp;-&nbsp;
-                  {frontmatter.toTime}
+                  <i>
+                    {formattedDate}
+                    <br />
+                    {frontmatter.fromTime}&nbsp;-&nbsp;
+                    {frontmatter.toTime}
+                  </i>
                 </p>
                 <div style={{ position: 'relative' }} className="mask-p">
                   <div
@@ -170,25 +171,7 @@ const Page = props => {
           {children}
           <Footer style={{ borderTop: '1px dotted #00006F' }}>
             <h1 className="mask-h4">More events</h1>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                marginBottom: 0,
-              }}
-              className="mask-p"
-            >
-              <div>
-                {!isNull(prev) && (
-                  <Link to={`/${prev.fields.route}`}>⇜ Previous</Link>
-                )}
-              </div>
-              <div>
-                {!isNull(next) && (
-                  <Link to={`/${next.fields.route}`}>Next ⇝</Link>
-                )}
-              </div>
-            </div>
+            <PrevNext next={next} prev={prev} Link={Link} />
           </Footer>
         </Col>
         <Col sm={24} md={24} xl={9}>

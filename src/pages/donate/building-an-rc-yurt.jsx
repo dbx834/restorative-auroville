@@ -7,25 +7,14 @@ import PropTypes from 'prop-types'
 // import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-
 import Images from '@bodhi-project/components/lib/Images'
 
-import Breadcrumb from 'antd/lib/breadcrumb'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import Link from '../../components/Link'
-import StandardPage from '../../components/wrappers/StandardPage'
-import DisqusComments from '../../components/DisqusComments'
-import seoHelper from '../../methods/seoHelper'
-import PrevNext from '../../components/PrevNext'
+import DonateProjectWrapper from '../../components/wrappers/DonateProjectWrapper'
 
-const photos = [
-  { src: '/donate-assets/yurt/yurt4.jpeg', width: 600, height: 450 },
-  { src: '/donate-assets/yurt/yurt2.jpeg', width: 600, height: 800 },
-  { src: '/donate-assets/yurt/yurt3.jpeg', width: 600, height: 450 },
-  { src: '/donate-assets/yurt/yurt5.jpeg', width: 600, height: 450 },
-]
+import Link from '../../components/Link'
+
+import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
@@ -39,8 +28,6 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
-const { Item: BItem } = Breadcrumb
-
 const next = {
   // nakedPageSlug: 'community-events/walk-of-hope-in-auroville-and-the-bioregion',
 }
@@ -49,22 +36,25 @@ const prev = {
   nakedPageSlug: 'donate/filming-a-live-restorative-circle',
 }
 
+const photos = [
+  { src: '/donate-assets/yurt/yurt4.jpeg', width: 600, height: 450 },
+  { src: '/donate-assets/yurt/yurt3.jpeg', width: 600, height: 450 },
+  { src: '/donate-assets/yurt/yurt5.jpeg', width: 600, height: 450 },
+]
+
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Initiative */
 const Initiative = props => {
   return (
-    <StandardPage className="" seoData={seoData}>
-      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
-        <BItem>
-          <Link to="/">Home</Link>
-        </BItem>
-        <BItem>
-          <Link to="/donate">Donate</Link>
-        </BItem>
-        <BItem>Building an RC Yurt</BItem>
-      </Breadcrumb>
+    <DonateProjectWrapper
+      className=""
+      seoData={seoData}
+      prev={prev}
+      next={next}
+      pageData={pageData}
+    >
       <h1 className="mask-h3">Building an RC Yurt</h1>
       <p>
         With our work growing, it’s high-time that we build a physical structure
@@ -76,41 +66,35 @@ const Initiative = props => {
         were faced with the challenge of finding a suitable meeting space. As we
         don’t have a budget for this work, we tried our best to find spaces that
         were available for free, and oftentimes we’d end up sitting in L’aura’s
-        living room -- which is cozy, but not workable as a long-term
+        living room – which is cozy, but not workable as a long-term
         professional space.
       </p>
       <p>
-        We’d like to create a space that’s more neutral, and that’s designed to
+        We’d like to create a space that’s more neutral and designed to
         accommodate about 30-40 people sitting in a circle.
       </p>
       <div className="margin-p">
         <Images
           photos={photos}
           loader="gradient"
-          columns={{ min: 2, max: 2 }}
+          columns={{ min: 3, max: 3 }}
         />
-        &nbsp;
       </div>
       <p>
         In the context of today’s Auroville, we think a dismountable and
         moveable structure would be the best. We visited a yurt built by
-        Jean-Marc, and we loved its circular design. We’d like to set up a
-        similar yurt, possibly in Centre Field next to L’aura’s house.
+        Aurovilian builder Jean-Marc, and we loved its circular design. We’d
+        like to set up a similar yurt, possibly in Centre Field next to L’aura’s
+        house.
       </p>
-      <p>
-        The estimated cost to put up this yurt is Rs.5 lakhs, and we’re looking
-        for financial support.{' '}
-        <Link to="/donate">
-          If you’re inspired by our project and would like to help, we welcome
-          your contributions you can donate here
-        </Link>
-        .
-      </p>
-      <p>Please know that any amount is greatly appreciated.</p>
       <p>We look forward to providing a new space for community growth.</p>
-      <PrevNext next={next} prev={prev} />
-      <DisqusComments pageData={pageData} />
-    </StandardPage>
+      <p>
+        If you’re inspired by our project and would like to help, we welcome
+        your contributions. Please know that any amount is greatly
+        appreciated.&nbsp;
+        <Link to="/donate">You can donate here</Link>.
+      </p>
+    </DonateProjectWrapper>
   )
 }
 

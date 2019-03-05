@@ -28,7 +28,7 @@ const pageData = {
   category: 'Restorative Circle',
   author: "L'aura Joy",
   next: {
-    nakedPageSlug: 'writings/our-apprentice-pranjal-shares',
+    nakedPageSlug: 'writings/can-we-talk-about-discrimination-in-auroville',
   },
   prev: {
     nakedPageSlug: 'writings/la-responsabilite-de-tous',

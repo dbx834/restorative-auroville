@@ -18,6 +18,9 @@ import CircleByYear3 from '../components/graphs/CircleByYear3'
 // import RadialGraph from '../components/graphs/RadialGraph'
 import PieGraph from '../components/graphs/PieGraph'
 import FeedbackGraph from '../components/graphs/FeedbackGraph'
+
+import DisqusComments from '../components/DisqusComments'
+
 import seoHelper from '../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -45,6 +48,8 @@ const Page = () => (
     <CircleByYear3 />
     <PieGraph />
     <FeedbackGraph />
+    <br />
+    <DisqusComments pageData={pageData} />
   </StandardPage>
 )
 

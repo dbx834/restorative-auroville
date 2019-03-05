@@ -87,7 +87,8 @@ const Page = props => {
             the larger Restorative Auroville project, we facilitate Circles,
             some of us teach, some of us run our different initiatives, and
             more. And we’re wanting to expand our team and our reach in the
-            community.&nbsp;
+            community.
+            <br />
             <Link to="/our-team">Read more about us ⇝</Link>
           </p>
         </Col>

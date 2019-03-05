@@ -24,11 +24,9 @@ import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import Link from '../../components/Link'
-import PrevNext from '../../components/PrevNext'
-import StandardPage from '../../components/wrappers/StandardPage'
-import DisqusComments from '../../components/DisqusComments'
+import CommunityEventWrapper from '../../components/wrappers/CommunityEventWrapper'
 
+import Link from '../../components/Link'
 import Video from '../../components/Video'
 import GoldenMajorHalves from '../../components/GoldenMajorHalves'
 
@@ -103,7 +101,13 @@ const Theme = props => {
 /** Initiative */
 const Initiative = props => {
   return (
-    <StandardPage className="" seoData={seoData}>
+    <CommunityEventWrapper
+      className=""
+      seoData={seoData}
+      next={next}
+      prev={prev}
+      pageData={pageData}
+    >
       <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
         <BItem>
           <Link to="/">Home</Link>
@@ -157,22 +161,24 @@ const Initiative = props => {
           </div>
           <div>
             <Theme
-              border="#FA8F00"
+              border="#FB9001"
               title="Restorative Dialogue across Cultures (2016)"
               tag="Projects & Reports"
               files={[
                 {
                   title: 'Project Proposal',
                   link:
-                    '/cross-cultural-restorative-dialogue-project-proposal.pdf',
+                    'https://www.restorativeauroville.org/pdf-kjol/cross-cultural-restorative-dialogue-project-proposal.pdf',
                 },
                 {
                   title: 'Report',
-                  link: '/cross-cultural-dialogue-report.pdf',
+                  link:
+                    'https://www.restorativeauroville.org/pdf-kjol/cross-cultural-dialogue-report.pdf',
                 },
                 {
                   title: 'Report Annexe',
-                  link: '/cross-cultural-dialogue-report-annexe.pdf',
+                  link:
+                    'https://www.restorativeauroville.org/pdf-kjol/cross-cultural-dialogue-report-annexe.pdf',
                 },
               ]}
             />
@@ -211,9 +217,7 @@ const Initiative = props => {
           columns={{ min: 2, max: 2 }}
         />
       </div>
-      <PrevNext next={next} prev={prev} />
-      <DisqusComments pageData={pageData} />
-    </StandardPage>
+    </CommunityEventWrapper>
   )
 }
 

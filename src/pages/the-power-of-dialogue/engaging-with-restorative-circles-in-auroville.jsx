@@ -22,6 +22,8 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
+const prev = {}
+
 const next = {
   nakedPageSlug:
     'the-power-of-dialogue/designing-our-justice-system-consciously',
@@ -36,12 +38,18 @@ const next = {
 // ----------------------------------------------------------------------------
 /** Page */
 const Page = () => (
-  <VideoWrapper className="" seoData={seoData} pageData={pageData} next={next}>
+  <VideoWrapper
+    className=""
+    seoData={seoData}
+    pageData={pageData}
+    prev={prev}
+    next={next}
+  >
     <p>
       L'aura shares about her experience of engaging with Restorative Circles in
       Auroville and how it's received by the community.
     </p>
-    <div style={{ maxWidth: '60em' }} className="margin-p">
+    <div style={{ maxWidth: '45rem' }} className="margin-p">
       <Video url="https://www.youtube.com/watch?v=tuJrfIFd3IY" />
     </div>
   </VideoWrapper>

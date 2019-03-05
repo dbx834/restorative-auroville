@@ -29,7 +29,7 @@ const pageData = {
   category: 'Restorative Circle',
   author: 'Auroville Today',
   prev: {
-    nakedPageSlug: 'writings/our-apprentice-pranjal-shares',
+    nakedPageSlug: 'writings/restoring-connection',
   },
 }
 

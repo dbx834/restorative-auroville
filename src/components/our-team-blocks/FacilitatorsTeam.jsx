@@ -174,11 +174,13 @@ class FacilitatorsTeam extends React.Component {
             image={lauraSquare}
             className="child-circle-highlight"
             role={<Frag>Founder</Frag>}
+            style={{ cursor: 'unset' }}
           />
           <PersonCircle
             image={janetSquare}
             className="child-circle-highlight"
             role={<Frag>Founder</Frag>}
+            style={{ cursor: 'unset' }}
           />
           <PersonCircle
             image={katiSquare}
@@ -190,6 +192,7 @@ class FacilitatorsTeam extends React.Component {
                 &nbsp;&nbsp;Member
               </Frag>
             }
+            style={{ cursor: 'unset' }}
           />
           <PersonCircle
             image={pranjalSquare}
@@ -201,6 +204,7 @@ class FacilitatorsTeam extends React.Component {
                 &nbsp;&nbsp;Member
               </Frag>
             }
+            style={{ cursor: 'unset' }}
           />
           <PersonCircle
             image={henrikeSquare}
@@ -212,6 +216,7 @@ class FacilitatorsTeam extends React.Component {
                 &nbsp;&nbsp;Member
               </Frag>
             }
+            style={{ cursor: 'unset' }}
           />
         </div>
       </div>

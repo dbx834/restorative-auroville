@@ -20,6 +20,10 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
+const next = {}
+
+const prev = {}
+
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
@@ -29,9 +33,15 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 /** Page */
 const Page = () => (
-  <VideoWrapper className="" seoData={seoData} pageData={pageData}>
+  <VideoWrapper
+    className=""
+    seoData={seoData}
+    pageData={pageData}
+    prev={prev}
+    next={next}
+  >
     <p>Surya shares about her experiences with Restoratives Circles.</p>
-    <div style={{ maxWidth: '60em' }} className="margin-p">
+    <div style={{ maxWidth: '45rem' }} className="margin-p">
       <Video url="https://www.youtube.com/watch?v=uIyY6TDbnSQ" />
     </div>
   </VideoWrapper>

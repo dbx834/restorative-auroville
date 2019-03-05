@@ -10,7 +10,6 @@ import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import Image from '@bodhi-project/components/lib/Image'
 
@@ -34,6 +33,8 @@ import birdsTop from '../assets/birdsTop.png'
 import grungeBox from '../assets/grungeBg.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
+
 const pageData = {
   pageTitle: 'About Restorative Auroville',
   nakedPageSlug: 'about-restorative-auroville',
@@ -46,7 +47,6 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
-const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -229,22 +229,25 @@ const Page = () => (
     <GoldenMajorHalves>
       <div>
         <Theme
-          border="#0101AF"
+          border="#FB9001"
           title="Restorative Auroville Research Project (2015-17)"
           tag="Projects & Reports"
           text="In September 2015, we applied for a 1-year grant to support our Research Project to bring Restorative Circles to Auroville and to start exploring the possibilities of developing a Restorative Justice System here."
           files={[
             {
               title: 'Project Proposal',
-              link: '/applied-research-restorative-circles-in-auroville.pdf',
+              link:
+                'https://www.restorativeauroville.org/pdf-kjol/applied-research-restorative-circles-in-auroville.pdf',
             },
             {
               title: '6-month Report',
-              link: '/restorative-auroville-6-month-report.pdf',
+              link:
+                'https://www.restorativeauroville.org/pdf-kjol/restorative-auroville-6-month-report.pdf',
             },
             {
               title: '1-year Report',
-              link: '/restorative-auroville-year-end-report.pdf',
+              link:
+                'https://www.restorativeauroville.org/pdf-kjol/restorative-auroville-year-end-report.pdf',
             },
           ]}
         />

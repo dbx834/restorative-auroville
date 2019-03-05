@@ -34,7 +34,8 @@ const { Fragment } = React
 const pageData = {
   pageTitle: 'Archives',
   nakedPageSlug: 'archives',
-  pageAbstract: 'From our archives…',
+  pageAbstract:
+    'Here’s a compilation of some additional project proposals, reports, public presentations, teaching material, and more.',
 }
 
 const seoData = seoHelper(pageData)
@@ -59,6 +60,13 @@ const style = css({
     borderRadius: 'unset !important',
   },
 }).toString()
+
+// blue - 0101AF
+// yellow - FAE300
+// purple - 4A01AA
+// orange - FB9001
+// red - E00044
+// green - #00e09c
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -98,7 +106,7 @@ const Theme = props => {
               <Images
                 photos={photos}
                 loader="gradient"
-                columns={{ min: 2, max: 3 }}
+                columns={{ min: 3, max: 3 }}
               />
             </Panel>
           </Collapse>
@@ -142,7 +150,7 @@ const Page = () => (
   <StandardPage className="" seoData={seoData}>
     <h1 className="mask-h3">Archives</h1>
     <p>
-      Here’s a compilation of our different project proposals, reports, public
+      Here’s a compilation of some additional project proposals, reports, public
       presentations, teaching material, and more.
     </p>
     <Theme
@@ -152,7 +160,8 @@ const Page = () => (
       files={[
         {
           title: 'English sample page',
-          link: '/rc-booklet-extract-english.pdf',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/rc-booklet-extract-english.pdf',
         },
         {
           title: 'French sample page (coming soon)',
@@ -166,29 +175,32 @@ const Page = () => (
       files={[
         {
           title: 'English version',
-          link: '/rc-poster-english.pdf',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/rc-poster-english.pdf',
         },
         {
           title: 'Tamil version',
-          link: '/rc-poster-tamil.pdf',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/rc-poster-tamil.pdf',
         },
         {
           title: 'French version (coming soon)',
         },
         {
           title: 'Spanish version',
-          link: '/rc-poster-spanish.pdf',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/rc-poster-spanish.pdf',
         },
       ]}
     />
     <Theme
-      border="#4A01AA"
+      border="#FAE300"
       title="Our RC-channel on YouTube (2011‒present)  "
-      tag="Videos"
+      tag="Video"
       text="With somewhat regular updates…"
       files={[
         {
-          title: 'See videos',
+          title: 'Videos',
           icon: 'youtube',
           link:
             'https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF',
@@ -196,7 +208,7 @@ const Page = () => (
       ]}
     />
     <Theme
-      border="#FAE300"
+      border="#4A01AA"
       title='"Experiences with training and facilitating Restorative Circles and conflict resolution" (2018)'
       tag="Interview"
       text={
@@ -210,7 +222,7 @@ const Page = () => (
       }
       files={[
         {
-          title: 'Watch interview',
+          title: 'Interview',
           icon: 'youtube',
           link:
             'https://www.youtube.com/watch?time_continue=2570&v=jy9C8tyCxkg',
@@ -218,7 +230,7 @@ const Page = () => (
       ]}
     />
     <Theme
-      border="#FABB00"
+      border="#FB9001"
       title="Walk of Hope in Auroville & the Bioregion (2018)"
       tag="Projects & Reports"
       text={
@@ -233,14 +245,15 @@ const Page = () => (
       files={[
         {
           title: 'Project Proposal',
-          link: '/walk-of-hope-project-proposal.pdf',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/walk-of-hope-project-proposal.pdf',
         },
       ]}
     />
     <Theme
-      border="#FABB00"
+      border="#E00044"
       title='"Create Auroville Together: Restorative Circles" (2017)'
-      tag="Public Presentations"
+      tag="Public Presentation"
       text="A public presentation about RC at Unity Pavilion, Auroville."
       photos={[
         { src: '/archives/public2017/img1.jpg', width: 600, height: 450 },
@@ -250,60 +263,95 @@ const Page = () => (
       columns={3}
       files={[
         {
-          title: 'Watch video, Part 1',
+          title: 'Feedback results (coming soon)',
+        },
+        {
+          title: 'Video Part 1',
           icon: 'youtube',
           link:
             'https://www.youtube.com/watch?v=n1Uf1IYQ2_Y&t=10s&index=9&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF',
         },
         {
-          title: 'Watch video, Part 2',
+          title: 'Video Part 2',
           icon: 'youtube',
           link:
             'https://www.youtube.com/watch?v=ngOhj-NhKJo&t=0s&index=8&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF',
         },
+        {
+          title: '"Auroville Radio" recording',
+          icon: 'sound',
+          link: 'https://www.aurovilleradio.org/cat-on-rc-in-auroville/',
+        },
       ]}
     />
     <Theme
-      border="#4A01AA"
+      border="#FB9001"
       title="Justice Questionnaire (2017)"
       tag="Projects & Reports"
       text="We sent out a questionnaire to the entire Auroville community in an attempt to raise awareness about our very basic human need for justice, and to hear the community’s thoughts on this topic."
       files={[
         {
           title: "Justice in Auroville – What's Your Opinion?",
-          link: '/justice-in-auroville-what-is-your-opinion.pdf',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/justice-in-auroville-what-is-your-opinion.pdf',
         },
         {
           title: 'Results',
-          link: '/justice-questionnaire-result.pdf',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/justice-questionnaire-result.pdf',
         },
       ]}
     />
     <Theme
-      border="#FAE300"
+      border="#FB9001"
       title='FilmFest: "Restoring Connection" (2016)'
       tag="Projects & Reports"
       text="We screened documentaries and feature films about peace and reconciliation work from around the world, in an attempt to inspire a movement towards restorative justice in Auroville."
       files={[
         {
           title: 'Project Proposal',
-          link: '/restoring-connection-film-fest-project-proposal.pdf',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/restoring-connection-film-fest-project-proposal.pdf',
         },
         {
           title: 'Report',
-          link: '/filmfest-report.pdf',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/filmfest-report.pdf',
         },
         {
-          title: 'See "Auroville Today" article',
+          title: '"Auroville Today" article',
           icon: 'copy',
           link: '/writings/restoring-connection',
         },
       ]}
     />
     <Theme
-      border="#0101AF"
-      title="Flash-mob: Spontaneous (2015)"
-      tag="Flash Mob"
+      border="#FB9001"
+      title="Restorative Dialogue across Cultures (2016)"
+      tag="Projects & Reports"
+      text="We invited Duke Duchscherer (USA, Canada) to co-host a Restorative Dialogue with us, in an attempt to bridge the gap between Aurovilians from the locality and Aurovilians from other places in the world."
+      files={[
+        {
+          title: 'Project Proposal',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/cross-cultural-restorative-dialogue-project-proposal.pdf',
+        },
+        {
+          title: 'Report',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/cross-cultural-dialogue-report.pdf',
+        },
+        {
+          title: 'Report Annexe',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/cross-cultural-dialogue-report-annexe.pdf',
+        },
+      ]}
+    />
+    <Theme
+      border="#00e09c"
+      title="Flashmob: Spontaneous Happening (2016)"
+      tag="Flashmob"
       text="We spontaneously painted wooden planks with conflict-transformation-related phrases and secretly (in the middle of the night) hung them up along Auroville’s roads, to inspire the unexpected. However, it wasn’t long until someone else (who?) decided that this was too outrageous and secretly took them down. How sad."
       photos={[
         {
@@ -339,61 +387,32 @@ const Page = () => (
       ]}
     />
     <Theme
-      border="#FA8F00"
-      title="Restorative Dialogue across Cultures (2016)"
-      tag="Projects & Reports"
-      text="We invited Duke Duchscherer (USA, Canada) to co-host a Restorative Dialogue with us, in an attempt to bridge the gap between Aurovilians from the locality and Aurovilians from other places in the world."
-      files={[
-        {
-          title: 'Project Proposal',
-          link: '/cross-cultural-restorative-dialogue-project-proposal.pdf',
-        },
-        {
-          title: 'Report',
-          link: '/cross-cultural-dialogue-report.pdf',
-        },
-        {
-          title: 'Report Annexe',
-          link: '/cross-cultural-dialogue-report-annexe.pdf',
-        },
-      ]}
-    />
-    <Theme
-      border="#0101AF"
+      border="#FB9001"
       title="Restorative Auroville Research Project (2015-17)"
       tag="Projects & Reports"
       text="In September 2015, we applied for a 1-year grant to support our Research Project to bring Restorative Circles to Auroville and to start exploring the possibilities of developing a Restorative Justice System here."
       files={[
         {
           title: 'Project Proposal',
-          link: '/applied-research-restorative-circles-in-auroville.pdf',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/applied-research-restorative-circles-in-auroville.pdf',
         },
         {
           title: '6-month Report',
-          link: '/restorative-auroville-6-month-report.pdf',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/restorative-auroville-6-month-report.pdf',
         },
         {
           title: '1-year Report',
-          link: '/restorative-auroville-year-end-report.pdf',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/restorative-auroville-year-end-report.pdf',
         },
       ]}
     />
     <Theme
-      border="#E00044"
-      title="Truth & Reconciliation Process (2015)"
-      tag="Document"
-      text="A process we wanted to offer the community to support healing and reconciliation, especially in connection to governance and feedback. However, it wasn't implemented."
-      files={[
-        {
-          title: 'See Our Draft',
-          link: '/truth-and-reconcilation-process.pdf',
-        },
-      ]}
-    />
-    <Theme
-      border="#0101AF"
-      title="Flash-mob: Eye-Gazing (2015)"
-      tag="Flash Mob"
+      border="#00e09c"
+      title="Flashmob: Eye-Gazing (2015)"
+      tag="Flashmob"
       text='We spontaneously joined the "World’s Biggest Eye Contact Experiment" and flash-mobbed Solar Kitchen and the Visitors’ Centre.'
       photos={[
         {
@@ -444,59 +463,75 @@ const Page = () => (
       ]}
     />
     <Theme
-      border="#E00044"
-      title="Auroville's Conflict Resolution Policy (2015)"
+      border="#0101AF"
+      title="Truth & Reconciliation Process (2015)"
       tag="Document"
+      text="A process we wanted to offer the community to support healing and reconciliation, especially in connection to governance and feedback. However, it wasn't implemented."
       files={[
         {
-          title: 'See document',
-          link: '/auroville-conflict-resolution-policy-2015.pdf',
+          title: 'Draft document',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/truth-and-reconcilation-process.pdf',
         },
       ]}
     />
     <Theme
-      border="#FABB00"
+      border="#0101AF"
+      title="Auroville's Conflict Resolution Policy (2015)"
+      tag="Document"
+      text="A work in progress, to be updated soon…"
+      files={[
+        {
+          title: 'Document',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/auroville-conflict-resolution-policy-2015.pdf',
+        },
+      ]}
+    />
+    <Theme
+      border="#E00044"
       title="How Do We Dream It Could Be? (2014)"
-      tag="Public Presentations"
+      tag="Public Presentation"
       text='We offered a public presentation about RC at Unity Pavilion, and explored about the question: "How do we dream justice could be in Auroville?"'
       files={[
         {
-          title: 'Project Proposal',
-          link: '/how-we-dream.pdf',
+          title: 'Our dream',
+          link:
+            'https://www.restorativeauroville.org/pdf-kjol/how-we-dream.pdf',
         },
         {
-          title: 'Watch video',
+          title: 'Video',
           icon: 'youtube',
           link: 'https://www.youtube.com/watch?v=34yV9adMWNY',
         },
         {
-          title: 'Listen to radio recording',
+          title: '"Auroville Radio" recording',
           icon: 'sound',
           link: 'https://www.aurovilleradio.org/restorative-circles/',
         },
       ]}
     />
     <Theme
-      border="#FB9001"
+      border="#4A01AA"
       title="Auroville Radio interviews L'aura on Restorative Circles (2014)"
       tag="Interview"
       text="Exploring 'justice' in Auroville, and how we can respond to conflict and so-called unacceptable behaviour in ways that hold all sides of the story and support moving forward as an entire community."
       files={[
         {
-          title: 'Watch interview',
+          title: 'Interview',
           icon: 'youtube',
           link: 'https://www.youtube.com/watch?v=jRrurVLtprE',
         },
       ]}
     />
     <Theme
-      border="#FABB00"
+      border="#E00044"
       title="First-Ever RC Presentation in Auroville! (2011)"
       tag="Public Presentations"
       text="Soon after Jason and L’aura returned from a training with Dominic Barter in the USA, they presented RC at Town Hall, Auroville. (Please excuse the terrible video quality!)"
       files={[
         {
-          title: 'Watch video',
+          title: 'Video',
           icon: 'youtube',
           link:
             'https://www.youtube.com/watch?v=YIUFjSzXn1Y&t=0s&index=7&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF',

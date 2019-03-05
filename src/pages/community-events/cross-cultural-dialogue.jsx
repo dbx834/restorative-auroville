@@ -16,15 +16,13 @@ import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import CommunityEventWrapper from '../../components/wrappers/CommunityEventWrapper'
+
 import Link from '../../components/Link'
-import PrevNext from '../../components/PrevNext'
-import StandardPage from '../../components/wrappers/StandardPage'
 import EqualHalves from '../../components/EqualHalves'
 import GoldenMajorHalves from '../../components/GoldenMajorHalves'
 import GrungeBox from '../../components/GrungeBox'
-import PDFViewer from '../../components/PDFViewer'
 
-import DisqusComments from '../../components/DisqusComments'
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -72,13 +70,38 @@ const prev = {
   nakedPageSlug: 'community-events/women-for-justice',
 }
 
+const notes = [
+  {
+    url:
+      'https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-english.pdf',
+    title: 'See invitation (English)',
+  },
+  {
+    url:
+      'https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-tamil.pdf',
+    title: 'See invitation (Tamil)',
+  },
+  {
+    url:
+      'https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-action-list.pdf',
+    title: 'Action Agreements',
+  },
+]
+
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Initiative */
 const Initiative = props => {
   return (
-    <StandardPage className="" seoData={seoData}>
+    <CommunityEventWrapper
+      className=""
+      seoData={seoData}
+      next={next}
+      prev={prev}
+      pageData={pageData}
+      notes={notes}
+    >
       <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
         <BItem>
           <Link to="/">Home</Link>
@@ -91,10 +114,17 @@ const Initiative = props => {
       <h1 className="mask-h3">
         Cross-Cultural Dialogue: Discrimination in Auroville
       </h1>
+      <p>
+        In response to the recent claims of discrimination against some in the
+        Tamil community in Auroville, we hosted a 2-day Cross-Cultural Dialogue.
+        We offered a space to explore this topic further and to have a deep
+        sharing about our experiences and pain, as well as our felt sense of
+        togetherness and aspiration to manifest Human Unity.
+      </p>
       <EqualHalves>
-        <div>
+        <div style={{ paddingLeft: 4 }}>
           <Image
-            src="/event-assets/cross-cultural-dialogue/english-poster.jpeg"
+            src="/event-assets/cross-cultural-dialogue/english-poster2.jpg"
             rawWidth={1280}
             rawHeight={905}
             style={{
@@ -108,9 +138,9 @@ const Initiative = props => {
             alt="Cross-Cultural Dialogue"
           />
         </div>
-        <div>
+        <div style={{ paddingRight: 4 }}>
           <Image
-            src="/event-assets/cross-cultural-dialogue/tamil-poster.jpeg"
+            src="/event-assets/cross-cultural-dialogue/tamil-poster2.jpg"
             rawWidth={1280}
             rawHeight={905}
             style={{
@@ -132,19 +162,6 @@ const Initiative = props => {
           columns={{ min: 2, max: 2 }}
         />
       </div>
-      <PDFViewer
-        url="https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-english.pdf"
-        title="English poster"
-      />
-      <PDFViewer
-        url="https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-tamil.pdf"
-        title="Tamil poster"
-      />
-      <PDFViewer
-        url="https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-action-list.pdf"
-        title="Action list"
-      />
-      &nbsp;
       <GoldenMajorHalves>
         <div>
           <h2 className="mask-h4" style={{ marginBottom: 0 }}>
@@ -153,19 +170,22 @@ const Initiative = props => {
             </Link>
           </h2>
           <h3 className="mask-h5">
-            Read our article published in Auroville Today…
+            Read our article published after our Cross-Cultural Dialogue in
+            Auroville Today…
           </h3>
           <p>
-            Feelings of discrimination surfaced after two Tamil members of the
-            Working Committee were not given proximity passes for the Prime
-            Minister's visit on February 24th. This led to a rift within the
-            Working Committee, and the debate spilled over into the larger
-            community. The Auroville Council, asked by many members of the
-            community to look into the matter of feelings of discrimination,
-            called for a Restorative Circle to support the Working Committee to
-            work through some of their internal dynamics. In addition,
-            Restorative Auroville also organized a Cross-Cultural Dialogue on
-            the topic of discrimination. L'aura reports.
+            <i>
+              "Feelings of discrimination surfaced after two Tamil members of
+              the Working Committee were not given proximity passes for the
+              Prime Minister's visit on February 24th. This led to a rift within
+              the Working Committee, and the debate spilled over into the larger
+              community. The Auroville Council, asked by many members of the
+              community to look into the matter of feelings of discrimination,
+              called for a Restorative Circle to support the Working Committee
+              to work through some of their internal dynamics. In addition,
+              Restorative Auroville also organized a Cross-Cultural Dialogue on
+              the topic of discrimination. L'aura reports."
+            </i>
           </p>
           <p>
             <strong>
@@ -184,9 +204,7 @@ const Initiative = props => {
           </GrungeBox>
         </div>
       </GoldenMajorHalves>
-      <PrevNext next={next} prev={prev} />
-      <DisqusComments pageData={pageData} />
-    </StandardPage>
+    </CommunityEventWrapper>
   )
 }
 
