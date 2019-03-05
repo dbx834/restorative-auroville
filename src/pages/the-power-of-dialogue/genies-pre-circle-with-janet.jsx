@@ -21,9 +21,9 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
-const next = {}
+const next = undefined
 
-const prev = {}
+const prev = undefined
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles

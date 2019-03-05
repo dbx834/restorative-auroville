@@ -55,7 +55,7 @@ const prev = {
     'system-building-initiatives/restorative-circles-in-aikiyam-school',
 }
 
-const next = {}
+const next = undefined
 
 const notes = []
 

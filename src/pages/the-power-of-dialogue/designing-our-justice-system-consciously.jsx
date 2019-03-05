@@ -28,7 +28,7 @@ const prev = {
     'the-power-of-dialogue/engaging-with-restorative-circles-in-auroville',
 }
 
-const next = {}
+const next = undefined
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles

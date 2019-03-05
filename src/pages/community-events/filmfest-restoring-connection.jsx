@@ -26,7 +26,6 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 import CommunityEventWrapper from '../../components/wrappers/CommunityEventWrapper'
 
 import Link from '../../components/Link'
-import PDFViewer from '../../components/PDFViewer'
 
 import seoHelper from '../../methods/seoHelper'
 
@@ -46,7 +45,7 @@ const prev = {
   nakedPageSlug: 'community-events/restorative-dialogue-across-cultures',
 }
 
-const next = {}
+const next = undefined
 
 const seoData = seoHelper(pageData)
 

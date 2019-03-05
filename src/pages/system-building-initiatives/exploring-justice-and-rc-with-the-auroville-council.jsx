@@ -29,7 +29,7 @@ const next = {
     'system-building-initiatives/restorative-circles-in-aikiyam-school',
 }
 
-const prev = {}
+const prev = undefined
 
 const seoData = seoHelper(pageData)
 

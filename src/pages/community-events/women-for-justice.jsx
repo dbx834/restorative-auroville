@@ -43,7 +43,7 @@ const photos = [
   },
 ]
 
-const prev = {}
+const prev = undefined
 
 const next = {
   nakedPageSlug: 'community-events/cross-cultural-dialogue',

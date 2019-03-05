@@ -22,7 +22,7 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
-const prev = {}
+const prev = undefined
 
 const next = {
   nakedPageSlug:
