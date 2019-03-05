@@ -37,8 +37,8 @@ const Page = ({
   className,
   pageData,
   seoData,
-  prev = null,
-  next = null,
+  prev = {},
+  next = {},
   children,
 }) => (
   <StandardPage className={className} seoData={seoData}>

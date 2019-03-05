@@ -63,8 +63,8 @@ const StandardPage = props => {
     seoData,
     children,
     pageData,
-    next,
-    prev,
+    next = {},
+    prev = {},
     notes = [],
   } = props
   const {

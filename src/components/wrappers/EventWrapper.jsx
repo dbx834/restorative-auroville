@@ -7,6 +7,8 @@ import React from 'react'
 // import { css } from "glamor";
 // import moment from 'moment'
 
+import isNull from 'lodash/isNull'
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { EventSchema } from '@bodhi-project/seo'
 import { Header, Footer } from '@bodhi-project/semantic-webflow'
@@ -95,7 +97,6 @@ const Page = props => {
       url: `${data.websiteUrl}${route}`,
     },
   }
-  // const dateStr = moment(frontmatter.date).format('ddd, MMMM D, YYYY')
 
   return (
     <StandardPage className="" seoData={seoData}>
@@ -171,7 +172,11 @@ const Page = props => {
           {children}
           <Footer style={{ borderTop: '1px dotted #00006F' }}>
             <h1 className="mask-h4">More events</h1>
-            <PrevNext next={next} prev={prev} Link={Link} />
+            <PrevNext
+              prev={!isNull(prev) && { nakedPageSlug: prev.fields.route }}
+              next={!isNull(next) && { nakedPageSlug: next.fields.route }}
+              Link={Link}
+            />
           </Footer>
         </Col>
         <Col sm={24} md={24} xl={9}>
