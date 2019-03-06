@@ -161,7 +161,7 @@ const Page = () => (
         {
           title: 'English sample page',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/rc-booklet-extract-english.pdf',
+            'https://ucarecdn.com/6c37a7dc-4e40-444b-a45b-4a31b5c031b4/-/inline/yes/',
         },
         {
           title: 'French sample page (coming soon)',
