@@ -155,7 +155,7 @@ class Layout extends React.Component {
 
     return (
       <Type
-        kit="dkc2ilk"
+        kit="jdd4npp"
         style={{ minHeight: '100vh' }}
         className={pageStyles}
         options={{

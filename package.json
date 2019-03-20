@@ -32,7 +32,7 @@
     "@bodhi-project/markdown-to-react": "1.0.1",
     "@bodhi-project/semantic-webflow": "0.0.13",
     "@bodhi-project/seo": "^2.0.1",
-    "@bodhi-project/typography": "1.1.0",
+    "@bodhi-project/typography": "2.0.1",
     "antd": "^3.10.1",
     "axios": "^0.18.0",
     "color": "^3.1.0",

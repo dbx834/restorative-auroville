@@ -38,7 +38,7 @@ const prev = {
 const notes = [
   {
     url:
-      'https://www.restorativeauroville.org/donate-assets/magazine/proposal.pdf',
+      'https://www.restorativeauroville.org/donate-assets/magazine/proposal-v2.pdf',
     title: 'See Project Proposal',
   },
 ]
