@@ -41,8 +41,12 @@ import p3ComingSoon from '../assets/coming-soon-red.jpg'
 import p4ComingSoon from '../assets/coming-soon-green.jpg'
 
 import p21 from '../assets/genies-precircle-with-janet.jpg'
+
 import p31 from '../assets/engaging-with-restorative-circles-in-auroville.jpg'
 import p32 from '../assets/designing-our-justice-system-consciously.jpg'
+import p33 from '../assets/daring-to-bring-forward-a-real-live-act.jpg'
+import p34 from '../assets/the-value-of-learning-rc-facilitation.jpg'
+
 import p41 from '../assets/surya-on-restorative-circles.jpg'
 
 import yellowBorder from '../assets/yellowBorder.jpg'
@@ -338,7 +342,43 @@ const Page = () => (
         />
         <p>Coming soon…</p>
       </Col>
+      {/*
+      <Col md={8}>
+        <VideoCover
+          to="/the-power-of-dialogue/daring-to-bring-forward-a-real-live-act"
+          cover={p33}
+          text='Kati shares her recent learning regarding the importance of bringing an authentic live act to a Circle, instead of simply having an "interesting" topic as the starting point.'
+        />
+      </Col>
+      */}
     </Row>
+    {/*
+    <Row gutter={{ md: 24 }}>
+      <Col md={8}>
+        <VideoCover
+          to="/the-power-of-dialogue/the-value-of-learning-rc-facilitation"
+          cover={p34}
+          text="Coming soon."
+        />
+      </Col>
+      <Col md={8}>
+        <Image
+          src={p3ComingSoon}
+          style={{
+            background: 'transparent',
+            border: 'unset',
+            height: 'auto',
+            width: '100%',
+            marginBottom: 10,
+          }}
+          loader="gradient"
+          rawWidth={1440}
+          rawHeight={900}
+        />
+        <p>Coming soon…</p>
+      </Col>
+    </Row>
+    */}
     <Image
       src={greenBorder}
       style={{

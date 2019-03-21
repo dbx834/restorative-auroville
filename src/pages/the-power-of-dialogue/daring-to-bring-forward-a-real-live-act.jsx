@@ -14,23 +14,22 @@ import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: '3.2 Designing our Justice System Consciously',
+  pageTitle: '3.3 Daring to Bring Forward a Real Live Act',
   nakedPageSlug:
-    'the-power-of-dialogue/designing-our-justice-system-consciously',
+    'the-power-of-dialogue/daring-to-bring-forward-a-real-live-act',
   pageAbstract:
-    "L'aura shares about her experience of engaging with Restorative Circles in Auroville and the importance of designing a justice system consciously, otherwise we'll just inherit the old ways..",
+    'Kati shares her recent learning regarding the importance of bringing an authentic live act to a Circle, instead of simply having an "interesting" topic as the starting point.',
 }
 
 const seoData = seoHelper(pageData)
 
 const prev = {
   nakedPageSlug:
-    'the-power-of-dialogue/engaging-with-restorative-circles-in-auroville',
+    'the-power-of-dialogue/designing-our-justice-system-consciously',
 }
 
 const next = {
-  nakedPageSlug:
-    'the-power-of-dialogue/daring-to-bring-forward-a-real-live-act',
+  nakedPageSlug: 'the-power-of-dialogue/the-value-of-learning-rc-facilitation',
 }
 
 // ----------------------------------------------------------------------------
@@ -50,12 +49,12 @@ const Page = () => (
     next={next}
   >
     <p>
-      L'aura shares about her experience of engaging with Restorative Circles in
-      Auroville and the importance of designing a justice system consciously,
-      otherwise we'll just inherit the old ways.
+      Kati shares her recent learning regarding the importance of bringing an
+      authentic live act to a Circle, instead of simply having an "interesting"
+      topic as the starting point.
     </p>
     <div style={{ maxWidth: '45rem' }} className="margin-p">
-      <Video url="https://www.youtube.com/watch?v=ur4OvDPkoSE" />
+      <Video url="https://youtu.be/9wQcQDqpp5w" />
     </div>
   </VideoWrapper>
 )

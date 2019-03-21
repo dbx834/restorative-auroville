@@ -49,7 +49,6 @@
       { "title": "Gallery", "link": "/gallery" },
       { "title": "Our Story", "link": "/our-story" },
       { "title": "Newsletter", "link": "/newsletter" },
-      { "title": "Testimonials", "link": "/testimonials" },
       { "title": "Pay Fee", "link": "/pay-fee" }
     ]
   },

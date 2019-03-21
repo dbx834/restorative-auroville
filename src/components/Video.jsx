@@ -33,7 +33,12 @@ const Video = props => {
                 height: playerHeight,
               }}
             >
-              <ReactPlayer url={url} width="inherit" height="inherit" />
+              <ReactPlayer
+                url={url}
+                width="inherit"
+                height="inherit"
+                controls
+              />
             </div>
           )
         }}

@@ -14,24 +14,19 @@ import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: '3.2 Designing our Justice System Consciously',
-  nakedPageSlug:
-    'the-power-of-dialogue/designing-our-justice-system-consciously',
-  pageAbstract:
-    "L'aura shares about her experience of engaging with Restorative Circles in Auroville and the importance of designing a justice system consciously, otherwise we'll just inherit the old ways..",
+  pageTitle: '3.4 The Value of Learning RC Facilitation',
+  nakedPageSlug: 'the-power-of-dialogue/the-value-of-learning-rc-facilitation',
+  pageAbstract: 'Coming soon...',
 }
 
 const seoData = seoHelper(pageData)
 
 const prev = {
   nakedPageSlug:
-    'the-power-of-dialogue/engaging-with-restorative-circles-in-auroville',
-}
-
-const next = {
-  nakedPageSlug:
     'the-power-of-dialogue/daring-to-bring-forward-a-real-live-act',
 }
+
+const next = undefined
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -49,13 +44,9 @@ const Page = () => (
     prev={prev}
     next={next}
   >
-    <p>
-      L'aura shares about her experience of engaging with Restorative Circles in
-      Auroville and the importance of designing a justice system consciously,
-      otherwise we'll just inherit the old ways.
-    </p>
+    <p>Coming soon...</p>
     <div style={{ maxWidth: '45rem' }} className="margin-p">
-      <Video url="https://www.youtube.com/watch?v=ur4OvDPkoSE" />
+      <Video url="https://youtu.be/lpBQbBKZg1s" />
     </div>
   </VideoWrapper>
 )

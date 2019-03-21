@@ -60,49 +60,7 @@ const Page = () => (
         <NewsletterForm />
       </Col>
       <Col sm={24} md={9}>
-        <h2
-          className="mask-h3"
-          style={{ display: 'inline-block', position: 'relative' }}
-        >
-          Restorative Auroville
-          <div
-            style={{
-              position: 'absolute',
-              top: -20,
-              right: -38,
-              height: 50,
-            }}
-          >
-            <Image
-              src={birdsTop}
-              style={{
-                background: 'transparent',
-                border: 'unset',
-                height: 50,
-                width: 50,
-              }}
-              rawWidth={900}
-              rawHeight={900}
-            />
-          </div>
-        </h2>
-        <p>
-          Restorative Auroville is an initative of&nbsp;
-          <OutLink to="https://www.joylivinglearning.org/">
-            Joy Living Learning
-          </OutLink>
-          , a unit of the&nbsp;
-          <OutLink to="https://www.auroville.org/">
-            Auroville Foundation
-          </OutLink>
-          , India.
-        </p>
-        <p>
-          <OutLink to="mailto:restorative@auroville.org.in?Subject=Hello">
-            <Icon type="mail" theme="outlined" />
-            &nbsp; restorative@auroville.org.in
-          </OutLink>
-        </p>
+        &nbsp;
       </Col>
     </Row>
   </StandardPage>
