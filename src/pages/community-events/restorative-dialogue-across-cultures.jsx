@@ -168,17 +168,17 @@ const Initiative = props => {
                 {
                   title: 'Project Proposal',
                   link:
-                    'https://www.restorativeauroville.org/pdf-kjol/cross-cultural-restorative-dialogue-project-proposal.pdf',
+                    'https://www.restorativeauroville.org/pdfs1/cross-cultural-restorative-dialogue-project-proposal.pdf',
                 },
                 {
                   title: 'Report',
                   link:
-                    'https://www.restorativeauroville.org/pdf-kjol/cross-cultural-dialogue-report.pdf',
+                    'https://www.restorativeauroville.org/pdfs1/cross-cultural-dialogue-report.pdf',
                 },
                 {
                   title: 'Report Annexe',
                   link:
-                    'https://www.restorativeauroville.org/pdf-kjol/cross-cultural-dialogue-report-annexe.pdf',
+                    'https://www.restorativeauroville.org/pdfs1/cross-cultural-dialogue-report-annexe.pdf',
                 },
               ]}
             />

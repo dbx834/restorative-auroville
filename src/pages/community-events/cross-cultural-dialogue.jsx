@@ -72,18 +72,15 @@ const prev = {
 
 const notes = [
   {
-    url:
-      'https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-english.pdf',
+    url: 'https://www.restorativeauroville.org/pdfs1/ccd-english.pdf',
     title: 'See invitation (English)',
   },
   {
-    url:
-      'https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-tamil.pdf',
+    url: 'https://www.restorativeauroville.org/pdfs1/ccd-tamil.pdf',
     title: 'See invitation (Tamil)',
   },
   {
-    url:
-      'https://www.restorativeauroville.org/event-assets/cross-cultural-dialogue/ccd-action-list.pdf',
+    url: 'https://www.restorativeauroville.org/pdfs1/ccd-action-list.pdf',
     title: 'Action Agreements',
   },
 ]

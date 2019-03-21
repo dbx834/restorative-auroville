@@ -237,17 +237,17 @@ const Page = () => (
             {
               title: 'Project Proposal',
               link:
-                'https://www.restorativeauroville.org/pdf-kjol/applied-research-restorative-circles-in-auroville.pdf',
+                'https://www.restorativeauroville.org/pdfs1/applied-research-restorative-circles-in-auroville.pdf',
             },
             {
               title: '6-month Report',
               link:
-                'https://www.restorativeauroville.org/pdf-kjol/restorative-auroville-6-month-report.pdf',
+                'https://www.restorativeauroville.org/pdfs1/restorative-auroville-6-month-report.pdf',
             },
             {
               title: '1-year Report',
               link:
-                'https://www.restorativeauroville.org/pdf-kjol/restorative-auroville-year-end-report.pdf',
+                'https://www.restorativeauroville.org/pdfs1/restorative-auroville-year-end-report.pdf',
             },
           ]}
         />

@@ -232,7 +232,7 @@ const Initiative = props => {
               {
                 title: 'Project Proposal',
                 link:
-                  'https://www.restorativeauroville.org/pdf-kjol/walk-of-hope-project-proposal.pdf',
+                  'https://www.restorativeauroville.org/pdfs1/walk-of-hope-project-proposal.pdf',
               },
             ]}
           />

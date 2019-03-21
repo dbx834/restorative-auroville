@@ -98,7 +98,7 @@ const Page = () => (
     <div style={{ background: '#d1d1d1' }}>
       <div style={{ width: '45%', margin: 'auto' }}>
         <PDFReader
-          url="https://www.restorativeauroville.org/av-rc-system.pdf"
+          url="https://www.restorativeauroville.org/pdfsv1/av-rc-system.pdf"
           className={pdfStyles}
         />
       </div>

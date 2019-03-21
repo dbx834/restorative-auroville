@@ -161,7 +161,7 @@ const Page = () => (
         {
           title: 'English sample page',
           link:
-            'https://ucarecdn.com/6c37a7dc-4e40-444b-a45b-4a31b5c031b4/-/inline/yes/',
+            'https://www.restorativeauroville.org/pdfs1/rc-booklet-extract-english.pdf',
         },
         {
           title: 'French sample page (coming soon)',
@@ -176,12 +176,12 @@ const Page = () => (
         {
           title: 'English version',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/rc-poster-english.pdf',
+            'https://www.restorativeauroville.org/pdfs1/rc-poster-english.pdf',
         },
         {
           title: 'Tamil version',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/rc-poster-tamil.pdf',
+            'https://www.restorativeauroville.org/pdfs1/rc-poster-tamil.pdf',
         },
         {
           title: 'French version (coming soon)',
@@ -189,7 +189,7 @@ const Page = () => (
         {
           title: 'Spanish version',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/rc-poster-spanish.pdf',
+            'https://www.restorativeauroville.org/pdfs1/rc-poster-spanish.pdf',
         },
       ]}
     />
@@ -246,7 +246,7 @@ const Page = () => (
         {
           title: 'Project Proposal',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/walk-of-hope-project-proposal.pdf',
+            'https://www.restorativeauroville.org/pdfs1/walk-of-hope-project-proposal.pdf',
         },
       ]}
     />
@@ -293,12 +293,12 @@ const Page = () => (
         {
           title: "Justice in Auroville – What's Your Opinion?",
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/justice-in-auroville-what-is-your-opinion.pdf',
+            'https://www.restorativeauroville.org/pdfs1/justice-in-auroville-what-is-your-opinion.pdf',
         },
         {
           title: 'Results',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/justice-questionnaire-result.pdf',
+            'https://www.restorativeauroville.org/pdfs1/justice-questionnaire-result.pdf',
         },
       ]}
     />
@@ -311,12 +311,12 @@ const Page = () => (
         {
           title: 'Project Proposal',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/restoring-connection-film-fest-project-proposal.pdf',
+            'https://www.restorativeauroville.org/pdfs1/restoring-connection-film-fest-project-proposal.pdf',
         },
         {
           title: 'Report',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/filmfest-report.pdf',
+            'https://www.restorativeauroville.org/pdfs1/filmfest-report.pdf',
         },
         {
           title: '"Auroville Today" article',
@@ -334,17 +334,17 @@ const Page = () => (
         {
           title: 'Project Proposal',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/cross-cultural-restorative-dialogue-project-proposal.pdf',
+            'https://www.restorativeauroville.org/pdfs1/cross-cultural-restorative-dialogue-project-proposal.pdf',
         },
         {
           title: 'Report',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/cross-cultural-dialogue-report.pdf',
+            'https://www.restorativeauroville.org/pdfs1/cross-cultural-dialogue-report.pdf',
         },
         {
           title: 'Report Annexe',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/cross-cultural-dialogue-report-annexe.pdf',
+            'https://www.restorativeauroville.org/pdfs1/cross-cultural-dialogue-report-annexe.pdf',
         },
       ]}
     />
@@ -395,17 +395,17 @@ const Page = () => (
         {
           title: 'Project Proposal',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/applied-research-restorative-circles-in-auroville.pdf',
+            'https://www.restorativeauroville.org/pdfs1/applied-research-restorative-circles-in-auroville.pdf',
         },
         {
           title: '6-month Report',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/restorative-auroville-6-month-report.pdf',
+            'https://www.restorativeauroville.org/pdfs1/restorative-auroville-6-month-report.pdf',
         },
         {
           title: '1-year Report',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/restorative-auroville-year-end-report.pdf',
+            'https://www.restorativeauroville.org/pdfs1/restorative-auroville-year-end-report.pdf',
         },
       ]}
     />
@@ -471,7 +471,7 @@ const Page = () => (
         {
           title: 'Draft document',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/truth-and-reconcilation-process.pdf',
+            'https://www.restorativeauroville.org/pdfs1/truth-and-reconcilation-process.pdf',
         },
       ]}
     />
@@ -484,7 +484,7 @@ const Page = () => (
         {
           title: 'Document',
           link:
-            'https://www.restorativeauroville.org/pdf-kjol/auroville-conflict-resolution-policy-2015.pdf',
+            'https://www.restorativeauroville.org/pdfs1/auroville-conflict-resolution-policy-2015.pdf',
         },
       ]}
     />
@@ -496,8 +496,7 @@ const Page = () => (
       files={[
         {
           title: 'Our dream',
-          link:
-            'https://www.restorativeauroville.org/pdf-kjol/how-we-dream.pdf',
+          link: 'https://www.restorativeauroville.org/pdfs1/how-we-dream.pdf',
         },
         {
           title: 'Video',
