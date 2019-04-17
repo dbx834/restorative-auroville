@@ -9,27 +9,22 @@ import React from 'react'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import VideoWrapper from '../../components/wrappers/VideoWrapper'
 import Video from '../../components/Video'
-
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: '3.3 Daring to Bring Forward a Real Live Act',
-  nakedPageSlug:
-    'the-power-of-dialogue/daring-to-bring-forward-a-real-live-act',
+  pageTitle: '4.2 The Value of RC Facilitation',
+  nakedPageSlug: 'the-power-of-dialogue/the-value-of-rc-facilitation',
   pageAbstract:
-    'Kati shares her recent learning regarding the importance of bringing an authentic live act to a Circle, instead of simply having an "interesting" topic as the starting point.',
+    'Pranjal reflects on his learning journey with RC facilitation, and appreciates how the skills he has acquired here can provide for a strong foundation in holding space in different contexts.',
 }
 
 const seoData = seoHelper(pageData)
 
-const prev = {
-  nakedPageSlug:
-    'the-power-of-dialogue/designing-our-justice-system-consciously',
-}
+const next = undefined
 
-const next = {
-  nakedPageSlug: 'the-power-of-dialogue/the-value-of-learning-rc-facilitation',
+const prev = {
+  nakedPageSlug: 'the-power-of-dialogue/surya-on-restorative-circles',
 }
 
 // ----------------------------------------------------------------------------
@@ -49,12 +44,12 @@ const Page = () => (
     next={next}
   >
     <p>
-      Kati shares her recent learning regarding the importance of bringing an
-      authentic live act to a Circle, instead of simply having an "interesting"
-      topic as the starting point.
+      Pranjal reflects on his learning journey with RC facilitation, and
+      appreciates how the skills he has acquired here can provide for a strong
+      foundation in holding space in different contexts.
     </p>
     <div style={{ maxWidth: '45rem' }} className="margin-p">
-      <Video url="https://youtu.be/9wQcQDqpp5w" />
+      <Video url="https://www.youtube.com/watch?v=O40ut-RDcgI" />
     </div>
   </VideoWrapper>
 )

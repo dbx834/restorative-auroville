@@ -13,14 +13,16 @@ import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: 'Surya on Restorative Circles',
+  pageTitle: '4.1 Surya on Restorative Circles',
   nakedPageSlug: 'the-power-of-dialogue/surya-on-restorative-circles',
   pageAbstract: 'Surya shares about her experiences with Restoratives Circles.',
 }
 
 const seoData = seoHelper(pageData)
 
-const next = undefined
+const next = {
+  nakedPageSlug: 'the-power-of-dialogue/the-value-of-rc-facilitation',
+}
 
 const prev = undefined
 

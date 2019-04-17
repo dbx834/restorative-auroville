@@ -14,16 +14,16 @@ import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: '3.4 The Value of Learning RC Facilitation',
-  nakedPageSlug: 'the-power-of-dialogue/the-value-of-learning-rc-facilitation',
-  pageAbstract: 'Coming soon...',
+  pageTitle: "3.5 RC's Ripple Effect",
+  nakedPageSlug: 'the-power-of-dialogue/rcs-ripple-effect',
+  pageAbstract:
+    'Pranjal reflects on how Circles can impact the community in unexpected ways, even when some folks choose not to attend.',
 }
 
 const seoData = seoHelper(pageData)
 
 const prev = {
-  nakedPageSlug:
-    'the-power-of-dialogue/daring-to-bring-forward-a-real-live-act',
+  nakedPageSlug: 'the-power-of-dialogue/rc-challenges-us-to-grow',
 }
 
 const next = undefined
@@ -44,9 +44,12 @@ const Page = () => (
     prev={prev}
     next={next}
   >
-    <p>Coming soon...</p>
+    <p>
+      Pranjal reflects on how Circles can impact the community in unexpected
+      ways, even when some folks choose not to attend.
+    </p>
     <div style={{ maxWidth: '45rem' }} className="margin-p">
-      <Video url="https://youtu.be/lpBQbBKZg1s" />
+      <Video url="https://youtu.be/RSA4NUSzJ4Y" />
     </div>
   </VideoWrapper>
 )

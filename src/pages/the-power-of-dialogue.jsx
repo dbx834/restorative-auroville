@@ -44,10 +44,12 @@ import p21 from '../assets/genies-precircle-with-janet.jpg'
 
 import p31 from '../assets/engaging-with-restorative-circles-in-auroville.jpg'
 import p32 from '../assets/designing-our-justice-system-consciously.jpg'
-import p33 from '../assets/daring-to-bring-forward-a-real-live-act.jpg'
-import p34 from '../assets/the-value-of-learning-rc-facilitation.jpg'
+import p33 from '../assets/defining-the-act.jpg'
+import p34 from '../assets/rc-challenges-us-to-grow.jpg'
+import p35 from '../assets/rcs-ripple-effect.jpg'
 
 import p41 from '../assets/surya-on-restorative-circles.jpg'
+import p42 from '../assets/the-value-of-rc-facilitation.jpg'
 
 import yellowBorder from '../assets/yellowBorder.jpg'
 import greenBorder from '../assets/greenBorder.jpg'
@@ -327,6 +329,29 @@ const Page = () => (
         />
       </Col>
       <Col md={8}>
+        <VideoCover
+          to="/the-power-of-dialogue/defining-the-act"
+          cover={p33}
+          text="Kati shares her recent learning regarding the importance of bringing an authentic live act to a Circle, instead of simply having an 'interesting' topic as the starting point."
+        />
+      </Col>
+    </Row>
+    <Row gutter={{ md: 24 }}>
+      <Col md={8}>
+        <VideoCover
+          to="/the-power-of-dialogue/rc-challenges-us-to-grow"
+          cover={p34}
+          text='Kati shares her recent learning regarding the importance of bringing an authentic live act to a Circle, instead of simply having an "interesting" topic as the starting point.'
+        />
+      </Col>
+      <Col md={8}>
+        <VideoCover
+          to="/the-power-of-dialogue/rcs-ripple-effect"
+          cover={p35}
+          text="Pranjal reflects on how Circles can impact the community in unexpected ways, even when some folks choose not to attend."
+        />
+      </Col>
+      <Col md={8}>
         <Image
           src={p3ComingSoon}
           style={{
@@ -342,15 +367,6 @@ const Page = () => (
         />
         <p>Coming soon…</p>
       </Col>
-      {/*
-      <Col md={8}>
-        <VideoCover
-          to="/the-power-of-dialogue/daring-to-bring-forward-a-real-live-act"
-          cover={p33}
-          text='Kati shares her recent learning regarding the importance of bringing an authentic live act to a Circle, instead of simply having an "interesting" topic as the starting point.'
-        />
-      </Col>
-      */}
     </Row>
     {/*
     <Row gutter={{ md: 24 }}>
@@ -409,6 +425,13 @@ const Page = () => (
         />
       </Col>
       <Col md={8}>
+        <VideoCover
+          to="/the-power-of-dialogue/the-value-of-rc-facilitation"
+          cover={p42}
+          text="Pranjal reflects on his learning journey with RC facilitation, and appreciates how the skills he has acquired here can provide for a strong foundation in holding space in different contexts."
+        />
+      </Col>
+      <Col md={8}>
         <Image
           src={p4ComingSoon}
           style={{
@@ -424,7 +447,6 @@ const Page = () => (
         />
         <p>Coming soon…</p>
       </Col>
-      <Col md={8}>&nbsp;</Col>
     </Row>
     <Theme
       border="#FAE300"

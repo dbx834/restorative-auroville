@@ -14,22 +14,20 @@ import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: '3.2 Designing our Justice System Consciously',
-  nakedPageSlug:
-    'the-power-of-dialogue/designing-our-justice-system-consciously',
+  pageTitle: '3.4 RC Challenges Us to Grow',
+  nakedPageSlug: 'the-power-of-dialogue/rc-challenges-us-to-grow',
   pageAbstract:
-    "L'aura shares about her experience of engaging with Restorative Circles in Auroville and the importance of designing a justice system consciously, otherwise we'll just inherit the old ways..",
+    'Kati shares her recent learning regarding the importance of bringing an authentic live act to a Circle, instead of simply having an "interesting" topic as the starting point.',
 }
 
 const seoData = seoHelper(pageData)
 
 const prev = {
-  nakedPageSlug:
-    'the-power-of-dialogue/engaging-with-restorative-circles-in-auroville',
+  nakedPageSlug: 'the-power-of-dialogue/defining-the-act',
 }
 
 const next = {
-  nakedPageSlug: 'the-power-of-dialogue/defining-the-act',
+  nakedPageSlug: 'the-power-of-dialogue/rcs-ripple-effect',
 }
 
 // ----------------------------------------------------------------------------
@@ -49,12 +47,12 @@ const Page = () => (
     next={next}
   >
     <p>
-      L'aura shares about her experience of engaging with Restorative Circles in
-      Auroville and the importance of designing a justice system consciously,
-      otherwise we'll just inherit the old ways.
+      Kati shares her recent learning regarding the importance of bringing an
+      authentic live act to a Circle, instead of simply having an "interesting"
+      topic as the starting point.
     </p>
     <div style={{ maxWidth: '45rem' }} className="margin-p">
-      <Video url="https://www.youtube.com/watch?v=ur4OvDPkoSE" />
+      <Video url="https://youtu.be/bXrm9tUW4fU" />
     </div>
   </VideoWrapper>
 )
