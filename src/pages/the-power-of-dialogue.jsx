@@ -341,7 +341,7 @@ const Page = () => (
         <VideoCover
           to="/the-power-of-dialogue/rc-challenges-us-to-grow"
           cover={p34}
-          text='Kati shares her recent learning regarding the importance of bringing an authentic live act to a Circle, instead of simply having an "interesting" topic as the starting point.'
+          text="Henrike shares her thoughts on learning RC and how it invites for growth, as individuals and as a collective."
         />
       </Col>
       <Col md={8}>

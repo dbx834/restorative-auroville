@@ -17,7 +17,7 @@ const pageData = {
   pageTitle: '3.4 RC Challenges Us to Grow',
   nakedPageSlug: 'the-power-of-dialogue/rc-challenges-us-to-grow',
   pageAbstract:
-    'Kati shares her recent learning regarding the importance of bringing an authentic live act to a Circle, instead of simply having an "interesting" topic as the starting point.',
+    'Henrike shares her thoughts on learning RC and how it invites for growth, as individuals and as a collective.',
 }
 
 const seoData = seoHelper(pageData)
@@ -47,9 +47,8 @@ const Page = () => (
     next={next}
   >
     <p>
-      Kati shares her recent learning regarding the importance of bringing an
-      authentic live act to a Circle, instead of simply having an "interesting"
-      topic as the starting point.
+      Henrike shares her thoughts on learning RC and how it invites for growth,
+      as individuals and as a collective.
     </p>
     <div style={{ maxWidth: '45rem' }} className="margin-p">
       <Video url="https://youtu.be/bXrm9tUW4fU" />
