@@ -89,7 +89,7 @@ const VideoCover = ({ to, cover, text }) => {
           </div>
         </div>
       </Link>
-      <p style={{ marginTop: -4 }}>
+      <p style={{ marginTop: -4, lineHeight: '1.1 !important' }}>
         <span style={{ fontSize: '90%' }}>{text}</span>
       </p>
     </div>
