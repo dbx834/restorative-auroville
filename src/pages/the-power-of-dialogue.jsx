@@ -211,16 +211,14 @@ const Page = () => (
       }}
       alt="Restorative Auroville - The Craft"
     />
-    <h2 className="mask-h3" id="the-craft" style={{ marginBottom: -4 }}>
+    <h2 className="mask-h3" id="the-craft" style={{ marginBottom: 2 }}>
       1. The Craft
     </h2>
     <div className="margin-p">
       <p className="mask-h5">
-        <small style={{ fontSize: '90%' }}>
-          ↪&nbsp;
-          <strong>a learning resource</strong>
-          &nbsp;to highlight the RC process in its different steps and stages
-        </small>
+        ↪&nbsp;
+        <strong>a learning resource</strong>
+        &nbsp;to highlight the RC process in its different steps and stages
       </p>
     </div>
     <Row gutter={{ md: 24 }}>
@@ -253,17 +251,15 @@ const Page = () => (
       }}
       alt="Restorative Auroville - In Action"
     />
-    <h2 className="mask-h3" id="in-action" style={{ marginBottom: -4 }}>
+    <h2 className="mask-h3" id="in-action" style={{ marginBottom: 2 }}>
       2. In Action
     </h2>
     <div className="margin-p">
       <p className="mask-h5">
-        <small style={{ fontSize: '90%' }}>
-          ↪&nbsp;
-          <strong>touching “live” moments</strong>
-          &nbsp;from different stages of real Circles that have been called in
-          the community
-        </small>
+        ↪&nbsp;
+        <strong>touching “live” moments</strong>
+        &nbsp;from different stages of real Circles that have been called in the
+        community
       </p>
     </div>
     <Row gutter={{ md: 24 }}>
@@ -305,18 +301,16 @@ const Page = () => (
     <h2
       className="mask-h3"
       id="the-restorative-system"
-      style={{ marginBottom: -4 }}
+      style={{ marginBottom: 2 }}
     >
       3. The Restorative System
     </h2>
     <div className="margin-p">
       <p className="mask-h5">
-        <small style={{ fontSize: '90%' }}>
-          ↪&nbsp;
-          <strong>engaging with RC as a System</strong>
-          &nbsp;and highlighting the need to talk about the meaning of justice
-          and conflict in our community
-        </small>
+        ↪&nbsp;
+        <strong>engaging with RC as a System</strong>
+        &nbsp;and highlighting the need to talk about the meaning of justice and
+        conflict in our community
       </p>
     </div>
     <Row gutter={{ md: 24 }}>
@@ -412,16 +406,14 @@ const Page = () => (
       }}
       alt="Restorative Auroville - Experiences"
     />
-    <h2 className="mask-h3" id="experiences" style={{ marginBottom: -4 }}>
+    <h2 className="mask-h3" id="experiences" style={{ marginBottom: 2 }}>
       4. Experiences
     </h2>
     <div className="margin-p">
       <p className="mask-h5">
-        <small style={{ fontSize: '90%' }}>
-          ↪&nbsp;
-          <strong>community members talk about their experience</strong>
-          &nbsp;being in live Circles
-        </small>
+        ↪&nbsp;
+        <strong>community members talk about their experience</strong>
+        &nbsp;being in live Circles
       </p>
     </div>
     <Row gutter={{ md: 24 }}>
