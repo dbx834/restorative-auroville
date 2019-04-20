@@ -236,7 +236,9 @@ const Page = () => (
           rawWidth={1440}
           rawHeight={900}
         />
-        <p>Coming soon…</p>
+        <p>
+          <span style={{ fontSize: '90%' }}>Coming soon…</span>
+        </p>
       </Col>
       <Col md={12}>&nbsp;</Col>
     </Row>
@@ -284,7 +286,9 @@ const Page = () => (
           rawWidth={1440}
           rawHeight={900}
         />
-        <p>Coming soon…</p>
+        <p>
+          <span style={{ fontSize: '90%' }}>Coming soon…</span>
+        </p>
       </Col>
     </Row>
     <Image
@@ -365,7 +369,9 @@ const Page = () => (
           rawWidth={1440}
           rawHeight={900}
         />
-        <p>Coming soon…</p>
+        <p>
+          <span style={{ fontSize: '90%' }}>Coming soon…</span>
+        </p>
       </Col>
     </Row>
     {/*
@@ -445,7 +451,9 @@ const Page = () => (
           rawWidth={1440}
           rawHeight={900}
         />
-        <p>Coming soon…</p>
+        <p>
+          <span style={{ fontSize: '90%' }}>Coming soon…</span>
+        </p>
       </Col>
     </Row>
     <Theme
