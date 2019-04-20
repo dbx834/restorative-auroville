@@ -22,9 +22,9 @@ const pageData = {
   pageTitle: 'Listening',
   nakedPageSlug: 'writings/listening',
   pageAbstract:
-    'A poem inspired by a 2-day Restorative Circles workshop and my regular engaging with RC for 18 months during which I learned to facilitate Circles. The poem attempts to capture my understanding of the RC process and its key component – reflective listening.',
+    'A poem inspired by a 2-day Restorative Circles workshop and my regular engaging with RC for 18 months during which I learned to facilitate Circles. The poem attempts to capture my understanding of the RC process and its key component – reflective listening. ~ by Pranjal',
   cover: '/content-assets/covers/listening.jpg',
-  publishedTimestamp: 1555507638,
+  publishedTimestamp: 1555071875,
   category: 'Restorative Circle',
   author: 'Pranjal',
   prev: {
@@ -50,14 +50,14 @@ const Page = () => (
       To you.
       <br />
       <br />
-      Now pause….
+      Now pause…
       <br />
       Prepare.
       <br />
       <br />
       Listen to him.
       <br />
-      Ask her to listen to him like the mirror--
+      Ask her to listen to him like the mirror –
       <br />
       Reflect.
       <br />
@@ -112,6 +112,8 @@ const Page = () => (
       <i>Be</i> with their being.
       <br />
       Be, in the listening.
+      <br />
+      <br />~ by Pranjal
     </p>
   </BlogPostWrapper>
 )

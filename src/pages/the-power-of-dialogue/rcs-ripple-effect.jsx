@@ -26,7 +26,9 @@ const prev = {
   nakedPageSlug: 'the-power-of-dialogue/rc-challenges-us-to-grow',
 }
 
-const next = undefined
+const next = {
+  nakedPageSlug: 'the-power-of-dialogue/surya-on-restorative-circles',
+}
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles

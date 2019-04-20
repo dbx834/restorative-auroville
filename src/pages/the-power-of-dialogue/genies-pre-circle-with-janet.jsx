@@ -21,7 +21,10 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
-const next = undefined
+const next = {
+  nakedPageSlug:
+    'the-power-of-dialogue/engaging-with-restorative-circles-in-auroville',
+}
 
 const prev = undefined
 
