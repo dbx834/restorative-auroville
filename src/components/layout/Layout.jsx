@@ -160,9 +160,8 @@ class Layout extends React.Component {
     })
 
     this.state = {
-      defaultMediaQueryValues: isUndefined(window)
-        ? { width: 1440, height: 900 }
-        : {},
+      defaultMediaQueryValues:
+        typeof window === 'undefined' ? { width: 1440, height: 900 } : {},
       typeClass,
     }
   }
