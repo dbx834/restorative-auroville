@@ -26,6 +26,7 @@ import janetSquare from '../../assets/janetSquare.jpg'
 import katiSquare from '../../assets/katiSquare.jpg'
 import henrikeSquare from '../../assets/henrikeSquare.jpg'
 import pranjalSquare from '../../assets/pranjalSquare.jpg'
+import nilsSquare from '../../assets/nilsSquare.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment: Frag } = React
@@ -51,20 +52,23 @@ const circleStylesObject = css({
   flexWrap: 'wrap',
   justifyContent: 'flex-end',
 
-  '& .child-circle-highlight:nth-child(3)::after': {
-    content: `"Kati"`,
+  '& .child-circle-highlight:nth-child(1)::after': {
+    content: `"L'aura"`,
   },
   '& .child-circle-highlight:nth-child(2)::after': {
     content: `"Janet"`,
   },
-  '& .child-circle-highlight:nth-child(1)::after': {
-    content: `"L'aura"`,
+  '& .child-circle-highlight:nth-child(3)::after': {
+    content: `"Kati"`,
+  },
+  '& .child-circle-highlight:nth-child(4)::after': {
+    content: `"Pranjal"`,
   },
   '& .child-circle-highlight:nth-child(5)::after': {
     content: `"Henrike"`,
   },
-  '& .child-circle-highlight:nth-child(4)::after': {
-    content: `"Pranjal"`,
+  '& .child-circle-highlight:nth-child(6)::after': {
+    content: `"Nils"`,
   },
 })
 const circleStyles = circleStylesObject.toString()
@@ -136,6 +140,11 @@ const Page = props => {
                   &nbsp;&nbsp;Member
                 </Frag>
               }
+            />
+            <PersonCircle
+              image={nilsSquare}
+              className="child-circle-highlight"
+              role={<Frag>Apprentice</Frag>}
             />
           </div>
         </Col>

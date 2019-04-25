@@ -51,6 +51,7 @@ const Initiative = props => {
       prev={prev}
       next={next}
       pageData={pageData}
+      {...props}
     >
       <h1 className="mask-h3">Filming a Live Restorative Circle</h1>
       <p>

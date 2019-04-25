@@ -68,6 +68,7 @@ const Initiative = props => {
       next={next}
       pageData={pageData}
       notes={notes}
+      {...props}
     >
       <h1 className="mask-h3">Restorative Circles in Aikiyam School</h1>
       <p>

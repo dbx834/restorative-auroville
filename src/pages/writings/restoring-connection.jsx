@@ -41,8 +41,8 @@ const pageData = {
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <BlogPostWrapper className="" pageData={pageData}>
+const Page = props => (
+  <BlogPostWrapper className="" pageData={pageData} {...props}>
     <p>Published in “Auroville Today.”</p>
     <p>
       In October, there was a film festival in Cinema Paradiso and dialogue

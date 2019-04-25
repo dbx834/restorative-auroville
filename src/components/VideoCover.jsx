@@ -22,6 +22,10 @@ import playNow from '../assets/playNow.jpg'
 // ----------------------------------------------------------------------------
 const styleObject = css({
   '& .play-hover': {
+    '@media(max-width: 992px)': {
+      maxWidth: 400,
+    },
+
     position: 'relative',
     cursor: 'pointer',
 

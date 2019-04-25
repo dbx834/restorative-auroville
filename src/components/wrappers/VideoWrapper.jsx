@@ -40,8 +40,9 @@ const Page = ({
   prev = {},
   next = {},
   children,
+  ...props
 }) => (
-  <StandardPage className={className} seoData={seoData}>
+  <StandardPage className={className} seoData={seoData} {...props}>
     <Article>
       <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
         <BItem>

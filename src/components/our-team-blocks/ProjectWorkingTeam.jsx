@@ -19,12 +19,14 @@ import janetSquare from '../../assets/janetSquare.jpg'
 import katiSquare from '../../assets/katiSquare.jpg'
 import henrikeSquare from '../../assets/henrikeSquare.jpg'
 import pranjalSquare from '../../assets/pranjalSquare.jpg'
+import nilsSquare from '../../assets/nilsSquare.jpg'
 
 import Henrike from '../people/Henrike'
 import Janet from '../people/Janet'
 import Kati from '../people/Kati'
 import Laura from '../people/Laura'
 import Pranjal from '../people/Pranjal'
+import Nils from '../people/Nils'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 /** toDegrees */
@@ -43,6 +45,8 @@ const renderSwitch = person => {
       return <Laura />
     case 'pranjal':
       return <Pranjal />
+    case 'nils':
+      return <Nils />
     default:
       return <br />
   }
@@ -73,6 +77,9 @@ const circleStylesObject = css({
   '& .child-circle:nth-child(5)::after': {
     content: `"Pranjal"`,
   },
+  '& .child-circle:nth-child(6)::after': {
+    content: `"Nils"`,
+  },
 })
 const circleStyles = circleStylesObject.toString()
 
@@ -95,7 +102,7 @@ class ProjectWorkingTeam extends React.Component {
   /** standard constructor */
   componentDidMount() {
     // //Number of services
-    const noOfServices = 5
+    const noOfServices = 6
     //   //Half width of parent
     const parentCircleHalfWidth = 180
     //   //Add some padding from parent circle
@@ -142,12 +149,13 @@ class ProjectWorkingTeam extends React.Component {
         <div style={{ display: isMobile ? 'block' : 'flex' }}>
           <div className={`parent-circle ${circleStyles}`} ref="parent">
             <div
-              className={`${person === 'kati' && 'circle-active'} child-circle`}
+              className={`${person === 'kati' &&
+                'circle-active'} child-circle s`}
               ref="child1"
               style={{
                 backgroundImage: `url(${katiSquare})`,
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: '125px 125px',
+                backgroundSize: '105px 105px',
                 border: '2px solid #FFBF00',
               }}
               onClick={() => this.showPerson('kati')}
@@ -162,12 +170,12 @@ class ProjectWorkingTeam extends React.Component {
             </div>
             <div
               className={`${person === 'janet' &&
-                'circle-active'} child-circle`}
+                'circle-active'} child-circle s`}
               ref="child2"
               style={{
                 backgroundImage: `url(${janetSquare})`,
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: '125px 125px',
+                backgroundSize: '105px 105px',
                 border: '2px solid #FFBF00',
               }}
               onClick={() => this.showPerson('janet')}
@@ -178,12 +186,12 @@ class ProjectWorkingTeam extends React.Component {
             </div>
             <div
               className={`${person === 'laura' &&
-                'circle-active'} child-circle`}
+                'circle-active'} child-circle s`}
               ref="child3"
               style={{
                 backgroundImage: `url(${lauraSquare})`,
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: '125px 125px',
+                backgroundSize: '105px 105px',
                 border: '2px solid #FFBF00',
               }}
               onClick={() => this.showPerson('laura')}
@@ -194,12 +202,12 @@ class ProjectWorkingTeam extends React.Component {
             </div>
             <div
               className={`${person === 'henrike' &&
-                'circle-active'} child-circle`}
+                'circle-active'} child-circle s`}
               ref="child4"
               style={{
                 backgroundImage: `url(${henrikeSquare})`,
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: '125px 125px',
+                backgroundSize: '105px 105px',
                 border: '2px solid #FFBF00',
               }}
               onClick={() => this.showPerson('henrike')}
@@ -214,12 +222,12 @@ class ProjectWorkingTeam extends React.Component {
             </div>
             <div
               className={`${person === 'pranjal' &&
-                'circle-active'} child-circle`}
+                'circle-active'} child-circle s`}
               ref="child5"
               style={{
                 backgroundImage: `url(${pranjalSquare})`,
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: '125px 125px',
+                backgroundSize: '105px 105px',
                 border: '2px solid #FFBF00',
               }}
               onClick={() => this.showPerson('pranjal')}
@@ -232,7 +240,28 @@ class ProjectWorkingTeam extends React.Component {
                 </strong>
               </p>
             </div>
+            <div
+              className={`${person === 'nils' &&
+                'circle-active'} child-circle s`}
+              ref="child6"
+              style={{
+                backgroundImage: `url(${nilsSquare})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '105px 105px',
+                border: '2px solid #FFBF00',
+              }}
+              onClick={() => this.showPerson('nils')}
+            >
+              <p>
+                <strong>
+                  Core Team
+                  <br />
+                  &nbsp;&nbsp;Member
+                </strong>
+              </p>
+            </div>
           </div>
+
           <div style={{ flexBasis: '0', flexGrow: 1 }}>
             {renderSwitch(person)}
           </div>

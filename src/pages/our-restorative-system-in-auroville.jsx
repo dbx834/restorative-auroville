@@ -55,8 +55,8 @@ const pdfStyles = css({
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <StandardPage className={pageStyles} seoData={seoData}>
+const Page = props => (
+  <StandardPage className={pageStyles} seoData={seoData} {...props}>
     <h1 className="mask-h3">Our Restorative System in Auroville</h1>
     <p>
       Conflict is a natural, inevitable part of living together, and Auroville

@@ -37,8 +37,8 @@ const pageData = {
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <BlogPostWrapper className="" pageData={pageData}>
+const Page = props => (
+  <BlogPostWrapper className="" pageData={pageData} {...props}>
     <div className="mask-p">
       <Video url="https://www.youtube.com/watch?v=n1Uf1IYQ2_Y" />
     </div>

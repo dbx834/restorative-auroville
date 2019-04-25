@@ -8,7 +8,6 @@ import { css } from 'glamor'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { Page } from '@bodhi-project/semantic-webflow'
 import {
   // --------------- Basic
   UpdateTitle,
@@ -77,7 +76,7 @@ const StandardPage = props => {
   } = seoData
 
   return (
-    <Layout>
+    <Layout {...props} className={`${pageStyles} ${className}`}>
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
       <UpdateTitle title={pageTitle} />
       <GeneralMeta data={generalMetaData} />
@@ -87,7 +86,7 @@ const StandardPage = props => {
       <BreadcrumbSchema data={breadcrumbSchemaData} />
 
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
-      <Page className={`${pageStyles} ${className}`}>
+      <Fragment>
         <Breadcrumb
           className="mask-p"
           separator="»"
@@ -114,7 +113,7 @@ const StandardPage = props => {
           </Fragment>
         ))}
         <DisqusComments pageData={pageData} />
-      </Page>
+      </Fragment>
     </Layout>
   )
 }

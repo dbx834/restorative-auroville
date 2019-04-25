@@ -48,8 +48,8 @@ const seoData = seoHelper(pageData)
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <StandardPage className="" seoData={seoData}>
+const Page = props => (
+  <StandardPage className="" seoData={seoData} {...props}>
     <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
       <Col sm={24} md={15}>
         <h1 className="mask-h3">Newsletter</h1>

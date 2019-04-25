@@ -46,7 +46,7 @@ const pageStyles = css({
 // ----------------------------------------------------------------------------
 /** Page */
 const Page = ({ data, ...props }) => (
-  <StandardPage className={pageStyles} seoData={seoData}>
+  <StandardPage className={pageStyles} seoData={seoData} {...props}>
     <EventsGrid data={data} />
   </StandardPage>
 )

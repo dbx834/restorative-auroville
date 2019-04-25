@@ -108,8 +108,8 @@ const Theme = props => {
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <StandardPage className="" seoData={seoData}>
+const Page = props => (
+  <StandardPage className="" seoData={seoData} {...props}>
     <h1 className="mask-h3">Restorative Circles</h1>
     <p>
       A Restorative Circle (RC) is a community process designed to hold space

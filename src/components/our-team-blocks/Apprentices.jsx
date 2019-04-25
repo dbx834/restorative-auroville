@@ -20,13 +20,15 @@ import pranjalSquare from '../../assets/pranjalSquare.jpg'
 import stefanSquare from '../../assets/stefanSquare.jpg'
 import celiaSquare from '../../assets/celiaSquare.jpg'
 import michelleSquare from '../../assets/michelleSquare.jpg'
+import nilsSquare from '../../assets/nilsSquare.jpg'
 
 import Henrike from '../people/Henrike'
 import Pranjal from '../people/Pranjal'
 import Celia from '../people/Celia'
-import Hamsini from '../people/Hamsini'
+// import Hamsini from '../people/Hamsini'
 import Michelle from '../people/Michelle'
 import Stefan from '../people/Stefan'
+import Nils from '../people/Nils'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 /** toDegrees */
@@ -43,8 +45,8 @@ const renderSwitch = person => {
       return <Stefan />
     case 'michelle':
       return <Michelle />
-    case ' ':
-      return <Hamsini />
+    case 'nils':
+      return <Nils />
     case 'celia':
       return <Celia />
     default:
@@ -78,7 +80,7 @@ const circleStylesObject = css({
     content: `"Celia"`,
   },
   '& .child-circle:nth-child(6)::after': {
-    content: `" "`,
+    content: `"Nils"`,
   },
 })
 const circleStyles = circleStylesObject.toString()
@@ -250,19 +252,23 @@ class Apprentices extends React.Component {
               </p>
             </div>
             <div
-              className={`${person === 'hamsini' &&
+              className={`${person === 'nils' &&
                 'circle-active'} child-circle s`}
               ref="child6"
               style={{
-                backgroundImage: `url(${blueSquare})`,
+                backgroundImage: `url(${nilsSquare})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '105px 105px',
                 border: '2px solid #FFBF00',
               }}
-              // onClick={() => this.showPerson('hamsini')}
+              onClick={() => this.showPerson('nils')}
             >
               <p>
-                <strong>&nbsp;</strong>
+                <strong>
+                  2019-
+                  <br />
+                  present
+                </strong>
               </p>
             </div>
           </div>

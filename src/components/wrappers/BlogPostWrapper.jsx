@@ -72,7 +72,7 @@ const Page = props => {
   }
 
   return (
-    <StandardPage className="" seoData={seoData}>
+    <StandardPage className="" seoData={seoData} {...props}>
       <BlogPostSchema data={blogPageSchemaData} />
       <Article>
         <Breadcrumb

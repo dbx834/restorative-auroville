@@ -41,8 +41,8 @@ const pageData = {
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <BlogPostWrapper className="" pageData={pageData}>
+const Page = props => (
+  <BlogPostWrapper className="" pageData={pageData} {...props}>
     <p>Published on Auronet.</p>
     <p>In response to John's question:</p>
     <p>

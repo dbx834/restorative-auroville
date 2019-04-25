@@ -222,8 +222,8 @@ const seoData = seoHelper(pageData)
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <StandardPage className="" seoData={seoData}>
+const Page = props => (
+  <StandardPage className="" seoData={seoData} {...props}>
     <Header>
       <h1 className="mask-h3">Gallery: Restorative Auroville in Action…</h1>
     </Header>

@@ -1,56 +1,85 @@
 [
-  { "title": "Home", "link": "/" },
+  { "title": "Home", "link": "/", "mobileOnly": false },
   {
     "title": "About +",
     "menu": [
       {
         "title": "Our Project",
-        "link": "/about-restorative-auroville"
+        "link": "/about-restorative-auroville",
+        "mobileOnly": false
       },
-      { "title": "Restorative Circles", "link": "/restorative-circles" }
-    ]
+      {
+        "title": "Restorative Circles",
+        "link": "/restorative-circles",
+        "mobileOnly": false
+      }
+    ],
+    "mobileOnly": false
   },
   {
     "title": "Learn +",
     "menu": [
-      { "title": "Workshops & Practice Groups", "link": "/events" },
+      {
+        "title": "Workshops & Practice Groups",
+        "link": "/events",
+        "mobileOnly": false
+      },
       {
         "title": "Video Series: The Power of Dialogue",
-        "link": "/the-power-of-dialogue"
+        "link": "/the-power-of-dialogue",
+        "mobileOnly": false
       },
-      { "title": "Volunteer & Apprentice", "link": "/volunteer" }
-    ]
+      {
+        "title": "Volunteer & Apprentice",
+        "link": "/volunteer",
+        "mobileOnly": false
+      }
+    ],
+    "mobileOnly": false
   },
   {
     "title": "In Action +",
     "menu": [
       {
         "title": "Our Restorative System",
-        "link": "/our-restorative-system-in-auroville"
+        "link": "/our-restorative-system-in-auroville",
+        "mobileOnly": false
       },
-      { "title": "Circle Statistics", "link": "/circle-statistics" },
+      {
+        "title": "Circle Statistics",
+        "link": "/circle-statistics",
+        "mobileOnly": false
+      },
       {
         "title": "System-Building Initiatives",
-        "link": "/system-building-initiatives"
+        "link": "/system-building-initiatives",
+        "mobileOnly": false
       },
-      { "title": "Community Events", "link": "/community-events" }
-    ]
+      {
+        "title": "Community Events",
+        "link": "/community-events",
+        "mobileOnly": false
+      }
+    ],
+    "mobileOnly": false
   },
-  { "title": "Our Team", "link": "/our-team" },
+  { "title": "Our Team", "link": "/our-team", "mobileOnly": false },
   {
     "title": "Donate",
-    "link": "/donate"
+    "link": "/donate",
+    "mobileOnly": false
   },
   {
     "title": "More +",
     "menu": [
-      { "title": "Articles", "link": "/writings" },
-      { "title": "Archives", "link": "/archives" },
-      { "title": "Gallery", "link": "/gallery" },
-      { "title": "Our Story", "link": "/our-story" },
-      { "title": "Newsletter", "link": "/newsletter" },
-      { "title": "Pay Fee", "link": "/pay-fee" }
-    ]
+      { "title": "Articles", "link": "/writings", "mobileOnly": false },
+      { "title": "Archives", "link": "/archives", "mobileOnly": false },
+      { "title": "Gallery", "link": "/gallery", "mobileOnly": false },
+      { "title": "Our Story", "link": "/our-story", "mobileOnly": false },
+      { "title": "Newsletter", "link": "/newsletter", "mobileOnly": false },
+      { "title": "Pay Fee", "link": "/pay-fee", "mobileOnly": false }
+    ],
+    "mobileOnly": false
   },
-  { "title": "Contact Us", "link": "/contact-us" }
+  { "title": "Contact Us", "link": "/contact-us", "mobileOnly": false }
 ]

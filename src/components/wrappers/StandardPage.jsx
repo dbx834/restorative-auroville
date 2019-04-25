@@ -26,7 +26,7 @@ import {
 import Layout from '../layout/Layout'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment } = React
+// const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -59,17 +59,14 @@ const StandardPage = props => {
   } = seoData
 
   return (
-    <Layout>
-      {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
+    <Layout {...props} className={`${pageStyles} ${className}`}>
       <UpdateTitle title={pageTitle} />
       <GeneralMeta data={generalMetaData} />
       <TwitterSummaryCard data={twitterSummaryCardData} />
       <OpenGraphSummary data={openGraphSummaryData} />
       <WebpageSchema data={webpageSchemaData} />
       <BreadcrumbSchema data={breadcrumbSchemaData} />
-
-      {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
-      <Page className={`${pageStyles} ${className}`}>{children}</Page>
+      {children}
     </Layout>
   )
 }

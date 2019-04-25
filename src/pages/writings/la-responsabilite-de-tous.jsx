@@ -41,8 +41,8 @@ const pageData = {
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <BlogPostWrapper className="" pageData={pageData}>
+const Page = props => (
+  <BlogPostWrapper className="" pageData={pageData} {...props}>
     <p>Published in “La Revue D’Auroville.”</p>
     <p>
       <strong>Revue d’Auroville</strong> -{' '}

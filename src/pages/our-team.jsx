@@ -45,7 +45,7 @@ const seoData = seoHelper(pageData)
 const Page = props => {
   const { isMobile } = props
   return (
-    <StandardPage className="" seoData={seoData}>
+    <StandardPage className="" seoData={seoData} {...props}>
       <h1 className="mask-h3">Our Teams</h1>
       <p className="mask-p" style={{ marginBottom: 30 }}>
         Who Are We? A small group of people passionate about human connection

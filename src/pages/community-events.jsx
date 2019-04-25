@@ -62,7 +62,7 @@ const pageStyles = css({
 // ----------------------------------------------------------------------------
 /** Page */
 const Page = ({ data, isMobile, ...props }) => (
-  <StandardPage className={pageStyles} seoData={seoData}>
+  <StandardPage className={pageStyles} seoData={seoData} {...props}>
     <h2 className="mask-h3">Community Events</h2>
     <p>
       Our approach is to engage with the community at many levels and through

@@ -60,7 +60,7 @@ const Page = props => {
   const { isMobile } = props
 
   return (
-    <StandardPage className={pageStyle} seoData={seoData}>
+    <StandardPage className={pageStyle} seoData={seoData} {...props}>
       <h1 className="mask-h3" style={{ marginBottom: 10 }}>
         Articles
       </h1>

@@ -41,8 +41,8 @@ const seoData = seoHelper(pageData)
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <StandardPage className="" seoData={seoData}>
+const Page = props => (
+  <StandardPage className="" seoData={seoData} {...props}>
     <h1 className="mask-h3">How Restorative Auroville came to be…</h1>
     <p>
       Somewhere in 2008-09, L'aura heard about&nbsp;

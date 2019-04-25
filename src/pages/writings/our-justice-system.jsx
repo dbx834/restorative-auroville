@@ -41,8 +41,8 @@ const pageData = {
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <BlogPostWrapper className="" pageData={pageData}>
+const Page = props => (
+  <BlogPostWrapper className="" pageData={pageData} {...props}>
     <p>Published on Auronet.</p>
     <p>
       For me, all the talk about the feedback relating to the proposed WC/AVC

@@ -5,6 +5,7 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import { css } from 'glamor'
+import { graphql } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
@@ -18,6 +19,8 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import Col from 'antd/lib/col'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
+import Img from 'gatsby-image'
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
 import Copy from '../components/Copy'
@@ -25,25 +28,9 @@ import StandardPage from '../components/wrappers/StandardPage'
 import EventsThisMonth from '../components/lists/EventsThisMonth'
 
 import TeamHighlight from '../components/home-page/TeamHighlight'
-import VideoCover from '../components/VideoCover'
+import GatsbyImageVideoCover from '../components/GatsbyImageVideoCover'
 
 import seoHelper from '../methods/seoHelper'
-
-import banner from '../assets/banner.png'
-
-import p32 from '../assets/designing-our-justice-system-consciously.jpg'
-import p41 from '../assets/surya-on-restorative-circles.jpg'
-import bluePaintbrush from '../assets/bluePaintbrush.png'
-import orangePaintbrush from '../assets/orangePaintbrush.png'
-
-import banner21 from '../assets/banner2-1.png'
-import banner25 from '../assets/banner2-5.png'
-import banner24Hover from '../assets/banner2-4-hover.png'
-import banner23Hover from '../assets/banner2-3-hover.png'
-import banner22Hover from '../assets/banner2-2-hover.png'
-import banner24 from '../assets/banner2-4.png'
-import banner23 from '../assets/banner2-3.png'
-import banner22 from '../assets/banner2-2.png'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
@@ -54,6 +41,103 @@ const pageData = {
 }
 
 const seoData = seoHelper(pageData)
+
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    banner: file(relativePath: { eq: "banner.png" }) {
+      ...defaultImage
+    }
+    banner21: file(relativePath: { eq: "banner2-1.png" }) {
+      ...defaultImage
+    }
+    banner25: file(relativePath: { eq: "banner2-5.png" }) {
+      ...defaultImage
+    }
+    banner25: file(relativePath: { eq: "banner2-5.png" }) {
+      ...defaultImage
+    }
+    banner24Hover: file(relativePath: { eq: "banner2-4-hover.png" }) {
+      ...defaultImage
+    }
+    banner23Hover: file(relativePath: { eq: "banner2-3-hover.png" }) {
+      ...defaultImage
+    }
+    banner22Hover: file(relativePath: { eq: "banner2-2-hover.png" }) {
+      ...defaultImage
+    }
+    banner24: file(relativePath: { eq: "banner2-4.png" }) {
+      ...defaultImage
+    }
+    banner23: file(relativePath: { eq: "banner2-3.png" }) {
+      ...defaultImage
+    }
+    banner22: file(relativePath: { eq: "banner2-2.png" }) {
+      ...defaultImage
+    }
+    bluePaintbrush: file(relativePath: { eq: "bluePaintbrush.png" }) {
+      ...defaultImage
+    }
+    orangePaintbrush: file(relativePath: { eq: "orangePaintbrush.png" }) {
+      ...defaultImage
+    }
+    playNow: file(relativePath: { eq: "power-of-dialogue/playNow.jpg" }) {
+      ...defaultImage
+    }
+    videoCover1: file(
+      relativePath: {
+        eq: "power-of-dialogue/designing-our-justice-system-consciously.jpg"
+      }
+    ) {
+      ...defaultImage
+    }
+    videoCover2: file(
+      relativePath: { eq: "power-of-dialogue/surya-on-restorative-circles.jpg" }
+    ) {
+      ...defaultImage
+    }
+    allMarkdownRemark(
+      limit: 365
+      sort: { fields: [frontmatter___date], order: ASC }
+      filter: { frontmatter: { type: { eq: "event" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            route
+            humanDate
+            elapsed
+            beginDateInt
+            diff
+            year
+            month
+            monthN
+            dayOfMonth
+            displayDate
+            formattedDate
+          }
+          frontmatter {
+            abstract
+            title
+            subTitle
+            cover
+            date
+            startDate
+            finishDate
+            fromTime
+            toTime
+            category
+            tags
+            type
+            cost
+          }
+        }
+      }
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -121,132 +205,6 @@ const pageStyle = styleObject.toString()
 // ----------------------------------------------------------------------------
 /**
  * [description]
- * @return {[type]} [description]
- */
-const VideoSeriesBlock1 = () => (
-  <div>
-    <h2 className="mask-h3" style={{ marginBottom: 0 }}>
-      "The Power of Dialogue"
-    </h2>
-    <p style={{ marginBottom: 30 }}>
-      <Link to="/the-power-of-dialogue">See video series ⇝</Link>
-    </p>
-    <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-      <Col sm={24} md={24} lg={8}>
-        <VideoCover
-          to="/the-power-of-dialogue/designing-our-justice-system-consciously"
-          cover={p32}
-          text="L'aura shares about her experience of engaging with Restorative Circles in Auroville and the importance of designing a justice system consciously, otherwise we'll just inherit the old ways."
-        />
-      </Col>
-      <Col sm={24} md={24} lg={8}>
-        <VideoCover
-          to="/the-power-of-dialogue/surya-on-restorative-circles"
-          cover={p41}
-          text="Surya shares about her experiences with Restoratives Circles."
-        />
-      </Col>
-      <Col sm={24} md={24} lg={8}>
-        <h3 className="mask-h4">Our Video Series</h3>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            height: '100%',
-          }}
-        >
-          <div>
-            <Link
-              to="/the-power-of-dialogue#the-craft"
-              className="one"
-              style={{
-                marginBottom: 0,
-                borderLeft: '4px solid #FFBF00',
-                borderTop: '4px solid #FFBF00',
-                display: 'block',
-                paddingLeft: 12,
-              }}
-            >
-              <h4 className="mask-h5" style={{ marginBottom: 0 }}>
-                1. The Craft
-              </h4>
-              <p style={{ marginBottom: 20 }}>
-                <i>Learning the steps</i>
-              </p>
-            </Link>
-          </div>
-          <div>
-            <Link
-              to="/the-power-of-dialogue#in-action"
-              className="two"
-              style={{
-                marginBottom: 0,
-                borderLeft: '4px solid #4949FC',
-                borderTop: '4px solid #4949FC',
-                display: 'block',
-                paddingLeft: 12,
-                marginLeft: '1vw',
-              }}
-            >
-              <h4 className="mask-h5" style={{ marginBottom: 0 }}>
-                2. In Action
-              </h4>
-              <p style={{ marginBottom: 20 }}>
-                <i>Snippets from live Circles</i>
-              </p>
-            </Link>
-          </div>
-          <div>
-            <Link
-              to="/the-power-of-dialogue#the-restorative-system"
-              className="three"
-              style={{
-                marginBottom: 0,
-                borderLeft: '4px solid #FF4D4D',
-                borderTop: '4px solid #FF4D4D',
-                display: 'block',
-                paddingLeft: 12,
-                marginLeft: '2vw',
-              }}
-            >
-              <h4 className="mask-h5" style={{ marginBottom: 0 }}>
-                3. The Restorative System
-              </h4>
-              <p style={{ marginBottom: 20 }}>
-                <i>Exploring justice in community</i>
-              </p>
-            </Link>
-          </div>
-          <div>
-            <Link
-              to="/the-power-of-dialogue#experiences"
-              className="four"
-              style={{
-                marginBottom: 0,
-                borderLeft: '4px solid #5FA15F',
-                borderTop: '4px solid #5FA15F',
-                display: 'block',
-                paddingLeft: 12,
-                marginLeft: '3vw',
-              }}
-            >
-              <h4 className="mask-h5" style={{ marginBottom: 0 }}>
-                4. Experiences
-              </h4>
-              <p style={{ marginBottom: 20 }}>
-                <i>Participants share</i>
-              </p>
-            </Link>
-          </div>
-        </div>
-      </Col>
-    </Row>
-  </div>
-)
-
-/**
- * [description]
  * @param  {[type]} banner      [description]
  * @param  {[type]} bannerHover [description]
  * @return {[type]}             [description]
@@ -262,18 +220,7 @@ const BannerLink = ({ to, alt, bannerImage, bannerHover }) => (
       }}
       className="banner-hover"
     >
-      <Image
-        src={bannerImage}
-        rawWidth={1440}
-        rawHeight={350}
-        style={{
-          height: 'auto',
-          width: '100%',
-          border: 0,
-          background: 'transparent',
-        }}
-        alt={alt}
-      />
+      <Img fluid={bannerImage} alt={alt} />
       <div
         style={{
           position: 'absolute',
@@ -285,18 +232,7 @@ const BannerLink = ({ to, alt, bannerImage, bannerHover }) => (
         }}
         className="hover"
       >
-        <Image
-          src={bannerHover}
-          rawWidth={1440}
-          rawHeight={350}
-          style={{
-            height: 'auto',
-            width: '100%',
-            border: 0,
-            background: 'transparent',
-          }}
-          alt={alt}
-        />
+        <Img fluid={bannerHover} alt={alt} />
       </div>
     </div>
   </Link>
@@ -307,21 +243,10 @@ const Page = props => {
   const { data, isMobile } = props
 
   return (
-    <StandardPage className={pageStyle} seoData={seoData}>
+    <StandardPage className={pageStyle} seoData={seoData} {...props}>
       <Row gutter={{ xs: 4, sm: 6, md: 8 }}>
         <Col sm={24} md={24} lg={16}>
-          <Image
-            src={banner}
-            rawWidth={1440}
-            rawHeight={900}
-            style={{
-              height: 'auto',
-              width: '100%',
-              border: 0,
-              background: 'transparent',
-            }}
-            alt="Restorative Auroville"
-          />
+          <Img fluid={props.data.banner.childImageSharp.fluid} />
         </Col>
         <Col sm={0} md={0} lg={8}>
           <div
@@ -332,56 +257,34 @@ const Page = props => {
             }}
           >
             <div style={{ flexGrow: 165, flexBasis: 0 }}>
-              <Image
-                src={banner21}
-                rawWidth={1440}
-                rawHeight={450}
-                style={{
-                  height: 'auto',
-                  width: '100%',
-                  border: 0,
-                  background: 'transparent',
-                }}
-                alt="Restorative Auroville"
-              />
+              <Img fluid={props.data.banner21.childImageSharp.fluid} />
             </div>
             <div style={{ flexGrow: 195, flexBasis: 0 }}>
               <BannerLink
                 to="/restorative-circles"
-                bannerImage={banner22}
+                bannerImage={props.data.banner22.childImageSharp.fluid}
                 alt="We offer Restorative Circles"
-                bannerHover={banner22Hover}
+                bannerHover={props.data.banner22Hover.childImageSharp.fluid}
               />
             </div>
             <div style={{ flexGrow: 195, flexBasis: 0 }}>
               <BannerLink
                 to="/system-building-initiatives"
-                bannerImage={banner23}
+                bannerImage={props.data.banner23.childImageSharp.fluid}
                 alt="We can bring Restorative Circles to your community"
-                bannerHover={banner23Hover}
+                bannerHover={props.data.banner23Hover.childImageSharp.fluid}
               />
             </div>
             <div style={{ flexGrow: 195, flexBasis: 0 }}>
               <BannerLink
                 to="/events"
-                bannerImage={banner24}
+                bannerImage={props.data.banner24.childImageSharp.fluid}
                 alt="We offer learning opportunities"
-                bannerHover={banner24Hover}
+                bannerHover={props.data.banner24Hover.childImageSharp.fluid}
               />
             </div>
             <div style={{ flexGrow: 150, flexBasis: 0 }}>
-              <Image
-                src={banner25}
-                rawWidth={1440}
-                rawHeight={300}
-                style={{
-                  height: 'auto',
-                  width: '100%',
-                  border: 0,
-                  background: 'transparent',
-                }}
-                alt="Restorative Auroville"
-              />
+              <Img fluid={props.data.banner25.childImageSharp.fluid} />
             </div>
           </div>
         </Col>
@@ -417,20 +320,25 @@ const Page = props => {
             top: 0,
             left: 0,
             height: '100%',
+            width: '100%',
             zIndex: -2,
             overflow: 'hidden',
           }}
         >
-          <Image
-            src={bluePaintbrush}
+          <Img
+            fluid={props.data.bluePaintbrush.childImageSharp.fluid}
             style={{
-              background: 'transparent',
-              border: 'unset',
               height: '100%',
               width: '100%',
+              objectFit: 'unset',
+              objectPosition: 'unset',
             }}
-            rawWidth={1440}
-            rawHeight={900}
+            imgStyle={{
+              height: '100%',
+              width: '100%',
+              objectFit: 'unset',
+              objectPosition: 'unset',
+            }}
           />
         </div>
         <div className="margin-p">
@@ -443,6 +351,7 @@ const Page = props => {
           >
             Get Involved Today…
           </h2>
+          <br className="mobile-only" />
           <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
             <Col sm={24} md={24} lg={8}>
               <hr
@@ -471,6 +380,7 @@ const Page = props => {
                   See more ⇝
                 </Link>
               </p>
+              <br className="mobile-only" />
             </Col>
             <Col sm={24} md={24} lg={8}>
               <hr
@@ -500,6 +410,7 @@ const Page = props => {
                   Donate now ⇝
                 </Link>
               </p>
+              <br className="mobile-only" />
             </Col>
             <Col sm={24} md={24} lg={8}>
               <hr
@@ -531,12 +442,135 @@ const Page = props => {
                   See more ⇝
                 </Link>
               </p>
+              <br className="mobile-only" />
+              <br className="mobile-only" />
+              <br className="mobile-only" />
             </Col>
           </Row>
         </div>
       </div>
 
-      <VideoSeriesBlock1 />
+      <div>
+        <h2 className="mask-h3" style={{ marginBottom: 0 }}>
+          "The Power of Dialogue"
+        </h2>
+        <p style={{ marginBottom: 30 }}>
+          <Link to="/the-power-of-dialogue">See video series ⇝</Link>
+        </p>
+        <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
+          <Col sm={24} md={24} lg={8}>
+            <GatsbyImageVideoCover
+              to="/the-power-of-dialogue/designing-our-justice-system-consciously"
+              cover={props.data.videoCover1.childImageSharp.fluid}
+              text="L'aura shares about her experience of engaging with Restorative Circles in Auroville and the importance of designing a justice system consciously, otherwise we'll just inherit the old ways."
+              playNow={props.data.playNow.childImageSharp.fluid}
+            />
+          </Col>
+          <Col sm={24} md={24} lg={8}>
+            <GatsbyImageVideoCover
+              to="/the-power-of-dialogue/surya-on-restorative-circles"
+              cover={props.data.videoCover2.childImageSharp.fluid}
+              text="Surya shares about her experiences with Restoratives Circles."
+              playNow={props.data.playNow.childImageSharp.fluid}
+            />
+          </Col>
+          <Col sm={24} md={24} lg={8}>
+            <h3 className="mask-h4">Our Video Series</h3>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                height: '100%',
+              }}
+            >
+              <div>
+                <Link
+                  to="/the-power-of-dialogue#the-craft"
+                  className="one"
+                  style={{
+                    marginBottom: 0,
+                    borderLeft: '4px solid #FFBF00',
+                    borderTop: '4px solid #FFBF00',
+                    display: 'block',
+                    paddingLeft: 12,
+                  }}
+                >
+                  <h4 className="mask-h5" style={{ marginBottom: 0 }}>
+                    1. The Craft
+                  </h4>
+                  <p style={{ marginBottom: 20 }}>
+                    <i>Learning the steps</i>
+                  </p>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to="/the-power-of-dialogue#in-action"
+                  className="two"
+                  style={{
+                    marginBottom: 0,
+                    borderLeft: '4px solid #4949FC',
+                    borderTop: '4px solid #4949FC',
+                    display: 'block',
+                    paddingLeft: 12,
+                    marginLeft: '1vw',
+                  }}
+                >
+                  <h4 className="mask-h5" style={{ marginBottom: 0 }}>
+                    2. In Action
+                  </h4>
+                  <p style={{ marginBottom: 20 }}>
+                    <i>Snippets from live Circles</i>
+                  </p>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to="/the-power-of-dialogue#the-restorative-system"
+                  className="three"
+                  style={{
+                    marginBottom: 0,
+                    borderLeft: '4px solid #FF4D4D',
+                    borderTop: '4px solid #FF4D4D',
+                    display: 'block',
+                    paddingLeft: 12,
+                    marginLeft: '2vw',
+                  }}
+                >
+                  <h4 className="mask-h5" style={{ marginBottom: 0 }}>
+                    3. The Restorative System
+                  </h4>
+                  <p style={{ marginBottom: 20 }}>
+                    <i>Exploring justice in community</i>
+                  </p>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to="/the-power-of-dialogue#experiences"
+                  className="four"
+                  style={{
+                    marginBottom: 0,
+                    borderLeft: '4px solid #5FA15F',
+                    borderTop: '4px solid #5FA15F',
+                    display: 'block',
+                    paddingLeft: 12,
+                    marginLeft: '3vw',
+                  }}
+                >
+                  <h4 className="mask-h5" style={{ marginBottom: 0 }}>
+                    4. Experiences
+                  </h4>
+                  <p style={{ marginBottom: 20 }}>
+                    <i>Participants share</i>
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </div>
 
       <div
         style={{
@@ -555,25 +589,32 @@ const Page = props => {
             top: 0,
             left: 0,
             height: '100%',
+            width: '100%',
             zIndex: -2,
             overflow: 'hidden',
           }}
         >
-          <Image
-            src={orangePaintbrush}
+          <Img
+            fluid={props.data.orangePaintbrush.childImageSharp.fluid}
             style={{
-              background: 'transparent',
-              border: 'unset',
               height: '100%',
               width: '100%',
+              objectFit: 'unset',
+              objectPosition: 'unset',
             }}
-            rawWidth={1440}
-            rawHeight={900}
+            imgStyle={{
+              height: '100%',
+              width: '100%',
+              objectFit: 'unset',
+              objectPosition: 'unset',
+            }}
           />
         </div>
         <div className="margin-p">
           <Division goldenAlt>
             <Copy style={{ paddingTop: 10 }}>
+              <br className="mobile-only" />
+              <br className="mobile-only" />
               <Video
                 url="https://www.youtube.com/watch?v=6Ma-dnG53LU"
                 style={{ border: 'unset' }}
@@ -584,16 +625,20 @@ const Page = props => {
                   marginBottom: 0,
                 }}
               >
-                <i>
+                <i style={{ display: 'block' }}>
                   Teachers at Aikiyam School are
-                  <br />
+                  <br className="desktop-only" />
                   inspired by Restorative Circles!
                 </i>
-                <br />
-                <Link to="/system-building-initiatives/restorative-circles-in-aikiyam-school">
+                <Link
+                  to="/system-building-initiatives/restorative-circles-in-aikiyam-school"
+                  style={{ display: 'block' }}
+                >
                   See more ⇝
                 </Link>
               </p>
+              <br className="mobile-only" />
+              <br className="mobile-only" />
             </Copy>
             <Copy>
               <h2
@@ -633,6 +678,10 @@ const Page = props => {
                   See our System-Building Initiatives ⇝
                 </Link>
               </p>
+              <br className="mobile-only" />
+              <br className="mobile-only" />
+              <br className="mobile-only" />
+              <br className="mobile-only" />
             </Copy>
           </Division>
         </div>
@@ -642,54 +691,6 @@ const Page = props => {
     </StandardPage>
   )
 }
-
-// ----------------------------------------------------------------------------
-// ---------------------------------------------------------------------- Query
-// ----------------------------------------------------------------------------
-/* eslint-disable no-undef */
-export const pageQuery = graphql`
-  query HomepageQuery {
-    allMarkdownRemark(
-      limit: 365
-      sort: { fields: [frontmatter___date], order: ASC }
-      filter: { frontmatter: { type: { eq: "event" } } }
-    ) {
-      edges {
-        node {
-          fields {
-            route
-            humanDate
-            elapsed
-            beginDateInt
-            diff
-            year
-            month
-            monthN
-            dayOfMonth
-            displayDate
-            formattedDate
-          }
-          frontmatter {
-            abstract
-            title
-            subTitle
-            cover
-            date
-            startDate
-            finishDate
-            fromTime
-            toTime
-            category
-            tags
-            type
-            cost
-          }
-        }
-      }
-    }
-  }
-`
-/* eslint-enable no-undef */
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Export

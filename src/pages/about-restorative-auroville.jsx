@@ -12,6 +12,7 @@ import map from 'lodash/map'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import Image from '@bodhi-project/components/lib/Image'
+import keygen from '@bodhi-project/components/lib/methods/keygen'
 
 import Icon from 'antd/lib/icon'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
@@ -71,10 +72,10 @@ const Theme = props => {
       </h2>
       <p>{text}</p>
       {!isUndefined(files) && (
-        <Fragment>
+        <Fragment key={keygen()}>
           {map(files, file => {
             return (
-              <p>
+              <p key={keygen()}>
                 <OutLink to={file.link}>
                   <Icon
                     type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
@@ -93,8 +94,8 @@ const Theme = props => {
 }
 
 /** Page */
-const Page = () => (
-  <StandardPage className="" seoData={seoData}>
+const Page = props => (
+  <StandardPage className="" seoData={seoData} {...props}>
     <h1 className="mask-h3">Our Project</h1>
     <p>
       Restorative Auroville is an independent project that aims to bring the

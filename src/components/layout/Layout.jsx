@@ -6,33 +6,45 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'glamor'
 import moment from 'moment'
+import { graphql } from 'gatsby'
 
 import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { Type } from '@bodhi-project/typography'
+import MediaQuery from 'react-responsive'
+import Typekit from 'react-typekit'
+import typefn from '@bodhi-project/typography/lib/methods/type'
 import {
   InitializeMeta,
   UpdateTitle,
   WebsiteSchema,
   OrganisationSchema,
 } from '@bodhi-project/seo'
-import { StickyContainer, Sticky } from 'react-sticky'
-
-import Container from '@bodhi-project/components/lib/Container'
+import { StickyContainer } from 'react-sticky'
+import container from '@bodhi-project/components/lib/methods/container'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import '../../styles/index.less'
 import indexImage from '../../assets/launch.jpg'
 import data from '../../data/website.json'
 
-import WebsiteTitle from '../sandbox/WebsiteTitle'
-import MobileNav from './MobileNav'
-import DesktopNav from './DesktopNav'
-import DesktopFooter from './DesktopFooter'
-import MobileFooter from './MobileFooter'
+import Header from './Header'
+import Footer from './Footer'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+export const defaultImage = graphql`
+  fragment defaultImage on File {
+    childImageSharp {
+      fluid(
+        maxWidth: 2400
+        quality: 80
+        srcSetBreakpoints: [200, 400, 600, 800, 1000, 1200, 1600, 2000, 2400]
+      ) {
+        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      }
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------- Global SEO
@@ -68,28 +80,36 @@ const organisationSchemaData = {
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const pageStyle = css({
-  // background: "#0053a5",
-  padding: 0,
+const style = css({
+  '&#layout': {
+    '@media(max-width: 992px)': {
+      paddingTop: '1rem',
+      paddingLeft: '1rem',
+      paddingRight: '1rem',
+    },
 
-  '& #appWrapper': {
-    // background: '#f2f2f2',
-  },
+    '& > div': {
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
 
-  '& #contentWrapper': {
-    paddingTop: '24px',
+      '& header': {
+        flexGrow: 0,
+        flexBasis: 0,
+      },
 
-    '& #content': {
-      // minHeight: '100vh',
+      '& footer': {
+        flexGrow: 0,
+        flexBasis: 0,
+      },
 
-      '& #page-content': {
-        minHeight: 'calc(100vh - 400px)',
+      '& main': {
+        paddingTop: '1rem',
+        paddingBottom: '1rem',
+        flexGrow: 1,
+        flexBasis: 0,
       },
     },
-  },
-
-  '& #menuWrapper': {
-    zIndex: 1000,
   },
 
   '@media(min-width: 1200px)': {
@@ -115,8 +135,10 @@ const pageStyle = css({
       display: 'none',
     },
   },
-})
-const pageStyles = pageStyle.toString()
+}).toString()
+
+const goldenMajorBlock = container({ goldenMajor: true, block: true })
+const bleedBlock = container({ bleed: true, block: true })
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -126,6 +148,23 @@ class Layout extends React.Component {
   /** standard constructor */
   constructor(props) {
     super(props)
+
+    const typeClass = typefn({
+      kit: 'jdd4npp',
+      options: {
+        range: [12, 20], // Min and Max font-sizes
+        paragraphSpacingFactor: 1.2, // Greater for tighter paragraph-paragraph spacing
+        headingParagraphGapSpacingFactor: 0, // Greater for tighter header-paragraph spacing
+        indentParagraphs: false,
+      },
+    })
+
+    this.state = {
+      defaultMediaQueryValues: isUndefined(window)
+        ? { width: 1440, height: 900 }
+        : {},
+      typeClass,
+    }
   }
 
   /** after mount */
@@ -144,60 +183,46 @@ class Layout extends React.Component {
   /** on mount */
   componentDidUpdate() {
     if (!isUndefined(window)) {
-      const element = document.getElementById('contentWrapper')
+      const element = document.getElementById('layout')
       element.scrollTop = 0
     }
   }
 
   /** standard renderer */
   render() {
-    const { children } = this.props
+    const { children, className = '' } = this.props
+    const { typeClass, defaultMediaQueryValues } = this.state
+    const classNameX = `${typeClass} ${style} ${className}`
+    console.log('render')
 
     return (
-      <Type
-        kit="jdd4npp"
-        style={{ minHeight: '100vh' }}
-        className={pageStyles}
-        options={{
-          range: [12, 20], // Min and Max font-sizes
-          paragraphSpacingFactor: 1.2, // Greater for tighter paragraph-paragraph spacing
-          headingParagraphGapSpacingFactor: 0, // Greater for tighter header-paragraph spacing
-          indentParagraphs: false,
-        }}
-        id="appWrapper"
-      >
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
-        <InitializeMeta
-          data={{ titleTemplate: '%s | Restorative Auroville' }}
-        />
-        <UpdateTitle title="Loading..." />
-        <WebsiteSchema data={websiteSchemaData} />
-        <OrganisationSchema data={organisationSchemaData} />
-        <StickyContainer>
-          <header className="desktop-only" id="menuWrapper">
-            <Container goldenMajor block>
-              <WebsiteTitle />
-            </Container>
-            <Sticky topOffset={100}>
-              {({ style, isSticky }) => (
-                <div id="menuWrapper" style={style}>
-                  <DesktopNav isSticky={isSticky} {...this.props} />
-                </div>
-              )}
-            </Sticky>
-          </header>
-          <aside className="mobile-only">
-            <MobileNav />
-          </aside>
-          <div id="contentWrapper">
-            <Container goldenMajor block id="content">
-              <div id="page-content">{children}</div>
-              <MobileFooter />
-              <DesktopFooter />
-            </Container>
+      <MediaQuery minWidth={992} values={defaultMediaQueryValues}>
+        {matches => (
+          <div className={classNameX} id="layout">
+            <InitializeMeta
+              data={{ titleTemplate: `%s | ${data.websiteName}` }}
+            />
+            <UpdateTitle title="Restorative Circles in Auroville" />
+            <WebsiteSchema data={websiteSchemaData} />
+            <OrganisationSchema data={organisationSchemaData} />
+            <StickyContainer>
+              <Header
+                isDesktop={matches}
+                typeClass={typeClass}
+                {...this.props}
+              />
+              <main
+                role="main"
+                className={matches ? goldenMajorBlock : bleedBlock}
+              >
+                {children}
+              </main>
+              <Footer isDesktop={matches} />
+            </StickyContainer>
+            <Typekit kitId="jdd4npp" />
           </div>
-        </StickyContainer>
-      </Type>
+        )}
+      </MediaQuery>
     )
   }
 }

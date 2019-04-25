@@ -37,8 +37,8 @@ const pageData = {
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <BlogPostWrapper className="" pageData={pageData}>
+const Page = props => (
+  <BlogPostWrapper className="" pageData={pageData} {...props}>
     <p>Published on “Auroville Radio.”</p>
     <p>
       Exploring “justice” in Auroville, and how we can respond to conflict and

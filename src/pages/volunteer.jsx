@@ -79,8 +79,8 @@ const Li = props => (
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <StandardPage className={pageStyle} seoData={seoData}>
+const Page = props => (
+  <StandardPage className={pageStyle} seoData={seoData} {...props}>
     <h1 className="mask-h3">Volunteer & Apprentice</h1>
     <p>
       In order for this work to develop fully in Auroville, we need more

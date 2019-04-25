@@ -35,13 +35,14 @@ const prev = {
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
+const Page = props => (
   <VideoWrapper
     className=""
     seoData={seoData}
     pageData={pageData}
     prev={prev}
     next={next}
+    {...props}
   >
     <p>
       Pranjal reflects on his learning journey with RC facilitation, and

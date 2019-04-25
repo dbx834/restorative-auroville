@@ -41,8 +41,8 @@ const seoData = seoHelper(pageData)
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <StandardPage className="" seoData={seoData}>
+const Page = props => (
+  <StandardPage className="" seoData={seoData} {...props}>
     <h1 className="mask-h3">Circle Statistics</h1>
     <h2 className="mask-h4">Circles at a glance</h2>
     <CircleByYear3 />

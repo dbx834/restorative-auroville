@@ -72,6 +72,7 @@ const Initiative = props => {
       next={next}
       pageData={pageData}
       notes={notes}
+      {...props}
     >
       <Division golden>
         <div>

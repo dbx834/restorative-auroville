@@ -56,6 +56,7 @@ const Initiative = props => {
       next={next}
       pageData={pageData}
       notes={notes}
+      {...props}
     >
       <h1 className="mask-h3">
         Tamil Aurovilian Journeys (Printed Publication)

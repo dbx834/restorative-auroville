@@ -54,6 +54,7 @@ const Initiative = props => {
       next={next}
       pageData={pageData}
       notes={notes}
+      {...props}
     >
       <h1 className="mask-h3">
         Exploring Justice & RC with the Auroville Council

@@ -37,8 +37,8 @@ const pageData = {
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <BlogPostWrapper className="" pageData={pageData}>
+const Page = props => (
+  <BlogPostWrapper className="" pageData={pageData} {...props}>
     <p>
       We want to explore and understand this question: Are we divided in
       Auroville, as local Tamil Aurovilians and non-local Aurovilians?

@@ -35,8 +35,8 @@ const pageData = {
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <BlogPostWrapper className="" pageData={pageData}>
+const Page = props => (
+  <BlogPostWrapper className="" pageData={pageData} {...props}>
     <p>
       Last week we visioned together about how we dream we’d hold conflict in
       Auroville. People shared a longing for safe spaces, open communication,

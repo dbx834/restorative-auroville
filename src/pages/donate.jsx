@@ -63,7 +63,7 @@ const pageStyles = css({
 // ----------------------------------------------------------------------------
 /** Page */
 const Page = ({ isMobile, ...props }) => (
-  <StandardPage className={pageStyles} seoData={seoData}>
+  <StandardPage className={pageStyles} seoData={seoData} {...props}>
     <h1 className="mask-h3">Donate to Support Our Work!</h1>
     <p>
       If you’re inspired by our project and would like to help, we welcome your

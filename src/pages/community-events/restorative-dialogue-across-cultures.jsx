@@ -107,6 +107,7 @@ const Initiative = props => {
       next={next}
       prev={prev}
       pageData={pageData}
+      {...props}
     >
       <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
         <BItem>

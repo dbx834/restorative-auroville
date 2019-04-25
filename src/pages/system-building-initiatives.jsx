@@ -64,7 +64,7 @@ const Ongoingprojects = props => {
   const { isMobile } = props
 
   return (
-    <StandardPage className={pageStyles} seoData={seoData}>
+    <StandardPage className={pageStyles} seoData={seoData} {...props}>
       <h1 className="mask-h3">System-Building Initiatives</h1>
       <p>
         Our approach is to engage with the community at many levels and through

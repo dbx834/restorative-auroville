@@ -146,8 +146,8 @@ const Theme = props => {
 }
 
 /** Page */
-const Page = () => (
-  <StandardPage className="" seoData={seoData}>
+const Page = props => (
+  <StandardPage className="" seoData={seoData} {...props}>
     <h1 className="mask-h3">Archives</h1>
     <p>
       Here’s a compilation of some additional project proposals, reports, public

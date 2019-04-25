@@ -9,7 +9,6 @@ import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import PrevNext from '@bodhi-project/components/lib/PrevNext'
-import { Page } from '@bodhi-project/semantic-webflow'
 import {
   // --------------- Basic
   UpdateTitle,
@@ -72,7 +71,7 @@ const StandardPage = props => {
   } = seoData
 
   return (
-    <Layout>
+    <Layout {...props} className={`${pageStyles} ${className}`}>
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
       <UpdateTitle title={pageTitle} />
       <GeneralMeta data={generalMetaData} />
@@ -82,7 +81,7 @@ const StandardPage = props => {
       <BreadcrumbSchema data={breadcrumbSchemaData} />
 
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
-      <Page className={`${pageStyles} ${className}`}>
+      <Fragment>
         {children}
         <div style={{ borderTop: '1px dotted #00006F' }}>
           <h2 className="mask-h4">More community events</h2>
@@ -94,7 +93,7 @@ const StandardPage = props => {
           </Fragment>
         ))}
         <DisqusComments pageData={pageData} />
-      </Page>
+      </Fragment>
     </Layout>
   )
 }

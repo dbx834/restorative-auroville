@@ -36,13 +36,14 @@ const prev = undefined
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
+const Page = props => (
   <VideoWrapper
     className=""
     seoData={seoData}
     pageData={pageData}
     prev={prev}
     next={next}
+    {...props}
   >
     <p>
       Before entering a Restorative Circle, Facilitators meet amongst themselves

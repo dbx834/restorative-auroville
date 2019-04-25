@@ -38,13 +38,14 @@ const next = {
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
+const Page = props => (
   <VideoWrapper
     className=""
     seoData={seoData}
     pageData={pageData}
     prev={prev}
     next={next}
+    {...props}
   >
     <p>
       Henrike shares her thoughts on learning RC and how it invites for growth,

@@ -99,7 +99,7 @@ const Page = props => {
   }
 
   return (
-    <StandardPage className="" seoData={seoData}>
+    <StandardPage className="" seoData={seoData} {...props}>
       <EventSchema data={eventSchemaData} />
       <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
         <BItem>

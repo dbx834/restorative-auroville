@@ -34,13 +34,14 @@ const prev = undefined
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
+const Page = props => (
   <VideoWrapper
     className=""
     seoData={seoData}
     pageData={pageData}
     prev={prev}
     next={next}
+    {...props}
   >
     <p>Surya shares about her experiences with Restoratives Circles.</p>
     <div style={{ maxWidth: '45rem' }} className="margin-p">

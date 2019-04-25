@@ -37,13 +37,14 @@ const next = {
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
+const Page = props => (
   <VideoWrapper
     className=""
     seoData={seoData}
     pageData={pageData}
     prev={prev}
     next={next}
+    {...props}
   >
     <p>
       L'aura shares about her experience of engaging with Restorative Circles in
