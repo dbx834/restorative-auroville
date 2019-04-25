@@ -135,6 +135,12 @@ const style = css({
       display: 'none',
     },
   },
+
+  '& .coming-soon': {
+    '@media(max-width: 992px)': {
+      maxWidth: 400,
+    },
+  },
 }).toString()
 
 const goldenMajorBlock = container({ goldenMajor: true, block: true })

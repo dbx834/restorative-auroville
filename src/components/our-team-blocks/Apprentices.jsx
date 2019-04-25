@@ -149,6 +149,7 @@ class Apprentices extends React.Component {
             RC process and principles…
           </strong>
         </p>
+        <br className="mobile-only" />
         <div style={{ display: isMobile ? 'block' : 'flex' }}>
           <div className={`parent-circle ${circleStyles}`} ref="parent">
             <div

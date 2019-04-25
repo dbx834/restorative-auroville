@@ -49,18 +49,45 @@ const { Fragment: Frag } = React
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
-const pageStyles = css({
-  display: 'block',
+const style = css({
+  paddingLeft: 12,
+  borderLeft: `8px solid #4A01AA`,
+  marginBottom: 48,
 
-  '& .ant-card': {
-    boxShadow: '1px 2px 0 0 rgba(0, 0, 111, 1)',
+  '& .child-circle-highlight': {
+    width: '12vw',
+    height: '12vw',
+    backgroundSize: '12vw 12vw',
 
-    '&:hover': {
-      boxShadow: '2px 4px 0 0 rgba(0, 0, 111, 1)',
+    '&:after': {
+      width: '12vw',
+    },
+
+    '& p': {
+      width: '12vw',
+      height: '12vw',
+    },
+
+    '@media(min-width: 992px)': {
+      width: '6.25vw',
+      height: '6.25vw',
+      backgroundSize: '6.25vw 6.25vw',
+
+      '&:after': {
+        width: '6.25vw',
+      },
+
+      '& p': {
+        width: '6.25vw',
+        height: '6.25vw',
+      },
+
+      '& > div': {
+        backgroundSize: '6.25vw 6.25vw',
+      },
     },
   },
-})
-const pageStyle = pageStyles.toString()
+}).toString()
 
 const circleStylesObject = css({
   display: 'flex',
@@ -138,13 +165,7 @@ class FacilitatorsTeam extends React.Component {
     const { isMobile } = this.props
 
     return (
-      <div
-        style={{
-          paddingLeft: 12,
-          borderLeft: `8px solid #4A01AA`,
-          marginBottom: 48,
-        }}
-      >
+      <div className={style}>
         <h1 className="mask-h3" style={{ marginBottom: 0 }}>
           Facilitators' Team
         </h1>

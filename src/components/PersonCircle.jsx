@@ -45,7 +45,7 @@ const PersonCircle = props => {
       style={{
         backgroundImage: `url(${image})`,
         backgroundRepeat: 'no-repeat',
-        backgroundSize: '6.25vw 6.25vw',
+        // backgroundSize: '6.25vw 6.25vw',
         border: '2px solid #FFBF00',
         ...style,
       }}

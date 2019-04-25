@@ -44,6 +44,40 @@ const pageStyles = css({
       boxShadow: '2px 4px 0 0 rgba(0, 0, 111, 1)',
     },
   },
+
+  '& .child-circle-highlight': {
+    width: '12vw',
+    height: '12vw',
+    backgroundSize: '12vw 12vw',
+
+    '&:after': {
+      width: '12vw',
+    },
+
+    '& p': {
+      width: '12vw',
+      height: '12vw',
+    },
+
+    '@media(min-width: 992px)': {
+      width: '6.25vw',
+      height: '6.25vw',
+      backgroundSize: '6.25vw 6.25vw',
+
+      '&:after': {
+        width: '6.25vw',
+      },
+
+      '& p': {
+        width: '6.25vw',
+        height: '6.25vw',
+      },
+
+      '& > div': {
+        backgroundSize: '6.25vw 6.25vw',
+      },
+    },
+  },
 })
 const pageStyle = pageStyles.toString()
 

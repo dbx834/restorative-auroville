@@ -70,7 +70,6 @@ const VideoCover = ({ to, cover, text }) => {
               border: 'unset',
               height: 'auto',
               width: '100%',
-              marginBottom: 10,
             }}
             loader="gradient"
             rawWidth={1440}
@@ -84,7 +83,6 @@ const VideoCover = ({ to, cover, text }) => {
                 border: 'unset',
                 height: 'auto',
                 width: '100%',
-                marginBottom: 10,
               }}
               loader="gradient"
               rawWidth={1440}
@@ -93,7 +91,7 @@ const VideoCover = ({ to, cover, text }) => {
           </div>
         </div>
       </Link>
-      <p style={{ marginTop: -4, lineHeight: '1.1 !important' }}>
+      <p style={{ marginTop: 3, lineHeight: '1.1 !important' }}>
         <span style={{ fontSize: '90%' }}>{text}</span>
       </p>
     </div>

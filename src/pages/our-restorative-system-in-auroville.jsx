@@ -34,6 +34,14 @@ const seoData = seoHelper(pageData)
 const pageStyles = css({
   position: 'relative',
   display: 'block',
+
+  '& .pdf': {
+    width: '75%',
+    margin: 'auto',
+    '@media(min-width: 992px)': {
+      width: '45%',
+    },
+  },
 }).toString()
 
 const pdfStyles = css({
@@ -96,7 +104,7 @@ const Page = props => (
       development of a community.
     </p>
     <div style={{ background: '#d1d1d1' }}>
-      <div style={{ width: '45%', margin: 'auto' }}>
+      <div className="pdf">
         <PDFReader
           url="https://www.restorativeauroville.org/pdfs1/av-rc-system.pdf"
           className={pdfStyles}

@@ -55,7 +55,11 @@ const renderSwitch = person => {
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
-const circleStylesObject = css({
+const style = css({
+  paddingLeft: 12,
+  borderLeft: `8px solid #FABB00`,
+  marginBottom: 48,
+
   '& .child-circle.circle-active::after': {
     fontWeight: 700,
     textDecoration: 'underline',
@@ -80,8 +84,7 @@ const circleStylesObject = css({
   '& .child-circle:nth-child(6)::after': {
     content: `"Nils"`,
   },
-})
-const circleStyles = circleStylesObject.toString()
+}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -131,13 +134,7 @@ class ProjectWorkingTeam extends React.Component {
     const { person } = this.state
 
     return (
-      <div
-        style={{
-          paddingLeft: 12,
-          borderLeft: `8px solid #FABB00`,
-          marginBottom: 48,
-        }}
-      >
+      <div className={style}>
         <h1 className="mask-h3" style={{ marginBottom: 0 }}>
           Project Working Team
         </h1>
@@ -146,8 +143,9 @@ class ProjectWorkingTeam extends React.Component {
             ↪ run the larger project in all its aspects, from small to big…
           </strong>
         </p>
+        <br className="mobile-only" />
         <div style={{ display: isMobile ? 'block' : 'flex' }}>
-          <div className={`parent-circle ${circleStyles}`} ref="parent">
+          <div className="parent-circle" ref="parent">
             <div
               className={`${person === 'kati' &&
                 'circle-active'} child-circle s`}

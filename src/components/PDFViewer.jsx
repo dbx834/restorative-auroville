@@ -62,6 +62,24 @@ const style = css({
     borderRadius: '0px !important',
     marginBottom: '0px !important',
   },
+
+  '& .chirp': {
+    bottom: -18,
+
+    '& .chirp-image': {
+      height: '30px !important',
+      width: '30px !important',
+    },
+
+    '@media(min-width: 992px)': {
+      bottom: -8,
+
+      '& .chirp-image': {
+        height: '40px !important',
+        width: '40px !important',
+      },
+    },
+  },
 }).toString()
 
 const pdfStyles = css({
@@ -104,9 +122,9 @@ const PDFViewer = props => {
                 }}
               >
                 <div
+                  className="chirp"
                   style={{
                     position: 'absolute',
-                    bottom: -8,
                     right: -3,
                     height: 40,
                     zIndex: 100,
@@ -117,9 +135,8 @@ const PDFViewer = props => {
                     style={{
                       background: 'transparent',
                       border: 'unset',
-                      height: 40,
-                      width: 40,
                     }}
+                    className="chirp-image"
                     rawWidth={900}
                     rawHeight={900}
                   />

@@ -230,13 +230,13 @@ const Page = props => (
             border: 'unset',
             height: 'auto',
             width: '100%',
-            marginBottom: 10,
           }}
+          className="coming-soon"
           loader="gradient"
           rawWidth={1440}
           rawHeight={900}
         />
-        <p>
+        <p style={{ marginTop: 3, lineHeight: '1.1 !important' }}>
           <span style={{ fontSize: '90%' }}>Coming soon…</span>
         </p>
       </Col>
@@ -280,13 +280,13 @@ const Page = props => (
             border: 'unset',
             height: 'auto',
             width: '100%',
-            marginBottom: 10,
           }}
+          className="coming-soon"
           loader="gradient"
           rawWidth={1440}
           rawHeight={900}
         />
-        <p>
+        <p style={{ marginTop: 3, lineHeight: '1.1 !important' }}>
           <span style={{ fontSize: '90%' }}>Coming soon…</span>
         </p>
       </Col>
@@ -363,13 +363,13 @@ const Page = props => (
             border: 'unset',
             height: 'auto',
             width: '100%',
-            marginBottom: 10,
           }}
+          className="coming-soon"
           loader="gradient"
           rawWidth={1440}
           rawHeight={900}
         />
-        <p>
+        <p style={{ marginTop: 3, lineHeight: '1.1 !important' }}>
           <span style={{ fontSize: '90%' }}>Coming soon…</span>
         </p>
       </Col>
@@ -445,13 +445,13 @@ const Page = props => (
             border: 'unset',
             height: 'auto',
             width: '100%',
-            marginBottom: 10,
           }}
+          className="coming-soon"
           loader="gradient"
           rawWidth={1440}
           rawHeight={900}
         />
-        <p>
+        <p style={{ marginTop: 3, lineHeight: '1.1 !important' }}>
           <span style={{ fontSize: '90%' }}>Coming soon…</span>
         </p>
       </Col>

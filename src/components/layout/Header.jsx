@@ -120,7 +120,7 @@ const styleX = css({
 
   '& .mobile-header': {
     // padding: '0px 0px 5px 0px',
-    '& div.this': {
+    '& div.spaced': {
       display: 'flex',
       justifyContent: 'space-between',
     },
@@ -147,62 +147,97 @@ const styleX = css({
     },
   },
 
-  '& .ant-drawer-body': {
-    paddingLeft: '1rem !important',
-    paddingRight: '1rem !important',
-    paddingTop: '20px !important',
-    paddingBottom: '20px !important',
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100%',
+  '& .ant-drawer-content-wrapper': {
+    maxWidth: '400px !important',
+    width: '90% !important',
 
-    '& nav': {
-      flexGrow: 1,
-      flexBasis: 0,
-    },
+    '& .ant-drawer-body': {
+      paddingLeft: '1rem !important',
+      paddingRight: '1rem !important',
+      paddingTop: '20px !important',
+      paddingBottom: '20px !important',
+      display: 'flex',
+      flexDirection: 'column',
+      height: '100%',
 
-    '& #nav': {
-      '& .ant-menu-submenu-disabled': {
-        '& .ant-menu-submenu-title': {
-          color: 'rgba(0, 0, 0, 0.85) !important',
-          cursor: 'default !important',
-          lineHeight: '24px !important',
-          height: '24px !important',
+      '& nav': {
+        flexGrow: 1,
+        flexBasis: 0,
+      },
 
-          '& .ant-menu-submenu-arrow': {
-            display: 'none !important',
+      '& #nav': {
+        '& .ant-menu-submenu-disabled': {
+          '& .ant-menu-submenu-title': {
+            color: 'rgba(0, 0, 0, 0.85) !important',
+            cursor: 'default !important',
+            lineHeight: '28px !important',
+            height: '28px !important',
+            margin: '0px',
+            fontSize: 'inherit !important',
+
+            '& .ant-menu-submenu-arrow': {
+              display: 'none !important',
+            },
+
+            '& a': {
+              color: 'rgba(0, 0, 0, 0.85) !important',
+              transition: 'all 0.2s ease-in',
+
+              '&:hover': {
+                color: '#00006F',
+                fontWeight: 700,
+              },
+            },
+          },
+        },
+      },
+
+      '& .ant-menu-inline': {
+        border: 'unset !important',
+      },
+
+      '& .ant-menu-item': {
+        lineHeight: '28px !important',
+        height: '28px !important',
+        margin: '0px',
+
+        '& a': {
+          transition: 'all 0.2s ease-in',
+
+          '&:hover': {
+            fontWeight: 700,
+          },
+        },
+      },
+
+      '& .ant-menu-sub.ant-menu-inline > .ant-menu-item': {
+        paddingLeft: '36px !important',
+        lineHeight: '24px !important',
+        height: '24px !important',
+        margin: '0px',
+      },
+
+      '& .ant-menu-sub': {
+        marginTop: 0,
+
+        '& .ant-menu-item': {
+          '&:last-child': {
+            marginBottom: 5,
           },
         },
       },
     },
+  },
 
-    '& .ant-menu-inline': {
-      border: 'unset !important',
+  '@media(min-width: 992px)': {
+    '& .mobile-only': {
+      display: 'none',
     },
+  },
 
-    '& .ant-menu-sub': {
-      marginTop: 0,
-    },
-
-    '& .ant-menu-item': {
-      lineHeight: '24px !important',
-      height: '24px !important',
-      marginTop: 0,
-      marginBottom: 0,
-
-      '& a': {
-        transition: 'all 0.2s ease-in',
-
-        '&:hover': {
-          fontWeight: 700,
-        },
-      },
-    },
-
-    '& .ant-menu-sub.ant-menu-inline > .ant-menu-item': {
-      paddingLeft: '36px !important',
-      lineHeight: '18px !important',
-      height: '18px !important',
+  '@media(max-width: 992px)': {
+    '& .desktop-only': {
+      display: 'none',
     },
   },
 }).toString()
@@ -379,7 +414,7 @@ class Header extends React.Component {
         {isDesktop === false && (
           <div className={`${bleedBlock} mobile-header`}>
             <div>
-              <div className="this">
+              <div className="spaced">
                 <Link to="/" className="title">
                   <h1
                     style={{
@@ -441,7 +476,11 @@ class Header extends React.Component {
                     if (isUndefined(link)) {
                       returnObj = (
                         <SubMenu
-                          title={<span>{title}</span>}
+                          title={
+                            <Link to="#">
+                              <span>{title}</span>
+                            </Link>
+                          }
                           key={title}
                           disabled
                         >
