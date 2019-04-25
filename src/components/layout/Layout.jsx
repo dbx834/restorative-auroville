@@ -12,6 +12,7 @@ import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import MediaQuery from 'react-responsive'
+import ContainerDimensions from 'react-container-dimensions'
 import Typekit from 'react-typekit'
 import typefn from '@bodhi-project/typography/lib/methods/type'
 import {
@@ -166,9 +167,6 @@ class Layout extends React.Component {
     })
 
     this.state = {
-      // defaultMediaQueryValues:
-      //   typeof window === 'undefined' ? { width: 1440, height: 900 } : {},
-      defaultMediaQueryValues: {},
       typeClass,
     }
   }
@@ -197,37 +195,54 @@ class Layout extends React.Component {
   /** standard renderer */
   render() {
     const { children, className = '' } = this.props
-    const { typeClass, defaultMediaQueryValues } = this.state
+    const { typeClass } = this.state
     const classNameX = `${typeClass} ${style} ${className}`
+    const canUseDOM = !!(
+      typeof window !== 'undefined' &&
+      window.document &&
+      window.document.createElement
+    )
 
     return (
-      <MediaQuery minWidth={992}>
-        {matches => (
-          <div className={classNameX} id="layout">
-            <InitializeMeta
-              data={{ titleTemplate: `%s | ${data.websiteName}` }}
-            />
-            <UpdateTitle title="Restorative Circles in Auroville" />
-            <WebsiteSchema data={websiteSchemaData} />
-            <OrganisationSchema data={organisationSchemaData} />
-            <StickyContainer>
-              <Header
-                isDesktop={matches}
-                typeClass={typeClass}
-                {...this.props}
-              />
-              <main
-                role="main"
-                className={matches ? goldenMajorBlock : bleedBlock}
-              >
-                {children}
-              </main>
-              <Footer isDesktop={matches} />
-            </StickyContainer>
-            <Typekit kitId="jdd4npp" />
-          </div>
-        )}
-      </MediaQuery>
+      <ContainerDimensions>
+        {({ width }) => {
+          const height = Math.round(width * 0.62)
+          const defaultMediaQueryValues =
+            canUseDOM === true
+              ? { width, height }
+              : { width: 1440, height: 900 }
+
+          return (
+            <MediaQuery minWidth={992} values={defaultMediaQueryValues}>
+              {matches => (
+                <div className={classNameX} id="layout">
+                  <InitializeMeta
+                    data={{ titleTemplate: `%s | ${data.websiteName}` }}
+                  />
+                  <UpdateTitle title="Restorative Circles in Auroville" />
+                  <WebsiteSchema data={websiteSchemaData} />
+                  <OrganisationSchema data={organisationSchemaData} />
+                  <StickyContainer>
+                    <Header
+                      isDesktop={matches}
+                      typeClass={typeClass}
+                      {...this.props}
+                    />
+                    <main
+                      role="main"
+                      className={matches ? goldenMajorBlock : bleedBlock}
+                    >
+                      {children}
+                    </main>
+                    <Footer isDesktop={matches} />
+                  </StickyContainer>
+                  <Typekit kitId="jdd4npp" />
+                </div>
+              )}
+            </MediaQuery>
+          )
+        }}
+      </ContainerDimensions>
     )
   }
 }
