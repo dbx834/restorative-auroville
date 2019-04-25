@@ -192,7 +192,6 @@ class Layout extends React.Component {
     const { children, className = '' } = this.props
     const { typeClass, defaultMediaQueryValues } = this.state
     const classNameX = `${typeClass} ${style} ${className}`
-    console.log('render')
 
     return (
       <MediaQuery minWidth={992} values={defaultMediaQueryValues}>

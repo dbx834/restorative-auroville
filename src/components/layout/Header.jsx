@@ -286,7 +286,6 @@ class Header extends React.Component {
   render() {
     const { mode, isDesktop, typeClass, location } = this.props
     const { current, visible } = this.state
-    const { pathname: currentLocation } = location
 
     return (
       <header className={styleX} id="header">
@@ -336,14 +335,7 @@ class Header extends React.Component {
                                   } = subMenu
                                   return (
                                     <Menu.Item key={keygen()}>
-                                      <Link
-                                        to={thisLink}
-                                        className={
-                                          thisLink === currentLocation
-                                            ? 'active'
-                                            : 'inactive'
-                                        }
-                                      >
+                                      <Link to={thisLink}>
                                         <span>{subTitle}</span>
                                       </Link>
                                     </Menu.Item>
@@ -354,14 +346,7 @@ class Header extends React.Component {
                           } else {
                             returnObj = (
                               <Menu.Item key={keygen()}>
-                                <Link
-                                  to={link}
-                                  className={
-                                    link === currentLocation
-                                      ? 'active'
-                                      : 'inactive'
-                                  }
-                                >
+                                <Link to={link}>
                                   <span style={{ fontSize: '82%' }}>
                                     {title}
                                   </span>
@@ -464,16 +449,7 @@ class Header extends React.Component {
                             const { title: subTitle, link: thisLink } = subMenu
                             return (
                               <Menu.Item key={keygen()}>
-                                <Link
-                                  to={thisLink}
-                                  className={
-                                    thisLink === currentLocation
-                                      ? 'active'
-                                      : 'inactive'
-                                  }
-                                >
-                                  {subTitle}
-                                </Link>
+                                <Link to={thisLink}>{subTitle}</Link>
                               </Menu.Item>
                             )
                           })}
@@ -482,12 +458,7 @@ class Header extends React.Component {
                     } else {
                       returnObj = (
                         <Menu.Item key={keygen()}>
-                          <Link
-                            to={link}
-                            className={
-                              link === currentLocation ? 'active' : 'inactive'
-                            }
-                          >
+                          <Link to={link}>
                             <span>{title}</span>
                           </Link>
                         </Menu.Item>
