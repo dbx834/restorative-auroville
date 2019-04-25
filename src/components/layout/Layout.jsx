@@ -12,7 +12,6 @@ import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import MediaQuery from 'react-responsive'
-import ContainerDimensions from 'react-container-dimensions'
 import Typekit from 'react-typekit'
 import typefn from '@bodhi-project/typography/lib/methods/type'
 import {
@@ -33,6 +32,7 @@ import Header from './Header'
 import Footer from './Footer'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
 export const defaultImage = graphql`
   fragment defaultImage on File {
     childImageSharp {
@@ -168,11 +168,14 @@ class Layout extends React.Component {
 
     this.state = {
       typeClass,
+      client: false,
     }
   }
 
   /** after mount */
   componentDidMount() {
+    this.setState({ client: true })
+
     if (!isUndefined(document)) {
       const htmlElement = document.documentElement
       if (htmlElement.classList.contains('lk-loading')) {
@@ -187,33 +190,25 @@ class Layout extends React.Component {
   /** on mount */
   componentDidUpdate() {
     if (!isUndefined(window)) {
-      const element = document.getElementById('layout')
-      element.scrollTop = 0
+      if (this.state.client === true) {
+        const element = document.getElementById('layout')
+        element.scrollTop = 0
+      }
     }
   }
 
   /** standard renderer */
   render() {
     const { children, className = '' } = this.props
-    const { typeClass } = this.state
+    const { typeClass, client } = this.state
     const classNameX = `${typeClass} ${style} ${className}`
-    const canUseDOM = !!(
-      typeof window !== 'undefined' &&
-      window.document &&
-      window.document.createElement
-    )
 
     return (
-      <ContainerDimensions>
-        {({ width }) => {
-          const height = Math.round(width * 0.62)
-          const defaultMediaQueryValues =
-            canUseDOM === true
-              ? { width, height }
-              : { width: 1440, height: 900 }
-
-          return (
-            <MediaQuery minWidth={992} values={defaultMediaQueryValues}>
+      <Fragment>
+        {client === true && (
+          <Fragment>
+            <br style={{ display: 'none' }} />
+            <MediaQuery minWidth={992}>
               {matches => (
                 <div className={classNameX} id="layout">
                   <InitializeMeta
@@ -240,9 +235,10 @@ class Layout extends React.Component {
                 </div>
               )}
             </MediaQuery>
-          )
-        }}
-      </ContainerDimensions>
+            <br style={{ display: 'none' }} />
+          </Fragment>
+        )}
+      </Fragment>
     )
   }
 }
