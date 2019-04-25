@@ -64,6 +64,32 @@ const style = css({
     borderRadius: '8px !important',
     marginBottom: '20px !important',
   },
+
+  '& .chirpy': {
+    position: 'absolute',
+    bottom: -4,
+    right: -3,
+    height: 75,
+    width: 150,
+    zIndex: 100,
+
+    '& .chirpy-bird': {
+      height: 75,
+      width: 150,
+    },
+
+    '@media(max-width: 400px)': {
+      height: 35,
+      width: 70,
+      bottom: -4,
+      right: -7,
+
+      '& .chirpy-bird': {
+        height: 35,
+        width: 70,
+      },
+    },
+  },
 }).toString()
 
 // ----------------------------------------------------------------------------
@@ -95,28 +121,25 @@ const DisqusComments = props => {
                 width: '100%',
               }}
             >
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: -8,
-                  right: -3,
-                  height: 75,
-                  zIndex: 100,
-                }}
-              >
+              <div className="chirpy">
                 <Image
                   src="/assets/chirp.webp"
                   style={{
                     background: 'transparent',
                     border: 'unset',
-                    height: 75,
-                    width: 150,
                   }}
+                  className="chirpy"
                   rawWidth={1800}
                   rawHeight={900}
                 />
               </div>
-              <div style={{ paddingLeft: 20, width: 'calc(100% - 160px)' }}>
+              <div
+                style={{
+                  paddingLeft: 20,
+                  width: 'calc(100% - 160px)',
+                  minWidth: 310,
+                }}
+              >
                 <p className="mask-h6">
                   <span>Read and/or leave a comment...</span>
                 </p>
