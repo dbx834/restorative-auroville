@@ -201,7 +201,7 @@ class Layout extends React.Component {
     const classNameX = `${typeClass} ${style} ${className}`
 
     return (
-      <MediaQuery minWidth={992} values={defaultMediaQueryValues}>
+      <MediaQuery minWidth={992}>
         {matches => (
           <div className={classNameX} id="layout">
             <InitializeMeta
