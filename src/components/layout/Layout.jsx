@@ -238,6 +238,26 @@ class Layout extends React.Component {
             <br style={{ display: 'none' }} />
           </Fragment>
         )}
+        {client === false && (
+          <Fragment>
+            <div className={classNameX} id="layout">
+              <InitializeMeta
+                data={{ titleTemplate: `%s | ${data.websiteName}` }}
+              />
+              <UpdateTitle title="Restorative Circles in Auroville" />
+              <WebsiteSchema data={websiteSchemaData} />
+              <OrganisationSchema data={organisationSchemaData} />
+              <StickyContainer>
+                <Header isDesktop typeClass={typeClass} {...this.props} />
+                <main role="main" className={goldenMajorBlock}>
+                  {children}
+                </main>
+                <Footer isDesktop />
+              </StickyContainer>
+              <Typekit kitId="jdd4npp" />
+            </div>
+          </Fragment>
+        )}
       </Fragment>
     )
   }
