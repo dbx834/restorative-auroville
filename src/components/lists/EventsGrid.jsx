@@ -141,6 +141,17 @@ const pageStyle = css({
         height: 50,
         fontWeight: 700,
       },
+
+      '@media(max-width: 992px)': {
+        height: 35,
+        marginRight: 4,
+
+        '& h2': {
+          lineHeight: '35px',
+          height: 35,
+          left: 12,
+        },
+      },
     },
 
     '& .event-list': {
@@ -155,6 +166,16 @@ const pageStyle = css({
         marginRight: 5,
         marginLeft: 5,
         height: 50,
+
+        '@media(max-width: 992px)': {
+          minWidth: 35,
+          paddingLeft: 5,
+          paddingRight: 5,
+          marginRight: 2,
+          marginLeft: 2,
+          height: 35,
+        },
+
         position: 'relative',
         transition: 'all 300ms ease-in',
         display: 'flex',
