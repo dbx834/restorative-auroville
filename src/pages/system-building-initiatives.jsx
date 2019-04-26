@@ -42,7 +42,7 @@ const ongoingProjects = reverse(
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
-const pageStyle = css({
+const style = css({
   display: 'block',
   position: 'relative',
 
@@ -53,8 +53,21 @@ const pageStyle = css({
       boxShadow: '2px 4px 0 0 #FF7D00',
     },
   },
-})
-const pageStyles = pageStyle.toString()
+
+  '& .box': {
+    border: '2px solid #00006F',
+    borderRadius: 8,
+    marginTop: 30,
+
+    '@media(min-width: 992px)': {
+      padding: 24,
+    },
+
+    '@media(max-width: 992px)': {
+      padding: 6,
+    },
+  },
+}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -64,7 +77,7 @@ const Ongoingprojects = props => {
   const { isMobile } = props
 
   return (
-    <StandardPage className={pageStyles} seoData={seoData} {...props}>
+    <StandardPage className={style} seoData={seoData} {...props}>
       <h1 className="mask-h3">System-Building Initiatives</h1>
       <p>
         Our approach is to engage with the community at many levels and through
@@ -80,14 +93,7 @@ const Ongoingprojects = props => {
           itemWidth="33%"
         />
       </div>
-      <div
-        style={{
-          border: '2px solid #00006F',
-          padding: 24,
-          borderRadius: 8,
-          marginTop: 30,
-        }}
-      >
+      <div className="box">
         <p>
           In our aim to bring about a cultural shift in Auroville and how we
           engage with conflict, we’re hoping to bring RC and its principles to

@@ -4,7 +4,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 // import PropTypes from 'prop-types'
-// import { css } from "glamor";
+import { css } from 'glamor'
 
 import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
@@ -51,6 +51,27 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
+const style = css({
+  '& .image': {
+    '@media(min-width: 992px)': {
+      marginLeft: '6.25vw',
+      marginRight: '6.25vw',
+    },
+  },
+
+  '& .box': {
+    border: '2px solid #FABB00',
+    borderRadius: 8,
+
+    '@media(min-width: 992px)': {
+      padding: 24,
+    },
+
+    '@media(max-width: 992px)': {
+      padding: 6,
+    },
+  },
+}).toString()
 
 /** Theme */
 const Theme = props => {
@@ -109,7 +130,7 @@ const Theme = props => {
 // ----------------------------------------------------------------------------
 /** Page */
 const Page = props => (
-  <StandardPage className="" seoData={seoData} {...props}>
+  <StandardPage className={style} seoData={seoData} {...props}>
     <h1 className="mask-h3">Restorative Circles</h1>
     <p>
       A Restorative Circle (RC) is a community process designed to hold space
@@ -130,13 +151,7 @@ const Page = props => (
       community.
     </p>
     &nbsp;
-    <div
-      style={{
-        marginLeft: '6.25vw',
-        marginRight: '6.25vw',
-      }}
-      className="margin-p"
-    >
+    <div className="margin-p image">
       <Image
         src={newRestorativeSystemFlyer}
         rawHeight={890}
@@ -168,6 +183,7 @@ const Page = props => (
             empowered ways of restoring harmony and trust amongst us.
           </p>
         </div>
+        <br className="mobile-only" />
       </Col>
       <Col sm={24} md={9}>
         <div
@@ -234,13 +250,7 @@ const Page = props => (
         ]}
       />
     </Division>
-    <div
-      style={{
-        border: '2px solid #FABB00',
-        padding: 24,
-        borderRadius: 8,
-      }}
-    >
+    <div className="box">
       <h2 className="mask-h4">Participating in a Circle</h2>
       <p>
         The RC process is voluntary and open to all. It’s simply a tool that can

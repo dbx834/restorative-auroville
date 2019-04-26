@@ -77,17 +77,13 @@ const style = css({
       height: 75,
       width: 150,
     },
+  },
 
-    '@media(max-width: 400px)': {
-      height: 35,
-      width: 70,
-      bottom: -4,
-      right: -7,
+  '& .instructions': {
+    paddingLeft: 20,
 
-      '& .chirpy-bird': {
-        height: 35,
-        width: 70,
-      },
+    '@media(min-width: 992px)': {
+      width: 'calc(100% - 160px)',
     },
   },
 }).toString()
@@ -121,7 +117,7 @@ const DisqusComments = props => {
                 width: '100%',
               }}
             >
-              <div className="chirpy">
+              <div className="chirpy desktop-only">
                 <Image
                   src="/assets/chirp.webp"
                   style={{
@@ -133,13 +129,7 @@ const DisqusComments = props => {
                   rawHeight={900}
                 />
               </div>
-              <div
-                style={{
-                  paddingLeft: 20,
-                  width: 'calc(100% - 160px)',
-                  minWidth: 310,
-                }}
-              >
+              <div className="instructions">
                 <p className="mask-h6">
                   <span>Read and/or leave a comment...</span>
                 </p>

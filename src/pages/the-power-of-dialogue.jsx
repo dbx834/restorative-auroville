@@ -4,7 +4,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 // import PropTypes from 'prop-types'
-// import { css } from "glamor";
+import { css } from 'glamor'
 
 import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
@@ -73,6 +73,26 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
+const style = css({
+  '& .box': {
+    borderRadius: 4,
+    position: 'relative',
+
+    '@media(min-width: 992px)': {
+      paddingLeft: 18,
+      paddingRight: 18,
+      paddingTop: 36,
+      paddingBottom: 18,
+    },
+
+    '@media(max-width: 992px)': {
+      paddingLeft: 9,
+      paddingRight: 9,
+      paddingTop: 9,
+      paddingBottom: 9,
+    },
+  },
+}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -122,7 +142,7 @@ const Theme = props => {
 
 /** Page */
 const Page = props => (
-  <StandardPage className="" seoData={seoData} {...props}>
+  <StandardPage className={style} seoData={seoData} {...props}>
     <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
       <Col sm={24} md={15}>
         <h1 className="mask-h3">"The Power of Dialogue"</h1>
@@ -135,16 +155,7 @@ const Page = props => (
         </p>
       </Col>
       <Col sm={24} md={9}>
-        <div
-          style={{
-            padding: 18,
-            paddingTop: 36,
-            paddingBottom: 18,
-            borderRadius: 4,
-            position: 'relative',
-          }}
-          className="margin-p"
-        >
+        <div className="margin-p box">
           <div
             style={{
               position: 'absolute',
@@ -153,6 +164,7 @@ const Page = props => (
               height: 40,
               zIndex: -1,
             }}
+            className="desktop-only"
           >
             <Image
               src={camera}

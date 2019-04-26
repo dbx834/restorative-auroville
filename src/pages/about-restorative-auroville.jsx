@@ -4,7 +4,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 // import PropTypes from 'prop-types'
-// import { css } from "glamor";
+import { css } from 'glamor'
 
 import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
@@ -48,6 +48,30 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
+const style = css({
+  '& .box': {
+    borderRadius: 20,
+    position: 'relative',
+
+    '@media(min-width: 992px)': {
+      paddingTop: 48,
+      paddingBottom: 48,
+      paddingLeft: 48,
+      paddingRight: 48,
+      marginLeft: '6.25vw',
+      marginRight: '6.25vw',
+    },
+
+    '@media(max-width: 992px)': {
+      paddingTop: 12,
+      paddingBottom: 12,
+      paddingLeft: 12,
+      paddingRight: 12,
+      marginLeft: '2.25vw',
+      marginRight: '2.25vw',
+    },
+  },
+}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -95,7 +119,7 @@ const Theme = props => {
 
 /** Page */
 const Page = props => (
-  <StandardPage className="" seoData={seoData} {...props}>
+  <StandardPage className={style} seoData={seoData} {...props}>
     <h1 className="mask-h3">Our Project</h1>
     <p>
       Restorative Auroville is an independent project that aims to bring the
@@ -128,19 +152,7 @@ const Page = props => (
       experiments, testimonials, and more.
     </p>
     &nbsp;
-    <div
-      style={{
-        paddingTop: 48,
-        paddingBottom: 48,
-        paddingLeft: 48,
-        paddingRight: 48,
-        marginLeft: '6.25vw',
-        marginRight: '6.25vw',
-        borderRadius: 20,
-        position: 'relative',
-      }}
-      className="margin-p"
-    >
+    <div className="box margin-p">
       <div
         style={{
           position: 'absolute',
@@ -151,6 +163,7 @@ const Page = props => (
         }}
       >
         <Image
+          className="desktop-only"
           src={birdsTop}
           style={{
             background: 'transparent',

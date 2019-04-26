@@ -94,6 +94,30 @@ const styles = css({
       },
     },
   },
+
+  '& .swap': {
+    '@media(min-width: 992px)': {
+      display: 'flex',
+    },
+
+    '@media(max-width: 992px)': {
+      display: 'block',
+    },
+  },
+
+  '& .pad-left-mobile': {
+    '@media(max-width: 992px)': {
+      paddingLeft: 12,
+      paddingBottom: 12,
+    },
+  },
+
+  '& .pad-top-mobile': {
+    '@media(max-width: 992px)': {
+      paddingTop: 12,
+      // paddingBottom: 12,
+    },
+  },
 }).toString()
 
 // ----------------------------------------------------------------------------
@@ -374,7 +398,7 @@ class FeedbackGraph extends React.Component {
             marginBottom: 20,
           }}
         >
-          <div style={{ display: 'flex' }}>
+          <div className="swap">
             <div style={{ width: 220, paddingLeft: 20, paddingRight: 20 }}>
               <PieChart width={180} height={180}>
                 <Pie
@@ -395,6 +419,7 @@ class FeedbackGraph extends React.Component {
                 alignItems: 'center',
                 paddingRight: 20,
               }}
+              className="pad-left-mobile"
             >
               <p style={{ marginBottom: 0 }}>
                 <strong>Question 1.</strong>
@@ -415,7 +440,7 @@ class FeedbackGraph extends React.Component {
             marginBottom: 20,
           }}
         >
-          <div style={{ display: 'flex' }}>
+          <div className="swap">
             <div
               style={{
                 display: 'flex',
@@ -423,6 +448,7 @@ class FeedbackGraph extends React.Component {
                 paddingLeft: 20,
                 paddingRight: 20,
               }}
+              className="pad-top-mobile"
             >
               <p style={{ marginBottom: 0 }}>
                 <strong>Question 2.</strong>
@@ -457,7 +483,7 @@ class FeedbackGraph extends React.Component {
             marginBottom: 20,
           }}
         >
-          <div style={{ display: 'flex' }}>
+          <div className="swap">
             <div style={{ width: 180, paddingLeft: 20, paddingRight: 20 }}>
               <PieChart width={140} height={140}>
                 <Pie
@@ -478,6 +504,7 @@ class FeedbackGraph extends React.Component {
                 alignItems: 'center',
                 paddingRight: 20,
               }}
+              className="pad-left-mobile"
             >
               <p style={{ marginBottom: 0 }}>
                 <strong>Question 3.</strong>
