@@ -10,14 +10,14 @@ import map from 'lodash/map'
 import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Menu from 'antd/lib/menu'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/menu/style/css'
-
 import { Sticky } from 'react-sticky'
 
 import Image from '@bodhi-project/components/lib/Image'
 import container from '@bodhi-project/components/lib/methods/container'
 import keygen from '@bodhi-project/components/lib/methods/keygen'
+
+import Menu from 'antd/lib/menu'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/menu/style/css'
 
 import Drawer from 'antd/lib/drawer'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/drawer/style/css'
