@@ -46,7 +46,7 @@ const renderSwitch = person => {
     case 'michelle':
       return <Michelle />
     case 'nils':
-      return <Nils />
+      return <Nils show={false} />
     case 'celia':
       return <Celia />
     default:
