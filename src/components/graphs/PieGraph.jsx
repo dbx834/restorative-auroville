@@ -103,7 +103,7 @@ const yearData = [
   },
   {
     name: '2018',
-    value: 104,
+    value: 105,
     fill: '#eb80ff',
     opacity: '0.88',
     suffix: 'unique participants',

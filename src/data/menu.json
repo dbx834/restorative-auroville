@@ -59,6 +59,11 @@
         "title": "Community Events",
         "link": "/community-events",
         "mobileOnly": false
+      },
+      {
+        "title": "Outreach",
+        "link": "/outreach",
+        "mobileOnly": false
       }
     ],
     "mobileOnly": false
