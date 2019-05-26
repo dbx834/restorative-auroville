@@ -25,6 +25,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/collapse/style/css
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 // import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
+import CATFeedbackResults from '../components/graphs/CATFeedbackResults'
 
 import seoHelper from '../methods/seoHelper'
 
@@ -73,7 +74,17 @@ const style = css({
 // ----------------------------------------------------------------------------
 /** Theme */
 const Theme = props => {
-  const { border, title, files, tag, text, photos, columns } = props
+  const {
+    border,
+    title,
+    files,
+    tag,
+    text,
+    photos,
+    columns,
+    CollapsingComponent,
+    collapsingComponentTitle,
+  } = props
   return (
     <div style={{ paddingLeft: 12, borderLeft: `8px solid ${border}` }}>
       <h2 className="mask-h4">
@@ -108,6 +119,31 @@ const Theme = props => {
                 loader="gradient"
                 columns={{ min: 3, max: 3 }}
               />
+            </Panel>
+          </Collapse>
+        </div>
+      )}
+      {!isUndefined(CollapsingComponent) && (
+        <div className="mask-p">
+          <Collapse
+            defaultActiveKey={['9']}
+            accordion
+            bordered={false}
+            className={style}
+          >
+            <Panel
+              header={
+                <p style={{ marginBottom: 0 }}>
+                  <a href="#" disabled>
+                    <Icon type="pie-chart" theme="outlined" />
+                    &nbsp;{collapsingComponentTitle}
+                  </a>
+                </p>
+              }
+              key="1"
+              showArrow={false}
+            >
+              {CollapsingComponent}
             </Panel>
           </Collapse>
         </div>
@@ -260,11 +296,10 @@ const Page = props => (
         { src: '/archives/public2017/img3.jpg', width: 600, height: 778 },
         { src: '/archives/public2017/img2.jpg', width: 600, height: 450 },
       ]}
+      CollapsingComponent={<CATFeedbackResults />}
+      collapsingComponentTitle="Feedback results"
       columns={3}
       files={[
-        {
-          title: 'Feedback results (coming soon)',
-        },
         {
           title: 'Video Part 1',
           icon: 'youtube',

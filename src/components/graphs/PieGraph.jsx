@@ -78,7 +78,7 @@ const avData = [
   },
   {
     name: 'Total',
-    value: 245,
+    value: 257,
     fill: '#00006F',
     fillBox: '#00006F',
     textColor: '#FFF',
@@ -96,7 +96,7 @@ const yearData = [
   },
   {
     name: '2019',
-    value: 35,
+    value: 51,
     fill: '#ffeb80',
     opacity: '0.88',
     suffix: 'unique participants so far…',
@@ -187,8 +187,8 @@ const YTooltip = props => {
   }
 
   if (!isUndefined(avDatum)) {
-    if (avDatum.value === 245) {
-      text = '245 unique Aurovilians have participated in Circles so far.'
+    if (avDatum.value === 257) {
+      text = '257 unique Aurovilians have participated in Circles so far.'
     }
     if (avDatum.value === 2761) {
       text =
@@ -458,7 +458,7 @@ class PieGraph extends React.Component {
                           data={[
                             {
                               name: 'Total',
-                              value: 245,
+                              value: 257,
                               fill: '#00006F',
                             },
                           ]}
@@ -483,7 +483,7 @@ class PieGraph extends React.Component {
                       marginTop: -35,
                     }}
                   >
-                    <small>Total Participants: 245 so far</small>
+                    <small>Total Participants: 257 so far</small>
                   </p>
                 )}
               </div>
