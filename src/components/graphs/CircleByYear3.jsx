@@ -294,7 +294,7 @@ const generateTicksAndDomainAndRange = data => {
  * @return {[type]}       [description]
  */
 const XTooltip = props => {
-  const { payload } = props
+  const { payload, data } = props
   let circleId = undefined
   let index = undefined
   let circleDetails = undefined
@@ -1008,7 +1008,7 @@ class Sample3 extends React.Component {
                       width={0}
                     />
                     <ZAxis dataKey="size" range={[100, 10000]} />
-                    <Tooltip content={<XTooltip />} />
+                    <Tooltip content={<XTooltip data={data} />} />
 
                     {map(filteredData, (d, i) => {
                       const year = moment(d.times[0].time).format('YYYY')
