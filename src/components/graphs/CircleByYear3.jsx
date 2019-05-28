@@ -17,6 +17,7 @@ import last from 'lodash/last'
 import reverse from 'lodash/reverse'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Img from 'gatsby-image'
 import { Type } from '@bodhi-project/typography'
 import {
   CartesianGrid,
@@ -53,7 +54,6 @@ import Image from '@bodhi-project/components/lib/Image'
 import Division from '@bodhi-project/components/lib/Division'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import { data } from './data/rechartsData2'
 import inArray from '../../methods/inArray'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -325,10 +325,8 @@ const XTooltip = props => {
         >
           {!isUndefined(circleDetails.wordCloud) && (
             <Fragment>
-              <Image
-                src={circleDetails.wordCloud}
-                rawWidth={900}
-                rawHeight={900}
+              <Img
+                fluid={circleDetails.wordCloud}
                 style={{
                   height: 'auto',
                   maxWidth: '100%',
@@ -340,6 +338,7 @@ const XTooltip = props => {
                   borderTopRightRadius: 15,
                   background: '#FFF',
                   marginBottom: 0,
+                  padding: 6,
                   display: 'block',
                 }}
                 className="margin-p"
@@ -550,6 +549,8 @@ class Sample3 extends React.Component {
       activeRangeLeft,
       activeRangeRigth,
     } = this.state
+
+    const { data } = this.props
 
     const leftYearTemp = moment(left).format('YYYY')
     const ticks = generateTicks(left, right, resolution)
