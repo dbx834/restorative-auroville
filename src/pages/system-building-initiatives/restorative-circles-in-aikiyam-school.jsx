@@ -50,7 +50,7 @@ const prev = {
 const notes = [
   {
     url:
-      'https://www.restorativeauroville.org/pdfs1/system-building-initiatives-restorative-circles-in-aikiyam-school-conflict-resolution.pdf',
+      'https://www.restorativeauroville.org/pdfs2/system-building-initiatives-restorative-circles-in-aikiyam-school-conflict-resolution.pdf',
     title: 'See more notes',
   },
 ]

@@ -76,7 +76,7 @@ const photos = [
 
 const notes = [
   {
-    url: 'https://www.restorativeauroville.org/pdfs1/filmfest.pdf',
+    url: 'https://www.restorativeauroville.org/pdfs2/filmfest.pdf',
     title: 'See movie timetable',
     width: '40%',
   },
@@ -218,12 +218,12 @@ const Initiative = props => {
               {
                 title: 'Project Proposal',
                 link:
-                  'https://www.restorativeauroville.org/pdfs1/restoring-connection-film-fest-project-proposal.pdf',
+                  'https://www.restorativeauroville.org/pdfs2/restoring-connection-film-fest-project-proposal.pdf',
               },
               {
                 title: 'Report',
                 link:
-                  'https://www.restorativeauroville.org/pdfs1/filmfest-report.pdf',
+                  'https://www.restorativeauroville.org/pdfs2/filmfest-report.pdf',
               },
               {
                 title: 'See "Auroville Today" article',

@@ -151,6 +151,14 @@ const Page = props => (
       schools, public presentations and interactions, large-scale events,
       experiments, testimonials, and more.
     </p>
+    <p>
+      Restorative Auroville is an initiative of&nbsp;
+      <OutLink to="https://www.joylivinglearning.org/">
+        Joy Living Learning
+      </OutLink>
+      , a Unit of the&nbsp;
+      <OutLink to="https://www.auroville.org/">Auroville Foundation</OutLink>.
+    </p>
     &nbsp;
     <div className="box margin-p">
       <div
@@ -251,17 +259,17 @@ const Page = props => (
             {
               title: 'Project Proposal',
               link:
-                'https://www.restorativeauroville.org/pdfs1/applied-research-restorative-circles-in-auroville.pdf',
+                'https://www.restorativeauroville.org/pdfs2/applied-research-restorative-circles-in-auroville.pdf',
             },
             {
               title: '6-month Report',
               link:
-                'https://www.restorativeauroville.org/pdfs1/restorative-auroville-6-month-report.pdf',
+                'https://www.restorativeauroville.org/pdfs2/restorative-auroville-6-month-report.pdf',
             },
             {
               title: '1-year Report',
               link:
-                'https://www.restorativeauroville.org/pdfs1/restorative-auroville-year-end-report.pdf',
+                'https://www.restorativeauroville.org/pdfs2/restorative-auroville-year-end-report.pdf',
             },
           ]}
         />
@@ -271,14 +279,6 @@ const Page = props => (
         <Video url="https://www.youtube.com/watch?v=kqBM5Xr5VfI&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=10" />
       </div>
     </GoldenMajorHalves>
-    <p>
-      Restorative Auroville is an initiative of&nbsp;
-      <OutLink to="https://www.joylivinglearning.org/">
-        Joy Living Learning
-      </OutLink>
-      , a Unit of the&nbsp;
-      <OutLink to="https://www.auroville.org/">Auroville Foundation</OutLink>.
-    </p>
     <DisqusComments pageData={pageData} />
   </StandardPage>
 )

@@ -59,15 +59,15 @@ const Initiative = props => {
       <Division>
         <Fragment>
           <h2 className="mask-h5">
-            Restorative Circles Workshop with ISABS (Delhi)
-          </h2>
-          <Video url="https://www.youtube.com/watch?v=B7sO2a5_KV8" />
-        </Fragment>
-        <Fragment>
-          <h2 className="mask-h5">
             Restorative Circles Workshop with ISABS (Bangalore)
           </h2>
           <Video url="https://www.youtube.com/watch?v=8H3YNKz1A9Y" />
+        </Fragment>
+        <Fragment>
+          <h2 className="mask-h5">
+            Restorative Circles Workshop with ISABS (Delhi)
+          </h2>
+          <Video url="https://www.youtube.com/watch?v=B7sO2a5_KV8" />
         </Fragment>
       </Division>
       <br />

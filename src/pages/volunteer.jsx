@@ -129,8 +129,10 @@ const Page = props => (
         <VolunteerForm />
       </Col>
       <Col sm={24} md={9}>
-        <h2 className="mask-h3">Our apprentice, Henrike, shares…</h2>
-        <Video url="https://www.youtube.com/watch?v=WEc1itWPQVY" />
+        <h2 className="mask-h3" style={{ lineHeight: 1.2 }}>
+          Our apprentice, Henrike, shares…
+        </h2>
+        <Video url="https://www.youtube.com/watch?v=bXrm9tUW4fU" />
       </Col>
     </Row>
   </StandardPage>

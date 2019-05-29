@@ -3,28 +3,57 @@
 // ------------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
-import PropTypes from 'prop-types'
 import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Disqus from 'disqus-react'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import Image from '@bodhi-project/components/lib/Image'
-
-import Collapse from 'antd/lib/collapse'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/collapse/style/css'
+import DisqusComments from '@bodhi-project/components/lib/DisqusComments'
+import '@bodhi-project/antrd/lib/joy-living-learning/3.13.5/collapse/style/css'
+import '@bodhi-project/antrd/lib/joy-living-learning/3.13.5/icon/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import data from '../data/website.json'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React
-const { Panel } = Collapse
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 const style = css({
+  position: 'relative',
+  marginTop: '80px !important',
+
+  '& .chirpy': {
+    width: 150,
+    height: 60,
+    position: 'absolute',
+    top: -75,
+    right: 0,
+    zIndex: 100,
+  },
+
+  '&.simple': {
+    '& aside': {
+      background: '#f8f8ff !important',
+      paddingLeft: '16px !important',
+      paddingRight: '16px !important',
+      paddingTop: '8px !important',
+      // paddingBottom: '8px !important',
+      border: '1px solid #00006F !important',
+      borderRadius: '8px !important',
+
+      '& > p:nth-child(1)': {
+        display: 'none',
+      },
+
+      '& > p:nth-child(2)': {
+        marginTop: '0px !important',
+      },
+    },
+  },
+
   '& .ant-collapse-header': {
     background: '#f8f8ff !important',
     border: '1px solid #00006F !important',
@@ -65,20 +94,6 @@ const style = css({
     marginBottom: '20px !important',
   },
 
-  '& .chirpy': {
-    position: 'absolute',
-    bottom: -4,
-    right: -3,
-    height: 75,
-    width: 150,
-    zIndex: 100,
-
-    '& .chirpy-bird': {
-      height: 75,
-      width: 150,
-    },
-  },
-
   '& .instructions': {
     paddingLeft: 20,
 
@@ -89,85 +104,55 @@ const style = css({
 }).toString()
 
 // ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+const query = graphql`
+  query {
+    chirpy: file(relativePath: { eq: "chirpy.png" }) {
+      ...defaultImage
+    }
+  }
+`
+
+// ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** DisqusComments */
-const DisqusComments = props => {
-  const { pageData } = props
-  const disqusShortname = 'restorativeauroville'
-  const disqusConfig = {
-    url: `${data.websiteUrl}${pageData.nakedPageSlug}`,
-    identifier: `${data.websiteUrl}${pageData.nakedPageSlug}`,
-    title: pageData.pageTitle,
-  }
+/** DisqusCommentsX */
+const DisqusCommentsX = ({
+  pageData,
+  collapsible = false,
+  text = 'Please share your thoughts and inspiration. Our hope is for these comments to create a space for collective wisdom to emerge on Restorative Circles and justice. And a little request to please stay on topic and to keep your comments relevant and practical, so that other viewers are benefited.',
+}) => {
+  const styleX = `${style} mask-p`
 
   return (
-    <div className="mask-p">
-      <Collapse
-        defaultActiveKey={['9']}
-        accordion
-        bordered={false}
-        className={style}
-      >
-        <Panel
-          header={
-            <div
-              style={{
-                position: 'relative',
-                width: '100%',
-              }}
-            >
-              <div className="chirpy desktop-only">
-                <Image
-                  src="/assets/chirp.webp"
-                  style={{
-                    background: 'transparent',
-                    border: 'unset',
-                  }}
-                  className="chirpy"
-                  rawWidth={1800}
-                  rawHeight={900}
-                />
-              </div>
-              <div className="instructions">
-                <p className="mask-h6">
-                  <span>Read and/or leave a comment...</span>
-                </p>
-                <p style={{ marginTop: 0 }}>
-                  <span>
-                    Please share your thoughts and inspiration. Our hope is for
-                    these comments to create a space for collective wisdom to
-                    emerge on Restorative Circles and justice. And a little
-                    request to please stay on topic and to keep your comments
-                    relevant and practical, so that other viewers are benefited.
-                  </span>
-                </p>
-                <p style={{ marginBottom: 0 }}>
-                  <span>Click to open the Disqus window.</span>
-                </p>
-              </div>
-            </div>
-          }
-          key="1"
-          showArrow
-        >
-          <aside>
-            <Disqus.DiscussionEmbed
-              shortname={disqusShortname}
-              config={disqusConfig}
-            />
-          </aside>
-        </Panel>
-      </Collapse>
+    <div
+      className={`${collapsible === false ? 'simple' : 'collapse'} ${styleX}`}
+    >
+      <StaticQuery
+        query={query}
+        render={data => (
+          <div className="chirpy">
+            <Img fluid={data.chirpy.childImageSharp.fluid} />
+          </div>
+        )}
+      />
+      <DisqusComments
+        data={{
+          websiteUrl: 'https://www.restorativeauroville.org/',
+          disqusConfig: {
+            disqusShortname: 'restorativeauroville',
+          },
+        }}
+        pageData={pageData}
+        text={text}
+        collapsible={collapsible}
+      />
     </div>
   )
-}
-
-DisqusComments.propTypes = {
-  pageData: PropTypes.object,
 }
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default DisqusComments
+export default DisqusCommentsX

@@ -605,358 +605,6 @@ class Sample3 extends React.Component {
               }}
             />
           </Button>
-          <Popover
-            placement="leftTop"
-            overlayClassName={legendClass}
-            content={
-              <Type
-                kit="jdd4npp"
-                options={{
-                  range: [12, 20], // Min and Max font-sizes
-                  paragraphSpacingFactor: 1.2, // Greater for tighter paragraph-paragraph spacing
-                  headingParagraphGapSpacingFactor: 0, // Greater for tighter header-paragraph spacing
-                  indentParagraphs: false,
-                }}
-                style={{ maxWidth: 800, background: '#FAFAFA', padding: 9 }}
-              >
-                <h3 className="mask-h5" style={{ marginBottom: 8 }}>
-                  Legend
-                </h3>
-                <Division>
-                  <div>
-                    <h4 className="mask-h5">
-                      <small>The Complete Circle</small>
-                    </h4>
-                    <Image
-                      src="https://ucarecdn.com/2380d479-20eb-4f55-bfdf-93c435c6f2af/graph1_legend1.webp"
-                      rawWidth={2000}
-                      rawHeight={400}
-                      style={{
-                        height: 'auto',
-                        width: '100%',
-                        display: 'block',
-                        marginBottom: 7,
-                        border: 'unset',
-                      }}
-                    />
-                    <p style={{ marginBottom: 11 }}>
-                      <small>
-                        An example of a Circle's complete process over time,
-                        from Pre-Circle to Post-Circle.
-                      </small>
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="mask-h5">
-                      <small>The Circle Process</small>
-                    </h4>
-                    <Popover
-                      title={false}
-                      content={
-                        <div style={{ width: 450 }}>
-                          <Image
-                            src="https://ucarecdn.com/2c2ee637-3701-46a3-8d7e-023f1ca29057/rcprocess.webp"
-                            rawWidth={1324}
-                            rawHeight={890}
-                            style={{
-                              height: 'auto',
-                              width: '100%',
-                              maxWidth: 450,
-                              display: 'block',
-                              marginBottom: 0,
-                              border: 'unset',
-                            }}
-                          />
-                        </div>
-                      }
-                      style={{ padding: 0 }}
-                    >
-                      <div style={{ cursor: 'pointer' }}>
-                        <Image
-                          src="https://ucarecdn.com/c16ee457-d489-4b7a-96c7-21d1a2ba92c8/graph1_legend0.webp"
-                          rawWidth={2000}
-                          rawHeight={400}
-                          style={{
-                            height: 'auto',
-                            width: '100%',
-                            display: 'block',
-                            marginBottom: 7,
-                            border: 'unset',
-                          }}
-                        />
-                      </div>
-                    </Popover>
-                    <p style={{ marginBottom: 11 }}>
-                      <small>
-                        A Restorative Circle (RC) is a community process
-                        designed to hold space for those in conflict.
-                      </small>
-                    </p>
-                  </div>
-                </Division>
-
-                <Division className="desktop-only">
-                  <div>
-                    <div style={{ display: 'flex' }}>
-                      <div
-                        style={{
-                          flexGrow: 20,
-                          flexBasis: 0,
-                          marginRight: 7,
-                        }}
-                      >
-                        <Image
-                          src="https://ucarecdn.com/379f8800-bf20-4816-acbb-27461850a1fc/graph1_legend2.webp"
-                          rawWidth={900}
-                          rawHeight={500}
-                          style={{
-                            height: 'auto',
-                            width: '80%',
-                            display: 'block',
-                            border: 'unset',
-                            background: 'unset',
-                            margin: 'auto',
-                          }}
-                          className="margin-p"
-                        />
-                      </div>
-                      <div
-                        style={{
-                          flexGrow: 80,
-                          flexBasis: 0,
-                        }}
-                      >
-                        <h4
-                          className="mask-h5"
-                          style={{ marginTop: -11, marginBottom: 0 }}
-                        >
-                          <small>Circle Number</small>
-                        </h4>
-                        <p style={{ marginBottom: 11 }}>
-                          <small>
-                            Our Circles are recorded chronologically, so the
-                            number indicates this order over time. The highest
-                            number also indicates our total number of completed
-                            Circles (from 2016 onwards).
-                          </small>
-                        </p>
-                      </div>
-                    </div>
-
-                    <div style={{ display: 'flex' }}>
-                      <div
-                        style={{
-                          flexGrow: 20,
-                          flexBasis: 0,
-                          marginRight: 7,
-                        }}
-                      >
-                        <Image
-                          src="https://ucarecdn.com/25f11b47-e27e-4158-889b-b984bd71d405/graph1_legend3.webp"
-                          rawWidth={900}
-                          rawHeight={900}
-                          style={{
-                            height: 'auto',
-                            width: '80%',
-                            display: 'block',
-                            border: 'unset',
-                            background: 'unset',
-                            margin: 'auto',
-                          }}
-                          className="margin-p"
-                        />
-                      </div>
-                      <div
-                        style={{
-                          flexGrow: 80,
-                          flexBasis: 0,
-                        }}
-                      >
-                        <h4
-                          className="mask-h5"
-                          style={{ marginTop: -11, marginBottom: 0 }}
-                        >
-                          <small>Pre-Circle(s)</small>
-                        </h4>
-                        <p>
-                          <small>
-                            Indicates when the 1st Pre-Circle took place with
-                            the Circle Initiator, the person calling the Circle.
-                            (For simplicity, the dates of the consecutive
-                            Pre-Circles with the remaining Circle members are
-                            not indicated.)
-                          </small>
-                        </p>
-                        <p style={{ marginBottom: 11 }}>
-                          <small>
-                            The size of the outer bounds indicates the number of
-                            people who were named (to be invited to the Circle),
-                            whereas the inner bounds indicates the actual number
-                            of people who attended the Circle process.
-                          </small>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div style={{ display: 'flex' }}>
-                      <div
-                        style={{
-                          flexGrow: 12,
-                          flexBasis: 0,
-                          marginRight: 7,
-                        }}
-                      >
-                        <Image
-                          src="https://ucarecdn.com/2ed84125-02b1-482d-ac49-a5a04103f23b/graph1_legend4.webp"
-                          rawWidth={900}
-                          rawHeight={900}
-                          style={{
-                            height: 'auto',
-                            width: '80%',
-                            display: 'block',
-                            border: 'unset',
-                            background: 'unset',
-                            margin: 'auto',
-                          }}
-                          className="margin-p"
-                        />
-                      </div>
-                      <div
-                        style={{
-                          flexGrow: 88,
-                          flexBasis: 0,
-                        }}
-                      >
-                        <h4
-                          className="mask-h5"
-                          style={{ marginTop: -11, marginBottom: 0 }}
-                        >
-                          <small>Circle</small>
-                        </h4>
-                        <p style={{ marginBottom: 11 }}>
-                          <small>
-                            Indicates when the Circle took place (sometimes in
-                            multiple meetings) and its size (number of people
-                            who attended the Circle process).
-                          </small>
-                        </p>
-                      </div>
-                    </div>
-
-                    <div style={{ display: 'flex' }}>
-                      <div
-                        style={{
-                          flexGrow: 12,
-                          flexBasis: 0,
-                          marginRight: 7,
-                        }}
-                      >
-                        <Image
-                          src="https://ucarecdn.com/9ebd2b9d-8f2a-466a-9694-37c09bcebdb0/graph1_legend5.webp"
-                          rawWidth={900}
-                          rawHeight={900}
-                          style={{
-                            height: 'auto',
-                            width: '80%',
-                            display: 'block',
-                            border: 'unset',
-                            background: 'unset',
-                            margin: 'auto',
-                          }}
-                          className="margin-p"
-                        />
-                      </div>
-                      <div
-                        style={{
-                          flexGrow: 88,
-                          flexBasis: 0,
-                        }}
-                      >
-                        <h4
-                          className="mask-h5"
-                          style={{ marginTop: -11, marginBottom: 0 }}
-                        >
-                          <small>Post-Circle(s)</small>
-                        </h4>
-                        <p style={{ marginBottom: 11 }}>
-                          <small>
-                            Indicates when the Post-Circle(s) took place and its
-                            size (number of people who attended the Circle
-                            process).
-                          </small>
-                        </p>
-                      </div>
-                    </div>
-
-                    <div style={{ display: 'flex' }}>
-                      <div
-                        style={{
-                          flexGrow: 12,
-                          flexBasis: 0,
-                          marginRight: 7,
-                        }}
-                      >
-                        <Image
-                          src="https://ucarecdn.com/e15f7f54-2516-4ef3-997c-177034da9f9f/graph1_legend6.webp"
-                          rawWidth={1423}
-                          rawHeight={900}
-                          style={{
-                            height: 'auto',
-                            width: '100%',
-                            display: 'block',
-                            border: 'unset',
-                            background: 'unset',
-                          }}
-                          className="margin-p"
-                        />
-                      </div>
-                      <div
-                        style={{
-                          flexGrow: 88,
-                          flexBasis: 0,
-                        }}
-                      >
-                        <h4
-                          className="mask-h6"
-                          style={{ marginTop: -11, marginBottom: 0 }}
-                        >
-                          <small>Pop-Up</small>
-                        </h4>
-                        <p style={{ marginBottom: 11 }}>
-                          <small>
-                            When you hover over the graphics, a pop-up appears
-                            with additional information about each Circle: a
-                            word-cloud with key words from the Circle’s Act and
-                            Action Agreements, the dates for when the Circle(s)
-                            took place, as well as how many people were named
-                            and how many attended the Circle process).
-                          </small>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </Division>
-              </Type>
-            }
-          >
-            <Button
-              style={{ boxShadow: 'unset', height: 32, borderColor: '#2c2c2c' }}
-              shape="circle"
-            >
-              <Image
-                src="/graphs/info2.webp"
-                style={{
-                  height: 14,
-                  width: 6,
-                  display: 'block',
-                  margin: 'auto',
-                  border: 'unset',
-                  background: 'unset',
-                }}
-              />
-            </Button>
-          </Popover>
         </div>
         <ContainerDimensions>
           {({ width }) => {
@@ -1124,6 +772,324 @@ class Sample3 extends React.Component {
           </div>
         </div>
         <br />
+        <div style={{ background: '#FAFAFA', padding: 9 }}>
+          <h3 className="mask-h5" style={{ marginBottom: 8 }}>
+            Legend
+          </h3>
+          <Division>
+            <div>
+              <h4 className="mask-h5">
+                <small>The Complete Circle</small>
+              </h4>
+              <Image
+                src="https://ucarecdn.com/2380d479-20eb-4f55-bfdf-93c435c6f2af/graph1_legend1.webp"
+                rawWidth={2000}
+                rawHeight={400}
+                style={{
+                  height: 'auto',
+                  width: '100%',
+                  display: 'block',
+                  marginBottom: 7,
+                  border: 'unset',
+                }}
+              />
+              <p style={{ marginBottom: 11 }}>
+                <small>
+                  An example of a Circle's complete process over time, from
+                  Pre-Circle to Post-Circle.
+                </small>
+              </p>
+            </div>
+            <div>
+              <h4 className="mask-h5">
+                <small>The Circle Process</small>
+              </h4>
+              <Popover
+                title={false}
+                content={
+                  <div style={{ width: 450 }}>
+                    <Image
+                      src="https://ucarecdn.com/2c2ee637-3701-46a3-8d7e-023f1ca29057/rcprocess.webp"
+                      rawWidth={1324}
+                      rawHeight={890}
+                      style={{
+                        height: 'auto',
+                        width: '100%',
+                        maxWidth: 450,
+                        display: 'block',
+                        marginBottom: 0,
+                        border: 'unset',
+                      }}
+                    />
+                  </div>
+                }
+                style={{ padding: 0 }}
+              >
+                <div style={{ cursor: 'pointer' }}>
+                  <Image
+                    src="https://ucarecdn.com/c16ee457-d489-4b7a-96c7-21d1a2ba92c8/graph1_legend0.webp"
+                    rawWidth={2000}
+                    rawHeight={400}
+                    style={{
+                      height: 'auto',
+                      width: '100%',
+                      display: 'block',
+                      marginBottom: 7,
+                      border: 'unset',
+                    }}
+                  />
+                </div>
+              </Popover>
+              <p style={{ marginBottom: 11 }}>
+                <small>
+                  A Restorative Circle (RC) is a community process designed to
+                  hold space for those in conflict.
+                </small>
+              </p>
+            </div>
+          </Division>
+
+          <Division className="desktop-only">
+            <div>
+              <div style={{ display: 'flex' }}>
+                <div
+                  style={{
+                    flexGrow: 20,
+                    flexBasis: 0,
+                    marginRight: 7,
+                  }}
+                >
+                  <Image
+                    src="https://ucarecdn.com/379f8800-bf20-4816-acbb-27461850a1fc/graph1_legend2.webp"
+                    rawWidth={900}
+                    rawHeight={500}
+                    style={{
+                      height: 'auto',
+                      width: '80%',
+                      display: 'block',
+                      border: 'unset',
+                      background: 'unset',
+                      margin: 'auto',
+                    }}
+                    className="margin-p"
+                  />
+                </div>
+                <div
+                  style={{
+                    flexGrow: 80,
+                    flexBasis: 0,
+                  }}
+                >
+                  <h4
+                    className="mask-h5"
+                    style={{ marginTop: -11, marginBottom: 0 }}
+                  >
+                    <small>Circle Number</small>
+                  </h4>
+                  <p style={{ marginBottom: 11 }}>
+                    <small>
+                      Our Circles are recorded chronologically, so the number
+                      indicates this order over time. The highest number also
+                      indicates our total number of completed Circles (from 2016
+                      onwards).
+                    </small>
+                  </p>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex' }}>
+                <div
+                  style={{
+                    flexGrow: 20,
+                    flexBasis: 0,
+                    marginRight: 7,
+                  }}
+                >
+                  <Image
+                    src="https://ucarecdn.com/25f11b47-e27e-4158-889b-b984bd71d405/graph1_legend3.webp"
+                    rawWidth={900}
+                    rawHeight={900}
+                    style={{
+                      height: 'auto',
+                      width: '80%',
+                      display: 'block',
+                      border: 'unset',
+                      background: 'unset',
+                      margin: 'auto',
+                    }}
+                    className="margin-p"
+                  />
+                </div>
+                <div
+                  style={{
+                    flexGrow: 80,
+                    flexBasis: 0,
+                  }}
+                >
+                  <h4
+                    className="mask-h5"
+                    style={{ marginTop: -11, marginBottom: 0 }}
+                  >
+                    <small>Pre-Circle(s)</small>
+                  </h4>
+                  <p>
+                    <small>
+                      Indicates when the 1st Pre-Circle took place with the
+                      Circle Initiator, the person calling the Circle. (For
+                      simplicity, the dates of the consecutive Pre-Circles with
+                      the remaining Circle members are not indicated.)
+                    </small>
+                  </p>
+                  <p style={{ marginBottom: 11 }}>
+                    <small>
+                      The size of the outer bounds indicates the number of
+                      people who were named (to be invited to the Circle),
+                      whereas the inner bounds indicates the actual number of
+                      people who attended the Circle process.
+                    </small>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div style={{ display: 'flex' }}>
+                <div
+                  style={{
+                    flexGrow: 12,
+                    flexBasis: 0,
+                    marginRight: 7,
+                  }}
+                >
+                  <Image
+                    src="https://ucarecdn.com/2ed84125-02b1-482d-ac49-a5a04103f23b/graph1_legend4.webp"
+                    rawWidth={900}
+                    rawHeight={900}
+                    style={{
+                      height: 'auto',
+                      width: '80%',
+                      display: 'block',
+                      border: 'unset',
+                      background: 'unset',
+                      margin: 'auto',
+                    }}
+                    className="margin-p"
+                  />
+                </div>
+                <div
+                  style={{
+                    flexGrow: 88,
+                    flexBasis: 0,
+                  }}
+                >
+                  <h4
+                    className="mask-h5"
+                    style={{ marginTop: -11, marginBottom: 0 }}
+                  >
+                    <small>Circle</small>
+                  </h4>
+                  <p style={{ marginBottom: 11 }}>
+                    <small>
+                      Indicates when the Circle took place (sometimes in
+                      multiple meetings) and its size (number of people who
+                      attended the Circle process).
+                    </small>
+                  </p>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex' }}>
+                <div
+                  style={{
+                    flexGrow: 12,
+                    flexBasis: 0,
+                    marginRight: 7,
+                  }}
+                >
+                  <Image
+                    src="https://ucarecdn.com/9ebd2b9d-8f2a-466a-9694-37c09bcebdb0/graph1_legend5.webp"
+                    rawWidth={900}
+                    rawHeight={900}
+                    style={{
+                      height: 'auto',
+                      width: '80%',
+                      display: 'block',
+                      border: 'unset',
+                      background: 'unset',
+                      margin: 'auto',
+                    }}
+                    className="margin-p"
+                  />
+                </div>
+                <div
+                  style={{
+                    flexGrow: 88,
+                    flexBasis: 0,
+                  }}
+                >
+                  <h4
+                    className="mask-h5"
+                    style={{ marginTop: -11, marginBottom: 0 }}
+                  >
+                    <small>Post-Circle(s)</small>
+                  </h4>
+                  <p style={{ marginBottom: 11 }}>
+                    <small>
+                      Indicates when the Post-Circle(s) took place and its size
+                      (number of people who attended the Circle process).
+                    </small>
+                  </p>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex' }}>
+                <div
+                  style={{
+                    flexGrow: 12,
+                    flexBasis: 0,
+                    marginRight: 7,
+                  }}
+                >
+                  <Image
+                    src="https://ucarecdn.com/e15f7f54-2516-4ef3-997c-177034da9f9f/graph1_legend6.webp"
+                    rawWidth={1423}
+                    rawHeight={900}
+                    style={{
+                      height: 'auto',
+                      width: '100%',
+                      display: 'block',
+                      border: 'unset',
+                      background: 'unset',
+                    }}
+                    className="margin-p"
+                  />
+                </div>
+                <div
+                  style={{
+                    flexGrow: 88,
+                    flexBasis: 0,
+                  }}
+                >
+                  <h4
+                    className="mask-h6"
+                    style={{ marginTop: -11, marginBottom: 0 }}
+                  >
+                    <small>Pop-Up</small>
+                  </h4>
+                  <p style={{ marginBottom: 11 }}>
+                    <small>
+                      When you hover over the graphics, a pop-up appears with
+                      additional information about each Circle: a word-cloud
+                      with key words from the Circle’s Act and Action
+                      Agreements, the dates for when the Circle(s) took place,
+                      as well as how many people were named and how many
+                      attended the Circle process).
+                    </small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Division>
+        </div>
       </div>
     )
   }

@@ -76,7 +76,7 @@ const photos = [
 const notes = [
   {
     url:
-      'https://www.restorativeauroville.org/pdfs1/world-cafes-on-peace-and-justice-table-notes.pdf',
+      'https://www.restorativeauroville.org/pdfs2/world-cafes-on-peace-and-justice-table-notes.pdf',
     title: 'See additional notes',
   },
 ]

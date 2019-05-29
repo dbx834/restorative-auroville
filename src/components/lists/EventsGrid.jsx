@@ -635,7 +635,7 @@ class EventsGrid extends React.Component {
           placement="left"
         >
           <Type
-            kit="dkc2ilk"
+            kit="jdd4npp"
             style={{ minHeight: '100vh' }}
             options={{
               range: [12, 20], // Min and Max font-sizes

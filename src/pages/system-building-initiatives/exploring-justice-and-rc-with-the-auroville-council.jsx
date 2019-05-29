@@ -36,7 +36,7 @@ const seoData = seoHelper(pageData)
 const notes = [
   {
     url:
-      'https://www.restorativeauroville.org/pdfs1/system-building-initiatives-exploring-justice-and-rc-with-the-auroville-council.pdf',
+      'https://www.restorativeauroville.org/pdfs2/system-building-initiatives-exploring-justice-and-rc-with-the-auroville-council.pdf',
     title: 'See more notes',
   },
 ]

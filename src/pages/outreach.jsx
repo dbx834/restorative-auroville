@@ -85,7 +85,7 @@ const Ongoingprojects = props => {
       title: 'Restorative Circles in ISABS',
       cover: props.data.isabs.childImageSharp.fluid,
       route: 'outreach/restorative-circles-in-isabs',
-      formattedDate: 'Feb 2018 - ongoing',
+      formattedDate: 'Feb 2018 - Ongoing',
       abstract: 'Restorative Circles in ISABS…',
     },
     {
@@ -101,9 +101,8 @@ const Ongoingprojects = props => {
     <StandardPage className={style} seoData={seoData} {...props}>
       <h1 className="mask-h3">Outreach</h1>
       <p>
-        Our approach is to engage with the community at many levels and through
-        different initiatives, with a real longing to grow and transform our
-        systems together.
+        Our intention is to make this work as available as possible and to share
+        it with communities and projects that are seeking to shift paradigms.
       </p>
       <div className="margin-p">
         <Grid data={data} Img={Img} Link={Link} />

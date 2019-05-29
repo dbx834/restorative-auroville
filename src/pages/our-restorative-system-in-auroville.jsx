@@ -106,7 +106,7 @@ const Page = props => (
     <div style={{ background: '#d1d1d1' }}>
       <div className="pdf">
         <PDFReader
-          url="https://www.restorativeauroville.org/pdfs1/av-rc-system.pdf"
+          url="https://www.restorativeauroville.org/pdfs2/av-rc-system.pdf"
           className={pdfStyles}
         />
       </div>

@@ -105,7 +105,7 @@ const PDFViewer = props => {
   const { url, title = 'See PDF', width = '100%' } = props
 
   return (
-    <div className="mask-p">
+    <div className="mask-p" style={{ maxWidth: 'calc(100% - 200px)' }}>
       <div>
         <Collapse
           defaultActiveKey={['9']}
