@@ -82,18 +82,20 @@ const style = css({
 const Ongoingprojects = props => {
   const data = [
     {
-      title: 'Restorative Circles in ISABS',
+      title: 'Restorative Circles with ISABS',
       cover: props.data.isabs.childImageSharp.fluid,
-      route: 'outreach/restorative-circles-in-isabs',
+      route: 'outreach/restorative-circles-with-isabs',
       formattedDate: 'Feb 2018 - Ongoing',
-      abstract: 'Restorative Circles in ISABS…',
+      abstract:
+        'Members from ISABS have been excited about the possibility of setting up an RC System within their organization, offering a space and shared agreements for difficult conversations.',
     },
     {
       title: 'Restorative Circles with Enfold',
       cover: props.data.enfold.childImageSharp.fluid,
       route: 'outreach/restorative-circles-with-enfold',
       formattedDate: 'Nov 2018',
-      abstract: 'Restorative Circles with Enfold…',
+      abstract:
+        'Enfold works with at-risk youth and those in detention centres, offering them spaces to be heard and to reconnect with their own humanity.',
     },
   ]
 

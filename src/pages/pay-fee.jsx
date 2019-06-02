@@ -66,8 +66,8 @@ const Page = props => (
           <p>
             Select the Domestic option for Indian bank/credit cards, or the
             International option for foreign bank/credit cards. You will be
-            directed to Joy Living Learning's payment gateways, (the parent
-            entity for Restorative Auroville).
+            directed to Joy Living Learning's (the parent
+            entity for Restorative Auroville) payment gateway.
           </p>
           <div className="mask-p">
             <OutLink

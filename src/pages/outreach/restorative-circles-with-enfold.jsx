@@ -7,12 +7,13 @@ import PropTypes from 'prop-types'
 // import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// import Images from '@bodhi-project/components/lib/Images'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
+import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import OutreachPageWrapper from '../../components/wrappers/OutreachPageWrapper'
-
-import Link from '../../components/Link'
 
 import seoHelper from '../../methods/seoHelper'
 
@@ -22,7 +23,8 @@ import seoHelper from '../../methods/seoHelper'
 const pageData = {
   pageTitle: 'Restorative Circles with Enfold',
   nakedPageSlug: 'outreach/restorative-circles-with-enfold',
-  pageAbstract: 'Restorative Circles with Enfold…',
+  pageAbstract:
+    'Enfold works with at-risk youth and those in detention centres, offering them spaces to be heard and to reconnect with their own humanity. In addition to their own processes, they were curious about what more they might gain through Restorative Circles.',
 }
 
 const seoData = seoHelper(pageData)
@@ -32,8 +34,28 @@ const next = {
 }
 
 const prev = {
-  nakedPageSlug: 'outreach/restorative-circles-in-isabs',
+  nakedPageSlug: 'outreach/restorative-circles-with-isabs',
 }
+
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    enfold00003: file(relativePath: { eq: "outreach/enfold00003.jpeg" }) {
+      ...defaultImage
+    }
+    enfold00002: file(relativePath: { eq: "outreach/enfold00002.jpeg" }) {
+      ...defaultImage
+    }
+    enfold00001: file(relativePath: { eq: "outreach/enfold00001.jpeg" }) {
+      ...defaultImage
+    }
+    enfold00004: file(relativePath: { eq: "outreach/enfold00004.jpeg" }) {
+      ...defaultImage
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -50,7 +72,20 @@ const Initiative = props => {
       {...props}
     >
       <h1 className="mask-h3">Restorative Circles with Enfold</h1>
-      <p>Coming soon…</p>
+      <p>
+        Enfold works with at-risk youth and those in detention centres, offering
+        them spaces to be heard and to reconnect with their own humanity. In
+        addition to their own processes, they were curious about what more they
+        might gain through Restorative Circles.
+      </p>
+      <div className="mask-p">
+        <Gallery
+          data={props.data}
+          lookup="enfold"
+          columns={{ min: 2, max: 2 }}
+          Img={Img}
+        />
+      </div>
       <br />
     </OutreachPageWrapper>
   )

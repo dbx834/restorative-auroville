@@ -7,7 +7,10 @@ import PropTypes from 'prop-types'
 // import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-// import Images from '@bodhi-project/components/lib/Images'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
+import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
 
 import Video from '@bodhi-project/components/lib/Video'
 
@@ -26,9 +29,10 @@ import seoHelper from '../../methods/seoHelper'
 const { Fragment } = React
 
 const pageData = {
-  pageTitle: 'Restorative Circles in ISABS',
-  nakedPageSlug: 'outreach/restorative-circles-in-isabs',
-  pageAbstract: 'Restorative Circles in ISABS…',
+  pageTitle: 'Restorative Circles with ISABS',
+  nakedPageSlug: 'outreach/restorative-circles-with-isabs',
+  pageAbstract:
+    'Members from ISABS have been excited about the possibility of setting up an RC System within their organization, offering a space and shared agreements for difficult conversations.',
 }
 
 const seoData = seoHelper(pageData)
@@ -40,6 +44,32 @@ const next = {
 const prev = {
   // nakedPageSlug: 'outreach/restorative-circles-in-isabs',
 }
+
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    isabs00001: file(relativePath: { eq: "outreach/isabs00001.jpeg" }) {
+      ...defaultImage
+    }
+    isabs00002: file(relativePath: { eq: "outreach/isabs00002.jpeg" }) {
+      ...defaultImage
+    }
+    isabs00003: file(relativePath: { eq: "outreach/isabs00003.jpeg" }) {
+      ...defaultImage
+    }
+    isabs00004: file(relativePath: { eq: "outreach/isabs00004.jpeg" }) {
+      ...defaultImage
+    }
+    isabs00005: file(relativePath: { eq: "outreach/isabs00005.jpeg" }) {
+      ...defaultImage
+    }
+    isabs00006: file(relativePath: { eq: "outreach/isabs00006.jpeg" }) {
+      ...defaultImage
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -55,17 +85,34 @@ const Initiative = props => {
       pageData={pageData}
       {...props}
     >
-      <h1 className="mask-h3">Restorative Circles in ISABS</h1>
+      <h1 className="mask-h3">Restorative Circles with ISABS</h1>
+      <p>
+        Members from ISABS have been excited about the possibility of setting up
+        an RC System within their organization, offering a space and shared
+        agreements for difficult conversations.
+      </p>
+      <div className="mask-p">
+        <Gallery
+          data={props.data}
+          lookup="isabs"
+          columns={{ min: 2, max: 3 }}
+          Img={Img}
+        />
+      </div>
       <Division>
         <Fragment>
           <h2 className="mask-h5">
-            Restorative Circles Workshop with ISABS (Bangalore)
+            ISABS members reflect on their take-aways
+            <br />
+            (Bangalore batch)
           </h2>
           <Video url="https://www.youtube.com/watch?v=8H3YNKz1A9Y" />
         </Fragment>
         <Fragment>
           <h2 className="mask-h5">
-            Restorative Circles Workshop with ISABS (Delhi)
+            ISABS members reflect on their take-aways
+            <br />
+            (Delhi batch)
           </h2>
           <Video url="https://www.youtube.com/watch?v=B7sO2a5_KV8" />
         </Fragment>

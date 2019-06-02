@@ -4,6 +4,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 import PropTypes from 'prop-types'
+import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Images from '@bodhi-project/components/lib/Images'
@@ -60,6 +61,13 @@ const next = undefined
 const notes = []
 
 // ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Styles
+// ----------------------------------------------------------------------------
+const style = css({
+  display: 'flex !important',
+}).toString()
+
+// ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Initiative */
@@ -74,11 +82,24 @@ const Initiative = props => {
       notes={notes}
       {...props}
     >
-      <Division golden>
+      <Division golden className={style}>
         <div>
           <h1 className="mask-h3">
             Restorative Circles in TLC (The Learning Community School)
           </h1>
+          <h2 className="mask-h4">
+            Phase 2 – Exploring a Peer Mediation System
+          </h2>
+          <p>
+            Starting in July 2019, we’ll be exploring with setting up a Peer
+            Mediation System in TLC School, so that the children can have a
+            space to be heard and to work through their challenges with one
+            another. Although the School found meaning and support in the RC
+            process, they want to experiment with possibilities for a “quicker
+            response,” without needing to name and Pre-Circle everyone
+            beforehand...
+          </p>
+          <h2 className="mask-h4">Phase 1 – Restorative Circles</h2>
           <p>
             In late 2015, we were invited to share RC with the teachers at TLC
             (The Learning Community School). They developed a System and
@@ -86,22 +107,26 @@ const Initiative = props => {
             facilitated a couple of Circles among the facilitators and parents.
           </p>
         </div>
-        <div>
-          <GrungeBox style={{ paddingTop: 16, paddingBottom: 16 }}>
-            <p>
-              <strong>Q</strong>: How do you know a Circle is over...?
-              <br />
-              <strong>A</strong>: When all the kids start climbing up the
-              tree...!
-            </p>
-            <p style={{ marginBottom: 0 }}>
-              <i>
-                "So, are you guys trying to say you just wanna have fun...?!"
-              </i>
-              <br />
-              <i>"Is there anything more you’d like to say...?"</i>
-            </p>
-          </GrungeBox>
+        <div
+          style={{ display: 'flex', height: '100%', alignItems: 'flex-end' }}
+        >
+          <div>
+            <GrungeBox style={{ paddingTop: 16, paddingBottom: 16 }}>
+              <p>
+                <strong>Q</strong>: How do you know a Circle is over...?
+                <br />
+                <strong>A</strong>: When all the kids start climbing up the
+                tree...!
+              </p>
+              <p style={{ marginBottom: 0 }}>
+                <i>
+                  "So, are you guys trying to say you just wanna have fun...?!"
+                </i>
+                <br />
+                <i>"Is there anything more you’d like to say...?"</i>
+              </p>
+            </GrungeBox>
+          </div>
         </div>
       </Division>
       <div className="mask-p">

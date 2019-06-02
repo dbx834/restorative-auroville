@@ -10,9 +10,10 @@ import React from 'react'
 // import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import OutLink from '@bodhi-project/components/lib/OutLink'
-import Image from '@bodhi-project/components/lib/Image'
 
 import Row from 'antd/lib/row'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
@@ -28,8 +29,6 @@ import StandardPage from '../components/wrappers/StandardPage'
 
 import seoHelper from '../methods/seoHelper'
 
-import restorativeAurovilleArt1 from '../assets/restorativeAurovilleArt1.jpg'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
   pageTitle: 'Contact Us',
@@ -38,6 +37,17 @@ const pageData = {
 }
 
 const seoData = seoHelper(pageData)
+
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    art: file(relativePath: { eq: "contact-us/art.jpg" }) {
+      ...defaultImage
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -65,18 +75,7 @@ const Page = props => (
         <h2 className="mask-h3" style={{ color: '#FFF' }}>
           restorative@auroville.org.in
         </h2>
-        <Image
-          src={restorativeAurovilleArt1}
-          style={{
-            height: 'auto',
-            width: '100%',
-            marginTop: 12,
-            background: 'transparent',
-            border: 'unset',
-          }}
-          rawWidth={1440}
-          rawHeight={1440}
-        />
+        <Img fluid={props.data.art.childImageSharp.fluid} />
       </Col>
     </Row>
   </StandardPage>

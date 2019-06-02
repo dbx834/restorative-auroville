@@ -3,23 +3,23 @@
 // ------------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { css } from 'glamor'
 
-import filter from 'lodash/filter'
-import sortBy from 'lodash/sortBy'
-import reverse from 'lodash/reverse'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import withSizes from 'react-sizes'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
+import Grid from '@bodhi-project/components/lib/gatsby/Grid'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/card/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import Link from '../components/Link'
+
 import StandardPage from '../components/wrappers/StandardPage'
-import ProjectListing from '../components/lists/ProjectListing'
 
 import seoHelper from '../methods/seoHelper'
-
-import projects from '../data/sbi.json'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
@@ -32,25 +32,40 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
-const ongoingProjects = reverse(
-  sortBy(filter(projects, 'ongoing'), [
-    o => o.beginTimestamp,
-    o => o.endTimestamp,
-  ])
-)
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    aikiyam: file(
+      relativePath: { eq: "system-building-initiatives/aikiyam/cover.jpg" }
+    ) {
+      ...defaultImage
+    }
+    avc: file(
+      relativePath: { eq: "system-building-initiatives/avc/cover.jpg" }
+    ) {
+      ...defaultImage
+    }
+    tlc: file(
+      relativePath: { eq: "system-building-initiatives/tlc/cover.jpg" }
+    ) {
+      ...defaultImage
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 const style = css({
-  display: 'block',
-  position: 'relative',
-
-  '& .ant-card': {
-    boxShadow: '1px 2px 0 0 #FF7D00',
+  '& div.card': {
+    boxShadow: '1px 2px 0 0 #FF7D00 !important',
+    border: 'unset !important',
+    transition: 'all 200ms ease-in',
 
     '&:hover': {
-      boxShadow: '2px 4px 0 0 #FF7D00',
+      boxShadow: '2px 3px 0 0 #FF7D00 !important',
     },
   },
 
@@ -74,7 +89,35 @@ const style = css({
 // ----------------------------------------------------------------------------
 /** Ongoingprojects */
 const Ongoingprojects = props => {
-  const { isMobile } = props
+  const data = [
+    {
+      title: 'Restorative Circles in Aikiyam School',
+      cover: props.data.aikiyam.childImageSharp.fluid,
+      route:
+        'system-building-initiatives/restorative-circles-in-aikiyam-school',
+      formattedDate: 'January 2017 - Ongoing',
+      abstract:
+        'In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO "Olakh" (Gujarat), we will present a documentary about Nimisha’s work with women’s justice.',
+    },
+    {
+      title: 'Exploring Justice & RC with the Auroville Council',
+      cover: props.data.avc.childImageSharp.fluid,
+      route:
+        'system-building-initiatives/exploring-justice-and-rc-with-the-auroville-council',
+      formattedDate: 'January 2018',
+      abstract:
+        'In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO "Olakh" (Gujarat), we will present a documentary about Nimisha’s work with women’s justice.',
+    },
+    {
+      title: 'Restorative Circles in TLC (The Learning Community School)',
+      cover: props.data.tlc.childImageSharp.fluid,
+      route:
+        'system-building-initiatives/restorative-circles-in-the-learning-community-school',
+      formattedDate: 'November 2015 - Ongoing',
+      abstract:
+        'In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO "Olakh" (Gujarat), we will present a documentary about Nimisha’s work with women’s justice.',
+    },
+  ]
 
   return (
     <StandardPage className={style} seoData={seoData} {...props}>
@@ -87,11 +130,7 @@ const Ongoingprojects = props => {
         and more.
       </p>
       <div className="margin-p">
-        <ProjectListing
-          data={ongoingProjects}
-          isMobile={isMobile}
-          itemWidth="33%"
-        />
+        <Grid data={data} Img={Img} Link={Link} />
       </div>
       <div className="box">
         <p>
@@ -123,16 +162,7 @@ const Ongoingprojects = props => {
   )
 }
 
-Ongoingprojects.propTypes = {
-  data: PropTypes.object,
-}
-
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-/** mapSizesToProps */
-const mapSizesToProps = ({ width }) => ({
-  isMobile: width <= 768,
-})
-
-export default withSizes(mapSizesToProps)(Ongoingprojects)
+export default Ongoingprojects

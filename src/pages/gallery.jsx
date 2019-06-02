@@ -10,199 +10,17 @@ import React from 'react'
 // import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
+import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
+
 import { Header } from '@bodhi-project/semantic-webflow'
 
-// import Image from '@bodhi-project/components/lib/Image'
-import Images from '@bodhi-project/components/lib/Images'
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-// import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 
 import seoHelper from '../methods/seoHelper'
-
-import nvcX1 from '../assets/gallery/nvcX1.jpg'
-import nvcX2 from '../assets/gallery/nvcX2.jpg'
-import nvcX4 from '../assets/gallery/nvcX4.jpg'
-// import nvcX5 from "../assets/gallery/nvcX5.jpg";
-import nvcX6 from '../assets/gallery/nvcX6.jpg'
-import nvcX7 from '../assets/gallery/nvcX7.jpg'
-import nvcX8 from '../assets/gallery/nvcX8.jpg'
-// import nvcX9 from "../assets/gallery/nvcX9.jpg";
-import nvcX10 from '../assets/gallery/nvcX10.jpg'
-import nvcX11 from '../assets/gallery/nvcX11.jpg'
-import nvcX12 from '../assets/gallery/nvcX12.jpg'
-import nvcX13 from '../assets/gallery/nvcX13.jpg'
-import nvcX14 from '../assets/gallery/nvcX14.jpg'
-import nvcX15 from '../assets/gallery/nvcX15.jpg'
-import nvcX16 from '../assets/gallery/nvcX16.jpg'
-import nvcX17 from '../assets/gallery/nvcX17.jpg'
-import nvcX18 from '../assets/gallery/nvcX18.jpg'
-import nvcX19 from '../assets/gallery/nvcX19.jpg'
-import nvcX20 from '../assets/gallery/nvcX20.jpg'
-import nvcX21 from '../assets/gallery/nvcX21.jpg'
-import nvcX22 from '../assets/gallery/nvcX22.jpg'
-import nvcX23 from '../assets/gallery/nvcX23.jpg'
-import nvcX24 from '../assets/gallery/nvcX24.jpg'
-import nvcX25 from '../assets/gallery/nvcX25.jpg'
-import nvcX26 from '../assets/gallery/nvcX26.jpg'
-import nvcX27 from '../assets/gallery/nvcX27.jpg'
-import nvcX28 from '../assets/gallery/nvcX28.jpg'
-import nvcX29 from '../assets/gallery/nvcX29.jpg'
-import nvcX30 from '../assets/gallery/nvcX30.jpg'
-import nvcX31 from '../assets/gallery/nvcX31.jpg'
-import nvcX32 from '../assets/gallery/nvcX32.jpg'
-import nvcX33 from '../assets/gallery/nvcX33.jpg'
-import nvcX34 from '../assets/gallery/nvcX34.jpg'
-import nvcX35 from '../assets/gallery/nvcX35.jpg'
-import nvcX36 from '../assets/gallery/nvcX36.jpg'
-import nvcX37 from '../assets/gallery/nvcX37.jpg'
-import nvcX38 from '../assets/gallery/nvcX38.jpg'
-import nvcX39 from '../assets/gallery/nvcX39.jpg'
-import nvcX40 from '../assets/gallery/nvcX40.jpg'
-import nvcX41 from '../assets/gallery/nvcX41.jpg'
-import nvcX42 from '../assets/gallery/nvcX42.jpg'
-import nvcX43 from '../assets/gallery/nvcX43.jpg'
-import nvcX44 from '../assets/gallery/nvcX44.jpg'
-import nvcX45 from '../assets/gallery/nvcX45.jpg'
-import nvcX46 from '../assets/gallery/nvcX46.jpg'
-import nvcX47 from '../assets/gallery/nvcX47.jpg'
-import nvcX48 from '../assets/gallery/nvcX48.jpg'
-import nvcX49 from '../assets/gallery/nvcX49.jpg'
-import nvcX50 from '../assets/gallery/nvcX50.jpg'
-import nvcX51 from '../assets/gallery/nvcX51.jpg'
-import nvcX52 from '../assets/gallery/nvcX52.jpg'
-import nvcX53 from '../assets/gallery/nvcX53.jpg'
-import nvcX54 from '../assets/gallery/nvcX54.jpg'
-import nvcX55 from '../assets/gallery/nvcX55.jpg'
-import nvcX56 from '../assets/gallery/nvcX56.jpg'
-import nvcX57 from '../assets/gallery/nvcX57.jpg'
-import nvcX58 from '../assets/gallery/nvcX58.jpg'
-import nvcX59 from '../assets/gallery/nvcX59.jpg'
-import nvcX60 from '../assets/gallery/nvcX60.jpg'
-import nvcX61 from '../assets/gallery/nvcX61.jpg'
-import nvcX62 from '../assets/gallery/nvcX62.jpg'
-import nvcX63 from '../assets/gallery/nvcX63.jpg'
-import nvcX64 from '../assets/gallery/nvcX64.jpg'
-import nvcX65 from '../assets/gallery/nvcX65.jpg'
-import nvcX66 from '../assets/gallery/nvcX66.jpg'
-import nvcX67 from '../assets/gallery/nvcX67.jpg'
-import nvcX68 from '../assets/gallery/nvcX68.jpg'
-import nvcX69 from '../assets/gallery/nvcX69.jpg'
-import nvcX70 from '../assets/gallery/nvcX70.jpg'
-import nvcX71 from '../assets/gallery/nvcX71.jpg'
-import nvcX72 from '../assets/gallery/nvcX72.jpg'
-import nvcX73 from '../assets/gallery/nvcX73.jpg'
-import nvcX74 from '../assets/gallery/nvcX74.jpg'
-import nvcX75 from '../assets/gallery/nvcX75.jpg'
-import nvcX76 from '../assets/gallery/nvcX76.jpg'
-import nvcX77 from '../assets/gallery/nvcX77.jpg'
-import nvcX78 from '../assets/gallery/nvcX78.jpg'
-import nvcX85 from '../assets/gallery/nvcX85.jpg'
-import nvcX79 from '../assets/gallery/nvcX79.jpg'
-import nvcX80 from '../assets/gallery/nvcX80.jpg'
-import nvcX81 from '../assets/gallery/nvcX81.jpg'
-import nvcX82 from '../assets/gallery/nvcX82.jpg'
-import nvcX83 from '../assets/gallery/nvcX83.jpg'
-
-const photos = [
-  {
-    src: 'https://ucarecdn.com/32b25498-cbf8-47d7-aa43-2f6c9cfcbad5/img1.jpg',
-    width: 600,
-    height: 280,
-  },
-  { src: nvcX1, width: 600, height: 450 },
-  { src: nvcX2, width: 600, height: 450 },
-  { src: nvcX4, width: 600, height: 418 },
-  {
-    src: 'https://ucarecdn.com/1a7e0f09-7188-43b2-a47b-1d62ec1c8ce3/img2.jpg',
-    width: 600,
-    height: 277,
-  },
-  { src: nvcX78, width: 600, height: 800 },
-  { src: nvcX6, width: 600, height: 367 },
-  { src: nvcX7, width: 600, height: 367 },
-  { src: nvcX8, width: 600, height: 450 },
-  { src: nvcX10, width: 600, height: 690 },
-  { src: nvcX11, width: 600, height: 400 },
-  { src: nvcX12, width: 600, height: 493 },
-  { src: nvcX13, width: 600, height: 388 },
-  { src: nvcX14, width: 600, height: 800 },
-  { src: nvcX15, width: 600, height: 214 },
-  { src: nvcX16, width: 600, height: 450 },
-  { src: nvcX17, width: 600, height: 414 },
-  { src: nvcX18, width: 600, height: 1067 },
-  { src: nvcX19, width: 600, height: 800 },
-  { src: nvcX20, width: 600, height: 411 },
-  { src: nvcX21, width: 600, height: 450 },
-  { src: nvcX22, width: 600, height: 450 },
-  { src: nvcX23, width: 600, height: 450 },
-  { src: nvcX24, width: 600, height: 450 },
-  { src: nvcX25, width: 600, height: 441 },
-  { src: nvcX26, width: 600, height: 456 },
-  { src: nvcX27, width: 600, height: 450 },
-  { src: nvcX28, width: 600, height: 400 },
-  { src: nvcX29, width: 600, height: 400 },
-  { src: nvcX30, width: 600, height: 450 },
-  { src: nvcX31, width: 600, height: 354 },
-  { src: nvcX32, width: 600, height: 450 },
-  { src: nvcX33, width: 600, height: 450 },
-  { src: nvcX34, width: 600, height: 450 },
-  { src: nvcX35, width: 600, height: 450 },
-  { src: nvcX36, width: 600, height: 450 },
-  { src: nvcX37, width: 600, height: 400 },
-  { src: nvcX38, width: 600, height: 450 },
-  { src: nvcX39, width: 600, height: 450 },
-  { src: nvcX40, width: 600, height: 450 },
-  { src: nvcX41, width: 600, height: 399 },
-  { src: nvcX42, width: 600, height: 399 },
-  { src: nvcX43, width: 600, height: 399 },
-  { src: nvcX44, width: 600, height: 399 },
-  { src: nvcX45, width: 600, height: 450 },
-  { src: nvcX46, width: 600, height: 330 },
-  { src: nvcX47, width: 600, height: 450 },
-  { src: nvcX48, width: 600, height: 450 },
-  { src: nvcX49, width: 600, height: 1067 },
-  { src: nvcX50, width: 600, height: 776 },
-  { src: nvcX51, width: 600, height: 424 },
-  { src: nvcX52, width: 600, height: 243 },
-  { src: nvcX53, width: 600, height: 450 },
-  { src: nvcX54, width: 600, height: 338 },
-  { src: nvcX55, width: 600, height: 261 },
-  { src: nvcX56, width: 600, height: 400 },
-  { src: nvcX57, width: 600, height: 508 },
-  { src: nvcX58, width: 600, height: 848 },
-  { src: nvcX59, width: 600, height: 424 },
-  { src: nvcX60, width: 600, height: 806 },
-  { src: nvcX61, width: 600, height: 400 },
-  { src: nvcX62, width: 600, height: 400 },
-  { src: nvcX63, width: 600, height: 450 },
-  { src: nvcX64, width: 600, height: 450 },
-  { src: nvcX65, width: 600, height: 450 },
-  { src: nvcX66, width: 600, height: 450 },
-  { src: nvcX67, width: 600, height: 450 },
-  { src: nvcX68, width: 600, height: 450 },
-  { src: nvcX69, width: 600, height: 450 },
-  { src: nvcX70, width: 600, height: 450 },
-  { src: nvcX71, width: 600, height: 450 },
-  { src: nvcX72, width: 600, height: 450 },
-  { src: nvcX73, width: 600, height: 382 },
-  { src: nvcX74, width: 600, height: 249 },
-  { src: nvcX75, width: 600, height: 401 },
-  { src: nvcX76, width: 600, height: 401 },
-  { src: nvcX77, width: 600, height: 450 },
-  { src: nvcX85, width: 600, height: 450 },
-  { src: nvcX79, width: 600, height: 425 },
-  { src: nvcX80, width: 600, height: 603 },
-  { src: nvcX81, width: 600, height: 415 },
-  { src: nvcX82, width: 600, height: 555 },
-  { src: nvcX83, width: 600, height: 450 },
-  {
-    src: '/event-assets/restorative-dialogue-across-cultures/img00001.jpeg',
-    width: 600,
-    height: 400,
-  },
-]
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
@@ -213,6 +31,275 @@ const pageData = {
 }
 
 const seoData = seoHelper(pageData)
+
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    nvcX87: file(relativePath: { eq: "gallery/nvcX87.jpg" }) {
+      ...defaultImage
+    }
+    nvcX1: file(relativePath: { eq: "gallery/nvcX1.jpg" }) {
+      ...defaultImage
+    }
+    nvcX2: file(relativePath: { eq: "gallery/nvcX2.jpg" }) {
+      ...defaultImage
+    }
+    nvcX4: file(relativePath: { eq: "gallery/nvcX4.jpg" }) {
+      ...defaultImage
+    }
+    nvcX86: file(relativePath: { eq: "gallery/nvcX86.jpg" }) {
+      ...defaultImage
+    }
+    nvcX3: file(relativePath: { eq: "gallery/nvcX3.jpg" }) {
+      ...defaultImage
+    }
+    nvcX83: file(relativePath: { eq: "gallery/nvcX83.jpg" }) {
+      ...defaultImage
+    }
+    nvcX6: file(relativePath: { eq: "gallery/nvcX6.jpg" }) {
+      ...defaultImage
+    }
+    nvcX7: file(relativePath: { eq: "gallery/nvcX7.jpg" }) {
+      ...defaultImage
+    }
+    nvcX8: file(relativePath: { eq: "gallery/nvcX8.jpg" }) {
+      ...defaultImage
+    }
+    nvcX9: file(relativePath: { eq: "gallery/nvcX9.jpg" }) {
+      ...defaultImage
+    }
+    nvcX10: file(relativePath: { eq: "gallery/nvcX10.jpg" }) {
+      ...defaultImage
+    }
+    nvcX11: file(relativePath: { eq: "gallery/nvcX11.jpg" }) {
+      ...defaultImage
+    }
+    nvcX12: file(relativePath: { eq: "gallery/nvcX12.jpg" }) {
+      ...defaultImage
+    }
+    nvcX13: file(relativePath: { eq: "gallery/nvcX13.jpg" }) {
+      ...defaultImage
+    }
+    nvcX14: file(relativePath: { eq: "gallery/nvcX14.jpg" }) {
+      ...defaultImage
+    }
+    nvcX15: file(relativePath: { eq: "gallery/nvcX15.jpg" }) {
+      ...defaultImage
+    }
+    nvcX16: file(relativePath: { eq: "gallery/nvcX16.jpg" }) {
+      ...defaultImage
+    }
+    nvcX17: file(relativePath: { eq: "gallery/nvcX17.jpg" }) {
+      ...defaultImage
+    }
+    nvcX18: file(relativePath: { eq: "gallery/nvcX18.jpg" }) {
+      ...defaultImage
+    }
+    nvcX19: file(relativePath: { eq: "gallery/nvcX19.jpg" }) {
+      ...defaultImage
+    }
+    nvcX20: file(relativePath: { eq: "gallery/nvcX20.jpg" }) {
+      ...defaultImage
+    }
+    nvcX21: file(relativePath: { eq: "gallery/nvcX21.jpg" }) {
+      ...defaultImage
+    }
+    nvcX22: file(relativePath: { eq: "gallery/nvcX22.jpg" }) {
+      ...defaultImage
+    }
+    nvcX23: file(relativePath: { eq: "gallery/nvcX23.jpg" }) {
+      ...defaultImage
+    }
+    nvcX24: file(relativePath: { eq: "gallery/nvcX24.jpg" }) {
+      ...defaultImage
+    }
+    nvcX25: file(relativePath: { eq: "gallery/nvcX25.jpg" }) {
+      ...defaultImage
+    }
+    nvcX26: file(relativePath: { eq: "gallery/nvcX26.jpg" }) {
+      ...defaultImage
+    }
+    nvcX27: file(relativePath: { eq: "gallery/nvcX27.jpg" }) {
+      ...defaultImage
+    }
+    nvcX28: file(relativePath: { eq: "gallery/nvcX28.jpg" }) {
+      ...defaultImage
+    }
+    nvcX29: file(relativePath: { eq: "gallery/nvcX29.jpg" }) {
+      ...defaultImage
+    }
+    nvcX30: file(relativePath: { eq: "gallery/nvcX30.jpg" }) {
+      ...defaultImage
+    }
+    nvcX31: file(relativePath: { eq: "gallery/nvcX31.jpg" }) {
+      ...defaultImage
+    }
+    nvcX32: file(relativePath: { eq: "gallery/nvcX32.jpg" }) {
+      ...defaultImage
+    }
+    nvcX33: file(relativePath: { eq: "gallery/nvcX33.jpg" }) {
+      ...defaultImage
+    }
+    nvcX34: file(relativePath: { eq: "gallery/nvcX34.jpg" }) {
+      ...defaultImage
+    }
+    nvcX35: file(relativePath: { eq: "gallery/nvcX35.jpg" }) {
+      ...defaultImage
+    }
+    nvcX36: file(relativePath: { eq: "gallery/nvcX36.jpg" }) {
+      ...defaultImage
+    }
+    nvcX37: file(relativePath: { eq: "gallery/nvcX37.jpg" }) {
+      ...defaultImage
+    }
+    nvcX38: file(relativePath: { eq: "gallery/nvcX38.jpg" }) {
+      ...defaultImage
+    }
+    nvcX39: file(relativePath: { eq: "gallery/nvcX39.jpg" }) {
+      ...defaultImage
+    }
+    nvcX40: file(relativePath: { eq: "gallery/nvcX40.jpg" }) {
+      ...defaultImage
+    }
+    nvcX41: file(relativePath: { eq: "gallery/nvcX41.jpg" }) {
+      ...defaultImage
+    }
+    nvcX42: file(relativePath: { eq: "gallery/nvcX42.jpg" }) {
+      ...defaultImage
+    }
+    nvcX43: file(relativePath: { eq: "gallery/nvcX43.jpg" }) {
+      ...defaultImage
+    }
+    nvcX44: file(relativePath: { eq: "gallery/nvcX44.jpg" }) {
+      ...defaultImage
+    }
+    nvcX45: file(relativePath: { eq: "gallery/nvcX45.jpg" }) {
+      ...defaultImage
+    }
+    nvcX46: file(relativePath: { eq: "gallery/nvcX46.jpg" }) {
+      ...defaultImage
+    }
+    nvcX47: file(relativePath: { eq: "gallery/nvcX47.jpg" }) {
+      ...defaultImage
+    }
+    nvcX48: file(relativePath: { eq: "gallery/nvcX48.jpg" }) {
+      ...defaultImage
+    }
+    nvcX49: file(relativePath: { eq: "gallery/nvcX49.jpg" }) {
+      ...defaultImage
+    }
+    nvcX50: file(relativePath: { eq: "gallery/nvcX50.jpg" }) {
+      ...defaultImage
+    }
+    nvcX51: file(relativePath: { eq: "gallery/nvcX51.jpg" }) {
+      ...defaultImage
+    }
+    nvcX52: file(relativePath: { eq: "gallery/nvcX52.jpg" }) {
+      ...defaultImage
+    }
+    nvcX53: file(relativePath: { eq: "gallery/nvcX53.jpg" }) {
+      ...defaultImage
+    }
+    nvcX54: file(relativePath: { eq: "gallery/nvcX54.jpg" }) {
+      ...defaultImage
+    }
+    nvcX55: file(relativePath: { eq: "gallery/nvcX55.jpg" }) {
+      ...defaultImage
+    }
+    nvcX56: file(relativePath: { eq: "gallery/nvcX56.jpg" }) {
+      ...defaultImage
+    }
+    nvcX57: file(relativePath: { eq: "gallery/nvcX57.jpg" }) {
+      ...defaultImage
+    }
+    nvcX58: file(relativePath: { eq: "gallery/nvcX58.jpg" }) {
+      ...defaultImage
+    }
+    nvcX59: file(relativePath: { eq: "gallery/nvcX59.jpg" }) {
+      ...defaultImage
+    }
+    nvcX60: file(relativePath: { eq: "gallery/nvcX60.jpg" }) {
+      ...defaultImage
+    }
+    nvcX61: file(relativePath: { eq: "gallery/nvcX61.jpg" }) {
+      ...defaultImage
+    }
+    nvcX62: file(relativePath: { eq: "gallery/nvcX62.jpg" }) {
+      ...defaultImage
+    }
+    nvcX63: file(relativePath: { eq: "gallery/nvcX63.jpg" }) {
+      ...defaultImage
+    }
+    nvcX64: file(relativePath: { eq: "gallery/nvcX64.jpg" }) {
+      ...defaultImage
+    }
+    nvcX65: file(relativePath: { eq: "gallery/nvcX65.jpg" }) {
+      ...defaultImage
+    }
+    nvcX66: file(relativePath: { eq: "gallery/nvcX66.jpg" }) {
+      ...defaultImage
+    }
+    nvcX67: file(relativePath: { eq: "gallery/nvcX67.jpg" }) {
+      ...defaultImage
+    }
+    nvcX68: file(relativePath: { eq: "gallery/nvcX68.jpg" }) {
+      ...defaultImage
+    }
+    nvcX69: file(relativePath: { eq: "gallery/nvcX69.jpg" }) {
+      ...defaultImage
+    }
+    nvcX70: file(relativePath: { eq: "gallery/nvcX70.jpg" }) {
+      ...defaultImage
+    }
+    nvcX71: file(relativePath: { eq: "gallery/nvcX71.jpg" }) {
+      ...defaultImage
+    }
+    nvcX72: file(relativePath: { eq: "gallery/nvcX72.jpg" }) {
+      ...defaultImage
+    }
+    nvcX73: file(relativePath: { eq: "gallery/nvcX73.jpg" }) {
+      ...defaultImage
+    }
+    nvcX74: file(relativePath: { eq: "gallery/nvcX74.jpg" }) {
+      ...defaultImage
+    }
+    nvcX75: file(relativePath: { eq: "gallery/nvcX75.jpg" }) {
+      ...defaultImage
+    }
+    nvcX76: file(relativePath: { eq: "gallery/nvcX76.jpg" }) {
+      ...defaultImage
+    }
+    nvcX77: file(relativePath: { eq: "gallery/nvcX77.jpg" }) {
+      ...defaultImage
+    }
+    nvcX78: file(relativePath: { eq: "gallery/nvcX78.jpg" }) {
+      ...defaultImage
+    }
+    nvcX79: file(relativePath: { eq: "gallery/nvcX79.jpg" }) {
+      ...defaultImage
+    }
+    nvcX80: file(relativePath: { eq: "gallery/nvcX80.jpg" }) {
+      ...defaultImage
+    }
+    nvcX81: file(relativePath: { eq: "gallery/nvcX81.jpg" }) {
+      ...defaultImage
+    }
+    nvcX82: file(relativePath: { eq: "gallery/nvcX82.jpg" }) {
+      ...defaultImage
+    }
+    nvcX84: file(relativePath: { eq: "gallery/nvcX84.jpg" }) {
+      ...defaultImage
+    }
+    nvcX85: file(relativePath: { eq: "gallery/nvcX85.jpg" }) {
+      ...defaultImage
+    }
+    nvcX88: file(relativePath: { eq: "gallery/nvcX88.jpg" }) {
+      ...defaultImage
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -227,7 +314,14 @@ const Page = props => (
     <Header>
       <h1 className="mask-h3">Gallery: Restorative Auroville in Action…</h1>
     </Header>
-    <Images photos={photos} loader="gradient" columns={{ min: 3, max: 3 }} />
+    <div className="mask-p">
+      <Gallery
+        data={props.data}
+        lookup="nvcX"
+        columns={{ min: 2, max: 3 }}
+        Img={Img}
+      />
+    </div>
   </StandardPage>
 )
 

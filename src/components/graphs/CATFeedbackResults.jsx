@@ -37,12 +37,12 @@ const graph1 = [
 const graph2 = [
   {
     name: 'Yes',
-    value: 78.95,
+    value: 79,
     fill: '#228b22',
   },
   {
     name: 'No',
-    value: 21.05,
+    value: 21,
     fill: '#ff8c00',
   },
 ]
@@ -51,8 +51,6 @@ const graph2 = [
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 const styles = css({
-  marginTop: 40,
-
   '& .recharts-pie-labels': {
     '& text': {
       fontWeight: 700,
@@ -277,7 +275,7 @@ const CustomizedLabel1 = ({ x, y, fill, value }) => {
   let dy = y
   if (value === 100) {
     dx = x + 20
-    dy = y - 50
+    dy = y - 40
   }
 
   if (value === 0) {
@@ -303,13 +301,13 @@ const CustomizedLabel1 = ({ x, y, fill, value }) => {
 const CustomizedLabel2 = ({ x, y, fill, value }) => {
   let dx = x
   let dy = y
-  if (value === 78.95) {
+  if (value === 79) {
     dx = x + 4
     dy = y
   }
 
-  if (value === 21.05) {
-    dx = x - 10
+  if (value === 21) {
+    dx = x - 7
     dy = y - 5
   }
 
@@ -336,16 +334,23 @@ class FeedbackGraph extends React.Component {
       <div className={styles} id="hover">
         <div
           style={{
-            width: '80%',
+            width: '90%',
             background: 'rgb(0,0,111,0.22)',
             backgroundOpacity: 0.1,
             borderRadius: 20,
-            marginBottom: 20,
+            marginBottom: 6,
           }}
         >
           <div className="swap">
-            <div style={{ width: 220, paddingLeft: 20, paddingRight: 20 }}>
-              <PieChart width={180} height={180}>
+            <div
+              style={{
+                width: 160,
+                height: 105,
+                paddingLeft: 20,
+                paddingRight: 20,
+              }}
+            >
+              <PieChart width={120} height={120}>
                 <Pie
                   dataKey="value"
                   nameKey="name"
@@ -376,11 +381,11 @@ class FeedbackGraph extends React.Component {
         </div>
         <div
           style={{
-            width: '80%',
-            marginLeft: '10%',
+            width: '90%',
+            marginLeft: '5%',
             background: 'rgba(0,0,111,0.15)',
             borderRadius: 20,
-            marginBottom: 20,
+            marginBottom: 6,
           }}
         >
           <div className="swap">
@@ -400,8 +405,8 @@ class FeedbackGraph extends React.Component {
                 an available RC Facilitator?
               </p>
             </div>
-            <div style={{ width: 200, paddingRight: 20 }}>
-              <PieChart width={160} height={160}>
+            <div style={{ width: 160, height: 105, paddingRight: 20 }}>
+              <PieChart width={120} height={120}>
                 <Pie
                   dataKey="value"
                   nameKey="name"
@@ -418,8 +423,8 @@ class FeedbackGraph extends React.Component {
         </div>
         <div
           style={{
-            width: '80%',
-            marginLeft: '20%',
+            width: '90%',
+            marginLeft: '10%',
             background: 'rgba(0,0,111,0.08)',
             backgroundOpacity: 0.1,
             borderRadius: 20,
@@ -441,66 +446,73 @@ class FeedbackGraph extends React.Component {
                 resolution)? What would you concretely suggest we do?
               </p>
               <p style={{ marginBottom: 0 }}>
-                <strong>Some responses…</strong>
+                <strong>Responses:</strong>
                 <br />
                 <i>
+                  <span style={{ opacity: 0.75, color: '#00006F' }}>⇾</span>{' '}
                   Persevere... Be informed of alternatives in order to make a
                   "complete whole."
                 </i>
                 <br />
-                <br />
                 <i>
+                  <span style={{ opacity: 0.75, color: '#00006F' }}>⇾</span>{' '}
                   Better communication and connection with all. Beautiful work,
                   please keep going.
                 </i>
                 <br />
-                <br />
-                <i>"Knowing ourselves better in order to avoid projection.</i>
-                <br />
-                <br />
                 <i>
-                  A more systemic approach, a wider way to embrace complex
-                  situations. Don't rely only on one way to find solutions, be
-                  creative."
+                  <span style={{ opacity: 0.75, color: '#00006F' }}>⇾</span>{' '}
+                  Knowing ourselves better in order to avoid projection.
                 </i>
                 <br />
+                <i>
+                  <span style={{ opacity: 0.75, color: '#00006F' }}>⇾</span> A
+                  more systemic approach, a wider way to embrace complex
+                  situations. Don't rely only on one way to find solutions, be
+                  creative.
+                </i>
                 <br />
                 <i>
+                  <span style={{ opacity: 0.75, color: '#00006F' }}>⇾</span>{' '}
                   Addressing Restidents' Assembly ratification when there's
                   injustice in a conflict.
                 </i>
                 <br />
-                <br />
-                <i>Trust each other... Keep it up!</i>
-                <br />
+                <i>
+                  <span style={{ opacity: 0.75, color: '#00006F' }}>⇾</span>{' '}
+                  Trust each other... Keep it up!
+                </i>
                 <br />
                 <i>
+                  <span style={{ opacity: 0.75, color: '#00006F' }}>⇾</span>{' '}
                   Having a page on Auronet to communicate about RC and processes
                   that are going on in order to involve the full community to
                   take responsibility if needed.
                 </i>
                 <br />
-                <br />
                 <i>
+                  <span style={{ opacity: 0.75, color: '#00006F' }}>⇾</span>{' '}
                   Just keep going on. Emphasize the need for deeper
                   understanding of self and others, and clearing the collective
                   air...
                 </i>
                 <br />
-                <br />
                 <i>
+                  <span style={{ opacity: 0.75, color: '#00006F' }}>⇾</span>{' '}
                   Start the RC with a ritual to call for the higher Guidance of
                   all participants.
                 </i>
                 <br />
-                <br />
                 <i>
-                  Not to incarnate "institutional" justice for Auroville. Keep
-                  free. Keep distance.
+                  <span style={{ opacity: 0.75, color: '#00006F' }}>⇾</span> Not
+                  to incarnate "institutional" justice for Auroville. Keep free.
+                  Keep distance.
                 </i>
                 <br />
-                <br />
-                <i>Set up conflict preventention processes. Define justice.</i>
+                <i>
+                  <span style={{ opacity: 0.75, color: '#00006F' }}>⇾</span> Set
+                  up conflict preventention processes. Define justice.
+                </i>
                 <br />
               </p>
             </div>

@@ -246,7 +246,7 @@ class Apprentices extends React.Component {
             >
               <p>
                 <strong>
-                  2018-
+                  2018 -
                   <br />
                   present
                 </strong>
@@ -266,7 +266,7 @@ class Apprentices extends React.Component {
             >
               <p>
                 <strong>
-                  2019-
+                  2019 -
                   <br />
                   present
                 </strong>
