@@ -131,7 +131,7 @@ const Page = props => {
               <Col sm={24} md={15}>
                 <h1
                   className="mask-h3"
-                  style={{ marginTop: -10, marginBottom: 15, lineHeight: 1.2 }}
+                  style={{ marginTop: -10, marginBottom: 15, lineHeight: 1.1 }}
                 >
                   {title}
                 </h1>
