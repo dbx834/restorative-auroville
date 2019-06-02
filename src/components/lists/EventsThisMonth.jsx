@@ -332,7 +332,7 @@ class EventsGrid extends React.Component {
       <div className={`${pageStyles} desktop-only`}>
         <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
           <Col sm={24} md={24} xl={15}>
-            <h1 className="mask-h3">Workshops & Events</h1>
+            <h2 className="mask-h3">Workshops & Events</h2>
             <p>
               We offer regular learning opportunities through workshops and
               practice groups, in person and online. And from time to time, we
@@ -385,7 +385,7 @@ class EventsGrid extends React.Component {
                 <div style={{ padding: '0px 9px 9px' }}>
                   <Link to={`/${extraData.node.fields.route}`}>
                     <h3 className="mask-h4">
-                      {extraData.node.frontmatter.title} ⇝
+                      {extraData.node.frontmatter.title}
                     </h3>
                   </Link>
                   <p>
@@ -405,6 +405,10 @@ class EventsGrid extends React.Component {
                   </p>
                   <p style={{ marginBottom: 0 }}>
                     {extraData.node.frontmatter.abstract}
+                    <br />
+                    <Link to={`/${extraData.node.fields.route}`}>
+                      Read more ⇝
+                    </Link>
                   </p>
                 </div>
               </div>

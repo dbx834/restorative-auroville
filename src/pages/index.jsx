@@ -343,7 +343,7 @@ const Page = props => {
         </div>
         <div className="margin-p">
           <h2
-            className="mask-h2"
+            className="mask-h3"
             style={{
               color: '#FFFFFF',
               marginBottom: 10,
@@ -362,7 +362,7 @@ const Page = props => {
                 }}
               />
               <h3
-                className="mask-h3"
+                className="mask-h4"
                 style={{
                   color: '#FFFFFF',
                   marginBottom: 10,
@@ -391,7 +391,7 @@ const Page = props => {
                 }}
               />
               <h3
-                className="mask-h3"
+                className="mask-h4"
                 style={{
                   color: '#FFFFFF',
                   marginBottom: 10,
@@ -421,7 +421,7 @@ const Page = props => {
                 }}
               />
               <h3
-                className="mask-h3"
+                className="mask-h4"
                 style={{
                   color: '#FFFFFF',
                   marginBottom: 10,
@@ -642,6 +642,7 @@ const Page = props => {
             </Copy>
             <Copy>
               <h2
+                className="mask-h3"
                 style={{
                   color: '#2c2c2c',
                   marginBottom: 10,
