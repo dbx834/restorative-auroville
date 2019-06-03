@@ -10,14 +10,12 @@ import React from 'react'
 // import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-
 import Image from '@bodhi-project/components/lib/Image'
 import OutLink from '@bodhi-project/components/lib/OutLink'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
-import GoldenMajorHalves from '../components/GoldenMajorHalves'
 
 import seoHelper from '../methods/seoHelper'
 

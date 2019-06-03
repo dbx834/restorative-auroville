@@ -11,6 +11,8 @@ import reverse from 'lodash/reverse'
 import { RadialBarChart, RadialBar } from 'recharts'
 
 import Division from '@bodhi-project/components/lib/Division'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 import Button from 'antd/lib/button'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'

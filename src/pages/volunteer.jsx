@@ -15,25 +15,21 @@ import Img from 'gatsby-image'
 
 import Image from '@bodhi-project/components/lib/Image'
 import Video from '@bodhi-project/components/lib/Video'
-// import OutLink from '@bodhi-project/components/lib/OutLink'
 
-import Row from 'antd/lib/row'
+import Division from '@bodhi-project/components/lib/Division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
-
-import Col from 'antd/lib/col'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 import VolunteerForm from '../components/VolunteerForm'
 
 import seoHelper from '../methods/seoHelper'
-
-import nvcX80 from '../assets/gallery/nvcX80.jpg'
 import tick from '../assets/tick.png'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
+
 const pageData = {
   pageTitle: 'Volunteer',
   nakedPageSlug: 'volunteer',
@@ -136,18 +132,18 @@ const Page = props => (
       offer…?
     </p>
 
-    <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
-      <Col sm={24} md={15}>
+    <Division golden>
+      <Fragment>
         <h2 className="mask-h3">Volunteer Form</h2>
         <VolunteerForm />
-      </Col>
-      <Col sm={24} md={9}>
+      </Fragment>
+      <Fragment>
         <h2 className="mask-h3" style={{ lineHeight: 1.1 }}>
           Our work, inside-out...
         </h2>
         <Img
-          className="desktop-only"
           fluid={props.data.flowerBoardDesktop.childImageSharp.fluid}
+          style={{ maxWidth: 360 }}
         />
         <br />
         <br />
@@ -155,8 +151,8 @@ const Page = props => (
           Our apprentice, Henrike, shares...
         </h2>
         <Video url="https://www.youtube.com/watch?v=bXrm9tUW4fU" />
-      </Col>
-    </Row>
+      </Fragment>
+    </Division>
   </StandardPage>
 )
 

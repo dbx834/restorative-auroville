@@ -12,13 +12,10 @@ import Img from 'gatsby-image'
 
 import withSizes from 'react-sizes'
 import Division from '@bodhi-project/components/lib/Division'
-import Video from '@bodhi-project/components/lib/Video'
-
-import Row from 'antd/lib/row'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
-
-import Col from 'antd/lib/col'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
+
+import Video from '@bodhi-project/components/lib/Video'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
@@ -32,6 +29,8 @@ import GatsbyImageVideoCover from '../components/GatsbyImageVideoCover'
 import seoHelper from '../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
+
 const pageData = {
   pageTitle: 'Restorative Circles in Auroville',
   nakedPageSlug: '',
@@ -74,6 +73,41 @@ export const query = graphql`
       ...defaultImage
     }
     banner22: file(relativePath: { eq: "banner2-2.png" }) {
+      ...defaultImage
+    }
+    banner11Mobile: file(
+      relativePath: { eq: "homepage/banner-mobile-1-1.png" }
+    ) {
+      ...defaultImage
+    }
+    banner12Mobile: file(
+      relativePath: { eq: "homepage/banner-mobile-1-2.png" }
+    ) {
+      ...defaultImage
+    }
+    banner12HoverMobile: file(
+      relativePath: { eq: "homepage/banner-mobile-1-2-hover.png" }
+    ) {
+      ...defaultImage
+    }
+    banner21Mobile: file(
+      relativePath: { eq: "homepage/banner-mobile-2-1.png" }
+    ) {
+      ...defaultImage
+    }
+    banner21HoverMobile: file(
+      relativePath: { eq: "homepage/banner-mobile-2-1-hover.png" }
+    ) {
+      ...defaultImage
+    }
+    banner22Mobile: file(
+      relativePath: { eq: "homepage/banner-mobile-2-2.png" }
+    ) {
+      ...defaultImage
+    }
+    banner22HoverMobile: file(
+      relativePath: { eq: "homepage/banner-mobile-2-2-hover.png" }
+    ) {
       ...defaultImage
     }
     bluePaintbrush: file(relativePath: { eq: "bluePaintbrush.png" }) {
@@ -196,6 +230,17 @@ const styleObject = css({
       },
     },
   },
+
+  '& .yellow-block-padding': {
+    '@media(min-width: 992px)': {
+      paddingLeft: '12.5%',
+      paddingRight: '12.5%',
+    },
+    '@media(max-width: 992px)': {
+      paddingLeft: '10%',
+      paddingRight: '14%',
+    },
+  },
 })
 const pageStyle = styleObject.toString()
 
@@ -243,11 +288,11 @@ const Page = props => {
 
   return (
     <StandardPage className={pageStyle} seoData={seoData} {...props}>
-      <Row gutter={{ xs: 4, sm: 6, md: 8 }}>
-        <Col sm={24} md={24} lg={16}>
+      <Division bigGolden>
+        <Fragment>
           <Img fluid={props.data.banner.childImageSharp.fluid} />
-        </Col>
-        <Col sm={0} md={0} lg={8}>
+        </Fragment>
+        <div className="desktop-only">
           <div
             style={{
               display: 'flex',
@@ -286,8 +331,62 @@ const Page = props => {
               <Img fluid={props.data.banner25.childImageSharp.fluid} />
             </div>
           </div>
-        </Col>
-      </Row>
+        </div>
+      </Division>
+      <Division className="mobile-only">
+        <Fragment>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-start',
+            }}
+          >
+            <div style={{ flexGrow: 100, flexBasis: 0 }}>
+              <Img fluid={props.data.banner11Mobile.childImageSharp.fluid} />
+            </div>
+            <div style={{ flexGrow: 100, flexBasis: 0 }}>
+              <BannerLink
+                to="/system-building-initiatives"
+                bannerImage={props.data.banner12Mobile.childImageSharp.fluid}
+                alt="We can bring Restorative Circles to your community"
+                bannerHover={
+                  props.data.banner12HoverMobile.childImageSharp.fluid
+                }
+              />
+            </div>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-start',
+            }}
+          >
+            <div style={{ flexGrow: 100, flexBasis: 0 }}>
+              <BannerLink
+                to="/restorative-circles"
+                bannerImage={props.data.banner21Mobile.childImageSharp.fluid}
+                alt="We offer Restorative Circles"
+                bannerHover={
+                  props.data.banner21HoverMobile.childImageSharp.fluid
+                }
+              />
+            </div>
+            <div style={{ flexGrow: 100, flexBasis: 0 }}>
+              <BannerLink
+                to="/system-building-initiatives"
+                bannerImage={props.data.banner22Mobile.childImageSharp.fluid}
+                alt="We can bring Restorative Circles to your community"
+                bannerHover={
+                  props.data.banner22HoverMobile.childImageSharp.fluid
+                }
+              />
+            </div>
+          </div>
+        </Fragment>
+        <Fragment>
+          <br />
+        </Fragment>
+      </Division>
       <h1 className="mask-h3">Restorative Auroville</h1>
       <p>
         Restorative Auroville is an independent project that aims to bring the
@@ -351,8 +450,8 @@ const Page = props => {
             Get Involved Today…
           </h2>
           <br className="mobile-only" />
-          <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-            <Col sm={24} md={24} lg={8}>
+          <Division byThree custom={[8, 8, 8]}>
+            <Fragment>
               <hr
                 style={{
                   borderTop: '6px solid #FFFFFF',
@@ -380,8 +479,8 @@ const Page = props => {
                 </Link>
               </p>
               <br className="mobile-only" />
-            </Col>
-            <Col sm={24} md={24} lg={8}>
+            </Fragment>
+            <Fragment>
               <hr
                 style={{
                   borderTop: '6px solid #FFFFFF',
@@ -410,8 +509,8 @@ const Page = props => {
                 </Link>
               </p>
               <br className="mobile-only" />
-            </Col>
-            <Col sm={24} md={24} lg={8}>
+            </Fragment>
+            <Fragment>
               <hr
                 style={{
                   borderTop: '6px solid #FFFFFF',
@@ -444,8 +543,8 @@ const Page = props => {
               <br className="mobile-only" />
               <br className="mobile-only" />
               <br className="mobile-only" />
-            </Col>
-          </Row>
+            </Fragment>
+          </Division>
         </div>
       </div>
 
@@ -456,24 +555,24 @@ const Page = props => {
         <p style={{ marginBottom: 30 }}>
           <Link to="/the-power-of-dialogue">See video series ⇝</Link>
         </p>
-        <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-          <Col sm={24} md={24} lg={8}>
+        <Division byThree>
+          <Fragment>
             <GatsbyImageVideoCover
               to="/the-power-of-dialogue/designing-our-justice-system-consciously"
               cover={props.data.videoCover1.childImageSharp.fluid}
               text="L'aura shares about her experience of engaging with Restorative Circles in Auroville and the importance of designing a justice system consciously, otherwise we'll just inherit the old ways."
               playNow={props.data.playNow.childImageSharp.fluid}
             />
-          </Col>
-          <Col sm={24} md={24} lg={8}>
+          </Fragment>
+          <Fragment>
             <GatsbyImageVideoCover
               to="/the-power-of-dialogue/surya-on-restorative-circles"
               cover={props.data.videoCover2.childImageSharp.fluid}
               text="Surya shares about her experiences with Restoratives Circles."
               playNow={props.data.playNow.childImageSharp.fluid}
             />
-          </Col>
-          <Col sm={24} md={24} lg={8}>
+          </Fragment>
+          <Fragment>
             <h3 className="mask-h4">Our Video Series</h3>
             <div
               style={{
@@ -567,8 +666,8 @@ const Page = props => {
                 </Link>
               </div>
             </div>
-          </Col>
-        </Row>
+          </Fragment>
+        </Division>
       </div>
 
       <div
@@ -576,11 +675,9 @@ const Page = props => {
           marginTop: 30,
           paddingTop: 48,
           paddingBottom: 48,
-          paddingLeft: '12.5%',
-          paddingRight: '12.5%',
           position: 'relative',
         }}
-        className="margin-p"
+        className="margin-p yellow-block-padding"
       >
         <div
           style={{

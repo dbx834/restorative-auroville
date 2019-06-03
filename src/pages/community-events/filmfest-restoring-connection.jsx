@@ -10,8 +10,13 @@ import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Images from '@bodhi-project/components/lib/Images'
-import OutLink from '@bodhi-project/components/lib/OutLink'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
+import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
+import Division from '@bodhi-project/components/lib/Division'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
@@ -28,8 +33,6 @@ import CommunityEventWrapper from '../../components/wrappers/CommunityEventWrapp
 import Link from '../../components/Link'
 
 import seoHelper from '../../methods/seoHelper'
-
-import GoldenMajorHalves from '../../components/GoldenMajorHalves'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React
@@ -51,29 +54,6 @@ const seoData = seoHelper(pageData)
 
 const { Item: BItem } = Breadcrumb
 
-const photos = [
-  {
-    src: '/event-assets/filmfest-restoring-connection/nvcX43.jpg',
-    width: 600,
-    height: 399,
-  },
-  {
-    src: '/event-assets/filmfest-restoring-connection/nvcX44.jpg',
-    width: 600,
-    height: 399,
-  },
-  {
-    src: '/event-assets/filmfest-restoring-connection/nvcX37.jpg',
-    width: 600,
-    height: 400,
-  },
-  {
-    src: '/event-assets/filmfest-restoring-connection/nvcX42.jpg',
-    width: 600,
-    height: 399,
-  },
-]
-
 const notes = [
   {
     url: 'https://www.restorativeauroville.org/pdfs2/filmfest.pdf',
@@ -82,6 +62,45 @@ const notes = [
   },
 ]
 
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    nvcX43: file(
+      relativePath: {
+        eq: "community-events/filmfest-restoring-connection/nvcX43.jpg"
+      }
+    ) {
+      ...defaultImage
+    }
+    nvcX44: file(
+      relativePath: {
+        eq: "community-events/filmfest-restoring-connection/nvcX44.jpg"
+      }
+    ) {
+      ...defaultImage
+    }
+    nvcX37: file(
+      relativePath: {
+        eq: "community-events/filmfest-restoring-connection/nvcX37.jpg"
+      }
+    ) {
+      ...defaultImage
+    }
+    nvcX42: file(
+      relativePath: {
+        eq: "community-events/filmfest-restoring-connection/nvcX42.jpg"
+      }
+    ) {
+      ...defaultImage
+    }
+  }
+`
+
+// ----------------------------------------------------------------------------
+// ------------------------------------------------------------------ Component
+// ----------------------------------------------------------------------------
 /** Theme */
 const Theme = props => {
   const { border, title, files, tag, text } = props
@@ -106,14 +125,14 @@ const Theme = props => {
           {map(files, file => {
             return (
               <p>
-                <OutLink to={file.link}>
+                <Link to={file.link}>
                   <Icon
                     type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
                     theme="outlined"
                   />
                   &nbsp;
                   {file.title}
-                </OutLink>
+                </Link>
               </p>
             )
           })}
@@ -123,9 +142,6 @@ const Theme = props => {
   )
 }
 
-// ----------------------------------------------------------------------------
-// ------------------------------------------------------------------ Component
-// ----------------------------------------------------------------------------
 /** Initiative */
 const Initiative = props => {
   return (
@@ -159,10 +175,11 @@ const Initiative = props => {
         a live Restorative Circle.
       </p>
       <div className="mask-p">
-        <Images
-          photos={photos}
-          loader="gradient"
+        <Gallery
+          data={props.data}
+          lookup="nvcX"
           columns={{ min: 2, max: 2 }}
+          Img={Img}
         />
       </div>
       <p>
@@ -201,15 +218,15 @@ const Initiative = props => {
           direction.
         </li>
       </ul>
-      <GoldenMajorHalves>
-        <div>
+      <Division golden>
+        <Fragment>
           <p>
             People expressed a longing that as a community we would really learn
             to love, to forgive, to share, and to overcome our conditioned ideas
             of superiority versus inferiority.
           </p>
-        </div>
-        <div>
+        </Fragment>
+        <Fragment>
           <Theme
             border="#FB9001"
             title='FilmFest: "Restoring Connection" (2016)'
@@ -232,8 +249,8 @@ const Initiative = props => {
               },
             ]}
           />
-        </div>
-      </GoldenMajorHalves>
+        </Fragment>
+      </Division>
     </CommunityEventWrapper>
   )
 }

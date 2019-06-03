@@ -8,17 +8,22 @@ import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import OutLink from '@bodhi-project/components/lib/OutLink'
+import Division from '@bodhi-project/components/lib/Division'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
+
 import PDFReader from '@bodhi-project/components/lib/PDFReader'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../components/wrappers/StandardPage'
-import EqualHalves from '../components/EqualHalves'
 import Video from '../components/Video'
 import DisqusComments from '../components/DisqusComments'
 
 import seoHelper from '../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
+
 const pageData = {
   pageTitle: 'Our Restorative System in Auroville',
   nakedPageSlug: 'our-restorative-system-in-auroville',
@@ -118,20 +123,20 @@ const Page = props => (
     <p style={{ marginBottom: 30 }}>
       <i>Public presentation at Unity Pavilion, Auroville (2017)</i>
     </p>
-    <EqualHalves>
-      <div>
+    <Division>
+      <Fragment>
         <Video url="https://www.youtube.com/watch?v=n1Uf1IYQ2_Y&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=9" />
         <p className="mask-h5">
           <strong>Part 1</strong>
         </p>
-      </div>
-      <div>
+      </Fragment>
+      <Fragment>
         <Video url="https://www.youtube.com/watch?v=ngOhj-NhKJo&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=8" />
         <p className="mask-h5">
           <strong>Part 2</strong>
         </p>
-      </div>
-    </EqualHalves>
+      </Fragment>
+    </Division>
     <br />
     <br />
     <br />

@@ -14,11 +14,8 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import OutLink from '@bodhi-project/components/lib/OutLink'
-
-import Row from 'antd/lib/row'
+import Division from '@bodhi-project/components/lib/Division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
-
-import Col from 'antd/lib/col'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
@@ -30,6 +27,8 @@ import StandardPage from '../components/wrappers/StandardPage'
 import seoHelper from '../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
+
 const pageData = {
   pageTitle: 'Contact Us',
   nakedPageSlug: 'contact-us',
@@ -59,8 +58,8 @@ export const query = graphql`
 /** Page */
 const Page = props => (
   <StandardPage className="" seoData={seoData} {...props}>
-    <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
-      <Col sm={24} md={15}>
+    <Division golden>
+      <Fragment>
         <h1 className="mask-h3">Contact Us</h1>
         <ContactForm />
         <br />
@@ -70,14 +69,14 @@ const Page = props => (
             restorative@auroville.org.in
           </OutLink>
         </p>
-      </Col>
-      <Col sm={24} md={9} className="desktop-only">
+      </Fragment>
+      <Fragment>
         <h2 className="mask-h3" style={{ color: '#FFF' }}>
           restorative@auroville.org.in
         </h2>
         <Img fluid={props.data.art.childImageSharp.fluid} />
-      </Col>
-    </Row>
+      </Fragment>
+    </Division>
   </StandardPage>
 )
 

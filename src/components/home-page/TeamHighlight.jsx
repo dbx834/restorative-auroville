@@ -9,12 +9,8 @@ import { css } from 'glamor'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
 
-// import OutLink from '@bodhi-project/components/lib/OutLink'
-
-import Row from 'antd/lib/row'
+import Division from '@bodhi-project/components/lib/Division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
-
-import Col from 'antd/lib/col'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
@@ -29,7 +25,7 @@ import pranjalSquare from '../../assets/pranjalSquare.jpg'
 import nilsSquare from '../../assets/nilsSquare.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment: Frag } = React
+const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -116,8 +112,8 @@ const Page = props => {
 
   return (
     <section className={pageStyle}>
-      <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-        <Col sm={24} md={24} lg={24} xl={15}>
+      <Division golden>
+        <Fragment>
           <h2 className="mask-h3">Who Are We?</h2>
           <p>
             We're a small group of people passionate about human connection and
@@ -129,60 +125,60 @@ const Page = props => {
             <br />
             <Link to="/our-team">Read more about us ⇝</Link>
           </p>
-        </Col>
-        <Col sm={24} md={24} lg={24} xl={9}>
+        </Fragment>
+        <Fragment>
           <div className={circleStyles}>
             <PersonCircle
               image={lauraSquare}
               className="child-circle-highlight"
-              role={<Frag>Founder</Frag>}
+              role={<Fragment>Founder</Fragment>}
             />
             <PersonCircle
               image={janetSquare}
               className="child-circle-highlight"
-              role={<Frag>Founder</Frag>}
+              role={<Fragment>Founder</Fragment>}
             />
             <PersonCircle
               image={katiSquare}
               className="child-circle-highlight"
               role={
-                <Frag>
+                <Fragment>
                   Core Team
                   <br />
                   &nbsp;&nbsp;Member
-                </Frag>
+                </Fragment>
               }
             />
             <PersonCircle
               image={pranjalSquare}
               className="child-circle-highlight"
               role={
-                <Frag>
+                <Fragment>
                   Core Team
                   <br />
                   &nbsp;&nbsp;Member
-                </Frag>
+                </Fragment>
               }
             />
             <PersonCircle
               image={henrikeSquare}
               className="child-circle-highlight"
               role={
-                <Frag>
+                <Fragment>
                   Core Team
                   <br />
                   &nbsp;&nbsp;Member
-                </Frag>
+                </Fragment>
               }
             />
             <PersonCircle
               image={nilsSquare}
               className="child-circle-highlight"
-              role={<Frag>Apprentice</Frag>}
+              role={<Fragment>Apprentice</Fragment>}
             />
           </div>
-        </Col>
-      </Row>
+        </Fragment>
+      </Division>
     </section>
   )
 }

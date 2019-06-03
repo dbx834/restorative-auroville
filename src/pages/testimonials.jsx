@@ -10,15 +10,12 @@ import React from 'react'
 // import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Division from '@bodhi-project/components/lib/Division'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import Image from '@bodhi-project/components/lib/Image'
-
-import Row from 'antd/lib/row'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
-
-import Col from 'antd/lib/col'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 import Icon from 'antd/lib/icon'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
@@ -32,10 +29,12 @@ import seoHelper from '../methods/seoHelper'
 import birdsTop from '../assets/birdsTop.png'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
+
 const pageData = {
   pageTitle: 'Testimonials',
   nakedPageSlug: 'testimonials',
-  pageAbstract: 'Page abstract.',
+  pageAbstract: 'Coming Soon.',
 }
 
 const seoData = seoHelper(pageData)
@@ -50,12 +49,12 @@ const seoData = seoHelper(pageData)
 /** Page */
 const Page = props => (
   <StandardPage className="" seoData={seoData} {...props}>
-    <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
-      <Col sm={24} md={15}>
+    <Division golden>
+      <Fragment>
         <h1 className="mask-h3">Testimonials</h1>
         <p>Coming Soon.</p>
-      </Col>
-      <Col sm={24} md={9}>
+      </Fragment>
+      <Fragment>
         <h1
           className="mask-h3"
           style={{ display: 'inline-block', position: 'relative' }}
@@ -99,8 +98,8 @@ const Page = props => (
             &nbsp; restorative@auroville.org.in
           </OutLink>
         </p>
-      </Col>
-    </Row>
+      </Fragment>
+    </Division>
   </StandardPage>
 )
 

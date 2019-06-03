@@ -17,22 +17,21 @@ import join from 'lodash/join'
 import isNull from 'lodash/isNull'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import MediaQuery from 'react-responsive'
 import { withPrefix } from 'gatsby-link'
-import withSizes from 'react-sizes'
 import 'moment/locale/en-gb'
 
 import Image from '@bodhi-project/components/lib/Image'
+
+import Division from '@bodhi-project/components/lib/Division'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
+
 import AnimateOnChange from 'react-animate-on-change'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/blocks
 import Tabs from 'antd/lib/tabs'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tabs/style/css'
-
-import Row from 'antd/lib/row'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
-
-import Col from 'antd/lib/col'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 import Switch from 'antd/lib/switch'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/switch/style/css'
@@ -308,6 +307,7 @@ class EventsGrid extends React.Component {
       extraData: undefined,
       active: undefined,
       nextActive: undefined,
+      client: false,
     }
 
     this.onClose = this.onClose.bind(this)
@@ -322,6 +322,8 @@ class EventsGrid extends React.Component {
 
   /** componentDidMount */
   componentDidMount() {
+    this.setState({ client: true })
+
     const { active } = this.state
     if (isUndefined(active)) {
       const { data } = this.props
@@ -438,6 +440,7 @@ class EventsGrid extends React.Component {
       visible,
       extraData,
       showArchive,
+      client,
     } = this.state
     const today = moment()
     const thisYear = today.year().toString()
@@ -463,219 +466,271 @@ class EventsGrid extends React.Component {
     const { active, nextActive } = this.state
 
     return (
-      <div className={pageStyles}>
-        <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-          <Col sm={24} md={24} xl={15}>
-            <div style={{ position: 'relative' }}>
-              <h1 className="mask-h3">Workshops & Practice Groups</h1>
-              <div style={{ position: 'absolute', top: 0, right: 0 }}>
-                <h2
-                  className="mask-h6"
-                  style={{
-                    display: 'inline-block',
-                    margin: 0,
-                    lineHeight: '22px',
-                    marginTop: 9,
-                  }}
-                >
-                  <small>Past</small>
-                </h2>
-                &nbsp;
-                <Switch
-                  style={{ display: 'inline-block', margin: 0, marginTop: -2 }}
-                  defaultChecked={false}
-                  onChange={this.toggleArchive}
-                  size="small"
-                />
-              </div>
-            </div>
-            <Tabs type="card" tabPosition="left" defaultActiveKey={thisYear}>
-              {map(years, (year, yearKey) => {
-                const key = `${year}-${yearKey}`
-                return (
-                  <TabPane tab={year} key={year} id={key}>
+      <Fragment>
+        {client === true && (
+          <Fragment>
+            <br style={{ display: 'none' }} />
+            <MediaQuery minWidth={992}>
+              {matches => (
+                <div className={pageStyles}>
+                  <Division golden>
                     <Fragment>
-                      {year === thisYear && (
-                        <Fragment>
-                          {showArchive === false ? (
-                            <Fragment>
-                              {map(thisAndFutureMonths, (month, monthKey) => {
-                                return (
-                                  <Month
-                                    year={year}
-                                    month={month}
-                                    monthKey={monthKey}
-                                    postEdges={postEdges}
-                                    openSet={this.openSet}
-                                    registerForEvent={this.registerForEvent}
-                                    updateExtraData={this.updateExtraData}
-                                    past={false}
-                                    key={`${month}-${monthKey}`}
-                                    setActive={this.setActive}
-                                    active={active}
-                                    nextActive={nextActive}
-                                  />
-                                )
-                              })}
-                            </Fragment>
-                          ) : (
-                            <div className="old-events">
-                              {map(previousMonths, (month, monthKey) => {
-                                return (
-                                  <Month
-                                    year={year}
-                                    month={month}
-                                    monthKey={monthKey}
-                                    postEdges={postEdges}
-                                    openSet={this.openSet}
-                                    registerForEvent={this.registerForEvent}
-                                    updateExtraData={this.updateExtraData}
-                                    past
-                                    key={`${month}-${monthKey}`}
-                                    setActive={this.setActive}
-                                    active={active}
-                                    nextActive={nextActive}
-                                  />
-                                )
-                              })}
-                            </div>
-                          )}
-                        </Fragment>
-                      )}
-                      <Fragment>
-                        {year !== thisYear && (
-                          <div
-                            className={
-                              year < thisYear ? 'old-events' : 'future-events'
-                            }
+                      <div style={{ position: 'relative' }}>
+                        <h1 className="mask-h3">Workshops & Practice Groups</h1>
+                        <p>
+                          Here you’ll find a listing of our upcoming RC
+                          workshops and practice groups, plus other special
+                          events we're hosting. Please register now if you’d
+                          like to attend any of these events.
+                        </p>
+                        <div style={{ position: 'absolute', top: 0, right: 0 }}>
+                          <h2
+                            className="mask-h6"
+                            style={{
+                              display: 'inline-block',
+                              margin: 0,
+                              lineHeight: '22px',
+                              marginTop: 9,
+                            }}
                           >
-                            {map(monthsArray, (month, monthKey) => {
-                              return (
-                                <Month
-                                  year={year}
-                                  month={month}
-                                  monthKey={monthKey}
-                                  postEdges={postEdges}
-                                  openSet={this.openSet}
-                                  registerForEvent={this.registerForEvent}
-                                  updateExtraData={this.updateExtraData}
-                                  past={false}
-                                  key={`${month}-${monthKey}`}
-                                  setActive={this.setActive}
-                                  active={active}
-                                  nextActive={nextActive}
-                                />
-                              )
-                            })}
-                          </div>
-                        )}
-                      </Fragment>
+                            <small>Past</small>
+                          </h2>
+                          &nbsp;
+                          <Switch
+                            style={{
+                              display: 'inline-block',
+                              margin: 0,
+                              marginTop: -2,
+                            }}
+                            defaultChecked={false}
+                            onChange={this.toggleArchive}
+                            size="small"
+                          />
+                        </div>
+                      </div>
+                      <Tabs
+                        type="card"
+                        tabPosition="left"
+                        defaultActiveKey={thisYear}
+                      >
+                        {map(years, (year, yearKey) => {
+                          const key = `${year}-${yearKey}`
+                          return (
+                            <TabPane tab={year} key={year} id={key}>
+                              <Fragment>
+                                {year === thisYear && (
+                                  <Fragment>
+                                    {showArchive === false ? (
+                                      <Fragment>
+                                        {map(
+                                          thisAndFutureMonths,
+                                          (month, monthKey) => {
+                                            return (
+                                              <Month
+                                                year={year}
+                                                month={month}
+                                                monthKey={monthKey}
+                                                postEdges={postEdges}
+                                                openSet={this.openSet}
+                                                registerForEvent={
+                                                  this.registerForEvent
+                                                }
+                                                updateExtraData={
+                                                  this.updateExtraData
+                                                }
+                                                past={false}
+                                                key={`${month}-${monthKey}`}
+                                                setActive={this.setActive}
+                                                active={active}
+                                                nextActive={nextActive}
+                                              />
+                                            )
+                                          }
+                                        )}
+                                      </Fragment>
+                                    ) : (
+                                      <div className="old-events">
+                                        {map(
+                                          previousMonths,
+                                          (month, monthKey) => {
+                                            return (
+                                              <Month
+                                                year={year}
+                                                month={month}
+                                                monthKey={monthKey}
+                                                postEdges={postEdges}
+                                                openSet={this.openSet}
+                                                registerForEvent={
+                                                  this.registerForEvent
+                                                }
+                                                updateExtraData={
+                                                  this.updateExtraData
+                                                }
+                                                past
+                                                key={`${month}-${monthKey}`}
+                                                setActive={this.setActive}
+                                                active={active}
+                                                nextActive={nextActive}
+                                              />
+                                            )
+                                          }
+                                        )}
+                                      </div>
+                                    )}
+                                  </Fragment>
+                                )}
+                                <Fragment>
+                                  {year !== thisYear && (
+                                    <div
+                                      className={
+                                        year < thisYear
+                                          ? 'old-events'
+                                          : 'future-events'
+                                      }
+                                    >
+                                      {map(monthsArray, (month, monthKey) => {
+                                        return (
+                                          <Month
+                                            year={year}
+                                            month={month}
+                                            monthKey={monthKey}
+                                            postEdges={postEdges}
+                                            openSet={this.openSet}
+                                            registerForEvent={
+                                              this.registerForEvent
+                                            }
+                                            updateExtraData={
+                                              this.updateExtraData
+                                            }
+                                            past={false}
+                                            key={`${month}-${monthKey}`}
+                                            setActive={this.setActive}
+                                            active={active}
+                                            nextActive={nextActive}
+                                          />
+                                        )
+                                      })}
+                                    </div>
+                                  )}
+                                </Fragment>
+                              </Fragment>
+                            </TabPane>
+                          )
+                        })}
+                      </Tabs>
                     </Fragment>
-                  </TabPane>
-                )
-              })}
-            </Tabs>
-          </Col>
-          <Col sm={24} md={24} xl={9}>
-            {!isUndefined(extraData) && (
-              <div>
-                <Image
-                  src={getBanner(
-                    extraData.node.frontmatter.cover,
-                    extraData.node.frontmatter.tags
-                  )}
-                  rawWidth={1440}
-                  rawHeight={900}
-                  style={{
-                    border: '1px solid #00006F',
-                    height: 'auto',
-                    width: '100%',
-                    marginBottom: 11,
-                  }}
-                  className="mask-p"
-                />
-                <h3 className="mask-h4">{extraData.node.frontmatter.title}</h3>
-                <p>
-                  <AnimateOnChange
-                    baseClassName="animated"
-                    animationClassName="flash"
-                    animate={animate}
-                    onAnimationEnd={() => this.doneAnimating()}
+                    <Fragment>
+                      {!isUndefined(extraData) && (
+                        <div>
+                          <br className="mobile-only" />
+                          <Image
+                            src={getBanner(
+                              extraData.node.frontmatter.cover,
+                              extraData.node.frontmatter.tags
+                            )}
+                            rawWidth={1440}
+                            rawHeight={900}
+                            style={{
+                              border: '1px solid #00006F',
+                              height: 'auto',
+                              width: '100%',
+                              maxWidth: 360,
+                              marginBottom: 11,
+                            }}
+                            className="mask-p"
+                          />
+                          <h3 className="mask-h4">
+                            {extraData.node.frontmatter.title}
+                          </h3>
+                          <p>
+                            <AnimateOnChange
+                              baseClassName="animated"
+                              animationClassName="flash"
+                              animate={animate}
+                              onAnimationEnd={() => this.doneAnimating()}
+                            >
+                              <i>
+                                {extraData.node.fields.formattedDate}
+                                <br />
+                                {extraData.node.frontmatter.fromTime} -{' '}
+                                {extraData.node.frontmatter.toTime}
+                              </i>
+                            </AnimateOnChange>
+                          </p>
+                          <p>{extraData.node.frontmatter.abstract}</p>
+                          <div className="margin-p">
+                            <Link
+                              to={`/${extraData.node.fields.route}`}
+                              className="ant-btn"
+                            >
+                              <span style={{ fontSize: '125%' }}>
+                                More details ⇝
+                              </span>
+                            </Link>
+                          </div>
+                          <div className="margin-p">
+                            {registerLink(extraData, this.registerForEvent)}
+                          </div>
+                        </div>
+                      )}
+                    </Fragment>
+                  </Division>
+                  <Drawer
+                    title={false}
+                    closable={false}
+                    onClose={this.onClose}
+                    visible={visible}
+                    width={matches ? '38vw' : '100vw'}
+                    placement="left"
                   >
-                    <i>
-                      {extraData.node.fields.formattedDate}
-                      <br />
-                      {extraData.node.frontmatter.fromTime} -{' '}
-                      {extraData.node.frontmatter.toTime}
-                    </i>
-                  </AnimateOnChange>
-                </p>
-                <p>{extraData.node.frontmatter.abstract}</p>
-                <div className="margin-p">
-                  <Link
-                    to={`/${extraData.node.fields.route}`}
-                    className="ant-btn"
-                  >
-                    <span style={{ fontSize: '125%' }}>More details ⇝</span>
-                  </Link>
+                    <Type
+                      kit="jdd4npp"
+                      style={{ minHeight: '100vh' }}
+                      options={{
+                        range: [12, 20], // Min and Max font-sizes
+                        paragraphSpacingFactor: 1.2, // Greater for tighter paragraph-paragraph spacing
+                        headingParagraphGapSpacingFactor: 0, // Greater for tighter header-paragraph spacing
+                        indentParagraphs: false,
+                      }}
+                    >
+                      <EventRegisterationForm
+                        event={postEdges[indexForForm]}
+                        formattedDate={
+                          isUndefined(indexForForm)
+                            ? ' '
+                            : postEdges[indexForForm].node.fields.formattedDate
+                        }
+                      />
+                    </Type>
+                    <div
+                      style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        width: '100%',
+                        borderTop: '1px solid #e8e8e8',
+                        padding: '10px 16px',
+                        left: 0,
+                        background: '#f2f2f2',
+                        textAlign: 'right',
+                      }}
+                    >
+                      <Button
+                        style={{
+                          marginRight: 8,
+                        }}
+                        onClick={this.onClose}
+                      >
+                        Close
+                      </Button>
+                    </div>
+                  </Drawer>
                 </div>
-                <div className="margin-p">
-                  {registerLink(extraData, this.registerForEvent)}
-                </div>
-              </div>
-            )}
-          </Col>
-        </Row>
-        <Drawer
-          title={false}
-          closable={false}
-          onClose={this.onClose}
-          visible={visible}
-          width="38vw"
-          placement="left"
-        >
-          <Type
-            kit="jdd4npp"
-            style={{ minHeight: '100vh' }}
-            options={{
-              range: [12, 20], // Min and Max font-sizes
-              paragraphSpacingFactor: 1.2, // Greater for tighter paragraph-paragraph spacing
-              headingParagraphGapSpacingFactor: 0, // Greater for tighter header-paragraph spacing
-              indentParagraphs: false,
-            }}
-          >
-            <EventRegisterationForm
-              event={postEdges[indexForForm]}
-              formattedDate={
-                isUndefined(indexForForm)
-                  ? ' '
-                  : postEdges[indexForForm].node.fields.formattedDate
-              }
-            />
-          </Type>
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              width: '100%',
-              borderTop: '1px solid #e8e8e8',
-              padding: '10px 16px',
-              left: 0,
-              background: '#f2f2f2',
-              textAlign: 'right',
-            }}
-          >
-            <Button
-              style={{
-                marginRight: 8,
-              }}
-              onClick={this.onClose}
-            >
-              Close
-            </Button>
-          </div>
-        </Drawer>
-      </div>
+              )}
+            </MediaQuery>
+            <br style={{ display: 'none' }} />
+          </Fragment>
+        )}
+      </Fragment>
     )
   }
 }
@@ -687,9 +742,4 @@ EventsGrid.propTypes = {
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-// /** mapSizesToProps */
-const mapSizesToProps = ({ width }) => ({
-  isMobile: width <= 768,
-})
-
-export default withSizes(mapSizesToProps)(EventsGrid)
+export default EventsGrid

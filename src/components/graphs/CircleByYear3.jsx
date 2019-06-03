@@ -51,7 +51,10 @@ import Popover from 'antd/lib/popover'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/popover/style/css'
 
 import Image from '@bodhi-project/components/lib/Image'
+
 import Division from '@bodhi-project/components/lib/Division'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import inArray from '../../methods/inArray'
@@ -846,10 +849,11 @@ class Sample3 extends React.Component {
                   hold space for those in conflict.
                 </small>
               </p>
+              <br className="mobile-only" />
             </div>
           </Division>
 
-          <Division className="desktop-only">
+          <Division>
             <div>
               <div style={{ display: 'flex' }}>
                 <div
@@ -873,6 +877,7 @@ class Sample3 extends React.Component {
                     }}
                     className="margin-p"
                   />
+                  <br className="mobile-only" />
                 </div>
                 <div
                   style={{
@@ -886,7 +891,7 @@ class Sample3 extends React.Component {
                   >
                     <small>Circle Number</small>
                   </h4>
-                  <p style={{ marginBottom: 11 }}>
+                  <p>
                     <small>
                       Our Circles are recorded chronologically, so the number
                       indicates this order over time. The highest number also
@@ -919,6 +924,7 @@ class Sample3 extends React.Component {
                     }}
                     className="margin-p"
                   />
+                  <br className="mobile-only" />
                 </div>
                 <div
                   style={{
@@ -940,7 +946,7 @@ class Sample3 extends React.Component {
                       the remaining Circle members are not indicated.)
                     </small>
                   </p>
-                  <p style={{ marginBottom: 11 }}>
+                  <p style={{ marginBottom: 0 }}>
                     <small>
                       The size of the outer bounds indicates the number of
                       people who were named (to be invited to the Circle),
@@ -948,6 +954,7 @@ class Sample3 extends React.Component {
                       people who attended the Circle process.
                     </small>
                   </p>
+                  <br className="mobile-only" />
                 </div>
               </div>
             </div>
@@ -955,7 +962,7 @@ class Sample3 extends React.Component {
               <div style={{ display: 'flex' }}>
                 <div
                   style={{
-                    flexGrow: 12,
+                    flexGrow: 20,
                     flexBasis: 0,
                     marginRight: 7,
                   }}
@@ -974,10 +981,11 @@ class Sample3 extends React.Component {
                     }}
                     className="margin-p"
                   />
+                  <br className="mobile-only" />
                 </div>
                 <div
                   style={{
-                    flexGrow: 88,
+                    flexGrow: 80,
                     flexBasis: 0,
                   }}
                 >
@@ -987,7 +995,7 @@ class Sample3 extends React.Component {
                   >
                     <small>Circle</small>
                   </h4>
-                  <p style={{ marginBottom: 11 }}>
+                  <p>
                     <small>
                       Indicates when the Circle took place (sometimes in
                       multiple meetings) and its size (number of people who
@@ -1000,7 +1008,7 @@ class Sample3 extends React.Component {
               <div style={{ display: 'flex' }}>
                 <div
                   style={{
-                    flexGrow: 12,
+                    flexGrow: 20,
                     flexBasis: 0,
                     marginRight: 7,
                   }}
@@ -1019,10 +1027,11 @@ class Sample3 extends React.Component {
                     }}
                     className="margin-p"
                   />
+                  <br className="mobile-only" />
                 </div>
                 <div
                   style={{
-                    flexGrow: 88,
+                    flexGrow: 80,
                     flexBasis: 0,
                   }}
                 >
@@ -1032,7 +1041,7 @@ class Sample3 extends React.Component {
                   >
                     <small>Post-Circle(s)</small>
                   </h4>
-                  <p style={{ marginBottom: 11 }}>
+                  <p>
                     <small>
                       Indicates when the Post-Circle(s) took place and its size
                       (number of people who attended the Circle process).
@@ -1044,7 +1053,7 @@ class Sample3 extends React.Component {
               <div style={{ display: 'flex' }}>
                 <div
                   style={{
-                    flexGrow: 12,
+                    flexGrow: 20,
                     flexBasis: 0,
                     marginRight: 7,
                   }}
@@ -1062,10 +1071,11 @@ class Sample3 extends React.Component {
                     }}
                     className="margin-p"
                   />
+                  <br className="mobile-only" />
                 </div>
                 <div
                   style={{
-                    flexGrow: 88,
+                    flexGrow: 80,
                     flexBasis: 0,
                   }}
                 >
@@ -1075,7 +1085,7 @@ class Sample3 extends React.Component {
                   >
                     <small>Pop-Up</small>
                   </h4>
-                  <p style={{ marginBottom: 11 }}>
+                  <p>
                     <small>
                       When you hover over the graphics, a pop-up appears with
                       additional information about each Circle: a word-cloud

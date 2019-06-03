@@ -10,8 +10,14 @@ import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import OutLink from '@bodhi-project/components/lib/OutLink'
-import Images from '@bodhi-project/components/lib/Images'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
+import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
+
+import Division from '@bodhi-project/components/lib/Division'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
@@ -28,36 +34,11 @@ import CommunityEventWrapper from '../../components/wrappers/CommunityEventWrapp
 import Link from '../../components/Link'
 import Video from '../../components/Video'
 
-import GoldenMajorHalves from '../../components/GoldenMajorHalves'
 import GrungeBox from '../../components/GrungeBox'
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React
-
-const photos = [
-  {
-    src:
-      '/event-assets/walk-of-hope-in-auroville-and-the-bioregion/wohFlyer.jpg',
-    width: 600,
-    height: 424,
-  },
-  {
-    src: '/event-assets/walk-of-hope-in-auroville-and-the-bioregion/wohMap.jpg',
-    width: 600,
-    height: 849,
-  },
-  {
-    src: '/event-assets/walk-of-hope-in-auroville-and-the-bioregion/nvcX33.jpg',
-    width: 600,
-    height: 450,
-  },
-  {
-    src: '/event-assets/walk-of-hope-in-auroville-and-the-bioregion/nvcX34.jpg',
-    width: 600,
-    height: 450,
-  },
-]
 
 const pageData = {
   pageTitle: 'Walk of Hope in Auroville & the Bioregion',
@@ -78,6 +59,45 @@ const next = {
   nakedPageSlug: 'community-events/world-cafes-on-peace-and-justice',
 }
 
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    img00001: file(
+      relativePath: {
+        eq: "community-events/walk-of-hope-in-auroville-and-the-bioregion/wohFlyer.jpg"
+      }
+    ) {
+      ...defaultImage
+    }
+    img00002: file(
+      relativePath: {
+        eq: "community-events/walk-of-hope-in-auroville-and-the-bioregion/wohMap.jpg"
+      }
+    ) {
+      ...defaultImage
+    }
+    img00003: file(
+      relativePath: {
+        eq: "community-events/walk-of-hope-in-auroville-and-the-bioregion/nvcX33.jpg"
+      }
+    ) {
+      ...defaultImage
+    }
+    img00004: file(
+      relativePath: {
+        eq: "community-events/walk-of-hope-in-auroville-and-the-bioregion/nvcX34.jpg"
+      }
+    ) {
+      ...defaultImage
+    }
+  }
+`
+
+// ----------------------------------------------------------------------------
+// ------------------------------------------------------------------ Component
+// ----------------------------------------------------------------------------
 /** Theme */
 const Theme = props => {
   const { border, title, files, tag, text } = props
@@ -102,14 +122,14 @@ const Theme = props => {
           {map(files, file => {
             return (
               <p>
-                <OutLink to={file.link}>
+                <Link to={file.link}>
                   <Icon
                     type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
                     theme="outlined"
                   />
                   &nbsp;
                   {file.title}
-                </OutLink>
+                </Link>
               </p>
             )
           })}
@@ -119,9 +139,6 @@ const Theme = props => {
   )
 }
 
-// ----------------------------------------------------------------------------
-// ------------------------------------------------------------------ Component
-// ----------------------------------------------------------------------------
 /** Initiative */
 const Initiative = props => {
   return (
@@ -159,13 +176,13 @@ const Initiative = props => {
         social activist. Sri M became known for his Walk of Hope from
         Kanyakumari to Kashmir, over 7000 km through India in 2015-16.
       </p>
-      <GoldenMajorHalves>
-        <div>
-          <div style={{ maxWidth: '600px' }}>
+      <Division golden>
+        <Fragment>
+          <div style={{ maxWidth: 600 }}>
             <Video url="https://www.youtube.com/watch?v=I79YcKxzhYo" />
           </div>
-        </div>
-        <div>
+        </Fragment>
+        <Fragment>
           <GrungeBox>
             <p
               style={{
@@ -190,13 +207,14 @@ const Initiative = props => {
               </small>
             </p>
           </GrungeBox>
-        </div>
-      </GoldenMajorHalves>
+        </Fragment>
+      </Division>
       <div className="mask-p">
-        <Images
-          photos={photos}
-          loader="gradient"
+        <Gallery
+          data={props.data}
+          lookup="img"
           columns={{ min: 2, max: 2 }}
+          Img={Img}
         />
       </div>
       <p>
@@ -216,15 +234,15 @@ const Initiative = props => {
         where our beautiful interaction culminated with the Imam singing verses
         of the Quaran for us.
       </p>
-      <GoldenMajorHalves>
-        <div>
+      <Division golden>
+        <Fragment>
           <p>
             With gratitude to our co-organizers: Restorative Auroville, Franz
             (Prisma), Moris (Auroville Village Action Group), Shankar (Aikiyam
             School), and many other Aurovilians and volunteers.
           </p>
-        </div>
-        <div>
+        </Fragment>
+        <Fragment>
           <Theme
             border="#FB9001"
             title="Walk of Hope in Auroville & the Bioregion (2018)"
@@ -237,8 +255,8 @@ const Initiative = props => {
               },
             ]}
           />
-        </div>
-      </GoldenMajorHalves>
+        </Fragment>
+      </Division>
     </CommunityEventWrapper>
   )
 }

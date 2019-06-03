@@ -17,20 +17,17 @@ import withSizes from 'react-sizes'
 import 'moment/locale/en-gb'
 
 import Image from '@bodhi-project/components/lib/Image'
-import AnimateOnChange from 'react-animate-on-change'
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/blocks
-import Row from 'antd/lib/row'
+import Division from '@bodhi-project/components/lib/Division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
-
-import Col from 'antd/lib/col'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
+
+import AnimateOnChange from 'react-animate-on-change'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Month from './Month'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-// const { Fragment } = React
+const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -329,9 +326,9 @@ class EventsGrid extends React.Component {
     const { active, nextActive } = this.state
 
     return (
-      <div className={`${pageStyles} desktop-only`}>
-        <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-          <Col sm={24} md={24} xl={15}>
+      <div className={`${pageStyles}`}>
+        <Division golden>
+          <Fragment>
             <h2 className="mask-h3">Workshops & Events</h2>
             <p>
               We offer regular learning opportunities through workshops and
@@ -339,6 +336,8 @@ class EventsGrid extends React.Component {
               also organize cool community-based events! Join us!
               <br />
               <Link to="/events">See all events here ⇝</Link>
+              <br className="mobile-only" />
+              <br className="mobile-only" />
             </p>
             <div className="margin-p">
               <Month
@@ -355,10 +354,10 @@ class EventsGrid extends React.Component {
                 active={active}
                 nextActive={nextActive}
               />
-              <br />
+              <br className="desktop-only" />
             </div>
-          </Col>
-          <Col sm={24} md={24} xl={9}>
+          </Fragment>
+          <Fragment>
             {!isUndefined(extraData) && (
               <div
                 style={{
@@ -380,9 +379,10 @@ class EventsGrid extends React.Component {
                     width: '100%',
                     marginBottom: 5,
                   }}
-                  className="mask-p"
+                  className="mask-p desktop-only"
                 />
                 <div style={{ padding: '0px 9px 9px' }}>
+                  <br className="mobile-only" />
                   <Link to={`/${extraData.node.fields.route}`}>
                     <h3 className="mask-h4">
                       {extraData.node.frontmatter.title}
@@ -413,8 +413,8 @@ class EventsGrid extends React.Component {
                 </div>
               </div>
             )}
-          </Col>
-        </Row>
+          </Fragment>
+        </Division>
       </div>
     )
   }

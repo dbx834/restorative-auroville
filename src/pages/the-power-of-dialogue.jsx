@@ -10,16 +10,13 @@ import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Division from '@bodhi-project/components/lib/Division'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 import Image from '@bodhi-project/components/lib/Image'
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import Images from '@bodhi-project/components/lib/Images'
-
-import Row from 'antd/lib/row'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
-
-import Col from 'antd/lib/col'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
@@ -143,8 +140,8 @@ const Theme = props => {
 /** Page */
 const Page = props => (
   <StandardPage className={style} seoData={seoData} {...props}>
-    <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
-      <Col sm={24} md={15}>
+    <Division>
+      <Fragment>
         <h1 className="mask-h3">"The Power of Dialogue"</h1>
         <p>
           We offer this video series as an opportunity for you to journey along
@@ -153,8 +150,8 @@ const Page = props => (
           our attempt to celebrate this body of work and to offer back a few
           nuggets from our unfolding journey.
         </p>
-      </Col>
-      <Col sm={24} md={9}>
+      </Fragment>
+      <Fragment>
         <div className="margin-p box">
           <div
             style={{
@@ -210,8 +207,8 @@ const Page = props => (
             idea of being filmed… Would you like this Circle to be yours?
           </p>
         </div>
-      </Col>
-    </Row>
+      </Fragment>
+    </Division>
     <Image
       src={yellowBorder}
       style={{
@@ -233,8 +230,8 @@ const Page = props => (
         &nbsp;to highlight the RC process in its different steps and stages
       </p>
     </div>
-    <Row gutter={{ md: 24 }}>
-      <Col md={8}>
+    <Division custom={[8, 8]}>
+      <Fragment>
         <Image
           src={p1ComingSoon}
           style={{
@@ -251,9 +248,9 @@ const Page = props => (
         <p style={{ marginTop: 3, lineHeight: '1.1 !important' }}>
           <span style={{ fontSize: '90%' }}>Coming soon…</span>
         </p>
-      </Col>
-      <Col md={12}>&nbsp;</Col>
-    </Row>
+      </Fragment>
+      <Fragment>&nbsp;</Fragment>
+    </Division>
     <Image
       src={blueBorder}
       style={{
@@ -276,15 +273,15 @@ const Page = props => (
         community
       </p>
     </div>
-    <Row gutter={{ md: 24 }}>
-      <Col md={8}>
+    <Division byThree custom={[8, 8]}>
+      <Fragment>
         <VideoCover
           to="/the-power-of-dialogue/genies-pre-circle-with-janet"
           cover={p21}
           text="Before entering a Restorative Circle, Facilitators meet amongst themselves to work through any challenging thoughts or feelings that might interfere with their capacity to hold space during the Circle. Eugénie Dumont (Genie), in her role as filmmaker, is also given an opportunity to be heard for her connection to the Circle."
         />
-      </Col>
-      <Col md={8}>
+      </Fragment>
+      <Fragment>
         <Image
           src={p2ComingSoon}
           style={{
@@ -301,8 +298,8 @@ const Page = props => (
         <p style={{ marginTop: 3, lineHeight: '1.1 !important' }}>
           <span style={{ fontSize: '90%' }}>Coming soon…</span>
         </p>
-      </Col>
-    </Row>
+      </Fragment>
+    </Division>
     <Image
       src={redBorder}
       style={{
@@ -329,45 +326,45 @@ const Page = props => (
         conflict in our community
       </p>
     </div>
-    <Row gutter={{ md: 24 }}>
-      <Col md={8}>
+    <Division byThree custom={[8, 8, 8]}>
+      <Fragment>
         <VideoCover
           to="/the-power-of-dialogue/engaging-with-restorative-circles-in-auroville"
           cover={p31}
           text="L'aura shares about her experience of engaging with Restorative Circles in Auroville and how it's received by the community."
         />
-      </Col>
-      <Col md={8}>
+      </Fragment>
+      <Fragment>
         <VideoCover
           to="/the-power-of-dialogue/designing-our-justice-system-consciously"
           cover={p32}
           text="L'aura shares about her experience of engaging with Restorative Circles in Auroville and the importance of designing a justice system consciously, otherwise we'll just inherit the old ways."
         />
-      </Col>
-      <Col md={8}>
+      </Fragment>
+      <Fragment>
         <VideoCover
           to="/the-power-of-dialogue/defining-the-act"
           cover={p33}
           text="Kati shares her recent learning regarding the importance of bringing an authentic live act to a Circle, instead of simply having an 'interesting' topic as the starting point."
         />
-      </Col>
-    </Row>
-    <Row gutter={{ md: 24 }}>
-      <Col md={8}>
+      </Fragment>
+    </Division>
+    <Division byThree custom={[8, 8, 8]}>
+      <Fragment>
         <VideoCover
           to="/the-power-of-dialogue/rc-challenges-us-to-grow"
           cover={p34}
           text="Henrike shares her thoughts on learning RC and how it invites for growth, as individuals and as a collective."
         />
-      </Col>
-      <Col md={8}>
+      </Fragment>
+      <Fragment>
         <VideoCover
           to="/the-power-of-dialogue/rcs-ripple-effect"
           cover={p35}
           text="Pranjal reflects on how Circles can impact the community in unexpected ways, even when some folks choose not to attend."
         />
-      </Col>
-      <Col md={8}>
+      </Fragment>
+      <Fragment>
         <Image
           src={p3ComingSoon}
           style={{
@@ -384,35 +381,8 @@ const Page = props => (
         <p style={{ marginTop: 3, lineHeight: '1.1 !important' }}>
           <span style={{ fontSize: '90%' }}>Coming soon…</span>
         </p>
-      </Col>
-    </Row>
-    {/*
-    <Row gutter={{ md: 24 }}>
-      <Col md={8}>
-        <VideoCover
-          to="/the-power-of-dialogue/the-value-of-learning-rc-facilitation"
-          cover={p34}
-          text="Coming soon."
-        />
-      </Col>
-      <Col md={8}>
-        <Image
-          src={p3ComingSoon}
-          style={{
-            background: 'transparent',
-            border: 'unset',
-            height: 'auto',
-            width: '100%',
-            marginBottom: 10,
-          }}
-          loader="gradient"
-          rawWidth={1440}
-          rawHeight={900}
-        />
-        <p>Coming soon…</p>
-      </Col>
-    </Row>
-    */}
+      </Fragment>
+    </Division>
     <Image
       src={greenBorder}
       style={{
@@ -434,22 +404,22 @@ const Page = props => (
         &nbsp;being in live Circles
       </p>
     </div>
-    <Row gutter={{ md: 24 }}>
-      <Col md={8}>
+    <Division byThree custom={[8, 8, 8]}>
+      <Fragment>
         <VideoCover
           to="/the-power-of-dialogue/surya-on-restorative-circles"
           cover={p41}
           text="Surya shares about her experiences with Restoratives Circles."
         />
-      </Col>
-      <Col md={8}>
+      </Fragment>
+      <Fragment>
         <VideoCover
           to="/the-power-of-dialogue/the-value-of-rc-facilitation"
           cover={p42}
           text="Pranjal reflects on his learning journey with RC facilitation, and appreciates how the skills he has acquired here can provide for a strong foundation in holding space in different contexts."
         />
-      </Col>
-      <Col md={8}>
+      </Fragment>
+      <Fragment>
         <Image
           src={p4ComingSoon}
           style={{
@@ -466,8 +436,8 @@ const Page = props => (
         <p style={{ marginTop: 3, lineHeight: '1.1 !important' }}>
           <span style={{ fontSize: '90%' }}>Coming soon…</span>
         </p>
-      </Col>
-    </Row>
+      </Fragment>
+    </Division>
     <Theme
       border="#FAE300"
       title="Our RC-channel on YouTube (2011‒present)  "

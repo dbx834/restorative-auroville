@@ -19,8 +19,8 @@ import grungeBox from '../assets/grungeBg.jpg'
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** EqualHalves */
-const EqualHalves = props => {
+/** GrungeBox */
+const GrungeBox = props => {
   const { children, style } = props
   return (
     <div
@@ -83,9 +83,9 @@ const EqualHalves = props => {
   )
 }
 
-EqualHalves.propTypes = {}
+GrungeBox.propTypes = {}
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports
 // ----------------------------------------------------------------------------
-export default EqualHalves
+export default GrungeBox

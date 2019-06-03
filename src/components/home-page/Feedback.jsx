@@ -9,12 +9,8 @@ import { css } from 'glamor'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
 
-// import OutLink from '@bodhi-project/components/lib/OutLink'
-
-import Row from 'antd/lib/row'
+import Division from '@bodhi-project/components/lib/Division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
-
-import Col from 'antd/lib/col'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
@@ -22,7 +18,7 @@ import Video from '../Video'
 // import Link from '../Link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment: Frag } = React
+const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -50,12 +46,12 @@ const Page = props => {
 
   return (
     <section className={pageStyle}>
-      <Row gutter={{ xs: 24, sm: 36, md: 48 }}>
-        <Col sm={24} md={24} lg={15}>
+      <Division golden>
+        <Fragment>
           <h2 className="mask-h3">The Power of Dialogue - Video Series</h2>
           <Video url="https://www.youtube.com/watch?v=tuJrfIFd3IY" />
-        </Col>
-        <Col sm={24} md={24} lg={9}>
+        </Fragment>
+        <Fragment>
           <h2 className="mask-h3">Testimonial</h2>
           <p>
             <i>
@@ -70,8 +66,8 @@ const Page = props => {
             <br />
             <br />~ Naomi Christine
           </p>
-        </Col>
-      </Row>
+        </Fragment>
+      </Division>
     </section>
   )
 }

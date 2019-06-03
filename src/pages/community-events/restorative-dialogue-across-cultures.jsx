@@ -9,10 +9,14 @@ import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import OutLink from '@bodhi-project/components/lib/OutLink'
-// import Image from '@bodhi-project/components/lib/Image'
-import Images from '@bodhi-project/components/lib/Images'
+import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
+
+import Division from '@bodhi-project/components/lib/Division'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
@@ -28,7 +32,6 @@ import CommunityEventWrapper from '../../components/wrappers/CommunityEventWrapp
 
 import Link from '../../components/Link'
 import Video from '../../components/Video'
-import GoldenMajorHalves from '../../components/GoldenMajorHalves'
 
 import seoHelper from '../../methods/seoHelper'
 
@@ -53,6 +56,42 @@ const prev = {
 const seoData = seoHelper(pageData)
 
 const { Item: BItem } = Breadcrumb
+
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    img00001: file(
+      relativePath: {
+        eq: "community-events/restorative-dialogue-across-cultures/img00001.jpeg"
+      }
+    ) {
+      ...defaultImage
+    }
+    img00002: file(
+      relativePath: {
+        eq: "community-events/restorative-dialogue-across-cultures/img00002.jpeg"
+      }
+    ) {
+      ...defaultImage
+    }
+    img00003: file(
+      relativePath: {
+        eq: "community-events/restorative-dialogue-across-cultures/img00003.jpeg"
+      }
+    ) {
+      ...defaultImage
+    }
+    img00004: file(
+      relativePath: {
+        eq: "community-events/restorative-dialogue-across-cultures/img00004.jpeg"
+      }
+    ) {
+      ...defaultImage
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -81,14 +120,14 @@ const Theme = props => {
           {map(files, file => {
             return (
               <p>
-                <OutLink to={file.link}>
+                <Link to={file.link}>
                   <Icon
                     type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
                     theme="outlined"
                   />
                   &nbsp;
                   {file.title}
-                </OutLink>
+                </Link>
               </p>
             )
           })}
@@ -152,70 +191,44 @@ const Initiative = props => {
         complex than an exclusive cultural targeting, in one direction or the
         other.
       </p>
-      <div className="margin-p">
-        <GoldenMajorHalves>
-          <div>
-            <Video
-              url="https://vimeo.com/242213125"
-              style={{ marginBottom: 0 }}
-            />
-          </div>
-          <div>
-            <Theme
-              border="#FB9001"
-              title="Restorative Dialogue across Cultures (2016)"
-              tag="Projects & Reports"
-              files={[
-                {
-                  title: 'Project Proposal',
-                  link:
-                    'https://www.restorativeauroville.org/pdfs2/cross-cultural-restorative-dialogue-project-proposal.pdf',
-                },
-                {
-                  title: 'Report',
-                  link:
-                    'https://www.restorativeauroville.org/pdfs2/cross-cultural-dialogue-report.pdf',
-                },
-                {
-                  title: 'Report Annexe',
-                  link:
-                    'https://www.restorativeauroville.org/pdfs2/cross-cultural-dialogue-report-annexe.pdf',
-                },
-              ]}
-            />
-          </div>
-        </GoldenMajorHalves>
-      </div>
-      <div className="margin-p">
-        <Images
-          photos={[
-            {
-              src:
-                '/event-assets/restorative-dialogue-across-cultures/img00001.jpeg',
-              width: 600,
-              height: 400,
-            },
-            {
-              src:
-                '/event-assets/restorative-dialogue-across-cultures/img00002.jpeg',
-              width: 600,
-              height: 400,
-            },
-            {
-              src:
-                '/event-assets/restorative-dialogue-across-cultures/img00003.jpeg',
-              width: 600,
-              height: 400,
-            },
-            {
-              src:
-                '/event-assets/restorative-dialogue-across-cultures/img00004.jpeg',
-              width: 600,
-              height: 400,
-            },
-          ]}
-          loader="gradient"
+      <Division golden className="margin-p">
+        <Fragment>
+          <Video
+            url="https://vimeo.com/242213125"
+            style={{ marginBottom: 0 }}
+          />
+        </Fragment>
+        <Fragment>
+          <Theme
+            border="#FB9001"
+            title="Restorative Dialogue across Cultures (2016)"
+            tag="Projects & Reports"
+            files={[
+              {
+                title: 'Project Proposal',
+                link:
+                  'https://www.restorativeauroville.org/pdfs2/cross-cultural-restorative-dialogue-project-proposal.pdf',
+              },
+              {
+                title: 'Report',
+                link:
+                  'https://www.restorativeauroville.org/pdfs2/cross-cultural-dialogue-report.pdf',
+              },
+              {
+                title: 'Report Annexe',
+                link:
+                  'https://www.restorativeauroville.org/pdfs2/cross-cultural-dialogue-report-annexe.pdf',
+              },
+            ]}
+          />
+        </Fragment>
+      </Division>
+      <div className="mask-p">
+        <Gallery
+          data={props.data}
+          lookup="img"
           columns={{ min: 2, max: 2 }}
+          Img={Img}
         />
       </div>
     </CommunityEventWrapper>

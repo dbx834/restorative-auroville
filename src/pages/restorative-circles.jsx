@@ -12,6 +12,9 @@ import map from 'lodash/map'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import Division from '@bodhi-project/components/lib/Division'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
+
 import Image from '@bodhi-project/components/lib/Image'
 
 import Icon from 'antd/lib/icon'
@@ -19,12 +22,6 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 
 import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
-
-import Row from 'antd/lib/row'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
-
-import Col from 'antd/lib/col'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
@@ -166,8 +163,8 @@ const Page = props => (
         alt="Restorative Auroville"
       />
     </div>
-    <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
-      <Col sm={24} md={15}>
+    <Division golden>
+      <Fragment>
         <div
           style={{
             border: '2px solid #00006F',
@@ -184,8 +181,8 @@ const Page = props => (
           </p>
         </div>
         <br className="mobile-only" />
-      </Col>
-      <Col sm={24} md={9}>
+      </Fragment>
+      <Fragment>
         <div
           style={{
             border: '2px solid #00006F',
@@ -204,8 +201,8 @@ const Page = props => (
             .
           </p>
         </div>
-      </Col>
-    </Row>
+      </Fragment>
+    </Division>
     <br />
     <br />
     <Division>

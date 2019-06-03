@@ -14,7 +14,10 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import OutLink from '@bodhi-project/components/lib/OutLink'
-import Image from '@bodhi-project/components/lib/Image'
+import Division from '@bodhi-project/components/lib/Division'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
+
 import keygen from '@bodhi-project/components/lib/methods/keygen'
 
 import Icon from 'antd/lib/icon'
@@ -26,8 +29,6 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
-
-import GoldenMajorHalves from '../components/GoldenMajorHalves'
 import DisqusComments from '../components/DisqusComments'
 import Video from '../components/Video'
 
@@ -287,8 +288,8 @@ const Page = props => (
       />
     </div>
     &nbsp;
-    <GoldenMajorHalves>
-      <div>
+    <Division golden>
+      <Fragment>
         <Theme
           border="#FB9001"
           title="Restorative Auroville Research Project (2015-17)"
@@ -312,12 +313,12 @@ const Page = props => (
             },
           ]}
         />
-      </div>
-      <div>
+      </Fragment>
+      <Fragment>
         <h2 className="mask-h5">Justice & Restorative Circles in Auroville</h2>
         <Video url="https://www.youtube.com/watch?v=kqBM5Xr5VfI&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=10" />
-      </div>
-    </GoldenMajorHalves>
+      </Fragment>
+    </Division>
     <DisqusComments pageData={pageData} />
   </StandardPage>
 )
