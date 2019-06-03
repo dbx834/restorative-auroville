@@ -10,6 +10,8 @@ import { css } from 'glamor'
 // import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Image from '@bodhi-project/components/lib/Image'
 import Video from '@bodhi-project/components/lib/Video'
@@ -40,6 +42,17 @@ const pageData = {
 }
 
 const seoData = seoHelper(pageData)
+
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    flowerBoardDesktop: file(relativePath: { eq: "flower-board-desktop.png" }) {
+      ...defaultImage
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -129,8 +142,17 @@ const Page = props => (
         <VolunteerForm />
       </Col>
       <Col sm={24} md={9}>
-        <h2 className="mask-h3" style={{ lineHeight: 1.2 }}>
-          Our apprentice, Henrike, shares…
+        <h2 className="mask-h3" style={{ lineHeight: 1.1 }}>
+          Our work, inside-out...
+        </h2>
+        <Img
+          className="desktop-only"
+          fluid={props.data.flowerBoardDesktop.childImageSharp.fluid}
+        />
+        <br />
+        <br />
+        <h2 className="mask-h3" style={{ lineHeight: 1.1 }}>
+          Our apprentice, Henrike, shares...
         </h2>
         <Video url="https://www.youtube.com/watch?v=bXrm9tUW4fU" />
       </Col>

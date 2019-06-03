@@ -10,6 +10,9 @@ import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import Image from '@bodhi-project/components/lib/Image'
 import keygen from '@bodhi-project/components/lib/methods/keygen'
@@ -29,9 +32,6 @@ import DisqusComments from '../components/DisqusComments'
 import Video from '../components/Video'
 
 import seoHelper from '../methods/seoHelper'
-
-import birdsTop from '../assets/birdsTop.png'
-import grungeBox from '../assets/grungeBg.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React
@@ -54,24 +54,40 @@ const style = css({
     position: 'relative',
 
     '@media(min-width: 992px)': {
-      paddingTop: 48,
-      paddingBottom: 48,
       paddingLeft: 48,
       paddingRight: 48,
-      marginLeft: '6.25vw',
-      marginRight: '6.25vw',
+
+      '& .list': {
+        width: 'calc(100% - 332px)',
+      },
     },
 
-    '@media(max-width: 992px)': {
-      paddingTop: 12,
-      paddingBottom: 12,
-      paddingLeft: 12,
-      paddingRight: 12,
-      marginLeft: '2.25vw',
-      marginRight: '2.25vw',
-    },
+    '@media(max-width: 992px)': {},
   },
 }).toString()
+
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    birdsTop: file(relativePath: { eq: "birdsTop.png" }) {
+      ...defaultImage
+    }
+    grungeBg: file(relativePath: { eq: "grungeBg.jpg" }) {
+      ...defaultImage
+    }
+    flowerBoardDesktop: file(relativePath: { eq: "flower-board-desktop.png" }) {
+      ...defaultImage
+    }
+    flowerBoardMobile: file(relativePath: { eq: "flower-board-mobile.png" }) {
+      ...defaultImage
+    }
+    cloudBoard: file(relativePath: { eq: "cloud-board.png" }) {
+      ...defaultImage
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -164,23 +180,37 @@ const Page = props => (
       <div
         style={{
           position: 'absolute',
-          top: 10,
+          bottom: 10,
           right: 10,
-          height: 75,
+          height: 400,
           zIndex: -1,
         }}
       >
-        <Image
+        <Img
           className="desktop-only"
-          src={birdsTop}
+          fluid={props.data.flowerBoardDesktop.childImageSharp.fluid}
           style={{
-            background: 'transparent',
-            border: 'unset',
-            height: 75,
-            width: 75,
+            height: 400,
+            width: 300,
           }}
-          rawWidth={900}
-          rawHeight={900}
+        />
+      </div>
+      <div
+        style={{
+          position: 'absolute',
+          top: 10,
+          right: 45,
+          height: 45,
+          zIndex: -1,
+        }}
+      >
+        <Img
+          className="desktop-only"
+          fluid={props.data.cloudBoard.childImageSharp.fluid}
+          style={{
+            height: 45,
+            width: 90,
+          }}
         />
       </div>
       <div
@@ -188,26 +218,27 @@ const Page = props => (
           position: 'absolute',
           top: 0,
           left: 0,
+          width: '100%',
           height: '100%',
           zIndex: -2,
           borderRadius: '8px',
           overflow: 'hidden',
         }}
       >
-        <Image
-          src={grungeBox}
-          style={{
-            background: 'transparent',
-            border: 'unset',
-            height: '100%',
-            width: '100%',
-          }}
-          rawWidth={1440}
-          rawHeight={900}
+        <Img
+          className="desktop-only"
+          fluid={props.data.grungeBg.childImageSharp.fluid}
+          objectFit="fill"
         />
       </div>
       <h2 className="mask-h4">Our Aims & Objectives:</h2>
-      <ul className="mask-p" style={{ marginBottom: 0, paddingLeft: 22 }}>
+      <ul
+        className="mask-p list"
+        style={{
+          marginBottom: 0,
+          paddingLeft: 22,
+        }}
+      >
         <li>
           to co-create a Justice System in Auroville that reflects our values
           and is effective
@@ -246,6 +277,14 @@ const Page = props => (
           their peace and justice systems
         </li>
       </ul>
+      <h2 className="mask-h3 mobile-only">Our work, inside-out...</h2>
+      <Img
+        className="margin-p mobile-only"
+        fluid={props.data.flowerBoardMobile.childImageSharp.fluid}
+        style={{
+          maxWidth: 360,
+        }}
+      />
     </div>
     &nbsp;
     <GoldenMajorHalves>

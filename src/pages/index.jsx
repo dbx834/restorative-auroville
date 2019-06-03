@@ -5,11 +5,12 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import { css } from 'glamor'
-import { graphql } from 'gatsby'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
 import withSizes from 'react-sizes'
-import Image from '@bodhi-project/components/lib/Image'
 import Division from '@bodhi-project/components/lib/Division'
 import Video from '@bodhi-project/components/lib/Video'
 
@@ -18,8 +19,6 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 
 import Col from 'antd/lib/col'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
-
-import Img from 'gatsby-image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'

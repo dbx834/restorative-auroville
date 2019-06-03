@@ -91,6 +91,15 @@ const style = css({
 const Ongoingprojects = props => {
   const data = [
     {
+      title: 'Restorative Circles in TLC (The Learning Community School)',
+      cover: props.data.tlc.childImageSharp.fluid,
+      route:
+        'system-building-initiatives/restorative-circles-in-the-learning-community-school',
+      formattedDate: 'November 2015 - Ongoing',
+      abstract:
+        'In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO "Olakh" (Gujarat), we will present a documentary about Nimisha’s work with women’s justice.',
+    },
+    {
       title: 'Restorative Circles in Aikiyam School',
       cover: props.data.aikiyam.childImageSharp.fluid,
       route:
@@ -105,15 +114,6 @@ const Ongoingprojects = props => {
       route:
         'system-building-initiatives/exploring-justice-and-rc-with-the-auroville-council',
       formattedDate: 'January 2018',
-      abstract:
-        'In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO "Olakh" (Gujarat), we will present a documentary about Nimisha’s work with women’s justice.',
-    },
-    {
-      title: 'Restorative Circles in TLC (The Learning Community School)',
-      cover: props.data.tlc.childImageSharp.fluid,
-      route:
-        'system-building-initiatives/restorative-circles-in-the-learning-community-school',
-      formattedDate: 'November 2015 - Ongoing',
       abstract:
         'In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO "Olakh" (Gujarat), we will present a documentary about Nimisha’s work with women’s justice.',
     },
