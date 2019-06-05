@@ -1,12 +1,13 @@
-// ------------------------------------------------------------------------------
-// ---------------------------------------------------------------------- Imports
-// ------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// -------------------------------------------------------------------- Imports
+// ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
-// import PropTypes from 'prop-types'
 import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import MediaQuery from 'react-responsive'
+
 import PDFReader from '@bodhi-project/components/lib/PDFReader'
 
 import Image from '@bodhi-project/components/lib/Image'
@@ -16,7 +17,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/collapse/style/css
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-// const { Fragment } = React
+const { Fragment } = React
 const { Panel } = Collapse
 
 // ----------------------------------------------------------------------------
@@ -39,7 +40,11 @@ const style = css({
       verticalAlign: 'unset !important',
       top: 'unset !important',
       transform: 'unset !important',
-      lineHeight: '34px !important',
+      lineHeight: '24px !important',
+
+      '@media(min-width: 992px)': {
+        lineHeight: '34px !important',
+      },
     },
 
     '& > div': {
@@ -101,70 +106,114 @@ const pdfStyles = css({
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** PDFViewer */
-const PDFViewer = props => {
-  const { url, title = 'See PDF', width = '100%' } = props
+class PDFViewer extends React.Component {
+  /** standard constructor */
+  constructor(props) {
+    super(props)
 
-  return (
-    <div className="mask-p" style={{ maxWidth: 'calc(100% - 200px)' }}>
-      <div>
-        <Collapse
-          defaultActiveKey={['9']}
-          accordion
-          bordered={false}
-          className={style}
-        >
-          <Panel
-            header={
-              <div
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                }}
-              >
+    this.state = {
+      client: false,
+    }
+  }
+
+  /** after mount */
+  componentDidMount() {
+    this.setState({ client: true })
+  }
+
+  /** standard renderer */
+  render() {
+    const { url, title = 'See PDF', width = '100%' } = this.props
+    const { client } = this.state
+
+    return (
+      <Fragment>
+        {client === true && (
+          <Fragment>
+            <br style={{ display: 'none' }} />
+            <MediaQuery minWidth={992}>
+              {matches => (
                 <div
-                  className="chirp"
-                  style={{
-                    position: 'absolute',
-                    right: -3,
-                    height: 40,
-                    zIndex: 100,
-                  }}
+                  className="mask-p"
+                  style={{ maxWidth: matches ? 'calc(100% - 200px)' : '100%' }}
                 >
-                  <Image
-                    src="/assets/chirp-pdf.webp"
-                    style={{
-                      background: 'transparent',
-                      border: 'unset',
-                    }}
-                    className="chirp-image"
-                    rawWidth={900}
-                    rawHeight={900}
-                  />
+                  <div>
+                    <Collapse
+                      defaultActiveKey={['9']}
+                      accordion
+                      bordered={false}
+                      className={style}
+                    >
+                      <Panel
+                        header={
+                          <div
+                            style={{
+                              position: 'relative',
+                              width: '100%',
+                            }}
+                          >
+                            <div
+                              className="chirp"
+                              style={{
+                                position: 'absolute',
+                                right: -3,
+                                height: 40,
+                                zIndex: 100,
+                              }}
+                            >
+                              <Image
+                                src="/assets/chirp-pdf.webp"
+                                style={{
+                                  background: 'transparent',
+                                  border: 'unset',
+                                }}
+                                className="chirp-image"
+                                rawWidth={900}
+                                rawHeight={900}
+                              />
+                            </div>
+                            <div
+                              style={{
+                                paddingLeft: 20,
+                                width: 'calc(100% - 50px)',
+                              }}
+                            >
+                              <p
+                                className="mask-h6"
+                                style={{ marginBottom: 0 }}
+                              >
+                                <span>{title}</span>
+                              </p>
+                            </div>
+                          </div>
+                        }
+                        key="1"
+                        showArrow
+                      >
+                        <div style={{ background: '#d1d1d1', padding: 12 }}>
+                          <div
+                            style={{
+                              width: matches ? width : '100%',
+                              margin: 'auto',
+                            }}
+                          >
+                            <PDFReader url={url} className={pdfStyles} />
+                          </div>
+                          &nbsp;
+                        </div>
+                      </Panel>
+                    </Collapse>
+                  </div>
                 </div>
-                <div style={{ paddingLeft: 20, width: 'calc(100% - 50px)' }}>
-                  <p className="mask-h6" style={{ marginBottom: 0 }}>
-                    <span>{title}</span>
-                  </p>
-                </div>
-              </div>
-            }
-            key="1"
-            showArrow
-          >
-            <div style={{ background: '#d1d1d1', padding: 12 }}>
-              <div style={{ width, margin: 'auto' }}>
-                <PDFReader url={url} className={pdfStyles} />
-              </div>
-              &nbsp;
-            </div>
-          </Panel>
-        </Collapse>
-      </div>
-    </div>
-  )
+              )}
+            </MediaQuery>
+            <br style={{ display: 'none' }} />
+          </Fragment>
+        )}
+      </Fragment>
+    )
+  }
 }
-
-// PDFViewer.propTypes = {}
 
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Exports

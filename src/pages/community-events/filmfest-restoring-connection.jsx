@@ -48,7 +48,9 @@ const prev = {
   nakedPageSlug: 'community-events/restorative-dialogue-across-cultures',
 }
 
-const next = undefined
+const next = {
+  nakedPageSlug: 'community-events/world-cafes-on-peace-and-justice',
+}
 
 const seoData = seoHelper(pageData)
 
@@ -57,7 +59,7 @@ const { Item: BItem } = Breadcrumb
 const notes = [
   {
     url: 'https://www.restorativeauroville.org/pdfs2/filmfest.pdf',
-    title: 'See movie timetable',
+    title: 'See FilmFest Program',
     width: '40%',
   },
 ]

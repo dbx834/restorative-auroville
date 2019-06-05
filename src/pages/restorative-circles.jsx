@@ -279,7 +279,7 @@ const Page = props => (
     </div>
     <br />
     <br />
-    <h2 className="mask-h4">Learn more about Restorative Circles…</h2>
+    <h2 className="mask-h4">Learn More about Restorative Circles…</h2>
     <p>
       See our <Link to="/events">Upcoming Events</Link> and join a workshop or
       practice group (in person or online).

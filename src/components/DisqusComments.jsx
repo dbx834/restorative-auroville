@@ -121,7 +121,16 @@ const query = graphql`
 const DisqusCommentsX = ({
   pageData,
   collapsible = false,
-  text = 'Please share your thoughts and inspiration. Our hope is for these comments to create a space for collective wisdom to emerge on Restorative Circles and justice. And a little request to please stay on topic and to keep your comments relevant and practical, so that other viewers are benefited.',
+  text = [
+    <p>
+      <strong>Please share your thoughts and inspiration…</strong>
+      <br />
+      Our hope is for these comments to create a space for collective wisdom to
+      emerge on Restorative Circles and justice. And a little request to please
+      stay on topic and to keep your comments relevant and practical, so that
+      other viewers are benefited.
+    </p>,
+  ],
 }) => {
   const styleX = `${style} mask-p`
 

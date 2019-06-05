@@ -363,26 +363,42 @@ const XTooltip = props => {
                 {thisCircleDetails.type === 1 && '1st Pre-Circle'}
                 {thisCircleDetails.type === 2 && 'Circle'}
                 {thisCircleDetails.type === 3 && 'Post-Circle'}
-                &nbsp;(Circle #{circleDetails.id})
+                &nbsp;(#{circleDetails.id}):
               </strong>
               {
                 <Fragment>
                   {thisCircleDetails.type === 0 && (
                     <Fragment>
-                      <br />
-                      <i>with the Initiator of the Circle</i>
+                      &nbsp;
+                      {thisCircleTime}
+                      <i style={{ display: 'block', marginTop: -2 }}>
+                        with the Initiator of the Circle
+                      </i>
                     </Fragment>
                   )}
                   {thisCircleDetails.type === 1 && (
                     <Fragment>
-                      <br />
-                      <i>with the Initiator of the Circle</i>
+                      &nbsp;
+                      {thisCircleTime}
+                      <i style={{ display: 'block', marginTop: -2 }}>
+                        with the Initiator of the Circle
+                      </i>
+                    </Fragment>
+                  )}
+                  {thisCircleDetails.type === 2 && (
+                    <Fragment>
+                      &nbsp;
+                      {thisCircleTime}
+                    </Fragment>
+                  )}
+                  {thisCircleDetails.type === 3 && (
+                    <Fragment>
+                      &nbsp;
+                      {thisCircleTime}
                     </Fragment>
                   )}
                 </Fragment>
               }
-              <br />
-              {thisCircleTime}
             </small>
           </p>
           <p

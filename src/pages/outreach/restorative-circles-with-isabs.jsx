@@ -37,11 +37,11 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
-const next = {
+const prev = {
   nakedPageSlug: 'outreach/restorative-circles-with-enfold',
 }
 
-const prev = {
+const next = {
   // nakedPageSlug: 'outreach/restorative-circles-in-isabs',
 }
 
@@ -102,17 +102,21 @@ const Initiative = props => {
       <Division>
         <Fragment>
           <h2 className="mask-h5">
-            ISABS members reflect on their take-aways
-            <br />
-            (Bangalore batch)
+            <strong>
+              ISABS members reflect on their take-aways
+              <br />
+              (Bangalore batch)
+            </strong>
           </h2>
           <Video url="https://www.youtube.com/watch?v=8H3YNKz1A9Y" />
         </Fragment>
         <Fragment>
           <h2 className="mask-h5">
-            ISABS members reflect on their take-aways
-            <br />
-            (Delhi batch)
+            <strong>
+              ISABS members reflect on their take-aways
+              <br />
+              (Delhi batch)
+            </strong>
           </h2>
           <Video url="https://www.youtube.com/watch?v=B7sO2a5_KV8" />
         </Fragment>

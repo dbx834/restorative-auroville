@@ -36,6 +36,7 @@ import data from '../../data/website.json'
 
 import EventRegisterationForm from '../forms/EventRegisterationForm'
 
+const { Fragment } = React
 const { Item: BItem } = Breadcrumb
 
 // ----------------------------------------------------------------------------
@@ -111,8 +112,8 @@ const Page = props => {
       <Division golden>
         <Fragment>
           <Header>
-            <Row gutter={{ xs: 24, sm: 24, md: 24 }}>
-              <Col sm={24} md={9}>
+            <Division golden>
+              <Fragment>
                 <Image
                   src={cover}
                   rawWidth={1440}
@@ -125,8 +126,8 @@ const Page = props => {
                   }}
                   className="mask-p"
                 />
-              </Col>
-              <Col sm={24} md={15}>
+              </Fragment>
+              <Fragment>
                 <h1
                   className="mask-h3"
                   style={{ marginTop: -10, marginBottom: 15, lineHeight: 1.1 }}
@@ -164,8 +165,8 @@ const Page = props => {
                     </FacebookProvider>
                   </div>
                 </div>
-              </Col>
-            </Row>
+              </Fragment>
+            </Division>
           </Header>
           {children}
           <Footer style={{ borderTop: '1px dotted #00006F' }}>

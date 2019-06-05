@@ -91,22 +91,22 @@ const style = css({
 const Ongoingprojects = props => {
   const data = [
     {
-      title: 'Restorative Circles in TLC (The Learning Community School)',
-      cover: props.data.tlc.childImageSharp.fluid,
-      route:
-        'system-building-initiatives/restorative-circles-in-the-learning-community-school',
-      formattedDate: 'November 2015 - Ongoing',
-      abstract:
-        'In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO "Olakh" (Gujarat), we will present a documentary about Nimisha’s work with women’s justice.',
-    },
-    {
       title: 'Restorative Circles in Aikiyam School',
       cover: props.data.aikiyam.childImageSharp.fluid,
       route:
         'system-building-initiatives/restorative-circles-in-aikiyam-school',
       formattedDate: 'January 2017 - Ongoing',
       abstract:
-        'In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO "Olakh" (Gujarat), we will present a documentary about Nimisha’s work with women’s justice.',
+        'We are sharing RC in Aikiyam School, one of Auroville’s outreach schools for children from Kindergarten to 8th Grade. After discussions with the administration and teachers of the school, a group of ten teachers has committed to learn about RC.',
+    },
+    {
+      title: 'Restorative Circles in TLC (The Learning Community School)',
+      cover: props.data.tlc.childImageSharp.fluid,
+      route:
+        'system-building-initiatives/restorative-circles-in-the-learning-community-school',
+      formattedDate: 'November 2015 - Ongoing',
+      abstract:
+        'In late 2015, we were invited to share RC with the teachers at TLC (The Learning Community School).',
     },
     {
       title: 'Exploring Justice & RC with the Auroville Council',
@@ -115,7 +115,7 @@ const Ongoingprojects = props => {
         'system-building-initiatives/exploring-justice-and-rc-with-the-auroville-council',
       formattedDate: 'January 2018',
       abstract:
-        'In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO "Olakh" (Gujarat), we will present a documentary about Nimisha’s work with women’s justice.',
+        'In early 2018, we invited the Auroville Council to explore RC and justice with us, so that we could improve our collaboration and better contribute to the community.',
     },
   ]
 

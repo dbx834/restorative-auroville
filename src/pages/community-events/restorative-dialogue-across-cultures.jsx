@@ -45,12 +45,10 @@ const pageData = {
     'We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?',
 }
 
+const prev = undefined
+
 const next = {
   nakedPageSlug: 'community-events/filmfest-restoring-connection',
-}
-
-const prev = {
-  nakedPageSlug: 'community-events/world-cafes-on-peace-and-justice',
 }
 
 const seoData = seoHelper(pageData)

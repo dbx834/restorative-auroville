@@ -47,17 +47,17 @@ const pageData = {
     'Spreading the message of oneness, inclusion and respect and (re-)connect as Aurovilians, and with our neighbours in the surrounding villages.',
 }
 
-const prev = {
+const next = {
   nakedPageSlug: 'community-events/cross-cultural-dialogue',
+}
+
+const prev = {
+  nakedPageSlug: 'community-events/world-cafes-on-peace-and-justice',
 }
 
 const seoData = seoHelper(pageData)
 
 const { Item: BItem } = Breadcrumb
-
-const next = {
-  nakedPageSlug: 'community-events/world-cafes-on-peace-and-justice',
-}
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Images

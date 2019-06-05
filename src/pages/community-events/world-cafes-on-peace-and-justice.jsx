@@ -28,11 +28,11 @@ const pageData = {
     'In the first months of 2016, we hosted a series of evening conversations in the co-creative World Café format. “What can we do as a community to openly share past pain and to restore connection and trust?”',
 }
 
-const next = {
-  nakedPageSlug: 'community-events/restorative-dialogue-across-cultures',
+const prev = {
+  nakedPageSlug: 'community-events/filmfest-restoring-connection',
 }
 
-const prev = {
+const next = {
   nakedPageSlug: 'community-events/walk-of-hope-in-auroville-and-the-bioregion',
 }
 

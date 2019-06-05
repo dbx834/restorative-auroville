@@ -29,11 +29,11 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
-const next = {
+const prev = {
   // nakedPageSlug: 'outreach/restorative-circles-with-enfold',
 }
 
-const prev = {
+const next = {
   nakedPageSlug: 'outreach/restorative-circles-with-isabs',
 }
 

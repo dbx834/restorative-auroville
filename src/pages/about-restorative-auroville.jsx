@@ -55,8 +55,8 @@ const style = css({
     position: 'relative',
 
     '@media(min-width: 992px)': {
-      paddingLeft: 48,
-      paddingRight: 48,
+      paddingLeft: 36,
+      paddingRight: 36,
 
       '& .list': {
         width: 'calc(100% - 332px)',
@@ -64,6 +64,24 @@ const style = css({
     },
 
     '@media(max-width: 992px)': {},
+
+    '& .check': {
+      height: '100% !important',
+
+      '& > div': {
+        height: '100% !important',
+      },
+
+      '& > img': {
+        objectFit: 'fill !important',
+      },
+
+      '& > picture': {
+        '& > img': {
+          objectFit: 'fill !important',
+        },
+      },
+    },
   },
 }).toString()
 
@@ -82,9 +100,6 @@ export const query = graphql`
       ...defaultImage
     }
     flowerBoardMobile: file(relativePath: { eq: "flower-board-mobile.png" }) {
-      ...defaultImage
-    }
-    cloudBoard: file(relativePath: { eq: "cloud-board.png" }) {
       ...defaultImage
     }
   }
@@ -181,8 +196,8 @@ const Page = props => (
       <div
         style={{
           position: 'absolute',
-          bottom: 10,
-          right: 10,
+          bottom: 4,
+          right: 20,
           height: 400,
           zIndex: -1,
         }}
@@ -192,25 +207,7 @@ const Page = props => (
           fluid={props.data.flowerBoardDesktop.childImageSharp.fluid}
           style={{
             height: 400,
-            width: 300,
-          }}
-        />
-      </div>
-      <div
-        style={{
-          position: 'absolute',
-          top: 10,
-          right: 45,
-          height: 45,
-          zIndex: -1,
-        }}
-      >
-        <Img
-          className="desktop-only"
-          fluid={props.data.cloudBoard.childImageSharp.fluid}
-          style={{
-            height: 45,
-            width: 90,
+            width: 257,
           }}
         />
       </div>
@@ -222,14 +219,11 @@ const Page = props => (
           width: '100%',
           height: '100%',
           zIndex: -2,
-          borderRadius: '8px',
-          overflow: 'hidden',
         }}
       >
         <Img
-          className="desktop-only"
+          className="desktop-only check"
           fluid={props.data.grungeBg.childImageSharp.fluid}
-          objectFit="fill"
         />
       </div>
       <h2 className="mask-h4">Our Aims & Objectives:</h2>

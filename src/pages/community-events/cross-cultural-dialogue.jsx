@@ -42,11 +42,11 @@ const seoData = seoHelper(pageData)
 
 const { Item: BItem } = Breadcrumb
 
-const next = {
+const prev = {
   nakedPageSlug: 'community-events/walk-of-hope-in-auroville-and-the-bioregion',
 }
 
-const prev = {
+const next = {
   nakedPageSlug: 'community-events/women-for-justice',
 }
 

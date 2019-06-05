@@ -7,6 +7,7 @@ import React from 'react'
 import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Video from '@bodhi-project/components/lib/Video'
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import Division from '@bodhi-project/components/lib/Division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
@@ -16,7 +17,6 @@ import PDFReader from '@bodhi-project/components/lib/PDFReader'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import StandardPage from '../components/wrappers/StandardPage'
-import Video from '../components/Video'
 import DisqusComments from '../components/DisqusComments'
 
 import seoHelper from '../methods/seoHelper'
@@ -117,24 +117,25 @@ const Page = props => (
       </div>
     </div>
     <br />
+    <br />
     <h2 className="mask-h4" style={{ marginBottom: 0 }}>
       "Create Auroville Together: Restorative Circles"
     </h2>
-    <p style={{ marginBottom: 30 }}>
-      <i>Public presentation at Unity Pavilion, Auroville (2017)</i>
+    <p style={{ marginBottom: 10 }}>
+      Public presentation at Unity Pavilion, Auroville (2017)
     </p>
     <Division>
       <Fragment>
-        <Video url="https://www.youtube.com/watch?v=n1Uf1IYQ2_Y&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=9" />
-        <p className="mask-h5">
+        <p className="mask-h6">
           <strong>Part 1</strong>
         </p>
+        <Video url="https://www.youtube.com/watch?v=n1Uf1IYQ2_Y&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=9" />
       </Fragment>
       <Fragment>
-        <Video url="https://www.youtube.com/watch?v=ngOhj-NhKJo&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=8" />
-        <p className="mask-h5">
+        <p className="mask-h6">
           <strong>Part 2</strong>
         </p>
+        <Video url="https://www.youtube.com/watch?v=ngOhj-NhKJo&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=8" />
       </Fragment>
     </Division>
     <br />

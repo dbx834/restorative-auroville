@@ -45,8 +45,8 @@ const Page = props => (
       <Fragment>
         <h1 className="mask-h3">Newsletter</h1>
         <p>
-          Sign up for our occasional newsletter and receive information about
-          future RC (and/or Nonviolent Communication) events.
+          If you'd like to receive updates about our programs and/or events,
+          please sign up for our newsletter.
         </p>
         <NewsletterForm />
       </Fragment>
