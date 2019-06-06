@@ -91,15 +91,6 @@ const style = css({
 const Ongoingprojects = props => {
   const data = [
     {
-      title: 'Restorative Circles in Aikiyam School',
-      cover: props.data.aikiyam.childImageSharp.fluid,
-      route:
-        'system-building-initiatives/restorative-circles-in-aikiyam-school',
-      formattedDate: 'January 2017 - Ongoing',
-      abstract:
-        'We are sharing RC in Aikiyam School, one of Auroville’s outreach schools for children from Kindergarten to 8th Grade. After discussions with the administration and teachers of the school, a group of ten teachers has committed to learn about RC.',
-    },
-    {
       title: 'Restorative Circles in TLC (The Learning Community School)',
       cover: props.data.tlc.childImageSharp.fluid,
       route:
@@ -107,6 +98,15 @@ const Ongoingprojects = props => {
       formattedDate: 'November 2015 - Ongoing',
       abstract:
         'In late 2015, we were invited to share RC with the teachers at TLC (The Learning Community School).',
+    },
+    {
+      title: 'Restorative Circles in Aikiyam School',
+      cover: props.data.aikiyam.childImageSharp.fluid,
+      route:
+        'system-building-initiatives/restorative-circles-in-aikiyam-school',
+      formattedDate: 'January 2017 - Ongoing',
+      abstract:
+        'We are sharing RC in Aikiyam School, one of Auroville’s outreach schools for children from Kindergarten to 8th Grade. After discussions with the administration and teachers of the school, a group of ten teachers has committed to learn about RC.',
     },
     {
       title: 'Exploring Justice & RC with the Auroville Council',

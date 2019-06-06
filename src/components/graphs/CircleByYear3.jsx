@@ -795,7 +795,7 @@ class Sample3 extends React.Component {
           <h3 className="mask-h5" style={{ marginBottom: 8 }}>
             Legend
           </h3>
-          <Division>
+          <Division style={{ marginBottom: 10 }}>
             <div>
               <h4 className="mask-h5">
                 <small>The Complete Circle</small>
@@ -907,7 +907,7 @@ class Sample3 extends React.Component {
                   >
                     <small>Circle Number</small>
                   </h4>
-                  <p>
+                  <p style={{ marginBottom: 20 }}>
                     <small>
                       Our Circles are recorded chronologically, so the number
                       indicates this order over time. The highest number also
@@ -1011,7 +1011,7 @@ class Sample3 extends React.Component {
                   >
                     <small>Circle</small>
                   </h4>
-                  <p>
+                  <p style={{ marginBottom: 20 }}>
                     <small>
                       Indicates when the Circle took place (sometimes in
                       multiple meetings) and its size (number of people who
@@ -1057,7 +1057,7 @@ class Sample3 extends React.Component {
                   >
                     <small>Post-Circle(s)</small>
                   </h4>
-                  <p>
+                  <p style={{ marginBottom: 20 }}>
                     <small>
                       Indicates when the Post-Circle(s) took place and its size
                       (number of people who attended the Circle process).

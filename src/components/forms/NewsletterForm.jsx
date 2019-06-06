@@ -22,11 +22,13 @@ import {
   hasErrors,
   validateEmail,
   validateName,
+  validateComment,
 } from '../../methods/formHelpers'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
 const FormItem = Form.Item
+const { TextArea } = Input
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -65,15 +67,16 @@ class IndexPage extends React.Component {
           loader: true,
         })
 
-        let { name, email } = values
+        let { name, email, comment } = values
 
         name = isUndefined(name) ? ' ' : name
         email = isUndefined(email) ? ' ' : email
+        comment = isUndefined(comment) ? ' ' : comment
 
         // Mock some delay
         setTimeout(() => {
           fetch(
-            `https://script.google.com/macros/s/AKfycbzhQ705YWqcsohLqLzzv7_0UrzHD7tMlFVNOPr7D00uCaiUP-g/exec?email=${email}&name=${name}&callback=?`,
+            `https://script.google.com/macros/s/AKfycbzhQ705YWqcsohLqLzzv7_0UrzHD7tMlFVNOPr7D00uCaiUP-g/exec?email=${email}&name=${name}&comment=${comment}&callback=?`,
             {
               method: 'GET',
               mode: 'no-cors',
@@ -106,6 +109,7 @@ class IndexPage extends React.Component {
     // Only show error after a field is touched.
     const nameError = isFieldTouched('name') && getFieldError('name')
     const emailError = isFieldTouched('email') && getFieldError('email')
+    const commentError = isFieldTouched('comment') && getFieldError('comment')
 
     return (
       <div>
@@ -124,6 +128,18 @@ class IndexPage extends React.Component {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateEmail }],
               })(<Input placeholder="Email" />)}
+            </FormItem>
+            {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comment */}
+            <FormItem validateStatus={commentError ? 'error' : ''} help="">
+              {getFieldDecorator('comment', {
+                validateTrigger: ['onChange', 'onBlur'],
+                rules: [{ validator: validateComment }],
+              })(
+                <TextArea
+                  placeholder="What is your area of interest? What sort of information would you enjoy receiving?"
+                  autosize={{ minRows: 3, maxRows: 5 }}
+                />
+              )}
             </FormItem>
 
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Submit */}
