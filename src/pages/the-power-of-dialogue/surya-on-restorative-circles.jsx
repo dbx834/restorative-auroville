@@ -24,7 +24,9 @@ const next = {
   nakedPageSlug: 'the-power-of-dialogue/the-value-of-rc-facilitation',
 }
 
-const prev = undefined
+const prev = {
+  nakedPageSlug: 'the-power-of-dialogue/rcs-ripple-effect',
+}
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles

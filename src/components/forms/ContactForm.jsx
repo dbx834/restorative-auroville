@@ -180,7 +180,7 @@ class ContactForm extends React.Component {
         {/* On-sent message */}
         {this.state.formSent === true && (
           <p className="home" style={{ textIndent: 0 }}>
-            We recieved your message. We'll get back to you shortly.
+            We received your message. We'll get back to you shortly.
           </p>
         )}
       </div>

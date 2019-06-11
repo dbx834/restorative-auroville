@@ -142,6 +142,22 @@ const style = css({
       maxWidth: 400,
     },
   },
+
+  '& #fb': {
+    '& > div': {
+      '& > div': {
+        '& > span': {
+          width: '96px !important',
+          overflow: 'hidden !important',
+
+          '& > iframe': {
+            width: '96px !important',
+            overflow: 'hidden !important',
+          },
+        },
+      },
+    },
+  },
 }).toString()
 
 const goldenMajorBlock = container({ goldenMajor: true, block: true })

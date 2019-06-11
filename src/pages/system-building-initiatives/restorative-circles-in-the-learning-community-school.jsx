@@ -109,6 +109,7 @@ const Initiative = props => {
         </div>
         <div
           style={{ display: 'flex', height: '100%', alignItems: 'flex-end' }}
+          className="desktop-only"
         >
           <div>
             <GrungeBox style={{ paddingTop: 16, paddingBottom: 16 }}>

@@ -22,7 +22,9 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
-const prev = undefined
+const prev = {
+  nakedPageSlug: 'the-power-of-dialogue/genies-pre-circle-with-janet',
+}
 
 const next = {
   nakedPageSlug:

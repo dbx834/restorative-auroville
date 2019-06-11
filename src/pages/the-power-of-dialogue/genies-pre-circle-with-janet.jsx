@@ -13,7 +13,8 @@ import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: "2.1 Genie's Pre Circle with Janet",
+  pageTitle:
+    "2.1 Genie's Pre-Circle with Janet & Facilitators' Pre-Circle with Janet, L'aura, Kati & Shanti",
   nakedPageSlug: 'the-power-of-dialogue/genies-pre-circle-with-janet',
   pageAbstract:
     'Before entering a Restorative Circle, Facilitators meet amongst themselves to work through any challenging thoughts or feelings that might interfere with their capacity to hold space during the Circle. Eugénie Dumont (Genie), in her role as filmmaker, is also given an opportunity to be heard for her connection to the Circle.',
