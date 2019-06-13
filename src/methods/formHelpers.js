@@ -1,12 +1,11 @@
 // ----------------------------------------------------------------------------
 // -------------------------------------------------------------------- Imports
 // ----------------------------------------------------------------------------
-
 import isEmpty from 'lodash/isEmpty'
-import replace from 'lodash/replace'
+// import replace from 'lodash/replace'
 
 import isEmail from 'validator/lib/isEmail'
-import isAlpha from 'validator/lib/isAlphanumeric'
+// import isAlpha from 'validator/lib/isAlphanumeric'
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Functions
@@ -38,20 +37,22 @@ export const validateMobile = (rule, value, callback) => {
 
 /** Check email is valid */
 export const validateCountry = (rule, value, callback) => {
-  if (isEmpty(value)) {
-    callback("We'd like to know where you're from!")
-  } else {
-    callback()
-  }
+  callback()
+  // if (isEmpty(value)) {
+  //   callback("We'd like to know where you're from!")
+  // } else {
+  //   callback()
+  // }
 }
 
 /** Check email is valid */
 export const validateCurrentLocation = (rule, value, callback) => {
-  if (isEmpty(value)) {
-    callback("We'd like to know where you're currently living!")
-  } else {
-    callback()
-  }
+  callback()
+  // if (isEmpty(value)) {
+  //   callback("We'd like to know where you're currently living!")
+  // } else {
+  //   callback()
+  // }
 }
 
 /** Check email is valid */
@@ -64,11 +65,12 @@ export const validateWhatDrawsYou = (rule, value, callback) => {
 
 /** Check email is valid */
 export const validateComment = (rule, value, callback) => {
-  if (isEmpty(value)) {
-    callback('Please fill in this detail.')
-  } else {
-    callback()
-  }
+  callback()
+  // if (isEmpty(value)) {
+  //   callback('Please fill in this detail.')
+  // } else {
+  //   callback()
+  // }
 }
 
 /** Check name is valid */
@@ -76,19 +78,16 @@ export const validateName = (rule, value, callback) => {
   if (isEmpty(value)) {
     callback('Please fill in your name.')
   } else {
-    if (!isAlpha(replace(value, ' ', ''))) {
-      callback('A name can have only characters (a-z, A-Z).')
-    } else {
-      callback()
-    }
+    callback()
   }
 }
 
 /** Check email is valid */
 export const validateExperience = (rule, value, callback) => {
-  if (isEmpty(value)) {
-    callback('Please fill in this detail.')
-  } else {
-    callback()
-  }
+  callback()
+  // if (isEmpty(value)) {
+  //   callback('Please fill in this detail.')
+  // } else {
+  //   callback()
+  // }
 }

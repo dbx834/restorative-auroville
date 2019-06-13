@@ -3,6 +3,7 @@
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
+import { css } from 'glamor'
 
 import isUndefined from 'lodash/isUndefined'
 
@@ -33,6 +34,14 @@ const { TextArea } = Input
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
+const formStyle = css({
+  // Space below error message
+  '& .ant-form-explain': {
+    '& > p': {
+      marginBottom: 12,
+    },
+  },
+}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -114,32 +123,71 @@ class IndexPage extends React.Component {
     return (
       <div>
         {this.state.formSent === false && (
-          <Form onSubmit={this.handleSubmit}>
+          <Form onSubmit={this.handleSubmit} className={`${formStyle} mask-p`}>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Name */}
-            <FormItem validateStatus={nameError ? 'error' : ''} help="">
+            <p>Name</p>
+            <FormItem
+              validateStatus={nameError ? 'error' : ''}
+              help={
+                nameError ? (
+                  <p>
+                    <small>{nameError}</small>
+                  </p>
+                ) : (
+                  ''
+                )
+              }
+              className="mask-p"
+            >
               {getFieldDecorator('name', {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateName }],
-              })(<Input placeholder="Name" />)}
+              })(<Input />)}
             </FormItem>
+
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Email */}
-            <FormItem validateStatus={emailError ? 'error' : ''} help="">
+            <p>Email</p>
+            <FormItem
+              validateStatus={emailError ? 'error' : ''}
+              help={
+                emailError ? (
+                  <p>
+                    <small>{emailError}</small>
+                  </p>
+                ) : (
+                  ''
+                )
+              }
+              className="mask-p"
+            >
               {getFieldDecorator('email', {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateEmail }],
-              })(<Input placeholder="Email" />)}
+              })(<Input />)}
             </FormItem>
+
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comment */}
-            <FormItem validateStatus={commentError ? 'error' : ''} help="">
+            <p>
+              What is your area of interest? What sort of information would you
+              enjoy receiving?
+            </p>
+            <FormItem
+              validateStatus={commentError ? 'error' : ''}
+              help={
+                commentError ? (
+                  <p>
+                    <small>{commentError}</small>
+                  </p>
+                ) : (
+                  ''
+                )
+              }
+              className="mask-p"
+            >
               {getFieldDecorator('comment', {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [{ validator: validateComment }],
-              })(
-                <TextArea
-                  placeholder="What is your area of interest? What sort of information would you enjoy receiving?"
-                  autosize={{ minRows: 3, maxRows: 5 }}
-                />
-              )}
+              })(<TextArea autosize={{ minRows: 3, maxRows: 5 }} />)}
             </FormItem>
 
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Submit */}
@@ -149,6 +197,7 @@ class IndexPage extends React.Component {
                 htmlType="submit"
                 disabled={hasErrors(getFieldsError())}
                 loading={this.state.loader}
+                className="mask-p"
               >
                 Submit
               </Button>

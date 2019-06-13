@@ -21,6 +21,8 @@ import MediaQuery from 'react-responsive'
 import { withPrefix } from 'gatsby-link'
 import 'moment/locale/en-gb'
 
+import typefn from '@bodhi-project/typography/lib/methods/type'
+
 import Image from '@bodhi-project/components/lib/Image'
 
 import Division from '@bodhi-project/components/lib/Division'
@@ -299,6 +301,16 @@ class EventsGrid extends React.Component {
   constructor(props) {
     super(props)
 
+    const typeClass = typefn({
+      kit: 'jdd4npp',
+      options: {
+        range: [12, 20], // Min and Max font-sizes
+        paragraphSpacingFactor: 1.2, // Greater for tighter paragraph-paragraph spacing
+        headingParagraphGapSpacingFactor: 0, // Greater for tighter header-paragraph spacing
+        indentParagraphs: false,
+      },
+    })
+
     this.state = {
       visible: false,
       indexForForm: undefined,
@@ -308,6 +320,7 @@ class EventsGrid extends React.Component {
       active: undefined,
       nextActive: undefined,
       client: false,
+      typeClass,
     }
 
     this.onClose = this.onClose.bind(this)
@@ -463,7 +476,7 @@ class EventsGrid extends React.Component {
     const monthsArray = values(months)
     const previousMonths = reverse(filter(months, (m, key) => key < thisMonth))
     const thisAndFutureMonths = filter(months, (m, key) => key >= thisMonth)
-    const { active, nextActive } = this.state
+    const { active, nextActive, typeClass } = this.state
 
     return (
       <Fragment>
@@ -682,26 +695,18 @@ class EventsGrid extends React.Component {
                     visible={visible}
                     width={matches ? '38vw' : '100vw'}
                     placement="left"
+                    className={typeClass}
                   >
-                    <Type
-                      kit="jdd4npp"
-                      style={{ minHeight: '100vh' }}
-                      options={{
-                        range: [12, 20], // Min and Max font-sizes
-                        paragraphSpacingFactor: 1.2, // Greater for tighter paragraph-paragraph spacing
-                        headingParagraphGapSpacingFactor: 0, // Greater for tighter header-paragraph spacing
-                        indentParagraphs: false,
-                      }}
-                    >
-                      <EventRegisterationForm
-                        event={postEdges[indexForForm]}
-                        formattedDate={
-                          isUndefined(indexForForm)
-                            ? ' '
-                            : postEdges[indexForForm].node.fields.formattedDate
-                        }
-                      />
-                    </Type>
+                    <EventRegisterationForm
+                      index={indexForForm}
+                      event={postEdges[indexForForm]}
+                      formattedDate={
+                        isUndefined(indexForForm)
+                          ? ' '
+                          : postEdges[indexForForm].node.fields.formattedDate
+                      }
+                    />
+
                     <div
                       style={{
                         position: 'absolute',

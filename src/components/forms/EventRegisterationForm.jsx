@@ -5,12 +5,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
+import { css } from 'glamor'
 
 import isUndefined from 'lodash/isUndefined'
 import isNull from 'lodash/isNull'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import Image from '@bodhi-project/components/lib/Image'
 
@@ -55,6 +55,15 @@ const radioStyle = {
   lineHeight: '24px',
 }
 
+const formStyle = css({
+  // Space below error message
+  '& .ant-form-explain': {
+    '& > p': {
+      marginBottom: 12,
+    },
+  },
+}).toString()
+
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
@@ -76,6 +85,18 @@ class EventRegisterationForm extends React.Component {
   componentDidMount() {
     const { form } = this.props
     form.validateFields()
+  }
+
+  /** componentDidUpdate */
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.index !== prevProps.index) {
+      if (prevState.formSent === true) {
+        this.setState({
+          loader: null,
+          formSent: false,
+        })
+      }
+    }
   }
 
   /** handleSubmit - Post to google spreadsheet. */
@@ -154,6 +175,7 @@ class EventRegisterationForm extends React.Component {
         node: { fields, frontmatter },
       },
       formattedDate,
+      index = 1,
     } = this.props
 
     const {
@@ -196,6 +218,7 @@ class EventRegisterationForm extends React.Component {
 
     return (
       <Fragment>
+        <p style={{ display: 'none' }}>{index}</p>
         {(eventStatus === 'past' || eventStatus === 'present') && (
           <Fragment>
             <h3 style={{ marginTop: -10, marginBottom: 5 }}>
@@ -299,69 +322,151 @@ class EventRegisterationForm extends React.Component {
               </p>
             )}
             {formSent === false && (
-              <Form onSubmit={this.handleSubmit} className="mask-p">
+              <Form
+                onSubmit={this.handleSubmit}
+                className={`${formStyle} mask-p`}
+              >
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Name */}
-                <FormItem validateStatus={nameError ? 'error' : ''} help="">
+                <p>Name</p>
+                <FormItem
+                  validateStatus={nameError ? 'error' : ''}
+                  help={
+                    nameError ? (
+                      <p>
+                        <small>{nameError}</small>
+                      </p>
+                    ) : (
+                      ''
+                    )
+                  }
+                  className="mask-p"
+                >
                   {getFieldDecorator('name', {
                     validateTrigger: ['onChange', 'onBlur'],
                     rules: [{ validator: validateName }],
-                  })(<Input placeholder="Name" />)}
+                  })(<Input />)}
                 </FormItem>
+
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Email */}
-                <FormItem validateStatus={emailError ? 'error' : ''} help="">
+                <p>Email</p>
+                <FormItem
+                  validateStatus={emailError ? 'error' : ''}
+                  help={
+                    emailError ? (
+                      <p>
+                        <small>{emailError}</small>
+                      </p>
+                    ) : (
+                      ''
+                    )
+                  }
+                  className="mask-p"
+                >
                   {getFieldDecorator('email', {
                     validateTrigger: ['onChange', 'onBlur'],
                     rules: [{ validator: validateEmail }],
-                  })(<Input placeholder="Email" />)}
+                  })(<Input />)}
                 </FormItem>
+
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Mobile */}
-                <FormItem validateStatus={mobileError ? 'error' : ''} help="">
+                <p>Mobile / WhatsApp</p>
+                <FormItem
+                  validateStatus={mobileError ? 'error' : ''}
+                  help={
+                    mobileError ? (
+                      <p>
+                        <small>{mobileError}</small>
+                      </p>
+                    ) : (
+                      ''
+                    )
+                  }
+                  className="mask-p"
+                >
                   {getFieldDecorator('mobile', {
                     validateTrigger: ['onChange', 'onBlur'],
                     rules: [{ validator: validateMobile }],
-                  })(<Input placeholder="Mobile / WhatsApp" />)}
+                  })(<Input />)}
                 </FormItem>
+
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Country Selection */}
-                <FormItem validateStatus={countryError ? 'error' : ''} help="">
+                <p>What's your country of origin?</p>
+                <FormItem
+                  validateStatus={countryError ? 'error' : ''}
+                  help={
+                    countryError ? (
+                      <p>
+                        <small>{countryError}</small>
+                      </p>
+                    ) : (
+                      ''
+                    )
+                  }
+                  className="mask-p"
+                >
                   {getFieldDecorator('country', {
                     validateTrigger: ['onChange', 'onBlur'],
                     rules: [{ validator: validateCountry }],
-                  })(<Input placeholder="What's your country of origin?" />)}
+                  })(<Input />)}
                 </FormItem>
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Location */}
+                <p>Where are you living presently?</p>
                 <FormItem
                   validateStatus={currentLocationError ? 'error' : ''}
-                  help=""
+                  help={
+                    currentLocationError ? (
+                      <p>
+                        <small>{currentLocationError}</small>
+                      </p>
+                    ) : (
+                      ''
+                    )
+                  }
+                  className="mask-p"
                 >
                   {getFieldDecorator('currentLocation', {
                     validateTrigger: ['onChange', 'onBlur'],
                     rules: [{ validator: validateCurrentLocation }],
-                  })(<Input placeholder="Where are you living presently?" />)}
+                  })(<Input />)}
                 </FormItem>
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ What Draws You */}
+                <p>What draws you to this practice group / workshop?</p>
                 <FormItem
                   validateStatus={whatDrawsYouError ? 'error' : ''}
-                  help=""
+                  help={
+                    whatDrawsYouError ? (
+                      <p>
+                        <small>{whatDrawsYouError}</small>
+                      </p>
+                    ) : (
+                      ''
+                    )
+                  }
+                  className="mask-p"
                 >
                   {getFieldDecorator('whatDrawsYou', {
                     validateTrigger: ['onChange', 'onBlur'],
                     rules: [{ validator: validateWhatDrawsYou }],
-                  })(
-                    <TextArea
-                      placeholder="What draws you to this practice group / workshop?"
-                      autosize={{ minRows: 3, maxRows: 5 }}
-                    />
-                  )}
+                  })(<TextArea autosize={{ minRows: 3, maxRows: 5 }} />)}
                 </FormItem>
 
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Experience Level */}
-                <span style={{ marginBottom: 8, display: 'block' }}>
+                <p>
                   Do you have any previous experience with RC (or Restorative
                   Justice or Nonviolent Communication)?
-                </span>
+                </p>
                 <FormItem
                   validateStatus={experienceError ? 'error' : ''}
-                  help=""
+                  help={
+                    experienceError ? (
+                      <p>
+                        <small>{experienceError}</small>
+                      </p>
+                    ) : (
+                      ''
+                    )
+                  }
+                  className="mask-p"
                 >
                   {getFieldDecorator('experience', {
                     validateTrigger: ['onChange', 'onBlur'],
@@ -391,26 +496,46 @@ class EventRegisterationForm extends React.Component {
                 </FormItem>
 
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Journey */}
-                <FormItem validateStatus={journeyError ? 'error' : ''} help="">
+                <p>
+                  Please share a few sentences about your RC (and/or RJ or NVC)
+                  journey.
+                </p>
+                <FormItem
+                  validateStatus={journeyError ? 'error' : ''}
+                  help={
+                    journeyError ? (
+                      <p>
+                        <small>{journeyError}</small>
+                      </p>
+                    ) : (
+                      ''
+                    )
+                  }
+                  className="mask-p"
+                >
                   {getFieldDecorator('journey', {
                     validateTrigger: ['onChange', 'onBlur'],
                     rules: [{ validator: validateComment }],
-                  })(
-                    <TextArea
-                      placeholder="Please share a few sentences about your RC (and/or RJ or NVC) journey."
-                      autosize={{ minRows: 3, maxRows: 5 }}
-                    />
-                  )}
+                  })(<TextArea autosize={{ minRows: 3, maxRows: 5 }} />)}
                 </FormItem>
 
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ More Info. */}
-                <span style={{ marginBottom: 8, display: 'block' }}>
+                <p>
                   Would you like to receive information about future RC (and/or
                   NVC) events?
-                </span>
+                </p>
                 <FormItem
                   validateStatus={wouldLikeInfoError ? 'error' : ''}
-                  help=""
+                  help={
+                    wouldLikeInfoError ? (
+                      <p>
+                        <small>{wouldLikeInfoError}</small>
+                      </p>
+                    ) : (
+                      ''
+                    )
+                  }
+                  className="mask-p"
                 >
                   {getFieldDecorator('wouldLikeInfo', {
                     validateTrigger: ['onChange', 'onBlur'],
@@ -434,16 +559,24 @@ class EventRegisterationForm extends React.Component {
                 </FormItem>
 
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comment */}
-                <FormItem validateStatus={commentError ? 'error' : ''} help="">
+                <p>Any other comments / questions?</p>
+                <FormItem
+                  validateStatus={commentError ? 'error' : ''}
+                  help={
+                    commentError ? (
+                      <p>
+                        <small>{commentError}</small>
+                      </p>
+                    ) : (
+                      ''
+                    )
+                  }
+                  className="mask-p"
+                >
                   {getFieldDecorator('comment', {
                     validateTrigger: ['onChange', 'onBlur'],
                     rules: [{ validator: validateComment }],
-                  })(
-                    <TextArea
-                      placeholder="Any other comments / questions?"
-                      autosize={{ minRows: 3, maxRows: 5 }}
-                    />
-                  )}
+                  })(<TextArea autosize={{ minRows: 3, maxRows: 5 }} />)}
                 </FormItem>
                 {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Submit */}
                 <FormItem>
@@ -452,6 +585,7 @@ class EventRegisterationForm extends React.Component {
                     htmlType="submit"
                     disabled={hasErrors(getFieldsError())}
                     loading={loader}
+                    className="mask-p"
                   >
                     Submit
                   </Button>
