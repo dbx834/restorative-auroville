@@ -7,6 +7,9 @@ import PropTypes from 'prop-types'
 // import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
 import Images from '@bodhi-project/components/lib/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
@@ -43,6 +46,17 @@ const photos = [
 ]
 
 // ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    costs: file(relativePath: { eq: "donate/yurt/costs.jpeg" }) {
+      ...defaultImage
+    }
+  }
+`
+
+// ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Initiative */
@@ -59,9 +73,15 @@ const Initiative = props => {
       <h1 className="mask-h3">Building an RC Yurt</h1>
       <p>
         With our work growing, it’s high-time that we build a physical structure
-        for our RC gatherings. We’re hoping to raise Rs.5 lakhs in order to set
+        for our RC gatherings. We’re hoping to raise Rs.6 lakhs in order to set
         up a dismountable yurt.
       </p>
+      <div className="mask-p">
+        <Img
+          fluid={props.data.costs.childImageSharp.fluid}
+          style={{ maxWidth: 480 }}
+        />
+      </div>
       <p>
         In our first 3 years, we hosted almost 30 live Circles, and each time we
         were faced with the challenge of finding a suitable meeting space. As we
