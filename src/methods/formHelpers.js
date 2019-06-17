@@ -20,7 +20,7 @@ export const validateEmail = (rule, value, callback) => {
     callback('Please fill in your email.')
   } else {
     if (!isEmail(value)) {
-      callback("That's not a valid email address!")
+      callback('Please enter a valid email address.')
     } else {
       callback()
     }
