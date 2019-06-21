@@ -212,12 +212,12 @@ const Page = props => (
         {
           title: 'English version',
           link:
-            'https://www.restorativeauroville.org/pdfs2/rc-poster-english.pdf',
+            'https://www.restorativeauroville.org/pdfs2/rc-poster-english-r.pdf',
         },
         {
           title: 'Tamil version',
           link:
-            'https://www.restorativeauroville.org/pdfs2/rc-poster-tamil.pdf',
+            'https://www.restorativeauroville.org/pdfs2/rc-poster-tamil-r.pdf',
         },
         {
           title: 'French version (coming soon)',
@@ -225,7 +225,7 @@ const Page = props => (
         {
           title: 'Spanish version',
           link:
-            'https://www.restorativeauroville.org/pdfs2/rc-poster-spanish.pdf',
+            'https://www.restorativeauroville.org/pdfs2/rc-poster-spanish-r.pdf',
         },
       ]}
     />
