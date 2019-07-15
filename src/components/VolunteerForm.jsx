@@ -91,19 +91,21 @@ class VolunteerForm extends React.Component {
         // Mock some delay
         setTimeout(() => {
           fetch(
-            `https://script.google.com/macros/s/AKfycbz5JIQcdqZVgIKOL1QfxRxXZtcouqV3NRSAgbKXKZqE6pFGF3w8/exec?email=${email}&name=${name}&originCountry=${originCountry}&currentPlace=${currentPlace}&aboutYourself=${aboutYourself}&whatDrawsYou=${whatDrawsYou}&whatSkills=${whatSkills}&whatAcknowledgement=${whatAcknowledgement}&anyOtherComment=${anyOtherComment}&callback=?`,
+            `https://script.google.com/macros/s/AKfycbxjSVTno8RZHbgp0xSaFPycYNVSuJGQ4vY-XhQRg0n1hQ5KdnEP/exec?email=${email}&name=${name}&originCountry=${originCountry}&currentPlace=${currentPlace}&aboutYourself=${aboutYourself}&whatDrawsYou=${whatDrawsYou}&whatSkills=${whatSkills}&whatAcknowledgement=${whatAcknowledgement}&anyOtherComment=${anyOtherComment}&callback=?`,
             {
               method: 'GET',
               mode: 'no-cors',
             }
           )
             .then(response => {
+              console.log(response)
               this.setState({
                 loader: false,
                 formSent: true,
               })
             })
             .catch(error => {
+              console.log(error)
               this.setState({
                 loader: false,
               })
