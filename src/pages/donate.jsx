@@ -122,7 +122,7 @@ const Page = props => {
       </p>
       <div className="mask-p">
         <Link
-          to="https://www.auroville.com/donations/"
+          to="https://donations.auroville.com/"
           style={{ marginTop: 10, marginBottom: 10 }}
           className="ant-btn ant-btn-primary"
         >

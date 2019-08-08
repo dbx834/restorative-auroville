@@ -163,7 +163,7 @@ const Page = props => (
       collective levels.
     </p>
     <p>
-      After having studied and practiced the Restorative Cirlces (RC) process
+      After having studied and practiced the Restorative Circles (RC) process
       for 5 years, we officially launched Restorative Auroville as a public
       service in Auroville in September 2015. Because much of this work depends
       on how it’s received in the community, its growth is organic and we don’t
