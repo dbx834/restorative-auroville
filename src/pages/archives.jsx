@@ -534,12 +534,12 @@ const Page = props => (
           link: 'https://www.restorativeauroville.org/pdfs2/how-we-dream.pdf',
         },
         {
-          title: 'Video',
+          title: 'Video (short intro)',
           icon: 'youtube',
           link: 'https://www.youtube.com/watch?v=34yV9adMWNY',
         },
         {
-          title: '"Auroville Radio" recording',
+          title: '"Auroville Radio" recording (full session)',
           icon: 'sound',
           link: 'https://www.aurovilleradio.org/restorative-circles/',
         },
@@ -552,9 +552,9 @@ const Page = props => (
       text="Exploring 'justice' in Auroville, and how we can respond to conflict and so-called unacceptable behaviour in ways that hold all sides of the story and support moving forward as an entire community."
       files={[
         {
-          title: 'Interview',
-          icon: 'youtube',
-          link: 'https://www.youtube.com/watch?v=jRrurVLtprE',
+          title: '"Auroville Radio" interview',
+          icon: 'sound',
+          link: 'https://www.aurovilleradio.org/laura-the-restorative-circles/',
         },
       ]}
     />
