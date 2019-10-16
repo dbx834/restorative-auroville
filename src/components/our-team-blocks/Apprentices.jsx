@@ -14,7 +14,7 @@ import { css } from 'glamor'
 // import Image from "@bodhi-project/components/lib/Image";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import blueSquare from '../../assets/blueSquare.jpg'
+// import blueSquare from '../../assets/blueSquare.jpg'
 import henrikeSquare from '../../assets/henrikeSquare.jpg'
 import pranjalSquare from '../../assets/pranjalSquare.jpg'
 import stefanSquare from '../../assets/stefanSquare.jpg'
@@ -22,6 +22,7 @@ import celiaSquare from '../../assets/celiaSquare.jpg'
 import michelleSquare from '../../assets/michelleSquare.jpg'
 import nilsSquare from '../../assets/nilsSquare.jpg'
 import anneSquare from '../../assets/anneSquare.jpg'
+import emmaSquare from '../../assets/emmaSquare.jpg'
 
 import Henrike from '../people/Henrike'
 import Anne from '../people/Anne'
@@ -31,6 +32,7 @@ import Celia from '../people/Celia'
 import Michelle from '../people/Michelle'
 import Stefan from '../people/Stefan'
 import Nils from '../people/Nils'
+import Emma from '../people/Emma'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 /** toDegrees */
@@ -53,6 +55,8 @@ const renderSwitch = person => {
       return <Celia />
     case 'anne':
       return <Anne show={false} />
+    case 'emma':
+      return <Emma show={false} />
     default:
       return <br />
   }
@@ -89,6 +93,9 @@ const circleStylesObject = css({
   '& .child-circle:nth-child(7)::after': {
     content: `"Anne"`,
   },
+  '& .child-circle:nth-child(8)::after': {
+    content: `"Emma"`,
+  },
 })
 const circleStyles = circleStylesObject.toString()
 
@@ -111,7 +118,7 @@ class Apprentices extends React.Component {
   /** standard constructor */
   componentDidMount() {
     // //Number of services
-    const noOfServices = 7
+    const noOfServices = 8
     //   //Half width of parent
     const parentCircleHalfWidth = 180
     //   //Add some padding from parent circle
@@ -290,6 +297,26 @@ class Apprentices extends React.Component {
                 border: '2px solid #FFBF00',
               }}
               onClick={() => this.showPerson('anne')}
+            >
+              <p>
+                <strong>
+                  2019 -
+                  <br />
+                  present
+                </strong>
+              </p>
+            </div>
+            <div
+              className={`${person === 'emma' &&
+                'circle-active'} child-circle xs`}
+              ref="child8"
+              style={{
+                backgroundImage: `url(${emmaSquare})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '85px 85px',
+                border: '2px solid #FFBF00',
+              }}
+              onClick={() => this.showPerson('emma')}
             >
               <p>
                 <strong>

@@ -48,7 +48,7 @@ const Person = ({ show = true }) => (
         Circles. I have been able to integrate the qualities of presence and
         hearing and reflecting meaning during difficult conversations. As a
         volunteer, I helped organize events like the Walk of Hope and
-        Cross-cultural Dialogue and assist in raising awareness within the
+        Cross-Cultural Dialogue and assist in raising awareness within the
         community. I’m convinced that the principles of restorative justice are
         the way forward to greater understanding and lasting harmony.
       </i>
