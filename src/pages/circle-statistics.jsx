@@ -122,10 +122,8 @@ export const query = graphql`
     }
   }
 `
-
-// ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Styles
-// ----------------------------------------------------------------------------
+/** [description] */
+const timestamp = date => new Date(date).getTime()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -135,6 +133,90 @@ const Page = props => {
   const { data: d } = props
 
   const data = [
+    {
+      id: 32,
+      named: 24,
+      attended: 15,
+      wordCloud: d.inprogress.childImageSharp.fluid,
+      times: [
+        {
+          value: 32,
+          time: timestamp('2019.10.19'),
+          size: 3000,
+          type: 0,
+        },
+        {
+          value: 32,
+          time: timestamp('2019.10.19'),
+          size: 1500,
+          type: 1,
+        },
+        {
+          value: 32,
+          time: timestamp('2019.11.8'),
+          size: 1500,
+          type: 2,
+        },
+      ],
+    },
+    {
+      id: 31,
+      named: 39,
+      attended: 15,
+      wordCloud: d.inprogress.childImageSharp.fluid,
+      times: [
+        {
+          value: 31,
+          time: timestamp('2019.10.05'),
+          size: 4000,
+          type: 0,
+        },
+        {
+          value: 31,
+          time: timestamp('2019.10.05'),
+          size: 1500,
+          type: 1,
+        },
+        {
+          value: 31,
+          time: timestamp('2019.10.25'),
+          size: 1500,
+          type: 2,
+        },
+      ],
+    },
+    {
+      id: 30,
+      named: 29,
+      attended: 10,
+      wordCloud: d.inprogress.childImageSharp.fluid,
+      times: [
+        {
+          value: 30,
+          time: timestamp('2019.08.05'),
+          size: 3000,
+          type: 0,
+        },
+        {
+          value: 30,
+          time: timestamp('2019.08.05'),
+          size: 1000,
+          type: 1,
+        },
+        {
+          value: 30,
+          time: timestamp('2019.10.11'),
+          size: 1000,
+          type: 2,
+        },
+        {
+          value: 30,
+          time: timestamp('2019.11.06'),
+          size: 1000,
+          type: 3,
+        },
+      ],
+    },
     {
       id: 29,
       named: 17,
@@ -161,7 +243,7 @@ const Page = props => {
         },
         {
           value: 29,
-          time: 1561188951000,
+          time: timestamp('2019.06.29'),
           size: 1000,
           type: 3,
         },
@@ -200,6 +282,12 @@ const Page = props => {
         {
           value: 28,
           time: 1560756951000,
+          size: 2000,
+          type: 3,
+        },
+        {
+          value: 28,
+          time: timestamp('2019.06.22'),
           size: 2000,
           type: 3,
         },

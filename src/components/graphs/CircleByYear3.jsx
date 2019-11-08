@@ -70,13 +70,15 @@ const yellowTheme = ['#ffac80', '#ffeb80', '#ff8080']
 const blueTheme = ['#80ffec', '#80d3ff', '#8094ff']
 const purpleTheme = ['#a54aff', '#ca96ff', '#ff96ff']
 const greenTheme = ['#008000', '#639500', '#2CB32C']
-// const redTheme = ['#ff80c0', '#ff8080', '#ffc080']
+const redTheme = ['#ff80c0', '#ff8080', '#ffc080']
+
 const colors = {
   2015: blueTheme,
   2016: blueTheme,
   2017: yellowTheme,
   2018: purpleTheme,
   2019: greenTheme,
+  2020: redTheme,
 }
 
 const styles = css({
@@ -232,18 +234,21 @@ const filterData = (data, left, right) => {
     }
   })
 
-  filteredData[0].times.push({
-    value: filteredData[0].times[0].value,
-    time: filteredData[0].times[0].time,
-    size: 100,
-    type: 10,
-  })
-  filteredData[0].times.push({
-    value: filteredData[0].times[0].value,
-    time: filteredData[0].times[0].time,
-    size: 10000,
-    type: 10,
-  })
+  if (filteredData.length > 0) {
+    filteredData[0].times.push({
+      value: filteredData[0].times[0].value,
+      time: filteredData[0].times[0].time,
+      size: 100,
+      type: 10,
+    })
+    filteredData[0].times.push({
+      value: filteredData[0].times[0].value,
+      time: filteredData[0].times[0].time,
+      size: 10000,
+      type: 10,
+    })
+  }
+
   return filteredData
 }
 
@@ -440,11 +445,11 @@ class Sample3 extends React.Component {
       refAreaLeft: undefined,
       refAreaRight: undefined,
       left: +moment('2016-01-01', 'YYYY-MM-DD'),
-      right: +moment('2020-01-01', 'YYYY-MM-DD'),
+      right: +moment('2021-01-01', 'YYYY-MM-DD'),
       resolution: 'years',
-      allowedRange: [2016, 2017, 2018, 2019, 2020],
+      allowedRange: [2016, 2017, 2018, 2019, 2020, 2021],
       activeRangeLeft: 2019,
-      activeRangeRigth: 2020,
+      activeRangeRigth: 2021,
     }
 
     this.updateRefAreaLeft = this.updateRefAreaLeft.bind(this)
@@ -502,7 +507,7 @@ class Sample3 extends React.Component {
       refAreaLeft: undefined,
       refAreaRight: undefined,
       left: +moment('2016-01-01', 'YYYY-MM-DD'),
-      right: +moment('2020-01-01', 'YYYY-MM-DD'),
+      right: +moment('2021-01-01', 'YYYY-MM-DD'),
       resolution: 'years',
     })
   }
@@ -599,6 +604,7 @@ class Sample3 extends React.Component {
             style={{ width: 90, marginRight: 10 }}
             onChange={this.yearSelected}
           >
+            <Option value={2020}>2020</Option>
             <Option value={2019}>2019</Option>
             <Option value={2018}>2018</Option>
             <Option value={2017}>2017</Option>
@@ -767,7 +773,7 @@ class Sample3 extends React.Component {
             <p style={{ marginBottom: 0 }}>
               <strong>
                 {resolution === 'years' ? (
-                  <Fragment>2016 - 2019</Fragment>
+                  <Fragment>2016 - 2020</Fragment>
                 ) : (
                   <Fragment>{activeRangeLeft}</Fragment>
                 )}

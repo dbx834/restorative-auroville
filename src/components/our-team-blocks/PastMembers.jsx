@@ -17,10 +17,12 @@ import { css } from 'glamor'
 import blueSquare from '../../assets/blueSquare.jpg'
 import heleneSquare from '../../assets/heleneSquare.jpg'
 import shantiSquare from '../../assets/shantiSquare.jpg'
+import anneSquare from '../../assets/anneSquare.jpg'
 
 import Helene from '../people/Helene'
 import Shanti from '../people/Shanti'
 import Rita from '../people/Rita'
+import Anne from '../people/Anne'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 /** toDegrees */
@@ -35,6 +37,8 @@ const renderSwitch = person => {
       return <Shanti />
     case 'rita':
       return <Rita />
+    case 'anne':
+      return <Anne />
     default:
       return <br />
   }
@@ -62,6 +66,10 @@ const circleStylesObject = css({
     content: `"Rita \\A 2017-2018"`,
     whiteSpace: 'pre',
   },
+  '& .child-circle:nth-child(4)::after': {
+    content: `"Anne \\A 2019"`,
+    whiteSpace: 'pre',
+  },
 })
 const circleStyles = circleStylesObject.toString()
 
@@ -84,7 +92,7 @@ class PastMembers extends React.Component {
   /** standard constructor */
   componentDidMount() {
     // //Number of services
-    const noOfServices = 3
+    const noOfServices = 4
     //   //Half width of parent
     const parentCircleHalfWidth = 180
     //   //Add some padding from parent circle
@@ -180,6 +188,21 @@ class PastMembers extends React.Component {
             >
               <p>
                 <strong>Apprentice</strong>
+              </p>
+            </div>
+            <div
+              className={`${person === 'anne' && 'circle-active'} child-circle`}
+              ref="child4"
+              style={{
+                backgroundImage: `url(${anneSquare})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '125px 125px',
+                border: '2px solid #FFBF00',
+              }}
+              onClick={() => this.showPerson('anne')}
+            >
+              <p>
+                <strong>Volunteer</strong>
               </p>
             </div>
           </div>

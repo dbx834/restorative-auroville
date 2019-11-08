@@ -21,11 +21,10 @@ import stefanSquare from '../../assets/stefanSquare.jpg'
 import celiaSquare from '../../assets/celiaSquare.jpg'
 import michelleSquare from '../../assets/michelleSquare.jpg'
 import nilsSquare from '../../assets/nilsSquare.jpg'
-import anneSquare from '../../assets/anneSquare.jpg'
 import emmaSquare from '../../assets/emmaSquare.jpg'
+import melodieSquare from '../../assets/melodieSquare.jpg'
 
 import Henrike from '../people/Henrike'
-import Anne from '../people/Anne'
 import Pranjal from '../people/Pranjal'
 import Celia from '../people/Celia'
 // import Hamsini from '../people/Hamsini'
@@ -33,6 +32,7 @@ import Michelle from '../people/Michelle'
 import Stefan from '../people/Stefan'
 import Nils from '../people/Nils'
 import Emma from '../people/Emma'
+import Melodie from '../people/Melodie'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 /** toDegrees */
@@ -53,10 +53,10 @@ const renderSwitch = person => {
       return <Nils show={false} />
     case 'celia':
       return <Celia />
-    case 'anne':
-      return <Anne show={false} />
     case 'emma':
       return <Emma show={false} />
+    case 'melodie':
+      return <Melodie show={false} />
     default:
       return <br />
   }
@@ -91,7 +91,7 @@ const circleStylesObject = css({
     content: `"Nils"`,
   },
   '& .child-circle:nth-child(7)::after': {
-    content: `"Anne"`,
+    content: `"Melodie"`,
   },
   '& .child-circle:nth-child(8)::after': {
     content: `"Emma"`,
@@ -287,16 +287,16 @@ class Apprentices extends React.Component {
               </p>
             </div>
             <div
-              className={`${person === 'anne' &&
+              className={`${person === 'melodie' &&
                 'circle-active'} child-circle xs`}
               ref="child7"
               style={{
-                backgroundImage: `url(${anneSquare})`,
+                backgroundImage: `url(${melodieSquare})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '85px 85px',
                 border: '2px solid #FFBF00',
               }}
-              onClick={() => this.showPerson('anne')}
+              onClick={() => this.showPerson('melodie')}
             >
               <p>
                 <strong>

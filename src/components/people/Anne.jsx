@@ -19,10 +19,7 @@ const { Fragment } = React
 /** Person */
 const Person = ({ show = true }) => (
   <div>
-    <h1 className="mask-h4">
-      Anne Terlouw
-      <Fragment>{show === true && ' – Apprentice'}</Fragment>
-    </h1>
+    <h1 className="mask-h4">Anne Terlouw</h1>
     <p style={{ marginBottom: 0 }}>
       <i>
         I was born and raised in Holland, where life brought me to study
