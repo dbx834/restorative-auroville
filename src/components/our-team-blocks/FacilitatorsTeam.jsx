@@ -21,6 +21,7 @@ import janetSquare from '../../assets/janetSquare.jpg'
 import katiSquare from '../../assets/katiSquare.jpg'
 import henrikeSquare from '../../assets/henrikeSquare.jpg'
 import pranjalSquare from '../../assets/pranjalSquare.jpg'
+import nilsSquare from '../../assets/nilsSquare.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 /** toDegrees */
@@ -114,6 +115,9 @@ const circleStylesObject = css({
   },
   '& .child-circle-highlight:nth-child(4)::after': {
     content: `"Pranjal"`,
+  },
+  '& .child-circle-highlight:nth-child(6)::after': {
+    content: `"Nils"`,
   },
 })
 const circleStyles = circleStylesObject.toString()
@@ -229,6 +233,18 @@ class FacilitatorsTeam extends React.Component {
           />
           <PersonCircle
             image={henrikeSquare}
+            className="child-circle-highlight"
+            role={
+              <Frag>
+                Core Team
+                <br />
+                &nbsp;&nbsp;Member
+              </Frag>
+            }
+            style={{ cursor: 'unset' }}
+          />
+          <PersonCircle
+            image={nilsSquare}
             className="child-circle-highlight"
             role={
               <Frag>

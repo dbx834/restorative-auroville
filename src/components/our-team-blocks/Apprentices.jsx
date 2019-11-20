@@ -15,22 +15,22 @@ import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 // import blueSquare from '../../assets/blueSquare.jpg'
-import henrikeSquare from '../../assets/henrikeSquare.jpg'
-import pranjalSquare from '../../assets/pranjalSquare.jpg'
+// import henrikeSquare from '../../assets/henrikeSquare.jpg'
+// import pranjalSquare from '../../assets/pranjalSquare.jpg'
 import stefanSquare from '../../assets/stefanSquare.jpg'
 import celiaSquare from '../../assets/celiaSquare.jpg'
 import michelleSquare from '../../assets/michelleSquare.jpg'
-import nilsSquare from '../../assets/nilsSquare.jpg'
+// import nilsSquare from '../../assets/nilsSquare.jpg'
 import emmaSquare from '../../assets/emmaSquare.jpg'
 import melodieSquare from '../../assets/melodieSquare.jpg'
 
-import Henrike from '../people/Henrike'
-import Pranjal from '../people/Pranjal'
+// import Henrike from '../people/Henrike'
+// import Pranjal from '../people/Pranjal'
 import Celia from '../people/Celia'
 // import Hamsini from '../people/Hamsini'
 import Michelle from '../people/Michelle'
 import Stefan from '../people/Stefan'
-import Nils from '../people/Nils'
+// import Nils from '../people/Nils'
 import Emma from '../people/Emma'
 import Melodie from '../people/Melodie'
 
@@ -41,16 +41,10 @@ const toDegrees = angle => angle * (Math.PI / 180)
 /** renderSwitch */
 const renderSwitch = person => {
   switch (person) {
-    case 'henrike':
-      return <Henrike show={false} />
-    case 'pranjal':
-      return <Pranjal show={false} />
     case 'stefan':
       return <Stefan />
     case 'michelle':
       return <Michelle />
-    case 'nils':
-      return <Nils show={false} />
     case 'celia':
       return <Celia />
     case 'emma':
@@ -76,24 +70,15 @@ const circleStylesObject = css({
     content: `"Stefan"`,
   },
   '& .child-circle:nth-child(2)::after': {
-    content: `"Henrike"`,
-  },
-  '& .child-circle:nth-child(3)::after': {
-    content: `"Pranjal"`,
-  },
-  '& .child-circle:nth-child(4)::after': {
     content: `"Michelle"`,
   },
-  '& .child-circle:nth-child(5)::after': {
+  '& .child-circle:nth-child(3)::after': {
     content: `"Celia"`,
   },
-  '& .child-circle:nth-child(6)::after': {
-    content: `"Nils"`,
+  '& .child-circle:nth-child(4)::after': {
+    content: `"Mélodie"`,
   },
-  '& .child-circle:nth-child(7)::after': {
-    content: `"Melodie"`,
-  },
-  '& .child-circle:nth-child(8)::after': {
+  '& .child-circle:nth-child(5)::after': {
     content: `"Emma"`,
   },
 })
@@ -118,7 +103,7 @@ class Apprentices extends React.Component {
   /** standard constructor */
   componentDidMount() {
     // //Number of services
-    const noOfServices = 8
+    const noOfServices = 5
     //   //Half width of parent
     const parentCircleHalfWidth = 180
     //   //Add some padding from parent circle
@@ -187,49 +172,9 @@ class Apprentices extends React.Component {
               </p>
             </div>
             <div
-              className={`${person === 'henrike' &&
-                'circle-active'} child-circle xs`}
-              ref="child2"
-              style={{
-                backgroundImage: `url(${henrikeSquare})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: '85px 85px',
-                border: '2px solid #FFBF00',
-              }}
-              onClick={() => this.showPerson('henrike')}
-            >
-              <p>
-                <strong>
-                  2018 -
-                  <br />
-                  present
-                </strong>
-              </p>
-            </div>
-            <div
-              className={`${person === 'pranjal' &&
-                'circle-active'} child-circle xs`}
-              ref="child3"
-              style={{
-                backgroundImage: `url(${pranjalSquare})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: '85px 85px',
-                border: '2px solid #FFBF00',
-              }}
-              onClick={() => this.showPerson('pranjal')}
-            >
-              <p>
-                <strong>
-                  2017 -
-                  <br />
-                  present
-                </strong>
-              </p>
-            </div>
-            <div
               className={`${person === 'michelle' &&
                 'circle-active'} child-circle xs`}
-              ref="child4"
+              ref="child2"
               style={{
                 backgroundImage: `url(${michelleSquare})`,
                 backgroundRepeat: 'no-repeat',
@@ -249,7 +194,7 @@ class Apprentices extends React.Component {
             <div
               className={`${person === 'celia' &&
                 'circle-active'} child-circle xs`}
-              ref="child5"
+              ref="child3"
               style={{
                 backgroundImage: `url(${celiaSquare})`,
                 backgroundRepeat: 'no-repeat',
@@ -267,29 +212,9 @@ class Apprentices extends React.Component {
               </p>
             </div>
             <div
-              className={`${person === 'nils' &&
-                'circle-active'} child-circle xs`}
-              ref="child6"
-              style={{
-                backgroundImage: `url(${nilsSquare})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: '85px 85px',
-                border: '2px solid #FFBF00',
-              }}
-              onClick={() => this.showPerson('nils')}
-            >
-              <p>
-                <strong>
-                  2019 -
-                  <br />
-                  present
-                </strong>
-              </p>
-            </div>
-            <div
               className={`${person === 'melodie' &&
                 'circle-active'} child-circle xs`}
-              ref="child7"
+              ref="child4"
               style={{
                 backgroundImage: `url(${melodieSquare})`,
                 backgroundRepeat: 'no-repeat',
@@ -309,7 +234,7 @@ class Apprentices extends React.Component {
             <div
               className={`${person === 'emma' &&
                 'circle-active'} child-circle xs`}
-              ref="child8"
+              ref="child5"
               style={{
                 backgroundImage: `url(${emmaSquare})`,
                 backgroundRepeat: 'no-repeat',

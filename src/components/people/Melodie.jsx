@@ -20,7 +20,7 @@ const { Fragment } = React
 const Person = ({ show = true }) => (
   <div>
     <h1 className="mask-h4">
-      Melodie Baptiste
+      Mélodie Baptiste
       <Fragment>{show === true && ' – Apprentice'}</Fragment>
     </h1>
     <p>

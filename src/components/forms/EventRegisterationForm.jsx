@@ -44,6 +44,8 @@ import {
   validateExperience,
 } from '../../methods/formHelpers'
 
+import inArray from '../../methods/inArray'
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React
 const FormItem = Form.Item
@@ -177,6 +179,11 @@ class EventRegisterationForm extends React.Component {
       formattedDate,
       index = 1,
     } = this.props
+    const { tags = [] } = frontmatter
+    let cancelled = false
+    if (inArray(tags, 'cancelled')) {
+      cancelled = true
+    }
 
     const {
       getFieldDecorator,
@@ -219,384 +226,390 @@ class EventRegisterationForm extends React.Component {
     return (
       <Fragment>
         <p style={{ display: 'none' }}>{index}</p>
-        {(eventStatus === 'past' || eventStatus === 'present') && (
+        {cancelled === false && (
           <Fragment>
-            <h3 style={{ marginTop: -10, marginBottom: 5 }}>
-              Registration Closed
-            </h3>
-            <p>Registration for this event is now closed.</p>
-          </Fragment>
-        )}
-        {eventStatus === 'future' && (
-          <Fragment>
-            <h3 style={{ marginTop: -10, marginBottom: 5 }}>Fee</h3>
-            <p>
-              <strong>
-                <i>{frontmatter.cost}</i>
-              </strong>
-            </p>
-            {frontmatter.cost === 'On donation' ? (
+            {(eventStatus === 'past' || eventStatus === 'present') && (
               <Fragment>
-                <p>
-                  You may join free of charge, as we offer this space as a
-                  service to the community. And we also welcome any contribution
-                  you'd like to make, so as to support our work.
-                </p>
+                <h3 style={{ marginTop: -10, marginBottom: 5 }}>
+                  Registration Closed
+                </h3>
+                <p>Registration for this event is now closed.</p>
               </Fragment>
-            ) : (
-              <p>Please make your payment to confirm your seat.</p>
             )}
-            <p>
-              Select the Domestic option for Indian bank/credit cards, or the
-              International option for foreign bank/credit cards.
-            </p>
-            <div className="mask-p">
-              <OutLink
-                to="https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
-                style={{ marginRight: 17, borderBottom: 0 }}
-              >
-                <Tooltip title="Indian Card">
-                  <div style={{ display: 'inline-block' }}>
-                    <Image
-                      src={domestic}
-                      rawHeight={450}
-                      rawWidth={450}
-                      className="icon"
-                      style={{
-                        height: 50,
-                        width: 50,
-                        display: 'inline-block',
-                        background: 'transparent',
-                        border: 'unset',
-                      }}
-                    />
-                  </div>
-                </Tooltip>
-              </OutLink>
-              <form
-                action="https://www.paypal.com/cgi-bin/webscr"
-                method="post"
-                target="_blank"
-                style={{ display: 'inline-block' }}
-                className="hover"
-              >
-                <input type="hidden" name="cmd" value="_s-xclick" />
-                <input
-                  type="hidden"
-                  name="hosted_button_id"
-                  value="WFXM5RNDGBXL4"
-                />
-                <Tooltip title="International Card">
-                  <input
-                    type="image"
-                    src={international}
-                    border="0"
-                    name="submit"
-                    alt="PayPal – The safer, easier way to pay online!"
-                    style={{
-                      height: 50,
-                      width: 50,
-                    }}
-                  />
-                </Tooltip>
-                <img
-                  alt=""
-                  border="0"
-                  src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif"
-                  width="1"
-                  height="1"
-                />
-              </form>
-            </div>
-            <h3>Register</h3>
-            {formSent === false ? (
-              <p>
-                You are about to register for{' '}
-                <strong>{frontmatter.title}</strong> on{' '}
-                <strong>{formattedDate}</strong>.
-              </p>
-            ) : (
-              <p>
-                You registered for <strong>{frontmatter.title}</strong> on{' '}
-                <strong>{formattedDate}</strong>.
-              </p>
-            )}
-            {formSent === false && (
-              <Form
-                onSubmit={this.handleSubmit}
-                className={`${formStyle} mask-p`}
-              >
-                {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Name */}
-                <p>Name</p>
-                <FormItem
-                  validateStatus={nameError ? 'error' : ''}
-                  help={
-                    nameError ? (
-                      <p>
-                        <small>{nameError}</small>
-                      </p>
-                    ) : (
-                      ''
-                    )
-                  }
-                  className="mask-p"
-                >
-                  {getFieldDecorator('name', {
-                    validateTrigger: ['onChange', 'onBlur'],
-                    rules: [{ validator: validateName }],
-                  })(<Input />)}
-                </FormItem>
-
-                {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Email */}
-                <p>Email</p>
-                <FormItem
-                  validateStatus={emailError ? 'error' : ''}
-                  help={
-                    emailError ? (
-                      <p>
-                        <small>{emailError}</small>
-                      </p>
-                    ) : (
-                      ''
-                    )
-                  }
-                  className="mask-p"
-                >
-                  {getFieldDecorator('email', {
-                    validateTrigger: ['onChange', 'onBlur'],
-                    rules: [{ validator: validateEmail }],
-                  })(<Input />)}
-                </FormItem>
-
-                {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Mobile */}
-                <p>Mobile / WhatsApp</p>
-                <FormItem
-                  validateStatus={mobileError ? 'error' : ''}
-                  help={
-                    mobileError ? (
-                      <p>
-                        <small>{mobileError}</small>
-                      </p>
-                    ) : (
-                      ''
-                    )
-                  }
-                  className="mask-p"
-                >
-                  {getFieldDecorator('mobile', {
-                    validateTrigger: ['onChange', 'onBlur'],
-                    rules: [{ validator: validateMobile }],
-                  })(<Input />)}
-                </FormItem>
-
-                {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Country Selection */}
-                <p>What's your country of origin?</p>
-                <FormItem
-                  validateStatus={countryError ? 'error' : ''}
-                  help={
-                    countryError ? (
-                      <p>
-                        <small>{countryError}</small>
-                      </p>
-                    ) : (
-                      ''
-                    )
-                  }
-                  className="mask-p"
-                >
-                  {getFieldDecorator('country', {
-                    validateTrigger: ['onChange', 'onBlur'],
-                    rules: [{ validator: validateCountry }],
-                  })(<Input />)}
-                </FormItem>
-                {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Location */}
-                <p>Where are you living presently?</p>
-                <FormItem
-                  validateStatus={currentLocationError ? 'error' : ''}
-                  help={
-                    currentLocationError ? (
-                      <p>
-                        <small>{currentLocationError}</small>
-                      </p>
-                    ) : (
-                      ''
-                    )
-                  }
-                  className="mask-p"
-                >
-                  {getFieldDecorator('currentLocation', {
-                    validateTrigger: ['onChange', 'onBlur'],
-                    rules: [{ validator: validateCurrentLocation }],
-                  })(<Input />)}
-                </FormItem>
-                {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ What Draws You */}
-                <p>What draws you to this practice group / workshop?</p>
-                <FormItem
-                  validateStatus={whatDrawsYouError ? 'error' : ''}
-                  help={
-                    whatDrawsYouError ? (
-                      <p>
-                        <small>{whatDrawsYouError}</small>
-                      </p>
-                    ) : (
-                      ''
-                    )
-                  }
-                  className="mask-p"
-                >
-                  {getFieldDecorator('whatDrawsYou', {
-                    validateTrigger: ['onChange', 'onBlur'],
-                    rules: [{ validator: validateWhatDrawsYou }],
-                  })(<TextArea autosize={{ minRows: 3, maxRows: 5 }} />)}
-                </FormItem>
-
-                {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Experience Level */}
+            {eventStatus === 'future' && (
+              <Fragment>
+                <h3 style={{ marginTop: -10, marginBottom: 5 }}>Fee</h3>
                 <p>
-                  Do you have any previous experience with RC (or Restorative
-                  Justice or Nonviolent Communication)?
+                  <strong>
+                    <i>{frontmatter.cost}</i>
+                  </strong>
                 </p>
-                <FormItem
-                  validateStatus={experienceError ? 'error' : ''}
-                  help={
-                    experienceError ? (
-                      <p>
-                        <small>{experienceError}</small>
-                      </p>
-                    ) : (
-                      ''
-                    )
-                  }
-                  className="mask-p"
-                >
-                  {getFieldDecorator('experience', {
-                    validateTrigger: ['onChange', 'onBlur'],
-                    rules: [{ validator: validateExperience }],
-                  })(
-                    <RadioGroup>
-                      <Radio
-                        style={radioStyle}
-                        value="Beginner (0-5 days of training)"
-                      >
-                        Beginner (0-5 days of training)
-                      </Radio>
-                      <Radio
-                        style={radioStyle}
-                        value="Intermediate (5-10 days of training)"
-                      >
-                        Intermediate (5-10 days of training)
-                      </Radio>
-                      <Radio
-                        style={radioStyle}
-                        value="Advanced (over 10 days of training)"
-                      >
-                        Advanced (over 10 days of training)
-                      </Radio>
-                    </RadioGroup>
-                  )}
-                </FormItem>
-
-                {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Journey */}
+                {frontmatter.cost === 'On donation' ? (
+                  <Fragment>
+                    <p>
+                      You may join free of charge, as we offer this space as a
+                      service to the community. And we also welcome any
+                      contribution you'd like to make, so as to support our
+                      work.
+                    </p>
+                  </Fragment>
+                ) : (
+                  <p>Please make your payment to confirm your seat.</p>
+                )}
                 <p>
-                  Please share a few sentences about your RC (and/or RJ or NVC)
-                  journey.
+                  Select the Domestic option for Indian bank/credit cards, or
+                  the International option for foreign bank/credit cards.
                 </p>
-                <FormItem
-                  validateStatus={journeyError ? 'error' : ''}
-                  help={
-                    journeyError ? (
-                      <p>
-                        <small>{journeyError}</small>
-                      </p>
-                    ) : (
-                      ''
-                    )
-                  }
-                  className="mask-p"
-                >
-                  {getFieldDecorator('journey', {
-                    validateTrigger: ['onChange', 'onBlur'],
-                    rules: [{ validator: validateComment }],
-                  })(<TextArea autosize={{ minRows: 3, maxRows: 5 }} />)}
-                </FormItem>
-
-                {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ More Info. */}
-                <p>
-                  Would you like to receive information about future RC (and/or
-                  NVC) events?
-                </p>
-                <FormItem
-                  validateStatus={wouldLikeInfoError ? 'error' : ''}
-                  help={
-                    wouldLikeInfoError ? (
-                      <p>
-                        <small>{wouldLikeInfoError}</small>
-                      </p>
-                    ) : (
-                      ''
-                    )
-                  }
-                  className="mask-p"
-                >
-                  {getFieldDecorator('wouldLikeInfo', {
-                    validateTrigger: ['onChange', 'onBlur'],
-                    rules: [{ validator: validateExperience }],
-                  })(
-                    <RadioGroup>
-                      <Radio
-                        style={radioStyle}
-                        value="Yes, I'd like to receive information every now and then."
-                      >
-                        Yes, I'd like to receive information every now and then.
-                      </Radio>
-                      <Radio
-                        style={radioStyle}
-                        value="No, I'd not like to receive information."
-                      >
-                        No, I'd not like to receive information.
-                      </Radio>
-                    </RadioGroup>
-                  )}
-                </FormItem>
-
-                {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comment */}
-                <p>Any other comments / questions?</p>
-                <FormItem
-                  validateStatus={commentError ? 'error' : ''}
-                  help={
-                    commentError ? (
-                      <p>
-                        <small>{commentError}</small>
-                      </p>
-                    ) : (
-                      ''
-                    )
-                  }
-                  className="mask-p"
-                >
-                  {getFieldDecorator('comment', {
-                    validateTrigger: ['onChange', 'onBlur'],
-                    rules: [{ validator: validateComment }],
-                  })(<TextArea autosize={{ minRows: 3, maxRows: 5 }} />)}
-                </FormItem>
-                {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Submit */}
-                <FormItem>
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    disabled={hasErrors(getFieldsError())}
-                    loading={loader}
-                    className="mask-p"
+                <div className="mask-p">
+                  <OutLink
+                    to="https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
+                    style={{ marginRight: 17, borderBottom: 0 }}
                   >
-                    Submit
-                  </Button>
-                </FormItem>
-              </Form>
-            )}
-            {/* On-sent message */}
-            {formSent === true && (
-              <p className="home" style={{ textIndent: 0 }}>
-                Thank you for registering! We'll get back to you shortly.
-              </p>
+                    <Tooltip title="Indian Card">
+                      <div style={{ display: 'inline-block' }}>
+                        <Image
+                          src={domestic}
+                          rawHeight={450}
+                          rawWidth={450}
+                          className="icon"
+                          style={{
+                            height: 50,
+                            width: 50,
+                            display: 'inline-block',
+                            background: 'transparent',
+                            border: 'unset',
+                          }}
+                        />
+                      </div>
+                    </Tooltip>
+                  </OutLink>
+                  <form
+                    action="https://www.paypal.com/cgi-bin/webscr"
+                    method="post"
+                    target="_blank"
+                    style={{ display: 'inline-block' }}
+                    className="hover"
+                  >
+                    <input type="hidden" name="cmd" value="_s-xclick" />
+                    <input
+                      type="hidden"
+                      name="hosted_button_id"
+                      value="WFXM5RNDGBXL4"
+                    />
+                    <Tooltip title="International Card">
+                      <input
+                        type="image"
+                        src={international}
+                        border="0"
+                        name="submit"
+                        alt="PayPal – The safer, easier way to pay online!"
+                        style={{
+                          height: 50,
+                          width: 50,
+                        }}
+                      />
+                    </Tooltip>
+                    <img
+                      alt=""
+                      border="0"
+                      src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif"
+                      width="1"
+                      height="1"
+                    />
+                  </form>
+                </div>
+                <h3>Register</h3>
+                {formSent === false ? (
+                  <p>
+                    You are about to register for{' '}
+                    <strong>{frontmatter.title}</strong> on{' '}
+                    <strong>{formattedDate}</strong>.
+                  </p>
+                ) : (
+                  <p>
+                    You registered for <strong>{frontmatter.title}</strong> on{' '}
+                    <strong>{formattedDate}</strong>.
+                  </p>
+                )}
+                {formSent === false && (
+                  <Form
+                    onSubmit={this.handleSubmit}
+                    className={`${formStyle} mask-p`}
+                  >
+                    {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Name */}
+                    <p>Name</p>
+                    <FormItem
+                      validateStatus={nameError ? 'error' : ''}
+                      help={
+                        nameError ? (
+                          <p>
+                            <small>{nameError}</small>
+                          </p>
+                        ) : (
+                          ''
+                        )
+                      }
+                      className="mask-p"
+                    >
+                      {getFieldDecorator('name', {
+                        validateTrigger: ['onChange', 'onBlur'],
+                        rules: [{ validator: validateName }],
+                      })(<Input />)}
+                    </FormItem>
+
+                    {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Email */}
+                    <p>Email</p>
+                    <FormItem
+                      validateStatus={emailError ? 'error' : ''}
+                      help={
+                        emailError ? (
+                          <p>
+                            <small>{emailError}</small>
+                          </p>
+                        ) : (
+                          ''
+                        )
+                      }
+                      className="mask-p"
+                    >
+                      {getFieldDecorator('email', {
+                        validateTrigger: ['onChange', 'onBlur'],
+                        rules: [{ validator: validateEmail }],
+                      })(<Input />)}
+                    </FormItem>
+
+                    {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Mobile */}
+                    <p>Mobile / WhatsApp</p>
+                    <FormItem
+                      validateStatus={mobileError ? 'error' : ''}
+                      help={
+                        mobileError ? (
+                          <p>
+                            <small>{mobileError}</small>
+                          </p>
+                        ) : (
+                          ''
+                        )
+                      }
+                      className="mask-p"
+                    >
+                      {getFieldDecorator('mobile', {
+                        validateTrigger: ['onChange', 'onBlur'],
+                        rules: [{ validator: validateMobile }],
+                      })(<Input />)}
+                    </FormItem>
+
+                    {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Country Selection */}
+                    <p>What's your country of origin?</p>
+                    <FormItem
+                      validateStatus={countryError ? 'error' : ''}
+                      help={
+                        countryError ? (
+                          <p>
+                            <small>{countryError}</small>
+                          </p>
+                        ) : (
+                          ''
+                        )
+                      }
+                      className="mask-p"
+                    >
+                      {getFieldDecorator('country', {
+                        validateTrigger: ['onChange', 'onBlur'],
+                        rules: [{ validator: validateCountry }],
+                      })(<Input />)}
+                    </FormItem>
+                    {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Location */}
+                    <p>Where are you living presently?</p>
+                    <FormItem
+                      validateStatus={currentLocationError ? 'error' : ''}
+                      help={
+                        currentLocationError ? (
+                          <p>
+                            <small>{currentLocationError}</small>
+                          </p>
+                        ) : (
+                          ''
+                        )
+                      }
+                      className="mask-p"
+                    >
+                      {getFieldDecorator('currentLocation', {
+                        validateTrigger: ['onChange', 'onBlur'],
+                        rules: [{ validator: validateCurrentLocation }],
+                      })(<Input />)}
+                    </FormItem>
+                    {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ What Draws You */}
+                    <p>What draws you to this practice group / workshop?</p>
+                    <FormItem
+                      validateStatus={whatDrawsYouError ? 'error' : ''}
+                      help={
+                        whatDrawsYouError ? (
+                          <p>
+                            <small>{whatDrawsYouError}</small>
+                          </p>
+                        ) : (
+                          ''
+                        )
+                      }
+                      className="mask-p"
+                    >
+                      {getFieldDecorator('whatDrawsYou', {
+                        validateTrigger: ['onChange', 'onBlur'],
+                        rules: [{ validator: validateWhatDrawsYou }],
+                      })(<TextArea autosize={{ minRows: 3, maxRows: 5 }} />)}
+                    </FormItem>
+
+                    {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Experience Level */}
+                    <p>
+                      Do you have any previous experience with RC (or
+                      Restorative Justice or Nonviolent Communication)?
+                    </p>
+                    <FormItem
+                      validateStatus={experienceError ? 'error' : ''}
+                      help={
+                        experienceError ? (
+                          <p>
+                            <small>{experienceError}</small>
+                          </p>
+                        ) : (
+                          ''
+                        )
+                      }
+                      className="mask-p"
+                    >
+                      {getFieldDecorator('experience', {
+                        validateTrigger: ['onChange', 'onBlur'],
+                        rules: [{ validator: validateExperience }],
+                      })(
+                        <RadioGroup>
+                          <Radio
+                            style={radioStyle}
+                            value="Beginner (0-5 days of training)"
+                          >
+                            Beginner (0-5 days of training)
+                          </Radio>
+                          <Radio
+                            style={radioStyle}
+                            value="Intermediate (5-10 days of training)"
+                          >
+                            Intermediate (5-10 days of training)
+                          </Radio>
+                          <Radio
+                            style={radioStyle}
+                            value="Advanced (over 10 days of training)"
+                          >
+                            Advanced (over 10 days of training)
+                          </Radio>
+                        </RadioGroup>
+                      )}
+                    </FormItem>
+
+                    {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Journey */}
+                    <p>
+                      Please share a few sentences about your RC (and/or RJ or
+                      NVC) journey.
+                    </p>
+                    <FormItem
+                      validateStatus={journeyError ? 'error' : ''}
+                      help={
+                        journeyError ? (
+                          <p>
+                            <small>{journeyError}</small>
+                          </p>
+                        ) : (
+                          ''
+                        )
+                      }
+                      className="mask-p"
+                    >
+                      {getFieldDecorator('journey', {
+                        validateTrigger: ['onChange', 'onBlur'],
+                        rules: [{ validator: validateComment }],
+                      })(<TextArea autosize={{ minRows: 3, maxRows: 5 }} />)}
+                    </FormItem>
+
+                    {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ More Info. */}
+                    <p>
+                      Would you like to receive information about future RC
+                      (and/or NVC) events?
+                    </p>
+                    <FormItem
+                      validateStatus={wouldLikeInfoError ? 'error' : ''}
+                      help={
+                        wouldLikeInfoError ? (
+                          <p>
+                            <small>{wouldLikeInfoError}</small>
+                          </p>
+                        ) : (
+                          ''
+                        )
+                      }
+                      className="mask-p"
+                    >
+                      {getFieldDecorator('wouldLikeInfo', {
+                        validateTrigger: ['onChange', 'onBlur'],
+                        rules: [{ validator: validateExperience }],
+                      })(
+                        <RadioGroup>
+                          <Radio
+                            style={radioStyle}
+                            value="Yes, I'd like to receive information every now and then."
+                          >
+                            Yes, I'd like to receive information every now and
+                            then.
+                          </Radio>
+                          <Radio
+                            style={radioStyle}
+                            value="No, I'd not like to receive information."
+                          >
+                            No, I'd not like to receive information.
+                          </Radio>
+                        </RadioGroup>
+                      )}
+                    </FormItem>
+
+                    {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comment */}
+                    <p>Any other comments / questions?</p>
+                    <FormItem
+                      validateStatus={commentError ? 'error' : ''}
+                      help={
+                        commentError ? (
+                          <p>
+                            <small>{commentError}</small>
+                          </p>
+                        ) : (
+                          ''
+                        )
+                      }
+                      className="mask-p"
+                    >
+                      {getFieldDecorator('comment', {
+                        validateTrigger: ['onChange', 'onBlur'],
+                        rules: [{ validator: validateComment }],
+                      })(<TextArea autosize={{ minRows: 3, maxRows: 5 }} />)}
+                    </FormItem>
+                    {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Submit */}
+                    <FormItem>
+                      <Button
+                        type="primary"
+                        htmlType="submit"
+                        disabled={hasErrors(getFieldsError())}
+                        loading={loader}
+                        className="mask-p"
+                      >
+                        Submit
+                      </Button>
+                    </FormItem>
+                  </Form>
+                )}
+                {/* On-sent message */}
+                {formSent === true && (
+                  <p className="home" style={{ textIndent: 0 }}>
+                    Thank you for registering! We'll get back to you shortly.
+                  </p>
+                )}
+              </Fragment>
             )}
           </Fragment>
         )}

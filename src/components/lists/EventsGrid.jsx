@@ -44,12 +44,14 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
 import Drawer from 'antd/lib/drawer'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/drawer/style/css'
 
-import { Type } from '@bodhi-project/typography'
+// import { Type } from '@bodhi-project/typography'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../Link'
 import Month from './Month'
 import EventRegisterationForm from '../forms/EventRegisterationForm'
+
+import inArray from '../../methods/inArray'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React
@@ -271,19 +273,31 @@ const registerLink = (extraData, registerForEvent) => {
     eventStatus = 'present'
   }
 
+  const { node = {} } = extraData
+  const { frontmatter = {} } = node
+  const { tags = [] } = frontmatter
+  let cancelled = false
+  if (inArray(tags, 'cancelled')) {
+    cancelled = true
+  }
+
   let frag = <Fragment />
   if (eventStatus === 'past' || eventStatus === 'present') {
     frag = 'Registration for this event is now closed.'
   } else {
     frag = (
-      <a
-        href="#"
-        title="Register now"
-        onClick={e => registerForEvent(e, extraData.edgeIndex)}
-        className="ant-btn"
-      >
-        <span style={{ fontSize: '125%' }}>Quick register ⇝</span>
-      </a>
+      <Fragment>
+        {cancelled === false && (
+          <a
+            href="#"
+            title="Register now"
+            onClick={e => registerForEvent(e, extraData.edgeIndex)}
+            className="ant-btn"
+          >
+            <span style={{ fontSize: '125%' }}>Quick register ⇝</span>
+          </a>
+        )}
+      </Fragment>
     )
   }
 
@@ -447,14 +461,7 @@ class EventsGrid extends React.Component {
   render() {
     const { data } = this.props
     const postEdges = data.allMarkdownRemark.edges
-    const {
-      animate,
-      indexForForm,
-      visible,
-      extraData,
-      showArchive,
-      client,
-    } = this.state
+    const { animate, indexForForm, visible, showArchive, client } = this.state
     const today = moment()
     const thisYear = today.year().toString()
     const thisMonth = today.month()
@@ -477,6 +484,14 @@ class EventsGrid extends React.Component {
     const previousMonths = reverse(filter(months, (m, key) => key < thisMonth))
     const thisAndFutureMonths = filter(months, (m, key) => key >= thisMonth)
     const { active, nextActive, typeClass } = this.state
+    const { extraData = {} } = this.state
+    const { node = {} } = extraData
+    const { frontmatter = {} } = node
+    const { tags = [] } = frontmatter
+    let cancelled = false
+    if (inArray(tags, 'cancelled')) {
+      cancelled = true
+    }
 
     return (
       <Fragment>

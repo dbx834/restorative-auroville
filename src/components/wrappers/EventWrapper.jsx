@@ -142,7 +142,10 @@ const Page = props => {
                     {frontmatter.toTime}
                   </i>
                 </p>
-                <div style={{ position: 'relative' }} className="mask-p">
+                <div
+                  style={{ position: 'relative', marginBottom: 0 }}
+                  className="mask-p"
+                >
                   <div
                     style={{
                       position: 'absolute',
@@ -151,7 +154,7 @@ const Page = props => {
                       backgroundColor: '#ffffff',
                       zIndex: 10,
                       height: 20,
-                      width: 'calc(100% - 96px)',
+                      width: 'calc(100% - 58px)',
                     }}
                   />
                   <div style={{ maxWidth: 96 }} id="fb">
