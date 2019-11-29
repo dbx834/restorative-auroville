@@ -70,7 +70,7 @@ const style = css({
       verticalAlign: 'unset !important',
       top: 'unset !important',
       transform: 'unset !important',
-      lineHeight: '34px !important',
+      lineHeight: '26px !important',
     },
 
     '& > div': {
@@ -120,7 +120,7 @@ const query = graphql`
 /** DisqusCommentsX */
 const DisqusCommentsX = ({
   pageData,
-  collapsible = false,
+  collapsible = true,
   text = [
     <p>
       <strong>Please share your thoughts and inspiration…</strong>

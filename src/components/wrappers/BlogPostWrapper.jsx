@@ -102,26 +102,13 @@ const Page = props => {
           <p>
             <i>{abstract}</i>
           </p>
-          <div style={{ position: 'relative' }} className="mask-p">
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 101,
-                backgroundColor: '#ffffff',
-                zIndex: 10,
-                height: 20,
-                width: 'calc(100% - 96px)',
-              }}
-            />
-            <div style={{ maxWidth: 96 }} id="fb">
+          <div
+            style={{ position: 'relative', marginBottom: 0 }}
+            className="mask-p"
+          >
+            <div style={{ maxWidth: 114, overflow: 'hidden' }}>
               <FacebookProvider appId="218604115574634">
-                <FBLike
-                  href={withUrl(route, data)}
-                  colorScheme="dark"
-                  showFaces
-                  share
-                />
+                <FBLike href={withUrl(route, data)} colorScheme="dark" share />
               </FacebookProvider>
             </div>
           </div>

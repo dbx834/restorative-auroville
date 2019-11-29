@@ -174,7 +174,13 @@ const Page = props => {
             <PersonCircle
               image={nilsSquare}
               className="child-circle-highlight"
-              role={<Fragment>Apprentice</Fragment>}
+              role={
+                <Fragment>
+                  Core Team
+                  <br />
+                  &nbsp;&nbsp;Member
+                </Fragment>
+              }
             />
           </div>
         </Fragment>

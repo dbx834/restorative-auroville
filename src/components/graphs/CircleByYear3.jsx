@@ -448,7 +448,7 @@ class Sample3 extends React.Component {
       right: +moment('2021-01-01', 'YYYY-MM-DD'),
       resolution: 'years',
       allowedRange: [2016, 2017, 2018, 2019, 2020, 2021],
-      activeRangeLeft: 2019,
+      activeRangeLeft: 2016,
       activeRangeRigth: 2021,
     }
 
@@ -547,15 +547,27 @@ class Sample3 extends React.Component {
    * @return {[type]}       [description]
    */
   yearSelected(value) {
-    this.setState({
-      refAreaLeft: undefined,
-      refAreaRight: undefined,
-      left: +moment(`${value}-01-01`, 'YYYY-MM-DD'),
-      right: +moment(`${value + 1}-01-01`, 'YYYY-MM-DD'),
-      activeRangeLeft: value,
-      activeRangeRigth: value + 1,
-      resolution: 'months',
-    })
+    if (typeof value === 'string') {
+      this.setState({
+        refAreaLeft: undefined,
+        refAreaRight: undefined,
+        left: +moment('2016-01-01', 'YYYY-MM-DD'),
+        right: +moment('2021-01-01', 'YYYY-MM-DD'),
+        activeRangeLeft: 2016,
+        activeRangeRigth: 2021,
+        resolution: 'years',
+      })
+    } else {
+      this.setState({
+        refAreaLeft: undefined,
+        refAreaRight: undefined,
+        left: +moment(`${value}-01-01`, 'YYYY-MM-DD'),
+        right: +moment(`${value + 1}-01-01`, 'YYYY-MM-DD'),
+        activeRangeLeft: value,
+        activeRangeRigth: value + 1,
+        resolution: 'months',
+      })
+    }
   }
 
   /**
@@ -576,7 +588,10 @@ class Sample3 extends React.Component {
 
     const { data } = this.props
 
-    const leftYearTemp = moment(left).format('YYYY')
+    let leftYearTemp = moment(left).format('YYYY')
+    if (activeRangeLeft === 2016 && activeRangeRigth === 2021) {
+      leftYearTemp = 'all'
+    }
     const ticks = generateTicks(left, right, resolution)
     const years = {}
     let filteredData = filterData(data, left, right)
@@ -584,8 +599,6 @@ class Sample3 extends React.Component {
     const { ticks: yTicks, domain, range } = generateTicksAndDomainAndRange(
       filteredData
     )
-
-    // console.log(range)
 
     return (
       <div className={`${styles} ${resolution}`}>
@@ -600,7 +613,7 @@ class Sample3 extends React.Component {
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <Select
             value={leftYearTemp}
-            defaultValue={leftYearTemp}
+            defaultValue="all"
             style={{ width: 90, marginRight: 10 }}
             onChange={this.yearSelected}
           >
@@ -609,6 +622,7 @@ class Sample3 extends React.Component {
             <Option value={2018}>2018</Option>
             <Option value={2017}>2017</Option>
             <Option value={2016}>2016</Option>
+            <Option value="all">All</Option>
           </Select>
           <Button
             onClick={e => this.reset(e)}

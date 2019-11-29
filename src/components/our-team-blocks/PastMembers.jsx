@@ -83,7 +83,7 @@ class PastMembers extends React.Component {
     super(props)
 
     this.state = {
-      person: 'helene',
+      person: 'shanti',
     }
 
     this.showPerson = this.showPerson.bind(this)
@@ -141,12 +141,12 @@ class PastMembers extends React.Component {
           <div className={`parent-circle ${circleStyles}`} ref="parent">
             <div
               className={`${person === 'shanti' &&
-                'circle-active'} child-circle`}
+                'circle-active'} child-circle s`}
               ref="child1"
               style={{
                 backgroundImage: `url(${shantiSquare})`,
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: '125px 125px',
+                backgroundSize: '105px 105px',
                 border: '2px solid #FFBF00',
               }}
               onClick={() => this.showPerson('shanti')}
@@ -157,12 +157,12 @@ class PastMembers extends React.Component {
             </div>
             <div
               className={`${person === 'helene' &&
-                'circle-active'} child-circle`}
+                'circle-active'} child-circle s`}
               ref="child2"
               style={{
                 backgroundImage: `url(${heleneSquare})`,
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: '125px 125px',
+                backgroundSize: '105px 105px',
                 border: '2px solid #FFBF00',
               }}
               onClick={() => this.showPerson('helene')}
@@ -176,12 +176,13 @@ class PastMembers extends React.Component {
               </p>
             </div>
             <div
-              className={`${person === 'rita' && 'circle-active'} child-circle`}
+              className={`${person === 'rita' &&
+                'circle-active'} child-circle s`}
               ref="child3"
               style={{
                 backgroundImage: `url(${blueSquare})`,
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: '125px 125px',
+                backgroundSize: '105px 105px',
                 border: '2px solid #FFBF00',
               }}
               onClick={() => this.showPerson('rita')}
@@ -191,12 +192,13 @@ class PastMembers extends React.Component {
               </p>
             </div>
             <div
-              className={`${person === 'anne' && 'circle-active'} child-circle`}
+              className={`${person === 'anne' &&
+                'circle-active'} child-circle s`}
               ref="child4"
               style={{
                 backgroundImage: `url(${anneSquare})`,
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: '125px 125px',
+                backgroundSize: '105px 105px',
                 border: '2px solid #FFBF00',
               }}
               onClick={() => this.showPerson('anne')}

@@ -251,7 +251,11 @@ class ProjectWorkingTeam extends React.Component {
               onClick={() => this.showPerson('nils')}
             >
               <p>
-                <strong>Apprentice</strong>
+                <strong>
+                  Core Team
+                  <br />
+                  &nbsp;&nbsp;Member
+                </strong>
               </p>
             </div>
           </div>
