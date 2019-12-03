@@ -56,7 +56,7 @@ const Page = ({
       <Header>
         <h1 className="mask-h3">{seoData.pageTitle}</h1>
       </Header>
-      <div style={{ position: 'relative', marginBottom: 0 }} className="mask-p">
+      <div style={{ position: 'relative' }} className="mask-p">
         <div style={{ maxWidth: 114, overflow: 'hidden' }}>
           <FacebookProvider appId="218604115574634">
             <FBLike
