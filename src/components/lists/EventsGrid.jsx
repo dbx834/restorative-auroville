@@ -465,7 +465,7 @@ class EventsGrid extends React.Component {
     const today = moment()
     const thisYear = today.year().toString()
     const thisMonth = today.month()
-    const years = ['2018', '2019']
+    const years = ['2018', '2019', '2020']
     const months = {
       0: 'Jan',
       1: 'Feb',
