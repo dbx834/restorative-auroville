@@ -41,43 +41,47 @@ const Page = ({
   next = {},
   children,
   ...props
-}) => (
-  <StandardPage className={className} seoData={seoData} {...props}>
-    <Article>
-      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
-        <BItem>
-          <Link to="/">Home</Link>
-        </BItem>
-        <BItem>
-          <Link to="/the-power-of-dialogue">The Power of Dialogue</Link>
-        </BItem>
-        <BItem>{seoData.pageTitle}</BItem>
-      </Breadcrumb>
-      <Header>
-        <h1 className="mask-h3">{seoData.pageTitle}</h1>
-      </Header>
-      <div style={{ position: 'relative' }} className="mask-p">
-        <div style={{ maxWidth: 114, overflow: 'hidden' }}>
-          <FacebookProvider appId="218604115574634">
-            <FBLike
-              href={withUrl(pageData.nakedPageSlug, data)}
-              colorScheme="dark"
-              share
-            />
-          </FacebookProvider>
+}) => {
+  const { nakedPageSlug: route } = pageData
+
+  return (
+    <StandardPage className={className} seoData={seoData} {...props}>
+      <Article>
+        <Breadcrumb
+          className="mask-p"
+          separator="»"
+          style={{ marginBottom: 30 }}
+        >
+          <BItem>
+            <Link to="/">Home</Link>
+          </BItem>
+          <BItem>
+            <Link to="/the-power-of-dialogue">The Power of Dialogue</Link>
+          </BItem>
+          <BItem>{seoData.pageTitle}</BItem>
+        </Breadcrumb>
+        <Header>
+          <h1 className="mask-h3">{seoData.pageTitle}</h1>
+        </Header>
+        <div style={{ position: 'relative' }} className="mask-p">
+          <div style={{ maxWidth: 114, overflow: 'hidden' }}>
+            <FacebookProvider appId="218604115574634">
+              <FBLike href={withUrl(route, data)} colorScheme="dark" share />
+            </FacebookProvider>
+          </div>
         </div>
-      </div>
 
-      {children}
+        {children}
 
-      <div style={{ borderTop: '1px dotted #00006F' }}>
-        <h2 className="mask-h4">More in this series</h2>
-        <PrevNext next={next} prev={prev} Link={Link} />
-      </div>
-    </Article>
-    <DisqusComments pageData={pageData} />
-  </StandardPage>
-)
+        <div style={{ borderTop: '1px dotted #00006F' }}>
+          <h2 className="mask-h4">More in this series</h2>
+          <PrevNext next={next} prev={prev} Link={Link} />
+        </div>
+      </Article>
+      <DisqusComments pageData={pageData} />
+    </StandardPage>
+  )
+}
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Export

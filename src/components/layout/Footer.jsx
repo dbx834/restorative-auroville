@@ -113,7 +113,7 @@ const Footer = props => {
         </p>
         <p>
           <small style={{ fontSize: '90%' }}>
-            Copyright © 2015-2019 Restorative Auroville &{' '}
+            Copyright © 2015-2020 Restorative Auroville &{' '}
             <OutLink to="https://www.joylivinglearning.org/">
               Joy Living Learning
             </OutLink>

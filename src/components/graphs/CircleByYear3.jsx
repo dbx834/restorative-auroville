@@ -18,7 +18,7 @@ import reverse from 'lodash/reverse'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Img from 'gatsby-image'
-import { Type } from '@bodhi-project/typography'
+// import { Type } from '@bodhi-project/typography'
 import {
   CartesianGrid,
   ResponsiveContainer,
@@ -508,6 +508,8 @@ class Sample3 extends React.Component {
       refAreaRight: undefined,
       left: +moment('2016-01-01', 'YYYY-MM-DD'),
       right: +moment('2021-01-01', 'YYYY-MM-DD'),
+      activeRangeLeft: 2016,
+      activeRangeRigth: 2021,
       resolution: 'years',
     })
   }
@@ -622,7 +624,7 @@ class Sample3 extends React.Component {
             <Option value={2018}>2018</Option>
             <Option value={2017}>2017</Option>
             <Option value={2016}>2016</Option>
-            <Option value="all">All</Option>
+            <Option value="all">All years</Option>
           </Select>
           <Button
             onClick={e => this.reset(e)}

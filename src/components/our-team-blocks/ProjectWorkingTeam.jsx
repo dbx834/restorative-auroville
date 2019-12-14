@@ -18,15 +18,17 @@ import lauraSquare from '../../assets/lauraSquare.jpg'
 import janetSquare from '../../assets/janetSquare.jpg'
 import katiSquare from '../../assets/katiSquare.jpg'
 import henrikeSquare from '../../assets/henrikeSquare.jpg'
-import pranjalSquare from '../../assets/pranjalSquare.jpg'
+// import pranjalSquare from '../../assets/pranjalSquare.jpg'
 import nilsSquare from '../../assets/nilsSquare.jpg'
+import blueSquare from '../../assets/blueSquare.jpg'
 
 import Henrike from '../people/Henrike'
 import Janet from '../people/Janet'
 import Kati from '../people/Kati'
 import Laura from '../people/Laura'
-import Pranjal from '../people/Pranjal'
+// import Pranjal from '../people/Pranjal'
 import Nils from '../people/Nils'
+import Suma from '../people/Suma'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 /** toDegrees */
@@ -43,8 +45,8 @@ const renderSwitch = person => {
       return <Kati />
     case 'laura':
       return <Laura />
-    case 'pranjal':
-      return <Pranjal />
+    case 'suma':
+      return <Suma />
     case 'nils':
       return <Nils />
     default:
@@ -79,7 +81,7 @@ const style = css({
     content: `"Henrike"`,
   },
   '& .child-circle:nth-child(5)::after': {
-    content: `"Pranjal"`,
+    content: `"Suma"`,
   },
   '& .child-circle:nth-child(6)::after': {
     content: `"Nils"`,
@@ -219,16 +221,16 @@ class ProjectWorkingTeam extends React.Component {
               </p>
             </div>
             <div
-              className={`${person === 'pranjal' &&
+              className={`${person === 'suma' &&
                 'circle-active'} child-circle s`}
               ref="child5"
               style={{
-                backgroundImage: `url(${pranjalSquare})`,
+                backgroundImage: `url(${blueSquare})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '105px 105px',
                 border: '2px solid #FFBF00',
               }}
-              onClick={() => this.showPerson('pranjal')}
+              onClick={() => this.showPerson('suma')}
             >
               <p>
                 <strong>

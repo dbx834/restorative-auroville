@@ -18,11 +18,13 @@ import blueSquare from '../../assets/blueSquare.jpg'
 import heleneSquare from '../../assets/heleneSquare.jpg'
 import shantiSquare from '../../assets/shantiSquare.jpg'
 import anneSquare from '../../assets/anneSquare.jpg'
+import pranjalSquare from '../../assets/pranjalSquare.jpg'
 
 import Helene from '../people/Helene'
 import Shanti from '../people/Shanti'
 import Rita from '../people/Rita'
 import Anne from '../people/Anne'
+import Pranjal from '../people/Pranjal'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 /** toDegrees */
@@ -39,6 +41,8 @@ const renderSwitch = person => {
       return <Rita />
     case 'anne':
       return <Anne />
+    case 'pranjal':
+      return <Pranjal />
     default:
       return <br />
   }
@@ -70,6 +74,10 @@ const circleStylesObject = css({
     content: `"Anne \\A 2019"`,
     whiteSpace: 'pre',
   },
+  '& .child-circle:nth-child(5)::after': {
+    content: `"Pranjal \\A 2018-2019"`,
+    whiteSpace: 'pre',
+  },
 })
 const circleStyles = circleStylesObject.toString()
 
@@ -92,7 +100,7 @@ class PastMembers extends React.Component {
   /** standard constructor */
   componentDidMount() {
     // //Number of services
-    const noOfServices = 4
+    const noOfServices = 5
     //   //Half width of parent
     const parentCircleHalfWidth = 180
     //   //Add some padding from parent circle
@@ -205,6 +213,26 @@ class PastMembers extends React.Component {
             >
               <p>
                 <strong>Volunteer</strong>
+              </p>
+            </div>
+            <div
+              className={`${person === 'pranjal' &&
+                'circle-active'} child-circle s`}
+              ref="child5"
+              style={{
+                backgroundImage: `url(${pranjalSquare})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '105px 105px',
+                border: '2px solid #FFBF00',
+              }}
+              onClick={() => this.showPerson('pranjal')}
+            >
+              <p>
+                <strong>
+                  Core Team
+                  <br />
+                  &nbsp;&nbsp;Member
+                </strong>
               </p>
             </div>
           </div>
