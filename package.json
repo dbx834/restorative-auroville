@@ -37,7 +37,7 @@
     "axios": "^0.19.1",
     "color": "^3.1.2",
     "disqus-react": "^1.0.7",
-    "gatsby": "2.18.21",
+    "gatsby": "^2.18.18",
     "gatsby-image": "^2.2.38",
     "gatsby-plugin-canonical-urls": "^2.1.19",
     "gatsby-plugin-fastclick": "^1.0.1",
