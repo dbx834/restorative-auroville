@@ -51,22 +51,22 @@ const next = {
 export const query = graphql`
   query {
     isabs00001: file(relativePath: { eq: "outreach/isabs00001.jpeg" }) {
-      ...defaultImage
+      ...max900
     }
     isabs00002: file(relativePath: { eq: "outreach/isabs00002.jpeg" }) {
-      ...defaultImage
+      ...max900
     }
     isabs00003: file(relativePath: { eq: "outreach/isabs00003.jpeg" }) {
-      ...defaultImage
+      ...max900
     }
     isabs00004: file(relativePath: { eq: "outreach/isabs00004.jpeg" }) {
-      ...defaultImage
+      ...max900
     }
     isabs00005: file(relativePath: { eq: "outreach/isabs00005.jpeg" }) {
-      ...defaultImage
+      ...max900
     }
     isabs00006: file(relativePath: { eq: "outreach/isabs00006.jpeg" }) {
-      ...defaultImage
+      ...max900
     }
   }
 `

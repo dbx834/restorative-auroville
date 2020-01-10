@@ -12,6 +12,7 @@ import map from 'lodash/map'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
+import Video from '@bodhi-project/components/lib/Video'
 import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
 
 import Division from '@bodhi-project/components/lib/Division'
@@ -21,17 +22,15 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
-import Icon from 'antd/lib/icon'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
-
 import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
+
+import FileTextIcon from 'react-feather/dist/icons/file-text'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import CommunityEventWrapper from '../../components/wrappers/CommunityEventWrapper'
 
 import Link from '../../components/Link'
-import Video from '../../components/Video'
 
 import seoHelper from '../../methods/seoHelper'
 
@@ -65,28 +64,28 @@ export const query = graphql`
         eq: "community-events/restorative-dialogue-across-cultures/img00001.jpeg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     img00002: file(
       relativePath: {
         eq: "community-events/restorative-dialogue-across-cultures/img00002.jpeg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     img00003: file(
       relativePath: {
         eq: "community-events/restorative-dialogue-across-cultures/img00003.jpeg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     img00004: file(
       relativePath: {
         eq: "community-events/restorative-dialogue-across-cultures/img00004.jpeg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
   }
 `
@@ -114,22 +113,22 @@ const Theme = props => {
       </h2>
       <p>{text}</p>
       {!isUndefined(files) && (
-        <Fragment>
+        <p>
           {map(files, file => {
             return (
-              <p>
-                <Link to={file.link}>
-                  <Icon
-                    type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
-                    theme="outlined"
-                  />
+              <Fragment>
+                <Link
+                  to={file.link}
+                  style={{ display: 'flex', marginBottom: 12 }}
+                >
+                  <FileTextIcon />
                   &nbsp;
                   {file.title}
                 </Link>
-              </p>
+              </Fragment>
             )
           })}
-        </Fragment>
+        </p>
       )}
     </div>
   )

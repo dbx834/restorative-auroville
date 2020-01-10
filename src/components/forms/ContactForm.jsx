@@ -3,12 +3,10 @@
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
-import { css } from 'glamor'
 
 import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-
 import Form from 'antd/lib/form'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/form/style/css'
 
@@ -32,15 +30,6 @@ import {
 // const { Fragment } = React;
 const FormItem = Form.Item
 const { TextArea } = Input
-
-const formStyle = css({
-  // Space below error message
-  '& .ant-form-explain': {
-    '& > p': {
-      marginBottom: 12,
-    },
-  },
-}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -128,7 +117,7 @@ class ContactForm extends React.Component {
     return (
       <div>
         {this.state.formSent === false && (
-          <Form onSubmit={this.handleSubmit} className={`${formStyle} mask-p`}>
+          <Form onSubmit={this.handleSubmit}>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Name */}
             <p>Name</p>
             <FormItem
@@ -241,6 +230,7 @@ class ContactForm extends React.Component {
                 disabled={hasErrors(getFieldsError())}
                 loading={this.state.loader}
                 className="mask-p"
+                style={{ marginBottom: 0 }}
               >
                 Submit
               </Button>

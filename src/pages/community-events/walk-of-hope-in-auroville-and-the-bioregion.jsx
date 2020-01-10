@@ -22,17 +22,16 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
-import Icon from 'antd/lib/icon'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
-
 import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
+
+import FileTextIcon from 'react-feather/dist/icons/file-text'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import CommunityEventWrapper from '../../components/wrappers/CommunityEventWrapper'
 
 import Link from '../../components/Link'
-import Video from '../../components/Video'
+import Video from '@bodhi-project/components/lib/Video'
 
 import GrungeBox from '../../components/GrungeBox'
 import seoHelper from '../../methods/seoHelper'
@@ -69,28 +68,28 @@ export const query = graphql`
         eq: "community-events/walk-of-hope-in-auroville-and-the-bioregion/wohFlyer.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     img00002: file(
       relativePath: {
         eq: "community-events/walk-of-hope-in-auroville-and-the-bioregion/wohMap.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     img00003: file(
       relativePath: {
         eq: "community-events/walk-of-hope-in-auroville-and-the-bioregion/nvcX33.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     img00004: file(
       relativePath: {
         eq: "community-events/walk-of-hope-in-auroville-and-the-bioregion/nvcX34.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
   }
 `
@@ -118,22 +117,22 @@ const Theme = props => {
       </h2>
       <p>{text}</p>
       {!isUndefined(files) && (
-        <Fragment>
+        <p>
           {map(files, file => {
             return (
-              <p>
-                <Link to={file.link}>
-                  <Icon
-                    type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
-                    theme="outlined"
-                  />
+              <Fragment>
+                <Link
+                  to={file.link}
+                  style={{ display: 'flex', marginBottom: 12 }}
+                >
+                  <FileTextIcon />
                   &nbsp;
                   {file.title}
                 </Link>
-              </p>
+              </Fragment>
             )
           })}
-        </Fragment>
+        </p>
       )}
     </div>
   )

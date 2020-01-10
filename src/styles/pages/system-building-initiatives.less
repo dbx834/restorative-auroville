@@ -1,0 +1,77 @@
+.system-building-initiatives-page {
+  & .filter-by-tag-buttons,
+  .filter-by-category-buttons,
+  .filter-by-year-buttons {
+    display: none !important;
+  }
+
+  & button {
+    padding: 0 12px !important;
+    border-width: 1px !important;
+    box-shadow: unset !important;
+    border-radius: 3px !important;
+    margin-bottom: 0px !important;
+
+    &.selected {
+      background: #00006f;
+      & span {
+        color: #fff;
+      }
+    }
+
+    & span {
+      font-size: 90%;
+    }
+  }
+
+  & .grid-item {
+    border-radius: 6px !important;
+    border: 1px solid #00006f;
+    transition: all 220ms ease;
+    overflow: hidden;
+
+    &:hover {
+      box-shadow: 1px 2px 0 0 #ff7d00;
+    }
+
+    & article {
+      border: unset;
+
+      & .content {
+        padding: 8px;
+
+        & header {
+          & h1 {
+            color: #00006f;
+
+            & span {
+              font-size: unset !important;
+            }
+          }
+        }
+
+        & main {
+          & p {
+            &:last-child {
+              margin-bottom: 0px !important;
+            }
+          }
+        }
+      }
+
+      & .cover {
+        & .date {
+          padding: 5px 8px;
+
+          & p {
+            margin-bottom: 0px !important;
+
+            & span {
+              font-size: 80%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

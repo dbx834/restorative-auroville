@@ -4,15 +4,27 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 // import PropTypes from 'prop-types'
-import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { Box, Button } from 'grommet'
+import MediaQuery from 'react-responsive'
 
-import Grid from '@bodhi-project/components/lib/gatsby/Grid'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/card/style/css'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
+import Grid from '@bodhi-project/components/lib/grid/gatsby'
+import '@bodhi-project/components/lib/grid/style.less'
+import '@bodhi-project/components/lib/standard-renderers/article/vertical.less'
+// import '@bodhi-project/components/lib/grid/buttons-as-links.less'
+import '@bodhi-project/components/lib/snippets/hover-underline-animation.less'
+import '@bodhi-project/components/lib/features/loading-detection/style.less'
+import '@bodhi-project/components/lib/features/tag-filter/style.less'
+import '@bodhi-project/components/lib/features/category-filter/style.less'
+import '@bodhi-project/components/lib/features/chronology-sort/style.less'
+import '@bodhi-project/components/lib/features/year-filter/style.less'
+
+import { categories } from '@bodhi-project/components/lib/methods/mockCategory'
+import { tags } from '@bodhi-project/components/lib/methods/mockTag'
+import mapCovers from '@bodhi-project/components/lib/methods/mapCovers'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
@@ -20,6 +32,10 @@ import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 
 import seoHelper from '../methods/seoHelper'
+
+import rawData from '../data/system-building-initiatives'
+
+import '../styles/pages/system-building-initiatives.less'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
@@ -32,95 +48,62 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
+const conf = {
+  wrapper: '',
+  articleType: 'linkedArticle',
+  render: ['cover', 'date', 'formattedDate', 'title', 'abstract'],
+  layout: 'vertical',
+  columns: 3,
+  titleMask: 'mask-h5',
+  filterMethod: {
+    categories: 'exclusive',
+    tags: 'exclusive',
+  },
+}
+
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Images
 // ----------------------------------------------------------------------------
 export const query = graphql`
   query {
-    aikiyam: file(
-      relativePath: { eq: "system-building-initiatives/aikiyam/cover.jpg" }
+    restorativeCirclesInTheLearningCommunitySchool: file(
+      relativePath: {
+        eq: "system-building-initiatives/restorative-circles-in-the-learning-community-school.jpg"
+      }
     ) {
-      ...defaultImage
+      ...max900
     }
-    avc: file(
-      relativePath: { eq: "system-building-initiatives/avc/cover.jpg" }
+    restorativeCirclesInAikiyamSchool: file(
+      relativePath: {
+        eq: "system-building-initiatives/restorative-circles-in-aikiyam-school.jpg"
+      }
     ) {
-      ...defaultImage
+      ...max900
     }
-    tlc: file(
-      relativePath: { eq: "system-building-initiatives/tlc/cover.jpg" }
+    exploringJusticeAndRcWithTheAurovilleCouncil: file(
+      relativePath: {
+        eq: "system-building-initiatives/exploring-justice-and-rc-with-the-auroville-council.jpg"
+      }
     ) {
-      ...defaultImage
+      ...max900
     }
   }
 `
-
-// ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Styles
-// ----------------------------------------------------------------------------
-const style = css({
-  '& div.card': {
-    boxShadow: '1px 2px 0 0 #FF7D00 !important',
-    border: 'unset !important',
-    transition: 'all 200ms ease-in',
-
-    '&:hover': {
-      boxShadow: '2px 3px 0 0 #FF7D00 !important',
-    },
-  },
-
-  '& .box': {
-    border: '2px solid #00006F',
-    borderRadius: 8,
-    marginTop: 30,
-
-    '@media(min-width: 992px)': {
-      padding: 24,
-    },
-
-    '@media(max-width: 992px)': {
-      padding: 6,
-    },
-  },
-}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Ongoingprojects */
 const Ongoingprojects = props => {
-  const data = [
-    {
-      title: 'Restorative Circles in TLC (The Learning Community School)',
-      cover: props.data.tlc.childImageSharp.fluid,
-      route:
-        'system-building-initiatives/restorative-circles-in-the-learning-community-school',
-      formattedDate: 'November 2015 - Ongoing',
-      abstract:
-        'In late 2015, we were invited to share RC with the teachers at TLC (The Learning Community School).',
-    },
-    {
-      title: 'Restorative Circles in Aikiyam School',
-      cover: props.data.aikiyam.childImageSharp.fluid,
-      route:
-        'system-building-initiatives/restorative-circles-in-aikiyam-school',
-      formattedDate: 'January 2017 - Ongoing',
-      abstract:
-        'We are sharing RC in Aikiyam School, one of Auroville’s outreach schools for children from Kindergarten to 8th Grade. After discussions with the administration and teachers of the school, a group of ten teachers has committed to learn about RC.',
-    },
-    {
-      title: 'Exploring Justice & RC with the Auroville Council',
-      cover: props.data.avc.childImageSharp.fluid,
-      route:
-        'system-building-initiatives/exploring-justice-and-rc-with-the-auroville-council',
-      formattedDate: 'January 2018',
-      abstract:
-        'In early 2018, we invited the Auroville Council to explore RC and justice with us, so that we could improve our collaboration and better contribute to the community.',
-    },
-  ]
+  const { data: images } = props
+  const data = mapCovers(rawData, images)
 
   return (
-    <StandardPage className={style} seoData={seoData} {...props}>
+    <StandardPage
+      className="system-building-initiatives-page"
+      seoData={seoData}
+      {...props}
+    >
       <h1 className="mask-h3">System-Building Initiatives</h1>
       <p>
         Our approach is to engage with the community at many levels and through
@@ -130,7 +113,19 @@ const Ongoingprojects = props => {
         and more.
       </p>
       <div className="margin-p">
-        <Grid data={data} Img={Img} Link={Link} />
+        <Grid
+          loading={false}
+          Link={Link}
+          Box={Box}
+          Button={Button}
+          Img={Img}
+          MediaQuery={MediaQuery}
+          data={data}
+          allCategories={categories}
+          allTags={tags}
+          strictChronology
+          conf={conf}
+        />
       </div>
       <div className="box">
         <p>

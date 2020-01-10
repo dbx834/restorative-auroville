@@ -40,85 +40,85 @@ const seoData = seoHelper(pageData)
 export const query = graphql`
   query {
     c1: file(relativePath: { eq: "circle-stats/c1.png" }) {
-      ...defaultImage
+      ...max900
     }
     c2: file(relativePath: { eq: "circle-stats/c2.png" }) {
-      ...defaultImage
+      ...max900
     }
     c3: file(relativePath: { eq: "circle-stats/c3.png" }) {
-      ...defaultImage
+      ...max900
     }
     c4: file(relativePath: { eq: "circle-stats/c4.png" }) {
-      ...defaultImage
+      ...max900
     }
     c5: file(relativePath: { eq: "circle-stats/c5.png" }) {
-      ...defaultImage
+      ...max900
     }
     c6: file(relativePath: { eq: "circle-stats/c6.png" }) {
-      ...defaultImage
+      ...max900
     }
     c7: file(relativePath: { eq: "circle-stats/c7.png" }) {
-      ...defaultImage
+      ...max900
     }
     c8: file(relativePath: { eq: "circle-stats/c8.png" }) {
-      ...defaultImage
+      ...max900
     }
     c9: file(relativePath: { eq: "circle-stats/c9.png" }) {
-      ...defaultImage
+      ...max900
     }
     c10: file(relativePath: { eq: "circle-stats/c10.png" }) {
-      ...defaultImage
+      ...max900
     }
     c11: file(relativePath: { eq: "circle-stats/c11.png" }) {
-      ...defaultImage
+      ...max900
     }
     c12: file(relativePath: { eq: "circle-stats/c12.png" }) {
-      ...defaultImage
+      ...max900
     }
     c13: file(relativePath: { eq: "circle-stats/c13.png" }) {
-      ...defaultImage
+      ...max900
     }
     c14: file(relativePath: { eq: "circle-stats/c14.png" }) {
-      ...defaultImage
+      ...max900
     }
     c15: file(relativePath: { eq: "circle-stats/c15.png" }) {
-      ...defaultImage
+      ...max900
     }
     c16: file(relativePath: { eq: "circle-stats/c16.png" }) {
-      ...defaultImage
+      ...max900
     }
     c17: file(relativePath: { eq: "circle-stats/c17.png" }) {
-      ...defaultImage
+      ...max900
     }
     c18: file(relativePath: { eq: "circle-stats/c18.png" }) {
-      ...defaultImage
+      ...max900
     }
     c19: file(relativePath: { eq: "circle-stats/c19.png" }) {
-      ...defaultImage
+      ...max900
     }
     c20: file(relativePath: { eq: "circle-stats/c20.png" }) {
-      ...defaultImage
+      ...max900
     }
     c21: file(relativePath: { eq: "circle-stats/c21.png" }) {
-      ...defaultImage
+      ...max900
     }
     c22: file(relativePath: { eq: "circle-stats/c22.png" }) {
-      ...defaultImage
+      ...max900
     }
     c23: file(relativePath: { eq: "circle-stats/c23.png" }) {
-      ...defaultImage
+      ...max900
     }
     c24: file(relativePath: { eq: "circle-stats/c24.png" }) {
-      ...defaultImage
+      ...max900
     }
     c25: file(relativePath: { eq: "circle-stats/c25.png" }) {
-      ...defaultImage
+      ...max900
     }
     c26: file(relativePath: { eq: "circle-stats/c26.png" }) {
-      ...defaultImage
+      ...max900
     }
     inprogress: file(relativePath: { eq: "circle-stats/inprogress.png" }) {
-      ...defaultImage
+      ...max900
     }
   }
 `

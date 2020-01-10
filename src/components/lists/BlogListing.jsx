@@ -16,7 +16,6 @@ import StackGrid from 'react-stack-grid'
 import ContainerDimensions from 'react-container-dimensions'
 import { Header, Article } from '@bodhi-project/semantic-webflow'
 
-//
 import Image from '@bodhi-project/components/lib/Image'
 
 import Tag from 'antd/lib/tag'

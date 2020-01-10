@@ -4,11 +4,11 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 // import PropTypes from 'prop-types'
-import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { Box, Button } from 'grommet'
 
 import withSizes from 'react-sizes'
 import Division from '@bodhi-project/components/lib/Division'
@@ -17,14 +17,23 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 import Video from '@bodhi-project/components/lib/Video'
 
+import smallKey from '@bodhi-project/components/lib/methods/smallKey'
+import timestamp from '@bodhi-project/components/lib/methods/timestamp'
+import mockTag from '@bodhi-project/components/lib/methods/mockTag'
+import mockCategory from '@bodhi-project/components/lib/methods/mockCategory'
+
+import { LinkedArticle } from '@bodhi-project/components/lib/standard-renderers/article/gatsby'
+import '@bodhi-project/components/lib/standard-renderers/article/vertical.less'
+import '@bodhi-project/components/lib/hover-cover/grid-item-article-hover.less'
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
-import Copy from '../components/Copy'
 import StandardPage from '../components/wrappers/StandardPage'
 import EventsThisMonth from '../components/lists/EventsThisMonth'
 
 import TeamHighlight from '../components/home-page/TeamHighlight'
-import GatsbyImageVideoCover from '../components/GatsbyImageVideoCover'
+
+import '../styles/pages/index.less'
 
 import seoHelper from '../methods/seoHelper'
 
@@ -46,90 +55,102 @@ const seoData = seoHelper(pageData)
 export const query = graphql`
   query {
     banner: file(relativePath: { eq: "banner.png" }) {
-      ...defaultImage
+      ...max900
     }
     banner21: file(relativePath: { eq: "banner2-1.png" }) {
-      ...defaultImage
+      ...max900
     }
     banner25: file(relativePath: { eq: "banner2-5.png" }) {
-      ...defaultImage
+      ...max900
     }
     banner25: file(relativePath: { eq: "banner2-5.png" }) {
-      ...defaultImage
+      ...max900
     }
     banner24Hover: file(relativePath: { eq: "banner2-4-hover.png" }) {
-      ...defaultImage
+      ...max900
     }
     banner23Hover: file(relativePath: { eq: "banner2-3-hover.png" }) {
-      ...defaultImage
+      ...max900
     }
     banner22Hover: file(relativePath: { eq: "banner2-2-hover.png" }) {
-      ...defaultImage
+      ...max900
     }
     banner24: file(relativePath: { eq: "banner2-4.png" }) {
-      ...defaultImage
+      ...max900
     }
     banner23: file(relativePath: { eq: "banner2-3.png" }) {
-      ...defaultImage
+      ...max900
     }
     banner22: file(relativePath: { eq: "banner2-2.png" }) {
-      ...defaultImage
+      ...max900
     }
     banner11Mobile: file(
       relativePath: { eq: "homepage/banner-mobile-1-1.png" }
     ) {
-      ...defaultImage
+      ...max900
     }
     banner12Mobile: file(
       relativePath: { eq: "homepage/banner-mobile-1-2.png" }
     ) {
-      ...defaultImage
+      ...max900
     }
     banner12HoverMobile: file(
       relativePath: { eq: "homepage/banner-mobile-1-2-hover.png" }
     ) {
-      ...defaultImage
+      ...max900
     }
     banner21Mobile: file(
       relativePath: { eq: "homepage/banner-mobile-2-1.png" }
     ) {
-      ...defaultImage
+      ...max900
     }
     banner21HoverMobile: file(
       relativePath: { eq: "homepage/banner-mobile-2-1-hover.png" }
     ) {
-      ...defaultImage
+      ...max900
     }
     banner22Mobile: file(
       relativePath: { eq: "homepage/banner-mobile-2-2.png" }
     ) {
-      ...defaultImage
+      ...max900
     }
     banner22HoverMobile: file(
       relativePath: { eq: "homepage/banner-mobile-2-2-hover.png" }
     ) {
-      ...defaultImage
+      ...max900
     }
     bluePaintbrush: file(relativePath: { eq: "bluePaintbrush.png" }) {
-      ...defaultImage
+      ...max900
     }
     orangePaintbrush: file(relativePath: { eq: "orangePaintbrush.png" }) {
-      ...defaultImage
+      ...max900
     }
     playNow: file(relativePath: { eq: "power-of-dialogue/playNow.jpg" }) {
-      ...defaultImage
-    }
-    videoCover1: file(
-      relativePath: {
-        eq: "power-of-dialogue/designing-our-justice-system-consciously.jpg"
-      }
-    ) {
-      ...defaultImage
+      ...max900
     }
     videoCover2: file(
       relativePath: { eq: "power-of-dialogue/surya-on-restorative-circles.jpg" }
     ) {
-      ...defaultImage
+      ...max900
+    }
+    defaultForegroundFallback: file(
+      relativePath: { eq: "the-power-of-dialogue/playNow.jpg" }
+    ) {
+      ...max900
+    }
+    designingOurJusticeSystemConsciously: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/designing-our-justice-system-consciously.jpg"
+      }
+    ) {
+      ...max900
+    }
+    suryaOnRestorativeCircles: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/surya-on-restorative-circles.jpg"
+      }
+    ) {
+      ...max900
     }
     allMarkdownRemark(
       limit: 365
@@ -171,78 +192,6 @@ export const query = graphql`
     }
   }
 `
-
-// ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Styles
-// ----------------------------------------------------------------------------
-const styleObject = css({
-  display: 'block',
-
-  '& .ant-card': {
-    boxShadow: '1px 2px 0 0 #FF7D00',
-
-    '&:hover': {
-      boxShadow: '2px 4px 0 0 #FF7D00',
-    },
-  },
-
-  '& .one': {
-    transition: 'all 300ms ease-in',
-
-    '&:hover': {
-      background: '#ffe59a',
-    },
-  },
-
-  '& .two': {
-    transition: 'all 300ms ease-in',
-
-    '&:hover': {
-      background: '#dfdffe',
-    },
-  },
-
-  '& .three': {
-    transition: 'all 300ms ease-in',
-
-    '&:hover': {
-      background: '#ffe7e7',
-    },
-  },
-
-  '& .four': {
-    transition: 'all 300ms ease-in',
-
-    '&:hover': {
-      background: '#bfd9bf',
-    },
-  },
-
-  '& .banner-hover': {
-    '& .hover': {
-      transition: 'all 300ms ease-in',
-      opacity: 0,
-    },
-
-    '&:hover': {
-      '& .hover': {
-        opacity: 1,
-      },
-    },
-  },
-
-  '& .yellow-block-padding': {
-    '@media(min-width: 992px)': {
-      paddingLeft: '12.5%',
-      paddingRight: '12.5%',
-    },
-    '@media(max-width: 992px)': {
-      paddingLeft: '10%',
-      paddingRight: '14%',
-    },
-  },
-})
-const pageStyle = styleObject.toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -287,7 +236,7 @@ const Page = props => {
   const { data, isMobile } = props
 
   return (
-    <StandardPage className={pageStyle} seoData={seoData} {...props}>
+    <StandardPage className="index-page" seoData={seoData} {...props}>
       <Division bigGolden>
         <Fragment>
           <Img fluid={props.data.banner.childImageSharp.fluid} />
@@ -555,31 +504,68 @@ const Page = props => {
         <p style={{ marginBottom: 30 }}>
           <Link to="/the-power-of-dialogue">See video series ⇝</Link>
         </p>
-        <Division byThree>
-          <Fragment>
-            <GatsbyImageVideoCover
-              to="/the-power-of-dialogue/designing-our-justice-system-consciously"
-              cover={props.data.videoCover1.childImageSharp.fluid}
-              text="L'aura shares about her experience of engaging with Restorative Circles in Auroville and the importance of designing a justice system consciously, otherwise we'll just inherit the old ways."
-              playNow={props.data.playNow.childImageSharp.fluid}
-            />
-          </Fragment>
-          <Fragment>
-            <GatsbyImageVideoCover
-              to="/the-power-of-dialogue/surya-on-restorative-circles"
-              cover={props.data.videoCover2.childImageSharp.fluid}
-              text="Surya shares about her experiences with Restoratives Circles."
-              playNow={props.data.playNow.childImageSharp.fluid}
-            />
-          </Fragment>
-          <Fragment>
+        <div className="by-three">
+          <LinkedArticle
+            className="resize-detector"
+            render={['hover-cover', 'abstract']}
+            layout="vertical"
+            data={{
+              key: smallKey(),
+              title: 'na',
+              background:
+                props.data.designingOurJusticeSystemConsciously.childImageSharp
+                  .fluid,
+              foreground:
+                props.data.defaultForegroundFallback.childImageSharp.fluid,
+              routeSlug:
+                '/the-power-of-dialogue/designing-our-justice-system-consciously',
+              publishedAt: timestamp('01.01.2015'),
+              abstract:
+                "L'aura shares about her experience of engaging with Restorative Circles in Auroville and the importance of designing a justice system consciously, otherwise we'll just inherit the old ways.",
+              hasCategories: mockCategory(),
+              hasTags: mockTag(),
+            }}
+            Link={Link}
+            Box={Box}
+            Button={Button}
+            Img={Img}
+            conf={{
+              datePosition: 'cover',
+            }}
+          />
+          <LinkedArticle
+            className="resize-detector"
+            render={['hover-cover', 'abstract']}
+            layout="vertical"
+            data={{
+              key: smallKey(),
+              title: 'na',
+              background:
+                props.data.suryaOnRestorativeCircles.childImageSharp.fluid,
+              foreground:
+                props.data.defaultForegroundFallback.childImageSharp.fluid,
+              routeSlug: '/the-power-of-dialogue/surya-on-restorative-circles',
+              publishedAt: timestamp('01.01.2015'),
+              abstract:
+                'Surya shares about her experiences with Restoratives Circles.',
+              hasCategories: mockCategory(),
+              hasTags: mockTag(),
+            }}
+            Link={Link}
+            Box={Box}
+            Button={Button}
+            Img={Img}
+            conf={{
+              datePosition: 'cover',
+            }}
+          />
+          <div>
             <h3 className="mask-h4">Our Video Series</h3>
             <div
               style={{
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                height: '100%',
               }}
             >
               <div>
@@ -598,7 +584,7 @@ const Page = props => {
                     1. The Craft
                   </h4>
                   <p style={{ marginBottom: 20 }}>
-                    <i>Learning the steps</i>
+                    <i style={{ fontSize: '90%' }}>Learning the steps</i>
                   </p>
                 </Link>
               </div>
@@ -619,7 +605,9 @@ const Page = props => {
                     2. In Action
                   </h4>
                   <p style={{ marginBottom: 20 }}>
-                    <i>Snippets from live Circles</i>
+                    <i style={{ fontSize: '90%' }}>
+                      Snippets from live Circles
+                    </i>
                   </p>
                 </Link>
               </div>
@@ -640,7 +628,9 @@ const Page = props => {
                     3. The Restorative System
                   </h4>
                   <p style={{ marginBottom: 20 }}>
-                    <i>Exploring justice in community</i>
+                    <i style={{ fontSize: '90%' }}>
+                      Exploring justice in community
+                    </i>
                   </p>
                 </Link>
               </div>
@@ -661,13 +651,13 @@ const Page = props => {
                     4. Experiences
                   </h4>
                   <p style={{ marginBottom: 20 }}>
-                    <i>Participants share</i>
+                    <i style={{ fontSize: '90%' }}>Participants share</i>
                   </p>
                 </Link>
               </div>
             </div>
-          </Fragment>
-        </Division>
+          </div>
+        </div>
       </div>
 
       <div
@@ -708,7 +698,7 @@ const Page = props => {
         </div>
         <div className="margin-p">
           <Division goldenAlt>
-            <Copy style={{ paddingTop: 10 }}>
+            <div style={{ paddingTop: 10 }}>
               <br className="mobile-only" />
               <br className="mobile-only" />
               <Video
@@ -721,7 +711,7 @@ const Page = props => {
                   marginBottom: 0,
                 }}
               >
-                <i style={{ display: 'block' }}>
+                <i style={{ display: 'block', fontSize: '90%' }}>
                   Teachers at Aikiyam School are
                   <br className="desktop-only" />
                   inspired by Restorative Circles!
@@ -735,8 +725,8 @@ const Page = props => {
               </p>
               <br className="mobile-only" />
               <br className="mobile-only" />
-            </Copy>
-            <Copy>
+            </div>
+            <div>
               <h2
                 className="mask-h3"
                 style={{
@@ -779,7 +769,7 @@ const Page = props => {
               <br className="mobile-only" />
               <br className="mobile-only" />
               <br className="mobile-only" />
-            </Copy>
+            </div>
           </Division>
         </div>
       </div>
@@ -794,7 +784,7 @@ const Page = props => {
 // ----------------------------------------------------------------------------
 /** mapSizesToProps */
 const mapSizesToProps = ({ width }) => ({
-  isMobile: width <= 768,
+  isMobile: width <= 992,
 })
 
 export default withSizes(mapSizesToProps)(Page)

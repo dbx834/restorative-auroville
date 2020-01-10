@@ -15,7 +15,7 @@ import React from 'react'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import BlogPostWrapper from '../../components/wrappers/BlogPostWrapper'
 
-import Video from '../../components/Video'
+import Video from '@bodhi-project/components/lib/Video'
 
 // import seoHelper from '../../methods/seoHelper'
 

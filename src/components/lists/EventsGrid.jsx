@@ -21,7 +21,7 @@ import MediaQuery from 'react-responsive'
 import { withPrefix } from 'gatsby-link'
 import 'moment/locale/en-gb'
 
-import typefn from '@bodhi-project/typography/lib/methods/type'
+// import typefn from '@bodhi-project/typography/lib/methods/type'
 
 import Image from '@bodhi-project/components/lib/Image'
 
@@ -38,18 +38,13 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tabs/style/css'
 import Switch from 'antd/lib/switch'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/switch/style/css'
 
-import Button from 'antd/lib/button'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
-
-import Drawer from 'antd/lib/drawer'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/drawer/style/css'
-
-// import { Type } from '@bodhi-project/typography'
+// import Button from 'antd/lib/button'
+// import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../Link'
 import Month from './Month'
-import EventRegisterationForm from '../forms/EventRegisterationForm'
+// import EventRegisterationForm from '../forms/EventRegisterationForm'
 
 import inArray from '../../methods/inArray'
 
@@ -140,18 +135,16 @@ const pageStyle = css({
         margin: 0,
         position: 'absolute',
         left: 24,
-        lineHeight: '50px',
-        height: 50,
         fontWeight: 700,
       },
 
       '@media(max-width: 992px)': {
-        height: 35,
-        marginRight: 4,
+        // height: 35,
+        // marginRight: 4,
 
         '& h2': {
-          lineHeight: '35px',
-          height: 35,
+          // lineHeight: '35px',
+          // height: 35,
           left: 12,
         },
       },
@@ -171,12 +164,12 @@ const pageStyle = css({
         height: 50,
 
         '@media(max-width: 992px)': {
-          minWidth: 35,
+          minWidth: 36,
           paddingLeft: 5,
           paddingRight: 5,
           marginRight: 2,
           marginLeft: 2,
-          height: 35,
+          height: 36,
         },
 
         position: 'relative',
@@ -284,21 +277,6 @@ const registerLink = (extraData, registerForEvent) => {
   let frag = <Fragment />
   if (eventStatus === 'past' || eventStatus === 'present') {
     frag = 'Registration for this event is now closed.'
-  } else {
-    frag = (
-      <Fragment>
-        {cancelled === false && (
-          <a
-            href="#"
-            title="Register now"
-            onClick={e => registerForEvent(e, extraData.edgeIndex)}
-            className="ant-btn"
-          >
-            <span style={{ fontSize: '125%' }}>Quick register ⇝</span>
-          </a>
-        )}
-      </Fragment>
-    )
   }
 
   return frag
@@ -315,15 +293,18 @@ class EventsGrid extends React.Component {
   constructor(props) {
     super(props)
 
-    const typeClass = typefn({
-      kit: 'jdd4npp',
-      options: {
-        range: [12, 20], // Min and Max font-sizes
-        paragraphSpacingFactor: 1.2, // Greater for tighter paragraph-paragraph spacing
-        headingParagraphGapSpacingFactor: 0, // Greater for tighter header-paragraph spacing
-        indentParagraphs: false,
-      },
-    })
+    // const typeClass = typefn({
+    //   kit: 'jdd4npp',
+    //   options: {
+    //     range: [12, 20], // Min and Max font-sizes
+    //     paragraphSpacingFactor: 1.2, // Greater for tighter paragraph-paragraph spacing
+    //     headingParagraphGapSpacingFactor: 0, // Greater for tighter header-paragraph spacing
+    //     indentParagraphs: false,
+    //   },
+    // })
+
+    const today = moment()
+    const thisYear = today.year().toString()
 
     this.state = {
       visible: false,
@@ -334,7 +315,7 @@ class EventsGrid extends React.Component {
       active: undefined,
       nextActive: undefined,
       client: false,
-      typeClass,
+      currentYear: thisYear,
     }
 
     this.onClose = this.onClose.bind(this)
@@ -345,6 +326,7 @@ class EventsGrid extends React.Component {
     this.doneAnimating = this.doneAnimating.bind(this)
     this.setActive = this.setActive.bind(this)
     this.nextActive = this.nextActive.bind(this)
+    this.tabChanged = this.tabChanged.bind(this)
   }
 
   /** componentDidMount */
@@ -457,11 +439,18 @@ class EventsGrid extends React.Component {
     })
   }
 
+  /** tabChanged */
+  tabChanged(key) {
+    this.setState({
+      currentYear: key,
+    })
+  }
+
   /** standard renderer */
   render() {
     const { data } = this.props
     const postEdges = data.allMarkdownRemark.edges
-    const { animate, indexForForm, visible, showArchive, client } = this.state
+    const { animate, showArchive, client, currentYear } = this.state
     const today = moment()
     const thisYear = today.year().toString()
     const thisMonth = today.month()
@@ -483,7 +472,7 @@ class EventsGrid extends React.Component {
     const monthsArray = values(months)
     const previousMonths = reverse(filter(months, (m, key) => key < thisMonth))
     const thisAndFutureMonths = filter(months, (m, key) => key >= thisMonth)
-    const { active, nextActive, typeClass } = this.state
+    const { active, nextActive } = this.state
     const { extraData = {} } = this.state
     const { node = {} } = extraData
     const { frontmatter = {} } = node
@@ -511,35 +500,40 @@ class EventsGrid extends React.Component {
                           events we're hosting. Please register now if you’d
                           like to attend any of these events.
                         </p>
-                        <div style={{ position: 'absolute', top: 0, right: 0 }}>
-                          <h2
-                            className="mask-h6"
-                            style={{
-                              display: 'inline-block',
-                              margin: 0,
-                              lineHeight: '22px',
-                              marginTop: 9,
-                            }}
+                        {currentYear === thisYear && (
+                          <div
+                            style={{ position: 'absolute', top: 0, right: 0 }}
                           >
-                            <small>Past</small>
-                          </h2>
-                          &nbsp;
-                          <Switch
-                            style={{
-                              display: 'inline-block',
-                              margin: 0,
-                              marginTop: -2,
-                            }}
-                            defaultChecked={false}
-                            onChange={this.toggleArchive}
-                            size="small"
-                          />
-                        </div>
+                            <h2
+                              className="mask-h6"
+                              style={{
+                                display: 'inline-block',
+                                margin: 0,
+                                lineHeight: '22px',
+                                marginTop: 9,
+                              }}
+                            >
+                              <small>Past</small>
+                            </h2>
+                            &nbsp;
+                            <Switch
+                              style={{
+                                display: 'inline-block',
+                                margin: 0,
+                                marginTop: -2,
+                              }}
+                              defaultChecked={false}
+                              onChange={this.toggleArchive}
+                              size="small"
+                            />
+                          </div>
+                        )}
                       </div>
                       <Tabs
                         type="card"
                         tabPosition="left"
                         defaultActiveKey={thisYear}
+                        onChange={this.tabChanged}
                       >
                         {map(years, (year, yearKey) => {
                           const key = `${year}-${yearKey}`
@@ -703,6 +697,7 @@ class EventsGrid extends React.Component {
                       )}
                     </Fragment>
                   </Division>
+                  {/*
                   <Drawer
                     title={false}
                     closable={false}
@@ -744,6 +739,7 @@ class EventsGrid extends React.Component {
                       </Button>
                     </div>
                   </Drawer>
+                  */}
                 </div>
               )}
             </MediaQuery>

@@ -170,11 +170,9 @@ class FacilitatorsTeam extends React.Component {
 
     return (
       <div className={style}>
-        <h1 className="mask-h3" style={{ marginBottom: 0 }}>
-          Facilitators' Team
-        </h1>
+        <h1 className="mask-h3">Facilitators' Team</h1>
         <p>
-          <strong>↪ available to the community as Circle Facilitators…</strong>
+          <strong>available to the community as Circle Facilitators…</strong>
         </p>
         <p>
           The Facilitator is a dynamic role, selected according to individual
@@ -222,13 +220,7 @@ class FacilitatorsTeam extends React.Component {
           <PersonCircle
             image={pranjalSquare}
             className="child-circle-highlight"
-            role={
-              <Frag>
-                Core Team
-                <br />
-                &nbsp;&nbsp;Member
-              </Frag>
-            }
+            role={<Frag>Facilitator</Frag>}
             style={{ cursor: 'unset' }}
           />
           <PersonCircle

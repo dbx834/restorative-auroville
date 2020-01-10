@@ -41,6 +41,7 @@ const style = css({
       top: 'unset !important',
       transform: 'unset !important',
       lineHeight: '24px !important',
+      marginTop: '-2px',
 
       '@media(min-width: 992px)': {
         lineHeight: '34px !important',

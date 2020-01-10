@@ -19,10 +19,7 @@ const { Fragment } = React
 /** Person */
 const Person = ({ show = true }) => (
   <div>
-    <h1 className="mask-h4">
-      Pranjal Tiwari
-      <Fragment>{show === true && ' – Core Team Member'}</Fragment>
-    </h1>
+    <h1 className="mask-h4">Pranjal Tiwari</h1>
     <p>
       <i>
         I grew up in Pondicherry and studied at the Sri Aurobindo International

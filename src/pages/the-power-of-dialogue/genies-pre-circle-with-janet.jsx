@@ -8,7 +8,7 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import VideoWrapper from '../../components/wrappers/VideoWrapper'
-import Video from '../../components/Video'
+import Video from '@bodhi-project/components/lib/Video'
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -22,12 +22,11 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
-const next = {
-  nakedPageSlug:
-    'the-power-of-dialogue/engaging-with-restorative-circles-in-auroville',
-}
-
 const prev = undefined
+
+const next = {
+  nakedPageSlug: 'the-power-of-dialogue/rakhals-pre-circle-with-henrike',
+}
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles

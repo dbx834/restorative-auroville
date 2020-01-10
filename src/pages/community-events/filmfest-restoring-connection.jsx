@@ -21,11 +21,10 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
 
-import Icon from 'antd/lib/icon'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
-
 import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
+
+import FileTextIcon from 'react-feather/dist/icons/file-text'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import CommunityEventWrapper from '../../components/wrappers/CommunityEventWrapper'
@@ -74,28 +73,28 @@ export const query = graphql`
         eq: "community-events/filmfest-restoring-connection/nvcX43.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     nvcX44: file(
       relativePath: {
         eq: "community-events/filmfest-restoring-connection/nvcX44.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     nvcX37: file(
       relativePath: {
         eq: "community-events/filmfest-restoring-connection/nvcX37.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     nvcX42: file(
       relativePath: {
         eq: "community-events/filmfest-restoring-connection/nvcX42.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
   }
 `
@@ -123,22 +122,22 @@ const Theme = props => {
       </h2>
       <p>{text}</p>
       {!isUndefined(files) && (
-        <Fragment>
+        <p>
           {map(files, file => {
             return (
-              <p>
-                <Link to={file.link}>
-                  <Icon
-                    type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
-                    theme="outlined"
-                  />
+              <Fragment>
+                <Link
+                  to={file.link}
+                  style={{ display: 'flex', marginBottom: 12 }}
+                >
+                  <FileTextIcon />
                   &nbsp;
                   {file.title}
                 </Link>
-              </p>
+              </Fragment>
             )
           })}
-        </Fragment>
+        </p>
       )}
     </div>
   )

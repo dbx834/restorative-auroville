@@ -75,34 +75,34 @@ export const query = graphql`
         eq: "community-events/cross-cultural-dialogue/english-poster2.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     tamilPoster: file(
       relativePath: {
         eq: "community-events/cross-cultural-dialogue/tamil-poster2.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     ccd3: file(
       relativePath: { eq: "community-events/cross-cultural-dialogue/ccd3.jpeg" }
     ) {
-      ...defaultImage
+      ...max900
     }
     ccd1: file(
       relativePath: { eq: "community-events/cross-cultural-dialogue/ccd1.jpeg" }
     ) {
-      ...defaultImage
+      ...max900
     }
     ccd2: file(
       relativePath: { eq: "community-events/cross-cultural-dialogue/ccd2.jpeg" }
     ) {
-      ...defaultImage
+      ...max900
     }
     ccd4: file(
       relativePath: { eq: "community-events/cross-cultural-dialogue/ccd4.jpeg" }
     ) {
-      ...defaultImage
+      ...max900
     }
   }
 `

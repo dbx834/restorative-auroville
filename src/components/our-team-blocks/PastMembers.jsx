@@ -75,7 +75,7 @@ const circleStylesObject = css({
     whiteSpace: 'pre',
   },
   '& .child-circle:nth-child(5)::after': {
-    content: `"Pranjal \\A 2018-2019"`,
+    content: `"Pranjal \\A 2017-2019"`,
     whiteSpace: 'pre',
   },
 })
@@ -136,12 +136,10 @@ class PastMembers extends React.Component {
           marginBottom: 48,
         }}
       >
-        <h1 className="mask-h3" style={{ marginBottom: 0 }}>
-          Past Members
-        </h1>
+        <h1 className="mask-h3">Past Members</h1>
         <p>
           <strong>
-            ↪ community members who have contributed to our project, and to whom
+            community members who have contributed to our project, and to whom
             we are immensely grateful…
           </strong>
         </p>

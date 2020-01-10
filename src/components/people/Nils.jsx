@@ -21,7 +21,7 @@ const Person = ({ show = true }) => (
   <div>
     <h1 className="mask-h4">
       Nils Johansson
-      <Fragment>{show === true && ' – Apprentice'}</Fragment>
+      <Fragment>{show === true && ' – Core Team Member'}</Fragment>
     </h1>
     <p>
       <i>Hello, I’m Nils and I’m excited writing this!</i>

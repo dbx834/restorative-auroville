@@ -4,57 +4,58 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 // import PropTypes from 'prop-types'
-import { css } from 'glamor'
 
 import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import { Box, Button } from 'grommet'
+import MediaQuery from 'react-responsive'
+
 import Division from '@bodhi-project/components/lib/Division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
+import Grid from '@bodhi-project/components/lib/grid/gatsby'
+import '@bodhi-project/components/lib/grid/style.less'
+import '@bodhi-project/components/lib/standard-renderers/article/vertical.less'
+// import '@bodhi-project/components/lib/grid/buttons-as-links.less'
+import '@bodhi-project/components/lib/snippets/hover-underline-animation.less'
+import '@bodhi-project/components/lib/features/loading-detection/style.less'
+import '@bodhi-project/components/lib/features/tag-filter/style.less'
+import '@bodhi-project/components/lib/hover-cover/grid-item-article-hover.less'
+import '@bodhi-project/components/lib/features/category-filter/style.less'
+import '@bodhi-project/components/lib/features/chronology-sort/style.less'
+import '@bodhi-project/components/lib/features/year-filter/style.less'
+
 import Image from '@bodhi-project/components/lib/Image'
-import OutLink from '@bodhi-project/components/lib/OutLink'
-import Images from '@bodhi-project/components/lib/Images'
 
 import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 
-import Icon from 'antd/lib/icon'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
+import YouTubeIcon from 'react-feather/dist/icons/youtube'
+
+import smallKey from '@bodhi-project/components/lib/methods/smallKey'
+import mapHoverCovers from '@bodhi-project/components/lib/methods/mapHoverCovers'
+
+// import mockTimestamp from '@bodhi-project/components/lib/methods/mockTimestamp'
+import { tags } from '@bodhi-project/components/lib/methods/mockTag'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 import DisqusComments from '../components/DisqusComments'
-import VideoCover from '../components/VideoCover'
 
 import seoHelper from '../methods/seoHelper'
 
-import p1ComingSoon from '../assets/coming-soon-yellow.jpg'
-import p2ComingSoon from '../assets/coming-soon-blue.jpg'
-import p3ComingSoon from '../assets/coming-soon-red.jpg'
-import p4ComingSoon from '../assets/coming-soon-green.jpg'
-
-import p21 from '../assets/genies-precircle-with-janet.jpg'
-
-import p31 from '../assets/engaging-with-restorative-circles-in-auroville.jpg'
-import p32 from '../assets/designing-our-justice-system-consciously.jpg'
-import p33 from '../assets/defining-the-act.jpg'
-import p34 from '../assets/rc-challenges-us-to-grow.jpg'
-import p35 from '../assets/rcs-ripple-effect.jpg'
-
-import p41 from '../assets/surya-on-restorative-circles.jpg'
-import p42 from '../assets/the-value-of-rc-facilitation.jpg'
-
-import yellowBorder from '../assets/yellowBorder.jpg'
-import greenBorder from '../assets/greenBorder.jpg'
-import redBorder from '../assets/redBorder.jpg'
-import blueBorder from '../assets/blueBorder.jpg'
-
 import grungeBox from '../assets/grungeBg.jpg'
 import camera from '../assets/camera.png'
+
+import rawData from '../data/the-power-of-dialogue'
+
+import '../styles/pages/the-power-of-dialogue.less'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React
@@ -67,394 +68,341 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
-// ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Styles
-// ----------------------------------------------------------------------------
-const style = css({
-  '& .box': {
-    borderRadius: 4,
-    position: 'relative',
-
-    '@media(min-width: 992px)': {
-      paddingLeft: 18,
-      paddingRight: 18,
-      paddingTop: 36,
-      paddingBottom: 18,
-    },
-
-    '@media(max-width: 992px)': {
-      paddingLeft: 9,
-      paddingRight: 9,
-      paddingTop: 9,
-      paddingBottom: 9,
-    },
+const categories = [
+  {
+    categoryId: smallKey(),
+    key: smallKey(),
+    categoryName: 'Experiences',
+    abstract: (
+      <Fragment>
+        <strong>community members talk about their experience</strong>
+        &nbsp;being in live Circles
+      </Fragment>
+    ),
+    categoryShortCode: 'experiences',
+    __typename: 'Category',
   },
-}).toString()
+  {
+    categoryId: smallKey(),
+    key: smallKey(),
+    categoryName: 'The Restorative System',
+    abstract: (
+      <Fragment>
+        <strong>engaging with RC as a System</strong>&nbsp;and highlighting the
+        need to talk about the meaning of justice and conflict in our community
+      </Fragment>
+    ),
+    categoryShortCode: 'theRestorativeSystem',
+    __typename: 'Category',
+  },
+  {
+    categoryId: smallKey(),
+    key: smallKey(),
+    categoryName: 'In Action',
+    abstract: (
+      <Fragment>
+        <strong>touching “live” moments</strong>&nbsp;from different stages of
+        real Circles that have been called in the community
+      </Fragment>
+    ),
+    categoryShortCode: 'inAction',
+    __typename: 'Category',
+  },
+  {
+    categoryId: smallKey(),
+    key: smallKey(),
+    categoryName: 'The Craft',
+    abstract: (
+      <Fragment>
+        <strong>a learning resource</strong>&nbsp;to highlight the RC process in
+        its different steps and stages (COMING SOON)
+      </Fragment>
+    ),
+    categoryShortCode: 'theCraft',
+    __typename: 'Category',
+  },
+]
+
+const conf = {
+  wrapper: '',
+  articleType: 'linkedArticle',
+  render: ['hover-cover', 'title', 'abstract'],
+  layout: 'vertical',
+  columns: 3,
+  titleMask: 'mask-h5',
+  filterMethod: {
+    categories: 'exclusive',
+    tags: 'exclusive',
+  },
+  hydrate: {
+    chronology: 'oldest-first',
+  },
+  renderCategoryAbstract: true,
+  allCategoryAbstract: <Fragment>...</Fragment>,
+  hashFilter: true,
+}
+
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    defaultForegroundFallback: file(
+      relativePath: { eq: "the-power-of-dialogue/playNow.jpg" }
+    ) {
+      ...max900
+    }
+    geniesPreCircleWithJanet: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/genies-precircle-with-janet.jpg"
+      }
+    ) {
+      ...max900
+    }
+    rakhalsPreCircleWithHenrike: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/rakhals-pre-circle-with-henrike.jpg"
+      }
+    ) {
+      ...max900
+    }
+    engagingWithRestorativeCirclesInAuroville: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/engaging-with-restorative-circles-in-auroville.jpg"
+      }
+    ) {
+      ...max900
+    }
+    designingOurJusticeSystemConsciously: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/designing-our-justice-system-consciously.jpg"
+      }
+    ) {
+      ...max900
+    }
+    definingTheAct: file(
+      relativePath: { eq: "the-power-of-dialogue/defining-the-act.jpg" }
+    ) {
+      ...max900
+    }
+    rcChallengesUsToGrow: file(
+      relativePath: { eq: "the-power-of-dialogue/rc-challenges-us-to-grow.jpg" }
+    ) {
+      ...max900
+    }
+    rcsRippleEffect: file(
+      relativePath: { eq: "the-power-of-dialogue/rcs-ripple-effect.jpg" }
+    ) {
+      ...max900
+    }
+    suryaOnRestorativeCircles: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/surya-on-restorative-circles.jpg"
+      }
+    ) {
+      ...max900
+    }
+    theValueOfRcFacilitation: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/the-value-of-rc-facilitation.jpg"
+      }
+    ) {
+      ...max900
+    }
+    highlightsAndLearningOnRestorativeCircles1: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/highlights-and-learning-on-restorative-circles-1.jpg"
+      }
+    ) {
+      ...max900
+    }
+    highlightsAndLearningOnRestorativeCircles2: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/highlights-and-learning-on-restorative-circles-2.jpg"
+      }
+    ) {
+      ...max900
+    }
+    highlightsAndLearningOnRestorativeCircles3: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/highlights-and-learning-on-restorative-circles-3.jpg"
+      }
+    ) {
+      ...max900
+    }
+    engagingWithTheCommunityThroughRc: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/engaging-with-the-community-through-rc.jpg"
+      }
+    ) {
+      ...max900
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Theme */
 const Theme = props => {
-  const { border, title, files, tag, text, photos, columns } = props
+  const { border, title, files, tag, text } = props
   return (
-    <div style={{ paddingLeft: 12, borderLeft: `8px solid ${border}` }}>
+    <div
+      style={{
+        paddingLeft: 12,
+        borderLeft: `8px solid ${border}`,
+      }}
+    >
       <h2 className="mask-h4">
-        <span>{title}</span>
-        <Link to="/archives">
-          <Tag color="geekblue">...from our Archives</Tag>
-        </Link>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <span>{title}</span>
+          <Link to="/archives">
+            <Tag color="geekblue">...from our Archives</Tag>
+          </Link>
+        </div>
       </h2>
       <p>{text}</p>
-      {!isUndefined(photos) && (
-        <div className="mask-p">
-          <Images
-            photos={photos}
-            loader="gradient"
-            columns={{ min: 3, max: 3 }}
-          />
-        </div>
-      )}
       {!isUndefined(files) && (
-        <Fragment>
+        <p>
           {map(files, file => {
             return (
-              <p>
-                <OutLink to={file.link}>
-                  <Icon
-                    type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
-                    theme="outlined"
-                  />
+              <Fragment>
+                <Link
+                  to={file.link}
+                  style={{ display: 'flex', marginBottom: 12 }}
+                >
+                  <YouTubeIcon />
                   &nbsp;
                   {file.title}
-                </OutLink>
-              </p>
+                </Link>
+              </Fragment>
             )
           })}
-        </Fragment>
+        </p>
       )}
     </div>
   )
 }
 
 /** Page */
-const Page = props => (
-  <StandardPage className={style} seoData={seoData} {...props}>
-    <Division>
-      <Fragment>
-        <h1 className="mask-h3">"The Power of Dialogue"</h1>
-        <p>
-          We offer this video series as an opportunity for you to journey along
-          with our journey. Restorative Circles is still very new to the world,
-          and learning material and resources are somewhat limited. So here’s
-          our attempt to celebrate this body of work and to offer back a few
-          nuggets from our unfolding journey.
-        </p>
-      </Fragment>
-      <Fragment>
-        <div className="margin-p box">
-          <div
-            style={{
-              position: 'absolute',
-              top: 2,
-              right: 5,
-              height: 40,
-              zIndex: -1,
-            }}
-            className="desktop-only"
-          >
-            <Image
-              src={camera}
-              style={{
-                background: 'transparent',
-                border: 'unset',
-                height: 40,
-                width: 40,
-              }}
-              rawWidth={900}
-              rawHeight={900}
-            />
-          </div>
-          <div
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              height: '100%',
-              zIndex: -2,
-              borderRadius: '8px',
-              overflow: 'hidden',
-            }}
-          >
-            <Image
-              src={grungeBox}
-              style={{
-                background: 'transparent',
-                border: 'unset',
-                height: '100%',
-                width: '100%',
-              }}
-              rawWidth={1440}
-              rawHeight={900}
-            />
-          </div>
-          <p style={{ marginBottom: 0 }}>
-            <Link to="/donate/filming-a-live-restorative-circle">
-              Our big dream is to one day film an entire live Restorative Circle
-            </Link>
-            . It’s an intimate and delicate space, and so we’re crossing our
-            fingers that sooner or later a group will be comfortable with the
-            idea of being filmed… Would you like this Circle to be yours?
-          </p>
-        </div>
-      </Fragment>
-    </Division>
-    <Image
-      src={yellowBorder}
-      style={{
-        height: 4,
-        width: '100%',
-        border: 0,
-        background: 'transparent',
-        marginBottom: 0,
-      }}
-      alt="Restorative Auroville - The Craft"
-    />
-    <h2 className="mask-h3" id="the-craft" style={{ marginBottom: 2 }}>
-      1. The Craft
-    </h2>
-    <div className="margin-p">
-      <p className="mask-h5">
-        ↪&nbsp;
-        <strong>a learning resource</strong>
-        &nbsp;to highlight the RC process in its different steps and stages
-      </p>
-    </div>
-    <Division custom={[8, 8]}>
-      <Fragment>
-        <Image
-          src={p1ComingSoon}
-          style={{
-            background: 'transparent',
-            border: 'unset',
-            height: 'auto',
-            width: '100%',
-          }}
-          className="coming-soon"
-          loader="gradient"
-          rawWidth={1440}
-          rawHeight={900}
-        />
-        <p style={{ marginTop: 3, lineHeight: '1.1 !important' }}>
-          <span style={{ fontSize: '90%' }}>Coming soon…</span>
-        </p>
-      </Fragment>
-      <Fragment>&nbsp;</Fragment>
-    </Division>
-    <Image
-      src={blueBorder}
-      style={{
-        height: 4,
-        width: '100%',
-        border: 0,
-        background: 'transparent',
-        marginBottom: 0,
-      }}
-      alt="Restorative Auroville - In Action"
-    />
-    <h2 className="mask-h3" id="in-action" style={{ marginBottom: 2 }}>
-      2. In Action
-    </h2>
-    <div className="margin-p">
-      <p className="mask-h5">
-        ↪&nbsp;
-        <strong>touching “live” moments</strong>
-        &nbsp;from different stages of real Circles that have been called in the
-        community
-      </p>
-    </div>
-    <Division byThree custom={[8, 8]}>
-      <Fragment>
-        <VideoCover
-          to="/the-power-of-dialogue/genies-pre-circle-with-janet"
-          cover={p21}
-          text="Before entering a Restorative Circle, Facilitators meet amongst themselves to work through any challenging thoughts or feelings that might interfere with their capacity to hold space during the Circle. Eugénie Dumont (Genie), in her role as filmmaker, is also given an opportunity to be heard for her connection to the Circle."
-        />
-      </Fragment>
-      <Fragment>
-        <Image
-          src={p2ComingSoon}
-          style={{
-            background: 'transparent',
-            border: 'unset',
-            height: 'auto',
-            width: '100%',
-          }}
-          className="coming-soon"
-          loader="gradient"
-          rawWidth={1440}
-          rawHeight={900}
-        />
-        <p style={{ marginTop: 3, lineHeight: '1.1 !important' }}>
-          <span style={{ fontSize: '90%' }}>Coming soon…</span>
-        </p>
-      </Fragment>
-    </Division>
-    <Image
-      src={redBorder}
-      style={{
-        height: 4,
-        width: '100%',
-        border: 0,
-        background: 'transparent',
-        marginBottom: 0,
-      }}
-      alt="Restorative Auroville - The Restorative System"
-    />
-    <h2
-      className="mask-h3"
-      id="the-restorative-system"
-      style={{ marginBottom: 2 }}
+const Page = props => {
+  const { data: images } = props
+  const data = mapHoverCovers(
+    rawData,
+    images,
+    images.defaultForegroundFallback.childImageSharp.fluid
+  )
+
+  return (
+    <StandardPage
+      className="the-power-of-dialogue-page"
+      seoData={seoData}
+      {...props}
     >
-      3. The Restorative System
-    </h2>
-    <div className="margin-p">
-      <p className="mask-h5">
-        ↪&nbsp;
-        <strong>engaging with RC as a System</strong>
-        &nbsp;and highlighting the need to talk about the meaning of justice and
-        conflict in our community
-      </p>
-    </div>
-    <Division byThree custom={[8, 8, 8]}>
-      <Fragment>
-        <VideoCover
-          to="/the-power-of-dialogue/engaging-with-restorative-circles-in-auroville"
-          cover={p31}
-          text="L'aura shares about her experience of engaging with Restorative Circles in Auroville and how it's received by the community."
-        />
-      </Fragment>
-      <Fragment>
-        <VideoCover
-          to="/the-power-of-dialogue/designing-our-justice-system-consciously"
-          cover={p32}
-          text="L'aura shares about her experience of engaging with Restorative Circles in Auroville and the importance of designing a justice system consciously, otherwise we'll just inherit the old ways."
-        />
-      </Fragment>
-      <Fragment>
-        <VideoCover
-          to="/the-power-of-dialogue/defining-the-act"
-          cover={p33}
-          text="Kati shares her recent learning regarding the importance of bringing an authentic live act to a Circle, instead of simply having an 'interesting' topic as the starting point."
-        />
-      </Fragment>
-    </Division>
-    <Division byThree custom={[8, 8, 8]}>
-      <Fragment>
-        <VideoCover
-          to="/the-power-of-dialogue/rc-challenges-us-to-grow"
-          cover={p34}
-          text="Henrike shares her thoughts on learning RC and how it invites for growth, as individuals and as a collective."
-        />
-      </Fragment>
-      <Fragment>
-        <VideoCover
-          to="/the-power-of-dialogue/rcs-ripple-effect"
-          cover={p35}
-          text="Pranjal reflects on how Circles can impact the community in unexpected ways, even when some folks choose not to attend."
-        />
-      </Fragment>
-      <Fragment>
-        <Image
-          src={p3ComingSoon}
-          style={{
-            background: 'transparent',
-            border: 'unset',
-            height: 'auto',
-            width: '100%',
-          }}
-          className="coming-soon"
-          loader="gradient"
-          rawWidth={1440}
-          rawHeight={900}
-        />
-        <p style={{ marginTop: 3, lineHeight: '1.1 !important' }}>
-          <span style={{ fontSize: '90%' }}>Coming soon…</span>
-        </p>
-      </Fragment>
-    </Division>
-    <Image
-      src={greenBorder}
-      style={{
-        height: 4,
-        width: '100%',
-        border: 0,
-        background: 'transparent',
-        marginBottom: 0,
-      }}
-      alt="Restorative Auroville - Experiences"
-    />
-    <h2 className="mask-h3" id="experiences" style={{ marginBottom: 2 }}>
-      4. Experiences
-    </h2>
-    <div className="margin-p">
-      <p className="mask-h5">
-        ↪&nbsp;
-        <strong>community members talk about their experience</strong>
-        &nbsp;being in live Circles
-      </p>
-    </div>
-    <Division byThree custom={[8, 8, 8]}>
-      <Fragment>
-        <VideoCover
-          to="/the-power-of-dialogue/surya-on-restorative-circles"
-          cover={p41}
-          text="Surya shares about her experiences with Restoratives Circles."
-        />
-      </Fragment>
-      <Fragment>
-        <VideoCover
-          to="/the-power-of-dialogue/the-value-of-rc-facilitation"
-          cover={p42}
-          text="Pranjal reflects on his learning journey with RC facilitation, and appreciates how the skills he has acquired here can provide for a strong foundation in holding space in different contexts."
-        />
-      </Fragment>
-      <Fragment>
-        <Image
-          src={p4ComingSoon}
-          style={{
-            background: 'transparent',
-            border: 'unset',
-            height: 'auto',
-            width: '100%',
-          }}
-          className="coming-soon"
-          loader="gradient"
-          rawWidth={1440}
-          rawHeight={900}
-        />
-        <p style={{ marginTop: 3, lineHeight: '1.1 !important' }}>
-          <span style={{ fontSize: '90%' }}>Coming soon…</span>
-        </p>
-      </Fragment>
-    </Division>
-    <Theme
-      border="#FAE300"
-      title="Our RC-channel on YouTube (2011‒present)  "
-      tag="...from our Archives"
-      text="With somewhat regular updates…"
-      files={[
-        {
-          title: 'See videos',
-          icon: 'youtube',
-          link:
-            'https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF',
-        },
-      ]}
-    />
-    <DisqusComments pageData={pageData} />
-  </StandardPage>
-)
+      <Division>
+        <Fragment>
+          <h1 className="mask-h3">"The Power of Dialogue"</h1>
+          <p>
+            We offer this video series as an opportunity for you to journey
+            along with our journey. Restorative Circles is still very new to the
+            world, and learning material and resources are somewhat limited. So
+            here’s our attempt to celebrate this body of work and to offer back
+            a few nuggets from our unfolding journey.
+          </p>
+        </Fragment>
+        <Fragment>
+          <div className="margin-p box small-box">
+            <div
+              style={{
+                position: 'absolute',
+                top: 2,
+                right: 5,
+                height: 40,
+                zIndex: -1,
+              }}
+              className="desktop-only"
+            >
+              <Image
+                src={camera}
+                style={{
+                  background: 'transparent',
+                  border: 'unset',
+                  height: 40,
+                  width: 40,
+                }}
+                rawWidth={900}
+                rawHeight={900}
+              />
+            </div>
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                height: '100%',
+                zIndex: -2,
+                borderRadius: '8px',
+                overflow: 'hidden',
+              }}
+            >
+              <Image
+                src={grungeBox}
+                style={{
+                  background: 'transparent',
+                  border: 'unset',
+                  height: '100%',
+                  width: '100%',
+                }}
+                rawWidth={1440}
+                rawHeight={900}
+              />
+            </div>
+            <p style={{ marginBottom: 0 }}>
+              <Link to="/donate/filming-a-live-restorative-circle">
+                Our big dream is to one day film an entire live Restorative
+                Circle
+              </Link>
+              . It’s an intimate and delicate space, and so we’re crossing our
+              fingers that sooner or later a group will be comfortable with the
+              idea of being filmed… Would you like this Circle to be yours?
+            </p>
+          </div>
+        </Fragment>
+      </Division>
+      <br className="mobile-only" />
+      <Grid
+        {...props}
+        loading={false}
+        Link={Link}
+        Box={Box}
+        Button={Button}
+        Img={Img}
+        MediaQuery={MediaQuery}
+        data={data}
+        allCategories={categories}
+        allTags={tags}
+        strictChronology
+        conf={conf}
+      />
+      <br />
+      <Theme
+        border="#FAE300"
+        title="Our RC-channel on YouTube (2011‒present)  "
+        tag="...from our Archives"
+        text="With somewhat regular updates…"
+        files={[
+          {
+            title: 'See videos',
+            icon: 'youtube',
+            link:
+              'https://www.youtube.com/playlist?list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF',
+          },
+        ]}
+      />
+      <DisqusComments pageData={pageData} />
+    </StandardPage>
+  )
+}
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Export

@@ -10,7 +10,7 @@ import React from 'react'
 import isNull from 'lodash/isNull'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { EventSchema } from '@bodhi-project/seo'
+import EventSchema from '@bodhi-project/seo/lib/EventSchema'
 import { Header, Footer } from '@bodhi-project/semantic-webflow'
 import { FacebookProvider, Like as FBLike } from 'react-facebook'
 

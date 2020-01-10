@@ -70,7 +70,12 @@ const style = css({
       verticalAlign: 'unset !important',
       top: 'unset !important',
       transform: 'unset !important',
-      lineHeight: '26px !important',
+      lineHeight: '24px !important',
+      marginTop: '-2px',
+
+      '@media(min-width: 992px)': {
+        lineHeight: '34px !important',
+      },
     },
 
     '& > div': {
@@ -109,7 +114,7 @@ const style = css({
 const query = graphql`
   query {
     chirpy: file(relativePath: { eq: "chirpy.png" }) {
-      ...defaultImage
+      ...max900
     }
   }
 `

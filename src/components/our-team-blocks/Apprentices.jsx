@@ -139,13 +139,11 @@ class Apprentices extends React.Component {
           marginBottom: 48,
         }}
       >
-        <h1 className="mask-h3" style={{ marginBottom: 0 }}>
-          Apprentices & Volunteers
-        </h1>
+        <h1 className="mask-h3">Apprentices & Volunteers</h1>
         <p>
           <strong>
-            ↪ community members who are journeying with us and integrating the
-            RC process and principles…
+            community members who are journeying with us and integrating the RC
+            process and principles…
           </strong>
         </p>
         <br className="mobile-only" />

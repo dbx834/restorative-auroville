@@ -45,7 +45,7 @@ const seoData = seoHelper(pageData)
 export const query = graphql`
   query {
     flowerBoardDesktop: file(relativePath: { eq: "flower-board-desktop.png" }) {
-      ...defaultImage
+      ...max900
     }
   }
 `

@@ -21,6 +21,7 @@ import henrikeSquare from '../../assets/henrikeSquare.jpg'
 // import pranjalSquare from '../../assets/pranjalSquare.jpg'
 import nilsSquare from '../../assets/nilsSquare.jpg'
 import blueSquare from '../../assets/blueSquare.jpg'
+import sumaSquare from '../../assets/sumaSquare.jpg'
 
 import Henrike from '../people/Henrike'
 import Janet from '../people/Janet'
@@ -137,12 +138,10 @@ class ProjectWorkingTeam extends React.Component {
 
     return (
       <div className={style}>
-        <h1 className="mask-h3" style={{ marginBottom: 0 }}>
-          Project Working Team
-        </h1>
+        <h1 className="mask-h3">Project Working Team</h1>
         <p>
           <strong>
-            ↪ run the larger project in all its aspects, from small to big…
+            run the larger project in all its aspects, from small to big…
           </strong>
         </p>
         <br className="mobile-only" />
@@ -225,7 +224,7 @@ class ProjectWorkingTeam extends React.Component {
                 'circle-active'} child-circle s`}
               ref="child5"
               style={{
-                backgroundImage: `url(${blueSquare})`,
+                backgroundImage: `url(${sumaSquare})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '105px 105px',
                 border: '2px solid #FFBF00',

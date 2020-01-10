@@ -10,12 +10,11 @@ import { css } from 'glamor'
 import withSizes from 'react-sizes'
 
 import Division from '@bodhi-project/components/lib/Division'
+import Video from '@bodhi-project/components/lib/Video'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import Video from '../Video'
-// import Link from '../Link'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React
@@ -77,7 +76,7 @@ const Page = props => {
 // ----------------------------------------------------------------------------
 /** mapSizesToProps */
 const mapSizesToProps = ({ width }) => ({
-  isMobile: width <= 768,
+  isMobile: width <= 992,
 })
 
 export default withSizes(mapSizesToProps)(Page)

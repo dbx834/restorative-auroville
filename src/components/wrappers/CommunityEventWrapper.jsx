@@ -9,18 +9,12 @@ import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import PrevNext from '@bodhi-project/components/lib/PrevNext'
-import {
-  // --------------- Basic
-  UpdateTitle,
-  GeneralMeta,
-  // --------------- Twitter
-  TwitterSummaryCard,
-  // --------------- Open Graph
-  OpenGraphSummary,
-  // --------------- Schema.org JSON-LD
-  WebpageSchema,
-  BreadcrumbSchema,
-} from '@bodhi-project/seo'
+import UpdateTitle from '@bodhi-project/seo/lib/UpdateTitle'
+import GeneralMeta from '@bodhi-project/seo/lib/GeneralMeta'
+import TwitterSummaryCard from '@bodhi-project/seo/lib/TwitterSummaryCard'
+import OpenGraphSummary from '@bodhi-project/seo/lib/OpenGraphSummary'
+import WebpageSchema from '@bodhi-project/seo/lib/WebpageSchema'
+import BreadcrumbSchema from '@bodhi-project/seo/lib/BreadcrumbSchema'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Layout from '../layout/Layout'

@@ -8,7 +8,7 @@ import React from 'react'
 import moment from 'moment'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { BlogPostSchema } from '@bodhi-project/seo'
+import BlogPostSchema from '@bodhi-project/seo/lib/BlogPostSchema'
 import { Article, Header, Footer } from '@bodhi-project/semantic-webflow'
 import { FacebookProvider, Like as FBLike } from 'react-facebook'
 
@@ -62,13 +62,15 @@ const Page = props => {
     datePublished: isoDate,
     dateModified: isoDate,
     description: abstract,
-    publisher: data.org.name,
-    author: data.org.founders[0],
-    publisherLogo: {
-      url: `${data.nakedWebsiteUrl}${data.org.logo}`,
-      height: 900,
-      width: 900,
+    publisher: {
+      name: data.org.name,
+      logo: {
+        url: `${data.nakedWebsiteUrl}${data.org.logo}`,
+        height: 900,
+        width: 900,
+      },
     },
+    author: data.org.founders[0],
   }
 
   return (

@@ -43,16 +43,16 @@ const next = {
 export const query = graphql`
   query {
     enfold00003: file(relativePath: { eq: "outreach/enfold00003.jpeg" }) {
-      ...defaultImage
+      ...max900
     }
     enfold00002: file(relativePath: { eq: "outreach/enfold00002.jpeg" }) {
-      ...defaultImage
+      ...max900
     }
     enfold00001: file(relativePath: { eq: "outreach/enfold00001.jpeg" }) {
-      ...defaultImage
+      ...max900
     }
     enfold00004: file(relativePath: { eq: "outreach/enfold00004.jpeg" }) {
-      ...defaultImage
+      ...max900
     }
   }
 `

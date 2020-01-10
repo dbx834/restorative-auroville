@@ -51,7 +51,7 @@ const photos = [
 export const query = graphql`
   query {
     costs: file(relativePath: { eq: "donate/yurt/costs.jpeg" }) {
-      ...defaultImage
+      ...max900
     }
   }
 `

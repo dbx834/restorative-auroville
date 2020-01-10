@@ -62,7 +62,7 @@ const Page = props => {
 // ----------------------------------------------------------------------------
 /** mapSizesToProps */
 const mapSizesToProps = ({ width }) => ({
-  isMobile: width <= 768,
+  isMobile: width <= 992,
 })
 
 export default withSizes(mapSizesToProps)(Page)

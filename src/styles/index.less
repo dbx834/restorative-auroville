@@ -8,45 +8,49 @@ once the loading script has taken effect.
 here we're hiding all content within
 the <html> once it has the class "wf-loading"
 */
-html.lk-loading body {
-  opacity: 0;
-}
+// html.lk-loading body {
+//   opacity: 0;
+// }
 
-/*
-just to make sure the <html>
-element shares the same dimensions as
-the browser window when loading
-(and not the potentially elongated page)
-*/
-html.lk-loading {
-  background-image: url('/loader.gif');
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 100%;
-  overflow: hidden;
-  z-index: 2;
-}
+// /*
+// just to make sure the <html>
+// element shares the same dimensions as
+// the browser window when loading
+// (and not the potentially elongated page)
+// */
+// html.lk-loading {
+//   background-image: url('/loader.gif');
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   height: 100%;
+//   overflow: hidden;
+//   z-index: 2;
+// }
 
-/*
-add some transitional effects
-to reintroduce the content
-gradually once fonts are loaded
-*/
-html.lk-active.wf-active body,
-html.lk-active.wf-inactive body {
-  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
-}
+// /*
+// add some transitional effects
+// to reintroduce the content
+// gradually once fonts are loaded
+// */
+// html.lk-active.wf-active body,
+// html.lk-active.wf-inactive body {
+//   -webkit-transition: opacity 0.5s ease-out;
+//   -moz-transition: opacity 0.5s ease-out;
+//   -o-transition: opacity 0.5s ease-out;
+//   transition: opacity 0.5s ease-out;
+// }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.1;
+.child-circle-highlight {
+  & p {
+    & strong {
+      font-size: 80%;
+    }
+  }
+
+  &::after {
+    margin-top: -2px;
+    font-size: 80%;
+  }
 }
 
 body {
@@ -84,7 +88,7 @@ body {
   transition: all 300ms ease-in;
   cursor: pointer;
   margin-right: 2px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .child-circle.s {
@@ -192,7 +196,7 @@ body {
   text-transform: initial !important;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   .ant-col-sm-0 {
     display: none;
   }
@@ -330,17 +334,64 @@ body {
 }
 
 main a:not(.white):not(.ant-btn-primary):not(.ignore) {
-  color: #e67100 !important;
+  color: #e67100;
 }
 
 main a:not(.white):not(.ant-btn-primary):not(.ignore):hover {
-  color: #00006f !important;
+  color: #00006f;
 }
 
 main a.white {
-  color: #ffffff !important;
+  color: #ffffff;
 }
 
 main a.white:hover {
-  color: #ffffff !important;
+  color: #ffffff;
+}
+
+.event-list {
+  & .event {
+    & p {
+      margin-bottom: 0px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  & .month-title {
+    height: 36px !important;
+    margin-right: 12px !important;
+  }
+
+  & .event-list {
+    & .event {
+      min-width: 36px !important;
+      padding-left: 4px !important;
+      padding-right: 3px !important;
+      margin-right: 3px !important;
+      margin-left: 3px !important;
+      height: 36px !important;
+    }
+  }
+
+  & .by-three {
+    & > div {
+      display: none !important;
+    }
+  }
+}
+
+.month-title {
+  display: flex;
+  align-items: center;
+
+  & h2 {
+    margin-bottom: 0px !important;
+  }
+}
+
+& .ant-collapse-header {
+  & p {
+    margin-bottom: 0px !important;
+  }
 }

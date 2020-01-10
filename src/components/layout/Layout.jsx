@@ -4,284 +4,262 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 import PropTypes from 'prop-types'
-import { css } from 'glamor'
-import moment from 'moment'
-import { graphql } from 'gatsby'
+import compose from 'recompose/compose'
 
+import map from 'lodash/map'
+import isArray from 'lodash/isArray'
+import isString from 'lodash/isString'
 import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { StaticQuery, graphql } from 'gatsby'
+import { Grommet, Box, Button, DropButton, Layer } from 'grommet'
+import Img from 'gatsby-image'
 import MediaQuery from 'react-responsive'
-import Typekit from 'react-typekit'
-import typefn from '@bodhi-project/typography/lib/methods/type'
-import {
-  InitializeMeta,
-  UpdateTitle,
-  WebsiteSchema,
-  OrganisationSchema,
-} from '@bodhi-project/seo'
-import { StickyContainer } from 'react-sticky'
-import container from '@bodhi-project/components/lib/methods/container'
+
+import StandardHeaderNavigation from '@bodhi-project/components/lib/header-navigations/standard/gatsby'
+import '@bodhi-project/components/lib/header-navigations/standard/style.less'
+import '@bodhi-project/components/lib/header-navigations/primitives/mobile-layer/style.less'
+import '@bodhi-project/components/lib/header-navigations/primitives/list-menu-renderer/style.less'
+import '@bodhi-project/components/lib/header-navigations/primitives/button-menu-renderer/style.less'
+
+import MinimalFooterNavigation from '@bodhi-project/components/lib/footer-navigations/minimal'
+import '@bodhi-project/components/lib/footer-navigations/minimal/style.less'
+
+import getRandomArbitraryInt from '@bodhi-project/components/lib/methods/getRandomArbitraryInt'
+import defaultScroll from '@bodhi-project/components/lib/features/default-scroll'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import '../../styles/index.less'
-import indexImage from '../../assets/launch.jpg'
-import data from '../../data/website.json'
+import '../../bootstrap/type.less'
+import '../../bootstrap/responsive.less'
+import '../../bootstrap/containers.less'
 
-import Header from './Header'
-import Footer from './Footer'
+import Link from '../Link'
+
+import desktopMenu from '../../data/desktopMenu.json'
+import mobileMenu from '../../data/mobileMenu.json'
+import websiteMenu from '../../data/websiteMenu.json'
+import quotes from '../../data/quotes.json'
+
+import './style.less'
+import '../../styles/index.less'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React
-export const defaultImage = graphql`
-  fragment defaultImage on File {
+
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const exportImageFragments = graphql`
+  fragment max90 on File {
+    childImageSharp {
+      fluid(maxWidth: 90, quality: 80) {
+        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      }
+    }
+  }
+  fragment max300 on File {
     childImageSharp {
       fluid(
-        maxWidth: 2400
+        maxWidth: 300
         quality: 80
-        srcSetBreakpoints: [200, 400, 600, 800, 1000, 1200, 1600, 2000, 2400]
+        srcSetBreakpoints: [100, 150, 200, 250, 300]
+      ) {
+        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      }
+    }
+  }
+  fragment max900 on File {
+    childImageSharp {
+      fluid(maxWidth: 900, quality: 80, srcSetBreakpoints: [300, 600, 900]) {
+        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      }
+    }
+  }
+  fragment max1200 on File {
+    childImageSharp {
+      fluid(
+        maxWidth: 1200
+        quality: 80
+        srcSetBreakpoints: [300, 600, 900, 1200]
+      ) {
+        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      }
+    }
+  }
+  fragment max1500 on File {
+    childImageSharp {
+      fluid(
+        maxWidth: 1500
+        quality: 80
+        srcSetBreakpoints: [300, 600, 900, 1200, 1500]
+      ) {
+        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      }
+    }
+  }
+  fragment max3000 on File {
+    childImageSharp {
+      fluid(
+        maxWidth: 3000
+        quality: 80
+        srcSetBreakpoints: [300, 600, 900, 1200, 1500, 2100, 2700, 3000]
       ) {
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
       }
     }
   }
 `
-
-// ----------------------------------------------------------------------------
-// ----------------------------------------------------------------- Global SEO
-// ----------------------------------------------------------------------------
-const websiteSchemaData = {
-  url: data.websiteUrl,
-  name: data.websiteName,
-  description: data.websiteDescription,
-  author: data.org.name,
-  publisher: data.org.name,
-  image: indexImage,
-}
-
-const organisationSchemaData = {
-  name: data.org.name,
-  legalName: data.org.legalName,
-  url: data.org.url,
-  logo: `${data.org.url}${data.org.logo}`,
-  foundingDate: moment(data.org.foundingDate).format(),
-  founders: data.org.founders,
-  streetAddress: data.orgLocation.streetAddress,
-  addressLocality: data.orgLocation.addressLocality,
-  addressRegion: data.orgLocation.addressRegion,
-  postalCode: data.orgLocation.postalCode,
-  addressCountry: data.orgLocation.addressCountry,
-  telephone: data.orgContact.telephone,
-  email: data.orgContact.email,
-  sameAs: data.orgSocialMediaProfiles,
-  image: indexImage,
-}
+export const query = graphql`
+  query {
+    mobileLogo: file(relativePath: { eq: "logos/mobile-logo.png" }) {
+      ...max900
+    }
+    logo: file(relativePath: { eq: "logos/logo.png" }) {
+      ...max900
+    }
+    wavesTop: file(relativePath: { eq: "dividers/wavesTop.png" }) {
+      ...max900
+    }
+    wavesBottom: file(relativePath: { eq: "dividers/wavesBottom.png" }) {
+      ...max900
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const style = css({
-  '&#layout': {
-    '@media(max-width: 992px)': {
-      paddingTop: '1rem',
-      paddingLeft: '1rem',
-      paddingRight: '1rem',
-    },
-
-    '& > div': {
-      display: 'flex',
-      flexDirection: 'column',
-      minHeight: '100vh',
-
-      '& header': {
-        flexGrow: 0,
-        flexBasis: 0,
-      },
-
-      '& footer': {
-        flexGrow: 0,
-        flexBasis: 0,
-      },
-
-      '& main': {
-        paddingTop: '1rem',
-        paddingBottom: '1rem',
-        flexGrow: 1,
-        flexBasis: 0,
-      },
+const theme = {
+  global: {
+    colors: { brand: '#00006F' },
+    edgeSize: {
+      small: '8px',
     },
   },
-
-  '@media(min-width: 1200px)': {
-    '& .small-only': {
-      display: 'none',
+  button: {
+    color: 'brand',
+    extend: { fontSize: 'inherit' },
+    border: {
+      radius: '8px',
     },
   },
-
-  '@media(max-width: 1200px)': {
-    '& .large-only': {
-      display: 'none',
-    },
+  box: { extend: { overflow: 'hidden' } },
+  layer: {
+    zIndex: 1000,
+    background: 'transparent',
   },
-
-  '@media(min-width: 992px)': {
-    '& .mobile-only': {
-      display: 'none',
-    },
-  },
-
-  '@media(max-width: 992px)': {
-    '& .desktop-only': {
-      display: 'none',
-    },
-  },
-
-  '& .coming-soon': {
-    '@media(max-width: 992px)': {
-      maxWidth: 400,
-    },
-  },
-
-  '& #fb': {
-    '& > div': {
-      '& > div': {
-        '& > span': {
-          width: '96px !important',
-          overflow: 'hidden !important',
-
-          '& > iframe': {
-            width: '96px !important',
-            overflow: 'hidden !important',
-          },
-        },
-      },
-    },
-  },
-}).toString()
-
-const goldenMajorBlock = container({ goldenMajor: true, block: true })
-const bleedBlock = container({ bleed: true, block: true })
+}
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** Layout */
-class Layout extends React.Component {
-  /** standard constructor */
-  constructor(props) {
-    super(props)
-
-    const typeClass = typefn({
-      kit: 'jdd4npp',
-      options: {
-        range: [12, 20], // Min and Max font-sizes
-        paragraphSpacingFactor: 1.2, // Greater for tighter paragraph-paragraph spacing
-        headingParagraphGapSpacingFactor: 0, // Greater for tighter header-paragraph spacing
-        indentParagraphs: false,
-      },
-    })
-
-    this.state = {
-      typeClass,
-      client: false,
-    }
+/** [description] */
+const Layout = props => {
+  const { children, className = '' } = props
+  const random = getRandomArbitraryInt(0, quotes.length - 1)
+  const quoteObj = quotes[random]
+  let quote = ''
+  let author = ''
+  if (!isUndefined(quoteObj)) {
+    ;({ quote, author } = quoteObj)
   }
 
-  /** after mount */
-  componentDidMount() {
-    this.setState({ client: true })
+  return (
+    <StaticQuery
+      query={query}
+      render={data => {
+        const { mobileLogo, logo } = data
 
-    if (!isUndefined(document)) {
-      const htmlElement = document.documentElement
-      if (htmlElement.classList.contains('lk-loading')) {
-        htmlElement.classList.toggle('lk-loading')
-      }
-      if (!htmlElement.classList.contains('lk-active')) {
-        htmlElement.classList.toggle('lk-active')
-      }
-    }
-  }
-
-  /** on mount */
-  componentDidUpdate() {
-    if (!isUndefined(window)) {
-      if (this.state.client === true) {
-        const element = document.getElementById('layout')
-        element.scrollTop = 0
-      }
-    }
-  }
-
-  /** standard renderer */
-  render() {
-    const { children, className = '' } = this.props
-    const { typeClass, client } = this.state
-    const classNameX = `${typeClass} ${style} ${className}`
-
-    return (
-      <Fragment>
-        {client === true && (
-          <Fragment>
-            <br style={{ display: 'none' }} />
-            <MediaQuery minWidth={992}>
-              {matches => (
-                <div className={classNameX} id="layout">
-                  <InitializeMeta
-                    data={{ titleTemplate: `%s | ${data.websiteName}` }}
-                  />
-                  <UpdateTitle title="Restorative Circles in Auroville" />
-                  <WebsiteSchema data={websiteSchemaData} />
-                  <OrganisationSchema data={organisationSchemaData} />
-                  <StickyContainer>
-                    <Header
-                      isDesktop={matches}
-                      typeClass={typeClass}
-                      {...this.props}
-                    />
-                    <main
-                      role="main"
-                      className={matches ? goldenMajorBlock : bleedBlock}
-                    >
-                      {children}
-                    </main>
-                    <Footer isDesktop={matches} />
-                  </StickyContainer>
-                  <Typekit kitId="jdd4npp" />
-                </div>
-              )}
-            </MediaQuery>
-            <br style={{ display: 'none' }} />
-          </Fragment>
-        )}
-        {client === false && (
-          <Fragment>
-            <div className={classNameX} id="layout">
-              <InitializeMeta
-                data={{ titleTemplate: `%s | ${data.websiteName}` }}
+        return (
+          <Grommet theme={theme} className="golden-major-container" id="layout">
+            <header>
+              <Link to="/" className="title">
+                <Img
+                  fluid={data.logo.childImageSharp.fluid}
+                  alt="Restorative Auroville"
+                />
+                <h1 className="mask-h2">Restorative Circles in Auroville</h1>
+              </Link>
+              <StandardHeaderNavigation
+                desktopMenu={desktopMenu}
+                mobileMenu={mobileMenu}
+                Link={Link}
+                Img={Img}
+                Box={Box}
+                Button={Button}
+                Layer={Layer}
+                MediaQuery={MediaQuery}
+                DropButton={DropButton}
+                mobileLogo={mobileLogo.childImageSharp.fluid}
               />
-              <UpdateTitle title="Restorative Circles in Auroville" />
-              <WebsiteSchema data={websiteSchemaData} />
-              <OrganisationSchema data={organisationSchemaData} />
-              <StickyContainer>
-                <Header isDesktop typeClass={typeClass} {...this.props} />
-                <main role="main" className={goldenMajorBlock}>
-                  {children}
-                </main>
-                <Footer isDesktop />
-              </StickyContainer>
-              <Typekit kitId="jdd4npp" />
-            </div>
-          </Fragment>
-        )}
-      </Fragment>
-    )
-  }
+              <Img fluid={data.wavesTop.childImageSharp.fluid} />
+            </header>
+            <main role="main" className={`main ${className}`}>
+              {children}
+            </main>
+            <footer>
+              <Img fluid={data.wavesBottom.childImageSharp.fluid} />
+              <MinimalFooterNavigation
+                data={websiteMenu}
+                Link={Link}
+                FootNote={
+                  <Fragment>
+                    <p className="text">
+                      {isString(quote) && (
+                        <Fragment>
+                          <i>"{quote}"</i>
+                        </Fragment>
+                      )}
+                      {isArray(quote) && (
+                        <Fragment>
+                          <i>
+                            "
+                            {map(quote, (quotelet, index) => (
+                              <Fragment key={index}>
+                                {index !== 0 && <br />}
+                                {quotelet}
+                              </Fragment>
+                            ))}
+                            "
+                          </i>
+                        </Fragment>
+                      )}
+                      <br />~ {author}
+                    </p>
+                    <p className="year">
+                      Copyright © 2015-2020{' '}
+                      <Link to="/">Restorative Auroville</Link>
+                      &nbsp;&&nbsp;
+                      <Link to="https://www.joylivinglearning.org/">
+                        Joy Living Learning
+                      </Link>
+                    </p>
+                  </Fragment>
+                }
+              />
+            </footer>
+          </Grommet>
+        )
+      }}
+    />
+  )
 }
 
+// ----------------------------------------------------------------------------
+// ------------------------------------------------------------------ Propcheck
+// ----------------------------------------------------------------------------
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-// ----------------------------------------------------------------------- Export
-export default Layout
+// ----------------------------------------------------------------------------
+// -------------------------------------------------------------------- Compose
+// ----------------------------------------------------------------------------
+/** Compose ala FP style */
+const ComposedComponent = compose(defaultScroll)(Layout)
+
+// ----------------------------------------------------------------------------
+// -------------------------------------------------------------------- Exports
+// ----------------------------------------------------------------------------
+export default ComposedComponent

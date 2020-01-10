@@ -3,21 +3,39 @@
 // ------------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
-import PropTypes from 'prop-types'
-import { css } from 'glamor'
-
-import { graphql } from 'gatsby'
+// import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Grid from '@bodhi-project/components/lib/gatsby/Grid'
+import { Box, Button } from 'grommet'
+import MediaQuery from 'react-responsive'
+
+import Grid from '@bodhi-project/components/lib/grid/gatsby'
+import '@bodhi-project/components/lib/grid/style.less'
+import '@bodhi-project/components/lib/standard-renderers/article/vertical.less'
+// import '@bodhi-project/components/lib/grid/buttons-as-links.less'
+import '@bodhi-project/components/lib/snippets/hover-underline-animation.less'
+import '@bodhi-project/components/lib/features/loading-detection/style.less'
+import '@bodhi-project/components/lib/features/tag-filter/style.less'
+import '@bodhi-project/components/lib/features/category-filter/style.less'
+import '@bodhi-project/components/lib/features/chronology-sort/style.less'
+import '@bodhi-project/components/lib/features/year-filter/style.less'
+
+import { categories } from '@bodhi-project/components/lib/methods/mockCategory'
+import { tags } from '@bodhi-project/components/lib/methods/mockTag'
+import mapCovers from '@bodhi-project/components/lib/methods/mapCovers'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
 
 import StandardPage from '../components/wrappers/StandardPage'
 
+import rawData from '../data/outreach'
+
 import seoHelper from '../methods/seoHelper'
+
+import '../styles/pages/outreach.less'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React;
@@ -29,85 +47,66 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
+const conf = {
+  wrapper: '',
+  articleType: 'linkedArticle',
+  render: ['cover', 'date', 'formattedDate', 'title', 'abstract'],
+  layout: 'vertical',
+  columns: 3,
+  titleMask: 'mask-h5',
+  filterMethod: {
+    categories: 'exclusive',
+    tags: 'exclusive',
+  },
+}
+
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Images
 // ----------------------------------------------------------------------------
 export const query = graphql`
   query {
-    isabs: file(relativePath: { eq: "outreach/rc-outreach-isabs.jpg" }) {
-      ...defaultImage
+    restorativeCirclesWithIsabs: file(
+      relativePath: { eq: "outreach/rc-outreach-isabs.jpg" }
+    ) {
+      ...max900
     }
-    enfold: file(relativePath: { eq: "outreach/rc-outreach-enfold.jpg" }) {
-      ...defaultImage
+    restorativeCirclesWithEnfold: file(
+      relativePath: { eq: "outreach/rc-outreach-enfold.jpg" }
+    ) {
+      ...max900
     }
   }
 `
-
-// ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Styles
-// ----------------------------------------------------------------------------
-const style = css({
-  display: 'block',
-  position: 'relative',
-
-  '& div.card': {
-    boxShadow: '1px 2px 0 0 #FF7D00 !important',
-    border: 'unset !important',
-    transition: 'all 200ms ease-in',
-
-    '&:hover': {
-      boxShadow: '2px 3px 0 0 #FF7D00 !important',
-    },
-  },
-
-  '& .box': {
-    border: '2px solid #00006F',
-    borderRadius: 8,
-    marginTop: 30,
-
-    '@media(min-width: 992px)': {
-      padding: 24,
-    },
-
-    '@media(max-width: 992px)': {
-      padding: 6,
-    },
-  },
-}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Ongoingprojects */
 const Ongoingprojects = props => {
-  const data = [
-    {
-      title: 'Restorative Circles with ISABS',
-      cover: props.data.isabs.childImageSharp.fluid,
-      route: 'outreach/restorative-circles-with-isabs',
-      formattedDate: 'Feb 2018 - Ongoing',
-      abstract:
-        'Members from ISABS have been excited about the possibility of setting up an RC System within their organization, offering a space and shared agreements for difficult conversations.',
-    },
-    {
-      title: 'Restorative Circles with Enfold',
-      cover: props.data.enfold.childImageSharp.fluid,
-      route: 'outreach/restorative-circles-with-enfold',
-      formattedDate: 'Nov 2018',
-      abstract:
-        'Enfold works with at-risk youth and those in detention centres, offering them spaces to be heard and to reconnect with their own humanity.',
-    },
-  ]
+  const { data: images } = props
+  const data = mapCovers(rawData, images)
 
   return (
-    <StandardPage className={style} seoData={seoData} {...props}>
+    <StandardPage className="outreach-page" seoData={seoData} {...props}>
       <h1 className="mask-h3">Outreach</h1>
       <p>
         Our intention is to make this work as available as possible and to share
         it with communities and projects that are seeking to shift paradigms.
       </p>
       <div className="margin-p">
-        <Grid data={data} Img={Img} Link={Link} />
+        <Grid
+          loading={false}
+          Link={Link}
+          Box={Box}
+          Button={Button}
+          Img={Img}
+          MediaQuery={MediaQuery}
+          data={data}
+          allCategories={categories}
+          allTags={tags}
+          strictChronology
+          conf={conf}
+        />
       </div>
     </StandardPage>
   )

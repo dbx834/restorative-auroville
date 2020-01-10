@@ -33,7 +33,9 @@
   "pathPrefix": "/",
   "copyright": "Copyright © 2015-2019 L’aura Joy & Joy Living Learning",
   "googleAnalyticsID": "UA-109854711-10",
+  "gaTrackingID": "UA-109854711-10",
   "googleAnalyticsViewID": "182889144",
+  "googleSiteVerification": "n2SY_8oYGU5Ah3Wtv_67FE5ldl9cQb8Ru8G9guzxPjI",
   "db": {
     "dbName": "monolith",
     "collections": ["posts"],

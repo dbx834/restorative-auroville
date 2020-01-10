@@ -10,18 +10,16 @@ import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import OutLink from '@bodhi-project/components/lib/OutLink'
 import Division from '@bodhi-project/components/lib/Division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 import Image from '@bodhi-project/components/lib/Image'
 
-import Icon from 'antd/lib/icon'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
-
 import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
+
+import FileTextIcon from 'react-feather/dist/icons/file-text'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
@@ -90,33 +88,36 @@ const Theme = props => {
       </h2>
       <p>{text}</p>
       {!isUndefined(files) && (
-        <Fragment>
+        <p>
           {map(files, file => {
             return (
-              <p>
+              <Fragment>
                 {!isUndefined(file.link) ? (
-                  <OutLink to={file.link}>
-                    <Icon
-                      type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
-                      theme="outlined"
-                    />
+                  <Link
+                    to={file.link}
+                    style={{ display: 'flex', marginBottom: 12 }}
+                  >
+                    <FileTextIcon />
                     &nbsp;
                     {file.title}
-                  </OutLink>
+                  </Link>
                 ) : (
-                  <a href="#" disabled className="ignore">
-                    <Icon
-                      type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
-                      theme="outlined"
-                    />
+                  <Link
+                    to={file.link}
+                    style={{ display: 'flex', marginBottom: 12 }}
+                    href="#"
+                    disabled
+                    className="ignore"
+                  >
+                    <FileTextIcon />
                     &nbsp;
                     {file.title}
-                  </a>
+                  </Link>
                 )}
-              </p>
+              </Fragment>
             )
           })}
-        </Fragment>
+        </p>
       )}
     </div>
   )
@@ -195,9 +196,9 @@ const Page = props => (
             development began with the work of Dominic Barter in the favelas in
             Rio de Janeiro in the mid 1990s and continues with a growing
             community both in Brazil and internationally.&nbsp;
-            <OutLink to="https://www.restorativecircles.org/">
+            <Link to="https://www.restorativecircles.org/">
               See more about Dominic's work here
-            </OutLink>
+            </Link>
             .
           </p>
         </div>
@@ -268,9 +269,9 @@ const Page = props => (
 
       <p style={{ marginBottom: 0 }}>
         <strong>How to Call a Circle</strong>: Send an email to&nbsp;
-        <OutLink to="mailto:restorative@auroville.org.in">
+        <Link to="mailto:restorative@auroville.org.in">
           restorative@auroville.org.in
-        </OutLink>
+        </Link>
         , or <Link to="/our-team">speak in person to a member of our team</Link>
         . A Facilitator will follow up with you, hear your concerns, explain the
         RC process, and confirm whether you’d like to go ahead with a Circle or

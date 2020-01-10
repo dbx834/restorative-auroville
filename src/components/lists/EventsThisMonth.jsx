@@ -8,8 +8,13 @@ import { css } from 'glamor'
 import moment from 'moment'
 import color from 'color'
 
+import map from 'lodash/map'
+import filter from 'lodash/filter'
+import reverse from 'lodash/reverse'
+import values from 'lodash/values'
 import isUndefined from 'lodash/isUndefined'
 import join from 'lodash/join'
+import slice from 'lodash/slice'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Link, { withPrefix } from 'gatsby-link'
@@ -106,8 +111,8 @@ const pageStyle = css({
         margin: 0,
         position: 'absolute',
         left: 24,
-        lineHeight: '50px',
-        height: 50,
+        // lineHeight: '50px',
+        // height: 50,
         fontWeight: 700,
       },
     },
@@ -321,8 +326,11 @@ class EventsGrid extends React.Component {
       10: 'Nov',
       11: 'Dec',
     }
-    const monthKey = thisMonth
-    const monthValue = months[thisMonth]
+    const thisAndFutureMonths = slice(
+      filter(months, (m, key) => key >= thisMonth),
+      0,
+      3
+    )
     const { active, nextActive } = this.state
 
     return (
@@ -340,20 +348,24 @@ class EventsGrid extends React.Component {
               <br className="mobile-only" />
             </p>
             <div className="margin-p">
-              <Month
-                year={thisYear}
-                month={monthValue}
-                monthKey={monthKey}
-                postEdges={postEdges}
-                openSet={this.openSet}
-                registerForEvent={this.registerForEvent}
-                updateExtraData={this.updateExtraData}
-                past={false}
-                key={`${monthValue}-${monthKey}`}
-                setActive={this.setActive}
-                active={active}
-                nextActive={nextActive}
-              />
+              {map(thisAndFutureMonths, (month, monthKey) => {
+                return (
+                  <Month
+                    year={thisYear}
+                    month={month}
+                    monthKey={monthKey}
+                    postEdges={postEdges}
+                    openSet={this.openSet}
+                    registerForEvent={this.registerForEvent}
+                    updateExtraData={this.updateExtraData}
+                    past={false}
+                    key={`${month}-${monthKey}`}
+                    setActive={this.setActive}
+                    active={active}
+                    nextActive={nextActive}
+                  />
+                )
+              })}
               <br className="desktop-only" />
             </div>
           </Fragment>
@@ -429,7 +441,7 @@ EventsGrid.propTypes = {
 // ----------------------------------------------------------------------------
 // /** mapSizesToProps */
 const mapSizesToProps = ({ width }) => ({
-  isMobile: width <= 768,
+  isMobile: width <= 992,
 })
 
 export default withSizes(mapSizesToProps)(EventsGrid)

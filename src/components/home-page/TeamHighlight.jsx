@@ -23,6 +23,7 @@ import katiSquare from '../../assets/katiSquare.jpg'
 import henrikeSquare from '../../assets/henrikeSquare.jpg'
 import pranjalSquare from '../../assets/pranjalSquare.jpg'
 import nilsSquare from '../../assets/nilsSquare.jpg'
+import sumaSquare from '../../assets/sumaSquare.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React
@@ -92,13 +93,13 @@ const circleStylesObject = css({
     content: `"Kati"`,
   },
   '& .child-circle-highlight:nth-child(4)::after': {
-    content: `"Pranjal"`,
-  },
-  '& .child-circle-highlight:nth-child(5)::after': {
     content: `"Henrike"`,
   },
-  '& .child-circle-highlight:nth-child(6)::after': {
+  '& .child-circle-highlight:nth-child(5)::after': {
     content: `"Nils"`,
+  },
+  '& .child-circle-highlight:nth-child(6)::after': {
+    content: `"Suma"`,
   },
 })
 const circleStyles = circleStylesObject.toString()
@@ -150,17 +151,6 @@ const Page = props => {
               }
             />
             <PersonCircle
-              image={pranjalSquare}
-              className="child-circle-highlight"
-              role={
-                <Fragment>
-                  Core Team
-                  <br />
-                  &nbsp;&nbsp;Member
-                </Fragment>
-              }
-            />
-            <PersonCircle
               image={henrikeSquare}
               className="child-circle-highlight"
               role={
@@ -182,6 +172,17 @@ const Page = props => {
                 </Fragment>
               }
             />
+            <PersonCircle
+              image={sumaSquare}
+              className="child-circle-highlight"
+              role={
+                <Fragment>
+                  Core Team
+                  <br />
+                  &nbsp;&nbsp;Member
+                </Fragment>
+              }
+            />
           </div>
         </Fragment>
       </Division>
@@ -194,7 +195,7 @@ const Page = props => {
 // ----------------------------------------------------------------------------
 /** mapSizesToProps */
 const mapSizesToProps = ({ width }) => ({
-  isMobile: width <= 768,
+  isMobile: width <= 992,
 })
 
 export default withSizes(mapSizesToProps)(Page)

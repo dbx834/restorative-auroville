@@ -8,7 +8,7 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import VideoWrapper from '../../components/wrappers/VideoWrapper'
-import Video from '../../components/Video'
+import Video from '@bodhi-project/components/lib/Video'
 
 import seoHelper from '../../methods/seoHelper'
 
@@ -27,7 +27,7 @@ const prev = {
 }
 
 const next = {
-  nakedPageSlug: 'the-power-of-dialogue/surya-on-restorative-circles',
+  nakedPageSlug: 'the-power-of-dialogue/engaging-with-the-community-through-rc',
 }
 
 // ----------------------------------------------------------------------------

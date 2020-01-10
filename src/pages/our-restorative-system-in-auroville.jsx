@@ -118,7 +118,7 @@ const Page = props => (
     </div>
     <br />
     <br />
-    <h2 className="mask-h4" style={{ marginBottom: 0 }}>
+    <h2 className="mask-h4">
       "Create Auroville Together: Restorative Circles"
     </h2>
     <p style={{ marginBottom: 10 }}>

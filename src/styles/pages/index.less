@@ -1,0 +1,114 @@
+& .index-page {
+  & .by-three {
+    display: flex;
+
+    & > div {
+      flex-grow: 33;
+      flex-basis: 0;
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+
+    & article {
+      flex-grow: 33;
+      flex-basis: 0;
+      margin-left: 4px;
+      margin-right: 4px;
+
+      & .standard-content.vertical {
+        border-radius: 6px !important;
+        border: 1px solid #00006f;
+        -webkit-transition: all 220ms ease;
+        transition: all 220ms ease;
+        overflow: hidden;
+        padding: unset;
+        display: block;
+        background: #fff;
+
+        &:hover {
+          box-shadow: 1px 2px 0 0 #ff7d00;
+        }
+      }
+
+      .video-cover {
+        position: relative;
+        cursor: pointer;
+
+        & .foreground {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          opacity: 0;
+          transition: all 220ms ease-in;
+          z-index: 100;
+        }
+      }
+
+      &:hover {
+        .video-cover {
+          .foreground {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+
+  & .one,
+  .two,
+  .three,
+  .four {
+    transition: all 220ms ease-in;
+  }
+
+  & .one {
+    &:hover {
+      background: #ffe59a;
+    }
+  }
+
+  & .two {
+    &:hover {
+      background: #dfdffe;
+    }
+  }
+
+  & .three {
+    &:hover {
+      background: #ffe7e7;
+    }
+  }
+
+  & .four {
+    &:hover {
+      background: #bfd9bf;
+    }
+  }
+
+  & .yellow-block-padding {
+    @media (min-width: 992px) {
+      padding-left: 12.5%;
+      padding-right: 12.5%;
+    }
+
+    @media (max-width: 992px) {
+      padding-left: 10%;
+      padding-right: 14%;
+    }
+  }
+
+  & .banner-hover {
+    & .hover {
+      transition: all 220ms ease-in;
+      opacity: 0;
+    }
+
+    &:hover {
+      & .hover {
+        opacity: 1;
+      }
+    }
+  }
+}

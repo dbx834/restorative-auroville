@@ -1,0 +1,43 @@
+@import '~@bodhi-project/typography/lib/mixins/headingMixins.less';
+@import '~@bodhi-project/typography/lib/mixins/paragraphMixins.less';
+
+@headingFamily: "futura-pt", "Avenir Next", "Helvetica", "Arial", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@fontFamily: "adobe-garamond-pro", "times", "times new roman", "Arial", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+.headingType(@headingFamily);
+
+each(@responsiveSteps, {
+  .responsiveHeading(@value, @index)
+});
+
+.paragraphType(@fontFamily);
+
+each(@responsiveSteps, {
+  .responsiveParagraph(@value, @index)
+});
+
+#copy {
+  & h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.1;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures contextual;
+    font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+    -webkit-box-direction: normal;
+    -webkit-font-smoothing: unset !important;
+  }
+
+  & ul,
+  ol,
+  li,
+  p, .mask-p {
+    line-height: 1.22;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures contextual;
+    font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  }
+}

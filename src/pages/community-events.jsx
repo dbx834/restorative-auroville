@@ -4,15 +4,27 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 // import PropTypes from 'prop-types'
-import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { Box, Button } from 'grommet'
+import MediaQuery from 'react-responsive'
 
-import Grid from '@bodhi-project/components/lib/gatsby/Grid'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/card/style/css'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
+import Grid from '@bodhi-project/components/lib/grid/gatsby'
+import '@bodhi-project/components/lib/grid/style.less'
+import '@bodhi-project/components/lib/standard-renderers/article/vertical.less'
+// import '@bodhi-project/components/lib/grid/buttons-as-links.less'
+import '@bodhi-project/components/lib/snippets/hover-underline-animation.less'
+import '@bodhi-project/components/lib/features/loading-detection/style.less'
+import '@bodhi-project/components/lib/features/tag-filter/style.less'
+import '@bodhi-project/components/lib/features/category-filter/style.less'
+import '@bodhi-project/components/lib/features/chronology-sort/style.less'
+import '@bodhi-project/components/lib/features/year-filter/style.less'
+
+import { categories } from '@bodhi-project/components/lib/methods/mockCategory'
+import { tags } from '@bodhi-project/components/lib/methods/mockTag'
+import mapCovers from '@bodhi-project/components/lib/methods/mapCovers'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
@@ -20,6 +32,10 @@ import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 
 import seoHelper from '../methods/seoHelper'
+
+import rawData from '../data/community-events'
+
+import '../styles/pages/community-events.less'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
@@ -31,6 +47,19 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
+const conf = {
+  wrapper: '',
+  articleType: 'linkedArticle',
+  render: ['cover', 'date', 'formattedDate', 'title', 'abstract'],
+  layout: 'vertical',
+  columns: 3,
+  titleMask: 'mask-h5',
+  filterMethod: {
+    categories: 'exclusive',
+    tags: 'exclusive',
+  },
+}
+
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Images
 // ----------------------------------------------------------------------------
@@ -41,131 +70,58 @@ export const query = graphql`
         eq: "community-events/cross-cultural-dialogue/banner.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     filmfestRestoringConnection: file(
       relativePath: {
         eq: "community-events/filmfest-restoring-connection/banner.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     restorativeDialogueAcrossCultures: file(
       relativePath: {
         eq: "community-events/restorative-dialogue-across-cultures/banner.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     walkOfHopeInAurovilleAndTheBioregion: file(
       relativePath: {
         eq: "community-events/walk-of-hope-in-auroville-and-the-bioregion/banner.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
     womenForJustice: file(
       relativePath: { eq: "community-events/women-for-justice/banner.jpg" }
     ) {
-      ...defaultImage
+      ...max900
     }
     worldCafesOnPeaceAndJustice: file(
       relativePath: {
         eq: "community-events/world-cafes-on-peace-and-justice/banner.jpg"
       }
     ) {
-      ...defaultImage
+      ...max900
     }
   }
 `
-// ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Styles
-// ----------------------------------------------------------------------------
-const pageStyles = css({
-  '& div.card': {
-    boxShadow: '1px 2px 0 0 #FF7D00 !important',
-    border: 'unset !important',
-    transition: 'all 200ms ease-in',
-
-    '&:hover': {
-      boxShadow: '2px 3px 0 0 #FF7D00 !important',
-    },
-  },
-
-  '& .box': {
-    border: '2px solid #00006F',
-    borderRadius: 8,
-    marginTop: 30,
-
-    '@media(min-width: 992px)': {
-      padding: 24,
-    },
-
-    '@media(max-width: 992px)': {
-      padding: 6,
-    },
-  },
-}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
 const Page = props => {
-  const data = [
-    {
-      title: 'Women for Justice',
-      cover: props.data.womenForJustice.childImageSharp.fluid,
-      route: 'community-events/women-for-justice',
-      formattedDate: 'To be announced',
-      abstract:
-        'In collaboration with Auroville Village Action Group and Nimisha Desai, founder of the NGO "Olakh" (Gujarat), we will present a documentary about Nimisha’s work with women’s justice.',
-    },
-    {
-      title: 'Cross-Cultural Dialogue: Discrimination in Auroville',
-      cover: props.data.crossCulturalDialogue.childImageSharp.fluid,
-      route: 'community-events/cross-cultural-dialogue',
-      formattedDate: 'April 2018',
-      abstract:
-        'In response to the recent claim of discrimination against some in the Tamil community in Auroville, we hosted a 2-day Cross-Cultural Dialogue.',
-    },
-    {
-      title: 'Walk of Hope in Auroville & the Bioregion',
-      cover:
-        props.data.walkOfHopeInAurovilleAndTheBioregion.childImageSharp.fluid,
-      route: 'community-events/walk-of-hope-in-auroville-and-the-bioregion',
-      formattedDate: 'January 2018',
-      abstract:
-        'The Walk was led by Sri M, an eminent spiritual guide, educationist and social activist.',
-    },
-    {
-      title: 'Restorative Dialogue across Cultures',
-      cover: props.data.restorativeDialogueAcrossCultures.childImageSharp.fluid,
-      route: 'community-events/restorative-dialogue-across-cultures',
-      formattedDate: 'September 2016',
-      abstract:
-        'We want to explore and understand this question: Are we divided in Auroville, as local Tamil Aurovilians and non-local Aurovilians?',
-    },
-    {
-      title: 'World Cafés on Peace & Justice',
-      cover: props.data.worldCafesOnPeaceAndJustice.childImageSharp.fluid,
-      route: 'community-events/world-cafes-on-peace-and-justice',
-      formattedDate: 'January 2016 - April 2016',
-      abstract:
-        'In the first months of 2016, we hosted a series of evening conversations in the co-creative World Café format. “What can we do as a community to openly share past pain and to restore connection and trust?”',
-    },
-    {
-      title: 'FilmFest: "Restoring Connection"',
-      cover: props.data.filmfestRestoringConnection.childImageSharp.fluid,
-      route: 'community-events/filmfest-restoring-connection',
-      formattedDate: 'October 2016',
-      abstract:
-        'We hosted a 6-day Film Festival, in hopes to raise awareness about Restorative Justice and hopefully contribute to building a justice system that is in alignment with our Auroville values.',
-    },
-  ]
+  const { data: images } = props
+  const data = mapCovers(rawData, images)
 
   return (
-    <StandardPage className={pageStyles} seoData={seoData} {...props}>
+    <StandardPage
+      className="community-events-page"
+      seoData={seoData}
+      {...props}
+    >
       <h2 className="mask-h3">Community Events</h2>
       <p>
         Our approach is to engage with the community at many levels and through
@@ -174,7 +130,19 @@ const Page = props => {
         forward!
       </p>
       <div className="margin-p">
-        <Grid data={data} Img={Img} Link={Link} />
+        <Grid
+          loading={false}
+          Link={Link}
+          Box={Box}
+          Button={Button}
+          Img={Img}
+          MediaQuery={MediaQuery}
+          data={data}
+          allCategories={categories}
+          allTags={tags}
+          strictChronology
+          conf={conf}
+        />
       </div>
     </StandardPage>
   )

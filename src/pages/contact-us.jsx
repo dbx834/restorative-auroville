@@ -3,17 +3,11 @@
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
-// import PropTypes from 'prop-types'
-// import { css } from "glamor";
-
-// import map from "lodash/map";
-// import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import OutLink from '@bodhi-project/components/lib/OutLink'
 import Division from '@bodhi-project/components/lib/Division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
@@ -21,6 +15,9 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import '../styles/pages/contact-us.less'
+
+import Link from '../components/Link'
 import ContactForm from '../components/forms/ContactForm'
 import StandardPage from '../components/wrappers/StandardPage'
 
@@ -43,7 +40,7 @@ const seoData = seoHelper(pageData)
 export const query = graphql`
   query {
     art: file(relativePath: { eq: "contact-us/art.jpg" }) {
-      ...defaultImage
+      ...max900
     }
   }
 `
@@ -62,12 +59,11 @@ const Page = props => (
       <Fragment>
         <h1 className="mask-h3">Contact Us</h1>
         <ContactForm />
-        <br />
         <p>
           You can also email us at:&nbsp;
-          <OutLink to="mailto:restorative@auroville.org.in?Subject=Hello">
+          <Link to="mailto:restorative@auroville.org.in?Subject=Hello">
             restorative@auroville.org.in
-          </OutLink>
+          </Link>
         </p>
       </Fragment>
       <Fragment>

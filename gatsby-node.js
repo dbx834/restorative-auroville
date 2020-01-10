@@ -14,6 +14,24 @@ const markdown = require('remark-parse')
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Functions
 // ----------------------------------------------------------------------------
+// exports.onCreateWebpackConfig = ({ stage, actions }) => {
+//   actions.setWebpackConfig({
+//     node: false,
+//   })
+//   if (stage !== `develop`) {
+//     actions.setWebpackConfig({
+//       resolve: {
+//         alias: {
+//           react: 'preact/compat',
+//           'react-dom': 'preact/compat',
+//           'react-dom/server': `preact/compat`,
+//           'preact-compat': `preact-compat/dist/preact-compat`,
+//         },
+//       },
+//     })
+//   }
+// }
+
 /** gets last page */
 const getPrev = (index, edges, thisEdge) => {
   const sliced = _.slice(edges, 0, index)

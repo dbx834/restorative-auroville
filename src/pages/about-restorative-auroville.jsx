@@ -13,24 +13,21 @@ import map from 'lodash/map'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import OutLink from '@bodhi-project/components/lib/OutLink'
 import Division from '@bodhi-project/components/lib/Division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
-import keygen from '@bodhi-project/components/lib/methods/keygen'
-
-import Icon from 'antd/lib/icon'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/icon/style/css'
+import Video from '@bodhi-project/components/lib/Video'
 
 import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
+
+import FileTextIcon from 'react-feather/dist/icons/file-text'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 import DisqusComments from '../components/DisqusComments'
-import Video from '../components/Video'
 
 import seoHelper from '../methods/seoHelper'
 
@@ -91,16 +88,16 @@ const style = css({
 export const query = graphql`
   query {
     birdsTop: file(relativePath: { eq: "birdsTop.png" }) {
-      ...defaultImage
+      ...max900
     }
     grungeBg: file(relativePath: { eq: "grungeBg.jpg" }) {
-      ...defaultImage
+      ...max900
     }
     flowerBoardDesktop: file(relativePath: { eq: "flower-board-desktop.png" }) {
-      ...defaultImage
+      ...max900
     }
     flowerBoardMobile: file(relativePath: { eq: "flower-board-mobile.png" }) {
-      ...defaultImage
+      ...max900
     }
   }
 `
@@ -128,22 +125,22 @@ const Theme = props => {
       </h2>
       <p>{text}</p>
       {!isUndefined(files) && (
-        <Fragment key={keygen()}>
+        <p>
           {map(files, file => {
             return (
-              <p key={keygen()}>
-                <OutLink to={file.link}>
-                  <Icon
-                    type={isUndefined(file.icon) ? 'file-pdf' : file.icon}
-                    theme="outlined"
-                  />
+              <Fragment>
+                <Link
+                  to={file.link}
+                  style={{ display: 'flex', marginBottom: 12 }}
+                >
+                  <FileTextIcon />
                   &nbsp;
                   {file.title}
-                </OutLink>
-              </p>
+                </Link>
+              </Fragment>
             )
           })}
-        </Fragment>
+        </p>
       )}
     </div>
   )
@@ -185,11 +182,9 @@ const Page = props => (
     </p>
     <p>
       Restorative Auroville is an initiative of&nbsp;
-      <OutLink to="https://www.joylivinglearning.org/">
-        Joy Living Learning
-      </OutLink>
-      , a Unit of the&nbsp;
-      <OutLink to="https://www.auroville.org/">Auroville Foundation</OutLink>.
+      <Link to="https://www.joylivinglearning.org/">Joy Living Learning</Link>,
+      a Unit of the&nbsp;
+      <Link to="https://www.auroville.org/">Auroville Foundation</Link>.
     </p>
     &nbsp;
     <div className="box margin-p">
@@ -309,7 +304,11 @@ const Page = props => (
         />
       </Fragment>
       <Fragment>
-        <h2 className="mask-h5">Justice & Restorative Circles in Auroville</h2>
+        <h2 className="mask-h5">
+          <span style={{ fontSize: '96%' }}>
+            Justice & Restorative Circles in Auroville
+          </span>
+        </h2>
         <Video url="https://www.youtube.com/watch?v=kqBM5Xr5VfI&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=10" />
       </Fragment>
     </Division>
