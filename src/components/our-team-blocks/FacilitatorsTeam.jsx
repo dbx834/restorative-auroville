@@ -172,7 +172,10 @@ class FacilitatorsTeam extends React.Component {
       <div className={style}>
         <h1 className="mask-h3">Facilitators' Team</h1>
         <p>
-          <strong>available to the community as Circle Facilitators…</strong>
+          <strong>
+            <span style={{ fontSize: '78%' }}>⮑</span> available to the
+            community as Circle Facilitators…
+          </strong>
         </p>
         <p>
           The Facilitator is a dynamic role, selected according to individual

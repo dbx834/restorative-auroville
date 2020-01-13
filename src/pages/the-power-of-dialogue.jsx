@@ -75,7 +75,10 @@ const categories = [
     categoryName: 'Experiences',
     abstract: (
       <Fragment>
-        <strong>community members talk about their experience</strong>
+        <strong>
+          <span style={{ fontSize: '78%' }}>⮑</span> community members talk
+          about their experience
+        </strong>
         &nbsp;being in live Circles
       </Fragment>
     ),
@@ -88,8 +91,12 @@ const categories = [
     categoryName: 'The Restorative System',
     abstract: (
       <Fragment>
-        <strong>engaging with RC as a System</strong>&nbsp;and highlighting the
-        need to talk about the meaning of justice and conflict in our community
+        <strong>
+          <span style={{ fontSize: '78%' }}>⮑</span> engaging with RC as a
+          System
+        </strong>
+        &nbsp;and highlighting the need to talk about the meaning of justice and
+        conflict in our community
       </Fragment>
     ),
     categoryShortCode: 'theRestorativeSystem',
@@ -101,8 +108,11 @@ const categories = [
     categoryName: 'In Action',
     abstract: (
       <Fragment>
-        <strong>touching “live” moments</strong>&nbsp;from different stages of
-        real Circles that have been called in the community
+        <strong>
+          <span style={{ fontSize: '78%' }}>⮑</span> touching “live” moments
+        </strong>
+        &nbsp;from different stages of real Circles that have been called in the
+        community
       </Fragment>
     ),
     categoryShortCode: 'inAction',
@@ -114,8 +124,11 @@ const categories = [
     categoryName: 'The Craft',
     abstract: (
       <Fragment>
-        <strong>a learning resource</strong>&nbsp;to highlight the RC process in
-        its different steps and stages (COMING SOON)
+        <strong>
+          <span style={{ fontSize: '78%' }}>⮑</span> a learning resource
+        </strong>
+        &nbsp;to highlight the RC process in its different steps and stages
+        (COMING SOON)
       </Fragment>
     ),
     categoryShortCode: 'theCraft',

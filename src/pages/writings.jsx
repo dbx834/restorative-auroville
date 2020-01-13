@@ -154,24 +154,20 @@ const Page = props => {
 
   return (
     <StandardPage className="writings-page" seoData={seoData} {...props}>
-      <h1 className="mask-h3" style={{ marginBottom: 10 }}>
-        Articles
-      </h1>
-      <div className="margin-p">
-        <Grid
-          loading={false}
-          Link={Link}
-          Box={Box}
-          Button={Button}
-          Img={Img}
-          MediaQuery={MediaQuery}
-          data={data}
-          allCategories={categories}
-          allTags={tags}
-          strictChronology
-          conf={conf}
-        />
-      </div>
+      <h1 className="mask-h3">Articles</h1>
+      <Grid
+        loading={false}
+        Link={Link}
+        Box={Box}
+        Button={Button}
+        Img={Img}
+        MediaQuery={MediaQuery}
+        data={data}
+        allCategories={categories}
+        allTags={tags}
+        strictChronology
+        conf={conf}
+      />
     </StandardPage>
   )
 }

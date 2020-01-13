@@ -142,8 +142,8 @@ class Apprentices extends React.Component {
         <h1 className="mask-h3">Apprentices & Volunteers</h1>
         <p>
           <strong>
-            community members who are journeying with us and integrating the RC
-            process and principles…
+            <span style={{ fontSize: '78%' }}>⮑</span> community members who are
+            journeying with us and integrating the RC process and principles…
           </strong>
         </p>
         <br className="mobile-only" />

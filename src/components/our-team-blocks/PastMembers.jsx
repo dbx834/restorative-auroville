@@ -139,8 +139,9 @@ class PastMembers extends React.Component {
         <h1 className="mask-h3">Past Members</h1>
         <p>
           <strong>
-            community members who have contributed to our project, and to whom
-            we are immensely grateful…
+            <span style={{ fontSize: '78%' }}>⮑</span> community members who
+            have contributed to our project, and to whom we are immensely
+            grateful…
           </strong>
         </p>
         <div style={{ display: isMobile ? 'block' : 'flex' }}>

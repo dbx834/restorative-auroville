@@ -141,7 +141,8 @@ class ProjectWorkingTeam extends React.Component {
         <h1 className="mask-h3">Project Working Team</h1>
         <p>
           <strong>
-            run the larger project in all its aspects, from small to big…
+            <span style={{ fontSize: '78%' }}>⮑</span> run the larger project in
+            all its aspects, from small to big…
           </strong>
         </p>
         <br className="mobile-only" />

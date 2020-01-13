@@ -498,13 +498,11 @@ const Page = props => {
       </div>
 
       <div>
-        <h2 className="mask-h3" style={{ marginBottom: 0 }}>
-          "The Power of Dialogue"
-        </h2>
-        <p style={{ marginBottom: 30 }}>
+        <h2 className="mask-h3">"The Power of Dialogue"</h2>
+        <p>
           <Link to="/the-power-of-dialogue">See video series ⇝</Link>
         </p>
-        <div className="by-three">
+        <div className="by-three margin-p">
           <LinkedArticle
             className="resize-detector"
             render={['hover-cover', 'abstract']}
