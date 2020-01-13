@@ -285,7 +285,7 @@ const Page = props => {
         </p>
       ),
       hasTags: ['dummy2'],
-      hasCategories: ['interview'],
+      hasCategories: ['interview', 'video'],
       resources: [
         {
           title: 'Interview',
@@ -641,7 +641,7 @@ const Page = props => {
           title: 'Video',
           link:
             'https://www.youtube.com/watch?v=YIUFjSzXn1Y&t=0s&index=7&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF',
-          icon: <HeadphonesIcon />,
+          icon: <YoutubeIcon />,
         },
       ],
     },
