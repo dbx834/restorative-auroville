@@ -4,6 +4,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 // import PropTypes from 'prop-types'
+import reverse from 'lodash/reverse'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { graphql } from 'gatsby'
@@ -22,6 +23,7 @@ import '@bodhi-project/components/lib/features/category-filter/style.less'
 import '@bodhi-project/components/lib/features/chronology-sort/style.less'
 import '@bodhi-project/components/lib/features/year-filter/style.less'
 
+import getAllYears from '@bodhi-project/components/lib/methods/getAllYears'
 import smallKey from '@bodhi-project/components/lib/methods/smallKey'
 import mapCovers from '@bodhi-project/components/lib/methods/mapCovers'
 
@@ -91,8 +93,10 @@ const conf = {
     categories: 'exclusive',
     tags: 'exclusive',
   },
-  reverseYearOrder: true,
+  reverseYearOrder: false,
 }
+
+const allYears = reverse(getAllYears(rawData))
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Images
@@ -165,6 +169,7 @@ const Page = props => {
         data={data}
         allCategories={categories}
         allTags={tags}
+        allYears={allYears}
         strictChronology
         conf={conf}
       />
