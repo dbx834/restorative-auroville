@@ -364,10 +364,10 @@ const Page = props => {
         <div
           style={{
             position: 'absolute',
-            top: 0,
-            left: 0,
-            height: '100%',
-            width: '100%',
+            top: '-5%',
+            left: '-5%',
+            height: '110%',
+            width: '110%',
             zIndex: -2,
             overflow: 'hidden',
           }}
@@ -498,9 +498,15 @@ const Page = props => {
       </div>
 
       <div>
-        <h2 className="mask-h3">"The Power of Dialogue"</h2>
+        <h2 className="mask-h3">The Power of Dialogue</h2>
         <p>
-          <Link to="/the-power-of-dialogue">See video series ⇝</Link>
+          We offer this video series as an opportunity for you to journey along
+          with our journey. Restorative Circles is still very new to the world,
+          and learning material and resources are somewhat limited. So here’s
+          our attempt to celebrate this body of work and to offer back a few
+          nuggets from our unfolding journey.
+          <br />
+          <Link to="/the-power-of-dialogue">See full video series ⇝</Link>
         </p>
         <div className="by-three margin-p">
           <LinkedArticle
@@ -558,7 +564,9 @@ const Page = props => {
             }}
           />
           <div>
-            <h3 className="mask-h4">Our Video Series</h3>
+            <h3 className="mask-h4" style={{ marginTop: -4 }}>
+              Our Video Series
+            </h3>
             <div
               style={{
                 display: 'flex',
@@ -578,10 +586,13 @@ const Page = props => {
                     paddingLeft: 12,
                   }}
                 >
-                  <h4 className="mask-h5" style={{ marginBottom: 0 }}>
+                  <h4
+                    className="mask-h5"
+                    style={{ marginBottom: 4, fontWeight: 700 }}
+                  >
                     1. The Craft
                   </h4>
-                  <p style={{ marginBottom: 20 }}>
+                  <p style={{ marginBottom: 16 }}>
                     <i style={{ fontSize: '90%' }}>Learning the steps</i>
                   </p>
                 </Link>
@@ -599,10 +610,13 @@ const Page = props => {
                     marginLeft: '1vw',
                   }}
                 >
-                  <h4 className="mask-h5" style={{ marginBottom: 0 }}>
+                  <h4
+                    className="mask-h5"
+                    style={{ marginBottom: 4, fontWeight: 700 }}
+                  >
                     2. In Action
                   </h4>
-                  <p style={{ marginBottom: 20 }}>
+                  <p style={{ marginBottom: 16 }}>
                     <i style={{ fontSize: '90%' }}>
                       Snippets from live Circles
                     </i>
@@ -622,10 +636,13 @@ const Page = props => {
                     marginLeft: '2vw',
                   }}
                 >
-                  <h4 className="mask-h5" style={{ marginBottom: 0 }}>
+                  <h4
+                    className="mask-h5"
+                    style={{ marginBottom: 4, fontWeight: 700 }}
+                  >
                     3. The Restorative System
                   </h4>
-                  <p style={{ marginBottom: 20 }}>
+                  <p style={{ marginBottom: 16 }}>
                     <i style={{ fontSize: '90%' }}>
                       Exploring justice in community
                     </i>
@@ -645,10 +662,13 @@ const Page = props => {
                     marginLeft: '3vw',
                   }}
                 >
-                  <h4 className="mask-h5" style={{ marginBottom: 0 }}>
+                  <h4
+                    className="mask-h5"
+                    style={{ marginBottom: 4, fontWeight: 700 }}
+                  >
                     4. Experiences
                   </h4>
-                  <p style={{ marginBottom: 20 }}>
+                  <p style={{ marginBottom: 16 }}>
                     <i style={{ fontSize: '90%' }}>Participants share</i>
                   </p>
                 </Link>
@@ -670,10 +690,10 @@ const Page = props => {
         <div
           style={{
             position: 'absolute',
-            top: 0,
-            left: 0,
-            height: '100%',
-            width: '100%',
+            top: '-5%',
+            left: '-5%',
+            height: '110%',
+            width: '110%',
             zIndex: -2,
             overflow: 'hidden',
           }}
@@ -701,7 +721,7 @@ const Page = props => {
               <br className="mobile-only" />
               <Video
                 url="https://www.youtube.com/watch?v=6Ma-dnG53LU"
-                style={{ border: 'unset' }}
+                style={{ border: 'unset', marginBottom: 8 }}
               />
               <p
                 style={{
@@ -746,19 +766,14 @@ const Page = props => {
               <p
                 style={{
                   color: '#2c2c2c',
+                  marginBottom: 0,
                 }}
               >
                 We invite any Working Groups, commercial Units, Services,
                 schools and residential communities that are interested in
                 learning more to reach out, so that we can design a training
                 series together and/or look at how to collaborate.
-              </p>
-              <p
-                style={{
-                  color: '#2c2c2c',
-                  marginBottom: 0,
-                }}
-              >
+                <br />
                 <Link to="/system-building-initiatives">
                   See our System-Building Initiatives ⇝
                 </Link>

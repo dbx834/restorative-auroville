@@ -230,15 +230,13 @@ class EventRegisterationForm extends React.Component {
           <Fragment>
             {(eventStatus === 'past' || eventStatus === 'present') && (
               <Fragment>
-                <h3 style={{ marginTop: -10, marginBottom: 5 }}>
-                  Registration Closed
-                </h3>
+                <h3 style={{ marginTop: -10 }}>Registration Closed</h3>
                 <p>Registration for this event is now closed.</p>
               </Fragment>
             )}
             {eventStatus === 'future' && (
               <Fragment>
-                <h3 style={{ marginTop: -10, marginBottom: 5 }}>Fee</h3>
+                <h3 style={{ marginTop: -10 }}>Fee</h3>
                 <p>
                   <strong>
                     <i>{frontmatter.cost}</i>

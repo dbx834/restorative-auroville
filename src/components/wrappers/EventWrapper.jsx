@@ -128,10 +128,7 @@ const Page = props => {
                 />
               </Fragment>
               <Fragment>
-                <h1
-                  className="mask-h3"
-                  style={{ marginTop: -10, marginBottom: 15, lineHeight: 1.1 }}
-                >
+                <h1 className="mask-h3" style={{ marginTop: -10 }}>
                   {title}
                 </h1>
                 <p>
@@ -152,6 +149,7 @@ const Page = props => {
                         href={withUrl(route, data)}
                         colorScheme="dark"
                         share
+                        showFaces
                       />
                     </FacebookProvider>
                   </div>

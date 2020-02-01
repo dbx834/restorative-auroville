@@ -75,9 +75,21 @@ const categories = [
     categoryName: 'Experiences',
     abstract: (
       <Fragment>
-        <strong>
-          <span style={{ fontSize: '78%' }}>⮑</span> community members talk
-          about their experience
+        <strong style={{ position: 'relative' }}>
+          <span
+            style={{
+              fontSize: '108%',
+              position: 'absolute',
+              transform: 'rotate(48deg)',
+              width: 20,
+              marginTop: -4,
+            }}
+          >
+            ⤻
+          </span>
+          <span style={{ paddingLeft: 24 }}>
+            community members talk about their experience
+          </span>
         </strong>
         &nbsp;being in live Circles
       </Fragment>
@@ -91,9 +103,19 @@ const categories = [
     categoryName: 'The Restorative System',
     abstract: (
       <Fragment>
-        <strong>
-          <span style={{ fontSize: '78%' }}>⮑</span> engaging with RC as a
-          System
+        <strong style={{ position: 'relative' }}>
+          <span
+            style={{
+              fontSize: '108%',
+              position: 'absolute',
+              transform: 'rotate(48deg)',
+              width: 20,
+              marginTop: -4,
+            }}
+          >
+            ⤻
+          </span>
+          <span style={{ paddingLeft: 24 }}>engaging with RC as a System</span>
         </strong>
         &nbsp;and highlighting the need to talk about the meaning of justice and
         conflict in our community
@@ -108,8 +130,19 @@ const categories = [
     categoryName: 'In Action',
     abstract: (
       <Fragment>
-        <strong>
-          <span style={{ fontSize: '78%' }}>⮑</span> touching “live” moments
+        <strong style={{ position: 'relative' }}>
+          <span
+            style={{
+              fontSize: '108%',
+              position: 'absolute',
+              transform: 'rotate(48deg)',
+              width: 20,
+              marginTop: -4,
+            }}
+          >
+            ⤻
+          </span>
+          <span style={{ paddingLeft: 24 }}>touching “live” moments</span>
         </strong>
         &nbsp;from different stages of real Circles that have been called in the
         community
@@ -124,8 +157,19 @@ const categories = [
     categoryName: 'The Craft',
     abstract: (
       <Fragment>
-        <strong>
-          <span style={{ fontSize: '78%' }}>⮑</span> a learning resource
+        <strong style={{ position: 'relative' }}>
+          <span
+            style={{
+              fontSize: '108%',
+              position: 'absolute',
+              transform: 'rotate(48deg)',
+              width: 20,
+              marginTop: -4,
+            }}
+          >
+            ⤻
+          </span>
+          <span style={{ paddingLeft: 24 }}>a learning resource</span>
         </strong>
         &nbsp;to highlight the RC process in its different steps and stages
         (COMING SOON)
@@ -139,7 +183,7 @@ const categories = [
 const conf = {
   wrapper: '',
   articleType: 'linkedArticle',
-  render: ['hover-cover', 'title', 'abstract'],
+  render: ['hover-cover', 'abstract'],
   layout: 'vertical',
   columns: 3,
   titleMask: 'mask-h5',
@@ -151,7 +195,25 @@ const conf = {
     chronology: 'oldest-first',
   },
   renderCategoryAbstract: true,
-  allCategoryAbstract: <Fragment>...</Fragment>,
+  allCategoryAbstract: (
+    <Fragment>
+      <strong style={{ position: 'relative' }}>
+        <span
+          style={{
+            fontSize: '108%',
+            position: 'absolute',
+            transform: 'rotate(48deg)',
+            width: 20,
+            marginTop: -4,
+          }}
+        >
+          ⤻
+        </span>
+        <span style={{ paddingLeft: 24 }}>see all our videos</span>
+      </strong>
+      &nbsp;at one glance, or select category by category
+    </Fragment>
+  ),
   hashFilter: true,
 }
 
@@ -314,7 +376,7 @@ const Page = props => {
     >
       <Division>
         <Fragment>
-          <h1 className="mask-h3">"The Power of Dialogue"</h1>
+          <h1 className="mask-h3">The Power of Dialogue</h1>
           <p>
             We offer this video series as an opportunity for you to journey
             along with our journey. Restorative Circles is still very new to the
@@ -328,8 +390,8 @@ const Page = props => {
             <div
               style={{
                 position: 'absolute',
-                top: 2,
-                right: 5,
+                top: 5,
+                right: 10,
                 height: 40,
                 zIndex: -1,
               }}
