@@ -5,10 +5,10 @@
 import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Video from '@bodhi-project/components/lib/Video'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import VideoWrapper from '../../components/wrappers/VideoWrapper'
-import Video from '@bodhi-project/components/lib/Video'
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -17,6 +17,7 @@ const pageData = {
   nakedPageSlug: 'the-power-of-dialogue/the-value-of-rc-facilitation',
   pageAbstract:
     'Pranjal reflects on his learning journey with RC facilitation, and appreciates how the skills he has acquired here can provide for a strong foundation in holding space in different contexts.',
+  cover: 'https://img.youtube.com/vi/O40ut-RDcgI/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)

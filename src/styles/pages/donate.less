@@ -8,6 +8,11 @@
       margin-bottom: 0px !important;
       background: #00006f;
 
+      &:focus {
+        outline-color: #00006f !important;
+        border-color: #00006f !important;
+      }
+
       & span {
         color: #fff;
         font-size: 90%;
@@ -17,7 +22,8 @@
 
   & .filter-by-tag-buttons,
   .filter-by-category-buttons,
-  .filter-by-year-buttons {
+  .filter-by-year-buttons,
+  .chronology-sort-buttons {
     display: none !important;
   }
 
@@ -28,15 +34,16 @@
     border-radius: 3px !important;
     margin-bottom: 0px !important;
 
+    &:focus {
+      outline-color: #00006f !important;
+      border-color: #00006f !important;
+    }
+
     &.selected {
       background: #00006f;
       & span {
         color: #fff;
       }
-    }
-
-    & span {
-      font-size: 90%;
     }
   }
 

@@ -5,10 +5,10 @@
 import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Video from '@bodhi-project/components/lib/Video'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import VideoWrapper from '../../components/wrappers/VideoWrapper'
-import Video from '@bodhi-project/components/lib/Video'
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -16,6 +16,7 @@ const pageData = {
   pageTitle: '4.1 Surya on Restorative Circles',
   nakedPageSlug: 'the-power-of-dialogue/surya-on-restorative-circles',
   pageAbstract: 'Surya shares about her experiences with Restoratives Circles.',
+  cover: 'https://img.youtube.com/vi/uIyY6TDbnSQ/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)

@@ -9,7 +9,6 @@ import Video from '@bodhi-project/components/lib/Video'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import VideoWrapper from '../../components/wrappers/VideoWrapper'
-
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -18,6 +17,7 @@ const pageData = {
   nakedPageSlug: 'the-power-of-dialogue/rakhals-pre-circle-with-henrike',
   pageAbstract:
     'Rakhal was named for this Circle, and here is his Pre-Circle with our Co-Facilitator, Henrike.',
+  cover: 'https://img.youtube.com/vi/Zlv1yN7OzZ0/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)

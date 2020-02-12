@@ -110,7 +110,7 @@ const pageStyle = css({
       '& h2': {
         margin: 0,
         position: 'absolute',
-        left: 24,
+        left: 18,
         // lineHeight: '50px',
         // height: 50,
         fontWeight: 700,

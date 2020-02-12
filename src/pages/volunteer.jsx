@@ -131,8 +131,7 @@ const Page = props => (
       Or… do you have any other great skills and/or simple willingness to
       offer…?
     </p>
-
-    <Division golden>
+    <Division golden className="margin-p">
       <Fragment>
         <h2 className="mask-h3">Volunteer Form</h2>
         <VolunteerForm />
@@ -141,12 +140,12 @@ const Page = props => (
         <h2 className="mask-h3" style={{ lineHeight: 1.1 }}>
           Our work, inside-out...
         </h2>
-        <Img
-          fluid={props.data.flowerBoardDesktop.childImageSharp.fluid}
-          style={{ maxWidth: 360 }}
-        />
-        <br />
-        <br />
+        <div className="mask-p">
+          <Img
+            fluid={props.data.flowerBoardDesktop.childImageSharp.fluid}
+            style={{ maxWidth: 360 }}
+          />
+        </div>
         <h2 className="mask-h3" style={{ lineHeight: 1.1 }}>
           Our apprentice, Henrike, shares...
         </h2>

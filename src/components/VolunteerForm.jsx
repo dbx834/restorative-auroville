@@ -142,7 +142,7 @@ class VolunteerForm extends React.Component {
       isFieldTouched('anyOtherComment') && getFieldError('anyOtherComment')
 
     return (
-      <div>
+      <div className="margin-p">
         {this.state.formSent === false && (
           <Form onSubmit={this.handleSubmit}>
             {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Name */}

@@ -108,7 +108,7 @@ const Page = props => (
       importance of consciously choosing a justice system for the growth and
       development of a community.
     </p>
-    <div style={{ background: '#d1d1d1' }}>
+    <div style={{ background: '#d1d1d1' }} className="mask-p">
       <div className="pdf">
         <PDFReader
           url="https://www.restorativeauroville.org/pdfs2/av-rc-system.pdf"
@@ -116,8 +116,6 @@ const Page = props => (
         />
       </div>
     </div>
-    <br />
-    <br />
     <h2 className="mask-h4">
       "Create Auroville Together: Restorative Circles"
     </h2>
@@ -126,21 +124,22 @@ const Page = props => (
     </p>
     <Division>
       <Fragment>
-        <p className="mask-h6">
+        <h3 className="mask-h6">
           <strong>Part 1</strong>
-        </p>
-        <Video url="https://www.youtube.com/watch?v=n1Uf1IYQ2_Y&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=9" />
+        </h3>
+        <div className="mask-p">
+          <Video url="https://www.youtube.com/watch?v=n1Uf1IYQ2_Y&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=9" />
+        </div>
       </Fragment>
       <Fragment>
-        <p className="mask-h6">
+        <h3 className="mask-h6">
           <strong>Part 2</strong>
-        </p>
-        <Video url="https://www.youtube.com/watch?v=ngOhj-NhKJo&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=8" />
+        </h3>
+        <div className="mask-p">
+          <Video url="https://www.youtube.com/watch?v=ngOhj-NhKJo&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=8" />
+        </div>
       </Fragment>
     </Division>
-    <br />
-    <br />
-    <br />
     <DisqusComments pageData={pageData} />
   </StandardPage>
 )

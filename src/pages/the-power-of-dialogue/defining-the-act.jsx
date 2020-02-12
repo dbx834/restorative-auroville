@@ -5,10 +5,10 @@
 import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Video from '@bodhi-project/components/lib/Video'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import VideoWrapper from '../../components/wrappers/VideoWrapper'
-import Video from '@bodhi-project/components/lib/Video'
 
 import seoHelper from '../../methods/seoHelper'
 
@@ -18,6 +18,7 @@ const pageData = {
   nakedPageSlug: 'the-power-of-dialogue/defining-the-act',
   pageAbstract:
     'Kati shares her recent learning regarding the importance of bringing an authentic live act to a Circle, instead of simply having an "interesting" topic as the starting point.',
+  cover: 'https://img.youtube.com/vi/Ih85lTN_wUo/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)

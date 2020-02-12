@@ -56,7 +56,7 @@ const { TabPane } = Tabs
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const baseColor = color('rgba(0, 0, 111, 0.68)')
+const baseColor = color('rgba(0, 0, 111, 1)')
 const pageStyle = css({
   '& .ant-tabs': {
     overflow: 'visible',
@@ -81,12 +81,25 @@ const pageStyle = css({
       paddingBottom: '0px !important',
       paddingRight: '16px !important',
       marginRight: '0px !important',
+
+      '&:nth-child(2)': {
+        marginTop: '-25px !important',
+        zIndex: '1',
+        height: '40px !important',
+        width: '40px !important',
+        left: '5px !important',
+        background: '#fff !important',
+      },
+
+      '&:not(:nth-child(2))': {
+        zIndex: '10',
+        height: '50px !important',
+        width: '50px !important',
+      },
     },
 
     '& .ant-tabs-tab.ant-tabs-tab-active': {
       fontFamily: 'futura-pt, sans-serif !important',
-      height: '50px !important',
-      width: '50px !important',
       display: 'flex !important',
       justifyContent: 'center !important',
       alignItems: 'center !important',
@@ -99,6 +112,22 @@ const pageStyle = css({
       paddingBottom: '0px !important',
       paddingRight: '16px !important',
       marginRight: '0px !important',
+
+      '&:nth-child(2)': {
+        marginTop: '-25px !important',
+        zIndex: '1',
+        height: '40px !important',
+        width: '40px !important',
+        left: '5px !important',
+        color: `#ffffff !important`,
+        backgroundColor: `${baseColor} !important`,
+      },
+
+      '&:not(:nth-child(2))': {
+        zIndex: '10',
+        height: '50px !important',
+        width: '50px !important',
+      },
     },
 
     '& .ant-tabs-content': {
@@ -130,22 +159,25 @@ const pageStyle = css({
       alignContent: 'flex-center',
       position: 'relative',
       height: 50,
+      paddingRight: 8,
 
       '& h2': {
         margin: 0,
         position: 'absolute',
-        left: 24,
+        left: 18,
         fontWeight: 700,
       },
 
       '@media(max-width: 992px)': {
+        flexGrow: 12,
+
         // height: 35,
         // marginRight: 4,
 
         '& h2': {
           // lineHeight: '35px',
           // height: 35,
-          left: 12,
+          left: 18,
         },
       },
     },
@@ -454,7 +486,7 @@ class EventsGrid extends React.Component {
     const today = moment()
     const thisYear = today.year().toString()
     const thisMonth = today.month()
-    const years = ['2018', '2019', '2020']
+    const years = ['2020', '2019', '2018']
     const months = {
       0: 'Jan',
       1: 'Feb',
@@ -500,34 +532,6 @@ class EventsGrid extends React.Component {
                           events we're hosting. Please register now if you’d
                           like to attend any of these events.
                         </p>
-                        {currentYear === thisYear && (
-                          <div
-                            style={{ position: 'absolute', top: 0, right: 0 }}
-                          >
-                            <h2
-                              className="mask-h6"
-                              style={{
-                                display: 'inline-block',
-                                margin: 0,
-                                lineHeight: '22px',
-                                marginTop: 9,
-                              }}
-                            >
-                              <small>Past</small>
-                            </h2>
-                            &nbsp;
-                            <Switch
-                              style={{
-                                display: 'inline-block',
-                                margin: 0,
-                                marginTop: -2,
-                              }}
-                              defaultChecked={false}
-                              onChange={this.toggleArchive}
-                              size="small"
-                            />
-                          </div>
-                        )}
                       </div>
                       <Tabs
                         type="card"
@@ -537,67 +541,35 @@ class EventsGrid extends React.Component {
                       >
                         {map(years, (year, yearKey) => {
                           const key = `${year}-${yearKey}`
-                          return (
+                          const ReturnTab = (
                             <TabPane tab={year} key={year} id={key}>
                               <Fragment>
                                 {year === thisYear && (
                                   <Fragment>
-                                    {showArchive === false ? (
-                                      <Fragment>
-                                        {map(
-                                          thisAndFutureMonths,
-                                          (month, monthKey) => {
-                                            return (
-                                              <Month
-                                                year={year}
-                                                month={month}
-                                                monthKey={monthKey}
-                                                postEdges={postEdges}
-                                                openSet={this.openSet}
-                                                registerForEvent={
-                                                  this.registerForEvent
-                                                }
-                                                updateExtraData={
-                                                  this.updateExtraData
-                                                }
-                                                past={false}
-                                                key={`${month}-${monthKey}`}
-                                                setActive={this.setActive}
-                                                active={active}
-                                                nextActive={nextActive}
-                                              />
-                                            )
-                                          }
-                                        )}
-                                      </Fragment>
-                                    ) : (
-                                      <div className="old-events">
-                                        {map(
-                                          previousMonths,
-                                          (month, monthKey) => {
-                                            return (
-                                              <Month
-                                                year={year}
-                                                month={month}
-                                                monthKey={monthKey}
-                                                postEdges={postEdges}
-                                                openSet={this.openSet}
-                                                registerForEvent={
-                                                  this.registerForEvent
-                                                }
-                                                updateExtraData={
-                                                  this.updateExtraData
-                                                }
-                                                past
-                                                key={`${month}-${monthKey}`}
-                                                setActive={this.setActive}
-                                                active={active}
-                                                nextActive={nextActive}
-                                              />
-                                            )
-                                          }
-                                        )}
-                                      </div>
+                                    {map(
+                                      thisAndFutureMonths,
+                                      (month, monthKey) => {
+                                        return (
+                                          <Month
+                                            year={year}
+                                            month={month}
+                                            monthKey={monthKey}
+                                            postEdges={postEdges}
+                                            openSet={this.openSet}
+                                            registerForEvent={
+                                              this.registerForEvent
+                                            }
+                                            updateExtraData={
+                                              this.updateExtraData
+                                            }
+                                            past={false}
+                                            key={`${month}-${monthKey}`}
+                                            setActive={this.setActive}
+                                            active={active}
+                                            nextActive={nextActive}
+                                          />
+                                        )
+                                      }
                                     )}
                                   </Fragment>
                                 )}
@@ -638,6 +610,41 @@ class EventsGrid extends React.Component {
                               </Fragment>
                             </TabPane>
                           )
+                          const PastTab = (
+                            <TabPane
+                              tab="Past"
+                              key={`${year}-past`}
+                              id={`${key}-past`}
+                            >
+                              <div className="old-events">
+                                {map(previousMonths, (month, monthKey) => {
+                                  return (
+                                    <Month
+                                      year={year}
+                                      month={month}
+                                      monthKey={monthKey}
+                                      postEdges={postEdges}
+                                      openSet={this.openSet}
+                                      registerForEvent={this.registerForEvent}
+                                      updateExtraData={this.updateExtraData}
+                                      past
+                                      key={`${month}-${monthKey}`}
+                                      setActive={this.setActive}
+                                      active={active}
+                                      nextActive={nextActive}
+                                    />
+                                  )
+                                })}
+                              </div>
+                            </TabPane>
+                          )
+
+                          let ReturnVal = ReturnTab
+                          if (year === thisYear) {
+                            ReturnVal = [ReturnTab, PastTab]
+                          }
+
+                          return ReturnVal
                         })}
                       </Tabs>
                     </Fragment>

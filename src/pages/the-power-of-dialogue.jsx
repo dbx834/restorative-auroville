@@ -82,7 +82,7 @@ const categories = [
               position: 'absolute',
               transform: 'rotate(48deg)',
               width: 20,
-              marginTop: -4,
+              marginTop: -2,
             }}
           >
             ⤻
@@ -110,7 +110,7 @@ const categories = [
               position: 'absolute',
               transform: 'rotate(48deg)',
               width: 20,
-              marginTop: -4,
+              marginTop: -2,
             }}
           >
             ⤻
@@ -137,7 +137,7 @@ const categories = [
               position: 'absolute',
               transform: 'rotate(48deg)',
               width: 20,
-              marginTop: -4,
+              marginTop: -2,
             }}
           >
             ⤻
@@ -164,7 +164,7 @@ const categories = [
               position: 'absolute',
               transform: 'rotate(48deg)',
               width: 20,
-              marginTop: -4,
+              marginTop: -2,
             }}
           >
             ⤻
@@ -172,7 +172,8 @@ const categories = [
           <span style={{ paddingLeft: 24 }}>a learning resource</span>
         </strong>
         &nbsp;to highlight the RC process in its different steps and stages
-        (COMING SOON)
+        <br />
+        ...COMING SOON...
       </Fragment>
     ),
     categoryShortCode: 'theCraft',
@@ -204,7 +205,7 @@ const conf = {
             position: 'absolute',
             transform: 'rotate(48deg)',
             width: 20,
-            marginTop: -4,
+            marginTop: -2,
           }}
         >
           ⤻
@@ -338,22 +339,29 @@ const Theme = props => {
       </h2>
       <p>{text}</p>
       {!isUndefined(files) && (
-        <p>
+        <ul
+          className="mask-p"
+          style={{ marginBottom: 0, padding: 0, listStyle: 'none' }}
+        >
           {map(files, file => {
             return (
-              <Fragment>
+              <li>
                 <Link
                   to={file.link}
-                  style={{ display: 'flex', marginBottom: 12 }}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginBottom: 6,
+                  }}
                 >
                   <YouTubeIcon />
                   &nbsp;
                   {file.title}
                 </Link>
-              </Fragment>
+              </li>
             )
           })}
-        </p>
+        </ul>
       )}
     </div>
   )
@@ -377,7 +385,7 @@ const Page = props => {
       <Division>
         <Fragment>
           <h1 className="mask-h3">The Power of Dialogue</h1>
-          <p>
+          <p className="abstract">
             We offer this video series as an opportunity for you to journey
             along with our journey. Restorative Circles is still very new to the
             world, and learning material and resources are somewhat limited. So
@@ -444,7 +452,6 @@ const Page = props => {
           </div>
         </Fragment>
       </Division>
-      <br className="mobile-only" />
       <Grid
         {...props}
         loading={false}

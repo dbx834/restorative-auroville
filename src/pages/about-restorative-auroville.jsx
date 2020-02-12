@@ -60,7 +60,10 @@ const style = css({
       },
     },
 
-    '@media(max-width: 992px)': {},
+    '@media(max-width: 992px)': {
+      paddingLeft: 24,
+      paddingRight: 24,
+    },
 
     '& .check': {
       height: '100% !important',
@@ -125,22 +128,29 @@ const Theme = props => {
       </h2>
       <p>{text}</p>
       {!isUndefined(files) && (
-        <p>
+        <ul
+          className="mask-p"
+          style={{ marginBottom: 0, padding: 0, listStyle: 'none' }}
+        >
           {map(files, file => {
             return (
-              <Fragment>
+              <li>
                 <Link
                   to={file.link}
-                  style={{ display: 'flex', marginBottom: 12 }}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginBottom: 6,
+                  }}
                 >
                   <FileTextIcon />
                   &nbsp;
                   {file.title}
                 </Link>
-              </Fragment>
+              </li>
             )
           })}
-        </p>
+        </ul>
       )}
     </div>
   )
@@ -186,7 +196,6 @@ const Page = props => (
       a Unit of the&nbsp;
       <Link to="https://www.auroville.org/">Auroville Foundation</Link>.
     </p>
-    &nbsp;
     <div className="box margin-p">
       <div
         style={{
@@ -217,7 +226,7 @@ const Page = props => (
         }}
       >
         <Img
-          className="desktop-only check"
+          className=" check"
           fluid={props.data.grungeBg.childImageSharp.fluid}
         />
       </div>
@@ -225,7 +234,6 @@ const Page = props => (
       <ul
         className="mask-p list"
         style={{
-          marginBottom: 0,
           paddingLeft: 22,
         }}
       >
@@ -262,12 +270,12 @@ const Page = props => (
           to contribute to restoring trust, communication and harmony amongst
           Aurovilians
         </li>
-        <li>
+        <li style={{ marginBottom: 0 }}>
           to potentially be an example for other communities seeking to improve
           their peace and justice systems
         </li>
       </ul>
-      <h2 className="mask-h3 mobile-only">Our work, inside-out...</h2>
+      <h2 className="mask-h4 mobile-only">Our work, inside-out...</h2>
       <Img
         className="margin-p mobile-only"
         fluid={props.data.flowerBoardMobile.childImageSharp.fluid}
@@ -302,13 +310,10 @@ const Page = props => (
             },
           ]}
         />
+        &nbsp;
       </Fragment>
       <Fragment>
-        <h2 className="mask-h5">
-          <span style={{ fontSize: '96%' }}>
-            Justice & Restorative Circles in Auroville
-          </span>
-        </h2>
+        <h2 className="mask-h4">Justice & Restorative Circles in Auroville</h2>
         <Video url="https://www.youtube.com/watch?v=kqBM5Xr5VfI&list=PLQbEiEQu-L1YAIZY5pLrNA5Z41yJ1L8pF&index=10" />
       </Fragment>
     </Division>

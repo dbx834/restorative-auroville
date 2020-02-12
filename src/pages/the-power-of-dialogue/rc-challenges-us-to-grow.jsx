@@ -5,11 +5,10 @@
 import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Video from '@bodhi-project/components/lib/Video'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import VideoWrapper from '../../components/wrappers/VideoWrapper'
-import Video from '@bodhi-project/components/lib/Video'
-
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -18,6 +17,7 @@ const pageData = {
   nakedPageSlug: 'the-power-of-dialogue/rc-challenges-us-to-grow',
   pageAbstract:
     'Henrike shares her thoughts on learning RC and how it invites for growth, as individuals and as a collective.',
+  cover: 'https://img.youtube.com/vi/bXrm9tUW4fU/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)

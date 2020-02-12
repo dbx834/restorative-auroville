@@ -132,7 +132,7 @@ export const query = graphql`
 // ----------------------------------------------------------------------------
 const theme = {
   global: {
-    colors: { brand: '#00006F' },
+    colors: { brand: '#00006F', control: '#00006F' },
     edgeSize: {
       small: '8px',
     },

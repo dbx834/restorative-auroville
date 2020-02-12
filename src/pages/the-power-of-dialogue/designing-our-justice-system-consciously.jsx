@@ -5,10 +5,10 @@
 import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Video from '@bodhi-project/components/lib/Video'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import VideoWrapper from '../../components/wrappers/VideoWrapper'
-import Video from '@bodhi-project/components/lib/Video'
 
 import seoHelper from '../../methods/seoHelper'
 
@@ -19,6 +19,7 @@ const pageData = {
     'the-power-of-dialogue/designing-our-justice-system-consciously',
   pageAbstract:
     "L'aura shares about her experience of engaging with Restorative Circles in Auroville and the importance of designing a justice system consciously, otherwise we'll just inherit the old ways..",
+  cover: 'https://img.youtube.com/vi/ur4OvDPkoSE/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)

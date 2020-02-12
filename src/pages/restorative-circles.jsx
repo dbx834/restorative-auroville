@@ -88,14 +88,17 @@ const Theme = props => {
       </h2>
       <p>{text}</p>
       {!isUndefined(files) && (
-        <p>
+        <ul
+          className="mask-p"
+          style={{ marginBottom: 0, padding: 0, listStyle: 'none' }}
+        >
           {map(files, file => {
             return (
-              <Fragment>
+              <li>
                 {!isUndefined(file.link) ? (
                   <Link
                     to={file.link}
-                    style={{ display: 'flex', marginBottom: 12 }}
+                    style={{ display: 'flex', marginBottom: 6 }}
                   >
                     <FileTextIcon />
                     &nbsp;
@@ -104,7 +107,7 @@ const Theme = props => {
                 ) : (
                   <Link
                     to={file.link}
-                    style={{ display: 'flex', marginBottom: 12 }}
+                    style={{ display: 'flex', marginBottom: 6 }}
                     href="#"
                     disabled
                     className="ignore"
@@ -114,10 +117,10 @@ const Theme = props => {
                     {file.title}
                   </Link>
                 )}
-              </Fragment>
+              </li>
             )
           })}
-        </p>
+        </ul>
       )}
     </div>
   )
@@ -148,7 +151,6 @@ const Page = props => (
       mutual understanding, self-responsibility and effective action within the
       community.
     </p>
-    &nbsp;
     <div className="margin-p image">
       <Image
         src={newRestorativeSystemFlyer}
@@ -205,49 +207,53 @@ const Page = props => (
       </Fragment>
     </Division>
     <br />
-    <br />
     <Division>
-      <Theme
-        border="#0101AF"
-        title="RC Handbook – Sample Pages"
-        tag="Document"
-        files={[
-          {
-            title: 'English sample page',
-            link:
-              'https://www.restorativeauroville.org/pdfs2/rc-booklet-extract-english.pdf',
-          },
-          {
-            title: 'French sample page (coming soon)',
-          },
-        ]}
-      />
-      <Theme
-        border="#0101AF"
-        title="RC Poster"
-        tag="Document"
-        files={[
-          {
-            title: 'English version',
-            link:
-              'https://www.restorativeauroville.org/pdfs2/rc-poster-english.pdf',
-          },
-          {
-            title: 'Tamil version',
-            link:
-              'https://www.restorativeauroville.org/pdfs2/rc-poster-tamil.pdf',
-          },
-          {
-            title: 'French version (coming soon)',
-          },
-          {
-            title: 'Spanish version',
-            link:
-              'https://www.restorativeauroville.org/pdfs2/rc-poster-spanish.pdf',
-          },
-        ]}
-      />
+      <div>
+        <Theme
+          border="#0101AF"
+          title="RC Handbook – Sample Pages"
+          tag="Document"
+          files={[
+            {
+              title: 'English sample page',
+              link:
+                'https://www.restorativeauroville.org/pdfs2/rc-booklet-extract-english.pdf',
+            },
+            {
+              title: 'French sample page (coming soon)',
+            },
+          ]}
+        />
+      </div>
+      <div>
+        <Theme
+          border="#0101AF"
+          title="RC Poster"
+          tag="Document"
+          files={[
+            {
+              title: 'English version',
+              link:
+                'https://www.restorativeauroville.org/pdfs2/rc-poster-english.pdf',
+            },
+            {
+              title: 'Tamil version',
+              link:
+                'https://www.restorativeauroville.org/pdfs2/rc-poster-tamil.pdf',
+            },
+            {
+              title: 'French version (coming soon)',
+            },
+            {
+              title: 'Spanish version',
+              link:
+                'https://www.restorativeauroville.org/pdfs2/rc-poster-spanish.pdf',
+            },
+          ]}
+        />
+      </div>
     </Division>
+    <br />
     <div className="box">
       <h2 className="mask-h4">Participating in a Circle</h2>
       <p>
@@ -278,7 +284,6 @@ const Page = props => (
         not.
       </p>
     </div>
-    <br />
     <br />
     <h2 className="mask-h4">Learn More about Restorative Circles…</h2>
     <p>

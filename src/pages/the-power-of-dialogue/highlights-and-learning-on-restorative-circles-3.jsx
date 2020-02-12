@@ -9,7 +9,6 @@ import Video from '@bodhi-project/components/lib/Video'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import VideoWrapper from '../../components/wrappers/VideoWrapper'
-
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -19,6 +18,7 @@ const pageData = {
     'the-power-of-dialogue/highlights-and-learning-on-restorative-circles-3',
   pageAbstract:
     'Sandyra is a supporter and advisor to our project, and she attended several Circles while she served on the Auroville Council. After a few intense Circles, we had a debrief session to review celebrations, challenges and growing edges of our project.',
+  cover: 'https://img.youtube.com/vi/MSWFPL5NWfM/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)

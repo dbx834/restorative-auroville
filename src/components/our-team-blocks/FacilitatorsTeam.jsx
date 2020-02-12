@@ -172,9 +172,21 @@ class FacilitatorsTeam extends React.Component {
       <div className={style}>
         <h1 className="mask-h3">Facilitators' Team</h1>
         <p>
-          <strong>
-            <span style={{ fontSize: '78%' }}>⮑</span> available to the
-            community as Circle Facilitators…
+          <strong style={{ position: 'relative' }}>
+            <span
+              style={{
+                fontSize: '108%',
+                position: 'absolute',
+                transform: 'rotate(48deg)',
+                width: 20,
+                marginTop: -4,
+              }}
+            >
+              ⤻
+            </span>
+            <span style={{ paddingLeft: 24 }}>
+              available to the community as Circle Facilitators…
+            </span>
           </strong>
         </p>
         <p>

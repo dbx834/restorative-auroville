@@ -129,21 +129,19 @@ const Page = props => {
       <h2 className="mask-h4" style={{ marginTop: -20 }}>
         We need support for these projects:
       </h2>
-      <div className="margin-p">
-        <Grid
-          loading={false}
-          Link={Link}
-          Box={Box}
-          Button={Button}
-          Img={Img}
-          MediaQuery={MediaQuery}
-          data={data}
-          allCategories={categories}
-          allTags={tags}
-          strictChronology
-          conf={conf}
-        />
-      </div>
+      <Grid
+        loading={false}
+        Link={Link}
+        Box={Box}
+        Button={Button}
+        Img={Img}
+        MediaQuery={MediaQuery}
+        data={data}
+        allCategories={categories}
+        allTags={tags}
+        strictChronology
+        conf={conf}
+      />
       <br />
       <p style={{ marginTop: -20 }}>
         Restorative Auroville is an initiative of{' '}

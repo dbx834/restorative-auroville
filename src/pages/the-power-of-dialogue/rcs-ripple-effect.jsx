@@ -5,11 +5,10 @@
 import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Video from '@bodhi-project/components/lib/Video'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import VideoWrapper from '../../components/wrappers/VideoWrapper'
-import Video from '@bodhi-project/components/lib/Video'
-
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -18,6 +17,7 @@ const pageData = {
   nakedPageSlug: 'the-power-of-dialogue/rcs-ripple-effect',
   pageAbstract:
     'Pranjal reflects on how Circles can impact the community in unexpected ways, even when some folks choose not to attend.',
+  cover: 'https://img.youtube.com/vi/RSA4NUSzJ4Y/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)

@@ -1,6 +1,7 @@
 & .index-page {
   & .by-three {
     display: flex;
+    flex-wrap: wrap;
 
     & > div {
       flex-grow: 33;
@@ -17,8 +18,14 @@
     }
 
     & article {
-      flex-grow: 33;
-      flex-basis: 0;
+      @media (max-width: 992px) {
+        flex-grow: 1;
+        flex-basis: 41%;
+      }
+      @media (min-width: 992px) {
+        flex-grow: 33;
+        flex-basis: 0;
+      }
       margin-left: 4px;
       margin-right: 4px;
 
@@ -99,14 +106,27 @@
   }
 
   & .yellow-block-padding {
+    position: relative;
+
     @media (min-width: 992px) {
-      padding-left: 12.5%;
-      padding-right: 12.5%;
+      padding-left: 10%;
+      padding-right: 10%;
+      margin-top: 30px;
+      padding-top: 48px;
+      padding-bottom: 48px;
     }
 
     @media (max-width: 992px) {
-      padding-left: 10%;
-      padding-right: 14%;
+      padding-left: 9%;
+      padding-right: 9%;
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+
+    & .video-title {
+      @media (max-width: 992px) {
+        margin-top: 8px !important;
+      }
     }
   }
 
@@ -120,6 +140,26 @@
       & .hover {
         opacity: 1;
       }
+    }
+  }
+
+  .desktop-banner {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    @media (min-width: 992px) {
+      top: -5%;
+      left: -5%;
+      height: 110%;
+      width: 110%;
+    }
+  }
+
+  & .video {
+    @media only screen and (max-width: 992px) {
+      max-width: 90%;
     }
   }
 }

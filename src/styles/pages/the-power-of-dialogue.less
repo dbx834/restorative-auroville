@@ -62,15 +62,16 @@
     border-radius: 3px !important;
     margin-bottom: 0px !important;
 
+    &:focus {
+      outline-color: #00006f !important;
+      border-color: #00006f !important;
+    }
+
     &.selected {
       background: #00006f;
       & span {
         color: #fff;
       }
-    }
-
-    & span {
-      font-size: 90%;
     }
   }
 
@@ -131,8 +132,55 @@
   }
 
   .small-box {
-    padding-top: 20px;
-    padding-bottom: 20px;
     margin-bottom: 0px !important;
+    transition: all 100ms ease;
+
+    // Mobile
+    @media only screen and (max-width: 992px) {
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    // Desktop
+    @media only screen and (min-width: 992px) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  & p.abstract {
+    // Mobile
+    @media only screen and (max-width: 992px) {
+      margin-bottom: 12px !important;
+    }
+  }
+
+  & .grid-container {
+    // Mobile
+    @media only screen and (max-width: 992px) {
+      margin-top: 12px;
+    }
+
+    & > p {
+      // Mobile
+      @media only screen and (max-width: 992px) {
+        margin-top: 0px !important;
+        margin-bottom: 9px !important;
+
+        & strong {
+          & span {
+            &:nth-child(1) {
+              margin-top: 0px !important;
+            }
+
+            &:nth-child(2) {
+              padding-left: 18px !important;
+            }
+          }
+        }
+      }
+    }
   }
 }

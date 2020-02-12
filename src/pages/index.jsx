@@ -362,12 +362,9 @@ const Page = props => {
         className="margin-p"
       >
         <div
+          className="desktop-banner"
           style={{
             position: 'absolute',
-            top: '-5%',
-            left: '-5%',
-            height: '110%',
-            width: '110%',
             zIndex: -2,
             overflow: 'hidden',
           }}
@@ -398,9 +395,8 @@ const Page = props => {
           >
             Get Involved Today…
           </h2>
-          <br className="mobile-only" />
-          <Division byThree custom={[8, 8, 8]}>
-            <Fragment>
+          <div className="by-three">
+            <article>
               <hr
                 style={{
                   borderTop: '6px solid #FFFFFF',
@@ -427,9 +423,8 @@ const Page = props => {
                   See more ⇝
                 </Link>
               </p>
-              <br className="mobile-only" />
-            </Fragment>
-            <Fragment>
+            </article>
+            <article>
               <hr
                 style={{
                   borderTop: '6px solid #FFFFFF',
@@ -457,9 +452,8 @@ const Page = props => {
                   Donate now ⇝
                 </Link>
               </p>
-              <br className="mobile-only" />
-            </Fragment>
-            <Fragment>
+            </article>
+            <article>
               <hr
                 style={{
                   borderTop: '6px solid #FFFFFF',
@@ -490,10 +484,9 @@ const Page = props => {
                 </Link>
               </p>
               <br className="mobile-only" />
-              <br className="mobile-only" />
-              <br className="mobile-only" />
-            </Fragment>
-          </Division>
+            </article>
+            <article className="mobile-only"></article>
+          </div>
         </div>
       </div>
 
@@ -678,22 +671,11 @@ const Page = props => {
         </div>
       </div>
 
-      <div
-        style={{
-          marginTop: 30,
-          paddingTop: 48,
-          paddingBottom: 48,
-          position: 'relative',
-        }}
-        className="margin-p yellow-block-padding"
-      >
+      <div className="margin-p yellow-block-padding">
         <div
+          className="desktop-banner"
           style={{
             position: 'absolute',
-            top: '-5%',
-            left: '-5%',
-            height: '110%',
-            width: '110%',
             zIndex: -2,
             overflow: 'hidden',
           }}
@@ -715,13 +697,12 @@ const Page = props => {
           />
         </div>
         <div className="margin-p">
-          <Division goldenAlt>
+          <Division>
             <div style={{ paddingTop: 10 }}>
-              <br className="mobile-only" />
-              <br className="mobile-only" />
               <Video
                 url="https://www.youtube.com/watch?v=6Ma-dnG53LU"
                 style={{ border: 'unset', marginBottom: 8 }}
+                className="video"
               />
               <p
                 style={{
@@ -741,12 +722,10 @@ const Page = props => {
                   See more ⇝
                 </Link>
               </p>
-              <br className="mobile-only" />
-              <br className="mobile-only" />
             </div>
             <div>
               <h2
-                className="mask-h3"
+                className="video-title mask-h3"
                 style={{
                   color: '#2c2c2c',
                   marginBottom: 10,
@@ -778,8 +757,6 @@ const Page = props => {
                   See our System-Building Initiatives ⇝
                 </Link>
               </p>
-              <br className="mobile-only" />
-              <br className="mobile-only" />
               <br className="mobile-only" />
               <br className="mobile-only" />
             </div>

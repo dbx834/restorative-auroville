@@ -5,11 +5,10 @@
 import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Video from '@bodhi-project/components/lib/Video'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import VideoWrapper from '../../components/wrappers/VideoWrapper'
-import Video from '@bodhi-project/components/lib/Video'
-
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -18,6 +17,7 @@ const pageData = {
   nakedPageSlug: 'the-power-of-dialogue/engaging-with-the-community-through-rc',
   pageAbstract:
     'Nils shares about his experience joining Restorative Auroville as a project team member and co-facilitator, and how it contributes to his journey in this community.',
+  cover: 'https://img.youtube.com/vi/mPXr0HkIX80/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)

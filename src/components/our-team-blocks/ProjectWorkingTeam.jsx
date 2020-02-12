@@ -140,9 +140,21 @@ class ProjectWorkingTeam extends React.Component {
       <div className={style}>
         <h1 className="mask-h3">Project Working Team</h1>
         <p>
-          <strong>
-            <span style={{ fontSize: '78%' }}>⮑</span> run the larger project in
-            all its aspects, from small to big…
+          <strong style={{ position: 'relative' }}>
+            <span
+              style={{
+                fontSize: '108%',
+                position: 'absolute',
+                transform: 'rotate(48deg)',
+                width: 20,
+                marginTop: -4,
+              }}
+            >
+              ⤻
+            </span>
+            <span style={{ paddingLeft: 24 }}>
+              run the larger project in all its aspects, from small to big…
+            </span>
           </strong>
         </p>
         <br className="mobile-only" />

@@ -397,12 +397,83 @@ main a.white:hover {
 }
 
 form {
-  p {
+  & p {
     margin-top: 0px !important;
     margin-bottom: 4px !important;
   }
-  p + div.mask-p {
+  & p + div.mask-p {
     margin-top: 0px !important;
     margin-bottom: 16px !important;
   }
+
+  & .ant-form-item {
+    &:last-child {
+      margin-bottom: 0px !important;
+    }
+  }
+}
+
+.filter-by-category-buttons,
+.filter-by-tag-buttons,
+.filter-by-year-buttons,
+.chronology-sort-buttons {
+  & ul {
+    & li {
+      & button {
+        font-family: futura-pt, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji,
+          Segoe UI Emoji, Segoe UI Symbol !important;
+      }
+    }
+  }
+}
+
+.filter-by-category-buttons {
+  @media only screen and (max-width: 992px) {
+    & ul {
+      display: flex;
+      flex-wrap: wrap;
+
+      & li {
+        flex-grow: 0;
+        flex-basis: 34%;
+        margin-bottom: 4px;
+
+        & button {
+          width: 100%;
+
+          & span {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}
+
+.event-cover {
+  @media only screen and (max-width: 992px) {
+    max-width: 300px;
+  }
+}
+
+.event-breadcrumb,
+.power-of-dialogue-breadcrumb {
+  @media only screen and (min-width: 992px) {
+    margin-bottom: 24px !important;
+  }
+
+  @media only screen and (max-width: 992px) {
+    margin-bottom: 8px !important;
+  }
+}
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
+  display: flex !important;
+  align-items: center;
+  height: 100%;
+  top: 0px !important;
+  line-height: 0px !important;
+  transform: unset !important;
+  margin-top: unset !important;
 }

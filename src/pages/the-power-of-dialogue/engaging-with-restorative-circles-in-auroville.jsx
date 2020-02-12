@@ -5,10 +5,10 @@
 import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Video from '@bodhi-project/components/lib/Video'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import VideoWrapper from '../../components/wrappers/VideoWrapper'
-import Video from '@bodhi-project/components/lib/Video'
 import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -18,6 +18,7 @@ const pageData = {
     'the-power-of-dialogue/engaging-with-restorative-circles-in-auroville',
   pageAbstract:
     "L'aura shares about her experience of engaging with Restorative Circles in Auroville and how it's received by the community.",
+  cover: 'https://img.youtube.com/vi/tuJrfIFd3IY/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)

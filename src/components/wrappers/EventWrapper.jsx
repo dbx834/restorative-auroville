@@ -100,7 +100,7 @@ const Page = props => {
   return (
     <StandardPage className="" seoData={seoData} {...props}>
       <EventSchema data={eventSchemaData} />
-      <Breadcrumb className="mask-p" separator="»" style={{ marginBottom: 30 }}>
+      <Breadcrumb className="mask-p event-breadcrumb" separator="»">
         <BItem>
           <Link to="/">Home</Link>
         </BItem>
@@ -124,11 +124,11 @@ const Page = props => {
                     width: '100%',
                     marginBottom: 11,
                   }}
-                  className="mask-p"
+                  className="mask-p event-cover"
                 />
               </Fragment>
               <Fragment>
-                <h1 className="mask-h3" style={{ marginTop: -10 }}>
+                <h1 className="mask-h3" style={{ marginTop: -6 }}>
                   {title}
                 </h1>
                 <p>

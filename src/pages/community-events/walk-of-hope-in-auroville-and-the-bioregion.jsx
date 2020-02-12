@@ -97,7 +97,6 @@ export const query = graphql`
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
-/** Theme */
 const Theme = props => {
   const { border, title, files, tag, text } = props
   return (
@@ -117,22 +116,29 @@ const Theme = props => {
       </h2>
       <p>{text}</p>
       {!isUndefined(files) && (
-        <p>
+        <ul
+          className="mask-p"
+          style={{ marginBottom: 0, padding: 0, listStyle: 'none' }}
+        >
           {map(files, file => {
             return (
-              <Fragment>
+              <li>
                 <Link
                   to={file.link}
-                  style={{ display: 'flex', marginBottom: 12 }}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginBottom: 6,
+                  }}
                 >
                   <FileTextIcon />
                   &nbsp;
                   {file.title}
                 </Link>
-              </Fragment>
+              </li>
             )
           })}
-        </p>
+        </ul>
       )}
     </div>
   )

@@ -48,9 +48,8 @@ const Page = ({
     <StandardPage className={className} seoData={seoData} {...props}>
       <Article>
         <Breadcrumb
-          className="mask-p"
+          className="mask-p power-of-dialogue-breadcrumb"
           separator="»"
-          style={{ marginBottom: 30 }}
         >
           <BItem>
             <Link to="/">Home</Link>
