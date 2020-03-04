@@ -242,6 +242,13 @@ export const query = graphql`
     ) {
       ...max900
     }
+    facilitatorsPreCircleOnSexualMisconduct: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/facilitators-pre-circle-on-sexual-misconduct.jpg"
+      }
+    ) {
+      ...max900
+    }
     engagingWithRestorativeCirclesInAuroville: file(
       relativePath: {
         eq: "the-power-of-dialogue/engaging-with-restorative-circles-in-auroville.jpg"
@@ -309,6 +316,20 @@ export const query = graphql`
     engagingWithTheCommunityThroughRc: file(
       relativePath: {
         eq: "the-power-of-dialogue/engaging-with-the-community-through-rc.jpg"
+      }
+    ) {
+      ...max900
+    }
+    listeningAsAMeansToCommunityResilience: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/listening-as-a-means-to-community-resilience.jpg"
+      }
+    ) {
+      ...max900
+    }
+    canRcReallyHandleChallengingCases: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/can-rc-really-handle-challenging-cases.jpg"
       }
     ) {
       ...max900

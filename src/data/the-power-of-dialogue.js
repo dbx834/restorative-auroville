@@ -26,9 +26,21 @@ const data = [
     title: undefined,
     cover: undefined,
     routeSlug: '/the-power-of-dialogue/rakhals-pre-circle-with-henrike',
-    publishedAt: timestamp('02.01.2019'),
+    publishedAt: timestamp('02.02.2019'),
     abstract:
       'Rakhal was named for this Circle, and here is his Pre-Circle with our Co-Facilitator, Henrike.',
+    hasCategories: ['inAction'],
+    hasTags: mockTag(),
+  },
+  {
+    key: smallKey(),
+    title: undefined,
+    cover: undefined,
+    routeSlug:
+      '/the-power-of-dialogue/facilitators-pre-circle-on-sexual-misconduct',
+    publishedAt: timestamp('02.03.2019'),
+    abstract:
+      "Here Henrike, Kati, Pranjal, L'aura and Nils have their Facilitators' Pre-Circle for a Circle that was called around women's safety and the impact of a community member's behaviour. This Circle was particularly delicate, as several decision-making bodies did not approve of our choice to respond to the call for a Circle process.",
     hasCategories: ['inAction'],
     hasTags: mockTag(),
   },
@@ -97,6 +109,29 @@ const data = [
     publishedAt: timestamp('03.06.2019'),
     abstract:
       'Nils shares about his experience joining Restorative Auroville as a project team member and co-facilitator, and how it contributes to his journey in this community.',
+    hasCategories: ['theRestorativeSystem'],
+    hasTags: mockTag(),
+  },
+  {
+    key: smallKey(),
+    title: undefined,
+    cover: undefined,
+    routeSlug:
+      '/the-power-of-dialogue/listening-as-a-means-to-community-resilience',
+    publishedAt: timestamp('03.07.2019'),
+    abstract:
+      'Nils shares on the power of listening deeply to one another, and how that has the potential to create connection and understanding amongst us, and in the long run contribute to community resilience.',
+    hasCategories: ['theRestorativeSystem'],
+    hasTags: mockTag(),
+  },
+  {
+    key: smallKey(),
+    title: undefined,
+    cover: undefined,
+    routeSlug: '/the-power-of-dialogue/can-rc-really-handle-challenging-cases',
+    publishedAt: timestamp('03.08.2019'),
+    abstract:
+      "L'aura shares about the challenge when governance bodies and decision-making groups feel somewhat threatened by a Circle being called, and how she longs for the day when we'll all see Circles as an opportunity for collective growth and shared responsibility, even for the most so-called challenging cases.",
     hasCategories: ['theRestorativeSystem'],
     hasTags: mockTag(),
   },

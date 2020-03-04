@@ -28,7 +28,7 @@ const prev = {
 
 const next = {
   nakedPageSlug:
-    'the-power-of-dialogue/engaging-with-restorative-circles-in-auroville',
+    'the-power-of-dialogue/facilitators-pre-circle-on-sexual-misconduct',
 }
 
 // ----------------------------------------------------------------------------

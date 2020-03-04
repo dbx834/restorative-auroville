@@ -105,11 +105,14 @@ const Page = props => {
             <i>{abstract}</i>
           </p>
           <div style={{ position: 'relative' }} className="mask-p">
-            <div style={{ maxWidth: 114, overflow: 'hidden' }}>
-              <FacebookProvider appId="218604115574634">
-                <FBLike href={withUrl(route, data)} colorScheme="dark" share />
-              </FacebookProvider>
-            </div>
+            <FacebookProvider appId="218604115574634">
+              <FBLike
+                href={withUrl(route, data)}
+                colorScheme="dark"
+                share
+                showFaces
+              />
+            </FacebookProvider>
           </div>
           <Image
             src={cover}

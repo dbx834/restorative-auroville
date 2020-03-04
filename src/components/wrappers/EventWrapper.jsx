@@ -143,16 +143,14 @@ const Page = props => {
                   style={{ position: 'relative', marginBottom: 0 }}
                   className="mask-p"
                 >
-                  <div style={{ maxWidth: 114, overflow: 'hidden' }}>
-                    <FacebookProvider appId="218604115574634">
-                      <FBLike
-                        href={withUrl(route, data)}
-                        colorScheme="dark"
-                        share
-                        showFaces
-                      />
-                    </FacebookProvider>
-                  </div>
+                  <FacebookProvider appId="218604115574634">
+                    <FBLike
+                      href={withUrl(route, data)}
+                      colorScheme="dark"
+                      share
+                      showFaces
+                    />
+                  </FacebookProvider>
                 </div>
               </Fragment>
             </Division>

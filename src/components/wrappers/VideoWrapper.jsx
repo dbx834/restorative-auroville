@@ -63,11 +63,14 @@ const Page = ({
           <h1 className="mask-h3">{seoData.pageTitle}</h1>
         </Header>
         <div style={{ position: 'relative' }} className="mask-p">
-          <div style={{ maxWidth: 114, overflow: 'hidden' }}>
-            <FacebookProvider appId="218604115574634">
-              <FBLike href={withUrl(route, data)} colorScheme="dark" share />
-            </FacebookProvider>
-          </div>
+          <FacebookProvider appId="218604115574634">
+            <FBLike
+              href={withUrl(route, data)}
+              colorScheme="dark"
+              share
+              showFaces
+            />
+          </FacebookProvider>
         </div>
 
         {children}

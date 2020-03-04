@@ -13,24 +13,23 @@ import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: '3.1 Engaging with Restorative Circles in Auroville',
+  pageTitle: "2.3 Facilitators' Pre-Circle on Sexual Misconduct",
   nakedPageSlug:
-    'the-power-of-dialogue/engaging-with-restorative-circles-in-auroville',
+    'the-power-of-dialogue/facilitators-pre-circle-on-sexual-misconduct',
   pageAbstract:
-    "L'aura shares about her experience of engaging with Restorative Circles in Auroville and how it's received by the community.",
-  cover: 'https://img.youtube.com/vi/tuJrfIFd3IY/hqdefault.jpg',
+    "Here Henrike, Kati, Pranjal, L'aura and Nils have their Facilitators' Pre-Circle for a Circle that was called around women's safety and the impact of a community member's behaviour. This Circle was particularly delicate, as several decision-making bodies did not approve of our choice to respond to the call for a Circle process.",
+  cover: 'https://img.youtube.com/vi/Zlv1yN7OzZ0/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)
 
 const prev = {
-  nakedPageSlug:
-    'the-power-of-dialogue/facilitators-pre-circle-on-sexual-misconduct',
+  nakedPageSlug: 'the-power-of-dialogue/rakhals-pre-circle-with-henrike',
 }
 
 const next = {
   nakedPageSlug:
-    'the-power-of-dialogue/designing-our-justice-system-consciously',
+    'the-power-of-dialogue/engaging-with-restorative-circles-in-auroville',
 }
 
 // ----------------------------------------------------------------------------
@@ -51,11 +50,14 @@ const Page = props => (
     {...props}
   >
     <p>
-      L'aura shares about her experience of engaging with Restorative Circles in
-      Auroville and how it's received by the community.
+      Here Henrike, Kati, Pranjal, L'aura and Nils have their Facilitators'
+      Pre-Circle for a Circle that was called around women's safety and the
+      impact of a community member's behaviour. This Circle was particularly
+      delicate, as several decision-making bodies did not approve of our choice
+      to respond to the call for a Circle process.
     </p>
     <div style={{ maxWidth: '45rem' }} className="margin-p">
-      <Video url="https://www.youtube.com/watch?v=tuJrfIFd3IY" />
+      <Video url="https://www.youtube.com/watch?v=s0kiSNDBQ6Q" />
     </div>
   </VideoWrapper>
 )

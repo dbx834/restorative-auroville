@@ -259,8 +259,32 @@ class EventRegisterationForm extends React.Component {
                   the International option for foreign bank/credit cards.
                 </p>
                 <div className="mask-p">
+                  {/*
                   <OutLink
                     to="https://www.payumoney.com/paybypayumoney/#/767B47CF78C16C75195046663CFE75CD"
+                    style={{ marginRight: 17 }}
+                  >
+                    <Tooltip title="Indian Card">
+                      <div style={{ display: 'inline-block' }}>
+                        <Image
+                          src={domestic}
+                          rawHeight={450}
+                          rawWidth={450}
+                          className="icon"
+                          style={{
+                            height: 65,
+                            width: 65,
+                            display: 'inline-block',
+                            background: 'transparent',
+                            border: 'unset',
+                          }}
+                        />
+                      </div>
+                    </Tooltip>
+                  </OutLink>
+                  */}
+                  <OutLink
+                    to="https://www.instamojo.com/@joylivinglearning/lc8626c75ec504947856a740e8ba71b94/"
                     style={{ marginRight: 17, borderBottom: 0 }}
                   >
                     <Tooltip title="Indian Card">
