@@ -148,7 +148,6 @@ const Page = props => {
                       href={withUrl(route, data)}
                       colorScheme="dark"
                       share
-                      showFaces
                     />
                   </FacebookProvider>
                 </div>

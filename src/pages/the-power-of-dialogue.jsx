@@ -230,7 +230,7 @@ export const query = graphql`
     }
     geniesPreCircleWithJanet: file(
       relativePath: {
-        eq: "the-power-of-dialogue/genies-precircle-with-janet.jpg"
+        eq: "the-power-of-dialogue/genies-pre-circle-with-janet.jpg"
       }
     ) {
       ...max900
