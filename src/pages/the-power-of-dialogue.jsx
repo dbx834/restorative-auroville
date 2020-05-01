@@ -333,7 +333,7 @@ const Page = props => {
     images.defaultForegroundFallback.childImageSharp.fluid
   )
 
-  console.log(d1C, d2C, d3C, d4C)
+  // console.log(d1C, d2C, d3C, d4C)
 
   return (
     <StandardPage
