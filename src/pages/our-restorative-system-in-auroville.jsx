@@ -7,9 +7,9 @@ import React from 'react'
 import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Video from '@bodhi-project/components/lib/Video'
-import OutLink from '@bodhi-project/components/lib/OutLink'
-import Division from '@bodhi-project/components/lib/Division'
+import Video from '@bodhi-project/components/lib/video'
+import OutLink from '@bodhi-project/components/lib/outlink'
+import Division from '@bodhi-project/components/lib/division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 

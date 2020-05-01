@@ -12,9 +12,9 @@ import Img from 'gatsby-image'
 
 import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
 
-import Video from '@bodhi-project/components/lib/Video'
+import Video from '@bodhi-project/components/lib/video'
 
-import Division from '@bodhi-project/components/lib/Division'
+import Division from '@bodhi-project/components/lib/division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 

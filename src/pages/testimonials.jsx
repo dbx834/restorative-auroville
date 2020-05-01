@@ -10,11 +10,11 @@ import React from 'react'
 // import isUndefined from "lodash/isUndefined";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Division from '@bodhi-project/components/lib/Division'
+import Division from '@bodhi-project/components/lib/division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
-import OutLink from '@bodhi-project/components/lib/OutLink'
+import OutLink from '@bodhi-project/components/lib/outlink'
 import Image from '@bodhi-project/components/lib/image/Image'
 
 import Icon from 'antd/lib/icon'

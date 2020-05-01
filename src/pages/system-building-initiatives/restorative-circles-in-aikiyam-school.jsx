@@ -7,8 +7,8 @@ import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import Images from '@bodhi-project/components/lib/image/Images'
-import OutLink from '@bodhi-project/components/lib/OutLink'
-import Video from '@bodhi-project/components/lib/Video'
+import OutLink from '@bodhi-project/components/lib/outlink'
+import Video from '@bodhi-project/components/lib/video'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import SystemBuildingInitiativeWrapper from '../../components/wrappers/SystemBuildingInitiativeWrapper'

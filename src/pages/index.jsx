@@ -11,11 +11,11 @@ import Img from 'gatsby-image'
 import { Box, Button } from 'grommet'
 
 import withSizes from 'react-sizes'
-import Division from '@bodhi-project/components/lib/Division'
+import Division from '@bodhi-project/components/lib/division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
-import Video from '@bodhi-project/components/lib/Video'
+import Video from '@bodhi-project/components/lib/video'
 
 import smallKey from '@bodhi-project/components/lib/methods/smallKey'
 import timestamp from '@bodhi-project/components/lib/methods/timestamp'

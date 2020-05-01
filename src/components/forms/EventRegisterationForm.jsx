@@ -11,7 +11,7 @@ import isUndefined from 'lodash/isUndefined'
 import isNull from 'lodash/isNull'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import OutLink from '@bodhi-project/components/lib/OutLink'
+import OutLink from '@bodhi-project/components/lib/outlink'
 import Image from '@bodhi-project/components/lib/image/Image'
 
 import Form from 'antd/lib/form'

@@ -10,12 +10,11 @@ import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 
+import Video from '@bodhi-project/components/lib/video'
 // import Image from '@bodhi-project/components/lib/image/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import BlogPostWrapper from '../../components/wrappers/BlogPostWrapper'
-
-import Video from '@bodhi-project/components/lib/Video'
 
 // import seoHelper from '../../methods/seoHelper'
 

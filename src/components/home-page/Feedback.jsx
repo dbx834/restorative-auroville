@@ -9,8 +9,8 @@ import { css } from 'glamor'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
 
-import Division from '@bodhi-project/components/lib/Division'
-import Video from '@bodhi-project/components/lib/Video'
+import Division from '@bodhi-project/components/lib/division'
+import Video from '@bodhi-project/components/lib/video'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 

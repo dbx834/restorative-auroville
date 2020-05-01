@@ -17,7 +17,7 @@ import { FacebookProvider, Like as FBLike } from 'react-facebook'
 import PrevNext from '@bodhi-project/components/lib/prev-next'
 import Image from '@bodhi-project/components/lib/image/Image'
 
-import Division from '@bodhi-project/components/lib/Division'
+import Division from '@bodhi-project/components/lib/division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
