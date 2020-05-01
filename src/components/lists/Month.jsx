@@ -10,7 +10,7 @@ import noop from 'lodash/noop'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import HoverIntent from 'react-hoverintent'
-import MotionFade from '@bodhi-project/components/lib/MotionFade'
+import MotionFade from '@bodhi-project/components/lib/motion/fade'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import inArray from '../../methods/inArray'

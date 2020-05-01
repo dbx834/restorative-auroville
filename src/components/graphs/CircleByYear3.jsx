@@ -50,7 +50,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/select/style/css'
 import Popover from 'antd/lib/popover'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/popover/style/css'
 
-import Image from '@bodhi-project/components/lib/Image'
+import Image from '@bodhi-project/components/lib/image/Image'
 
 import Division from '@bodhi-project/components/lib/Division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'

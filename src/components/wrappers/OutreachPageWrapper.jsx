@@ -15,7 +15,7 @@ import OpenGraphSummary from '@bodhi-project/seo/lib/OpenGraphSummary'
 import WebpageSchema from '@bodhi-project/seo/lib/WebpageSchema'
 import BreadcrumbSchema from '@bodhi-project/seo/lib/BreadcrumbSchema'
 
-import PrevNext from '@bodhi-project/components/lib/PrevNext'
+import PrevNext from '@bodhi-project/components/lib/prev-next'
 
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'

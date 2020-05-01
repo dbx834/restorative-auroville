@@ -13,7 +13,7 @@ import { css } from 'glamor'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Image from '@bodhi-project/components/lib/Image'
+import Image from '@bodhi-project/components/lib/image/Image'
 import Video from '@bodhi-project/components/lib/Video'
 
 import Division from '@bodhi-project/components/lib/Division'

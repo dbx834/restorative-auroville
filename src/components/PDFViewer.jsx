@@ -8,9 +8,9 @@ import { css } from 'glamor'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import MediaQuery from 'react-responsive'
 
-import PDFReader from '@bodhi-project/components/lib/PDFReader'
+import PDFReader from '@bodhi-project/components/lib/pdf/reader'
 
-import Image from '@bodhi-project/components/lib/Image'
+import Image from '@bodhi-project/components/lib/image/Image'
 
 import Collapse from 'antd/lib/collapse'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/collapse/style/css'

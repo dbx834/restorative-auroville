@@ -12,8 +12,8 @@ import BlogPostSchema from '@bodhi-project/seo/lib/BlogPostSchema'
 import { Article, Header, Footer } from '@bodhi-project/semantic-webflow'
 import { FacebookProvider, Like as FBLike } from 'react-facebook'
 
-import PrevNext from '@bodhi-project/components/lib/PrevNext'
-import Image from '@bodhi-project/components/lib/Image'
+import PrevNext from '@bodhi-project/components/lib/prev-next'
+import Image from '@bodhi-project/components/lib/image/Image'
 
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'

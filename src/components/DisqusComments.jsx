@@ -9,7 +9,8 @@ import { css } from 'glamor'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import DisqusComments from '@bodhi-project/components/lib/DisqusComments'
+import DisqusComments from '@bodhi-project/components/lib/disqus'
+import Collapse from 'antd/lib/collapse'
 import '@bodhi-project/antrd/lib/joy-living-learning/3.13.5/collapse/style/css'
 import '@bodhi-project/antrd/lib/joy-living-learning/3.13.5/icon/style/css'
 
@@ -149,6 +150,7 @@ const DisqusCommentsX = ({
         pageData={pageData}
         text={text}
         collapsible={collapsible}
+        Collapse={Collapse}
       />
     </div>
   )

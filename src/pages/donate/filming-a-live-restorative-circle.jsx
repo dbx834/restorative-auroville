@@ -6,7 +6,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Images from '@bodhi-project/components/lib/Images'
+import Images from '@bodhi-project/components/lib/image/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import DonateProjectWrapper from '../../components/wrappers/DonateProjectWrapper'

@@ -8,7 +8,7 @@ import React from 'react'
 import { FacebookProvider, Like as FBLike } from 'react-facebook'
 import { Article, Header } from '@bodhi-project/semantic-webflow'
 
-import PrevNext from '@bodhi-project/components/lib/PrevNext'
+import PrevNext from '@bodhi-project/components/lib/prev-next'
 
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'

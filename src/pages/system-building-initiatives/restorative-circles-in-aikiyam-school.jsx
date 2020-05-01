@@ -6,7 +6,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Images from '@bodhi-project/components/lib/Images'
+import Images from '@bodhi-project/components/lib/image/Images'
 import OutLink from '@bodhi-project/components/lib/OutLink'
 import Video from '@bodhi-project/components/lib/Video'
 

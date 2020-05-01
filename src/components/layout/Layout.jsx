@@ -192,6 +192,7 @@ const Layout = props => {
                 MediaQuery={MediaQuery}
                 DropButton={DropButton}
                 mobileLogo={mobileLogo.childImageSharp.fluid}
+                {...props}
               />
               <Img fluid={data.wavesTop.childImageSharp.fluid} />
             </header>

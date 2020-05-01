@@ -23,7 +23,7 @@ import 'moment/locale/en-gb'
 
 // import typefn from '@bodhi-project/typography/lib/methods/type'
 
-import Image from '@bodhi-project/components/lib/Image'
+import Image from '@bodhi-project/components/lib/image/Image'
 
 import Division from '@bodhi-project/components/lib/Division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'

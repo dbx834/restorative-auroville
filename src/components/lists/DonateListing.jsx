@@ -15,7 +15,7 @@ import StackGrid from 'react-stack-grid'
 import ContainerDimensions from 'react-container-dimensions'
 import { Header, Article } from '@bodhi-project/semantic-webflow'
 
-import Image from '@bodhi-project/components/lib/Image'
+import Image from '@bodhi-project/components/lib/image/Image'
 
 import Card from 'antd/lib/card'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/card/style/css'

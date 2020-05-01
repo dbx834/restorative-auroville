@@ -12,7 +12,7 @@ import isNull from 'lodash/isNull'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import OutLink from '@bodhi-project/components/lib/OutLink'
-import Image from '@bodhi-project/components/lib/Image'
+import Image from '@bodhi-project/components/lib/image/Image'
 
 import Form from 'antd/lib/form'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/form/style/css'

@@ -7,6 +7,7 @@ import React from 'react'
 
 import isUndefined from 'lodash/isUndefined'
 import map from 'lodash/map'
+import filter from 'lodash/filter'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { graphql } from 'gatsby'
@@ -14,7 +15,7 @@ import Img from 'gatsby-image'
 import { Box, Button } from 'grommet'
 import MediaQuery from 'react-responsive'
 
-import Division from '@bodhi-project/components/lib/Division'
+import Division from '@bodhi-project/components/lib/division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
@@ -30,14 +31,13 @@ import '@bodhi-project/components/lib/features/category-filter/style.less'
 import '@bodhi-project/components/lib/features/chronology-sort/style.less'
 import '@bodhi-project/components/lib/features/year-filter/style.less'
 
-import Image from '@bodhi-project/components/lib/Image'
-
 import Tag from 'antd/lib/tag'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tag/style/css'
 
 import YouTubeIcon from 'react-feather/dist/icons/youtube'
 
 import smallKey from '@bodhi-project/components/lib/methods/smallKey'
+import inArray from '@bodhi-project/components/lib/methods/inArray'
 import mapHoverCovers from '@bodhi-project/components/lib/methods/mapHoverCovers'
 
 // import mockTimestamp from '@bodhi-project/components/lib/methods/mockTimestamp'
@@ -49,9 +49,6 @@ import StandardPage from '../components/wrappers/StandardPage'
 import DisqusComments from '../components/DisqusComments'
 
 import seoHelper from '../methods/seoHelper'
-
-import grungeBox from '../assets/grungeBg.jpg'
-import camera from '../assets/camera.png'
 
 import rawData from '../data/the-power-of-dialogue'
 
@@ -73,27 +70,6 @@ const categories = [
     categoryId: smallKey(),
     key: smallKey(),
     categoryName: 'Experiences',
-    abstract: (
-      <Fragment>
-        <strong style={{ position: 'relative' }}>
-          <span
-            style={{
-              fontSize: '108%',
-              position: 'absolute',
-              transform: 'rotate(48deg)',
-              width: 20,
-              marginTop: -2,
-            }}
-          >
-            ⤻
-          </span>
-          <span style={{ paddingLeft: 24 }}>
-            community members talk about their experience
-          </span>
-        </strong>
-        &nbsp;being in live Circles
-      </Fragment>
-    ),
     categoryShortCode: 'experiences',
     __typename: 'Category',
   },
@@ -101,26 +77,6 @@ const categories = [
     categoryId: smallKey(),
     key: smallKey(),
     categoryName: 'The Restorative System',
-    abstract: (
-      <Fragment>
-        <strong style={{ position: 'relative' }}>
-          <span
-            style={{
-              fontSize: '108%',
-              position: 'absolute',
-              transform: 'rotate(48deg)',
-              width: 20,
-              marginTop: -2,
-            }}
-          >
-            ⤻
-          </span>
-          <span style={{ paddingLeft: 24 }}>engaging with RC as a System</span>
-        </strong>
-        &nbsp;and highlighting the need to talk about the meaning of justice and
-        conflict in our community
-      </Fragment>
-    ),
     categoryShortCode: 'theRestorativeSystem',
     __typename: 'Category',
   },
@@ -128,26 +84,6 @@ const categories = [
     categoryId: smallKey(),
     key: smallKey(),
     categoryName: 'In Action',
-    abstract: (
-      <Fragment>
-        <strong style={{ position: 'relative' }}>
-          <span
-            style={{
-              fontSize: '108%',
-              position: 'absolute',
-              transform: 'rotate(48deg)',
-              width: 20,
-              marginTop: -2,
-            }}
-          >
-            ⤻
-          </span>
-          <span style={{ paddingLeft: 24 }}>touching “live” moments</span>
-        </strong>
-        &nbsp;from different stages of real Circles that have been called in the
-        community
-      </Fragment>
-    ),
     categoryShortCode: 'inAction',
     __typename: 'Category',
   },
@@ -155,27 +91,6 @@ const categories = [
     categoryId: smallKey(),
     key: smallKey(),
     categoryName: 'The Craft',
-    abstract: (
-      <Fragment>
-        <strong style={{ position: 'relative' }}>
-          <span
-            style={{
-              fontSize: '108%',
-              position: 'absolute',
-              transform: 'rotate(48deg)',
-              width: 20,
-              marginTop: -2,
-            }}
-          >
-            ⤻
-          </span>
-          <span style={{ paddingLeft: 24 }}>a learning resource</span>
-        </strong>
-        &nbsp;to highlight the RC process in its different steps and stages
-        <br />
-        ...COMING SOON...
-      </Fragment>
-    ),
     categoryShortCode: 'theCraft',
     __typename: 'Category',
   },
@@ -195,28 +110,16 @@ const conf = {
   hydrate: {
     chronology: 'oldest-first',
   },
-  renderCategoryAbstract: true,
-  allCategoryAbstract: (
-    <Fragment>
-      <strong style={{ position: 'relative' }}>
-        <span
-          style={{
-            fontSize: '108%',
-            position: 'absolute',
-            transform: 'rotate(48deg)',
-            width: 20,
-            marginTop: -2,
-          }}
-        >
-          ⤻
-        </span>
-        <span style={{ paddingLeft: 24 }}>see all our videos</span>
-      </strong>
-      &nbsp;at one glance, or select category by category
-    </Fragment>
-  ),
+  renderCategoryAbstract: false,
   hashFilter: true,
 }
+
+const d1 = filter(rawData, o => inArray(o.hasCategories, 'theCraft'))
+const d2 = filter(rawData, o => inArray(o.hasCategories, 'inAction'))
+const d3 = filter(rawData, o =>
+  inArray(o.hasCategories, 'theRestorativeSystem')
+)
+const d4 = filter(rawData, o => inArray(o.hasCategories, 'experiences'))
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Images
@@ -334,6 +237,24 @@ export const query = graphql`
     ) {
       ...max900
     }
+    yellowBorder: file(relativePath: { eq: "yellowBorder.jpg" }) {
+      ...max900
+    }
+    blueBorder: file(relativePath: { eq: "blueBorder.jpg" }) {
+      ...max900
+    }
+    greenBorder: file(relativePath: { eq: "greenBorder.jpg" }) {
+      ...max900
+    }
+    redBorder: file(relativePath: { eq: "redBorder.jpg" }) {
+      ...max900
+    }
+    grungeBox: file(relativePath: { eq: "grungeBox.png" }) {
+      ...max900
+    }
+    camera: file(relativePath: { eq: "camera.png" }) {
+      ...max900
+    }
   }
 `
 
@@ -391,11 +312,28 @@ const Theme = props => {
 /** Page */
 const Page = props => {
   const { data: images } = props
-  const data = mapHoverCovers(
-    rawData,
+  const d1C = mapHoverCovers(
+    d1,
     images,
     images.defaultForegroundFallback.childImageSharp.fluid
   )
+  const d2C = mapHoverCovers(
+    d2,
+    images,
+    images.defaultForegroundFallback.childImageSharp.fluid
+  )
+  const d3C = mapHoverCovers(
+    d3,
+    images,
+    images.defaultForegroundFallback.childImageSharp.fluid
+  )
+  const d4C = mapHoverCovers(
+    d4,
+    images,
+    images.defaultForegroundFallback.childImageSharp.fluid
+  )
+
+  console.log(d1C, d2C, d3C, d4C)
 
   return (
     <StandardPage
@@ -426,8 +364,8 @@ const Page = props => {
               }}
               className="desktop-only"
             >
-              <Image
-                src={camera}
+              <Img
+                fluid={images.camera.childImageSharp.fluid}
                 style={{
                   background: 'transparent',
                   border: 'unset',
@@ -449,8 +387,8 @@ const Page = props => {
                 overflow: 'hidden',
               }}
             >
-              <Image
-                src={grungeBox}
+              <Img
+                fluid={images.grungeBox.childImageSharp.fluid}
                 style={{
                   background: 'transparent',
                   border: 'unset',
@@ -473,20 +411,205 @@ const Page = props => {
           </div>
         </Fragment>
       </Division>
-      <Grid
-        {...props}
-        loading={false}
-        Link={Link}
-        Box={Box}
-        Button={Button}
-        Img={Img}
-        MediaQuery={MediaQuery}
-        data={data}
-        allCategories={categories}
-        allTags={tags}
-        strictChronology
-        conf={conf}
+      <Img
+        fluid={images.yellowBorder.childImageSharp.fluid}
+        style={{
+          height: 4,
+          width: '100%',
+          border: 0,
+          background: 'transparent',
+          marginBottom: 0,
+        }}
+        alt="Restorative Auroville - The Craft"
       />
+      <h2 className="mask-h3" id="the-craft" style={{ marginBottom: 2 }}>
+        1. The Craft
+      </h2>
+      <p className="mask-h5">
+        <strong style={{ position: 'relative' }}>
+          <span
+            style={{
+              fontSize: '108%',
+              position: 'absolute',
+              transform: 'rotate(48deg)',
+              width: 20,
+              marginTop: -2,
+            }}
+          >
+            ⤻
+          </span>
+          <span style={{ paddingLeft: 24 }}>a learning resource</span>
+        </strong>
+        &nbsp;to highlight the RC process in its different steps and stages
+      </p>
+      <div id="d1">
+        <Grid
+          {...props}
+          loading={false}
+          Link={Link}
+          Box={Box}
+          Button={Button}
+          Img={Img}
+          MediaQuery={MediaQuery}
+          dataAlias={d1C}
+          allCategories={categories}
+          allTags={tags}
+          strictChronology
+          conf={{ ...conf, containerId: 'd1' }}
+        />
+      </div>
+      <br />
+      <Img
+        fluid={images.blueBorder.childImageSharp.fluid}
+        style={{
+          height: 4,
+          width: '100%',
+          border: 0,
+          background: 'transparent',
+          marginBottom: 0,
+        }}
+        alt="Restorative Auroville - In Action"
+      />
+      <h2 className="mask-h3" id="in-action" style={{ marginBottom: 2 }}>
+        2. In Action
+      </h2>
+      <p className="mask-h5">
+        <strong style={{ position: 'relative' }}>
+          <span
+            style={{
+              fontSize: '108%',
+              position: 'absolute',
+              transform: 'rotate(48deg)',
+              width: 20,
+              marginTop: -2,
+            }}
+          >
+            ⤻
+          </span>
+          <span style={{ paddingLeft: 24 }}>touching “live” moments</span>
+        </strong>
+        &nbsp;from different stages of real Circles that have been called in the
+        community
+      </p>
+      <div id="d2">
+        <Grid
+          {...props}
+          loading={false}
+          Link={Link}
+          Box={Box}
+          Button={Button}
+          Img={Img}
+          MediaQuery={MediaQuery}
+          dataAlias={d2C}
+          allCategories={categories}
+          allTags={tags}
+          strictChronology
+          conf={{ ...conf, containerId: 'd2' }}
+        />
+      </div>
+      <br />
+      <Img
+        fluid={images.redBorder.childImageSharp.fluid}
+        style={{
+          height: 4,
+          width: '100%',
+          border: 0,
+          background: 'transparent',
+          marginBottom: 0,
+        }}
+        alt="Restorative Auroville - The Restorative System"
+      />
+      <h2
+        className="mask-h3"
+        id="the-restorative-system"
+        style={{ marginBottom: 2 }}
+      >
+        3. The Restorative System
+      </h2>
+      <p className="mask-h5">
+        <strong style={{ position: 'relative' }}>
+          <span
+            style={{
+              fontSize: '108%',
+              position: 'absolute',
+              transform: 'rotate(48deg)',
+              width: 20,
+              marginTop: -2,
+            }}
+          >
+            ⤻
+          </span>
+          <span style={{ paddingLeft: 24 }}>engaging with RC as a System</span>
+        </strong>
+        &nbsp;and highlighting the need to talk about the meaning of justice and
+        conflict in our community
+      </p>
+      <div id="d3">
+        <Grid
+          {...props}
+          loading={false}
+          Link={Link}
+          Box={Box}
+          Button={Button}
+          Img={Img}
+          MediaQuery={MediaQuery}
+          dataAlias={d3C}
+          allCategories={categories}
+          allTags={tags}
+          strictChronology
+          conf={{ ...conf, containerId: 'd3' }}
+        />
+      </div>
+      <br />
+      <Img
+        fluid={images.greenBorder.childImageSharp.fluid}
+        style={{
+          height: 4,
+          width: '100%',
+          border: 0,
+          background: 'transparent',
+          marginBottom: 0,
+        }}
+        alt="Restorative Auroville - The Restorative System"
+      />
+      <h2 className="mask-h3" id="experiences" style={{ marginBottom: 2 }}>
+        4. Experiences
+      </h2>
+      <p className="mask-h5">
+        <strong style={{ position: 'relative' }}>
+          <span
+            style={{
+              fontSize: '108%',
+              position: 'absolute',
+              transform: 'rotate(48deg)',
+              width: 20,
+              marginTop: -2,
+            }}
+          >
+            ⤻
+          </span>
+          <span style={{ paddingLeft: 24 }}>
+            community members talk about their experience
+          </span>
+        </strong>
+        &nbsp;being in live Circles
+      </p>
+      <div id="d4">
+        <Grid
+          {...props}
+          loading={false}
+          Link={Link}
+          Box={Box}
+          Button={Button}
+          Img={Img}
+          MediaQuery={MediaQuery}
+          dataAlias={d4C}
+          allCategories={categories}
+          allTags={tags}
+          strictChronology
+          conf={{ ...conf, containerId: 'd4' }}
+        />
+      </div>
       <br />
       <Theme
         border="#FAE300"

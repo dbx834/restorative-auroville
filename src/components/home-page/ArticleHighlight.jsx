@@ -13,7 +13,7 @@ import reverse from 'lodash/reverse'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import withSizes from 'react-sizes'
 
-// import Image from '@bodhi-project/components/lib/Image'
+// import Image from '@bodhi-project/components/lib/image/Image'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import BlogListing from '../BlogListing'

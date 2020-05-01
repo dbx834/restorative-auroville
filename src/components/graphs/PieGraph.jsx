@@ -11,7 +11,7 @@ import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { PieChart, Pie, Tooltip } from 'recharts'
-import Image from '@bodhi-project/components/lib/Image'
+import Image from '@bodhi-project/components/lib/image/Image'
 
 import Button from 'antd/lib/button'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/button/style/css'

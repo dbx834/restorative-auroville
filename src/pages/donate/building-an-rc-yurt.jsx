@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Images from '@bodhi-project/components/lib/Images'
+import Images from '@bodhi-project/components/lib/image/Images'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import DonateProjectWrapper from '../../components/wrappers/DonateProjectWrapper'

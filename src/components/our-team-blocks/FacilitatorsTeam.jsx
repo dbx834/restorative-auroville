@@ -11,7 +11,7 @@ import { css } from 'glamor'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 // import Link from "gatsby-link";
 
-// import Image from "@bodhi-project/components/lib/Image";
+// import Image from "@bodhi-project/components/lib/image/Image";
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import PersonCircle from '../PersonCircle'

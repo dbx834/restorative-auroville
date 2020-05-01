@@ -8,7 +8,7 @@ import { css } from 'glamor'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import PrevNext from '@bodhi-project/components/lib/PrevNext'
+import PrevNext from '@bodhi-project/components/lib/prev-next'
 import UpdateTitle from '@bodhi-project/seo/lib/UpdateTitle'
 import GeneralMeta from '@bodhi-project/seo/lib/GeneralMeta'
 import TwitterSummaryCard from '@bodhi-project/seo/lib/TwitterSummaryCard'
