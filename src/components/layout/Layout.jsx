@@ -71,29 +71,21 @@ export const exportImageFragments = graphql`
   }
   fragment max900 on File {
     childImageSharp {
-      fluid(maxWidth: 900, quality: 80, srcSetBreakpoints: [300, 600, 900]) {
+      fluid(maxWidth: 900, quality: 80, srcSetBreakpoints: [600, 900]) {
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
       }
     }
   }
   fragment max1200 on File {
     childImageSharp {
-      fluid(
-        maxWidth: 1200
-        quality: 80
-        srcSetBreakpoints: [300, 600, 900, 1200]
-      ) {
+      fluid(maxWidth: 1200, quality: 80, srcSetBreakpoints: [600, 900, 1200]) {
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
       }
     }
   }
   fragment max1500 on File {
     childImageSharp {
-      fluid(
-        maxWidth: 1500
-        quality: 80
-        srcSetBreakpoints: [300, 600, 900, 1200, 1500]
-      ) {
+      fluid(maxWidth: 1500, quality: 80, srcSetBreakpoints: [300, 900, 1500]) {
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
       }
     }
@@ -103,7 +95,7 @@ export const exportImageFragments = graphql`
       fluid(
         maxWidth: 3000
         quality: 80
-        srcSetBreakpoints: [300, 600, 900, 1200, 1500, 2100, 2700, 3000]
+        srcSetBreakpoints: [300, 900, 1200, 2100, 3000]
       ) {
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
       }
