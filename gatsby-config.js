@@ -205,9 +205,9 @@ module.exports = {
     //     hash: 'sha512',
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-zopfli`, // https://www.gatsbyjs.org/packages/gatsby-plugin-zopfli
-    },
+    // {
+    //   resolve: `gatsby-plugin-zopfli`, // https://www.gatsbyjs.org/packages/gatsby-plugin-zopfli
+    // },
     {
       resolve: `gatsby-plugin-less`, // https://www.gatsbyjs.org/packages/gatsby-plugin-less/
     },
