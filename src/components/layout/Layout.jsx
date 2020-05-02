@@ -60,11 +60,7 @@ export const exportImageFragments = graphql`
   }
   fragment max300 on File {
     childImageSharp {
-      fluid(
-        maxWidth: 300
-        quality: 80
-        srcSetBreakpoints: [100, 150, 200, 250, 300]
-      ) {
+      fluid(maxWidth: 300, quality: 80, srcSetBreakpoints: [150, 300]) {
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
       }
     }
@@ -95,7 +91,7 @@ export const exportImageFragments = graphql`
       fluid(
         maxWidth: 3000
         quality: 80
-        srcSetBreakpoints: [300, 900, 1200, 2100, 3000]
+        srcSetBreakpoints: [300, 1200, 1800, 3000]
       ) {
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
       }
