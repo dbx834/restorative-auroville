@@ -58,6 +58,7 @@ const conf = {
     categories: 'exclusive',
     tags: 'exclusive',
   },
+  containerId: 'c',
 }
 
 // ----------------------------------------------------------------------------
@@ -129,19 +130,22 @@ const Page = props => {
       <h2 className="mask-h4" style={{ marginTop: -20 }}>
         We need support for these projects:
       </h2>
-      <Grid
-        loading={false}
-        Link={Link}
-        Box={Box}
-        Button={Button}
-        Img={Img}
-        MediaQuery={MediaQuery}
-        data={data}
-        allCategories={categories}
-        allTags={tags}
-        strictChronology
-        conf={conf}
-      />
+      <div id="c">
+        <Grid
+          loading={false}
+          Link={Link}
+          Box={Box}
+          Button={Button}
+          Img={Img}
+          MediaQuery={MediaQuery}
+          dataAlias={data}
+          data={[]}
+          allCategories={categories}
+          allTags={tags}
+          strictChronology
+          conf={conf}
+        />
+      </div>
       <br />
       <p style={{ marginTop: -20 }}>
         Restorative Auroville is an initiative of{' '}

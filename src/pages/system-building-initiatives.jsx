@@ -59,6 +59,7 @@ const conf = {
     categories: 'exclusive',
     tags: 'exclusive',
   },
+  containerId: 'c',
 }
 
 // ----------------------------------------------------------------------------
@@ -112,7 +113,7 @@ const Ongoingprojects = props => {
         Groups, commercial Units, Services, schools, residential communities,
         and more.
       </p>
-      <div className="margin-p">
+      <div className="margin-p" id="c">
         <Grid
           loading={false}
           Link={Link}
@@ -120,7 +121,8 @@ const Ongoingprojects = props => {
           Button={Button}
           Img={Img}
           MediaQuery={MediaQuery}
-          data={data}
+          data={[]}
+          dataAlias={data}
           allCategories={categories}
           allTags={tags}
           strictChronology

@@ -58,6 +58,7 @@ const conf = {
     categories: 'exclusive',
     tags: 'exclusive',
   },
+  containerId: 'c',
 }
 
 // ----------------------------------------------------------------------------
@@ -129,7 +130,7 @@ const Page = props => {
         events, with the hope to inspire and challenge us to take a leap
         forward!
       </p>
-      <div className="margin-p">
+      <div className="margin-p" id="c">
         <Grid
           loading={false}
           Link={Link}
@@ -137,7 +138,8 @@ const Page = props => {
           Button={Button}
           Img={Img}
           MediaQuery={MediaQuery}
-          data={data}
+          dataAlias={data}
+          data={[]}
           allCategories={categories}
           allTags={tags}
           strictChronology

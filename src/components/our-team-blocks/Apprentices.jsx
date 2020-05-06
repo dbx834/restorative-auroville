@@ -23,6 +23,8 @@ import michelleSquare from '../../assets/michelleSquare.jpg'
 // import nilsSquare from '../../assets/nilsSquare.jpg'
 import emmaSquare from '../../assets/emmaSquare.jpg'
 import melodieSquare from '../../assets/melodieSquare.jpg'
+import aditiSquare from '../../assets/aditiSquare.jpg'
+import sunmiSquare from '../../assets/sunmiSquare.jpg'
 
 // import Henrike from '../people/Henrike'
 // import Pranjal from '../people/Pranjal'
@@ -33,6 +35,8 @@ import Stefan from '../people/Stefan'
 // import Nils from '../people/Nils'
 import Emma from '../people/Emma'
 import Melodie from '../people/Melodie'
+import Aditi from '../people/Aditi'
+import Sunmi from '../people/Sunmi'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 /** toDegrees */
@@ -51,6 +55,10 @@ const renderSwitch = person => {
       return <Emma show={false} />
     case 'melodie':
       return <Melodie show={false} />
+    case 'aditi':
+      return <Aditi show={false} />
+    case 'sunmi':
+      return <Sunmi show={false} />
     default:
       return <br />
   }
@@ -81,6 +89,12 @@ const circleStylesObject = css({
   '& .child-circle:nth-child(5)::after': {
     content: `"Emma"`,
   },
+  '& .child-circle:nth-child(6)::after': {
+    content: `"Aditi"`,
+  },
+  '& .child-circle:nth-child(7)::after': {
+    content: `"Sunmi"`,
+  },
 })
 const circleStyles = circleStylesObject.toString()
 
@@ -103,7 +117,7 @@ class Apprentices extends React.Component {
   /** standard constructor */
   componentDidMount() {
     // //Number of services
-    const noOfServices = 5
+    const noOfServices = 7
     //   //Half width of parent
     const parentCircleHalfWidth = 180
     //   //Add some padding from parent circle
@@ -257,6 +271,46 @@ class Apprentices extends React.Component {
               <p>
                 <strong>
                   2019 -
+                  <br />
+                  present
+                </strong>
+              </p>
+            </div>
+            <div
+              className={`${person === 'aditi' &&
+                'circle-active'} child-circle s`}
+              ref="child6"
+              style={{
+                backgroundImage: `url(${aditiSquare})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '105px 105px',
+                border: '2px solid #FFBF00',
+              }}
+              onClick={() => this.showPerson('aditi')}
+            >
+              <p>
+                <strong>
+                  2020 -
+                  <br />
+                  present
+                </strong>
+              </p>
+            </div>
+            <div
+              className={`${person === 'sunmi' &&
+                'circle-active'} child-circle s`}
+              ref="child7"
+              style={{
+                backgroundImage: `url(${sunmiSquare})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '105px 105px',
+                border: '2px solid #FFBF00',
+              }}
+              onClick={() => this.showPerson('sunmi')}
+            >
+              <p>
+                <strong>
+                  2020 -
                   <br />
                   present
                 </strong>

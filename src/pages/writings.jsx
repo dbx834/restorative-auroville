@@ -94,6 +94,7 @@ const conf = {
     tags: 'exclusive',
   },
   reverseYearOrder: false,
+  containerId: 'c',
 }
 
 const allYears = reverse(getAllYears(rawData))
@@ -159,20 +160,23 @@ const Page = props => {
   return (
     <StandardPage className="writings-page" seoData={seoData} {...props}>
       <h1 className="mask-h3">Articles</h1>
-      <Grid
-        loading={false}
-        Link={Link}
-        Box={Box}
-        Button={Button}
-        Img={Img}
-        MediaQuery={MediaQuery}
-        data={data}
-        allCategories={categories}
-        allTags={tags}
-        allYears={allYears}
-        strictChronology
-        conf={conf}
-      />
+      <div id="c">
+        <Grid
+          loading={false}
+          Link={Link}
+          Box={Box}
+          Button={Button}
+          Img={Img}
+          MediaQuery={MediaQuery}
+          dataAlias={data}
+          data={[]}
+          allCategories={categories}
+          allTags={tags}
+          allYears={allYears}
+          strictChronology
+          conf={conf}
+        />
+      </div>
     </StandardPage>
   )
 }

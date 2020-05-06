@@ -58,6 +58,7 @@ const conf = {
     categories: 'exclusive',
     tags: 'exclusive',
   },
+  containerId: 'c',
 }
 
 // ----------------------------------------------------------------------------
@@ -93,7 +94,7 @@ const Ongoingprojects = props => {
         Our intention is to make this work as available as possible and to share
         it with communities and projects that are seeking to shift paradigms.
       </p>
-      <div className="margin-p">
+      <div className="margin-p" id="c">
         <Grid
           loading={false}
           Link={Link}
@@ -101,7 +102,8 @@ const Ongoingprojects = props => {
           Button={Button}
           Img={Img}
           MediaQuery={MediaQuery}
-          data={data}
+          dataAlias={data}
+          data={[]}
           allCategories={categories}
           allTags={tags}
           strictChronology

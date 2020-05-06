@@ -131,6 +131,41 @@ export const query = graphql`
     ) {
       ...max900
     }
+    preCircleGettingTheAct: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/pre-circle-getting-the-act.jpg"
+      }
+    ) {
+      ...max900
+    }
+    preCircleWouldYouLikeToGoAhead: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/pre-circle-would-you-like-to-go-ahead.jpg"
+      }
+    ) {
+      ...max900
+    }
+    preCircleWhoNeedsToBeThere: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/pre-circle-who-needs-to-be-there.jpg"
+      }
+    ) {
+      ...max900
+    }
+    preCircleExplainingTheProcess: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/pre-circle-explaining-the-process.jpg"
+      }
+    ) {
+      ...max900
+    }
+    preCircleHearingMeaning: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/pre-circle-hearing-meaning.jpg"
+      }
+    ) {
+      ...max900
+    }
     geniesPreCircleWithJanet: file(
       relativePath: {
         eq: "the-power-of-dialogue/genies-pre-circle-with-janet.jpg"
@@ -452,6 +487,7 @@ const Page = props => {
           Img={Img}
           MediaQuery={MediaQuery}
           dataAlias={d1C}
+          data={[]}
           allCategories={categories}
           allTags={tags}
           strictChronology
@@ -501,6 +537,7 @@ const Page = props => {
           Img={Img}
           MediaQuery={MediaQuery}
           dataAlias={d2C}
+          data={[]}
           allCategories={categories}
           allTags={tags}
           strictChronology
@@ -554,6 +591,7 @@ const Page = props => {
           Img={Img}
           MediaQuery={MediaQuery}
           dataAlias={d3C}
+          data={[]}
           allCategories={categories}
           allTags={tags}
           strictChronology
@@ -604,6 +642,7 @@ const Page = props => {
           Img={Img}
           MediaQuery={MediaQuery}
           dataAlias={d4C}
+          data={[]}
           allCategories={categories}
           allTags={tags}
           strictChronology
