@@ -6,8 +6,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-
-import Images from '@bodhi-project/components/lib/image/Images'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import Gallery from 'react-photo-gallery'
+import MediaQuery from 'react-responsive'
+import GalleryX from '@bodhi-project/components/lib/gatsby/Gallery'
 
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
@@ -30,19 +33,6 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
-const photos = [
-  {
-    src: '/event-assets/women-for-justice/english.jpg',
-    width: 598,
-    height: 677,
-  },
-  {
-    src: '/event-assets/women-for-justice/tamil.jpeg',
-    width: 1012,
-    height: 1280,
-  },
-]
-
 const next = undefined
 
 const prev = {
@@ -50,6 +40,24 @@ const prev = {
 }
 
 const { Item: BItem } = Breadcrumb
+
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    img1: file(
+      relativePath: { eq: "community-events/women-for-justice/img1.jpg" }
+    ) {
+      ...max900
+    }
+    img2: file(
+      relativePath: { eq: "community-events/women-for-justice/img2.jpg" }
+    ) {
+      ...max900
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -86,10 +94,13 @@ const Initiative = props => {
         youth from the bioregion.
       </p>
       <div className="margin-p">
-        <Images
-          photos={photos}
-          loader="gradient"
-          columns={{ min: 2, max: 2 }}
+        <GalleryX
+          data={props.data}
+          lookup="img"
+          columns={{ min: 3, max: 3 }}
+          Img={Img}
+          Gallery={Gallery}
+          MediaQuery={MediaQuery}
         />
         &nbsp;
       </div>

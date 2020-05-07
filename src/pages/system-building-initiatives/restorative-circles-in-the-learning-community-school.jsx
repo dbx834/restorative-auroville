@@ -141,7 +141,6 @@ export const query = graphql`
 // ----------------------------------------------------------------------------
 /** Initiative */
 const Initiative = props => {
-  console.log(props)
   return (
     <SystemBuildingInitiativeWrapper
       className=""

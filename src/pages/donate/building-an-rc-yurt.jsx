@@ -9,8 +9,9 @@ import PropTypes from 'prop-types'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-
-import Images from '@bodhi-project/components/lib/image/Images'
+import Gallery from 'react-photo-gallery'
+import MediaQuery from 'react-responsive'
+import GalleryX from '@bodhi-project/components/lib/gatsby/Gallery'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import DonateProjectWrapper from '../../components/wrappers/DonateProjectWrapper'
@@ -39,18 +40,21 @@ const prev = {
   nakedPageSlug: 'donate/filming-a-live-restorative-circle',
 }
 
-const photos = [
-  { src: '/donate-assets/yurt/yurt4.jpeg', width: 600, height: 450 },
-  { src: '/donate-assets/yurt/yurt3.jpeg', width: 600, height: 450 },
-  { src: '/donate-assets/yurt/yurt5.jpeg', width: 600, height: 450 },
-]
-
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Images
 // ----------------------------------------------------------------------------
 export const query = graphql`
   query {
     costs: file(relativePath: { eq: "donate/yurt/costs.jpeg" }) {
+      ...max900
+    }
+    yurt4: file(relativePath: { eq: "donate/yurt/yurt4.jpeg" }) {
+      ...max900
+    }
+    yurt3: file(relativePath: { eq: "donate/yurt/yurt3.jpeg" }) {
+      ...max900
+    }
+    yurt5: file(relativePath: { eq: "donate/yurt/yurt5.jpeg" }) {
       ...max900
     }
   }
@@ -95,10 +99,13 @@ const Initiative = props => {
         accommodate about 30-40 people sitting in a circle.
       </p>
       <div className="margin-p">
-        <Images
-          photos={photos}
-          loader="gradient"
+        <GalleryX
+          data={props.data}
+          lookup="yurt"
           columns={{ min: 3, max: 3 }}
+          Img={Img}
+          Gallery={Gallery}
+          MediaQuery={MediaQuery}
         />
       </div>
       <p>

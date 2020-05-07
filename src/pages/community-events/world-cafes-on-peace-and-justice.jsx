@@ -7,7 +7,11 @@ import PropTypes from 'prop-types'
 // import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Images from '@bodhi-project/components/lib/image/Images'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import Gallery from 'react-photo-gallery'
+import MediaQuery from 'react-responsive'
+import GalleryX from '@bodhi-project/components/lib/gatsby/Gallery'
 
 import Breadcrumb from 'antd/lib/breadcrumb'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
@@ -40,39 +44,6 @@ const seoData = seoHelper(pageData)
 
 const { Item: BItem } = Breadcrumb
 
-const photos = [
-  {
-    src: '/event-assets/world-cafes-on-peace-and-justice/img1.jpg',
-    width: 600,
-    height: 542,
-  },
-  {
-    src: '/event-assets/world-cafes-on-peace-and-justice/img2.jpg',
-    width: 600,
-    height: 424,
-  },
-  {
-    src: '/event-assets/world-cafes-on-peace-and-justice/img3.jpg',
-    width: 600,
-    height: 753,
-  },
-  {
-    src: '/event-assets/world-cafes-on-peace-and-justice/img4.jpg',
-    width: 600,
-    height: 402,
-  },
-  {
-    src: '/event-assets/world-cafes-on-peace-and-justice/img5.jpg',
-    width: 600,
-    height: 482,
-  },
-  {
-    src: '/event-assets/world-cafes-on-peace-and-justice/img6.jpg',
-    width: 600,
-    height: 543,
-  },
-]
-
 const notes = [
   {
     url:
@@ -80,6 +51,56 @@ const notes = [
     title: 'See additional notes',
   },
 ]
+
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    img1: file(
+      relativePath: {
+        eq: "community-events/world-cafes-on-peace-and-justice/img1.jpg"
+      }
+    ) {
+      ...max900
+    }
+    img2: file(
+      relativePath: {
+        eq: "community-events/world-cafes-on-peace-and-justice/img2.jpg"
+      }
+    ) {
+      ...max900
+    }
+    img3: file(
+      relativePath: {
+        eq: "community-events/world-cafes-on-peace-and-justice/img3.jpg"
+      }
+    ) {
+      ...max900
+    }
+    img4: file(
+      relativePath: {
+        eq: "community-events/world-cafes-on-peace-and-justice/img4.jpg"
+      }
+    ) {
+      ...max900
+    }
+    img5: file(
+      relativePath: {
+        eq: "community-events/world-cafes-on-peace-and-justice/img5.jpg"
+      }
+    ) {
+      ...max900
+    }
+    img6: file(
+      relativePath: {
+        eq: "community-events/world-cafes-on-peace-and-justice/img6.jpg"
+      }
+    ) {
+      ...max900
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -106,7 +127,6 @@ const Initiative = props => {
         <BItem>World Cafés on Peace & Justice</BItem>
       </Breadcrumb>
       <h1 className="mask-h3">World Cafés on Peace & Justice</h1>
-
       <p>
         In the first months of 2016, we hosted a series of evening conversations
         in the co-creative World Café format.
@@ -153,10 +173,13 @@ const Initiative = props => {
         facilitation!
       </p>
       <div className="mask-p">
-        <Images
-          photos={photos}
-          loader="gradient"
+        <GalleryX
+          data={props.data}
+          lookup="img"
           columns={{ min: 3, max: 3 }}
+          Img={Img}
+          Gallery={Gallery}
+          MediaQuery={MediaQuery}
         />
       </div>
     </CommunityEventWrapper>

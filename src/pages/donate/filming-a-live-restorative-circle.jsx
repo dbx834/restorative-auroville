@@ -6,7 +6,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Images from '@bodhi-project/components/lib/image/Images'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import Gallery from 'react-photo-gallery'
+import MediaQuery from 'react-responsive'
+import GalleryX from '@bodhi-project/components/lib/gatsby/Gallery'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import DonateProjectWrapper from '../../components/wrappers/DonateProjectWrapper'
@@ -26,11 +30,6 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
-const photos = [
-  { src: '/donate-assets/filming/img1.jpg', width: 1037, height: 790 },
-  { src: '/donate-assets/filming/img2.jpg', width: 594, height: 421 },
-]
-
 const next = {
   nakedPageSlug: 'donate/building-an-rc-yurt',
 }
@@ -38,6 +37,20 @@ const next = {
 const prev = {
   nakedPageSlug: 'donate/tamil-aurovilian-journeys',
 }
+
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    img1: file(relativePath: { eq: "donate/filming/img1.jpg" }) {
+      ...max900
+    }
+    img2: file(relativePath: { eq: "donate/filming/img2.jpg" }) {
+      ...max900
+    }
+  }
+`
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -69,10 +82,13 @@ const Initiative = props => {
         <Link to="/contact-us">Contact us.</Link>
       </p>
       <div className="margin-p">
-        <Images
-          photos={photos}
-          loader="gradient"
+        <GalleryX
+          data={props.data}
+          lookup="img"
           columns={{ min: 2, max: 2 }}
+          Img={Img}
+          Gallery={Gallery}
+          MediaQuery={MediaQuery}
         />
       </div>
       <p>
