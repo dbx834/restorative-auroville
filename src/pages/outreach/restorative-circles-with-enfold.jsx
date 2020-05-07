@@ -10,7 +10,9 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
+import Gallery from 'react-photo-gallery'
+import MediaQuery from 'react-responsive'
+import GalleryX from '@bodhi-project/components/lib/gatsby/Gallery'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import OutreachPageWrapper from '../../components/wrappers/OutreachPageWrapper'
@@ -79,11 +81,13 @@ const Initiative = props => {
         might gain through Restorative Circles.
       </p>
       <div className="mask-p">
-        <Gallery
+        <GalleryX
           data={props.data}
           lookup="enfold"
           columns={{ min: 2, max: 2 }}
           Img={Img}
+          Gallery={Gallery}
+          MediaQuery={MediaQuery}
         />
       </div>
       <br />

@@ -7,7 +7,11 @@ import PropTypes from 'prop-types'
 import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import Images from '@bodhi-project/components/lib/image/Images'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import Gallery from 'react-photo-gallery'
+import MediaQuery from 'react-responsive'
+import GalleryX from '@bodhi-project/components/lib/gatsby/Gallery'
 
 import Division from '@bodhi-project/components/lib/division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
@@ -33,24 +37,6 @@ const pageData = {
 
 const seoData = seoHelper(pageData)
 
-const photos = [
-  { src: '/sbi-assets/tlc/img1.jpg', width: 600, height: 979 },
-  { src: '/sbi-assets/tlc/img2.jpg', width: 600, height: 338 },
-  { src: '/sbi-assets/tlc/img3.jpg', width: 600, height: 338 },
-  { src: '/sbi-assets/tlc/img4.jpg', width: 600, height: 435 },
-  { src: '/sbi-assets/tlc/img5.jpg', width: 600, height: 430 },
-  { src: '/sbi-assets/tlc/img6.jpg', width: 600, height: 800 },
-  { src: '/sbi-assets/tlc/img7.jpg', width: 600, height: 800 },
-  { src: '/sbi-assets/tlc/img8.jpg', width: 600, height: 800 },
-  { src: '/sbi-assets/tlc/img9.jpg', width: 600, height: 361 },
-  { src: '/sbi-assets/tlc/img10.jpg', width: 600, height: 1444 },
-  { src: '/sbi-assets/tlc/img11.jpg', width: 600, height: 828 },
-  { src: '/sbi-assets/tlc/img12.jpg', width: 600, height: 327 },
-  { src: '/sbi-assets/tlc/img15.jpeg', width: 1280, height: 720 },
-  { src: '/sbi-assets/tlc/img13.jpg', width: 600, height: 739 },
-  { src: '/sbi-assets/tlc/img14.jpg', width: 600, height: 1067 },
-]
-
 const prev = {
   nakedPageSlug:
     'system-building-initiatives/restorative-circles-in-aikiyam-school',
@@ -68,10 +54,94 @@ const style = css({
 }).toString()
 
 // ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Images
+// ----------------------------------------------------------------------------
+export const query = graphql`
+  query {
+    img1: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img1.jpg" }
+    ) {
+      ...max900
+    }
+    img2: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img2.jpg" }
+    ) {
+      ...max900
+    }
+    img3: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img3.jpg" }
+    ) {
+      ...max900
+    }
+    img4: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img4.jpg" }
+    ) {
+      ...max900
+    }
+    img5: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img5.jpg" }
+    ) {
+      ...max900
+    }
+    img6: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img6.jpg" }
+    ) {
+      ...max900
+    }
+    img7: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img7.jpg" }
+    ) {
+      ...max900
+    }
+    img8: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img8.jpg" }
+    ) {
+      ...max900
+    }
+    img9: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img9.jpg" }
+    ) {
+      ...max900
+    }
+    img10: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img10.jpg" }
+    ) {
+      ...max900
+    }
+    img11: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img11.jpg" }
+    ) {
+      ...max900
+    }
+    img12: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img12.jpg" }
+    ) {
+      ...max900
+    }
+    img13: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img13.jpg" }
+    ) {
+      ...max900
+    }
+    img14: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img14.jpg" }
+    ) {
+      ...max900
+    }
+    img15: file(
+      relativePath: { eq: "system-building-initiatives/tlc/img15T.jpg" }
+    ) {
+      ...max900
+    }
+  }
+`
+
+// ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Initiative */
 const Initiative = props => {
+  console.log(props)
   return (
     <SystemBuildingInitiativeWrapper
       className=""
@@ -131,10 +201,13 @@ const Initiative = props => {
         </div>
       </Division>
       <div className="mask-p">
-        <Images
-          photos={photos}
-          loader="gradient"
+        <GalleryX
+          data={props.data}
+          lookup="img"
           columns={{ min: 3, max: 3 }}
+          Img={Img}
+          Gallery={Gallery}
+          MediaQuery={MediaQuery}
         />
       </div>
     </SystemBuildingInitiativeWrapper>
