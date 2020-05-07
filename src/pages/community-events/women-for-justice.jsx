@@ -47,12 +47,12 @@ const { Item: BItem } = Breadcrumb
 export const query = graphql`
   query {
     img1: file(
-      relativePath: { eq: "community-events/women-for-justice/img1.jpg" }
+      relativePath: { eq: "community-events/women-for-justice/english.jpg" }
     ) {
       ...max900
     }
     img2: file(
-      relativePath: { eq: "community-events/women-for-justice/img2.jpg" }
+      relativePath: { eq: "community-events/women-for-justice/tamil.jpeg" }
     ) {
       ...max900
     }
