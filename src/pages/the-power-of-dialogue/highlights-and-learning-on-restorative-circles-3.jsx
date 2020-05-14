@@ -54,7 +54,7 @@ const Page = props => (
       challenges and growing edges of our project.
     </p>
     <p>We asked Sandyra the following questions:</p>
-    <ol className="mask-p">
+    <ol className="mask-p" style={{ paddingLeft: 0 }}>
       <li>
         What has inspired/touched you about our exploration with RC in Auroville
         (in general/specific)?

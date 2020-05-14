@@ -45,7 +45,7 @@ const Page = props => (
     {...props}
   >
     <p>Here we look at the Pre-Circle and its five steps:</p>
-    <ol className="mask-p">
+    <ol className="mask-p" style={{ paddingLeft: 0 }}>
       <li>Getting the Act</li>
       <li>Hearing Meaning</li>
       <li>Explaining the RC Process</li>
