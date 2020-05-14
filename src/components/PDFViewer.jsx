@@ -78,11 +78,11 @@ const style = css({
     },
 
     '@media(min-width: 992px)': {
-      bottom: -8,
+      bottom: -12,
 
       '& .chirp-image': {
-        height: '40px !important',
-        width: '40px !important',
+        height: '36px !important',
+        width: '36px !important',
       },
     },
   },

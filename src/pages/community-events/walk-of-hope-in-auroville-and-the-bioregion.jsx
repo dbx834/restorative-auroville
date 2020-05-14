@@ -13,7 +13,9 @@ import map from 'lodash/map'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
+import Gallery from 'react-photo-gallery'
+import MediaQuery from 'react-responsive'
+import GalleryX from '@bodhi-project/components/lib/gatsby/Gallery'
 
 import Division from '@bodhi-project/components/lib/division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
@@ -215,11 +217,12 @@ const Initiative = props => {
         </Fragment>
       </Division>
       <div className="mask-p">
-        <Gallery
+        <GalleryX
           data={props.data}
           lookup="img"
           columns={{ min: 2, max: 2 }}
-          Img={Img}
+          Gallery={Gallery}
+          MediaQuery={MediaQuery}
         />
       </div>
       <p>

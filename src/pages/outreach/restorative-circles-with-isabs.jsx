@@ -10,7 +10,9 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
+import Gallery from 'react-photo-gallery'
+import MediaQuery from 'react-responsive'
+import GalleryX from '@bodhi-project/components/lib/gatsby/Gallery'
 
 import Video from '@bodhi-project/components/lib/video'
 
@@ -92,11 +94,13 @@ const Initiative = props => {
         agreements for difficult conversations.
       </p>
       <div className="mask-p">
-        <Gallery
+        <GalleryX
           data={props.data}
           lookup="isabs"
           columns={{ min: 2, max: 3 }}
           Img={Img}
+          Gallery={Gallery}
+          MediaQuery={MediaQuery}
         />
       </div>
       <Division>

@@ -9,7 +9,9 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
+import Gallery from 'react-photo-gallery'
+import MediaQuery from 'react-responsive'
+import GalleryX from '@bodhi-project/components/lib/gatsby/Gallery'
 
 import List from '@bodhi-project/components/lib/list/gatsby'
 import '@bodhi-project/components/lib/list/style.less'
@@ -339,11 +341,13 @@ const Page = props => {
           icon: <ImageIcon />,
           embed: (
             <Fragment>
-              <Gallery
+              <GalleryX
                 data={props.data}
                 lookup="gal"
                 columns={{ min: 3, max: 3 }}
                 Img={Img}
+                Gallery={Gallery}
+                MediaQuery={MediaQuery}
               />
             </Fragment>
           ),
@@ -474,11 +478,13 @@ const Page = props => {
           icon: <ImageIcon />,
           embed: (
             <Fragment>
-              <Gallery
+              <GalleryX
                 data={props.data}
                 lookup="img"
                 columns={{ min: 3, max: 3 }}
                 Img={Img}
+                Gallery={Gallery}
+                MediaQuery={MediaQuery}
               />
             </Fragment>
           ),
@@ -532,11 +538,13 @@ const Page = props => {
           icon: <ImageIcon />,
           embed: (
             <Fragment>
-              <Gallery
+              <GalleryX
                 data={props.data}
                 lookup="phot"
                 columns={{ min: 3, max: 3 }}
                 Img={Img}
+                Gallery={Gallery}
+                MediaQuery={MediaQuery}
               />
             </Fragment>
           ),

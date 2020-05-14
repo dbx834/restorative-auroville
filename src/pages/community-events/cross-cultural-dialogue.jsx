@@ -12,7 +12,10 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
+import Gallery from 'react-photo-gallery'
+import MediaQuery from 'react-responsive'
+import GalleryX from '@bodhi-project/components/lib/gatsby/Gallery'
+
 import Division from '@bodhi-project/components/lib/division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
@@ -150,11 +153,13 @@ const Initiative = props => {
         </div>
       </Division>
       <div className="margin-p">
-        <Gallery
+        <GalleryX
           data={props.data}
           lookup="ccd"
           columns={{ min: 2, max: 2 }}
           Img={Img}
+          Gallery={Gallery}
+          MediaQuery={MediaQuery}
         />
       </div>
       <Division golden>

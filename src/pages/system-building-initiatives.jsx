@@ -51,7 +51,7 @@ const seoData = seoHelper(pageData)
 const conf = {
   wrapper: '',
   articleType: 'linkedArticle',
-  render: ['cover', 'date', 'formattedDate', 'title', 'abstract'],
+  render: ['cover', 'date', 'formattedDate', 'title'],
   layout: 'vertical',
   columns: 3,
   titleMask: 'mask-h5',

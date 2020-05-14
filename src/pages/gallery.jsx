@@ -13,7 +13,9 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
+import Gallery from 'react-photo-gallery'
+import MediaQuery from 'react-responsive'
+import GalleryX from '@bodhi-project/components/lib/gatsby/Gallery'
 
 import { Header } from '@bodhi-project/semantic-webflow'
 
@@ -315,11 +317,13 @@ const Page = props => (
       <h1 className="mask-h3">Gallery: Restorative Auroville in Action…</h1>
     </Header>
     <div className="mask-p">
-      <Gallery
+      <GalleryX
         data={props.data}
         lookup="nvcX"
         columns={{ min: 2, max: 3 }}
         Img={Img}
+        Gallery={Gallery}
+        MediaQuery={MediaQuery}
       />
     </div>
   </StandardPage>
