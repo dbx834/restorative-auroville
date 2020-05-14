@@ -60,35 +60,62 @@ export const exportImageFragments = graphql`
   }
   fragment max300 on File {
     childImageSharp {
-      fluid(maxWidth: 300, quality: 80, srcSetBreakpoints: [150, 300]) {
+      fluid(maxWidth: 300, quality: 80, srcSetBreakpoints: [90, 150, 300]) {
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
       }
     }
   }
   fragment max900 on File {
     childImageSharp {
-      fluid(maxWidth: 900, quality: 80, srcSetBreakpoints: [600, 900]) {
+      fluid(
+        maxWidth: 900
+        quality: 80
+        srcSetBreakpoints: [120, 360, 540, 720, 900]
+      ) {
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
       }
     }
   }
   fragment max1200 on File {
     childImageSharp {
-      fluid(maxWidth: 1200, quality: 80, srcSetBreakpoints: [600, 1200]) {
+      fluid(
+        maxWidth: 1200
+        quality: 80
+        srcSetBreakpoints: [120, 360, 540, 720, 900, 1200]
+      ) {
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
       }
     }
   }
   fragment max1500 on File {
     childImageSharp {
-      fluid(maxWidth: 1500, quality: 80, srcSetBreakpoints: [900, 1500]) {
+      fluid(
+        maxWidth: 1500
+        quality: 80
+        srcSetBreakpoints: [120, 360, 540, 720, 900, 1200, 1500]
+      ) {
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
       }
     }
   }
   fragment max3000 on File {
     childImageSharp {
-      fluid(maxWidth: 3000, quality: 80, srcSetBreakpoints: [300, 1200, 3000]) {
+      fluid(
+        maxWidth: 3000
+        quality: 80
+        srcSetBreakpoints: [
+          120
+          360
+          540
+          720
+          900
+          1200
+          1500
+          2000
+          2500
+          3000
+        ]
+      ) {
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
       }
     }

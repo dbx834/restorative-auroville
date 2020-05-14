@@ -17,11 +17,13 @@
   ],
   "license": "MIT",
   "scripts": {
-    "start": "npm run dev",
-    "build": "gatsby build",
+    "start": "npm run develop",
+    "startc": "npm run develop-clean",
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "build-clean": "rm -rf public && rm -rf .cache && GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "serve": "gatsby serve",
-    "develop": "rm -rf public && rm -rf .cache && gatsby develop",
-    "dev": "npm run develop",
+    "develop": "gatsby develop",
+    "develop-clean": "rm -rf public && rm -rf .cache && gatsby develop",
     "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

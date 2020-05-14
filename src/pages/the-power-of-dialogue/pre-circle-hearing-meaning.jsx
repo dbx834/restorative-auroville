@@ -15,8 +15,8 @@ import seoHelper from '../../methods/seoHelper'
 const pageData = {
   pageTitle: '1.2 Pre-Circle: Hearing Meaning',
   nakedPageSlug: 'the-power-of-dialogue/pre-circle-hearing-meaning',
-  pageAbstract: 'Coming soon.',
-  // cover: 'https://img.youtube.com/vi/thEan8VgZiE/hqdefault.jpg',
+  pageAbstract: 'Here we look at the Pre-Circle and its five steps.',
+  cover: 'https://img.youtube.com/vi/L5oqRbdTLFo/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)
@@ -46,12 +46,17 @@ const Page = props => (
     next={next}
     {...props}
   >
-    <p>Coming soon.</p>
-    {/*
+    <p>Here we look at the Pre-Circle and its five steps:</p>
+    <ol className="mask-p">
+      <li>Getting the Act</li>
+      <li>Hearing Meaning</li>
+      <li>Explaining the RC Process</li>
+      <li>"Who needs to be there?"</li>
+      <li>"Would you like to go ahead?"</li>
+    </ol>
     <div style={{ maxWidth: '45rem' }} className="margin-p">
-      <Video url="https://youtu.be/thEan8VgZiE" />
+      <Video url="https://youtu.be/L5oqRbdTLFo" />
     </div>
-    */}
   </VideoWrapper>
 )
 
