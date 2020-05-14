@@ -13,6 +13,9 @@ import Gallery from 'react-photo-gallery'
 import MediaQuery from 'react-responsive'
 import GalleryX from '@bodhi-project/components/lib/gatsby/Gallery'
 
+import Timeline from 'antd/lib/timeline'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/timeline/style/css'
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import DonateProjectWrapper from '../../components/wrappers/DonateProjectWrapper'
 
@@ -57,6 +60,21 @@ export const query = graphql`
     yurt5: file(relativePath: { eq: "donate/yurt/yurt5.jpeg" }) {
       ...max900
     }
+    work3: file(relativePath: { eq: "donate/yurt/work3.jpeg" }) {
+      ...max900
+    }
+    work2: file(relativePath: { eq: "donate/yurt/work2.jpeg" }) {
+      ...max900
+    }
+    work1: file(relativePath: { eq: "donate/yurt/work1.jpeg" }) {
+      ...max900
+    }
+    naming2: file(relativePath: { eq: "donate/yurt/naming2.jpeg" }) {
+      ...max900
+    }
+    naming1: file(relativePath: { eq: "donate/yurt/naming1.jpeg" }) {
+      ...max900
+    }
   }
 `
 
@@ -75,53 +93,100 @@ const Initiative = props => {
       {...props}
     >
       <h1 className="mask-h3">Building an RC Yurt</h1>
-      <p>
-        With our work growing, it’s high-time that we build a physical structure
-        for our RC gatherings. We’re hoping to raise Rs.6 lakhs in order to set
-        up a dismountable yurt.
-      </p>
-      <div className="mask-p">
-        <Img
-          fluid={props.data.costs.childImageSharp.fluid}
-          style={{ maxWidth: 480 }}
-        />
-      </div>
-      <p>
-        In our first 3 years, we hosted almost 30 live Circles, and each time we
-        were faced with the challenge of finding a suitable meeting space. As we
-        don’t have a budget for this work, we tried our best to find spaces that
-        were available for free, and oftentimes we’d end up sitting in L’aura’s
-        living room – which is cozy, but not workable as a long-term
-        professional space.
-      </p>
-      <p>
-        We’d like to create a space that’s more neutral and designed to
-        accommodate about 30-40 people sitting in a circle.
-      </p>
-      <div className="margin-p">
-        <GalleryX
-          data={props.data}
-          lookup="yurt"
-          columns={{ min: 3, max: 3 }}
-          Img={Img}
-          Gallery={Gallery}
-          MediaQuery={MediaQuery}
-        />
-      </div>
-      <p>
-        In the context of today’s Auroville, we think a dismountable and
-        moveable structure would be the best. We visited a yurt built by
-        Aurovilian builder Jean-Marc, and we loved its circular design. We’d
-        like to set up a similar yurt, possibly in Centre Field next to L’aura’s
-        house.
-      </p>
-      <p>We look forward to providing a new space for community growth.</p>
-      <p>
-        If you’re inspired by our project and would like to help, we welcome
-        your contributions. Please know that any amount is greatly
-        appreciated.&nbsp;
-        <Link to="/donate">You can donate here</Link>.
-      </p>
+      <Timeline>
+        <Timeline.Item color="#ff5700">
+          <p>
+            <strong>The idea is birthed (January 2017)</strong>
+          </p>
+        </Timeline.Item>
+        <Timeline.Item color="#ffd700">
+          <p>
+            <strong>The resurrection (June 2019)</strong>
+          </p>
+          <p>
+            With our work growing, it’s high-time that we build a physical
+            structure for our RC gatherings. We’re hoping to raise Rs.6 lakhs in
+            order to set up a dismountable yurt.
+          </p>
+          <div className="mask-p">
+            <Img
+              fluid={props.data.costs.childImageSharp.fluid}
+              style={{ maxWidth: 480 }}
+            />
+          </div>
+          <p>
+            In our first 3 years, we hosted almost 30 live Circles, and each
+            time we were faced with the challenge of finding a suitable meeting
+            space. As we don’t have a budget for this work, we tried our best to
+            find spaces that were available for free, and oftentimes we’d end up
+            sitting in L’aura’s living room – which is cozy, but not workable as
+            a long-term professional space.
+          </p>
+          <p>
+            We’d like to create a space that’s more neutral and designed to
+            accommodate about 30-40 people sitting in a circle.
+          </p>
+          <div className="margin-p">
+            <GalleryX
+              data={props.data}
+              lookup="yurt"
+              columns={{ min: 3, max: 3 }}
+              Img={Img}
+              Gallery={Gallery}
+              MediaQuery={MediaQuery}
+            />
+          </div>
+          <p>
+            In the context of today’s Auroville, we think a dismountable and
+            moveable structure would be the best. We visited a yurt built by
+            Aurovilian builder Jean-Marc, and we loved its circular design. We’d
+            like to set up a similar yurt, possibly in Centre Field next to
+            L’aura’s house.
+          </p>
+          <p>We look forward to providing a new space for community growth.</p>
+          <p>
+            If you’re inspired by our project and would like to help, we welcome
+            your contributions. Please know that any amount is greatly
+            appreciated.&nbsp;
+            <Link to="/donate">You can donate here</Link>.
+          </p>
+        </Timeline.Item>
+        <Timeline.Item color="#ff5700">
+          <p>
+            <strong>Donations received (July 2019 - February 2020)</strong>
+          </p>
+        </Timeline.Item>
+        <Timeline.Item color="#ffd700">
+          <p>
+            <strong>Work starts (February 2020)</strong>
+          </p>
+          <div className="margin-p">
+            <GalleryX
+              data={props.data}
+              lookup="work"
+              columns={{ min: 3, max: 3 }}
+              Img={Img}
+              Gallery={Gallery}
+              MediaQuery={MediaQuery}
+            />
+          </div>
+        </Timeline.Item>
+        <Timeline.Item color="#ff5700">
+          <p>
+            <strong>Naming ceremony (March 2020)</strong>
+          </p>
+          <div className="margin-p">
+            <GalleryX
+              data={props.data}
+              lookup="naming"
+              columns={{ min: 2, max: 2 }}
+              Img={Img}
+              Gallery={Gallery}
+              MediaQuery={MediaQuery}
+            />
+          </div>
+        </Timeline.Item>
+      </Timeline>
     </DonateProjectWrapper>
   )
 }

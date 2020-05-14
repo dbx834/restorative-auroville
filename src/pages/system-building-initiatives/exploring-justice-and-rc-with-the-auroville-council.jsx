@@ -12,6 +12,7 @@ import Timeline from 'antd/lib/timeline'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/timeline/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import PDFViewer from '../../components/PDFViewer'
 import SystemBuildingInitiativeWrapper from '../../components/wrappers/SystemBuildingInitiativeWrapper'
 
 import seoHelper from '../../methods/seoHelper'
@@ -35,13 +36,7 @@ const prev = undefined
 
 const seoData = seoHelper(pageData)
 
-const notes = [
-  {
-    url:
-      'https://www.restorativeauroville.org/pdfs2/system-building-initiatives-exploring-justice-and-rc-with-the-auroville-council.pdf',
-    title: 'See more notes',
-  },
-]
+const notes = []
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -61,23 +56,22 @@ const Initiative = props => {
       <h1 className="mask-h3">
         Exploring Justice & RC with the Auroville Council
       </h1>
-      <p>Coming soon.</p>
-      <Image
-        src="/sbi-assets/avc/avCouncil.jpg"
-        rawWidth={1440}
-        rawHeight={900}
-        style={{
-          height: 'auto',
-          maxWidth: '45rem',
-          border: 0,
-          background: 'transparent',
-          display: 'block',
-          marginLeft: 0,
-        }}
-        alt="Exploring Justice and RC with the Auroville Council"
-        className="margin-p"
-      />
-      <div className="margin-p">
+      <div style={{ maxWidth: 600, marginBottom: 30 }}>
+        <Image
+          src="/sbi-assets/avc/avCouncil.jpg"
+          rawWidth={1440}
+          rawHeight={900}
+          style={{
+            height: 'auto',
+            border: 0,
+            background: 'transparent',
+            display: 'block',
+            marginLeft: 0,
+          }}
+          alt="Exploring Justice and RC with the Auroville Council"
+        />
+      </div>
+      <div>
         <Timeline>
           <Timeline.Item color="#ff5700">
             <p>
@@ -123,6 +117,13 @@ const Initiative = props => {
                 reach their full potential
               </li>
             </ul>
+            <div className="mask-p">
+              <PDFViewer
+                url="https://www.restorativeauroville.org/pdfs2/system-building-initiatives-exploring-justice-and-rc-with-the-auroville-council.pdf"
+                title="See more notes"
+                width="100%"
+              />
+            </div>
           </Timeline.Item>
           <Timeline.Item color="#ffd700">
             <p>
@@ -134,7 +135,7 @@ const Initiative = props => {
               from the Auroville Council have initiated a handful of Circles,
               they have actively participated in Circles when they were named,
               and they have also recommended to community members that they
-              themselves call Circles.
+              themselves call Circles. Yay, let's keep it up!
             </p>
           </Timeline.Item>
         </Timeline>

@@ -20,6 +20,7 @@ import OutLink from '@bodhi-project/components/lib/outlink'
 import Video from '@bodhi-project/components/lib/video'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+import PDFViewer from '../../components/PDFViewer'
 import SystemBuildingInitiativeWrapper from '../../components/wrappers/SystemBuildingInitiativeWrapper'
 
 import seoHelper from '../../methods/seoHelper'
@@ -85,13 +86,7 @@ const prev = {
     'system-building-initiatives/exploring-justice-and-rc-with-the-auroville-council',
 }
 
-const notes = [
-  {
-    url:
-      'https://www.restorativeauroville.org/pdfs2/system-building-initiatives-restorative-circles-in-aikiyam-school-conflict-resolution.pdf',
-    title: 'See more notes',
-  },
-]
+const notes = []
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -109,8 +104,10 @@ const Initiative = props => {
       {...props}
     >
       <h1 className="mask-h3">Restorative Circles in Aikiyam School</h1>
-      <p>Coming soon.</p>
-      <div className="margin-p">
+      <div style={{ maxWidth: 600, marginBottom: 30 }}>
+        <Video url="https://www.youtube.com/watch?v=6Ma-dnG53LU" />
+      </div>
+      <div>
         <Timeline>
           <Timeline.Item color="#ffd700">
             <p>
@@ -131,10 +128,7 @@ const Initiative = props => {
               are looking forward to seeing how they might adapt RC to their
               cultural context.
             </p>
-            <div style={{ maxWidth: 600 }} className="margin-p">
-              <Video url="https://www.youtube.com/watch?v=6Ma-dnG53LU" />
-            </div>
-            <div className="margin-p">
+            <div className="mask-p">
               <GalleryX
                 data={props.data}
                 lookup="sbi"
@@ -144,21 +138,27 @@ const Initiative = props => {
                 MediaQuery={MediaQuery}
               />
             </div>
+            <div className="mask-p">
+              <PDFViewer
+                url="https://www.restorativeauroville.org/pdfs2/system-building-initiatives-restorative-circles-in-aikiyam-school-conflict-resolution.pdf"
+                title="See more notes"
+                width="100%"
+              />
+            </div>
           </Timeline.Item>
           <Timeline.Item color="#ff5700">
             <p>
-              <strong>Exploring RC together (early 2018)</strong>
+              <strong>A challenging Circle (late 2019)</strong>
             </p>
             <p>
               In late 2019, a Circle was called regarding some structural
-              challenges within the school, where several teachers and support
-              group members were uneasy about how some teachers and
-              administrative personnel were punishing children. Although the
-              Circle took place, it revealed many areas of tension regarding
-              lack of shared power and transparency, and unfortunately several
-              key players chose not to attend the process. As a team, we made
-              several attempts to restore connection with the school and revive
-              our RC project, however we haven’t yet received a positive reply.
+              challenges within the school and the use of punishment. Although
+              we faced quite a bit of resistance and suggestions that the Circle
+              shouldn't take place, we still showed up and the process revealed
+              many areas of tension regarding lack of shared power and
+              transparency, and unfortunately several key players chose not to
+              attend. Ever since, it has been unclear how our RC project will
+              unfold here...
             </p>
           </Timeline.Item>
         </Timeline>

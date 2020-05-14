@@ -18,7 +18,7 @@ const data = [
     routeSlug:
       '/system-building-initiatives/restorative-circles-in-the-learning-community-school',
     publishedAt: timestamp('01.01.2015'),
-    formattedDate: 'November 2015 - Ongoing',
+    formattedDate: 'November 2015 - April 2020',
     abstract:
       'In late 2015, we were invited to share RC with the teachers at TLC (The Learning Community School).',
     hasCategories: mockCategory(),
@@ -31,7 +31,7 @@ const data = [
     routeSlug:
       '/system-building-initiatives/restorative-circles-in-aikiyam-school',
     publishedAt: timestamp('01.01.2017'),
-    formattedDate: 'January 2017 - Ongoing',
+    formattedDate: 'January 2017 - November 2019',
     abstract:
       'We are sharing RC in Aikiyam School, one of Auroville’s outreach schools for children from Kindergarten to 8th Grade. After discussions with the administration and teachers of the school, a group of ten teachers has committed to learn about RC.',
     hasCategories: mockCategory(),

@@ -4,7 +4,6 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 import PropTypes from 'prop-types'
-import { css } from 'glamor'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { graphql } from 'gatsby'
@@ -13,12 +12,12 @@ import Gallery from 'react-photo-gallery'
 import MediaQuery from 'react-responsive'
 import GalleryX from '@bodhi-project/components/lib/gatsby/Gallery'
 
-import Division from '@bodhi-project/components/lib/division'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
+import Timeline from 'antd/lib/timeline'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/timeline/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import SystemBuildingInitiativeWrapper from '../../components/wrappers/SystemBuildingInitiativeWrapper'
+import PDFViewer from '../../components/PDFViewer'
 
 import GrungeBox from '../../components/GrungeBox'
 
@@ -45,13 +44,6 @@ const prev = {
 const next = undefined
 
 const notes = []
-
-// ----------------------------------------------------------------------------
-// --------------------------------------------------------------------- Styles
-// ----------------------------------------------------------------------------
-const style = css({
-  display: 'flex !important',
-}).toString()
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Images
@@ -88,23 +80,13 @@ export const query = graphql`
     ) {
       ...max900
     }
-    img7: file(
-      relativePath: { eq: "system-building-initiatives/tlc/img7.jpg" }
-    ) {
-      ...max900
-    }
     img8: file(
       relativePath: { eq: "system-building-initiatives/tlc/img8.jpg" }
     ) {
       ...max900
     }
-    img9: file(
+    cover: file(
       relativePath: { eq: "system-building-initiatives/tlc/img9.jpg" }
-    ) {
-      ...max900
-    }
-    img10: file(
-      relativePath: { eq: "system-building-initiatives/tlc/img10.jpg" }
     ) {
       ...max900
     }
@@ -133,6 +115,36 @@ export const query = graphql`
     ) {
       ...max900
     }
+    pic1: file(
+      relativePath: { eq: "system-building-initiatives/tlc/pic1.jpeg" }
+    ) {
+      ...max900
+    }
+    pic2: file(
+      relativePath: { eq: "system-building-initiatives/tlc/pic2.jpg" }
+    ) {
+      ...max900
+    }
+    pic3: file(
+      relativePath: { eq: "system-building-initiatives/tlc/pic3.jpg" }
+    ) {
+      ...max900
+    }
+    pic4: file(
+      relativePath: { eq: "system-building-initiatives/tlc/pic4.jpg" }
+    ) {
+      ...max900
+    }
+    pic5: file(
+      relativePath: { eq: "system-building-initiatives/tlc/pic5.jpeg" }
+    ) {
+      ...max900
+    }
+    pic6: file(
+      relativePath: { eq: "system-building-initiatives/tlc/pic6.jpeg" }
+    ) {
+      ...max900
+    }
   }
 `
 
@@ -151,14 +163,75 @@ const Initiative = props => {
       notes={notes}
       {...props}
     >
-      <Division golden className={style}>
-        <div>
-          <h1 className="mask-h3">
-            Restorative Circles in TLC (The Learning Community School)
-          </h1>
-          <h2 className="mask-h4">
-            Phase 2 – Exploring a Peer Mediation System
-          </h2>
+      <h1 className="mask-h3">
+        Restorative Circles in TLC (The Learning Community School)
+      </h1>
+      <div style={{ maxWidth: 600, marginBottom: 30 }}>
+        <Img fluid={props.data.cover.childImageSharp.fluid} />
+      </div>
+      <Timeline>
+        <Timeline.Item color="#ff5700">
+          <p>
+            <strong>Restorative Circles at TLC (2015)</strong>
+          </p>
+          <p>
+            In late 2015, we were invited to share RC with the teachers at TLC
+            (The Learning Community School). They developed a System and
+            facilitated a couple of Circles among the children, while we
+            facilitated a couple of Circles among the facilitators and parents.
+          </p>
+          <div
+            style={{ display: 'flex', height: '100%', alignItems: 'flex-end' }}
+            className="mask-p desktop-only"
+          >
+            <GrungeBox
+              style={{ paddingTop: 16, paddingBottom: 16, marginBottom: 0 }}
+            >
+              <p>
+                <strong>Q</strong>: How do you know a Circle is over...?
+                <br />
+                <strong>A</strong>: When all the kids start climbing up the
+                tree...!
+              </p>
+              <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                <p style={{ marginBottom: 0 }}>
+                  <strong>Facilitator:</strong>&nbsp;
+                </p>
+                <p style={{ marginBottom: 0, marginTop: 0 }}>
+                  <i>
+                    "So, are you guys trying to say you just wanna have
+                    fun...?!"
+                  </i>
+                  <br />
+                  <i>"Is there anything more you’d like to say...?"</i>
+                </p>
+              </div>
+            </GrungeBox>
+          </div>
+          <div className="mask-p">
+            <GalleryX
+              data={props.data}
+              lookup="img"
+              columns={{ min: 3, max: 3 }}
+              Img={Img}
+              Gallery={Gallery}
+              MediaQuery={MediaQuery}
+            />
+          </div>
+          <div className="mask-p">
+            <PDFViewer
+              url="https://www.restorativeauroville.org/pdfs2/tlc.pdf"
+              title="See more notes"
+              width="100%"
+            />
+          </div>
+        </Timeline.Item>
+        <Timeline.Item color="#ffd700">
+          <p>
+            <strong>
+              Exploring a Peer Mediation System (July 2019 - April 2020)
+            </strong>
+          </p>
           <p>
             Starting in July 2019, we’ll be exploring with setting up a Peer
             Mediation System in TLC School, so that the children can have a
@@ -168,47 +241,33 @@ const Initiative = props => {
             response,” without needing to name and Pre-Circle everyone
             beforehand...
           </p>
-          <h2 className="mask-h4">Phase 1 – Restorative Circles</h2>
-          <p>
-            In late 2015, we were invited to share RC with the teachers at TLC
-            (The Learning Community School). They developed a System and
-            facilitated a couple of Circles among the children, while we
-            facilitated a couple of Circles among the facilitators and parents.
-          </p>
-        </div>
-        <div
-          style={{ display: 'flex', height: '100%', alignItems: 'flex-end' }}
-          className="desktop-only"
-        >
-          <div>
-            <GrungeBox style={{ paddingTop: 16, paddingBottom: 16 }}>
-              <p>
-                <strong>Q</strong>: How do you know a Circle is over...?
-                <br />
-                <strong>A</strong>: When all the kids start climbing up the
-                tree...!
-              </p>
-              <p style={{ marginBottom: 0 }}>
-                <i>
-                  "So, are you guys trying to say you just wanna have fun...?!"
-                </i>
-                <br />
-                <i>"Is there anything more you’d like to say...?"</i>
-              </p>
-            </GrungeBox>
+          <div className="mask-p">
+            <GalleryX
+              data={props.data}
+              lookup="pic"
+              columns={{ min: 3, max: 3 }}
+              Img={Img}
+              Gallery={Gallery}
+              MediaQuery={MediaQuery}
+            />
           </div>
-        </div>
-      </Division>
-      <div className="mask-p">
-        <GalleryX
-          data={props.data}
-          lookup="img"
-          columns={{ min: 3, max: 3 }}
-          Img={Img}
-          Gallery={Gallery}
-          MediaQuery={MediaQuery}
-        />
-      </div>
+        </Timeline.Item>
+        <Timeline.Item color="#ff5700">
+          <p>
+            <strong>Worldwide lockdown... (summer 2020 update)</strong>
+          </p>
+          <p>
+            Over the year, our exploration changed direction a couple of times,
+            from working with the entire school community (kids, facilitators,
+            parents), to working just with the kids, to finally working just
+            with the facilitators. It seems like our work has clearly made a
+            contribution to how communication and conflict is held at TLC, but
+            somehow we weren't able to ever finalize a working "conflict
+            resolution system" together... And then life changed with the
+            lockdown... until next time...!
+          </p>
+        </Timeline.Item>
+      </Timeline>
     </SystemBuildingInitiativeWrapper>
   )
 }
