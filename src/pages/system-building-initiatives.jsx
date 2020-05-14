@@ -98,6 +98,7 @@ export const query = graphql`
 const Ongoingprojects = props => {
   const { data: images } = props
   const data = mapCovers(rawData, images)
+  console.log(data)
 
   return (
     <StandardPage

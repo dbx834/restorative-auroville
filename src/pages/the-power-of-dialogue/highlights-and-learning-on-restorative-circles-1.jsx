@@ -57,7 +57,7 @@ const Page = props => (
       our project.
     </p>
     <p>We asked Aurovik the following questions:</p>
-    <ol className="mask-p" style={{ paddingLeft: 0 }}>
+    <ol className="mask-p" style={{ paddingLeft: 20 }}>
       <li>
         What has inspired/touched you about our exploration with RC in Auroville
         (in general/specific)?

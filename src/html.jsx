@@ -57,7 +57,7 @@ const HTML = props => {
   const { headComponents, body, postBodyComponents } = props
 
   return (
-    <html lang="en" className="lk-loading">
+    <html lang="en" className="lk-loading normal" id="copy">
       <head>
         <meta name="fragment" content="!" />
         <meta
@@ -71,7 +71,7 @@ const HTML = props => {
         <title>{`${data.websiteName}`}</title>
         {headComponents}
       </head>
-      <body id="copy">
+      <body>
         <InitializeMeta data={{ titleTemplate: `%s | ${data.websiteName}` }} />
         <UpdateTitle title={data.websiteAbstract} />
         <WebsiteSchema data={websiteSchemaData} />
