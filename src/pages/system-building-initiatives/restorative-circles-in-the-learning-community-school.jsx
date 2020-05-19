@@ -193,7 +193,14 @@ const Initiative = props => {
                 <strong>A</strong>: When all the kids start climbing up the
                 tree...!
               </p>
-              <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'flex-start',
+                  marginBottom: 0,
+                }}
+                className="margin-p"
+              >
                 <p style={{ marginBottom: 0 }}>
                   <strong>Facilitator:</strong>&nbsp;
                 </p>

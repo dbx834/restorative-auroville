@@ -19,6 +19,8 @@ import Division from '@bodhi-project/components/lib/division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
+import Image from '@bodhi-project/components/lib/image/Image'
+
 import Grid from '@bodhi-project/components/lib/grid/gatsby'
 import '@bodhi-project/components/lib/grid/style.less'
 import '@bodhi-project/components/lib/standard-renderers/article/vertical.less'
@@ -53,6 +55,8 @@ import seoHelper from '../methods/seoHelper'
 import rawData from '../data/the-power-of-dialogue'
 
 import '../styles/pages/the-power-of-dialogue.less'
+
+import grungeBox from '../assets/grungeBg.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React
@@ -368,8 +372,6 @@ const Page = props => {
     images.defaultForegroundFallback.childImageSharp.fluid
   )
 
-  // console.log(d1C, d2C, d3C, d4C)
-
   return (
     <StandardPage
       className="the-power-of-dialogue-page"
@@ -422,8 +424,8 @@ const Page = props => {
                 overflow: 'hidden',
               }}
             >
-              <Img
-                fluid={images.grungeBox.childImageSharp.fluid}
+              <Image
+                src={grungeBox}
                 style={{
                   background: 'transparent',
                   border: 'unset',
