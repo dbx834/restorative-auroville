@@ -98,7 +98,7 @@ const circleStylesObject = css({
   '& .child-circle.circle-active::after': {
     fontWeight: 700,
     textDecoration: 'underline',
-    fontSize: '15px',
+    fontSize: 'inherit',
     color: '#e67100',
   },
   '& .child-circle-highlight:nth-child(3)::after': {
@@ -207,7 +207,7 @@ class FacilitatorsTeam extends React.Component {
           Facilitators to be partnered with more experienced Facilitators, and
           for ongoing opportunities for collaboration and accountability.
         </p>
-        <div className={`${circleStyles} margin-p`}>
+        <div className={`${circleStyles} mask-p`}>
           <PersonCircle
             image={lauraSquare}
             className="child-circle-highlight"

@@ -15,7 +15,8 @@ import seoHelper from '../../methods/seoHelper'
 const pageData = {
   pageTitle: '1.4 Pre-Circle: "Who needs to be there?"',
   nakedPageSlug: 'the-power-of-dialogue/pre-circle-who-needs-to-be-there',
-  pageAbstract: 'Coming soon.',
+  pageAbstract:
+    'The fourth step in the Pre-Circle is "naming those to be invited," where the Facilitator asks each participant, "Who needs to be there?"',
   // cover: 'https://img.youtube.com/vi/thEan8VgZiE/hqdefault.jpg',
 }
 
@@ -46,7 +47,16 @@ const Page = props => (
     next={next}
     {...props}
   >
-    <p>Coming soon.</p>
+    <p>
+      The fourth step in the Pre-Circle is "naming those to be invited," where
+      the Facilitator asks each participant, "Who needs to be there?"
+    </p>
+    <p>
+      The Pre-Circle has five steps: i) getting the act; ii) hearing meaning;
+      iii) explaining the RC process; iv) naming those to be invited, v) getting
+      consent.
+    </p>
+    <p>Video coming soon.</p>
     {/*
     <div style={{ maxWidth: '45rem' }} className="margin-p">
       <Video url="https://youtu.be/thEan8VgZiE" />

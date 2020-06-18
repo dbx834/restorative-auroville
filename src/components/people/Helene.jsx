@@ -18,7 +18,9 @@ import React from 'react'
 /** Person */
 const Person = () => (
   <div>
-    <h1 className="mask-h4">Hélène Gagnon</h1>
+    <h1 className="mask-h4" style={{ fontWeight: 700 }}>
+      Hélène Gagnon
+    </h1>
     <p>
       <i>
         I was born and grew up in Montreal City, Quebec (the French-speaking

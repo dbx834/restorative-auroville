@@ -59,6 +59,11 @@ const conf = {
     tags: 'exclusive',
   },
   containerId: 'c',
+  hashFilter: false,
+  hydrate: {
+    activeFilter: false,
+    chronology: 'recent-first',
+  },
 }
 
 // ----------------------------------------------------------------------------
@@ -138,8 +143,7 @@ const Page = props => {
           Button={Button}
           Img={Img}
           MediaQuery={MediaQuery}
-          dataAlias={data}
-          data={[]}
+          documents={data}
           allCategories={categories}
           allTags={tags}
           strictChronology

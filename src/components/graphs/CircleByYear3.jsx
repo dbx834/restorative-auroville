@@ -592,7 +592,7 @@ class Sample3 extends React.Component {
 
     let leftYearTemp = moment(left).format('YYYY')
     if (activeRangeLeft === 2016 && activeRangeRigth === 2021) {
-      leftYearTemp = 'all'
+      leftYearTemp = 'All years'
     }
     const ticks = generateTicks(left, right, resolution)
     const years = {}
@@ -614,17 +614,45 @@ class Sample3 extends React.Component {
         </p>
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <Select
-            value={leftYearTemp}
+            value={
+              <span style={{ marginBottom: 0 }} className="mask-p">
+                <small>{leftYearTemp}</small>
+              </span>
+            }
             defaultValue="all"
-            style={{ width: 90, marginRight: 10 }}
+            style={{ width: 100, marginRight: 10 }}
             onChange={this.yearSelected}
           >
-            <Option value={2020}>2020</Option>
-            <Option value={2019}>2019</Option>
-            <Option value={2018}>2018</Option>
-            <Option value={2017}>2017</Option>
-            <Option value={2016}>2016</Option>
-            <Option value="all">All years</Option>
+            <Option value={2020}>
+              <span style={{ marginBottom: 0 }} className="mask-p">
+                <small>2020</small>
+              </span>
+            </Option>
+            <Option value={2019}>
+              <span style={{ marginBottom: 0 }} className="mask-p">
+                <small>2019</small>
+              </span>
+            </Option>
+            <Option value={2018}>
+              <span style={{ marginBottom: 0 }} className="mask-p">
+                <small>2018</small>
+              </span>
+            </Option>
+            <Option value={2017}>
+              <span style={{ marginBottom: 0 }} className="mask-p">
+                <small>2017</small>
+              </span>
+            </Option>
+            <Option value={2016}>
+              <span style={{ marginBottom: 0 }} className="mask-p">
+                <small>2016</small>
+              </span>
+            </Option>
+            <Option value="all">
+              <span style={{ marginBottom: 0 }} className="mask-p">
+                <small>All years</small>
+              </span>
+            </Option>
           </Select>
           <Button
             onClick={e => this.reset(e)}

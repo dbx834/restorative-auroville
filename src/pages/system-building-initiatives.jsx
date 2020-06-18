@@ -60,6 +60,11 @@ const conf = {
     tags: 'exclusive',
   },
   containerId: 'c',
+  hashFilter: false,
+  hydrate: {
+    activeFilter: false,
+    chronology: 'oldest-first',
+  },
 }
 
 // ----------------------------------------------------------------------------
@@ -121,8 +126,7 @@ const Ongoingprojects = props => {
           Button={Button}
           Img={Img}
           MediaQuery={MediaQuery}
-          data={[]}
-          dataAlias={data}
+          documents={data}
           allCategories={categories}
           allTags={tags}
           strictChronology

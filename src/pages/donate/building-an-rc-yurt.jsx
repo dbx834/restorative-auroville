@@ -12,6 +12,11 @@ import Img from 'gatsby-image'
 import Gallery from 'react-photo-gallery'
 import MediaQuery from 'react-responsive'
 import GalleryX from '@bodhi-project/components/lib/gatsby/Gallery'
+import Video from '@bodhi-project/components/lib/video'
+
+import Division from '@bodhi-project/components/lib/division'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/col/style/css'
 
 import Timeline from 'antd/lib/timeline'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/timeline/style/css'
@@ -69,6 +74,9 @@ export const query = graphql`
     work1: file(relativePath: { eq: "donate/yurt/work1.jpeg" }) {
       ...max900
     }
+    work5: file(relativePath: { eq: "donate/yurt/yurt7.jpeg" }) {
+      ...max900
+    }
     naming2: file(relativePath: { eq: "donate/yurt/naming2.jpeg" }) {
       ...max900
     }
@@ -98,10 +106,29 @@ const Initiative = props => {
           <p>
             <strong>The idea is birthed (January 2017)</strong>
           </p>
+          <Division custom={[12, 7]} className="margin-p">
+            <p style={{ marginBottom: 0 }}>
+              From early on in our project, we fantasized about the idea of
+              having our own RC-space. Hélène (a previous team member) had met
+              with Jean-Marc and had the idea of building a yurt. We tried to
+              fundraise, but were simply unable to raise the amount we needed.
+            </p>
+            <div
+              style={{ maxWidth: '15rem', marginBottom: 0 }}
+              className="margin-p"
+            >
+              <Video url="https://youtu.be/OlD_0LJqpHw" />
+            </div>
+          </Division>
         </Timeline.Item>
         <Timeline.Item color="#ffd700">
           <p>
             <strong>The resurrection (June 2019)</strong>
+          </p>
+          <p>
+            With Henrike on the team, we came back to our yurt dream and
+            formalized our application to the Town Development Council and set
+            up a fundraising campaign, some of which you can see below:
           </p>
           <p>
             With our work growing, it’s high-time that we build a physical
@@ -155,10 +182,19 @@ const Initiative = props => {
           <p>
             <strong>Donations received (July 2019 - February 2020)</strong>
           </p>
+          <p>
+            Wow, what incredible support we received! Within just a few months,
+            we were gifted a total of Rs.6,00,000!
+          </p>
         </Timeline.Item>
         <Timeline.Item color="#ffd700">
           <p>
             <strong>Work starts (February 2020)</strong>
+          </p>
+          <p>
+            Along with our builder, Jean-Marc, our team members and apprentices
+            start varnishing the wood... And later on the digging to lay the
+            foundation...
           </p>
           <div className="margin-p">
             <GalleryX
@@ -174,6 +210,10 @@ const Initiative = props => {
         <Timeline.Item color="#ff5700">
           <p>
             <strong>Naming ceremony (March 2020)</strong>
+          </p>
+          <p>
+            Over a spontaneous team lunch, we brainstormed on different names
+            for the space, and came up with “Dialogue House.”
           </p>
           <div className="margin-p">
             <GalleryX

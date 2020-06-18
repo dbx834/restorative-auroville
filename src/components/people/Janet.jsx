@@ -18,7 +18,9 @@ import React from 'react'
 /** Person */
 const Person = () => (
   <div>
-    <h1 className="mask-h4">Janet Fearn – Founder</h1>
+    <h1 className="mask-h4" style={{ fontWeight: 700 }}>
+      Janet Fearn – Founder
+    </h1>
     <p>
       <i>
         In 1967 I left my job in Toronto, Canada as a psychiatric social worker,

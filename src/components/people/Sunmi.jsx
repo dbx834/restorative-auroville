@@ -19,7 +19,9 @@ const { Fragment } = React
 /** Person */
 const Person = ({ show = true }) => (
   <div>
-    <h1 className="mask-h4">Sun-mi Shin</h1>
+    <h1 className="mask-h4" style={{ fontWeight: 700 }}>
+      Sun-Mi Shin
+    </h1>
     <p style={{ marginBottom: 0 }}>
       <i>Coming soon…</i>
     </p>

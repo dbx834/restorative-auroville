@@ -18,7 +18,9 @@ import React from 'react'
 /** Person */
 const Person = () => (
   <div>
-    <h1 className="mask-h4">L'aura Joy – Founder</h1>
+    <h1 className="mask-h4" style={{ fontWeight: 700 }}>
+      L'aura Joy – Founder
+    </h1>
     <p>
       <i>
         I was born and raised in Auroville, and life has lead me to work with

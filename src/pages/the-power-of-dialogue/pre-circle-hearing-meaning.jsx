@@ -15,7 +15,8 @@ import seoHelper from '../../methods/seoHelper'
 const pageData = {
   pageTitle: '1.2 Pre-Circle: Hearing Meaning',
   nakedPageSlug: 'the-power-of-dialogue/pre-circle-hearing-meaning',
-  pageAbstract: 'Here we look at the Pre-Circle and its five steps.',
+  pageAbstract:
+    'The second step in the Pre-Circle is "hearing meaning," where the Facilitator reflects back to the participant what he/she understands as their message, how they might be feeling about the incident, or what values might be at stake for them.',
   cover: 'https://img.youtube.com/vi/L5oqRbdTLFo/hqdefault.jpg',
 }
 
@@ -46,14 +47,17 @@ const Page = props => (
     next={next}
     {...props}
   >
-    <p>Here we look at the Pre-Circle and its five steps:</p>
-    <ol className="mask-p" style={{ paddingLeft: 20 }}>
-      <li>Getting the Act</li>
-      <li>Hearing Meaning</li>
-      <li>Explaining the RC Process</li>
-      <li>"Who needs to be there?"</li>
-      <li>"Would you like to go ahead?"</li>
-    </ol>
+    <p>
+      The second step in the Pre-Circle is "hearing meaning," where the
+      Facilitator reflects back to the participant what he/she understands as
+      their message, how they might be feeling about the incident, or what
+      values might be at stake for them.
+    </p>
+    <p>
+      The Pre-Circle has five steps: i) getting the act; ii) hearing meaning;
+      iii) explaining the RC process; iv) naming those to be invited, v) getting
+      consent.
+    </p>
     <div style={{ maxWidth: '45rem' }} className="margin-p">
       <Video url="https://youtu.be/L5oqRbdTLFo" />
     </div>

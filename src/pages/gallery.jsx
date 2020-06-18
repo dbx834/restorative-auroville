@@ -39,6 +39,15 @@ const seoData = seoHelper(pageData)
 // ----------------------------------------------------------------------------
 export const query = graphql`
   query {
+    nvcX102: file(relativePath: { eq: "gallery/photo1.jpg" }) {
+      ...max900
+    }
+    nvcX101: file(relativePath: { eq: "gallery/photo2.jpg" }) {
+      ...max900
+    }
+    nvcX100: file(relativePath: { eq: "gallery/photo3.jpg" }) {
+      ...max900
+    }
     nvcX87: file(relativePath: { eq: "gallery/nvcX87.jpg" }) {
       ...max900
     }
@@ -311,23 +320,26 @@ export const query = graphql`
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = props => (
-  <StandardPage className="" seoData={seoData} {...props}>
-    <Header>
-      <h1 className="mask-h3">Gallery: Restorative Auroville in Action…</h1>
-    </Header>
-    <div className="mask-p">
-      <GalleryX
-        data={props.data}
-        lookup="nvcX"
-        columns={{ min: 2, max: 3 }}
-        Img={Img}
-        Gallery={Gallery}
-        MediaQuery={MediaQuery}
-      />
-    </div>
-  </StandardPage>
-)
+const Page = props => {
+  console.log(props.data)
+  return (
+    <StandardPage className="" seoData={seoData} {...props}>
+      <Header>
+        <h1 className="mask-h3">Gallery: Restorative Auroville in Action…</h1>
+      </Header>
+      <div className="mask-p">
+        <GalleryX
+          data={props.data}
+          lookup="nvcX"
+          columns={{ min: 2, max: 3 }}
+          Img={Img}
+          Gallery={Gallery}
+          MediaQuery={MediaQuery}
+        />
+      </div>
+    </StandardPage>
+  )
+}
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Export

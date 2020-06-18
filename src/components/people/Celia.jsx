@@ -18,7 +18,9 @@ import React from 'react'
 /** Person */
 const Person = () => (
   <div>
-    <h1 className="mask-h4">Celia De Mengin Poirier</h1>
+    <h1 className="mask-h4" style={{ fontWeight: 700 }}>
+      Celia De Mengin Poirier
+    </h1>
     <p>
       <i>
         I grew up in France in a family where conflict, trust and love
@@ -39,7 +41,7 @@ const Person = () => (
         another person, and how to create connection. Through this NVC practice
         I heard about Restorative Circle, which is for me the implementation of
         NVC in a community. I like that it gives clear guidelines about the
-        process. I'm still very new to all this but i'm already super trustful
+        process. I'm still very new to all this but I'm already super trustful
         in its magic and I'm excited to learn its facilitation.
       </i>
     </p>

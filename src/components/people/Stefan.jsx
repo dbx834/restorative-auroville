@@ -18,7 +18,9 @@ import React from 'react'
 /** Person */
 const Person = () => (
   <div>
-    <h1 className="mask-h4">Stefan Gebert</h1>
+    <h1 className="mask-h4" style={{ fontWeight: 700 }}>
+      Stefan Gebert
+    </h1>
     <p>
       <i>
         With a background in sociology and psychology (in Germany), I found my

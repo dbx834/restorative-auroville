@@ -203,11 +203,12 @@ module.exports = {
     //   resolve: `gatsby-plugin-sri`, // https://www.gatsbyjs.org/packages/gatsby-plugin-sri
     //   options: {
     //     hash: 'sha512',
+    //     crossorigin: true,
     //   },
     // },
-    // {
-    //   resolve: `gatsby-plugin-zopfli`, // https://www.gatsbyjs.org/packages/gatsby-plugin-zopfli
-    // },
+    {
+      resolve: `gatsby-plugin-zopfli`, // https://www.gatsbyjs.org/packages/gatsby-plugin-zopfli
+    },
     {
       resolve: `gatsby-plugin-less`, // https://www.gatsbyjs.org/packages/gatsby-plugin-less/
     },

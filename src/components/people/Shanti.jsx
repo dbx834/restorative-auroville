@@ -18,7 +18,9 @@ import React from 'react'
 /** Person */
 const Person = () => (
   <div>
-    <h1 className="mask-h4">Anand Shanti</h1>
+    <h1 className="mask-h4" style={{ fontWeight: 700 }}>
+      Anand Shanti
+    </h1>
     <p>
       <i>
         I was one of the core group of people who started learning about

@@ -93,6 +93,8 @@ const HTML = props => {
             `,
           }}
         />
+        <script src="https://p.trellocdn.com/embed.min.js" />
+        <script src="https://trello.com/c/2vJGRevK.js" />
       </body>
     </html>
   )

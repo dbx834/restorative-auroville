@@ -18,7 +18,9 @@ import React from 'react'
 /** Person */
 const Person = () => (
   <div>
-    <h1 className="mask-h4">Kati Hötger – Core Team Member</h1>
+    <h1 className="mask-h4" style={{ fontWeight: 700 }}>
+      Kati Hötger – Core Team Member
+    </h1>
     <p>
       <i>I was born, raised and educated in Germany.</i>
     </p>

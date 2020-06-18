@@ -19,7 +19,7 @@ const { Fragment } = React
 /** Person */
 const Person = ({ show = true }) => (
   <div>
-    <h1 className="mask-h4">
+    <h1 className="mask-h4" style={{ fontWeight: 700 }}>
       Suma Houldsworth
       <Fragment>{show === true && ' – Core Team Member'}</Fragment>
     </h1>

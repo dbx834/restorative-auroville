@@ -111,11 +111,12 @@ const conf = {
     categories: 'exclusive',
     tags: 'exclusive',
   },
+  renderCategoryAbstract: false,
+  hashFilter: false,
   hydrate: {
+    activeFilter: false,
     chronology: 'oldest-first',
   },
-  renderCategoryAbstract: false,
-  hashFilter: true,
 }
 
 const d1 = filter(rawData, o => inArray(o.hasCategories, 'theCraft'))
@@ -383,10 +384,10 @@ const Page = props => {
           <h1 className="mask-h3">The Power of Dialogue</h1>
           <p className="abstract">
             We offer this video series as an opportunity for you to journey
-            along with our journey. Restorative Circles is still very new to the
-            world, and learning material and resources are somewhat limited. So
-            here’s our attempt to celebrate this body of work and to offer back
-            a few nuggets from our unfolding journey.
+            along with our journey. Restorative Circles is still very new to
+            this so-called "modern world," and learning material and resources
+            are somewhat limited. So here’s our attempt to celebrate this body
+            of work and to offer back a few nuggets from our unfolding journey.
           </p>
         </Fragment>
         <Fragment>
@@ -394,8 +395,8 @@ const Page = props => {
             <div
               style={{
                 position: 'absolute',
-                top: 5,
-                right: 10,
+                top: 2,
+                right: 8,
                 height: 40,
                 zIndex: -1,
               }}
@@ -436,7 +437,7 @@ const Page = props => {
                 rawHeight={900}
               />
             </div>
-            <p style={{ marginBottom: 0 }}>
+            <p style={{ marginBottom: 0, paddingRight: 25 }}>
               <Link to="/donate/filming-a-live-restorative-circle">
                 Our big dream is to one day film an entire live Restorative
                 Circle
@@ -459,7 +460,7 @@ const Page = props => {
         }}
         alt="Restorative Auroville - The Craft"
       />
-      <h2 className="mask-h3" id="the-craft" style={{ marginBottom: 2 }}>
+      <h2 className="mask-h3" id="the-craft" style={{ marginBottom: 4 }}>
         1. The Craft
       </h2>
       <p className="mask-h5">
@@ -488,8 +489,7 @@ const Page = props => {
           Button={Button}
           Img={Img}
           MediaQuery={MediaQuery}
-          dataAlias={d1C}
-          data={[]}
+          documents={d1C}
           allCategories={categories}
           allTags={tags}
           strictChronology
@@ -508,7 +508,7 @@ const Page = props => {
         }}
         alt="Restorative Auroville - In Action"
       />
-      <h2 className="mask-h3" id="in-action" style={{ marginBottom: 2 }}>
+      <h2 className="mask-h3" id="in-action" style={{ marginBottom: 4 }}>
         2. In Action
       </h2>
       <p className="mask-h5">
@@ -538,8 +538,7 @@ const Page = props => {
           Button={Button}
           Img={Img}
           MediaQuery={MediaQuery}
-          dataAlias={d2C}
-          data={[]}
+          documents={d2C}
           allCategories={categories}
           allTags={tags}
           strictChronology
@@ -592,8 +591,7 @@ const Page = props => {
           Button={Button}
           Img={Img}
           MediaQuery={MediaQuery}
-          dataAlias={d3C}
-          data={[]}
+          documents={d3C}
           allCategories={categories}
           allTags={tags}
           strictChronology
@@ -612,7 +610,7 @@ const Page = props => {
         }}
         alt="Restorative Auroville - The Restorative System"
       />
-      <h2 className="mask-h3" id="experiences" style={{ marginBottom: 2 }}>
+      <h2 className="mask-h3" id="experiences" style={{ marginBottom: 4 }}>
         4. Experiences
       </h2>
       <p className="mask-h5">
@@ -643,8 +641,7 @@ const Page = props => {
           Button={Button}
           Img={Img}
           MediaQuery={MediaQuery}
-          dataAlias={d4C}
-          data={[]}
+          documents={d4C}
           allCategories={categories}
           allTags={tags}
           strictChronology

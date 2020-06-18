@@ -95,6 +95,11 @@ const conf = {
   },
   reverseYearOrder: false,
   containerId: 'c',
+  hashFilter: false,
+  hydrate: {
+    activeFilter: false,
+    chronology: 'recent-first',
+  },
 }
 
 const allYears = reverse(getAllYears(rawData))
@@ -168,13 +173,13 @@ const Page = props => {
           Button={Button}
           Img={Img}
           MediaQuery={MediaQuery}
-          dataAlias={data}
-          data={[]}
+          documents={data}
           allCategories={categories}
           allTags={tags}
           allYears={allYears}
           strictChronology
           conf={conf}
+          {...props}
         />
       </div>
     </StandardPage>

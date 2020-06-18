@@ -225,13 +225,6 @@ const Initiative = props => {
               MediaQuery={MediaQuery}
             />
           </div>
-          <div className="mask-p">
-            <PDFViewer
-              url="https://www.restorativeauroville.org/pdfs2/tlc.pdf"
-              title="See more notes"
-              width="100%"
-            />
-          </div>
         </Timeline.Item>
         <Timeline.Item color="#ffd700">
           <p>
@@ -256,6 +249,13 @@ const Initiative = props => {
               Img={Img}
               Gallery={Gallery}
               MediaQuery={MediaQuery}
+            />
+          </div>
+          <div className="mask-p">
+            <PDFViewer
+              url="https://www.restorativeauroville.org/pdfs2/tlc.pdf"
+              title="See more notes"
+              width="100%"
             />
           </div>
         </Timeline.Item>
