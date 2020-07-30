@@ -26,7 +26,7 @@ import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/card/style/css'
 import orangePaintbrush from '../../assets/orangePaintbrush.png'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-// const { Fragment } = React
+const { Fragment } = React
 
 const RADIAN = Math.PI / 180
 /**
@@ -78,7 +78,7 @@ const avData = [
   },
   {
     name: 'Total',
-    value: 257,
+    value: 283,
     fill: '#00006F',
     fillBox: '#00006F',
     textColor: '#FFF',
@@ -96,10 +96,10 @@ const yearData = [
   },
   {
     name: '2019',
-    value: 51,
+    value: 86,
     fill: '#ffeb80',
     opacity: '0.88',
-    suffix: 'unique participants so far…',
+    suffix: 'unique participants',
   },
   {
     name: '2018',
@@ -187,12 +187,17 @@ const YTooltip = props => {
   }
 
   if (!isUndefined(avDatum)) {
-    if (avDatum.value === 257) {
-      text = '257 unique Aurovilians have participated in Circles so far.'
+    if (avDatum.value === 283) {
+      text =
+        '283 unique Aurovilians have participated in Circles so far (2016–19).'
     }
     if (avDatum.value === 2761) {
-      text =
-        "Auroville's Population: 3006 (Aurovilians and children, 2018 Census)"
+      text = (
+        <Fragment>
+          Auroville's Population: 3006&nbsp;
+          <i>(Aurovilians and children, 2018 Census)</i>
+        </Fragment>
+      )
     }
   }
 
@@ -483,7 +488,7 @@ class PieGraph extends React.Component {
                       marginTop: -35,
                     }}
                   >
-                    <small>Total Participants: 257 so far</small>
+                    <small>Total Participants: 283 so far</small>
                   </p>
                 )}
               </div>

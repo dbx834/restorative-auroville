@@ -130,7 +130,9 @@ const DisqusCommentsX = ({
 
   return (
     <div
-      className={`${collapsible === false ? 'simple' : 'collapse'} ${styleX}`}
+      className={`disqus ${
+        collapsible === false ? 'simple' : 'collapse'
+      } ${styleX}`}
     >
       <StaticQuery
         query={query}

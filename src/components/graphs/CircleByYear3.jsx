@@ -862,7 +862,7 @@ class Sample3 extends React.Component {
                   border: 'unset',
                 }}
               />
-              <p style={{ marginBottom: 11 }}>
+              <p style={{ marginBottom: 0, lineHeight: 1 }}>
                 <small>
                   An example of a Circle's complete process over time, from
                   Pre-Circle to Post-Circle.
@@ -909,15 +909,19 @@ class Sample3 extends React.Component {
                   />
                 </div>
               </Popover>
-              <p style={{ marginBottom: 11 }}>
+              <p style={{ marginBottom: 0, lineHeight: 1 }}>
                 <small>
                   A Restorative Circle (RC) is a community process designed to
-                  hold space for those in conflict.
+                  hold space for those in conflict. (Hover over the image to
+                  enlarge.)
                 </small>
               </p>
-              <br className="mobile-only" />
             </div>
           </Division>
+
+          <p style={{ textAlign: 'center', marginBottom: 15, marginTop: 15 }}>
+            <big>·····</big>
+          </p>
 
           <Division>
             <div>
@@ -953,11 +957,11 @@ class Sample3 extends React.Component {
                 >
                   <h4
                     className="mask-h5"
-                    style={{ marginTop: -11, marginBottom: 0 }}
+                    style={{ marginTop: -5, marginBottom: 9 }}
                   >
                     <small>Circle Number</small>
                   </h4>
-                  <p style={{ marginBottom: 20 }}>
+                  <p style={{ marginBottom: 20, lineHeight: 1 }}>
                     <small>
                       Our Circles are recorded chronologically, so the number
                       indicates this order over time. The highest number also
@@ -1000,11 +1004,11 @@ class Sample3 extends React.Component {
                 >
                   <h4
                     className="mask-h5"
-                    style={{ marginTop: -11, marginBottom: 0 }}
+                    style={{ marginTop: -5, marginBottom: 9 }}
                   >
                     <small>Pre-Circle(s)</small>
                   </h4>
-                  <p>
+                  <p style={{ lineHeight: 1, marginBottom: 3 }}>
                     <small>
                       Indicates when the 1st Pre-Circle took place with the
                       Circle Initiator, the person calling the Circle. (For
@@ -1012,7 +1016,7 @@ class Sample3 extends React.Component {
                       the remaining Circle members are not indicated.)
                     </small>
                   </p>
-                  <p style={{ marginBottom: 0 }}>
+                  <p style={{ marginBottom: 0, marginTop: 0, lineHeight: 1 }}>
                     <small>
                       The size of the outer bounds indicates the number of
                       people who were named (to be invited to the Circle),
@@ -1057,11 +1061,11 @@ class Sample3 extends React.Component {
                 >
                   <h4
                     className="mask-h5"
-                    style={{ marginTop: -11, marginBottom: 0 }}
+                    style={{ marginTop: -5, marginBottom: 9 }}
                   >
                     <small>Circle</small>
                   </h4>
-                  <p style={{ marginBottom: 20 }}>
+                  <p style={{ marginBottom: 20, lineHeight: 1 }}>
                     <small>
                       Indicates when the Circle took place (sometimes in
                       multiple meetings) and its size (number of people who
@@ -1070,7 +1074,6 @@ class Sample3 extends React.Component {
                   </p>
                 </div>
               </div>
-
               <div style={{ display: 'flex' }}>
                 <div
                   style={{
@@ -1103,11 +1106,11 @@ class Sample3 extends React.Component {
                 >
                   <h4
                     className="mask-h5"
-                    style={{ marginTop: -11, marginBottom: 0 }}
+                    style={{ marginTop: -5, marginBottom: 9 }}
                   >
                     <small>Post-Circle(s)</small>
                   </h4>
-                  <p style={{ marginBottom: 20 }}>
+                  <p style={{ marginBottom: 20, lineHeight: 1 }}>
                     <small>
                       Indicates when the Post-Circle(s) took place and its size
                       (number of people who attended the Circle process).
@@ -1147,11 +1150,11 @@ class Sample3 extends React.Component {
                 >
                   <h4
                     className="mask-h6"
-                    style={{ marginTop: -11, marginBottom: 0 }}
+                    style={{ marginTop: -5, marginBottom: 9 }}
                   >
                     <small>Pop-Up</small>
                   </h4>
-                  <p>
+                  <p style={{ lineHeight: 1, marginBottom: 0 }}>
                     <small>
                       When you hover over the graphics, a pop-up appears with
                       additional information about each Circle: a word-cloud

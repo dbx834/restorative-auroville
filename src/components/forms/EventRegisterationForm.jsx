@@ -616,15 +616,20 @@ class EventRegisterationForm extends React.Component {
                       <Button
                         type="primary"
                         htmlType="submit"
-                        disabled={hasErrors(getFieldsError())}
+                        // disabled={hasErrors(getFieldsError())}
+                        disabled={true}
                         loading={loader}
                         className="mask-p"
+                        style={{ marginBottom: 0 }}
                       >
                         Submit
                       </Button>
                     </FormItem>
                   </Form>
                 )}
+                <p className="home" style={{ textIndent: 0 }}>
+                  Paused until further notice...
+                </p>
                 {/* On-sent message */}
                 {formSent === true && (
                   <p className="home" style={{ textIndent: 0 }}>

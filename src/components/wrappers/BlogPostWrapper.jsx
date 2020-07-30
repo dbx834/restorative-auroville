@@ -10,7 +10,6 @@ import moment from 'moment'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import BlogPostSchema from '@bodhi-project/seo/lib/BlogPostSchema'
 import { Article, Header, Footer } from '@bodhi-project/semantic-webflow'
-import { FacebookProvider, Like as FBLike } from 'react-facebook'
 
 import PrevNext from '@bodhi-project/components/lib/prev-next'
 import Image from '@bodhi-project/components/lib/image/Image'
@@ -104,16 +103,6 @@ const Page = props => {
           <p>
             <i>{abstract}</i>
           </p>
-          <div style={{ position: 'relative' }} className="mask-p">
-            <FacebookProvider appId="218604115574634">
-              <FBLike
-                href={withUrl(route, data)}
-                colorScheme="dark"
-                share
-                showFaces
-              />
-            </FacebookProvider>
-          </div>
           <Image
             src={cover}
             rawWidth={1440}

@@ -5,7 +5,6 @@
 import React from 'react'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { FacebookProvider, Like as FBLike } from 'react-facebook'
 import { Article, Header } from '@bodhi-project/semantic-webflow'
 
 import PrevNext from '@bodhi-project/components/lib/prev-next'
@@ -62,19 +61,7 @@ const Page = ({
         <Header>
           <h1 className="mask-h3">{seoData.pageTitle}</h1>
         </Header>
-        <div style={{ position: 'relative' }} className="mask-p">
-          <FacebookProvider appId="218604115574634">
-            <FBLike
-              href={withUrl(route, data)}
-              colorScheme="dark"
-              share
-              showFaces
-            />
-          </FacebookProvider>
-        </div>
-
         {children}
-
         <div style={{ borderTop: '1px dotted #00006F' }}>
           <h2 className="mask-h4">More in this series</h2>
           <PrevNext next={next} prev={prev} Link={Link} />

@@ -10,9 +10,10 @@ import React from 'react'
 import isNull from 'lodash/isNull'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import ContainerDimensions from 'react-container-dimensions'
+
 import EventSchema from '@bodhi-project/seo/lib/EventSchema'
 import { Header, Footer } from '@bodhi-project/semantic-webflow'
-import { FacebookProvider, Like as FBLike } from 'react-facebook'
 
 import PrevNext from '@bodhi-project/components/lib/prev-next'
 import Image from '@bodhi-project/components/lib/image/Image'
@@ -110,51 +111,96 @@ const Page = props => {
         <BItem>{title}</BItem>
       </Breadcrumb>
       <Division golden>
-        <Fragment>
-          <Header>
-            <Division golden>
-              <Fragment>
-                <Image
-                  src={cover}
-                  rawWidth={1440}
-                  rawHeight={900}
-                  style={{
-                    border: '1px solid #00006F',
-                    height: 'auto',
-                    width: '100%',
-                    marginBottom: 11,
-                  }}
-                  className="mask-p event-cover"
-                />
-              </Fragment>
-              <Fragment>
-                <h1 className="mask-h3" style={{ marginTop: -6 }}>
-                  {title}
-                </h1>
-                <p>
-                  <i>
-                    {formattedDate}
-                    <br />
-                    {frontmatter.fromTime}&nbsp;-&nbsp;
-                    {frontmatter.toTime}
-                  </i>
-                </p>
-                <div
-                  style={{ position: 'relative', marginBottom: 0 }}
-                  className="mask-p"
-                >
-                  <FacebookProvider appId="218604115574634">
-                    <FBLike
-                      href={withUrl(route, data)}
-                      colorScheme="dark"
-                      share
+        <div>
+          <div className="notice-container">
+            <Header>
+              <Division golden>
+                <Fragment>
+                  <Image
+                    src={cover}
+                    rawWidth={1440}
+                    rawHeight={900}
+                    style={{
+                      border: '1px solid #00006F',
+                      height: 'auto',
+                      width: '100%',
+                      marginBottom: 11,
+                    }}
+                    className="mask-p event-cover"
+                  />
+                </Fragment>
+                <Fragment>
+                  <h1 className="mask-h3" style={{ marginTop: -6 }}>
+                    {title}
+                  </h1>
+                  <p>
+                    <i>
+                      {formattedDate}
+                      <br />
+                      {frontmatter.fromTime}&nbsp;-&nbsp;
+                      {frontmatter.toTime}
+                    </i>
+                  </p>
+                </Fragment>
+              </Division>
+            </Header>
+            {children}
+            <ContainerDimensions>
+              {({ width, height }) => {
+                return (
+                  <svg
+                    width={width}
+                    height={height}
+                    viewBox={`0 0 ${width} ${height}`}
+                    className="notice-overlay"
+                  >
+                    <rect
+                      x="10"
+                      y="10"
+                      width={width - 20}
+                      height={height - 20}
+                      style={{
+                        stroke: '#ff3434',
+                        strokeWidth: 10,
+                        fill: 'none',
+                      }}
+                      rx={20}
+                      ry={20}
                     />
-                  </FacebookProvider>
-                </div>
-              </Fragment>
-            </Division>
-          </Header>
-          {children}
+                    <line
+                      id="line"
+                      x1="17.5"
+                      y1="17.5"
+                      x2={width - 17.5}
+                      y2={height - 17.5}
+                      stroke="#ff3434"
+                      strokeWidth="20"
+                    />
+                    <g>
+                      <circle
+                        cx={width / 2}
+                        cy={height / 2}
+                        r={80}
+                        style={{ fill: '#ff3434' }}
+                      />
+                      <text
+                        x="50%"
+                        y="50%"
+                        textAnchor="middle"
+                        fill="#fff"
+                        dy={-8}
+                      >
+                        <tspan>Paused until</tspan>
+                        <tspan dy={18} dx={-95}>
+                          further notice...
+                        </tspan>
+                      </text>
+                    </g>
+                  </svg>
+                )
+              }}
+            </ContainerDimensions>
+          </div>
           <Footer style={{ borderTop: '1px dotted #00006F' }}>
             <h1 className="mask-h4">More events</h1>
             <PrevNext
@@ -163,7 +209,7 @@ const Page = props => {
               Link={Link}
             />
           </Footer>
-        </Fragment>
+        </div>
         <Fragment>
           <EventRegisterationForm
             event={{ node: { frontmatter, fields: { route, humanDate } } }}

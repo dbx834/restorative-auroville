@@ -21,6 +21,8 @@ import Link, { withPrefix } from 'gatsby-link'
 import withSizes from 'react-sizes'
 import 'moment/locale/en-gb'
 
+import ContainerDimensions from 'react-container-dimensions'
+
 import Image from '@bodhi-project/components/lib/image/Image'
 import Division from '@bodhi-project/components/lib/division'
 import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/row/style/css'
@@ -40,6 +42,8 @@ const { Fragment } = React
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
 const baseColor = color('rgba(0, 0, 111, 0.68)')
 const pageStyle = css({
+  position: 'relative',
+
   '& .ant-tabs': {
     overflow: 'visible',
 
@@ -334,7 +338,7 @@ class EventsGrid extends React.Component {
     const { active, nextActive } = this.state
 
     return (
-      <div className={`${pageStyles}`}>
+      <div className={`notice-container ${pageStyles}`}>
         <Division golden>
           <Fragment>
             <h2 className="mask-h3">Workshops & Events</h2>
@@ -427,6 +431,51 @@ class EventsGrid extends React.Component {
             )}
           </Fragment>
         </Division>
+        <ContainerDimensions>
+          {({ width, height }) => {
+            return (
+              <svg
+                width={width}
+                height={height}
+                viewBox={`0 0 ${width} ${height}`}
+                className="notice-overlay"
+              >
+                <rect
+                  x="10"
+                  y="10"
+                  width={width - 20}
+                  height={height - 20}
+                  style={{ stroke: '#ff3434', strokeWidth: 10, fill: 'none' }}
+                  rx={20}
+                  ry={20}
+                />
+                <line
+                  id="line"
+                  x1="17.5"
+                  y1="17.5"
+                  x2={width - 17.5}
+                  y2={height - 17.5}
+                  stroke="#ff3434"
+                  strokeWidth="20"
+                />
+                <g>
+                  <circle
+                    cx={width / 2}
+                    cy={height / 2}
+                    r={80}
+                    style={{ fill: '#ff3434' }}
+                  />
+                  <text x="50%" y="50%" textAnchor="middle" fill="#fff" dy={-8}>
+                    <tspan>Paused until</tspan>
+                    <tspan dy={18} dx={-95}>
+                      further notice...
+                    </tspan>
+                  </text>
+                </g>
+              </svg>
+            )
+          }}
+        </ContainerDimensions>
       </div>
     )
   }

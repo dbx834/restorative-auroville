@@ -321,7 +321,6 @@ export const query = graphql`
 // ----------------------------------------------------------------------------
 /** Page */
 const Page = props => {
-  console.log(props.data)
   return (
     <StandardPage className="" seoData={seoData} {...props}>
       <Header>
