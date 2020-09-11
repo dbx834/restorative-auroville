@@ -22,6 +22,11 @@ const Person = () => (
       Rita D'Souza-Lachaux
     </h1>
     <p style={{ marginBottom: 0 }}>
+      <strong>Past Apprentice & Past Core Team Member</strong>
+      <br />
+      <strong>2017 - 2019</strong>
+      <br />
+      <br />
       <i>Coming soon...</i>
     </p>
   </div>

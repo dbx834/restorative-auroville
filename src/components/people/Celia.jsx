@@ -22,6 +22,11 @@ const Person = () => (
       Celia De Mengin Poirier
     </h1>
     <p>
+      <strong>Facilitator</strong>
+      <br />
+      <strong>2018 - Present</strong>
+      <br />
+      <br />
       <i>
         I grew up in France in a family where conflict, trust and love
         co-existed. After a conflict between 2 members (or more), we would

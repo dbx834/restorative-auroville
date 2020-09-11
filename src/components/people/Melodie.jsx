@@ -21,9 +21,13 @@ const Person = ({ show = true }) => (
   <div>
     <h1 className="mask-h4" style={{ fontWeight: 700 }}>
       Mélodie Baptiste
-      <Fragment>{show === true && ' – Apprentice'}</Fragment>
     </h1>
     <p>
+      <strong>Core Team Member & Apprentice</strong>
+      <br />
+      <strong>2019 - Present</strong>
+      <br />
+      <br />
       <i>
         I’ve been working as a light technician and light designer since I
         graduated from high school. But I’m now interested in action and
@@ -56,13 +60,7 @@ const Person = ({ show = true }) => (
     <p style={{ marginBottom: 0 }}>
       <i>
         It took me a while to dare to think that I could be of any help in this
-        work, but here I am now, trying my best.I’ve been working as a light
-        technician and light designer since I graduated from high school. But
-        I’m now interested in action and manifestation, and sitting in a room
-        and talking to people has been one of my biggest challenges. It seemed
-        to me that nothing could be done by just sitting and talking, and that
-        solutions would come only to people who would actually get up and do
-        something with their hands.
+        work, but here I am now, trying my best.
       </i>
     </p>
   </div>

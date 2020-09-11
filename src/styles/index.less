@@ -529,7 +529,7 @@ iframe {
   & p {
     margin-bottom: 0px !important;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 9;
     -webkit-box-orient: vertical;
     overflow: hidden;
 
@@ -558,4 +558,130 @@ iframe {
       z-index: -1000;
     }
   }
+}
+
+.clamp {
+  & p {
+    margin-bottom: 0px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    &:not(:first-of-type) {
+      display: none;
+    }
+  }
+}
+
+#copy {
+  .clamp-other {
+    & h1 {
+      display: none;
+    }
+
+    & p {
+      // &:first-of-type {
+      //   display: none;
+      // }
+      // &:nth-of-type(2) {
+      //   margin-top: unset;
+      // }
+    }
+  }
+
+  .team-graph {
+    .ant-collapse {
+      border: unset;
+    }
+
+    .ant-collapse-header {
+      padding: unset;
+      padding-bottom: 8px;
+    }
+
+    .ant-collapse-content {
+      padding-top: 8px;
+      border-top: unset;
+      border-left: unset;
+      border-right: unset;
+      padding-bottom: 16px;
+    }
+
+    .ant-collapse-content-box {
+      padding: unset;
+    }
+
+    .ant-collapse-item {
+      padding-top: 16px;
+    }
+  }
+}
+
+#copy {
+  .team-modal {
+    & .ant-modal {
+      padding: 0;
+      height: calc(100% - 12.5%);
+    }
+
+    & a {
+      border: unset;
+    }
+
+    & .ant-modal-close {
+      display: none;
+    }
+
+    & .ant-modal-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      & .ant-tabs {
+        height: 100%;
+      }
+
+      & .ant-tabs-tab {
+        margin: 8px;
+        padding: unset;
+      }
+
+      & .ant-tabs-bar {
+        padding: unset;
+        margin-bottom: 0px;
+      }
+
+      & .ant-tabs-nav {
+      }
+
+      & .ant-tabs-content {
+        height: calc(100% - 136px);
+
+        & .ant-tabs-tabpane {
+          padding: 16px 38px;
+          max-height: 100%;
+          overflow-y: scroll;
+        }
+      }
+    }
+
+    & .ant-modal-body {
+      padding: 0px;
+      flex-grow: 1;
+    }
+
+    & .ant-modal-footer {
+      flex-shrink: 0;
+      & button {
+        &:nth-child(1) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.gray {
+  filter: grayscale(1);
 }

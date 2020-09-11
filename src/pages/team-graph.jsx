@@ -6,19 +6,29 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 // import { css } from "glamor";
 
+import Img from 'gatsby-image'
 import map from 'lodash/map'
 import shuffle from 'lodash/shuffle'
 
 import * as d3 from 'd3'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import { Popover, Button, Modal, Tabs } from 'antd'
+import Popover from 'antd/lib/popover'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/popover/style/css'
+
+import Modal from 'antd/lib/modal'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/modal/style/css'
+
+import Tabs from 'antd/lib/tabs'
+import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/tabs/style/css'
+
 import withSizes from 'react-sizes'
 
+import Image from '@bodhi-project/components/lib/image/Image'
 import smallKey from '@bodhi-project/components/lib/methods/smallKey'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-import circle from '../assets/circle.png'
+import circle from '../assets/team-graph-bg.png'
 
 import Laura from '../components/people/Laura'
 import Melodie from '../components/people/Melodie'
@@ -42,21 +52,30 @@ import Helene from '../components/people/Helene'
 import Shanti from '../components/people/Shanti'
 import Anne from '../components/people/Anne'
 import Pranjal from '../components/people/Pranjal'
+import Rita from '../components/people/Rita'
 
-import janetSquare from '../assets/janetSquare.jpg'
+// import janetSquare from '../assets/janetSquare.jpg'
+import janetSquareGray from '../assets/janetSquareGray.jpg'
 import henrikeSquare from '../assets/henrikeSquare.jpg'
 import nilsSquare from '../assets/nilsSquare.jpg'
-import sumaSquare from '../assets/sumaSquare.jpg'
+// import nilsSquareGray from '../assets/nilsSquareGray.jpg'
+// import sumaSquare from '../assets/sumaSquare.jpg'
+import sumaSquareGray from '../assets/sumaSquareGray.jpg'
 import stefanSquare from '../assets/stefanSquare.jpg'
 import celiaSquare from '../assets/celiaSquare.jpg'
 import michelleSquare from '../assets/michelleSquare.jpg'
 import emmaSquare from '../assets/emmaSquare.jpg'
 import aditiSquare from '../assets/aditiSquare.jpg'
 import sunmiSquare from '../assets/sunmiSquare.jpg'
-import heleneSquare from '../assets/heleneSquare.jpg'
-import shantiSquare from '../assets/shantiSquare.jpg'
-import anneSquare from '../assets/anneSquare.jpg'
+// import heleneSquare from '../assets/heleneSquare.jpg'
+import heleneSquareGray from '../assets/heleneSquareGray.jpg'
+// import shantiSquare from '../assets/shantiSquare.jpg'
+import shantiSquareGray from '../assets/shantiSquareGray.jpg'
+// import anneSquare from '../assets/anneSquare.jpg'
+import anneSquareGray from '../assets/anneSquareGray.jpg'
 import pranjalSquare from '../assets/pranjalSquare.jpg'
+import ritaFlower from '../assets/ritaFlowerGray.jpg'
+// import blueSquare from '../assets/blueSquare.jpg'
 
 import StandardPage from '../components/wrappers/StandardPage'
 import seoHelper from '../methods/seoHelper'
@@ -64,6 +83,7 @@ import seoHelper from '../methods/seoHelper'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { TabPane } = Tabs
 const { Fragment } = React
+// const { Panel } = Collapse
 
 const pageData = {
   pageTitle: 'Our Team',
@@ -84,36 +104,175 @@ const getRandomArbitrary = (min, max) => {
   return Math.random() * (max - min) + min
 }
 
-const coreTeamPersons = shuffle([
+const coreTeamPersons = [
   { name: "L'aura", photo: lauraSquare, about: <Laura /> },
-  { name: 'Melodie', photo: melodieSquare, about: <Melodie /> },
+  { name: 'Mélodie', photo: melodieSquare, about: <Melodie /> },
   { name: 'Kati', photo: katiSquare, about: <Kati /> },
-])
-
-const coreTeamPersonsShuffled = shuffle(coreTeamPersons)
-
-const teamPersons = [
-  { name: 'Janet', photo: janetSquare, about: <Janet /> },
-  { name: 'Henrike', photo: henrikeSquare, about: <Henrike /> },
-  { name: 'Nils', photo: nilsSquare, about: <Nils /> },
-  { name: 'Suma', photo: sumaSquare, about: <Suma /> },
-  { name: 'Stefan', photo: stefanSquare, about: <Stefan /> },
-  { name: 'Celia', photo: celiaSquare, about: <Celia /> },
-  { name: 'Michelle', photo: michelleSquare, about: <Michelle /> },
-  { name: 'Emma', photo: emmaSquare, about: <Emma /> },
-  { name: 'Aditi', photo: aditiSquare, about: <Aditi /> },
-  { name: 'Sunmi', photo: sunmiSquare, about: <Sunmi /> },
-  { name: 'Helene', photo: heleneSquare, about: <Helene /> },
-  { name: 'Shanti', photo: shantiSquare, about: <Shanti /> },
-  { name: 'Anne', photo: anneSquare, about: <Anne /> },
-  { name: 'Pranjal', photo: pranjalSquare, about: <Pranjal /> },
 ]
 
-const teamPersonsShuffled = shuffle(teamPersons)
+// const coreTeamPersonsShuffled = shuffle(coreTeamPersons)
+
+const teamPersons = [
+  {
+    name: 'Janet',
+    f: 100,
+    photo: janetSquareGray,
+    about: <Janet />,
+    stroke: '#808080',
+  },
+  {
+    name: 'Henrike',
+    f: 90,
+    photo: henrikeSquare,
+    about: <Henrike />,
+    stroke: '#00006F',
+  },
+  {
+    name: 'Nils',
+    f: 100,
+    photo: nilsSquare,
+    // photoClass: 'gray',
+    about: <Nils />,
+    stroke: '#00006F',
+  },
+  {
+    name: 'Suma',
+    f: 90,
+    photo: sumaSquareGray,
+    about: <Suma />,
+    stroke: '#808080',
+  },
+  {
+    name: 'Stefan',
+    f: 100,
+    photo: stefanSquare,
+    about: <Stefan />,
+    stroke: '#00006F',
+  },
+  {
+    name: 'Celia',
+    f: 90,
+    photo: celiaSquare,
+    about: <Celia />,
+    stroke: '#00006F',
+  },
+  {
+    name: 'Michelle',
+    f: 100,
+    photo: michelleSquare,
+    about: <Michelle />,
+    stroke: '#00006F',
+  },
+  {
+    name: 'Emma',
+    f: 90,
+    photo: emmaSquare,
+    about: <Emma />,
+    stroke: '#00006F',
+  },
+  {
+    name: 'Aditi',
+    f: 100,
+    photo: aditiSquare,
+    about: <Aditi />,
+    stroke: '#00006F',
+  },
+  {
+    name: 'Sun-Mi',
+    f: 90,
+    photo: sunmiSquare,
+    about: <Sunmi />,
+    stroke: '#00006F',
+  },
+  {
+    name: 'Hélène',
+    f: 100,
+    photo: heleneSquareGray,
+    about: <Helene />,
+    stroke: '#808080',
+  },
+  {
+    name: 'Shanti',
+    f: 90,
+    photo: shantiSquareGray,
+    about: <Shanti />,
+    stroke: '#808080',
+  },
+  {
+    name: 'Anne',
+    f: 100,
+    photo: anneSquareGray,
+    about: <Anne />,
+    stroke: '#808080',
+  },
+  {
+    name: 'Pranjal',
+    f: 90,
+    photo: pranjalSquare,
+    about: <Pranjal />,
+    stroke: '#00006F',
+  },
+  {
+    name: 'Rita',
+    f: 100,
+    photo: ritaFlower,
+    about: <Rita />,
+    stroke: '#808080',
+  },
+]
+
+// const teamPersonsShuffled = shuffle(teamPersons)
+
+const everybody = [...coreTeamPersons, ...teamPersons]
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
+/**  */
+class ToggleClass extends React.PureComponent {
+  /** [constructor description] */
+  constructor(props) {
+    super(props)
+    this.state = {
+      active: false,
+    }
+    this.toggleClass = this.toggleClass.bind(this)
+  }
+
+  /** [toggleClass description] */
+  toggleClass() {
+    const { active } = this.state
+    this.setState({ active: !active })
+  }
+
+  /** [render description] */
+  render() {
+    const { active } = this.state
+    const { conf = {}, children } = this.props
+    const { toggleClass = {} } = conf
+    const {
+      activeClass = 'active',
+      passiveClass = 'passive',
+      activeText = 'Make passive...',
+      passiveText = 'Activate...',
+    } = toggleClass
+
+    return (
+      <div
+        className={active === true ? activeClass : passiveClass}
+        onClick={this.toggleClass}
+      >
+        {children}
+        <p>
+          <a href="#" onClick={e => e.preventDefault()}>
+            {active === true ? activeText : passiveText}
+          </a>
+        </p>
+      </div>
+    )
+  }
+}
+
 /** Page */
 class Page extends React.PureComponent {
   /** standard constructor */
@@ -121,8 +280,9 @@ class Page extends React.PureComponent {
     super(props)
 
     this.state = {
+      init: false,
       visible: false,
-      currentActive: 'Laura',
+      currentActive: "L'aura",
     }
 
     this.drawCircle = this.drawCircle.bind(this)
@@ -184,13 +344,13 @@ class Page extends React.PureComponent {
     ]
     const lines = []
 
-    const coreTeamStrength = coreTeamPersonsShuffled.length
+    const coreTeamStrength = coreTeamPersons.length
     const parentCircleHalfWidth = boundY(12.5)
     const hyp = parentCircleHalfWidth
     const angle = Math.round(360 / coreTeamStrength)
     /** [description] */
     const addCoreTeam = () => {
-      map(coreTeamPersonsShuffled, (person, i) => {
+      map(coreTeamPersons, (person, i) => {
         const currentAngle = i * angle
         // calculate the positioning of the child circle around the parent circle
         const cx =
@@ -201,11 +361,11 @@ class Page extends React.PureComponent {
           cx,
           cy,
           r: boundY(12.5 * 0.67),
-          color: '#ffd1d1',
+          color: '#b43808',
           className: 'team-person core-team-person',
           type: 'core-team-person',
           key: smallKey(),
-          strokeWidth: 6,
+          strokeWidth: 4,
           ...person,
         })
         const x = (cx / 900) * 100
@@ -220,7 +380,7 @@ class Page extends React.PureComponent {
     }
     addCoreTeam()
 
-    const teamStrength = teamPersonsShuffled.length
+    const teamStrength = teamPersons.length
     const circleHalfWidth = boundY(35)
     const hyp2 = circleHalfWidth
     const angle2 = Math.round(360 / teamStrength)
@@ -229,10 +389,12 @@ class Page extends React.PureComponent {
 
     /** [description] */
     const addTeam = () => {
-      map(teamPersonsShuffled, (person, i) => {
+      map(teamPersons, (person, i) => {
         const currentAngle = i * angle2
         // calculate the positioning of the child circle around the parent circle
-        const randomF = getRandomArbitrary(100, 120)
+        // const randomF = getRandomArbitrary(80, 100)
+        // const randomF = 100
+        const randomF = person.f
         const cx =
           boundX(50) +
           Math.round(
@@ -249,19 +411,19 @@ class Page extends React.PureComponent {
             cx,
             cy,
             r: boundY(12.5 * 0.67 * 0.75),
-            color: '#d1ffff',
+            color: person.stroke,
             className: 'team-person',
             type: 'team-person',
             key: smallKey(),
-            strokeWidth: 3,
+            strokeWidth: 2,
             ...person,
           })
           const x = (cx / 900) * 100
           const y = (cy / 600) * 100
           const lineData = [{ x: 50, y: 50 }, { x, y }]
           lines.push({
+            stroke: person.stroke,
             line: line(lineData),
-            strokeWidth: 1,
             className: 'person-line team-person-line',
           })
         }
@@ -269,16 +431,21 @@ class Page extends React.PureComponent {
     }
     addTeam()
 
+    this.setState({
+      init: true,
+    })
+
     return (
       <Fragment>
-        {map(lines, ({ line, strokeWidth, className }) => {
+        {map(lines, ({ line, stroke, className }) => {
           return (
             <Fragment key={smallKey()}>
               <path
                 style={{
                   fill: 'none',
-                  strokeWidth,
-                  stroke: 'blue',
+                  strokeWidth: 1,
+                  strokeOpacity: 0.8,
+                  stroke,
                 }}
                 d={line}
                 className={className}
@@ -298,6 +465,7 @@ class Page extends React.PureComponent {
             key,
             name,
             photo,
+            photoClass,
             strokeWidth,
             about = <Fragment />,
           }) => (
@@ -357,7 +525,7 @@ class Page extends React.PureComponent {
                       <Fragment>
                         {about}
                         <p>
-                          <a href="#" onClick={e => this.showModal(e, 'laura')}>
+                          <a href="#" onClick={e => this.showModal(e, name)}>
                             Read more...
                           </a>
                         </p>
@@ -369,7 +537,6 @@ class Page extends React.PureComponent {
                   >
                     <circle
                       id={`circle-${key}`}
-                      className={className}
                       cx={cx}
                       cy={cy}
                       r={r}
@@ -389,32 +556,95 @@ class Page extends React.PureComponent {
 
   /** standard renderer */
   render() {
+    const { currentActive } = this.state
+
     return (
       <StandardPage className="" seoData={seoData} {...this.props}>
-        <h1 className="mask-h3">Team Graph</h1>
-        <div style={{ border: '1px solid #eee' }}>
+        <h1 className="mask-h3">Our Team</h1>
+        <p>
+          Who Are We? A small group of people passionate about human connection
+          and committed to walking towards increased community resilience. We
+          lead the larger Restorative Auroville project, we facilitate Circles,
+          some of us teach, some of us run our different initiatives, and
+          more... And we’re wanting to expand our team and our reach in the
+          community.
+        </p>
+        <div className="desktop-only">
           <svg className="graph" width={900} height={600}>
             {this.drawCircle()}
           </svg>
+          <Modal
+            title={false}
+            closeIcon={false}
+            width="58%"
+            style={{ top: '6.25%' }}
+            visible={this.state.visible}
+            onOk={this.handleOk}
+            okText="Close"
+            onCancel={this.handleCancel}
+            wrapClassName="team-modal"
+          >
+            <Tabs
+              activeKey={currentActive}
+              defaultActiveKey="L'aura"
+              onChange={() => true}
+            >
+              {map(everybody, person => {
+                return (
+                  <TabPane
+                    tab={
+                      <a
+                        className="ignore"
+                        href="#"
+                        onClick={e => this.showModal(e, person.name)}
+                      >
+                        <Image
+                          style={{ width: 100, height: 100, border: 'unset' }}
+                          src={person.photo}
+                        />
+                        <p style={{ marginBottom: 0 }}>{person.name}</p>
+                      </a>
+                    }
+                    key={person.name}
+                  >
+                    {person.about}
+                  </TabPane>
+                )
+              })}
+            </Tabs>
+          </Modal>
         </div>
-        <Modal
-          title="Basic Modal"
-          visible={this.state.visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-        >
-          <Tabs defaultActiveKey="1" onChange={() => true}>
-            <TabPane tab="Tab 1" key="1">
-              Content of Tab Pane 1
-            </TabPane>
-            <TabPane tab="Tab 2" key="2">
-              Content of Tab Pane 2
-            </TabPane>
-            <TabPane tab="Tab 3" key="3">
-              Content of Tab Pane 3
-            </TabPane>
-          </Tabs>
-        </Modal>
+        <div className="mobile-only team-graph">
+          {map(everybody, person => {
+            return (
+              <div
+                style={{ display: 'flex', width: '100%' }}
+                className="mask-p"
+              >
+                <div style={{ width: 116, marginRight: 16, flexShrink: 0 }}>
+                  <Image
+                    style={{ width: 100, height: 100 }}
+                    src={person.photo}
+                  />
+                </div>
+                <div style={{ flexGrow: 1, paddingRight: 16 }}>
+                  <ToggleClass
+                    conf={{
+                      toggleClass: {
+                        activeClass: 'unclamp',
+                        passiveClass: 'clamp',
+                        passiveText: 'Read more...',
+                        activeText: 'Minimize...',
+                      },
+                    }}
+                  >
+                    {person.about}
+                  </ToggleClass>
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </StandardPage>
     )
   }

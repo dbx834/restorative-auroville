@@ -13,24 +13,21 @@ import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: '4.5 Highlights & Learning on Restorative Circles (3)',
-  nakedPageSlug:
-    'the-power-of-dialogue/highlights-and-learning-on-restorative-circles-3',
+  pageTitle: '4.6 RC as a Powerful Life Skill',
+  nakedPageSlug: 'the-power-of-dialogue/rc-as-a-powerful-life-skill',
   pageAbstract:
-    'Sandyra is a supporter and advisor to our project, and she attended several Circles while she served on the Auroville Council. After a few intense Circles, we had a debrief session to review celebrations, challenges and growing edges of our project.',
-  cover: 'https://img.youtube.com/vi/MSWFPL5NWfM/hqdefault.jpg',
+    'Jola shares about her volunteering experience and how moved she was to discover the power and potential of Restorative Circles.',
+  cover: 'https://img.youtube.com/vi/Ye34-_jhtZE/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)
 
 const prev = {
   nakedPageSlug:
-    'the-power-of-dialogue/highlights-and-learning-on-restorative-circles-2',
+    'the-power-of-dialogue/highlights-and-learning-on-restorative-circles-3',
 }
 
-const next = {
-  nakedPageSlug: 'the-power-of-dialogue/rc-as-a-powerful-life-skill',
-}
+const next = undefined
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -50,31 +47,11 @@ const Page = props => (
     {...props}
   >
     <p>
-      Sandyra is a supporter and advisor to our project, and she attended
-      several Circles while she served on the Auroville Council. After a few
-      intense Circles, we had a debrief session to review celebrations,
-      challenges and growing edges of our project.
+      Jola shares about her volunteering experience and how moved she was to
+      discover the power and potential of Restorative Circles.
     </p>
-    <p>We asked Sandyra the following questions:</p>
-    <ol className="mask-p" style={{ paddingLeft: 20 }}>
-      <li>
-        What has inspired/touched you about our exploration with RC in Auroville
-        (in general/specific)?
-      </li>
-      <li>
-        What has challenged you about our exploration with RC in Auroville (in
-        general/specific)?
-      </li>
-      <li>
-        How do you think RC is contributing to Auroville's collective growth?
-      </li>
-      <li>
-        What do you think we need to pay particular attention to as we move
-        forward and deepen RC in Auroville?
-      </li>
-    </ol>
     <div style={{ maxWidth: '45rem' }} className="margin-p">
-      <Video url="https://youtu.be/MSWFPL5NWfM" />
+      <Video url="https://youtu.be/Ye34-_jhtZE" />
     </div>
   </VideoWrapper>
 )

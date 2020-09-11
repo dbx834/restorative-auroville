@@ -22,6 +22,11 @@ const Person = () => (
       Anand Shanti
     </h1>
     <p>
+      <strong>Co-Founder & Past Core Team Member</strong>
+      <br />
+      <strong>2010 - 2018</strong>
+      <br />
+      <br />
       <i>
         I was one of the core group of people who started learning about
         Restorative Circles in 2010 when L'aura returned from a training with

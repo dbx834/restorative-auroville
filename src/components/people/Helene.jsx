@@ -22,6 +22,11 @@ const Person = () => (
       Hélène Gagnon
     </h1>
     <p>
+      <strong>Past Core Team Member</strong>
+      <br />
+      <strong>2016 - 2018</strong>
+      <br />
+      <br />
       <i>
         I was born and grew up in Montreal City, Quebec (the French-speaking
         part of Canada). After studying pure sciences at college I started to

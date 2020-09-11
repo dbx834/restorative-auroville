@@ -21,9 +21,13 @@ const Person = ({ show = true }) => (
   <div>
     <h1 className="mask-h4" style={{ fontWeight: 700 }}>
       Emma Palmer
-      <Fragment>{show === true && ' – Apprentice'}</Fragment>
     </h1>
     <p>
+      <strong>Facilitator</strong>
+      <br />
+      <strong>2019 - Present</strong>
+      <br />
+      <br />
       <i>
         "Restore connection, as broken connection is the reason why we did
         something painful from the start." When I heard this sentence at my

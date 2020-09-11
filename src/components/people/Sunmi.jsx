@@ -23,6 +23,11 @@ const Person = ({ show = true }) => (
       Sun-Mi Shin
     </h1>
     <p style={{ marginBottom: 0 }}>
+      <strong>Apprentice & Resource Person</strong>
+      <br />
+      <strong>2020 - Present</strong>
+      <br />
+      <br />
       <i>Coming soon…</i>
     </p>
   </div>

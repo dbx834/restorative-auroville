@@ -21,16 +21,22 @@ const Person = ({ show = true }) => (
   <div>
     <h1 className="mask-h4" style={{ fontWeight: 700 }}>
       Nils Johansson
-      <Fragment>{show === true && ' – Core Team Member'}</Fragment>
     </h1>
     <p>
-      <i>Hello, I’m Nils and I’m excited writing this!</i>
+      <strong>Facilitator & Past Core Team Member</strong>
+      <br />
+      <strong>2019 - Present</strong>
+      <br />
+      <br />
+      <i>
+        Hello, I’m Nils and I’m excited writing this! The reason I'm a part of
+        Restorative Auroville is my long quest for freedom.
+      </i>
     </p>
     <p>
       <i>
-        The reason I'm a part of Restorative Auroville is my long quest for
-        freedom. It all started with a YouTube channel that I created in 2011. I
-        was filming and publicly sharing myself facing my own fears and
+        It all started with a YouTube channel that I created in 2011. I was
+        filming and publicly sharing myself facing my own fears and
         insecurities. This lead me on a path to help others overcome their fears
         through coaching, workshops and inspirational lectures.
       </i>

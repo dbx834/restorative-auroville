@@ -277,6 +277,13 @@ export const query = graphql`
     ) {
       ...max900
     }
+    rcAsAPowerfulLifeSkill: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/rc-as-a-powerful-life-skill.jpg"
+      }
+    ) {
+      ...max900
+    }
     yellowBorder: file(relativePath: { eq: "yellowBorder.jpg" }) {
       ...max900
     }

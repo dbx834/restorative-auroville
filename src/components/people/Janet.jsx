@@ -22,6 +22,11 @@ const Person = () => (
       Janet Fearn – Founder
     </h1>
     <p>
+      <strong>Co-Founder & Past Core Team Member</strong>
+      <br />
+      <strong>2010 - 2019</strong>
+      <br />
+      <br />
       <i>
         In 1967 I left my job in Toronto, Canada as a psychiatric social worker,
         and bought an around the world plane ticket. I spent several months

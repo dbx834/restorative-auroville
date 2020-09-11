@@ -22,6 +22,11 @@ const Person = () => (
       Stefan Gebert
     </h1>
     <p>
+      <strong>Apprentice</strong>
+      <br />
+      <strong>2018 - Present</strong>
+      <br />
+      <br />
       <i>
         With a background in sociology and psychology (in Germany), I found my
         passion and profession in the field of group facilitation and leadership

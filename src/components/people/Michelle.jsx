@@ -22,6 +22,11 @@ const Person = () => (
       Michelle Bertholle
     </h1>
     <p style={{ marginBottom: 0 }}>
+      <strong>Apprentice</strong>
+      <br />
+      <strong>2018 - Present</strong>
+      <br />
+      <br />
       <i>Coming soon…</i>
     </p>
   </div>

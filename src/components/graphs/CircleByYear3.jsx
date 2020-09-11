@@ -311,7 +311,9 @@ const XTooltip = props => {
   let thisCircleDetails = undefined
 
   if (payload.length > 0) {
-    thisCircleTime = moment(payload[0].value).format('ddd, MMM D, YYYY')
+    const that = payload[0].payload
+    const show = isUndefined(that.show) === true ? that.time : that.show
+    thisCircleTime = moment(show).format('ddd, MMM D, YYYY')
     circleId = payload[1].value
     index = findIndex(data, ['id', circleId])
     circleDetails = data[index]

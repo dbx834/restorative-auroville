@@ -32,28 +32,28 @@ const data = [
     hasCategories: ['theCraft'],
     hasTags: mockTag(),
   },
-  // {
-  //   key: smallKey(),
-  //   title: undefined,
-  //   cover: undefined,
-  //   routeSlug: '/the-power-of-dialogue/pre-circle-explaining-the-process',
-  //   publishedAt: timestamp('01.03.2019'),
-  //   abstract:
-  //     'The third step in the Pre-Circle is "explaining the process," where the Facilitator reviews the RC process with the participant and answers any questions they may have, so that everyone is on the same page about how this particular process works.',
-  //   hasCategories: ['theCraft'],
-  //   hasTags: mockTag(),
-  // },
-  // {
-  //   key: smallKey(),
-  //   title: undefined,
-  //   cover: undefined,
-  //   routeSlug: '/the-power-of-dialogue/pre-circle-who-needs-to-be-there',
-  //   publishedAt: timestamp('01.04.2019'),
-  //   abstract:
-  //     'The fourth step in the Pre-Circle is "naming those to be invited," where the Facilitator asks each participant, "Who needs to be there?"',
-  //   hasCategories: ['theCraft'],
-  //   hasTags: mockTag(),
-  // },
+  {
+    key: smallKey(),
+    title: undefined,
+    cover: undefined,
+    routeSlug: '/the-power-of-dialogue/pre-circle-explaining-the-process',
+    publishedAt: timestamp('01.03.2019'),
+    abstract:
+      'The third step in the Pre-Circle is "explaining the process," where the Facilitator reviews the RC process with the participant and answers any questions they may have, so that everyone is on the same page about how this particular process works.',
+    hasCategories: ['theCraft'],
+    hasTags: mockTag(),
+  },
+  {
+    key: smallKey(),
+    title: undefined,
+    cover: undefined,
+    routeSlug: '/the-power-of-dialogue/pre-circle-who-needs-to-be-there',
+    publishedAt: timestamp('01.04.2019'),
+    abstract:
+      'The fourth step in the Pre-Circle is "naming those to be invited," where the Facilitator asks each participant, "Who needs to be there?"',
+    hasCategories: ['theCraft'],
+    hasTags: mockTag(),
+  },
   // {
   //   key: smallKey(),
   //   title: undefined,
@@ -244,6 +244,17 @@ const data = [
     publishedAt: timestamp('04.05.2019'),
     abstract:
       'Sandyra is a supporter and advisor to our project, and she attended several Circles while she served on the Auroville Council. After a few intense Circles, we had a debrief session to review celebrations, challenges and growing edges of our project.',
+    hasCategories: ['experiences'],
+    hasTags: mockTag(),
+  },
+  {
+    key: smallKey(),
+    title: undefined,
+    cover: undefined,
+    routeSlug: '/the-power-of-dialogue/rc-as-a-powerful-life-skill',
+    publishedAt: timestamp('04.06.2019'),
+    abstract:
+      'Jola shares about her volunteering experience and how moved she was to discover the power and potential of Restorative Circles.',
     hasCategories: ['experiences'],
     hasTags: mockTag(),
   },

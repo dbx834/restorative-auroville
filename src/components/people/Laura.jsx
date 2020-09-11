@@ -19,9 +19,14 @@ import React from 'react'
 const Person = () => (
   <div>
     <h1 className="mask-h4" style={{ fontWeight: 700 }}>
-      L'aura Joy – Founder
+      L'aura Joy
     </h1>
     <p>
+      <strong>Founder</strong>
+      <br />
+      <strong>2010 - Present</strong>
+      <br />
+      <br />
       <i>
         I was born and raised in Auroville, and life has lead me to work with
         nonviolence, peace and justice. I went to university to become a high

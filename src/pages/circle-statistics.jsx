@@ -134,6 +134,32 @@ const Page = props => {
 
   const data = [
     {
+      id: 38,
+      named: 3,
+      attended: 3,
+      wordCloud: d.inprogress.childImageSharp.fluid,
+      times: [
+        {
+          value: 38,
+          time: timestamp('2020.07.21'),
+          size: 300,
+          type: 0,
+        },
+        {
+          value: 38,
+          time: timestamp('2020.07.21'),
+          size: 300,
+          type: 1,
+        },
+        {
+          value: 38,
+          time: timestamp('2020.07.27'),
+          size: 300,
+          type: 2,
+        },
+      ],
+    },
+    {
       id: 37,
       named: 46,
       attended: 15,
@@ -217,7 +243,8 @@ const Page = props => {
         },
         {
           value: 35,
-          time: timestamp('2020.02.08'),
+          time: timestamp('2020.02.13'),
+          show: timestamp('2020.02.08'),
           size: 900,
           type: 2,
         },
@@ -240,6 +267,12 @@ const Page = props => {
           time: timestamp('2020.01.14'),
           size: 2200,
           type: 0,
+        },
+        {
+          value: 34,
+          time: timestamp('2020.01.14'),
+          size: 1600,
+          type: 1,
         },
         {
           value: 34,
@@ -305,6 +338,12 @@ const Page = props => {
           size: 1300,
           type: 2,
         },
+        {
+          value: 32,
+          time: timestamp('2019.12.6'),
+          size: 1300,
+          type: 3,
+        },
       ],
     },
     {
@@ -330,6 +369,12 @@ const Page = props => {
           time: timestamp('2019.10.25'),
           size: 1600,
           type: 2,
+        },
+        {
+          value: 31,
+          time: timestamp('2019.11.25'),
+          size: 1600,
+          type: 3,
         },
       ],
     },

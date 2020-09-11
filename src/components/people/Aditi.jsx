@@ -23,6 +23,11 @@ const Person = ({ show = true }) => (
       Aditi Partha
     </h1>
     <p>
+      <strong>Volunteer</strong>
+      <br />
+      <strong>2020 - Present</strong>
+      <br />
+      <br />
       <i>
         Born in Pondicherry, I studied at the Sri Aurobindo International Centre
         of Education and graduated in 2019 in Political Science, History, and

@@ -56,12 +56,9 @@ const Page = props => (
       iii) explaining the RC process; iv) naming those to be invited, v) getting
       consent.
     </p>
-    <p>Video coming soon.</p>
-    {/*
     <div style={{ maxWidth: '45rem' }} className="margin-p">
-      <Video url="https://youtu.be/thEan8VgZiE" />
+      <Video url="https://youtu.be/kDQnXyZOk3w" />
     </div>
-    */}
   </VideoWrapper>
 )
 

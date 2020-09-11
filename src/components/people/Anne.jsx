@@ -23,6 +23,11 @@ const Person = ({ show = true }) => (
       Anne Terlouw
     </h1>
     <p style={{ marginBottom: 0 }}>
+      <strong>Past Volunteer</strong>
+      <br />
+      <strong>2019</strong>
+      <br />
+      <br />
       <i>
         I was born and raised in Holland, where life brought me to study
         Architectural Engineering. After a few years I felt this study wasn’t

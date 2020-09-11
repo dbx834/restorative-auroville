@@ -21,9 +21,13 @@ const Person = ({ show = true }) => (
   <div>
     <h1 className="mask-h4" style={{ fontWeight: 700 }}>
       Henrike Prudon
-      <Fragment>{show === true && ' – Core Team Member'}</Fragment>
     </h1>
     <p>
+      <strong>Facilitator & Past Core Team Member</strong>
+      <br />
+      <strong>2018 - Present</strong>
+      <br />
+      <br />
       <i>
         I was born and raised in Holland, where I studied Anthropology and Law.
         In this time, I did some research into restorative justice models as
