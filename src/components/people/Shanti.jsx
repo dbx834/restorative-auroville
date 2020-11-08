@@ -26,8 +26,7 @@ const Person = () => (
       <br />
       <strong>2010 - 2018</strong>
       <br />
-      <br />
-      <i>
+      <i style={{ display: 'block', marginTop: 10 }}>
         I was one of the core group of people who started learning about
         Restorative Circles in 2010 when L'aura returned from a training with
         Dominic Barter, the man who created this work. I felt immediately in

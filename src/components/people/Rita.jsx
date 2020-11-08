@@ -26,8 +26,7 @@ const Person = () => (
       <br />
       <strong>2017 - 2019</strong>
       <br />
-      <br />
-      <i>Coming soon...</i>
+      <i style={{ display: 'block', marginTop: 10 }}>Not available for now…</i>
     </p>
   </div>
 )

@@ -258,6 +258,17 @@ const data = [
     hasCategories: ['experiences'],
     hasTags: mockTag(),
   },
+  {
+    key: smallKey(),
+    title: undefined,
+    cover: undefined,
+    routeSlug: '/the-power-of-dialogue/celebrating-a-one-month-rc-immersion',
+    publishedAt: timestamp('04.07.2019'),
+    abstract:
+      'Sun-Mi shares about her experience of apprenticing with and shadowing Restorative Auroville for an intense month.',
+    hasCategories: ['experiences'],
+    hasTags: mockTag(),
+  },
 ]
 
 // ----------------------------------------------------------------------------

@@ -19,15 +19,14 @@ import React from 'react'
 const Person = () => (
   <div>
     <h1 className="mask-h4" style={{ fontWeight: 700 }}>
-      Janet Fearn – Founder
+      Janet Fearn
     </h1>
     <p>
       <strong>Co-Founder & Past Core Team Member</strong>
       <br />
       <strong>2010 - 2019</strong>
       <br />
-      <br />
-      <i>
+      <i style={{ display: 'block', marginTop: 10 }}>
         In 1967 I left my job in Toronto, Canada as a psychiatric social worker,
         and bought an around the world plane ticket. I spent several months
         travelling in India, and arrived in Pondicherry by chance in June of

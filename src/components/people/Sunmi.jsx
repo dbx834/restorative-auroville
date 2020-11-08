@@ -27,8 +27,7 @@ const Person = ({ show = true }) => (
       <br />
       <strong>2020 - Present</strong>
       <br />
-      <br />
-      <i>Coming soon…</i>
+      <i style={{ display: 'block', marginTop: 10 }}>Not available for now…</i>
     </p>
   </div>
 )

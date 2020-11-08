@@ -23,6 +23,7 @@ import 'moment/locale/en-gb'
 
 // import typefn from '@bodhi-project/typography/lib/methods/type'
 
+import ContainerDimensions from 'react-container-dimensions'
 import Image from '@bodhi-project/components/lib/image/Image'
 
 import Division from '@bodhi-project/components/lib/division'
@@ -515,7 +516,7 @@ class EventsGrid extends React.Component {
     }
 
     return (
-      <Fragment>
+      <div className="notice-container">
         {client === true && (
           <Fragment>
             <br style={{ display: 'none' }} />
@@ -753,7 +754,52 @@ class EventsGrid extends React.Component {
             <br style={{ display: 'none' }} />
           </Fragment>
         )}
-      </Fragment>
+        <ContainerDimensions>
+          {({ width, height }) => {
+            return (
+              <svg
+                width={width}
+                height={height}
+                viewBox={`0 0 ${width} ${height}`}
+                className="notice-overlay"
+              >
+                <rect
+                  x="10"
+                  y="10"
+                  width={width - 20}
+                  height={height - 20}
+                  style={{ stroke: '#ff3434', strokeWidth: 10, fill: 'none' }}
+                  rx={20}
+                  ry={20}
+                />
+                <line
+                  id="line"
+                  x1="17.5"
+                  y1="17.5"
+                  x2={width - 17.5}
+                  y2={height - 17.5}
+                  stroke="#ff3434"
+                  strokeWidth="20"
+                />
+                <g>
+                  <circle
+                    cx={width / 2}
+                    cy={height / 2}
+                    r={80}
+                    style={{ fill: '#ff3434' }}
+                  />
+                  <text x="50%" y="50%" textAnchor="middle" fill="#fff" dy={-8}>
+                    <tspan>Paused until</tspan>
+                    <tspan dy={18} dx={-95}>
+                      further notice...
+                    </tspan>
+                  </text>
+                </g>
+              </svg>
+            )
+          }}
+        </ContainerDimensions>
+      </div>
     )
   }
 }

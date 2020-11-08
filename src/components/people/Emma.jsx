@@ -23,12 +23,11 @@ const Person = ({ show = true }) => (
       Emma Palmer
     </h1>
     <p>
-      <strong>Facilitator</strong>
+      <strong>Co-Facilitator</strong>
       <br />
       <strong>2019 - Present</strong>
       <br />
-      <br />
-      <i>
+      <i style={{ display: 'block', marginTop: 10 }}>
         "Restore connection, as broken connection is the reason why we did
         something painful from the start." When I heard this sentence at my
         first Restorative Circle workshop, it immediately resonated with me and

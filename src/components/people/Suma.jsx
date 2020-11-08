@@ -27,8 +27,7 @@ const Person = ({ show = true }) => (
       <br />
       <strong>2019</strong>
       <br />
-      <br />
-      <i>
+      <i style={{ display: 'block', marginTop: 10 }}>
         I am a lifelong dreamer, learner and explorer, asking questions even if
         I’m not voicing them. Lately, many of my questions are about nada yoga,
         connecting to self and community, and culture-creation. Born into a

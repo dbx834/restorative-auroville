@@ -172,9 +172,9 @@ class Page extends React.Component {
         />
         <br />
         <p>
-          Here's our Trello board with our current projects needing support and
-          collaboration. Scroll through and let us know if you're inspired to
-          take something on!
+          Here's our DRAFT Trello board with our current projects needing
+          support and collaboration. Scroll through and let us know if you're
+          inspired to take something on!
         </p>
         <div className="margin-p" style={{ marginBottom: 0 }}>
           <ContainerDimensions>

@@ -50,6 +50,9 @@ module.exports = {
       resolve: `gatsby-plugin-offline`, // https://www.gatsbyjs.org/packages/gatsby-plugin-offline
     },
     {
+      resolve: `gatsby-plugin-remove-serviceworker`, // https://www.npmjs.com/package/gatsby-plugin-remove-serviceworker
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/images`,

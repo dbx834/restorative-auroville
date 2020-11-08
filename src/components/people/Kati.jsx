@@ -26,8 +26,7 @@ const Person = () => (
       <br />
       <strong>2015 - Present</strong>
       <br />
-      <br />
-      <i>
+      <i style={{ display: 'block', marginTop: 10 }}>
         I was born, raised and educated in Germany. Based in the city of Köln
         (Cologne) for 44 years, I made my professional career as a director for
         documentaries and was active in building up a cooperative, independent

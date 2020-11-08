@@ -166,7 +166,7 @@ const Page = props => (
         alt="Restorative Auroville"
       />
     </div>
-    <Division golden>
+    <Division>
       <Fragment>
         <div
           style={{
@@ -193,19 +193,19 @@ const Page = props => (
             borderRadius: 8,
           }}
         >
-          <p style={{ marginBottom: 0 }}>
+          <p style={{ marginBottom: 25 }}>
             Restorative Circles are a specific restorative practice whose
             development began with the work of Dominic Barter in the favelas in
             Rio de Janeiro in the mid 1990s and continues with a growing
             community both in Brazil and internationally.&nbsp;
             <Link to="https://www.restorativecircles.org/">
-              See more about Dominic's work here
+              See more about Dominic's work here ⇝
             </Link>
-            .
           </p>
         </div>
       </Fragment>
     </Division>
+    <br />
     <br />
     <Division>
       <div>
@@ -254,36 +254,61 @@ const Page = props => (
       </div>
     </Division>
     <br />
-    <div className="box">
-      <h2 className="mask-h4">Participating in a Circle</h2>
-      <p>
-        The RC process is voluntary and open to all. It’s simply a tool that can
-        support us in responding to conflict, for those who choose to use it.{' '}
-      </p>
+    <br />
+    <Division>
+      <div className="box">
+        <h2 className="mask-h4">Participating in a Circle</h2>
+        <p>
+          The RC process is voluntary and open to all. It’s simply a tool that
+          can support us in responding to conflict, for those who choose to use
+          it.{' '}
+        </p>
 
-      <p>
-        Anyone can initiate a Circle – whether you’re upset by an incident or
-        issue, or you upset someone else, or you’re not directly involved but
-        feel concerned, you can call a Circle.
-      </p>
+        <p>
+          Anyone can initiate a Circle – whether you’re upset by an incident or
+          issue, or you upset someone else, or you’re not directly involved but
+          feel concerned, you can call a Circle.
+        </p>
 
-      <p>
-        Anyone can be named to be invited to a Circle. And if someone isn’t
-        named, but is moved to participate, he/she can contact the Facilitator
-        and request to be included.
-      </p>
-
-      <p style={{ marginBottom: 0 }}>
-        <strong>How to Call a Circle</strong>: Send an email to&nbsp;
-        <Link to="mailto:restorative@auroville.org.in">
-          restorative@auroville.org.in
-        </Link>
-        , or <Link to="/our-team">speak in person to a member of our team</Link>
-        . A Facilitator will follow up with you, hear your concerns, explain the
-        RC process, and confirm whether you’d like to go ahead with a Circle or
-        not.
-      </p>
-    </div>
+        <p>
+          Anyone can be named to be invited to a Circle. And if someone isn’t
+          named, but is moved to participate, he/she can contact the Facilitator
+          and request to be included.
+        </p>
+        <p style={{ marginBottom: 0 }}>
+          <strong>How to Call a Circle</strong>: Send an email to&nbsp;
+          <Link to="mailto:restorative@auroville.org.in">
+            restorative@auroville.org.in
+          </Link>
+          , or{' '}
+          <Link to="/our-team">speak in person to a member of our team</Link>. A
+          Facilitator will follow up with you, hear your concerns, explain the
+          RC process, and confirm whether you’d like to go ahead with a Circle
+          or not.
+        </p>
+      </div>
+      <div className="box">
+        <h2 className="mask-h4">Facilitation of Restorative Circles</h2>
+        <p>
+          The Facilitator is a dynamic role, selected according to individual
+          availability and willingness, and so therefore can change from Circle
+          to Circle.
+        </p>
+        <p>
+          As Facilitators, we are committed to serving the emergent wisdom of
+          the Circle, offering questions sourced from the RC process. Our
+          intention is to hold space for dialogue, to track meaning in what
+          people say, and to write down any shared agreements.
+        </p>
+        <p style={{ marginBottom: 14 }}>
+          <strong>Co-Facilitation</strong>: We encourage partnership and
+          learning among Facilitators and usually suggest that more than one
+          Facilitator be present for each Circle. This also allows for new
+          Facilitators to be partnered with more experienced Facilitators, and
+          for ongoing opportunities for collaboration and accountability.
+        </p>
+      </div>
+    </Division>
     <br />
     <h2 className="mask-h4">Learn More about Restorative Circles…</h2>
     <p>

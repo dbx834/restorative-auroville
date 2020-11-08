@@ -22,12 +22,11 @@ const Person = () => (
       Celia De Mengin Poirier
     </h1>
     <p>
-      <strong>Facilitator</strong>
+      <strong>Co-Facilitator</strong>
       <br />
       <strong>2018 - Present</strong>
       <br />
-      <br />
-      <i>
+      <i style={{ display: 'block', marginTop: 10 }}>
         I grew up in France in a family where conflict, trust and love
         co-existed. After a conflict between 2 members (or more), we would
         usually sit together with another member who will act as a mediator. Our

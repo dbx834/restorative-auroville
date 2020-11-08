@@ -23,12 +23,11 @@ const Person = ({ show = true }) => (
       Henrike Prudon
     </h1>
     <p>
-      <strong>Facilitator & Past Core Team Member</strong>
+      <strong>Co-Facilitator & Past Core Team Member</strong>
       <br />
       <strong>2018 - Present</strong>
       <br />
-      <br />
-      <i>
+      <i style={{ display: 'block', marginTop: 10 }}>
         I was born and raised in Holland, where I studied Anthropology and Law.
         In this time, I did some research into restorative justice models as
         they are found among native groups around the world. I was fascinated

@@ -27,8 +27,7 @@ const Person = ({ show = true }) => (
       <br />
       <strong>2020 - Present</strong>
       <br />
-      <br />
-      <i>
+      <i style={{ display: 'block', marginTop: 10 }}>
         Born in Pondicherry, I studied at the Sri Aurobindo International Centre
         of Education and graduated in 2019 in Political Science, History, and
         International Relations. In an environment which focused on integral

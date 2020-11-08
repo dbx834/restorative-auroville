@@ -23,12 +23,11 @@ const Person = ({ show = true }) => (
       Pranjal Tiwari
     </h1>
     <p>
-      <strong>Facilitator & Past Core Team Member</strong>
+      <strong>Co-Facilitator & Past Core Team Member</strong>
       <br />
       <strong>2017 - Present</strong>
       <br />
-      <br />
-      <i>
+      <i style={{ display: 'block', marginTop: 10 }}>
         I grew up in Pondicherry and studied at the Sri Aurobindo International
         Center of Education. In this environment of an integral education, I
         graduated in Political Science and International Relations, studying Sri

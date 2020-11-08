@@ -284,6 +284,13 @@ export const query = graphql`
     ) {
       ...max900
     }
+    celebratingAOneMonthRcImmersion: file(
+      relativePath: {
+        eq: "the-power-of-dialogue/celebrating-a-one-month-rc-immersion.jpg"
+      }
+    ) {
+      ...max900
+    }
     yellowBorder: file(relativePath: { eq: "yellowBorder.jpg" }) {
       ...max900
     }

@@ -18,12 +18,8 @@ import PersonCircle from '../PersonCircle'
 import Link from '../Link'
 
 import lauraSquare from '../../assets/lauraSquare.jpg'
-import janetSquare from '../../assets/janetSquare.jpg'
+import melodieSquare from '../../assets/melodieSquare.jpg'
 import katiSquare from '../../assets/katiSquare.jpg'
-import henrikeSquare from '../../assets/henrikeSquare.jpg'
-import pranjalSquare from '../../assets/pranjalSquare.jpg'
-import nilsSquare from '../../assets/nilsSquare.jpg'
-import sumaSquare from '../../assets/sumaSquare.jpg'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const { Fragment } = React
@@ -87,19 +83,10 @@ const circleStylesObject = css({
     content: `"L'aura"`,
   },
   '& .child-circle-highlight:nth-child(2)::after': {
-    content: `"Janet"`,
-  },
-  '& .child-circle-highlight:nth-child(3)::after': {
     content: `"Kati"`,
   },
-  '& .child-circle-highlight:nth-child(4)::after': {
-    content: `"Henrike"`,
-  },
-  '& .child-circle-highlight:nth-child(5)::after': {
-    content: `"Nils"`,
-  },
-  '& .child-circle-highlight:nth-child(6)::after': {
-    content: `"Suma"`,
+  '& .child-circle-highlight:nth-child(3)::after': {
+    content: `"Mélodie"`,
   },
 })
 const circleStyles = circleStylesObject.toString()
@@ -121,21 +108,17 @@ const Page = props => {
             committed to walking towards increased community resilience. We lead
             the larger Restorative Auroville project, we facilitate Circles,
             some of us teach, some of us run our different initiatives, and
-            more. And we’re wanting to expand our team and our reach in the
+            more. And we’re wanting to expand our team and our reach within the
             community.
             <br />
             <Link to="/our-team">Read more about us ⇝</Link>
           </p>
         </Fragment>
         <Fragment>
-          <div className={circleStyles}>
+          <h2 className="mask-h3">&nbsp;</h2>
+          <div className={`${circleStyles} margin-p`}>
             <PersonCircle
               image={lauraSquare}
-              className="child-circle-highlight"
-              role={<Fragment>Founder</Fragment>}
-            />
-            <PersonCircle
-              image={janetSquare}
               className="child-circle-highlight"
               role={<Fragment>Founder</Fragment>}
             />
@@ -151,29 +134,7 @@ const Page = props => {
               }
             />
             <PersonCircle
-              image={henrikeSquare}
-              className="child-circle-highlight"
-              role={
-                <Fragment>
-                  Core Team
-                  <br />
-                  &nbsp;&nbsp;Member
-                </Fragment>
-              }
-            />
-            <PersonCircle
-              image={nilsSquare}
-              className="child-circle-highlight"
-              role={
-                <Fragment>
-                  Core Team
-                  <br />
-                  &nbsp;&nbsp;Member
-                </Fragment>
-              }
-            />
-            <PersonCircle
-              image={sumaSquare}
+              image={melodieSquare}
               className="child-circle-highlight"
               role={
                 <Fragment>

@@ -13,22 +13,20 @@ import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: '1.3 Pre-Circle: Explaining the Process',
-  nakedPageSlug: 'the-power-of-dialogue/pre-circle-explaining-the-process',
+  pageTitle: '4.7 Celebrating a 1-Month RC Immersion',
+  nakedPageSlug: 'the-power-of-dialogue/celebrating-a-one-month-rc-immersion',
   pageAbstract:
-    'The third step in the Pre-Circle is "explaining the process," where the Facilitator reviews the RC process with the participant and answers any questions they may have, so that everyone is on the same page about how this particular process works.',
-  cover: 'https://img.youtube.com/vi/f3Ky1-6qGuk/hqdefault.jpg',
+    'Sun-Mi shares about her experience of apprenticing with and shadowing Restorative Auroville for an intense month.',
+  cover: 'https://img.youtube.com/vi/K06gzVGzWCQ/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)
 
 const prev = {
-  nakedPageSlug: 'the-power-of-dialogue/pre-circle-hearing-meaning',
+  nakedPageSlug: 'the-power-of-dialogue/rc-as-a-powerful-life-skill',
 }
 
-const next = {
-  nakedPageSlug: 'the-power-of-dialogue/pre-circle-who-needs-to-be-there',
-}
+const next = undefined
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -48,18 +46,11 @@ const Page = props => (
     {...props}
   >
     <p>
-      The third step in the Pre-Circle is "explaining the process," where the
-      Facilitator reviews the RC process with the participant and answers any
-      questions they may have, so that everyone is on the same page about how
-      this particular process works.
-    </p>
-    <p>
-      The Pre-Circle has five steps: i) getting the act; ii) hearing meaning;
-      iii) explaining the RC process; iv) naming those to be invited, v) getting
-      consent.
+      Sun-Mi shares about her experience of apprenticing with and shadowing
+      Restorative Auroville for an intense month.
     </p>
     <div style={{ maxWidth: '45rem' }} className="margin-p">
-      <Video url="https://youtu.be/f3Ky1-6qGuk" />
+      <Video url="https://youtu.be/K06gzVGzWCQ" />
     </div>
   </VideoWrapper>
 )

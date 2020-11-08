@@ -27,7 +27,9 @@ const prev = {
     'the-power-of-dialogue/highlights-and-learning-on-restorative-circles-3',
 }
 
-const next = undefined
+const next = {
+  nakedPageSlug: 'the-power-of-dialogue/celebrating-a-one-month-rc-immersion',
+}
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles

@@ -26,8 +26,7 @@ const Person = () => (
       <br />
       <strong>2010 - Present</strong>
       <br />
-      <br />
-      <i>
+      <i style={{ display: 'block', marginTop: 10 }}>
         I was born and raised in Auroville, and life has lead me to work with
         nonviolence, peace and justice. I went to university to become a high
         school teacher and proceeded to teach for 6 years (3 in Canada, 3 in

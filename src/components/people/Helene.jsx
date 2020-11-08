@@ -26,8 +26,7 @@ const Person = () => (
       <br />
       <strong>2016 - 2018</strong>
       <br />
-      <br />
-      <i>
+      <i style={{ display: 'block', marginTop: 10 }}>
         I was born and grew up in Montreal City, Quebec (the French-speaking
         part of Canada). After studying pure sciences at college I started to
         study and practice painting and engraving. In parallel I started to look

@@ -27,8 +27,7 @@ const Person = ({ show = true }) => (
       <br />
       <strong>2019 - Present</strong>
       <br />
-      <br />
-      <i>
+      <i style={{ display: 'block', marginTop: 10 }}>
         I’ve been working as a light technician and light designer since I
         graduated from high school. But I’m now interested in action and
         manifestation, and sitting in a room and talking to people has been one

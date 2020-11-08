@@ -23,12 +23,11 @@ const Person = ({ show = true }) => (
       Nils Johansson
     </h1>
     <p>
-      <strong>Facilitator & Past Core Team Member</strong>
+      <strong>Co-Facilitator & Past Core Team Member</strong>
       <br />
       <strong>2019 - Present</strong>
       <br />
-      <br />
-      <i>
+      <i style={{ display: 'block', marginTop: 10 }}>
         Hello, I’m Nils and I’m excited writing this! The reason I'm a part of
         Restorative Auroville is my long quest for freedom.
       </i>

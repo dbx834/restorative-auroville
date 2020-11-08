@@ -11,20 +11,21 @@ import React from 'react'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Person */
-const Person = () => (
+const Person = ({ show = true }) => (
   <div>
     <h1 className="mask-h4" style={{ fontWeight: 700 }}>
-      Michelle Bertholle
+      Pranav Kumar
     </h1>
-    <p style={{ marginBottom: 0 }}>
-      <strong>Apprentice</strong>
+    <p>
+      <strong>Resource Person</strong>
       <br />
-      <strong>2018 - Present</strong>
+      <strong>2017 - Present</strong>
       <br />
       <i style={{ display: 'block', marginTop: 10 }}>Not available for now…</i>
     </p>

@@ -141,9 +141,8 @@ const Page = props => (
         <br />
         <Link to="/donate">
           If you’d like to support our work and make a financial contribution to
-          keep it going, please donate here
+          keep it going, please donate here ⇝
         </Link>
-        .
       </p>
     </div>
   </StandardPage>

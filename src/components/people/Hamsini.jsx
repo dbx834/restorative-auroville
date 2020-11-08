@@ -22,7 +22,7 @@ const Person = () => (
       Hamsini
     </h1>
     <p style={{ marginBottom: 0 }}>
-      <i>Coming soon…</i>
+      <i>Not available for now…</i>
     </p>
   </div>
 )

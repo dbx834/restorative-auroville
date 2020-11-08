@@ -27,8 +27,7 @@ const Person = ({ show = true }) => (
       <br />
       <strong>2019</strong>
       <br />
-      <br />
-      <i>
+      <i style={{ display: 'block', marginTop: 10 }}>
         I was born and raised in Holland, where life brought me to study
         Architectural Engineering. After a few years I felt this study wasn’t
         giving me the life energy and peace that it could give me. To become

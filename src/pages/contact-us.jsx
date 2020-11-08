@@ -59,7 +59,8 @@ const Page = props => (
       <Fragment>
         <h1 className="mask-h3">Contact Us</h1>
         <ContactForm />
-        <p>
+        <br />
+        <p style={{ marginBottom: 0 }}>
           You can also email us at:&nbsp;
           <Link to="mailto:restorative@auroville.org.in?Subject=Hello">
             restorative@auroville.org.in

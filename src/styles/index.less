@@ -546,7 +546,7 @@ iframe {
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 1000;
+    z-index: 10;
     transition: opacity 300ms, z-index 100ms 1ms;
     opacity: 0.8;
     overflow: hidden;
@@ -637,6 +637,7 @@ iframe {
       height: 100%;
       display: flex;
       flex-direction: column;
+      overflow: scroll;
 
       & .ant-tabs {
         height: 100%;
