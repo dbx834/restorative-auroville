@@ -716,7 +716,7 @@ class Page extends React.PureComponent {
                         activeClass: 'unclamp',
                         passiveClass: 'clamp',
                         passiveText: 'Read more...',
-                        activeText: 'Minimize...',
+                        activeText: 'Close...',
                       },
                     }}
                   >
