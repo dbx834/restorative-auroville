@@ -291,6 +291,11 @@ export const query = graphql`
     ) {
       ...max900
     }
+    rcAsPerseverance: file(
+      relativePath: { eq: "the-power-of-dialogue/rc-as-perseverance.jpg" }
+    ) {
+      ...max900
+    }
     yellowBorder: file(relativePath: { eq: "yellowBorder.jpg" }) {
       ...max900
     }

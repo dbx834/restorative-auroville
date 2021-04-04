@@ -10,7 +10,7 @@ const _ = require('lodash')
 // ----------------------------------------------------------------------- Data
 // ----------------------------------------------------------------------------
 const dirName = 'rc-practice-groups'
-const years = ['2020']
+const years = ['2021']
 const every = 'Thursday'
 
 /** make a dir */

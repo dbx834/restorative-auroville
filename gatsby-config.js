@@ -46,9 +46,9 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
-    {
-      resolve: `gatsby-plugin-offline`, // https://www.gatsbyjs.org/packages/gatsby-plugin-offline
-    },
+    // {
+    //   resolve: `gatsby-plugin-offline`, // https://www.gatsbyjs.org/packages/gatsby-plugin-offline
+    // },
     {
       resolve: `gatsby-plugin-remove-serviceworker`, // https://www.npmjs.com/package/gatsby-plugin-remove-serviceworker
     },

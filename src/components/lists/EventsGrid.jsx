@@ -388,7 +388,11 @@ class EventsGrid extends React.Component {
         }
         return runLoop
       })
-      this.updateExtraData(postEdges[edgeIndex].node, edgeIndex)
+
+      if (isUndefined(postEdges[edgeIndex]) === false) {
+        this.updateExtraData(postEdges[edgeIndex].node, edgeIndex)
+      }
+
       this.setActive(edgeIndex)
       this.nextActive(edgeIndex)
     }
@@ -487,7 +491,7 @@ class EventsGrid extends React.Component {
     const today = moment()
     const thisYear = today.year().toString()
     const thisMonth = today.month()
-    const years = ['2020', '2019', '2018']
+    const years = ['2021', '2020', '2019', '2018']
     const months = {
       0: 'Jan',
       1: 'Feb',
@@ -651,57 +655,61 @@ class EventsGrid extends React.Component {
                     </Fragment>
                     <Fragment>
                       {!isUndefined(extraData) && (
-                        <div>
-                          <br className="mobile-only" />
-                          <Image
-                            src={getBanner(
-                              extraData.node.frontmatter.cover,
-                              extraData.node.frontmatter.tags
-                            )}
-                            rawWidth={1440}
-                            rawHeight={900}
-                            style={{
-                              border: '1px solid #00006F',
-                              height: 'auto',
-                              width: '100%',
-                              maxWidth: 360,
-                              marginBottom: 11,
-                            }}
-                            className="mask-p"
-                          />
-                          <h3 className="mask-h4">
-                            {extraData.node.frontmatter.title}
-                          </h3>
-                          <p>
-                            <AnimateOnChange
-                              baseClassName="animated"
-                              animationClassName="flash"
-                              animate={animate}
-                              onAnimationEnd={() => this.doneAnimating()}
-                            >
-                              <i>
-                                {extraData.node.fields.formattedDate}
-                                <br />
-                                {extraData.node.frontmatter.fromTime} -{' '}
-                                {extraData.node.frontmatter.toTime}
-                              </i>
-                            </AnimateOnChange>
-                          </p>
-                          <p>{extraData.node.frontmatter.abstract}</p>
-                          <div className="margin-p">
-                            <Link
-                              to={`/${extraData.node.fields.route}`}
-                              className="ant-btn"
-                            >
-                              <span style={{ fontSize: '125%' }}>
-                                More details ⇝
-                              </span>
-                            </Link>
-                          </div>
-                          <div className="margin-p">
-                            {registerLink(extraData, this.registerForEvent)}
-                          </div>
-                        </div>
+                        <Fragment>
+                          {!isUndefined(extraData.node) && (
+                            <div>
+                              <br className="mobile-only" />
+                              <Image
+                                src={getBanner(
+                                  extraData.node.frontmatter.cover,
+                                  extraData.node.frontmatter.tags
+                                )}
+                                rawWidth={1440}
+                                rawHeight={900}
+                                style={{
+                                  border: '1px solid #00006F',
+                                  height: 'auto',
+                                  width: '100%',
+                                  maxWidth: 360,
+                                  marginBottom: 11,
+                                }}
+                                className="mask-p"
+                              />
+                              <h3 className="mask-h4">
+                                {extraData.node.frontmatter.title}
+                              </h3>
+                              <p>
+                                <AnimateOnChange
+                                  baseClassName="animated"
+                                  animationClassName="flash"
+                                  animate={animate}
+                                  onAnimationEnd={() => this.doneAnimating()}
+                                >
+                                  <i>
+                                    {extraData.node.fields.formattedDate}
+                                    <br />
+                                    {extraData.node.frontmatter.fromTime} -{' '}
+                                    {extraData.node.frontmatter.toTime}
+                                  </i>
+                                </AnimateOnChange>
+                              </p>
+                              <p>{extraData.node.frontmatter.abstract}</p>
+                              <div className="margin-p">
+                                <Link
+                                  to={`/${extraData.node.fields.route}`}
+                                  className="ant-btn"
+                                >
+                                  <span style={{ fontSize: '125%' }}>
+                                    More details ⇝
+                                  </span>
+                                </Link>
+                              </div>
+                              <div className="margin-p">
+                                {registerLink(extraData, this.registerForEvent)}
+                              </div>
+                            </div>
+                          )}
+                        </Fragment>
                       )}
                     </Fragment>
                   </Division>

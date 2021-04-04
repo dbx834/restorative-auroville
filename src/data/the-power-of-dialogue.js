@@ -269,6 +269,17 @@ const data = [
     hasCategories: ['experiences'],
     hasTags: mockTag(),
   },
+  {
+    key: smallKey(),
+    title: undefined,
+    cover: undefined,
+    routeSlug: '/the-power-of-dialogue/rc-as-perseverance',
+    publishedAt: timestamp('04.08.2019'),
+    abstract:
+      'Amy, Mael and Aurovik share about their experiences with Restorative Circles and explore its impact on conflict in Auroville.',
+    hasCategories: ['experiences'],
+    hasTags: mockTag(),
+  },
 ]
 
 // ----------------------------------------------------------------------------

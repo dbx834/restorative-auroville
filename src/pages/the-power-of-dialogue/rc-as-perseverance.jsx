@@ -13,22 +13,20 @@ import seoHelper from '../../methods/seoHelper'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 const pageData = {
-  pageTitle: '4.7 Celebrating a 1-Month RC Immersion',
-  nakedPageSlug: 'the-power-of-dialogue/celebrating-a-one-month-rc-immersion',
+  pageTitle: '4.8 RC as Perseverance',
+  nakedPageSlug: 'the-power-of-dialogue/rc-as-perseverance',
   pageAbstract:
-    'Sun-Mi shares about her experience of apprenticing with and shadowing Restorative Auroville for an intense month.',
-  cover: 'https://img.youtube.com/vi/K06gzVGzWCQ/hqdefault.jpg',
+    'Amy, Mael and Aurovik share about their experiences with Restorative Circles and explore its impact on conflict in Auroville.',
+  cover: 'https://img.youtube.com/vi/B_xQAkjSwYs/hqdefault.jpg',
 }
 
 const seoData = seoHelper(pageData)
 
 const prev = {
-  nakedPageSlug: 'the-power-of-dialogue/rc-as-a-powerful-life-skill',
+  nakedPageSlug: 'the-power-of-dialogue/celebrating-a-one-month-rc-immersion',
 }
 
-const next = {
-  nakedPageSlug: 'the-power-of-dialogue/rc-as-perseverance',
-}
+const next = undefined
 
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
@@ -48,11 +46,11 @@ const Page = props => (
     {...props}
   >
     <p>
-      Sun-Mi shares about her experience of apprenticing with and shadowing
-      Restorative Auroville for an intense month.
+      Amy, Mael and Aurovik share about their experiences with Restorative
+      Circles and explore its impact on conflict in Auroville.
     </p>
     <div style={{ maxWidth: '45rem' }} className="margin-p">
-      <Video url="https://youtu.be/K06gzVGzWCQ" />
+      <Video url="https://youtu.be/B_xQAkjSwYs" />
     </div>
   </VideoWrapper>
 )

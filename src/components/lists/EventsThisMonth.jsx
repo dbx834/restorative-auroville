@@ -256,7 +256,11 @@ class EventsGrid extends React.Component {
         }
         return runLoop
       })
-      this.updateExtraData(postEdges[edgeIndex].node, edgeIndex)
+
+      if (isUndefined(postEdges[edgeIndex]) === false) {
+        this.updateExtraData(postEdges[edgeIndex].node, edgeIndex)
+      }
+
       this.setActive(edgeIndex)
       this.nextActive(edgeIndex)
     }
